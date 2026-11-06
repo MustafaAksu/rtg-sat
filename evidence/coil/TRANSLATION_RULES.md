@@ -13,3 +13,4 @@ Applies to every `<name>.en.md` written beside a frozen Turkish original in `evi
 6. **Turkish-specific tokens** in file names, column headers or labels that are themselves identifiers (e.g. `CLI-N3-kalan-kosular.md`, `kayit`) stay unchanged.
 7. Markdown structure identical to the original (same heading levels, same table columns, same bullet nesting).
 8. Output is UTF-8, LF line endings, no trailing whitespace changes beyond what translation needs.
+9. **Locale number formats** (added after group D): Turkish thousands separator and percent position are rendered in English convention — `270.000` (two hundred seventy thousand) → `270,000`; `%5.66` → `5.66%`. Digits never change; a decimal point stays a decimal point. Short Turkish prose labels in backticks (e.g. `[eksik — eklendi]`) are translated; identifiers, filenames and campaign labels (`P-ara`, `P-κ`) are not.
