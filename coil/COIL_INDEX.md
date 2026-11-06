@@ -21,7 +21,7 @@
 | RM | Name | Type | Line | Path |
 |---|---|---|---|---|
 | RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG | `coil/records/RM-01.md` *(path provisional, Q4)* |
-| RM-02 | Viability-window regime | REGIME | mixed (7 instances) | `coil/records/RM-02.md` |
+| RM-02 | Viability-window regime | REGIME | mixed (9 instances: 4 archival, 5 experimental) | `coil/records/RM-02.md` *(path provisional, Q4)* |
 | RM-03 | Obligatory feedback | MECHANISM | not opened | — |
 | RM-04 | Path dependence | MECHANISM candidate | not opened | — |
 | RM-05 | Regeneration | MECHANISM | not opened | — |

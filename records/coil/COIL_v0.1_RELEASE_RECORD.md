@@ -78,6 +78,8 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | T2 | §5c | two cases, "not institutionalised" | + one sentence: RESOLVABILITY characterised case B's instrument without changing the decision | state synchronisation; decision unchanged |
 | T3 | §8 RM-03 | "RTG Synthesis P_floor cost law [CAND] input" | same name, marked **not pinned** to any tag; pointer only | note §3: RTG material is cited at tags or marked as not pinned |
 | T4 | §8 RM-07 | (a)/(b) `[ALG]` | `[DERIVED]` (COIL label for exact algebraic derivation) + the CF = 0.20 IC-identity precondition from the Pair B/C campaign | label vocabulary (charter §0.1); state synchronisation |
+| T6 | §4-F memory (rev. 2) | Turkish: "Markov tam state'te beklenmez" (compressed, ambiguous); first translation: "Markov is not expected in the full state" | conditional statement: in a model Markov on a sufficient full state no additional history dependence is expected; effective memory is tested relative to the chosen reduced/partial description; non-invertibility alone does not remove the forward Markov property | PR #6 review item 5: the first translation fixed the wrong reading; **meaning correction** |
+| T7 | §8 RM-02 (rev. 2) | "7 instances" | "9 instances (4 archival, 5 experimental)" | .g and .h added in batch 2 |
 | T5 | §4-H bridge burden; §8 file column | "SG-PROG-1"; old filenames | + `programme-v1.4`; new paths marked provisional (Q4) | pins; fixed names |
 
 **RM-01 (`RM-01-kayit-v0.1.md` → `coil/records/RM-01.md`)** — re-pinned from Dyadic v6.4.9 / LEGACY v0.6 to `dyad-v6.4.23` / `legacy-v0.7`. Grades copied as written at the tag; differences from the source record:
@@ -93,6 +95,10 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | R7 | continuous counterpart | `[UNDEFINED]` | unchanged; an RTG-side `[THM]` smooth flow embedding (§6.17) is noted as **not asserted** to bear on the field | pointer only |
 | R8 | §12.5 time semantics | LEGACY v0.6 `[ONTO legacy]`, dt-independence `[OPEN]` | same at `legacy-v0.7`, item OPEN-L0L1-O5 | re-pinned |
 | R9 | Genesis v2.8.4 cross-check; "Dynamical Genesis v3.0" NS verification | cited as sources | marked historical readings, **not pinned** | note §3 |
+| R11 | κ_fit(M) DSI transport | `[ALG]` | `[DEF]` "Historical fitting ansatz", not identified with the exact primitive orbit law; coefficient and error term not certified for the full dynamics; historical fit parameter (SG-7) | PR #6 review item 1 (grade mismatch); tag text copied |
+| R12 | det J / area preservation | "no separate grade tag" | Jacobian/determinant `[ALG]`, non-area-preservation `[THM]` (§6.1) | PR #6 review item 1; my earlier note was wrong |
+| R13 | 47/54 | "asymptotic healing law" | coefficient of the fixed-radius uniform-angle mean in the raw W-frame; not by itself a long-orbit law | PR #6 review item 1 |
+| R14 | OPEN 18 | "IA-certified item OPEN 18" | step-indexed form `DYAD-THM-OPEN18-STEP-MONOTONE` `[THM-ALG via IA]`, scope quoted; not the historical footprint statement | PR #6 review item 1 |
 | R10 | header versions, "Next" paragraph | v0.1.1/v0.2 notes; RM-02/RM-04 next steps | removed / replaced by "Next (RTG line, suspended)" | current state only |
 
 **RM-02 (`RM-02-kayit-v0.3.md` → `coil/records/RM-02.md`)**
@@ -108,6 +114,10 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | M7 | III [UNMEASURED] | "(Pair B/C and dyad Stage B completed)" | completed items removed; "triF rows at Pairs B/C" added | current state only |
 | M8 | V.6 | `[YANLIŞLANDI — RUN-MM1-PAIRBC v1.0]` | `[FALSIFIED]` (RUN-MM1-PAIRBC v1.0.1), both rungs' ratios | label; version of the RUN |
 | M9 | V.2 | "legacy DSN §12.5 dt-independence `[OPEN]`" | + OPEN-L0L1-O5 at `legacy-v0.7` | pin |
+| M11 | .e logical character (rev. 2) | "κ > κ_frac → CHAOS; necessary-and-sufficient-in-tested-scope" | three objects separated: first-fracture threshold on the grid, per-cell regime membership (predominant above κ_frac, not exhaustive), reversion islands | PR #6 review item 4: the summary contradicted its own κ = 2.90 island |
+| M12 | IV fracture row, result statement (rev. 2) | "periodicity → fracture; mode count shapes position/width" | periodicity a necessary-condition candidate, not sufficient; mode count a modifier candidate, not a proven cause; result statement labelled tested-scope attribution | PR #6 review item 4 |
+| M13 | IV rival table (rev. 2) | "complete robustness scan of the γdt axis at three points" | "minimal scan … not a complete one" | PR #6 review item 4; consistent with IDEALOG C.2(2) |
+| M14 | .h K*₁ values (rev. 2) | "K*₁ tri0 2.0, path3 1.5" | marked Pair A; K*₁ rescales per pair | PR #6 review item 4 |
 | M10 | header, change log | v0.1–v0.3 narrative | removed; summary: v0.1 three instances; v0.2 .a2, BIRTH-v0 layering; v0.3 RMT v0.3 fields, archival/experimental split, .d/.e/.f, birth-surface analysis measured; v0.3.1 .a1 `[COR]` from the recovered update rule | current state only |
 
 **MM-1 (`MM-1-minimal-model-extraction.md` → `coil/MM-1.md`)**
@@ -119,6 +129,9 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | N3 | §1 | relational force with D symmetric weights | + the campaigns' degree-normalised convention and GATE's K* = γ/(2c·dt) | charter C12 consistency |
 | N4 | §6a last paragraphs | "Partial result (T = 270…4320)…"; "Next: response regularity pretest `[EXPLORE, measured]`…" | merged into one paragraph in the past tense from RUN-MM1-RESOLVABILITY v1.0 with its locked/post-hoc statuses (LEFT-CENSORED; h_sep `[HEUR]`; S(T) `[EXPLORE]`; T ≥ 8640 `[UNMEASURED]`); the "required h ~ 1/‖D_sens‖" phrase replaced by h_sep = 1/S(T) `[HEUR]` ≠ h_res | state synchronisation; the RUN's own corrected terminology (h_sep, exponential not super-exponential) |
 | N5 | §6c (new) | — | Pair B/C result and its consequence for MM-1 | post-dates the source; negative result must not be dropped |
+| N7 | §1 (rev. 2) | "D symmetric weights … degree-normalised adjacency" | base adjacency A (symmetric), coupling D = Deg⁻¹A (not symmetric; path3 spec {−1, 0, 1}), stiffness S = f′(0)(D − I) on the synchronous branch (path3 spec {−2, −1, 0}); the certificate uses S | PR #6 review item 2: weight matrix and force Jacobian were conflated |
+| N8 | §2 S1/S2 (rev. 2) | "[THM] structural; second order + explicit Euler only" | "[THM] structural — linear spectral crossing"; hypotheses a = γdt ∈ (0, 4), σ < 0 stated; explicitly not the nonlinear NS theorem; onsets/ω at [NUM] | PR #6 review item 2: theorem scope |
+| N9 | §6a RESOLVABILITY (rev. 2) | h_sep as "required step … state-separation proxy"; "4 to 111 orders below the representability floor" | four objects separated (measured h_res; LEFT-CENSORED + FP diagnostic; S(T) fit; h_sep as output-separation proxy for Y, not h_res); orders restated: ≈ 2 below h_coeff(u), ≈ 4 below the grid floor at T = 540; "not claimed that no h exists" | PR #6 review item 3: the summary re-imported the RUN's retracted reading and mixed denominators |
 | N6 | §6a auditor's note | "c₃ could be a more sensitive descriptor candidate" | + "(tested in ORTHO: insufficient alone)" | state synchronisation |
 
 **IDEALOG (`IDEALOG-coil-RCSJ-eslesmesi.md` → `coil/IDEALOG_COIL_RCSJ.md`)**
@@ -130,6 +143,8 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | L3 | §C.2 guard 1 | "existing basin grids are written in u₀; if later …" | + Pair B/C adopted w₀ = dt·u₀ | state synchronisation |
 | L4 | §A4 table | β_c one decimal | two decimals, "at Pair A (a = 0.03)" | notation |
 | L5 | §B2(iii), §C.2(4), §D3 | "legacy `[OPEN]`" | OPEN-L0L1-O5 at `legacy-v0.7`; D3 notes it is RTG's item | pin; boundary |
+| L7 | §A1 (rev. 2) | "Inertia = coil `[DERIVED]`; the coil is the precondition of the spark" | derived part (second-order term is the precondition of the spark) kept `[DERIVED]`; the "coil" identification demoted to `[CAND / HEUR]` because in A2's phase equation φ̈ carries the capacitance C, not an inductance | PR #6 review item 6: algebraic match ≠ physical identification; pre-existing in the source |
+| L8 | §A4 (rev. 2) | "independent support that the cross-rung comparison is physically legitimate" | dimensionless identity `[DERIVED]`; physical-legitimacy reading `[HEUR]`; not evidence of invariance (Pair B/C) | PR #6 review item 6 |
 | L6 | §A1 | "Dynamical Genesis's finding" | "(RM-02.a2, historical reading)" | pin state |
 
 ### 3.3 Notation fixes applied in both files
@@ -143,7 +158,7 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 
 - Every claim keeps its scope and evidence pointer: checked by reading both live files against the sources side by side.
 - Nothing dropped: Pair B/C P-κ (kept and expanded), v3.0 → v3.1 retraction (kept, I10), S-3 negative closure, RANK INCONCLUSIVE, RESOLVABILITY LEFT-CENSORED and `[UNMEASURED]` T ≥ 8640, S-1/S-2 parked, `[ABSENT-in-window]` level of the descriptor results, "single-scalar class not falsified", "triF rows not measured", "no verdict on rung ordering", "cross-rung concordance ≠ independent confirmation".
-- No hash, approval or file content invented; the two source hashes are copied from `upload/coil/SHA256SUMS` (PR #3, independently re-verified in PR #4's intake review).
+- No hash, approval or file content invented. Batch 1: the two source hashes (index, charter) are copied from `upload/coil/SHA256SUMS` (PR #3, independently re-verified in PR #4's intake review). Batch 2: the five source hashes likewise.
 - SG-PROG-1 sentence present (charter §0.2, §4, §9.0; index §10).
 - RTG grades copied as stated at the tag (charter §0.3); RM-01 items whose grade changed between v6.4.9 and v6.4.23 are listed in §3.4 R1–R6 and carry the tag's grade, never the stronger of the two.
 - Batch 2 additionally: RM-02 .g/.h and MM-1 §6c add only content taken from run reports in the same upload (RUN-MM1-DYAD v1.0, RUN-MM1-PAIRBC v1.0.1, RUN-MM1-RESOLVABILITY v1.0); no number was computed anew except the two-decimal β_c = κ/a conversions.
@@ -153,3 +168,4 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 1 (PR #5, `910337e`): batch-1 content.
 - rev. 2 (PR #5, review `5797938861`): C11, C12, I14; glossary spark note scoped to MM-1 with the ringdiag spark class left `[OPEN]`. Q4 and adoption of this record are PI decisions after batch 2; RM paths in the index stay provisional until then.
 - rev. 3 (batch 2 PR): §1 batch-2 rows, §3.4 (T1–T5, R1–R10, M1–M10, N1–N6, L1–L6).
+- rev. 4 (PR #6, review `5799574800`): R11–R14, N7–N9, M11–M14, T6–T7, L7–L8; index RM-02 row (9 instances, path provisional); §4 batch-1/batch-2 hash sentences separated.

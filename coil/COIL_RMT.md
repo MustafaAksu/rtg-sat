@@ -105,7 +105,7 @@ Power-law scaling is not the only valid signature. (This distinction is consiste
 |---|---|
 | Causal role | increases-probability / decreases-probability / necessary-in-tested-scope / sufficient-in-tested-scope / neither / [UNDEFINED]. In open and stochastic systems, probabilistic in-scope language is used |
 | Structural-necessity evidence | Where ablation cannot be applied (removing the mechanism from a primitive mechanism changes the model), family comparison is used. **Not equated with causal inference**: family evidence is selection evidence, not intervention evidence |
-| Memory / path dependence | Operational test: under the same instantaneous state and control, do different histories produce different future distributions? The test is **relative to the choice of state description** (Markov is not expected in the full state; coarse-graining / winding loss / non-invertibility can produce effective memory) |
+| Memory / path dependence | Operational test: under the same instantaneous state and control, do different histories produce different future distributions? The test is **relative to the choice of state description**: in a model that is Markov on a sufficient full state, no dependence of the future distribution on additional history is expected; **effective memory is tested relative to the chosen reduced or partial description** (coarse-graining, winding loss). Non-invertibility alone does not remove the forward Markov property |
 
 ### G — Status and provenance
 | Field | Definition |
@@ -185,7 +185,7 @@ Charter §6.6 defines two event types: **execution failure** (code does not conf
 | RM | Name | Type | State | File |
 |---|---|---|---|---|
 | RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG line; aligned to the RMT fields of this document; carries the MM-1 separation note | `coil/records/RM-01.md` *(path provisional, Q4)* |
-| RM-02 | Viability-window regime / bounded viable regime | REGIME | 7 instances (archival + experimental) | `coil/records/RM-02.md` *(path provisional, Q4)* |
+| RM-02 | Viability-window regime / bounded viable regime | REGIME | 9 instances (4 archival .a1/.a2/.b/.c, 5 experimental .d–.h) | `coil/records/RM-02.md` *(path provisional, Q4)* |
 | RM-03 | Obligatory feedback (state / adaptive distinguished) | MECHANISM | Not opened; input: the "RTG Synthesis P_floor cost law" `[CAND]` named in the source — an RTG-side item **not pinned** to any `rtg-corpus` tag in this migration; pointer only, no claim carried | — |
 | RM-04 | Path dependence | MECHANISM candidate | Not opened; **non-Markov positive-control laboratory identified** | — |
 | RM-05 | Regeneration (recovery / adaptation / regeneration distinguished) | MECHANISM | Not opened | — |

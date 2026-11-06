@@ -18,9 +18,9 @@ What remains when everything Kuramoto-specific (phase, synchronisation, angle, g
 **State space:** (x, v) ∈ 𝓜^N × ℝ^N; 𝓜 either compact-periodic (S¹) or ℝ.
 **Update (second order, damped, explicit Euler):**
 $$x_{n+1} = x_n + dt\, v_n, \qquad v_{n+1} = (1-\gamma\, dt)\, v_n + dt\, K\, L(x)$$
-**Relational force:** L(x)_i = Σ_j D_ij f(x_j − x_i − a_ij); f odd, bounded, f′(0) ≠ 0; a_ij antisymmetric offset (frustration analogue); D symmetric weights. In the campaigns D is the degree-normalised adjacency (f_i = (1/deg_i) Σ_j A_ij f(…)); the GATE code writes the resulting path-3 threshold as K* = γ/(2c·dt) with c = f′(0).
+**Relational force:** L(x)_i = Σ_j D_ij f(x_j − x_i − a_ij); f odd, bounded, f′(0) ≠ 0; a_ij antisymmetric offset (frustration analogue). Three matrices are kept apart: the **symmetric base adjacency** A (the topology); the **coupling matrix** D used in the campaigns, D = Deg⁻¹A (degree-normalised; in general **not symmetric** — path3: D = [[0,1,0],[½,0,½],[0,1,0]], spec(D) = {−1, 0, 1}); and the **stiffness / force Jacobian** on the branch where the threshold is evaluated — on the synchronous sine branch S = f′(0)·(D − I), path3 spec(D − I) = {−2, −1, 0}. σ in S1 ranges over the eigenvalues of S; the certificate (`mm1_certificate.py`) uses S, and the GATE code writes the path-3 threshold as K* = γ/(2c·dt) with c = f′(0), i.e. |σ|_max = 2c.
 
-**Three free structural choices:** (i) the **compactness/periodicity** of 𝓜, (ii) the **waveform** of f, (iii) the **spectrum** of D (topology). Kuramoto is a single point of this triple: 𝓜 = S¹, f = sin, D = graph Laplacian.
+**Three free structural choices:** (i) the **compactness/periodicity** of 𝓜, (ii) the **waveform** of f, (iii) the **spectrum** of the stiffness (topology through A and its normalisation). Kuramoto is a single point of this triple: 𝓜 = S¹, f = sin, unnormalised A (stiffness = minus the graph Laplacian).
 
 ## 2. Decomposition of the signature
 
@@ -29,8 +29,8 @@ $$J_{\text{mode}} = \begin{pmatrix} 1 & dt \\ dt\,K\sigma & 1-\gamma dt\end{pmat
 
 | # | Component | Status | Depends on |
 |---|---|---|---|
-| **S1** | Spark law K* = γ/(dt·\|σ\|) | **[THM] structural** | Second order + explicit Euler only. Unrelated to f, topology, 𝓜 |
-| **S2** | NS angle cos ω = 1 − γdt/2 | **[THM] structural** | **γdt only.** Independent of σ, topology, f — also confirmed experimentally on the four N = 3 rungs and three realisations |
+| **S1** | Spark law K* = γ/(dt·(−σ)) for a stiffness eigenvalue σ < 0 | **[THM] structural — linear spectral crossing** | Second-order explicit-Euler block with a = γdt ∈ (0, 4); f, topology and 𝓜 enter only through σ |
+| **S2** | NS angle cos ω = 1 − γdt/2 at the crossing | **[THM] structural — linear spectral crossing** | **γdt only** (the discriminant on det J = 1 is a(a − 4), so a complex unit-circle pair requires 0 < a < 4). Independent of σ, topology, f — also confirmed experimentally on the four N = 3 rungs and three realisations |
 | **S3″** | Fracture co-occurs with a compact/periodic phase space | **[NUM, tested scope]** — see below | periodicity of 𝓜 (necessary-condition candidate); mode count and waveform as modifiers |
 | **S4** | Frustration narrows the band (does not create it) | **[NUM] — sine family only** | offset a_ij **and** ? |
 
@@ -38,7 +38,7 @@ $$J_{\text{mode}} = \begin{pmatrix} 1 & dt \\ dt\,K\sigma & 1-\gamma dt\end{pmat
 - **winding drift ⇐ periodicity** (starts at κ = 2.5 even in the single-mode tri dyad; absent in tanh)
 - **CHAOS/fracture ⇐ periodicity** (absent in tanh on path-3 and dyad alike; present in tri path-3 at κ = 1.80 and tri dyad at κ ≈ 2.30)
 
-The only place f enters S1/S2: S = f′(·)·D, i.e. f′ scales the **position** of the spark, not its **angle**. This is the algebraic reason ω came out 0.173416 in all four N = 3 topologies.
+**Scope of S1/S2.** They are statements about the **linearised one-mode block**: a complex eigenvalue pair of J_mode crosses the unit circle at K* with angle ω. This is a linear spectral crossing, not a proof of the general nonlinear Neimark–Sacker theorem (non-resonance and non-degeneracy conditions, direction of bifurcation); the campaigns' observed onsets and ω values are the numerical companions of the crossing, at `[NUM]`. The only place f enters S1/S2: S = f′(0)·(D − I) on the synchronous branch, i.e. f′ scales the **position** of the spark, not its **angle**. This is the algebraic reason ω came out 0.173416 in all four N = 3 topologies.
 
 ## 3. Mechanism hypothesis for S3/S4 — core of the gate test
 
@@ -119,7 +119,12 @@ This splits the independence structure of the signature in two:
 
 **Rank test RUN → INCONCLUSIVE** (RUN-MM1-RANK v1.0): large values σ₂/σ₁ ≈ 0.59–0.81 appeared, but the **three-scale convergence guard failed** (ρ ≈ 0.95–0.98, threshold 0.30). Diagnosis: ‖Y(+h) − Y(−h)‖ does not shrink when h is halved (ratio ≈ 0.8–1.0; a converging estimate would need 0.5) → **the local derivative response could not be resolved numerically in the tested h range**, so the rank theorem cannot be applied. **This does not show that Y is mathematically non-C¹** — for finite N the map is smooth in principle; the problem may be local determinability, not smoothness. It is not localised to chaotic cells (only 15 of 751 κ chaotic in the anchor, 3–10 % of ‖du‖²); restricting to regular κ does not restore convergence.
 
-**Derivative resolvability measured (RUN-MM1-RESOLVABILITY v1.0; T = 270 … 4320, PI-stopped):** at T = 270 the derivative resolves (h_res 3.64e-14 regular, 2.33e-12 chaos); for T ≥ 540 the locked status is LEFT-CENSORED and the post-hoc diagnosis is that the double-precision finite-difference instrument is unresolved — E(h) freezes at exactly 1.000000. Mechanism explained quantitatively: the required step is h_sep = 1/S(T) `[HEUR]` (a state-separation proxy, not a Taylor radius, and distinct from the measured h_res), with S(T) ≈ C·e^{0.065T} `[EXPLORE, R² > 0.999]`, which lies 4 (T = 540) to 111 (T = 4320) orders below the representability floor; the direction-aware floor is h_coeff(d) = max_i ulp(θ_i)/\|d_i\| (`coil/MEMO_GAUGE_CYCLE_FLUX.md` §5b). RANK's h = 0.0025 becomes unreachable by any practical h at less than 2 % of the target horizon. T ≥ 8640 `[UNMEASURED]`. The observable-derivative pre-measurement (∂_θ λ_N by forward sensitivity, 10⁻⁹–10⁻⁷ agreement with a central difference at short horizon) grows exponentially with horizon in the tested chaotic representative and not in the tested regular one — **one cell per class; not a class generalisation**.
+**Derivative resolvability measured (RUN-MM1-RESOLVABILITY v1.0; ladder T = 270 … 4320, PI-stopped at T = 4320).** Four objects are kept apart, as in the RUN:
+- **Measured h_res** (locked criterion): at T = 270 the derivative of the observable Y resolves in the tested h grid — h_res 3.64e-14 (regular), 2.33e-12 (chaos). T_cross = 270 in all six strata/directions: RANK's smallest step h = 0.0025 is already exceeded on the first rung of the ladder.
+- **LEFT-CENSORED** (locked operational status): for T ≥ 540 no h in the tested grid (down to 9.1e-15) satisfies the criterion; E(h) sits at 1.000000 in every stratum and direction. Post-hoc diagnosis `[NUM+FP diagnostic]`: the locked double-precision finite-difference instrument is unresolved there — the perturbation, added to an O(0.1) anchor coefficient, loses representability (direction-aware floor h_coeff(d) = max_i ulp(θ_i)/|d_i|; u: 3.925e-17, v: 4.807e-17; `coil/MEMO_GAUGE_CYCLE_FLUX.md` §5b). **It is not claimed that mathematically no h exists.**
+- **Exploratory fit** S(T) ≈ C·e^{0.065T} `[EXPLORE, R² > 0.999]` of the sensitivity norm.
+- **h_sep = 1/S(T)** `[HEUR]`: an **O(1) output-separation scale proxy for the observable Y**, not a state-separation scale and **not h_res** (the RUN retracted its earlier name "required h"); h_res depends on the truncation-error structure of the central difference, not on ‖D_sens‖ alone. Orders of magnitude at T = 540: h_sep ≈ 4.0e-19 lies about **two orders below the representability floor** h_coeff(u) (3.925e-17 / 3.957e-19 ≈ 99) and about four orders below the scan grid's floor (9.1e-15); at T = 4320, h_sep ≈ 6.9e-126. The conclusion "unreachable by any practical h" is the RUN's `[NUM-in-scope]` statement about the tested grid and the locked instrument, not an inference from the proxy.
+- T ≥ 8640 `[UNMEASURED]`. The observable-derivative pre-measurement (∂_θ λ_N by forward sensitivity, 10⁻⁹–10⁻⁷ agreement with a central difference at short horizon) grows exponentially with horizon in the tested chaotic representative and not in the tested regular one — **one cell per class; not a class generalisation**.
 
 ## 6b. Continuity status (RMT classification)
 

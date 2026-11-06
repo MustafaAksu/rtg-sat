@@ -12,8 +12,8 @@ Notation: κ = K/K*₁; a = γdt; β_c = κ/a (charter §3).
 
 ## A. Matching parts
 
-### A1. Inertia = coil `[DERIVED]`
-MM-1's second-order structure is an RLC circuit: the velocity variable v plays the coil's role (resistance to change, memory/momentum). First-order (coil-less) Kuramoto has no NS — the explicit-Euler/dt² finding of the *Dynamical Genesis* paper (RM-02.a2, historical reading) is the same statement. **The coil is the precondition of the spark.**
+### A1. Inertia ↔ "coil" `[CAND / HEUR]` — a circuit reading, not a derivation
+**What is derived:** MM-1 is second order in the state variable; first-order (inertia-less) Kuramoto has no NS, and the second-order term is the precondition of the spark (the explicit-Euler/dt² finding of the *Dynamical Genesis* paper, RM-02.a2 historical reading, is the same statement) `[DERIVED]`. **What is only a reading:** calling the inertial term "the coil". In the RCSJ phase equation of A2 the coefficient of φ̈ is proportional to the **capacitance** C and I_c sin φ is the restoring term; the inductance appears only as the nonlinear Josephson inductance L_J of the junction itself. So "inertia = coil" is **not shown by A2's equation**; if another circuit-coordinate mapping is meant (e.g. flux as the dynamical variable), it has to be defined separately. Kept as the PI's intuition that named the study: `[CAND / HEUR]`.
 
 ### A2. Dyad ↔ single Josephson junction (RCSJ) `[DERIVED — algebraic identity]`
 The continuous limit of the MM-1 dyad, φ̈ + γφ̇ + 2K sin φ = 0, is the normalised zero-bias RCSJ model:
@@ -29,13 +29,14 @@ The PI's "perhaps the dyad alone" intuition **pointed at the right rung**: the c
 | FP / FP_wound | zero-voltage state / neighbouring 2π well |
 | frustration offset a_ij on a cycle | **magnetic flux through the loop** f = Φ/Φ₀ |
 | fracture threshold | around the switching current `[CAND]` |
+| (A1 reading) inertial term | "coil" — `[CAND / HEUR]`, see A1 |
 
 All of A3 is structural except the last row; the switching-current counterpart is **[CAND]** because the control knob differs (B1).
 
 ### A4. κ normalisation = Stewart–McCumber parameter `[DERIVED]`
 Computing β_c := ω_p²/γ² for K = κK* gives
 $$\beta_c(\kappa) = \frac{\kappa}{\gamma\, dt} \quad\text{— INDEPENDENT of the rung.}$$
-So the κ scale chosen in the prereg coincides with the canonical damping parameter of JJ physics. This is **independent support** that the cross-rung comparison is physically legitimate (the scale is not arbitrary). Measured thresholds in β_c at Pair A (a = 0.03):
+So the κ scale chosen in the prereg coincides, as a **dimensionless identity**, with the canonical damping parameter of JJ physics `[DERIVED]`. The reading that this makes the cross-rung comparison **physically** legitimate is an interpretation `[HEUR]`: the identity shows the scale is not arbitrary *within MM-1's own algebra*; it does not by itself establish physical validity of comparing rungs, and the a-dependence measured in Pair B/C (§C) shows β_c(frac) is not an invariant across pairs. Measured thresholds in β_c at Pair A (a = 0.03):
 
 | Rung | κ_frac | β_c(frac) |
 |---|---|---|
