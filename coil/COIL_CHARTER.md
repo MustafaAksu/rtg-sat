@@ -1,0 +1,243 @@
+# COIL — Charter of the Research Programme "Cross-Layer Relational Dynamics"
+
+**Study key:** `coil` (`rtg-sat/REGISTRY.md`). **Governing edition:** the latest adopted tag `coil-v<version>` with its release record (`records/coil/`); none yet.
+**Document class:** discussion and governance text, not a publication text. In COIL's own vocabulary: `[DRAFT]`.
+**Source:** translation of the owner session's `charter-v0.3.md` (SHA-256 `80cbbb236e4c3be874c15b508dbdb5ecb36fb216c2c2a4ff78a3d4f2da7f1e8b`, `upload/coil-sources`), brought to current state; changes of meaning are listed in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
+**Language:** English translation of a Turkish original; terms in `coil/COIL_GLOSSARY.md`.
+**Boundary:** COIL is not RTG. Nothing in this document is an RTG result; RTG material is cited at adopted `rtg-corpus` tags only (§0.3).
+
+---
+
+## 0. Vocabulary, labels and RTG pins
+
+### 0.1 Status labels (COIL's own, declared once here)
+
+COIL grades its claims with its own labels. They are not DSN grades; the last column gives the nearest DSN Methodology v1.4 grade (`rtg-corpus` tag `methodology-v1.4`, §8) where the mapping is honest, and "none" where it is not.
+
+| COIL label | Meaning in COIL | Nearest DSN v1.4 grade |
+|---|---|---|
+| `[THM]` | Complete proof under explicit assumptions and conventions (used for the structural signatures S1/S2). | `[THM]` |
+| `[DERIVED]` | Exact algebraic derivation from the model's defining equations, with scope stated. | `[ALG]` |
+| `[NUM]` | Numerical result with stated protocol and finite scope; the campaign and the certificate are named. | `[NUM]` |
+| `[NUM-in-scope]` | `[NUM]` whose statement is explicitly restricted to the tested model, parameter range and topology. Bare `[NUM]` is not written in records; the format `[NUM-in-scope \| model \| range \| topology]` is mandatory there. | `[NUM diagnostic]` |
+| `[VAL]` / `[VAL-in-scope …]` | A result derived or replicated within a defined model/scope with provenance and robustness conditions stated. Bare `[VAL]` is never written; records use `[VAL-in-scope \| model \| range \| topology]`. | `[NUM strong]` when the robustness checks are named; else `[NUM]` |
+| `[CAND]` | Candidate (invariant, descriptor, bridge, mechanism) not yet tested, or tested without a locked criterion. | `[HYP]` |
+| `[HYP]` | Testable, not yet tested. | `[HYP]` |
+| `[MOD]` | Internally consistent phenomenological model without fundamental derivation; also the ceiling imposed when the naturalness preference (§6.3) is violated. | `[HEUR]` |
+| `[HEUR]` | Interpretive or heuristic argument; not a proof. | `[HEUR]` |
+| `[EXPLORE]` | Exploratory numerical observation without a locked criterion; cannot enter a decision. | `[OBS]` |
+| `[OBS]` | Measured but not part of a locked criterion; cannot be an input to a decision. | `[OBS]` |
+| `[SPEC]` | Points a direction, carries no claim. | none (workflow note) |
+| `[ARBITRARY]` | Structural choice made without justification; mandatory target of a robustness test. | none (anti-pattern marker) |
+| `[UNMEASURED]` | Field a campaign could not reach; declared per layer record (§6.7). | `[OPEN]` |
+| `[UNDEFINED]` | Field that has no definition on the object in question (e.g. a control parameter on a parameter-free map). | `[OPEN]` |
+| `[OPEN]` | Unresolved question; workflow information. | `[OPEN]` |
+| `[ABSENT-in-window]` / `[ABSENT-in-tested-domain]` / `[ABSENT]` | Absence of a phenomenon, graded by the domain it was searched in: the locked κ window; the whole tested domain; everywhere (never asserted in COIL so far). | `[NUM]` with scope; `[ABSENT]` has no counterpart |
+| `[FALSIFIED]` | A locked prediction failed under a preregistered criterion. Turkish original `[YANLIŞLANDI]`. | `[FAIL]` |
+| `[RESOLVED]` | An open item closed by derivation or measurement, pointer given. Turkish original `[ÇÖZÜLDÜ]`. | none (workflow) |
+| `[COR]` | Correction notice: old statement, new statement, reason. | `[COR]` |
+| `[RETRACTED]` | Formal withdrawal of a verdict (used for the carrier audit v3.0 → v3.1). | `[RETRACTED]` |
+| `[DRAFT]` | Document status: working text, revisable. | none (document status) |
+
+Rule-status labels (§5) are a separate class and apply to COIL's own rules, not to claims: `[derived]`, `[precautionary]`, `[mixed]`, `[procedural]`.
+
+Campaign outcome words used in run reports are decisions of locked preregistrations, not labels: `PASS`, `FAIL`, `INCONCLUSIVE`, `LEFT-CENSORED`, `REPLICATION-CONCORDANT`, `REPLICATION-NOT-RUN`.
+
+### 0.2 Programme lines
+
+COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic generator T; suspended) and the **MM-1 line** (object: the inertial relational-force family MM-1; active). **There is no named bridge between them.** The separation rule of the RTG Programme Overview, SG-PROG-1, is kept in every COIL text: a reference, analogy or abstract isomorphism is not a bridge.
+
+### 0.3 RTG material cited by COIL (pinned)
+
+| COIL use | `rtg-corpus` tag | Document | Item | Grade as stated there |
+|---|---|---|---|---|
+| RTG dyadic generator T (RM-01's object) | `dyad-v6.4.23` | `dsn/RTG_DYADIC_OSCILLATOR_DSN.md` v6.4.23 | `DYAD-DEF-PRIMITIVE-MAP` (§ "Dyad map") | `[DEF]` `[v6.4.11, provisional]` |
+| Legacy ringdiag update rule; §12.5 effective-parameter hypothesis (dt, γ) and dt-independence; OPEN-L0L1-0, OPEN-L0L1-1 | `legacy-v0.7` | `dsn/RTG_L0_L1_L2_BRIDGE_LEGACY_DSN.md` v0.7 | §3.1 QR-defined spark boundary; §12.5 (incl. `[OPEN]` OPEN-L0L1-O5: "establish any claimed dt-independence on a stated domain"); §9 OPEN items | §12.5 parameter entries `[ONTO legacy]` / `[MATH]`; dt-independence `[OPEN]`; OPEN items `[OPEN]` |
+| Separation guard SG-PROG-1; SG-L0L1-6 | `programme-v1.4`; `legacy-v0.7` | `dsn/RTG_PROGRAMME_OVERVIEW.md` v1.4; LEGACY DSN v0.7 | SG-PROG-1 (local guard and clarified wording); SG-L0L1-6 | guards, not graded claims |
+
+COIL does not restate RTG grades in a stronger form. OPEN-P0 (primitive ontology) is an RTG open item that conditions the RTG line; COIL does not work on it.
+
+---
+
+## 1. Motivation
+
+We observe certain structural patterns recurring across scales and ontological layers: viability windows between two qualitatively different failure regimes, bounded coherence, feedback, path dependence and regenerative return reappear in different contexts. Not all of these are expected to be present together at every layer; one of the programme's basic questions is at which layer, or at which transition surface, each mechanism first appears.
+
+The starting question: **are these similarities merely a product of our habit of carrying metaphors across layers, or does at least a part of them rest on a common dynamical architecture?**
+
+The programme has not answered this question; it has sharpened it. "The window" turned out not to be a single object: it has two boundaries, and the boundaries have **different birth surfaces** (§3). The right question is no longer "where is the window?" but **"where is each boundary that makes up the window, and by which mechanism is it born?"**
+
+## 2. Central hypotheses
+
+**[HYP-1]** At least part of the viability-window, resonance, path-dependence and regeneration structures seen at different ontological and cognitive layers may be scale- and context-dependent re-derivations of one common relational dynamical architecture. — *Status: untested (no cross-layer step has been taken).*
+
+**[HYP-2 — transition-first]** The conserved structure may belong not to the static properties of objects but to the dynamical rule of specific organisational transitions. — *Status: **supported within one layer.** In the physical layer, spark and fracture are born at different organisational thresholds (§3). This is an intra-layer confirmation of HYP-2, not a cross-layer one, and carries no cross-layer claim.*
+
+Terminology: "fractal" is an intuitive guide, not a main scientific term. "Bounded but non-zero phase difference" is a *candidate* invariant, not a hard-coded condition — indeed the RM-01 record **did not find** this form at the RTG dyadic level.
+
+## 3. What we have learned — empirical state of the programme
+
+All results are at the **[NUM]** ceiling, common scope: the MM-1 family (inertial relational force + explicit Euler), Pair A (γ = 0.3, dt = 0.10, a = γdt = 0.03), 25-IC grid. **The κ range is campaign-specific:** N2/N3/gate κ ∈ [0.5, 3]; ISOA κ = 2.535 ± 0.16; TONGUESET and ORTHO κ ∈ [0.5, 8]. No generalisation beyond these.
+
+Notation used throughout COIL (fixed here): κ = K/K*₁ with K*₁ = γ/(dt·|σ|_max) the spark threshold of the degree-normalised coupling f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i); a = γdt; β_c = κ/(γdt) = κ/a (Stewart–McCumber identity, §3.3).
+
+**3.1 The two boundaries of the window separated.**
+- **Spark** (lower boundary) is born with parameterisation: in the isolated dyad, without a network, at the predicted place (RUN-RM02-N2-A → decision D2).
+- **Fracture** (upper boundary) is born in the sine family with one additional relational mode: a cycle or frustration is **not required** (RUN-RM02-N3, preregistered attribution — *tested scope*). **But the additional mode is not necessary either:** in the triangle-wave realisation a single-mode dyad also fractures (RUN-MM1-DYAD). The role of the mode count is **realisation-dependent**.
+- Frustration does not create fracture but **narrows the band**: viable κ width tri0 1.65 → path3 1.35 → triF(3π/2) 0.30 → **triF(π) 0.05**.
+- Degeneracy does not bring fragility: tri0, which carries a double NS, is the rung that fractures last.
+
+**3.2 A minimal model was extracted and the gate was passed.**
+MM-1 (document `coil/MM-1.md`): second-order damped explicit Euler + a single/bounded relational force. The signature decomposed:
+- **S1** spark law K* = γ/(dt·|σ|) and **S2** NS angle cos ω = 1 − γdt/2 → **[THM] structural** (independent of waveform, topology and periodicity; also confirmed experimentally in four topologies + three realisations).
+- **S3″**: fracture is observed, within the tested scope, together with a **compact/periodic phase space**; removing periodicity removes it → **necessary-in-tested-scope**. *([COR] the "≥ 2 modes" component of the earlier S3′ was **falsified** — the single-mode triangle-wave dyad fractured at κ = 2.30, RUN-MM1-DYAD. The mode count is not a necessary condition; it is a **realisation-dependent modifier candidate** for position and band morphology, and its causal role is open.)*
+- Two phenomena separated: **winding drift ⇐ periodicity**; **chaos/fracture ⇐ periodicity** (mode count not required — RUN-MM1-DYAD).
+- Gate decision: **G1 — OPEN** (the signature was reproduced in a non-sine force).
+- **The waveform does work** (RUN + AUDIT-MM1-WAVEFORM, locked holdouts): the global waveform controls the tongue **geometry** (the normalised peak force A alone is not sufficient — decision B1 FAIL); global existence/birth remains a separate open question; once a tongue is born, its position *inside* the smooth-triangle family is given in a narrow band by χ = κA ≈ 3.193 (CV 0.94 %) — **but this collapse does not hold across families**: in the iso-amplitude test, with the same A and the same f′(0), none of six waveforms fractured in the locked window (decision I3); the tongue moved to κ ≈ 3.10. So while S1/S2 stay local-linear, **S3″ is truly global-nonlinear**, and the two scalar descriptors tried do not carry it **separately**: in the orthogonal-family test c₃ and H_high were **each insufficient alone** (ORTHO) — the geometry is sensitive to at least two independent perturbation directions. *The minimal sufficient descriptor dimension is open; the single-scalar explanation class as a whole has not been falsified.*
+
+**3.3 The scale was legitimised.** The normalisation κ = K/K* coincides with the Stewart–McCumber parameter: β_c(κ) = κ/(γdt), independent of the rung. Our comparison scale was not arbitrary.
+
+**3.4 The method passed its test.** The criterion code stopped a run once (EXEC-PATCH-RM02-N2-001); no criterion changed after data were seen; speed-ups were accepted only with an equivalence audit; certificates PASSED in three independent environments.
+
+**3.5 And the programme's most uncomfortable finding:** MM-1 **has a regular continuous limit**, but the spark/NS phenomenon is **not preserved** in that limit — in the RMT classification, *(b) the limit exists but the phenomenon disappears*; *(c) not a singular limit*. In the continuous limit the system is stable for every γ > 0; NS arises entirely from explicit Euler's energy pumping. This ties the ontological status of S1/S2 directly to **time semantics** (§10.1).
+
+**3.6 The only invariant candidate was tested and fell (Pair B/C).** Under a locked, level-guarded, clean-holdout design (tri0 × {B, C}; PREREG-MM1-PAIRBC v1.0.3): decision **P-κ** — β_c(frac) is **not** a-invariant. κ_frac(A, B, C) = 2.65 / 2.775 / 2.800 on tri0 while a rises 5.2×; β_c 88.33 → 27.75 → 17.95 (÷ 4.92); p_BC = +0.0202, q_B = 1.047, q_C = 1.057 — the slope guard and the level guard reached the same verdict (they are logical consistency guards on the same B/C threshold measurements, not independent evidence). Replication on path3, decision-free: κ_frac 2.35 / 2.525 / 2.55, p_BC = +0.0222, β_c 78.33 → 16.35 (÷ 4.79) — **REPLICATION-CONCORDANT**; cross-rung concordance is not an independent confirmation. Falsified: the general hypothesis "β_c(frac) is an a-invariant descriptor across the N3 ladder"; Pair A's 35–88 table cannot be carried as an a-independent invariant. The direct confirmatory falsification comes from tri0; path3 was measured as a concordant replication outside the decision; the triF rows were not measured. No verdict on rung ordering. Record: RUN-MM1-PAIRBC v1.0.1; audit AUDIT-R5-PAIR-BC v1.0.1.
+
+## 4. Ontological position
+
+The ground is relationalism: what is fundamental is not substances but relations and their dynamics. RTG is a candidate concretisation of this ground at the physical layer.
+
+Critical distinction: **a claim of ontological priority and a claim of epistemic access are not the same thing.**
+
+**Scope guard (no-derivation shortcut):** relational ontology sets the programme's direction; it can never be used as the proof of any cross-layer derivation.
+
+**Warning — the gap between ground and body:** the programme's ontological justification rests on RTG, but **its entire empirical body is in the MM-1 family**, and between MM-1 and RTG's postulated generator there is **no named bridge** (SG-PROG-1; SG-L0L1-6 at `legacy-v0.7`). This gap is not hidden; it is the reason for the two-line structure in §9.
+
+## 5. Epistemic discipline
+
+Claim labels are declared in §0.1. In records, `[VAL]` and `[NUM]` are never written bare; the in-scope format is mandatory.
+
+**Status of the rules.** The status discipline we apply to our claims applies to our rules as well. Every rule is in one of two classes:
+
+- **[derived]** — a logical/conceptual necessity. Violating it invalidates the claim. It cannot be relaxed by data; it changes only if a conceptual error is shown.
+- **[precautionary]** — a protective rule born of a concern. Whether the concern materialises **is tested by the outcome**; if falsified, the rule is revised, and that is a `[COR]` record, not a violation.
+
+This distinction is the general form of the correction in §9.0: phase ordering was a **[precautionary]** rule (it rested on the concern "if skipped, no result can be reached"); the outcome falsified the concern; the rule was revised. A derived rule could not receive the same treatment.
+
+**Methodological prohibitions:**
+1. **No mixing of metaphor and mechanism** `[derived]`. No structure whose order/control parameter and macro-regime behaviour are undefined may be declared "in the same class" — class equality between undefined objects is meaningless to begin with.
+2. **No ordering shortcut** `[mixed]`. A cross-layer universality claim cannot be advanced before intra-layer robustness is shown. Derived core: to claim membership of a class one must **know the class of at least one member**. Precautionary shell: *which* layer the robustness is shown in — revised (MM-1, not RTG; §9.0).
+3. **No derivation shortcut** `[derived]`. A higher-layer mechanism cannot be declared the consequence of a lower layer on structural similarity alone; each transition requires explicit **bridge variables**, a **mapping rule** and a **falsification criterion**.
+4. **Phase ordering** `[precautionary — REVISED, §9.0]`. Phases are run in order. *Status: the absolute form was falsified; the replacement rule — if a phase turns out to be non-executable (with the reason documented), the accessible line is chosen, and which object the resulting output belongs to is recorded explicitly.*
+
+**Gates are a separate class** `[procedural]`: not prohibitions but passage conditions (e.g. the Phase 2 gate). Binding until met; they fall away when met.
+
+## 6. General methodological principles
+
+**6.1 Independence and parity** `[derived]`. Every contributing researcher (human or AI) has the right and the duty of independent evaluation; no output receives privilege because of its source's authority. Dissent is institutionalised: for every main claim at least one participant takes the sceptical position.
+
+**6.2 Openness** `[derived]`. Method, code and the provenance chain including failed attempts are kept open. Rejected hypotheses are not deleted; they are archived with changed status.
+
+**6.3 Preference for naturalness (operational)** `[precautionary]`. (a) The mechanism must emerge from the dynamics, not be added by hand; (b) the result must not depend on fine-tuning; (c) at equal explanatory power the model with fewer free parameters is preferred. Violation → `[MOD]` ceiling.
+
+**6.4 No arbitrariness** `[derived]`. Every structural choice is tied either to a justification or to a robustness test; unjustified ones are marked `[ARBITRARY]`. Unmarked arbitrariness is more dangerous than marked.
+
+**6.5 Priority of discriminating power** `[derived]`. Predictions must be not merely new but **discriminating**: they must separate from metaphor-transfer, selection-effect and shared-constraint explanations.
+
+**6.6 Preregistration protocol** `[derived]` (distilled from the campaigns). For every experiment: (i) an analytic **certificate** is written and passed with an exit code — no run without a pass; (ii) predictions, tolerances and the **decision tree** are locked before data are taken; (iii) the run; (iv) independent audit. A locked prereg is **not changed**; if the implementation does not conform to the prereg, the code is corrected (execution-conformance patch), not the criterion. Performance optimisation is accepted only with an **equivalence audit**. Classifier blind spots are corrected at the reporting level; criteria are not changed retroactively.
+
+**Two event types are kept apart:**
+- **Execution failure** — the implementation does not conform to the prereg; the criterion code stops it. What is corrected is the code. (Example: EXEC-PATCH-RM02-N2-001.)
+- **Prediction failure** — the implementation is correct, the criterion runs and **drops the hypothesis**. What is corrected is the theory. (Example: P-S3-dyad FAIL → S3′ → S3″, RUN-MM1-DYAD; P-κ, RUN-MM1-PAIRBC.)
+
+The two are recorded separately in the programme's history: the first tests the instrument, the second the model. A programme's health is measured by whether events of the second kind *can occur*.
+
+**6.7 Partial-template protocol** `[precautionary]`. In ambiguous layers a full match is not sought: where the ruler reaches, it measures. Two guards are mandatory:
+- **The template must be frozen.** Before entering a layer, the template and the signature are preregistered; stretching the template inside the layer is forbidden. If the need to stretch arises, one leaves the layer, revises the template and re-enters.
+- **The unmeasured is declared.** Every layer record keeps an `[UNMEASURED]` list: which fields stayed where the ruler did not reach.
+- A partial match counts as information only if it produces at least one discriminating prediction in that layer; otherwise it is curve fitting.
+
+## 7. Class of the study
+
+A **research programme** in Lakatos' sense:
+- **The hard core is ontological/programmatic:** relational ontology is a starting assumption, not an empirical result.
+- **The protective belt is scientific:** certificates, preregistered campaigns, robustness tests — computable, falsifiable, repeatable.
+- **Bridge hypotheses** have the status of natural philosophy; they are promoted to science when tied to measurable invariants and explicit mapping rules.
+
+Progress criterion: a programme that only produces retrospective similarity explanations and no **discriminating prediction** has degenerated.
+
+**Note on alignment with RTG:** the Phase 1–2 goals of this programme are not an evaluation layer added to RTG from outside; in RTG's own maturity framework, a universality-class argument is one of the routes to Level D. This is a statement about COIL's motivation, not an RTG claim.
+
+## 8. Research goals
+
+1. **Invariant hunt** — *partial, with a negative result:* S1/S2 fixed as structural invariants; the a-independence of β_c(frac), the only genuine invariant candidate, was tested and **falsified** (P-κ, §3.6). No invariant candidate for fracture position is currently open.
+2. **Universality-class test** — *partial:* the signature was preserved in three realisations inside the MM-1 family; the family was not left.
+3. **Projection test** — *open:* whether the "corridor" structures are projections of a higher-dimensional attractor geometry has not been tested.
+4. **Birth-surface test** — *advanced:* separate surfaces measured for spark and fracture (§3.1).
+5. **Minimal-model extraction** — *completed:* MM-1 + gate G1.
+
+## 9. Roadmap
+
+### 9.0 Structural correction: the programme runs on two lines `[COR]`
+
+The earlier roadmap assumed a single line and said "no phase may be skipped". Phase 1 (an RTG-internal robustness test) was not done; instead, a robustness study was run in a parallel, fully controlled family (inertial Kuramoto → MM-1) and **produced a result**.
+
+**[COR] This is not an execution violation but a roadmap forecasting error.** The rationale of the phase-ordering prohibition was "if skipped, no result can be reached"; a result was reached. The prohibition was not binding in this case; what needed correcting was not the behaviour but **the Phase 1 definition**. (PI decision: *what happened is what counts.*)
+
+**The mechanism of the error has been identified; this is not retrospective rationalisation:** Phase 1 had been written as "preservation of the same macro-regime across different parameter ranges". But the RM-01 record documented that RTG's dyadic primitive map is **parameter-free** (control-parameter field `[UNDEFINED]`). So Phase 1 as written was **not executable** on the RTG primitive — there was no axis to scan. The accessible route ran through the parameterised family.
+
+This finding is itself one of the programme's results: **parameterisation/organisation creates new control axes** (RM-02 idea-log #10, *control-dimension emergence*). The roadmap is part of the protective belt and is revised by data; it is not the hard core.
+
+**What the correction does not resolve (scope record):** the predicted output of Phase 1 was "the signature of the RTG class"; what we have is "the signature of the MM-1 class". These are different objects. The skip did not block progress but **changed what we obtained** — not a violation, a fact of scope; read together with §4 and §10.2.
+
+The programme in fact runs **two lines**:
+
+| | **RTG line** | **MM-1 line** |
+|---|---|---|
+| Object | RTG's postulated generator T (conditional on OPEN-P0) | inertial relational-force family |
+| State | **Phase 0 partial** (RM-01, RM-02 records); Phase 1 **not started** | Phase 1 and Phase 2 **completed**, gate G1 open |
+| Firewall | SG-PROG-1, SG-L0L1-6 at full strength | — |
+| Relation | **There is NO named bridge between them** | |
+
+On which line will the cross-layer claim be built? There is no answer yet — this is the programme's largest open structural question (§10.2).
+
+### 9.1 MM-1 line (active)
+
+- **Phase 1 ✔** Robustness: 4 topologies × 2 integrators × 3 nonlinearities, preregistered.
+- **Phase 2 ✔ GATE OPEN (G1).** Minimal model extracted; the signature repeated in a non-sine realisation.
+- **Phase 2.5 — calibration plane.** Before going to ambiguous layers, run the template end to end in a well-defined plane of classical physics. **Candidate: RCSJ / Josephson junction** — the continuous limit of the MM-1 dyad is the algebraic twin of this model, and it has an independent experimental literature. Precondition: the control-knob mismatch (K here, bias current there) and the absence of a continuous counterpart of the spark (§10.1) must be resolved before a comparison can be set up. Not yet designed.
+- **Phase 3 — inorganic → self-maintaining.** May be started because the gate is open; needs its own prereg. Ablation mandatory: does self-maintenance disappear when the candidate mechanism is removed?
+- **Phase 4 — adaptive/cognitive.** The partial-template protocol (§6.7) applies here.
+- **Phase 5 — moral/relational.** Gate: not opened without at least one bridge at `[VAL-in-scope]` in Phases 3–4. The derivation prohibition is applied most strictly here.
+
+### 9.2 RTG line (suspended, deliberately)
+
+- **Phase 0 continues:** RM-04 (path dependence) and the remaining RM records.
+- **Phase 1 not started:** RTG-internal robustness (the p-family ledger of the Dyadic DSN is the natural input). The OPEN-P0 conditionality structurally limits this line.
+- This line **cannot import** the results of the MM-1 line.
+
+### 9.3 Standing line — falsification criteria
+Rewritten for every phase. A claim whose criterion cannot be written cannot receive `[HYP]` status.
+
+## 10. Open programmatic questions
+
+**10.1 Is discreteness ontological or numerical? (S-1)** MM-1's spark exists only in the discrete-time structure; it is absent in the continuous limit. If RTG's time is a causal index, the spark is real and "structure is born when the substrate cannot resolve its own oscillation" is a physical statement. If it is an approximation to metric time, the spark is an artefact. **It cannot be decided while the bridge n ↦ t_metric remains `[UNDEFINED]`.** *Sharpening: the two-group theorem (`coil/IDEALOG_COIL_RCSJ.md` §C.2, `[DERIVED]`) shows that the reduced dynamics is defined on (γdt, κ) only and dt has no independent role. Hence S-1 is, inside the MM-1 class, an **interpretive, not an empirical** question; its answer must be sought in whether RTG's update index carries a physical tick — LEGACY DSN §12.5 at `legacy-v0.7`, where dt is `[ONTO legacy]` "update resolution, not physical external time" and dt-independence is `[OPEN]` (OPEN-L0L1-O5: to be established on a stated domain).* This is the programme's highest-leverage open question — but the leverage lies in the RTG line, not in MM-1.
+
+**10.2 On which line will the cross-layer claim be built? (S-2)** The MM-1 line carries the empirical body but its tie to relational ontology is indirect; the RTG line carries the ontological justification but is empirically suspended. HYP-1 cannot become testable until a named bridge is built. Current state of the only bridge candidate: `[CAND] candidate bridge, wrong coordinate space` — see `coil/COIL_INDEX.md` S-2 and `coil/AUDIT_CARRIER_COMPLETENESS.md` (OPEN-QUOTIENT-EQUILIBRIUM).
+
+**10.3 The only invariant candidate — closed negatively (S-3).** β_c(frac) is not a-invariant (P-κ, §3.6). The 35–88 values of Pair A hold at a = 0.03 only as a table; a direct comparison across pairs is given in RUN-MM1-PAIRBC v1.0.1.
+
+## 11. What the programme does not currently claim
+
+- It has not been shown that RTG derives the higher layers.
+- It has not been shown that viability windows are a single universal law.
+- The same formal equation need not carry the same ontological meaning at different layers.
+- "Fractal" is an intuitive guide, not a proven scaling/self-similarity claim.
+- **It is not claimed that MM-1 derives RTG or is equivalent to it** — different family, no named bridge.
+- **It is not claimed that S1/S2 are physical (continuous-time) phenomena** — they are structural properties of the discrete-time class; their ontological status depends on §10.1.
+- No cross-layer mapping has been made; all of §3 is inside the physical layer.
+- β_c(frac) is not claimed to be an invariant of any kind; the N3-ladder κ_frac values are Pair-A numbers.
+
+## 12. Stopping rule
+
+If, over successive research cycles, the programme produces only post-hoc similarity and no discriminating prediction or independent confirmation: first the **protective belt** (models, mapping rules, minimal-model choice) is reopened; if that too yields nothing, the **hard core** (including relational ontology) is opened to debate. The ontological core is not the first casualty of model failure — but it is not untouchable either.
