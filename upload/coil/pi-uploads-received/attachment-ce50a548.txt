@@ -1,0 +1,71 @@
+Evet — ama **kodu yazmadan önce prereg’i v1.0.1 olarak supersede edelim**. Confirmatory veri henüz görülmediği için bunu yapmak metodolojik olarak temiz; kilitli v1.0 yerinde kalır, yeni sürüm düzeltmeleri açıkça taşır. Şu an bir **gerçek mantıksal blocker** ve üç teknik residue görüyorum.
+
+1. **Birincil \(p_{BC}\) tek başına \(\beta_c\)-invariance’ı kanıtlamıyor.** Şu karar kuralı yalnız B→C arasındaki *üssü* test ediyor:
+
+   $$
+   p_{BC}=\frac{\log(\kappa_C/\kappa_B)}{\log(a_C/a_B)}.
+   $$
+
+   Örneğin \(\kappa_B=5,\ \kappa_C=7.8\) olsa \(p_{BC}\approx1\) çıkar; fakat
+
+   $$
+   \beta_B=50,\qquad \beta_C=50,
+   $$
+
+   Pair-A tri0 referansı ise
+
+   $$
+   \beta_A=2.65/0.03\approx88.3.
+   $$
+
+   Mevcut tablo buna rağmen **P-\(\beta\)** diyebilir. Yani slope doğru, **level yanlış** olabilir. Prereg şu anda P-\(\beta\)'yı doğrudan “\(\beta_c(frac)\) invariant” diye yorumluyor. 
+
+   En temiz çözüm: \(p_{BC}\)'yi koru ama P-\(\beta\) için ayrıca Pair-A anchor consistency şartı koy:
+
+   $$
+   r_B^\beta=
+   \frac{\kappa_B/\kappa_A}{a_B/a_A},
+   \qquad
+   r_C^\beta=
+   \frac{\kappa_C/\kappa_A}{a_C/a_A}.
+   $$
+
+   P-\(\beta\) ancak \(p_{BC}\) bandı **ve** \(r_B^\beta,r_C^\beta\approx1\) birlikte geçerse verilsin. Benzer şekilde P-\(\kappa\) için \(\kappa_B/\kappa_A\) ve \(\kappa_C/\kappa_A\) anchor guard olsun. Üç-nokta fit böylece “doğrulama” değil gerçek consistency guard olur.
+
+2. **Belirsizlik hesabının metni kendi threshold tanımıyla uyuşmuyor.** Prereg “ilk pozitif hücreyi \(\kappa_{\rm frac}\) olarak raporla” diyor ama ardından bunu \(\pm0.0125\) simetrik belirsizlik gibi kullanıyor.  İki seçenekten biri kilitlenmeli: ya \([\kappa^-,\kappa^+]\) bracket raporla ve midpoint’i estimate yap; ya ilk pozitif hücreyi operational threshold olarak tutup grid resolution \(0.025\) de. Ayrıca gerçekten \(\pm0.0125\) kullanılırsa worst-case
+
+   $$
+   |\delta p|\approx0.0225\quad(\kappa\approx2.5),
+   \qquad
+   0.00625\quad(\kappa\approx9),
+   $$
+
+   çıkıyor; belgede yazan \(0.032/0.009\) daha konservatif ama “refine adımından türetildi” ifadesi tam değil. \(\pm0.05\) karar marjını rahatlıkla koruyabiliriz; yalnız provenance’ını doğru yazalım.
+
+3. **Karar tablosunda iki bölge açıkta kalıyor.** P-\(\kappa\) \([-0.15,0.15]\), P-\(\beta\) \([0.85,1.15]\), P-ara ise yalnız \(0.15<p<0.85\). Böylece
+
+   $$
+   p<-0.15\quad\text{ve}\quad p>1.15
+   $$
+
+   hiçbir dala düşmüyor.  `P-other: uncensored olup yukarıdaki üç dala girmeyen her sonuç; iki hipotez de reddedilir` yeterli.
+
+4. **Anchor guard exact threshold equality olmamalı.** Yeni arama \(\Delta\kappa=0.025\) refinement kullanıyor; eski Pair-A eşikleri daha kaba gridde ilk pozitif hücrelerdi. Dolayısıyla tamamen doğru pipeline yeni taramada örneğin 2.625 bulursa “2.65’i yeniden üretmedi” diye sahte STOP verebilir. Mevcut guard tam bunu istiyor.  Daha sağlam execution guard:
+
+   $$
+   \text{path3: }CF(2.30)<0.60,\ CF(2.35)\ge0.60
+   $$
+
+   $$
+   \text{tri0: }CF(2.60)<0.60,\ CF(2.65)\ge0.60.
+   $$
+
+   Yani **kaynak bracket’ın sınıflarını yeniden üret**, yeni finer threshold’un eski pozitif hücreyle tam eşit olmasını değil.
+
+Bunlara ek olarak iki literal residue var. Audit’in kendi §Hüküm satırı hâlâ eski “N=2 fracture dalını dolduramaz” ve “kilitlenmemiş estimator semantiği” diline dönüyor; üst bölümlerde bunları doğru biçimde `[ABSENT-in-tested-domain]` ve “cross-pair semantics not preregistered” diye düzeltmişsin.  Program indeksindeki #1 satırı da aynı eski shorthand’i taşıyor.  Bunlar yalnız propagation residue.
+
+Bunun dışında tasarımın omurgası güçlü: **tri0 temiz primary holdout**, path3 açıkça replication; full Pair-A horizon/classifier korunuyor; \(w_0\) matching kilitli; \([0.5,15]\) iki rakip rejimi de kapsıyor; censoring de açık. 
+
+Dolayısıyla sıra şu olsun: **PREREG v1.0.1 → certificate → code → CLI.** Certificate’ta özellikle anchor sentinel classifications, \(w_0\) equivalence, A/B/C parameter table, \(p\)-decision partition’ın tam kapsayıcılığı ve primary tri0’nun path3 exploratory verisinden hiçbir adaptive bilgi almaması mekanik olarak test edilsin. Bunlar geçmeden experiment script’i scientific mode’da başlamasın.
+
+Bu dört prereg düzeltmesini yapınca kod + sertifika + CLI’yi hazırlamak doğru sonraki adım.

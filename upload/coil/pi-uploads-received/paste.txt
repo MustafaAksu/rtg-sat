@@ -1,0 +1,27 @@
+Evet, **şimdi sertifika script’ini yazmak doğru adım**. Hatta ilk çalıştırmanın PASS vermesini beklemem; bunu özellikle **fail-first bir linter/certificate** olarak tasarlardım. Künye zaten kendisini henüz `self-contained rerun contract` ilan etmiyor ve PASS’i §10 sertifikasına bağlıyor. 
+
+Ama script’ten hemen önce dört küçük residue’yu düzelt: Program İndeksi hâlâ Künye için “tüm kampanya parametreleri tek yerde; prereg+CLI+RUN açmaya gerek yok” diyor; bu, Künye’nin yeni statüsüyle çelişiyor.  Künye §3 başlığı “**dört ayrı aile**” diyor ama tabloda beş aile var.  TONGUESET appendix’teki “**strata anchor baseline’dan dondurulmuş**” cümlesi de yanlış yere taşınmış: strata-freezing RESOLVABILITY kavramı; TONGUESET sertifikası iso-A guards, blocked/per-cell equivalence ve grid arithmetic test ediyor.   Son olarak “RNG yok → sonuçlar **bit-deterministic**” fazla güçlü; RNG olmaması protokolü deterministik yapar ama farklı NumPy/CPU/library ortamları arasında bit-identical sonuç garantilemez. Bunu “fixed-input deterministic; pinned environment içinde bit-reproducibility beklenir, cross-environment bit identity sertifikalı değildir” diye daraltırdım. 
+
+Sonra `kunye_completeness_certificate.py` şu contract ile yazılsın:
+
+1. **C1 — campaign registry completeness:** Künye §4’teki 11 kampanyanın her biri certificate registry’de tam bir kez bulunmalı. **C2 — nine-field completeness:** her kampanya için §10’daki dokuz alan ayrı ayrı `PASS/FAIL` vermeli: exact IC, pair constants, waveform parameters, horizons, scan/refinement, classifier, decision rule, executables, artifacts.  **C3 — no opaque exactness:** “exact IC” alanı yalnız `phi0_ensemble()` gibi fonksiyon adına referans veriyorsa PASS etmemeli; değerler açıkça enumerate edilmeli. Şu an PAIRBC appendix bu nedenle büyük olasılıkla FAIL etmeli.  **C4 — campaign↔code bijection:** §4’teki her kampanyanın §6’da execution mapping’i olmalı. Şu an örneğin WAVEFORM kampanyası §4’te var ama §6 mapping tablosunda ayrı satırı yok; sertifika bunu yakalamalı.   **C5 — artifact completeness:** generic `*_results/` yeterli sayılmasın; her kampanyanın canonical output filenames/patterns’i bulunmalı. **C6 — source resolution:** adı geçen prereg/RUN/script/CLI dosyalarının gerçekten mevcut olduğu kontrol edilsin; archived/superseded bir dosya active dependency olarak kullanılıyorsa FAIL. **C7 — status coherence:** certificate FAIL iken Program İndeksi Künye’yi `self-contained` diye ilan edemez; PASS olduğunda ancak bu statü yükseltilebilir. **C8 — immutable/read-only:** script hiçbir belgeyi değiştirmesin; yalnız rapor + exit code üretsin. **C9 — provenance binding:** çalıştırdığı Künye’nin SHA-256’sını ve mümkünse kullanılan source-file hashlerini rapora yazsın; böylece PASS hangi exact snapshot’a ait belli olsun.
+
+Ben ayrıca çıktıyı yalnız `9/9 PASS` şeklinde değil, kampanya × alan matrisi yapardım:
+
+`N2: 9/9`, `N3: 8/9 — artifacts missing`, `WAVEFORM: 7/9 — executable mapping + artifacts missing` gibi. Böylece bir sonraki cleanup veri odaklı olur; “hangi belgeyi biraz daha zenginleştirelim?” sorusu ortadan kalkar.
+
+Bir sınır da önemli: **v1 certificate “completeness” doğrulasın, bilimsel doğruluk değil.** Örneğin `dt=0.10` yazısının gerçek scriptte de 0.10 olduğunu çapraz doğrulamak ayrı bir `consistency audit` katmanıdır. Presence ile truth’ü aynı sertifikaya karıştırırsak script hızla karmaşıklaşır. İlk aşamada hedef:
+
+$$
+\boxed{\text{Künye eksiksiz bir execution contract mı?}}
+$$
+
+PASS olduktan sonra ikinci aşamada istersek:
+
+$$
+\boxed{\text{Künye kaynak prereg/code/RUN ile birebir tutarlı mı?}}
+$$
+
+sertifikasını ekleriz.
+
+Dolayısıyla **yaz**. Mevcut Künye’nin ilk koşuda bazı FAIL’ler üretmesi beklenen ve yararlı sonuç olur; o FAIL’leri kapattığımız anda CLI’ların arşivlenip arşivlenemeyeceğine artık sezgiyle değil mekanik kanıtla karar verebiliriz.

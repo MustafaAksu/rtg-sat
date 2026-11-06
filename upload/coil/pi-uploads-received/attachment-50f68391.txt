@@ -1,0 +1,39 @@
+Evet — ama **Künye’yi zenginleştirmeye başlamadan önce sertifikayı bir tur daha düzeltelim**. Yüklediğin script’i mevcut Künye/İndeks üzerinde geçici canonical dosya adlarıyla çalıştırdım; verdiğin fail matrisi yeniden üretildi. C4 artık gerçekten yalnız **WAVEFORM**’u işaretliyor. Fakat sertifikanın içinde üçü ciddi olmak üzere birkaç açık daha var.
+
+1. **C7 şu anda güvenilir değil.** Kod `claims_self` hesabının sonunda bütün indeks için `"DEĞİL" not in idx` şartı koyuyor.  Fakat Program İndeksi başka konularda zaten birçok kez “invariant DEĞİL” diyor; örneğin PairBC sonucu bunu içeriyor.  Dolayısıyla Künye satırını yarın gerçekten `self-contained` yapsan bile indeksin başka yerindeki herhangi bir `DEĞİL`, `claims_self=False` üretebilir. C7 şu anda **false-negative’a açık**. Çözüm: yalnız §1’deki **Kampanya Künyesi satırını** parse et; `self-contained` ve `DEĞİL` değerlendirmesi aynı satır içinde yapılsın.
+
+2. **C1 contract ile implementasyon uyuşmuyor.** Contract “11 kampanya §4’te **exactly once**” diyor, fakat kod yalnız `count == 0` kontrol ediyor.   Yani N3 iki kez yazılsa C1 yine PASS. Burada substring saymak da doğru değil; `N2` kampanya adı prereg dosya adında da geçebilir. §4 Markdown tablosunu satır satır parse edip campaign sütunundan **multiset** çıkar:
+
+$$
+\text{count}(c)=1\quad\forall c\in CAMPAIGNS
+$$
+
+ve ayrıca bilinmeyen kampanya adı varsa FAIL.
+
+3. **C3’ün `exact_IC` presence probe’u fazla gevşek.** Şu anda pattern’lerden biri yalnızca `IC`.  Bu yüzden “25 IC” yazan bir kampanya exact set’i hiç vermese bile önce PASS oluyor; yalnız `_ensemble()` görülürse sonradan düşüyor.  N2/N3/WAVEFORM’un `exact_IC=ok` çıkmasının bir kısmı bu yüzden. Sertifika “exact” diyorsa explicit enumeration veya Künye içinde çözülmüş named constant istemeli.
+
+Burada bence küçük bir mimari iyileştirme çok işimize yarar: Künye’yi 11 kez aynı şeyleri tekrar ederek şişirmeyelim. **Self-contained inheritance** kullanalım. Örneğin ortak bölümde tam olarak:
+
+```text
+IC_DYAD_V1 = phi0 {0.1,0.5,1,2,3} × u0 {0,0.5,-0.5,2,-2}
+PAIR_A = gamma 0.3, dt 0.10, a 0.03
+CLASSIFIER_FRACTURE_V1 = ...
+```
+
+tanımlansın; kampanya bloğu da `exact_IC: IC_DYAD_V1`, `pair_constants: PAIR_A`, `classifier: CLASSIFIER_FRACTURE_V1` diyebilsin. Sertifika referansın **aynı Künye içinde exact tanıma resolve olduğunu** kontrol eder. Bu gevşetme değildir; tam tersine opak fonksiyon referansını yasaklarken gereksiz tekrarları önler.
+
+4. **C8 mekanik test değil, şu anda assertion metni.** Kod doğrudan `[PASS] C8 immutability — this script wrote nothing` yazıyor.  Script gerçekten write çağrısı yapmıyor, dolayısıyla şu sürümde doğru; fakat “certificate” açısından Künye ve indeksin başlangıç SHA’sını alıp finalde tekrar hesaplamak daha temiz:
+
+$$
+H_{\rm before}=H_{\rm after}.
+$$
+
+Böylece ileride script büyüdüğünde C8 kendi kendini korur.
+
+5. **C5’i biraz daha sertleştirirdim.** Şu an `[\w\*]+\.csv` yeterli; çıplak `*.csv` bile canonical artifact kabul edilebilir.  Kampanya-spesifik dosya adı veya pattern isteyelim: örneğin `pairbc_tri0_{B,C}.csv`, `stageB_*_MERGED.csv` gibi. “Bir `.csv` gördüm” ile “rerun’ın hangi çıktıyı üretmesi gerektiğini biliyorum” aynı şey değil.
+
+Belgelerde de üç residue kaldı. Künye §10 yukarıda sertifikanın **yazıldığını ve FAIL verdiğini** söylüyor, ama aşağıdaki eski spesifikasyon metni hâlâ “script henüz yazılmadı” diyor.   Bunu silmek değil, `[SUPERSEDED SPEC TEXT]` diye işaretlemek veya “artık yazıldı” yapmak yeterli. Program İndeksi’nin prereg tablosunda da hâlâ **PREREG-MM1-PAIRBC v1.0.3 yok**, RUN tablosunda ise PairBC var.   Son olarak S-3 paragrafının sonundaki tarihsel `[EXPLORE]` notu hâlâ “kilitli kriterle doğrulanmadı — yeniden tasarlanmış kampanya gerekiyor” diyor; artık yeniden tasarlanmış kampanya yapıldı ve kapandı.  Oraya `historical — superseded by RUN-MM1-PAIRBC-v1.0.1` etiketi yeter.
+
+Bunlardan sonra senin önerdiğin kapanış sırası doğru: **C5 artifacts → C3 exact IC → C4 WAVEFORM mapping**, ama ben araya ortak exact definitions/inheritance katmanını koyardım. `pair_constants` ve `classifier`’ı 11 kez kopyalamak yerine self-contained named definitions’a bağlarız.
+
+Bu tur bittikten sonra sertifikanın FAIL’leri gerçekten **Künye eksikliği** olacak; sertifika implementasyonunun kendi belirsizliği olmayacak. O noktada PASS’in anlamı ciddi biçimde güçlenir.

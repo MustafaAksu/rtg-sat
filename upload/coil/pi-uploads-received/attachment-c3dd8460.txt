@@ -1,0 +1,76 @@
+Başlamadan önce **bir kez daha durdururdum**. v1.0.1, v1.0’a göre çok daha sağlam; fakat sertifikayı bu metne göre kodlarsak **üç gerçek karar-semantik boşluğunu ve iki residue’yu koda gömmüş oluruz**.
+
+En görünür olanı literal: §4 hâlâ
+
+$$
+\text{belirsizlik } \pm0.0125
+$$
+
+diyor, ama §5.2 bunu açıkça iptal edip **tek taraflı grid çözünürlüğü \(0.025\)** olarak yeniden tanımlıyor.   Bu kesinlikle tek tanıma indirilmeli; bence §4 satırı doğrudan “resolution \(=0.025\), true crossing \([\kappa_{\rm frac}-0.025,\kappa_{\rm frac}]\)” demeli.
+
+Daha önemlisi, **primary decision’ın hangi rung’dan üretildiği §5’te matematiksel olarak bağlanmamış**. §2 doğru biçimde tri0’ı primary, path3’ü replication ilan ediyor, fakat §5’teki \(p,r,q\) değişkenleri rung etiketsiz.   Certificate açısından bunu şöyle kilitlerdim:
+
+$$
+p_{\rm primary}\equiv p_{\rm tri0,BC},
+$$
+
+$$
+r^\beta_{\rm primary}\equiv r^\beta_{\rm tri0},
+\qquad
+q_{\rm primary}\equiv q_{\rm tri0}.
+$$
+
+**P-\(\beta\), P-\(\kappa\), P-ara, P-other yalnız tri0’dan çıkar.** Path3 için ayrı
+
+$$
+p_{\rm path3},\,r_{\rm path3},\,q_{\rm path3}
+$$
+
+hesaplanır ve yalnız `REPLICATION-CONCORDANT / DISCORDANT` gibi karar-dışı bir rapor üretir. Path3 hiçbir şekilde primary sonucu değiştiremez. Bu, contamination firewall’ın mekanik karşılığı olur.
+
+Üçüncü ve bence en önemli kalan tanımsızlık: §5.1’deki
+
+$$
+\kappa_{\rm frac}^A
+$$
+
+**hangi Pair-A değeri?** Sentinel guard yalnız eski bracket sınıflarını yeniden üretmeyi şart koşuyor; yeni fine-grid Pair-A threshold’u tanımlamıyor.   Dolayısıyla certificate şu anda \(r^\beta\) ve \(q\) hesabında A için hangi sayıyı kullanacağını kendi seçmek zorunda kalır.
+
+Ben bunu veri görmeden şimdi kapatırdım:
+
+$$
+\boxed{\kappa^{A,\mathrm{ref}}_{\rm tri0}=2.65},
+\qquad
+\boxed{\kappa^{A,\mathrm{ref}}_{\rm path3}=2.35}.
+$$
+
+Bunlar **frozen historical reference constants** olsun. Yeni A koşusu yalnız sentinel execution guard; yeni fine-grid bir A threshold bulsa bile primary \(r/q\) hesabının referansını değiştirmesin. Böylece calibration verisi karar seviyesini sonradan oynatamaz.
+
+Bir dördüncü nokta da var: §5.4 şu anda “iki-nokta ve üç-nokta \(p\) tutarsızsa P-other” diyor fakat **“tutarsız” için sayısal eşik tanımlanmamış**.  Bunu guard olarak bırakacaksak örneğin
+
+$$
+|p_{ABC}-p_{BC}|>0.15\Rightarrow P\text{-other}
+$$
+
+gibi bir eşik şimdi kilitlenmeli. Fakat daha temiz çözüm bence **üç-nokta fit’i karar-dışı diagnostic yapmak**. Çünkü A-level uyumunu zaten \(r^\beta/q\) çok daha doğrudan test ediyor. Böylece gereksiz ikinci bir karar eşiği eklemeyiz.
+
+Son olarak, küçük ama bilimsel olarak gerçek bir yorum aşımı kaldı. \(H_\kappa\) satırı:
+
+> “β_c invariant değil; **N=3 rung sıralaması Pair A’ya özgü**”
+
+diyor. 
+
+İlk yarısı doğru; ikinci yarısı çıkmıyor. \(\beta_c\) değerlerinin invariant olmaması, rung **sıralamasının** değiştiğini göstermez. Üstelik bu kampanya yalnız path3+tri0 ölçüyor, frustre iki rung’u ölçmüyor. Doğru hüküm:
+
+> **β_c(frac) invariant değildir; Pair-A’daki sayısal β_c(frac) değerleri diğer \(a\)’lara taşınamaz.**
+
+Path3–tri0 sıralaması B/C’de ayrıca raporlanabilir; dört-rung ordering genellemesi yapılamaz. Audit’te de aynı “rung sıralaması Pair A’ya özgü” dili var, onu da propagation cleanup ile düzeltmek gerekir. 
+
+Bunlar kapandıktan sonra certificate için senin beş maddene iki tane daha eklerdim:
+
+* **C6 — primary/replication firewall:** karar fonksiyonu yalnız `tri0` verisi kabul eder; path3 verisi primary decision API’sine girerse FAIL.
+* **C7 — frozen-A-reference:** \(r/q\) fonksiyonunda A referansı literal `2.65` (tri0) / `2.35` (path3); runtime A scan sonucu bu sabitleri değiştiremez.
+
+Ve certificate’ın decision-partition testinde yalnız birkaç örnek değil, sentetik grid taramasıyla **her uncensored finite \(p,r,q\)** kombinasyonunun tam bir ve yalnız bir dala düştüğünü test etmek çok iyi olur.
+
+Özetle: **henüz experiment code’a geçmeyelim.** Önce prereg’i bu beş noktada v1.0.2 olarak supersede et. Confirmatory B/C tri0 verisi hâlâ görülmediği için hâlâ epistemik olarak temiziz. Ondan sonra certificate → code → CLI sırası gerçekten güvenli hale gelir.

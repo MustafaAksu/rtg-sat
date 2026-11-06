@@ -1,0 +1,69 @@
+Kararın kendisi **doğru**: rapordaki sayılardan yeniden hesaplayınca \(p_{BC}=0.02017\), \(q_B=1.0472\), \(q_C=1.0566\); dolayısıyla kilitli P-\(\kappa\) bandına açık biçimde giriyor. \(r^\beta_B=0.3142\) ve \(r^\beta_C=0.2032\) de \(H_\beta\)'yı güçlü biçimde dışarıda bırakıyor. RUN bunu doğru kaydetmiş. 
+
+Ama **kanonikleştirmeden önce dört düzeltme yapardım.**
+
+Birincisi sayısal ve önemli: “\(a\) 5.2 kat değişirken \(\kappa_{\rm frac}\) yalnız %0.9 değişti” cümlesi yanlış karşılaştırma yapıyor. A→C için
+
+$$
+2.65\to2.80
+$$
+
+değişimi **%5.66**. %0.90, yalnız B→C’deki \(2.775\to2.800\) değişimi. Buna göre RUN §4 ve §7 ile indeks S-3 düzeltilmeli. Sonuç hiç zayıflamıyor:
+
+$$
+a:\times5.2,\qquad \kappa_{\rm frac}:+5.66\%,\qquad
+\beta_c:88.33\to17.95=\div4.92.
+$$
+
+RUN’daki mevcut %0.9 ifadesi iki yerde geçiyor.   Program indeksi de aynı residue’yu taşıyor. 
+
+İkincisi, “level guard **bağımsız doğrulama** yaptı” ifadesini daraltırdım. \(p\) ile \(q/r\) aynı B,C threshold ölçümlerinden türetiliyor; dolayısıyla istatistiksel olarak bağımsız kanıt değiller. Doğru ifade:
+
+> **slope ve level için ayrı mantıksal consistency guard’lar aynı hükme ulaştı.**
+
+Bu ayrım değerli; v1.0’daki slope-only boşluğu gerçekten kapattı, ama ikinci bağımsız dataset üretmedi.
+
+Üçüncüsü, path3 **koşulmadıysa `REPLICATION-CENSORED` değil**. Censoring, ölçüm yapılmış fakat threshold domain sınırında belirlenememişse kullanılır. Şu an doğru statü:
+
+$$
+\boxed{\texttt{REPLICATION-NOT-RUN [UNMEASURED]}}
+$$
+
+Koşulduktan sonra ancak `CONCORDANT`, `DISCORDANT` veya gerçekten domain-censored ise `CENSORED` olur. RUN §5 bunu şu anda yanlış adlandırıyor. 
+
+Dördüncüsü RM-02’de birkaç propagation residue var. `[UNMEASURED]` satırı hâlâ hem **Pair B/C**’yi hem de tamamlanmış **dyad Stage B**’yi ölçülmemiş sayıyor; bunlar çıkarılmalı.  Ayrıca `[YANLIŞLANDI]` maddesinin sonunda hâlâ “**Pair B/C sınavı yapılmadı**” yazıyor; bu doğrudan yeni kayıtla çelişiyor.  Aynı dosyada birleşik imza hâlâ `S3′` diyor; güncel kanon `S3″`.
+
+Bir scope daraltması daha öneriyorum. Primary yalnız **tri0**’da geldi. Dolayısıyla en sağlam bilimsel cümle:
+
+$$
+\boxed{
+[\mathrm{NUM\text{-}in\text{-}scope}]
+\ \beta_{c,\mathrm{tri0}}^{\rm frac}
+\text{ tested }a\text{ değerlerinde invariant değildir.}
+}
+$$
+
+Bundan dolayı “\(\beta_c^{frac}\) tüm N3 merdiveninde \(a\)-invariant bir descriptor’dır” genel hipotezi yanlışlanmış olur; **ama path3/triF değerlerinin tek tek nasıl değiştiği henüz ölçülmedi**. Bu nedenle “Pair-A’daki 35–88 sayılarının hepsi yalnız \(a=.03\)’te geçerlidir” yerine:
+
+> **Pair-A’daki 35–88 tablosu \(a\)-independent invariant bir tablo olarak taşınamaz; doğrudan falsification tri0 satırından gelir.**
+
+daha temiz.
+
+### Path3 replikasyonu
+
+Ben **koşardım**. Primary kararı değiştirmek için değil; şu ayrımı kapatmak için:
+
+* tri0’ya özgü mü?
+* yoksa ikinci bir rung’da da \(\kappa_{\rm frac}\approx\) sabit davranışı görülüyor mu?
+
+Ön-tarama yüzünden confirmatory değil, fakat tam kanonik pipeline ile `CONCORDANT/DISCORDANT` sonucu program açısından yararlı olur. Sonra Pair B/C kampanyasını gerçekten “tamamlandı” diye kapatabiliriz; şu an indeksin `~~Pair B/C koşusu~~` biçimi, replication hâlâ çalışmadığı için biraz erken. 
+
+Son olarak CF=0.20 platosunu **henüz RM-07 için doğrudan metastability verisi** saymazdım. 5/25’in uzun bir \(\kappa\) aralığında sabit olması ilk bakışta daha çok **IC-basin heterojenliği / sabit susceptibility subset’i** gösteriyor. Metastability için switching, residence time veya barrier davranışı ölçülmüş değil.  İlk ucuz test, o beş kaotik IC’nin kimliklerini \(\kappa\) boyunca karşılaştırmak: hep aynı beş ise basin-slice yapısı; üyelik değişiyorsa boundary/intermittency adayı. Ondan sonra RM-07’ye girilebilir.
+
+Yani ana sonuç değişmiyor:
+
+$$
+\boxed{\textbf{P-\(\kappa\): H\(_\beta\) yanlışlandı.}}
+$$
+
+Ama bu dört düzeltmeyle kayıt çok daha temiz olur; ardından path3 replication’ı koşup kampanyayı kapatırdım.

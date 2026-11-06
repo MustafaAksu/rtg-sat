@@ -1,0 +1,145 @@
+Evet, **Pair B/C’yi koşmadan önce iki ön kontrolü yapalım**: önce R5 feasibility audit, sonra mevcut prereg/script’in güncel kayıt disiplinine uygunluk denetimi. RMT artık bunu yeni kampanya öncesi zorunlu kılıyor; Pair B/C de programda açıkça #1 ve \(\beta_c(\mathrm{frac})\)’ın \(\gamma dt\)-bağımsızlığını sınayan asıl robustluk testi.   İki-grup teoremi de bunun neden doğru eksen olduğunu destekliyor: reduced MM-1 ailesinin bağımsız koordinatları \((\gamma dt,\kappa)\); ayrı bir \(dt\) ekseni bilgi üretmiyor. 
+
+Fakat Pair B/C’ye geçmeden önce **v3.0’da ciddi bir çatlak yakaladım**. Bu Pair B/C’yi bloklamıyor çünkü cross-layer hattına ait, ama `ONSET BRIDGE CLOSED` hükmünü şu anda kanonikleştirmemeliyiz.
+
+v3.0 şu sonuca dayanıyor:
+
+> “bu substratta sabit nokta yapısal olarak yok”
+
+ve bunu \(\theta=0\)'da \(f_i\neq0\) olması + 5 restart’ın başarısızlığıyla destekliyor. 
+
+Bu sonuç **matematiksel olarak çıkmıyor**. Hatta kayıtlı denklemin kendisinden iki karşı-örnek kurulabiliyor.
+
+### 1. En önemlisi: \(\theta_i\) eşit durumu bir **relative equilibrium**
+
+Kurtarılan doğru kuvvet:
+
+$$
+f_i=\frac15\sum_{j\in adj(i)}1.25
+\sin(\theta_j-\theta_i+\phi).
+$$
+
+
+
+Tüm fazlar eşitse,
+
+$$
+f_i=\sin\phi
+$$
+
+her düğüm için aynıdır. Dolayısıyla absolute \(v=0\) fixed point değildir; fakat
+
+$$
+v_i=\Omega=\frac{K\sin\phi}{\gamma}
+$$
+
+alındığında
+
+$$
+\Omega
+=
+(1-\gamma dt)\Omega+dtK\sin\phi
+$$
+
+tam olarak sağlanır.
+
+Yani
+
+$$
+\theta_i^{n+1}=\theta_i^n+dt\,\Omega
+$$
+
+ile bütün düğümler birlikte sürüklenir; **faz farkları sabittir**.
+
+Bu nedenle:
+
+$$
+\boxed{\text{absolute FP yokluğu} \neq
+\text{quotient/relative equilibrium yokluğu}}
+$$
+
+MM-1 zaten faz-farkı/reduced koordinatlarıyla kurulmuş bir nesne olduğu için, cross-layer karşılaştırmada doğru taşıyıcı muhtemelen absolute \(\theta\)-FP değil, **global-phase quotient içindeki relative equilibrium**.
+
+Bu durumda `find_k_spark`'ın \(\theta=0\) fallback’inin “fiziksel olmayan çözüm olmayan nokta” diye tamamen atılması da yeniden incelenmeli. Jacobian ortak sürüklenme hızından bağımsızsa, bu sayı aslında drifting synchronous branch’in **transverse stability threshold**’u olabilir.
+
+### 2. Daha da sert karşı-örnek: \(n=10\)'da absolute fixed point de var
+
+Ringdiag komşuluk \(i\pm1,i\pm2\). 
+
+Şunu al:
+
+$$
+\theta_i=i\pi,\qquad v_i=0.
+$$
+
+\(i\pm1\) farkları \(\pm\pi\), \(i\pm2\) farkları \(\pm2\pi\). Dolayısıyla
+
+$$
+\begin{aligned}
+f_i
+&=\frac14\{
+\sin(\phi+\pi)+\sin(\phi-\pi)\\
+&\qquad+\sin(\phi+2\pi)+\sin(\phi-2\pi)
+\}\\
+&=0.
+\end{aligned}
+$$
+
+Etkin \(1/4\), \(1.25/5\)'ten geliyor.
+
+Yani **\(n=10\) için exact twisted absolute equilibrium mevcut**.
+
+Bu equilibrium spark için doğru/stabil branch olmak zorunda değil — hatta linearization’ında hem pozitif hem negatif stiffness modları çıkması bekleniyor ve muhtemelen pre-spark attractor değildir. Ama tek başına şu cümleyi yanlışlıyor:
+
+> “bu substratta sabit nokta yapısal olarak yok.”
+
+Beş random restart bir nonexistence certificate olamaz.
+
+---
+
+Dolayısıyla v3.0 için şu an benim hükmüm:
+
+$$
+\boxed{\text{carrier MATCHES — ayakta}}
+$$
+
+$$
+\boxed{\text{absolute synchronous FP }(\theta=0,v=0)
+\text{ yok — doğru}}
+$$
+
+ama
+
+$$
+\boxed{\text{equilibrium object globally undefined — gösterilmedi}}
+$$
+
+ve dolayısıyla
+
+$$
+\boxed{\text{ONSET BRIDGE CLOSED — premature}}
+$$
+
+olur.
+
+Daha doğru yeni açık soru:
+
+> **MM-1’in spectral \(K^*\) nesnesinin ringdiag karşılığı, global-phase quotient’ındaki synchronous relative equilibrium’un transverse spectral crossing’i midir?**
+
+Bu, Def-B’den bile önce sorulmalı. Çünkü belki “yeni eşik nesnesi” türetmemiz gerekmiyor; var olan eşik nesnesini yanlış koordinat uzayında arıyoruz.
+
+RMT v0.3.8’de eklediğiniz genel ders — “aynı denklem ≠ aynı threshold object” — **genel metodolojik kural olarak hâlâ değerli**. Fakat satır 125’teki ringdiag source-case şu anda kesin örnek olarak kullanılmamalı; `candidate/source case under quotient-equilibrium audit` diye daraltılmalı. 
+
+## Pair B/C tarafında ne yapalım?
+
+Cross-layer düzeltmesini ayrı bir borç olarak park edip **Pair B/C’ye geçebiliriz**. Orada sıram kesinlikle:
+
+1. **R5 feasibility audit**
+2. **mevcut Pair B/C prereg + script semantic audit**
+3. ancak ikisi PASS ise execution.
+
+R5’te özellikle beş şey kritik olacak: karar gerçekten \(\beta_c(\mathrm{frac})\) invariance’ını ayırıyor mu; beklenen fracture bölgeleri mevcut \(\kappa\)-window içinde erişilebilir mi; B ve C’de hem fracture/non-fracture dallarının dolması mümkün mü; IC’ler \(u_0\) değil **eşdeğer \(w_0=dt\,u_0\)** semantiğini doğru taşıyor mu; ve Lyapunov/fracture observable’ı bütün pair’lerde **per-update aynı estimator semantiğinde** mi. Son iki guard iki-grup teoreminin kendi koşulları. 
+
+Bir de eski CLI’de Pair B/C yalnız N=2 robustness olarak ve Stage B “istersen” diye yazılmış; bu artık güncel bilimsel soru için yetersiz bir prereg olabilir.  Dolayısıyla eski script hazır olsa bile **onu doğrudan koşturmayalım**.
+
+Bence şimdi tam doğru adım: **Pair B/C R5 feasibility audit’i yapalım; ardından prereg/script’i satır satır güncel disipline karşı denetleyelim.** Cross-layer’daki relative-equilibrium çatlağını ise ayrı `OPEN` olarak kaydedelim; Pair B/C ana hattını rehin almasın.
