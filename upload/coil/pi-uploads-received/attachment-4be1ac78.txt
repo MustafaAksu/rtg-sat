@@ -1,0 +1,56 @@
+Önce **burada kısa bir toparlanma / durum notu**, hemen ardından **OPEN-L0L1-KSPARK-DEF için handover** yazardım. Pair B/C'yi bundan sonra ana MM-1 hattında tekrar #1 işe alırdım.
+
+Sebebi şu: carrier meselesinde artık gerçek bir state transition yaşandı. v1.1'in “carrier completeness kurulamaz” hükmü çöktü; kurtarılan update rule MM-1 ile aynı inertial explicit-Euler taşıyıcıyı veriyor ve yeni blocker artık tamamen başka türden: **Def-A/B spectral onset ile Def-C trajectory-QR onset aynı nesne mi?**   Bu, başka oturuma devredilecek kadar net ve kapalı bir test sorusu.
+
+Ama handover'dan **önce indeks/durum notunu temizlemek önemli**, çünkü mevcut `PROGRAM-INDEKSI` içinde yeni sonuçla çelişen üç residue var:
+
+* Yönetim tablosu RMT'yi hâlâ **v0.3.4** gösteriyor; güncel RMT v0.3.7. 
+* 2g RESOLVABILITY satırı hâlâ **“execution ready”** diyor; aynı belgenin prereg tablosu ise doğru olarak kampanyayı `TAMAM — PI-stopped at T=4320` diye kapatmış.  
+* En önemlisi, **S-2 artık yanlış**: hâlâ “carrier denetimi gösterdi ki named bridge ilk adımda taşıyıcı kaydının eksikliğinde takılıyor” diyor. Oysa v2.0 denetimi carrier'ın **MATCHES** olduğunu ve blocker'ın estimator semantics olduğunu söylüyor.  Bu satır mutlaka supersede edilmeli.
+
+Bence yeni S-2 cümlesi kabaca şu olmalı:
+
+> **S-2 — Cross-layer bridge status:** `[CANDIDATE-BRIDGE, blocked]` Legacy ringdiag ile MM-1 arasında carrier-level structural match artık kurulmuştur. Named bridge henüz kurulmuş değildir; birincil açık yük, spectral onset (Def-A/B) ile trajectory QR onset'in (Def-C) aynı substrate üzerinde çakışıp çakışmadığını belirleyen `OPEN-L0L1-KSPARK-DEF` testidir. Çok-flux farkı (\(\beta_1=31\)) sonraki bağımsız bridge burden olarak kalır.
+
+Bu, şu anki audit hükmüne tam uyuyor: legacy ringdiag hattı artık açık, ama Def semantiği kapatılmadan \(K^*\) eşitliği iddia edilemiyor; çok-flux problemi de sonradan hâlâ ayakta.  
+
+Sonra **handover yazmak kesinlikle değerli**. Çünkü test artık çok iyi tanımlı ve başka bir oturuma taşınmaya uygun:
+
+$$
+n=10,\quad
+\phi\in\{1.26,1.28\},\quad
+dt=0.09,\quad
+\gamma=1
+$$
+
+aynı ringdiag substrate üzerinde `find_k_spark`/Def-A çalıştırılacak ve kayıtlı Def-C bracket'larıyla karşılaştırılacak.  
+
+Handover'ın karar ağacı da çok kısa tutulabilir:
+
+$$
+\text{Def-A}\approx\text{Def-C}
+\Rightarrow
+\text{onset semantics aligned; bridge survives}
+$$
+
+$$
+\text{Def-A}\not\approx\text{Def-C}
+\Rightarrow
+\text{§3.1 spark is a different observable/event; bridge closes at this level}
+$$
+
+Buna iki zorunlu side-check eklerdim: **`deg_norm` production-path gerçeğini çözmek** ve iki \(\phi\) noktasında **aynı implementation/normalization** kullanmak. Çünkü recovery kaydının kendi içinde `deg_norm=False` ile \(1/\deg_i\) denklemi arasında açık çelişki var ve bu mutlak \(K^*\)'ı yaklaşık 4× oynatıyor.  
+
+Bir de küçük ama önemli nüans: audit'teki
+
+> “Çakışmazsa köprü kesin kapanır”
+
+ifadesini ben handover'da biraz daraltırdım. Def-A ile Def-C'nin uyuşmaması, **MM-1 \(K^*\) ↔ §3.1 \(K_{\rm spark}\)** onset bridge'ini kapatır. Carrier-level structural correspondence'ı geri almaz. Aynı şekilde uyum da tek başına “named bridge theorem” oluşturmaz; sadece estimator-semantic blocker'ı kaldırır. Audit zaten başka yerde bu ihtiyatı doğru koruyor. 
+
+Dolayısıyla sıra önerim net:
+
+1. **5–10 dakikalık durum/index cleanup**: RMT sürümü, 2g statüsü, S-2 supersession; ayrıca RM-02.a1 için docstring-mismatch düzeltme borcunu kaydet.
+2. **Handover yaz ve RTG oturumuna devret**: yalnız `OPEN-L0L1-KSPARK-DEF + deg_norm provenance`.
+3. **MM-1 ana hattında Pair B/C'ye dön.** Program önceliği hâlâ değişmedi; Pair B/C, \(\beta_c(\mathrm{frac})\)'ın \(\gamma dt\)-bağımsızlığına ilişkin kalan gerçek invariant adayını sınayan #1 deney. 
+
+Yani ben **“önce Pair B/C koşalım, sonra handover”** yapmazdım. Bu RTG sonucu şu anda zihinde çok taze ve handover nesnesi çok keskin; önce paketleyip kilitlemek daha güvenli. Sonra Pair B/C'ye dönmek en temiz ayrım.

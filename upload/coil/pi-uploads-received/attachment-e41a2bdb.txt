@@ -1,0 +1,69 @@
+Evet — **yeni prereg’i yazmak doğru adım**, ama mevcut audit’i dondurmadan önce dört noktayı düzeltirdim. Bunlardan ikisi epistemik olarak önemli.
+
+Birincisi, **path3 artık temiz bir confirmatory holdout değil.** Pair B/C path3 sonuçlarına prereg öncesinde baktın: yaklaşık \(\kappa_{\rm frac}\approx2.5\). Dolayısıyla yeni kampanyada path3, `[EXPLORE]` bulgunun **preregistered replication** kolu olabilir; “önceden görülmemiş falsification test” olamaz. Buna karşılık B/C **tri0 henüz görülmediyse**, asıl confirmatory primary onu yapmalıyız. Pair-A tri0 referansı \(\kappa_{\rm frac}=2.65\); \(\beta_c\)-invariance B ve C için sırasıyla yaklaşık \(8.83\) ve \(13.78\) öngörüyor.  Böylece çok güçlü bir ayrım elde ediyoruz: exploratory bulgunun ima ettiği “\(\kappa\) yaklaşık sabit” rejimi ile \(\beta_c\)-invariance’ın “\(\kappa\propto\gamma dt\)” rejimi birbirinden kilometrelerce uzakta.
+
+İkincisi, audit’teki **“N=2 dyad fracture dalını hiç dolduramaz”** ifadesi fazla güçlü. Aynı belgenin sonundaki scope guard zaten yalnız test edilen \(a\)’lar ve \(\kappa\le13\) için konuşulabileceğini doğru söylüyor.  §R5.4(a)’daki cümleyi şu düzeye çekerdim:
+
+> `[ABSENT-in-tested-domain]` N=2 sine dyad, test edilen \(a\in\{0.03,0.10,0.156\}\) ve \(\kappa\le13\) aralığında fracture dalını doldurmadı. Dahası hedef \(\beta_c^{frac}\) değerleri N=3 merdiveninden türediği için N=2, hedef invariantın source substrate’ı değildir.
+
+Bu, blocker’ı zayıflatmıyor; sadece nonexistence iddiasını temizliyor. Şu an audit bir yerde “hiç dolduramaz” derken sonra finite-domain guard koyuyor. 
+
+Üçüncüsü, **“estimator kilitsiz” blocker’ı olduğu haliyle doğru değil.** Eski N=2 prereg Benettin reduced-2D \(\lambda_{\max}\), \(\varepsilon_\lambda=10^{-3}\), \(2\times10^5\) Lyapunov horizon ve dört çeyreğin tamamında persistence koşulunu açıkça kilitlemişti.  Eksik olan daha dar: Pair B/C **cross-pair equivalence semantics**, özellikle \(w_0=dt\,u_0\) eşlemesi ve N3 kanonik pipeline’ının aynen korunması. Dolayısıyla blocker #3'ü “estimator unlocked” değil:
+
+**`cross-pair estimator/IC semantics not preregistered for the intended N3 invariance test`**
+
+diye yazardım. Bu daha savunulabilir.
+
+Dördüncüsü, “**N=3 kısa horizonlar yeterli**” cümlesini yeni prereg’e taşımamalıyız. Ön-tarama için kısa horizon meşru; confirmatory kampanyada Pair-A source threshold’larının üretildiği classifier/horizon semantiğini korumalıyız veya **önceden ayrı bir equivalence certificate** ile daha kısa horizonun kararları değiştirmediğini göstermeliyiz. Aksi halde R5.6’yı düzeltirken yeniden ihlal etmiş oluruz.
+
+### Yeni prereg’in yapısı
+
+Ben `PREREG-MM1-PAIRBC-v1.0`'ı şu mantıkla kilitlerdim:
+
+* **Primary holdout:** `tri0 × {B,C}` — prereg öncesi görülmemiş confirmatory hücreler.
+* **Replication arm:** `path3 × {B,C}` — mevcut `[EXPLORE] κ≈2.5` bulgusunun preregistered replication’ı.
+* **Pair A anchor:** yeni bilimsel veri sayılmaz; kanonik pipeline'ın source sonucu yeniden ürettiğini doğrulayan execution guard.
+* **Primary observable:** ilk robust FRACTURE threshold interval'i; 25 IC, kanonik N3 classifier, per-update \(\lambda\), dört-quarter persistence, \(CF\ge0.60\).
+* **IC rule:** Pair A’daki dimensionless \(w_0\) ensemble sabit; her pair için \(u_0=w_0/dt\).
+* **Search domain:** \(\kappa\in[0.5,15]\) her iki rakip rejimi de kapsıyor; ama tüm aralığı ince gridle taramak yerine preregistered coarse→refine algoritması kullanmak daha ekonomik.
+* **Censoring:** ilk taranan noktada pozitif → left-censored; domain sonuna kadar yok → right-censored; bunlardan hiçbiri threshold estimate gibi kullanılmaz.
+* **Decision rule:** “yaklaşık sabit” ve “orantılı” kelimelerine sonradan anlam vermeyelim; toleransı önceden sayısallaştıralım.
+
+Son madde özellikle önemli. Salt üçlü karar tablosu
+
+$$
+\kappa_{\rm frac}\approx const,\qquad
+\kappa_{\rm frac}\propto a,\qquad
+\text{ara}
+$$
+
+yeterince kilitli değil. Daha temiz primary quantity:
+
+$$
+p=\frac{\log(\kappa_C/\kappa_B)}
+        {\log(a_C/a_B)}
+$$
+
+veya A/B/C için preregistered log-linear fit
+
+$$
+\log \kappa_{\rm frac}=\alpha+p\log a.
+$$
+
+Burada
+
+$$
+H_{\beta}:p=1
+$$
+
+\(\beta_c^{frac}\)-invariance’ı, exploratory alternatif ise yaklaşık
+
+$$
+H_{\kappa}:p=0
+$$
+
+sabit-\(\kappa\) davranışını temsil eder. Aradaki davranış gerçekten ayrı sonuç olur; onu sonradan “hangisine daha yakın?” diye eğip bükmeyiz. Threshold discretization/refinement belirsizliğinden karar bantlarını prereg’de türetebiliriz.
+
+Bir de küçük indeks residue’su var: yeni Program İndeksi hâlâ RMT’yi **v0.3.7** gösteriyor, oysa yüklediğin mevcut RMT v0.3.8.  Pair B/C satırının R5 sonucu ise genel olarak doğru yerde ve `[EXPLORE]` tavanını koruyor. 
+
+Dolayısıyla benim hükmüm: **audit’i bu dört düzeltmeyle v1.0.1 yap, ardından prereg’i yaz.** Ve prereg’in bilimsel ağırlığını **tri0 holdout** taşısın; path3 artık doğrulama/replication kolu olsun. Bu ayrım yapılırsa, negatif sonuç bile program için oldukça temiz bir sonuç olacak.

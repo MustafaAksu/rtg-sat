@@ -1,0 +1,155 @@
+Bu kez gerçekten **taze dört dosyayı** taradım. Ana düzeltmeler yerleşmiş: RMT R5 artık direction-aware \(h_{\rm coeff}(d)\) kullanıyor; MEMO aynı formülle hizalı; RUN §6 extrapolation yapmıyor; Casebook statüsü doğru biçimde prospective validation `[OPEN]`; RM-07’de attractor-pair counting ile switching/metastability ayrımı da düzelmiş.   
+
+Ama final sweep **üç gerçek residue ve bir scope problemi** buldu. İlk ikisi çok küçük; üçüncüsü düzeltmeden kanonik mühür koymam.
+
+### 1. Casebook’ta tek bir gerçek \(N\)-residue kalmış
+
+Başta açıkça “bu belgede \(N\) kullanılmaz” deniyor, ama aşağıda hâlâ:
+
+> `yalnız 1 sub-N* nokta vardı`
+
+yazıyor.  
+
+Bu:
+
+> `yalnız 1 sub-T* nokta vardı`
+
+olmalı.
+
+Grep bunu gerçekten yakalıyor; dolayısıyla “N-residue sıfır” henüz teknik olarak doğru değil. 
+
+### 2. RUN §8’de eski “>70+ mertebe” residue’su kalmış
+
+Şu satır hâlâ mevcut:
+
+> `T=540 (unresolved, >70+ mertebe)`
+
+
+
+Bu yeni hesaplarla açıkça yanlış. \(T=540\)'ta \(h_{\rm sep}\), direction-aware \(h_{\rm coeff}\)'un yaklaşık **2 mertebe** altında. Casebook bunu doğru biçimde \(99.2\times\) ve \(121.5\times\) olarak kaydetmiş. 
+
+En temiz düzeltme:
+
+> `yalnız T=270 (resolved) ile T=540 (operationally LEFT-CENSORED) arasında bir sınır var`
+
+Mertebe sayısını bu maddeden tamamen çıkarırdım.
+
+### 3. Casebook’ta `h_noise` ve \(h_{\rm coeff}(d)\) notasyonu hâlâ karışık
+
+Belgenin ana “Formül” satırı hâlâ:
+
+$$
+h_{\rm noise}(T)\gtrsim \mathrm{ulp}(\text{katsayı ölçeği})
+$$
+
+diye başlıyor, sonra bunu düzeltip doğru direction-aware
+
+$$
+h_{\rm coeff}(d)
+\sim
+\max_{i:d_i\neq0}
+\frac{\mathrm{ulp}(\theta_i)}{|d_i|}
+$$
+
+formülüne geçiyor. Daha sonra \(T^*\) türetiminde tekrar \(h_{\rm noise}\) kullanılıyor.  
+
+Bu matematiksel hata değil, ama kanonik belgede **iki isim aynı nesneyi mi temsil ediyor?** belirsiz.
+
+İki temiz seçenek var. Ya her yerde \(h_{\rm coeff}(d)\) kullanın:
+
+$$
+T^*(d)=
+\frac1\mu
+\ln\frac{1}{C_S h_{\rm coeff}(d)},
+$$
+
+ya da başta açıkça
+
+$$
+h_{\rm noise}(d)\equiv h_{\rm coeff}(d)
+$$
+
+diye tanımlayın.
+
+Ben birinciyi tercih ederim; RMT ve MEMO zaten \(h_{\rm coeff}(d)\)'ye geçmiş durumda. MEMO’nun §5b başlığındaki “h_noise tabanı” ifadesini de aynı nedenle “direction-aware \(h_{\rm coeff}(d)\) tabanı” yapardım. 
+
+---
+
+## 4. Daha önemli scope problemi: RM-07 simetri cümlesi hâlâ “her MM-1 realizasyonu” için fazla geniş
+
+Metastability yorumu artık doğru daraltılmış; bu kısmı kabul ediyorum. Ama cümlenin başı:
+
+> odd \(g\) taşıyan **her MM-1 realizasyonunun** reduced haritasının tam simetrisidir
+
+diyor. 
+
+Bu ancak **zero-offset reduced map** için doğrudan doğru:
+
+$$
+\phi^+=\phi+w,\qquad
+w^+=(1-a)w-a\kappa g(\phi)
+$$
+
+ve odd \(g\) ile
+
+$$
+S(\phi,w)=(-\phi,-w)
+$$
+
+gerçekten
+
+$$
+F\circ S=S\circ F
+$$
+
+verir.
+
+Ama fixed antisymmetric offset varsa interaction:
+
+$$
+g(\phi-\alpha)
+$$
+
+tipine kayar ve inversion genel olarak fixed \(\alpha\)'yı korumaz; dönüşüm offset/flux sınıfını da
+
+$$
+\alpha\to-\alpha
+\qquad\text{veya}\qquad
+\Phi\to-\Phi
+$$
+
+taşır.
+
+Dolayısıyla triangle/triF gibi nonzero-cycle-flux realization için \(\mathbb Z_2\), **aynı fixed realization içinde** otomatik symmetry olmayabilir. Aynı realization symmetry olması için flux sınıfının sign reversal altında kendisine eşdeğer olması gerekir.
+
+RMT satırını şöyle scope’lardım:
+
+> **[ALG] Zero-offset reduced MM-1 map with odd \(g\)** has the exact equivariance \(F\circ S=S\circ F\), \(S(\phi,w)=(-\phi,-w)\). For offset/cycle-flux realizations, inversion generally maps the parameter class \(a\mapsto-a\) (\(\Phi\mapsto-\Phi\)); fixed-realization symmetry must be checked separately.
+
+Ardından mevcut doğru hüküm korunabilir:
+
+> symmetry-related pair existence bağımsız ikinci keşif değildir; fakat switching/barrier/residence-time metastability sorusu ayrı ve açık kalır.
+
+Bu bence tek **substantive** kalan konu.
+
+### Son statü
+
+Şu anda:
+
+$$
+\boxed{\text{RESOLVABILITY RUN: bilimsel içerik CLEAN}}
+$$
+
+$$
+\boxed{\text{MEMO/R5 integration: CLEAN, küçük notation residue}}
+$$
+
+$$
+\boxed{\text{CASEBOOK: 2 küçük textual residue}}
+$$
+
+$$
+\boxed{\text{RM-07: interpretation CLEAN, symmetry scope düzeltilmeli}}
+$$
+
+Yani üç hızlı metin düzeltmesi (`sub-N*`, `>70+`, `h_noise→h_coeff`) ve RM-07’nin **zero-offset/fixed-flux scope** ayrımı yapıldıktan sonra bu seti ben gerçekten **kanonik** kabul ederim.

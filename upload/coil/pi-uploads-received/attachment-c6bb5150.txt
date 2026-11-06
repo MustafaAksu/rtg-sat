@@ -1,0 +1,34 @@
+Bu noktada **daha agresif arşivlemeyi durdururdum**. 51 aktif Markdown bana fazla görünmüyor; asıl risk artık dosya sayısı değil, konsolidasyon sırasında **özet belgenin kaynak belgelerden küçük ama bilimsel olarak önemli sapmalar üretmesi**.
+
+Yeni yapı genel olarak doğru yönde. `ARSIV/README` açık biçimde “superseded, iddia kaynağı değil, silinmez” kuralını koyuyor ve carrier v1.0→v3.0 zincirini özellikle provenance için koruyor; bunu aynen bırakırdım.  Program indeksi de Künye’yi derived reproducibility compendium olarak ayrı bir yönetim belgesi yapmış. 
+
+Ama **freeze etmeden önce bir cleanup turu daha gerekli**. Yedi somut nokta görüyorum:
+
+1. **KÜNYE henüz gerçekten “tek dosyadan yeniden üretim” seviyesinde değil.** Başındaki iddia “bu tablo yeterlidir” diyor.  Fakat kampanya tablosunda örneğin gerçek 25-IC grid değerleri, N2/N3’te transient/measurement ayrımı, WAVEFORM’un dört \(q\) değeri, ISOA’nın altı \(t\) değeri, ORTHO arm katsayıları ve birçok exact CLI argümanı yok. N2 kodunda örneğin `n_trans=20000`, `n_meas=50000`, `n_lyap=200000` ayrı semantik nesneler; bunları yalnız “70k/200k” diye birleştirmek gerçek rerun için yeterli değil.  Dolayısıyla ya baştaki iddiayı “tek yerden **yönlendirilmiş yeniden üretim**” diye daraltalım, ya da Künye’ye kampanya başına `locked constants` appendix ekleyelim. Ben ikincisini tercih ederim.
+
+2. **Waveform-family haritasında gerçek bir hata var.** Künye şu anda smooth-triangle ailesini `GATE, ISOA, TONGUESET` için gösteriyor.  Oysa ISOA/TONGUESET ailesi
+
+$$
+g_t=\sin\phi+\alpha_t h_3+\beta_t h_5
+$$
+
+olan iso-A harmonic family. Smooth-triangle \(g_q=\arcsin(q\sin\phi)/q\) WAVEFORM holdout/boundary/birth hattına ait. GATE’teki R1 de doğrudan normalized \(g_q\) değil, \((2/\pi)\arcsin(.99\sin\phi)\) ölçekli sürüm. Burayı dört satıra ayırmak en temiz çözüm: `raw/scale-triangle gate`, `normalized smooth-triangle homotopy`, `iso-A 5-harmonic`, `7-harmonic extension`.
+
+3. **RUN v1.0.1 içinde iki stale cümle kalmış.** §4 hâlâ “path3/triF satırlarının tek tek nasıl değiştiği ölçülmedi” diyor, ama §5 hemen sonra path3’ü tamamen ölçüp \(2.525/2.55\) ve \(p=0.0222\) veriyor.   Doğrusu: **path3 measured as decision-free replication; triF rows unmeasured**. §7’de de “biri de replikasyon, henüz koşulmadı” kalmış; artık yanlış. 
+
+4. **RUN artifact listesi eksik.** Kapanmış kampanyanın sonunda yalnız anchor + tri0 B/C sayılıyor.  Artık `pairbc_path3_B.csv`, `pairbc_path3_C.csv` ve `pairbc_summary.csv` da kanonik artifact setine eklenmeli.
+
+5. **PROGRAM-INDEKSI’de arşiv propagasyonu tamamlanmamış.** §3 hâlâ aktif belgeler arasında `RUN-MM1-RESOLVABILITY-PROGRESS.md` gösteriyor, ama archive manifest bu dosyanın final RUN tarafından supersede edildiğini söylüyor.   Aynı şekilde §6 hâlâ `CLI-N3-kalan-kosular.md` listeliyor; archive manifest onu `RUNBOOK-N3.md` ile supersede edilmiş olarak kaydetmiş.  
+
+6. **PROGRAM-INDEKSI’nin prereg/run tablolarına PAIRBC eklenmeli.** İş #1’de kampanya kapanmış ve `PREREG-MM1-PAIRBC-v1.0.3` / `RUN-MM1-PAIRBC-v1.0.1` açıkça kullanılıyor.  Buna rağmen §4 prereg tablosunda ve §5 RUN tablosunda PairBC yok.   İndeksin “hangi prereg kilitli, hangi RUN güncel” işlevi açısından bu eksiklik doğrudan yapısal.
+
+7. **S-3’te bir eski cümle kalmış.** Güncel paragraf doğru olarak P-\(\kappa\)’yı kapatıyor ve A→C %5.66 düzeltmesini taşıyor; fakat aynı paragrafta “path3/triF satırları tek tek ölçülmedi” deniyor.  Artık path3 ölçüldü. Doğru form:
+   **“Direct confirmatory falsification tri0’dan gelir; path3 karar-dışı concordant replication olarak ölçüldü; triF satırları ölçülmedi.”**
+
+Bunları yaptıktan sonra **ben dosya sayısını daha fazla azaltmazdım**. Özellikle prereg ve RUN’ları birleştirmemek doğru karar. Bir prereg’in run’dan ayrı olması provenance’ın kendisi; birleşirse “hangi kısım veriden önceydi?” sınırı bulanıklaşır.
+
+CLI’lar ise daha sonra arşivlenebilir **ama yalnız KAMPANYA-KÜNYESİ gerçekten self-contained rerun contract hâline geldikten sonra**. Şu an CLI’ları eritmek erken olur. Künye henüz parametre haritası ve reproducibility index olarak çok faydalı, fakat exact execution specification’ın tamamını taşımıyor.
+
+Ben bundan sonraki konsolidasyonu dosya azaltma değil, **tek bir “KÜNYE completeness certificate”** olarak yapardım. Basit bir script her aktif kampanya için şu alanların Künye’de mevcut olduğunu kontrol etsin: exact IC set, exact pair constants, waveform parameter list, transient/measurement/Lyapunov horizons, scan grid/refinement, classifier, decision rule, executable names, output artifact names. Bir tanesi eksikse Künye “self-contained reproducible” diye işaretlenmesin.
+
+Bu sertifika PASS olduğunda mimari gerçekten oturmuş olur: **indeks = statü haritası, Künye = reproduction contract, prereg = frozen decision contract, RUN = evidence record, ARSIV = provenance.** Bu ayrım bence mevcut program için doğru son nokta.
