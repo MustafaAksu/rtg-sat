@@ -34,7 +34,7 @@ A study whose current state is only adopted at chat level, with no file in this 
 ## 4. Flow back to RTG
 
 - Nothing in `rtg-sat` is an RTG result. A satellite finding enters RTG only as a pipe item in the receiving stream's inbox in `rtg-corpus` (`pipes/<STREAM>/`), and only the receiver's Import Ledger row or release record makes it adopted use there.
-- **Disclosure.** `rtg-corpus` is public and `rtg-sat` is private. A pipe item filed into `rtg-corpus` states only what the satellite study's owners agree to make public. Where they do not, the item stays in `rtg-sat` and the PI relays it once disclosure is cleared.
+- **Disclosure.** `rtg-corpus` and `rtg-sat` are both public (PI decision, 4 Nov 2026). Open science applies to a satellite study's own work: its research, computations, code, negative results and scientific records may be public. Source rights still apply: third-party publications, licence-restricted documents and content without permission to share are not placed in `rtg-sat`; their bibliographic identity and permitted derived analyses may be. Such material stays in `rtg-lit`, which remains private. A pipe item filed into `rtg-corpus` still states only what the satellite study's owners agree to make public, and the PI checks disclosure before relaying it; confidential information and third-party copyrighted content are not published in either repository.
 - A satellite study may also have a transfer rule of its own (for example HHO → HCG); it is stated in its `REGISTRY.md` row and applies on top of this section.
 
 ## 5. Pipes inside `rtg-sat`
@@ -51,4 +51,4 @@ LIT (`MustafaAksu/rtg-lit`) serves the programme's own studies only: the RTG str
 
 ## 7. Leaving `rtg-sat`
 
-A study that grows its own publication line may move to its own repository with its history (`git subtree split` or `git filter-repo`), by PI decision. Its tags are recreated there with the same names and hashes; its `REGISTRY.md` row then points to the new repository.
+A study that grows its own publication line may move to its own repository with its history (`git subtree split` or `git filter-repo`), by PI decision. Its tags are recreated there with the same names. Commit and tag object hashes may change under history-rewriting extraction, so identity is carried by content, not by object hashes: each release record states the SHA-256 of the files it adopts, and the moved study's first release record in the new repository lists the old tag names with their original tag object hashes next to the new ones. Its `REGISTRY.md` row then points to the new repository.

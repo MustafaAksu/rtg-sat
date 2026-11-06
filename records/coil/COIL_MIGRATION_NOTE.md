@@ -7,7 +7,7 @@
 
 ## 1. Why you are receiving this
 
-The PI has set up `MustafaAksu/rtg-sat`, a private repository for studies that are inspired by RTG or related to it but are outside the RTG programme. COIL is registered there with key `coil` (tags `coil-v<version>`, inbox `pipes/COIL/`). You are its owner. Your task is to bring the study's documentation into this repository, gradually and in your own order, so that it is kept under the same discipline as RTG.
+The PI has set up `MustafaAksu/rtg-sat`, a public repository (PI decision, 4 Nov 2026; see `CONVENTIONS.md` §4 for what may and may not be placed in it) for studies that are inspired by RTG or related to it but are outside the RTG programme. COIL is registered there with key `coil` (tags `coil-v<version>`, inbox `pipes/COIL/`). You are its owner. Your task is to bring the study's documentation into this repository, gradually and in your own order, so that it is kept under the same discipline as RTG.
 
 ## 2. What COIL is (PI's statement)
 
