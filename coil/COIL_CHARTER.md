@@ -12,27 +12,27 @@
 
 ### 0.1 Status labels (COIL's own, declared once here)
 
-COIL grades its claims with its own labels. They are not DSN grades; the last column gives the nearest DSN Methodology v1.4 grade (`rtg-corpus` tag `methodology-v1.4`, §8) where the mapping is honest, and "none" where it is not.
+COIL grades its claims with its own labels. They are not DSN grades. The last column is a **descriptive comparison** with the DSN Methodology v1.4 tag registry (`rtg-corpus` tag `methodology-v1.4`, §8), to help a DSN reader; it is **not an automatic re-grading**: no COIL claim acquires a DSN grade by this table, and where a COIL label spans several DSN grades the column says so. DSN Methodology §8–9 keeps claim type, evidence state and task status apart; the column follows that separation.
 
-| COIL label | Meaning in COIL | Nearest DSN v1.4 grade |
+| COIL label | Meaning in COIL | Relation to DSN v1.4 (descriptive) |
 |---|---|---|
 | `[THM]` | Complete proof under explicit assumptions and conventions (used for the structural signatures S1/S2). | `[THM]` |
 | `[DERIVED]` | Exact algebraic derivation from the model's defining equations, with scope stated. | `[ALG]` |
 | `[NUM]` | Numerical result with stated protocol and finite scope; the campaign and the certificate are named. | `[NUM]` |
-| `[NUM-in-scope]` | `[NUM]` whose statement is explicitly restricted to the tested model, parameter range and topology. Bare `[NUM]` is not written in records; the format `[NUM-in-scope \| model \| range \| topology]` is mandatory there. | `[NUM diagnostic]` |
-| `[VAL]` / `[VAL-in-scope …]` | A result derived or replicated within a defined model/scope with provenance and robustness conditions stated. Bare `[VAL]` is never written; records use `[VAL-in-scope \| model \| range \| topology]`. | `[NUM strong]` when the robustness checks are named; else `[NUM]` |
+| `[NUM-in-scope]` | `[NUM]` whose statement is explicitly restricted to the tested model, parameter range and topology. Bare `[NUM]` is not written in records; the format `[NUM-in-scope \| model \| range \| topology]` is mandatory there. | `[NUM]` carrying its own scope and evidence qualifiers; not automatically `[NUM diagnostic]` |
+| `[VAL]` / `[VAL-in-scope …]` | A result derived **or** replicated within a defined model/scope with provenance and robustness conditions stated. Bare `[VAL]` is never written; records use `[VAL-in-scope \| model \| range \| topology]`. | **No single counterpart.** Depends on the claim and its evidence: `[ALG]`/`[THM]` for the derived subset, `[NUM]`/`[NUM strong]` for the replicated subset; the translation assigns none |
 | `[CAND]` | Candidate (invariant, descriptor, bridge, mechanism) not yet tested, or tested without a locked criterion. | `[HYP]` |
 | `[HYP]` | Testable, not yet tested. | `[HYP]` |
 | `[MOD]` | Internally consistent phenomenological model without fundamental derivation; also the ceiling imposed when the naturalness preference (§6.3) is violated. | `[HEUR]` |
 | `[HEUR]` | Interpretive or heuristic argument; not a proof. | `[HEUR]` |
-| `[EXPLORE]` | Exploratory numerical observation without a locked criterion; cannot enter a decision. | `[OBS]` |
+| `[EXPLORE]` | Exploratory numerical observation without a locked criterion; cannot enter a decision. | Absence of preregistration alone does not decide `[OBS]` vs `[NUM]`; whether a defined numerical protocol exists is judged per item |
 | `[OBS]` | Measured but not part of a locked criterion; cannot be an input to a decision. | `[OBS]` |
 | `[SPEC]` | Points a direction, carries no claim. | none (workflow note) |
 | `[ARBITRARY]` | Structural choice made without justification; mandatory target of a robustness test. | none (anti-pattern marker) |
-| `[UNMEASURED]` | Field a campaign could not reach; declared per layer record (§6.7). | `[OPEN]` |
-| `[UNDEFINED]` | Field that has no definition on the object in question (e.g. a control parameter on a parameter-free map). | `[OPEN]` |
+| `[UNMEASURED]` | Field a campaign could not reach; declared per layer record (§6.7). | An evidence state, not a task; it may motivate a defined `[OPEN]` question but is not one by itself |
+| `[UNDEFINED]` | Field that has no definition on the object in question (e.g. a control parameter on a parameter-free map). | A definition state; same remark |
 | `[OPEN]` | Unresolved question; workflow information. | `[OPEN]` |
-| `[ABSENT-in-window]` / `[ABSENT-in-tested-domain]` / `[ABSENT]` | Absence of a phenomenon, graded by the domain it was searched in: the locked κ window; the whole tested domain; everywhere (never asserted in COIL so far). | `[NUM]` with scope; `[ABSENT]` has no counterpart |
+| `[ABSENT-in-window]` / `[ABSENT-in-tested-domain]` / `[ABSENT]` | Absence of a phenomenon, graded by the domain it was searched in: the locked κ window; the whole tested domain; everywhere (never asserted in COIL so far). | A scoped negative `[NUM]`-type statement; `[ABSENT]` has no counterpart |
 | `[FALSIFIED]` | A locked prediction failed under a preregistered criterion. Turkish original `[YANLIŞLANDI]`. | `[FAIL]` |
 | `[RESOLVED]` | An open item closed by derivation or measurement, pointer given. Turkish original `[ÇÖZÜLDÜ]`. | none (workflow) |
 | `[COR]` | Correction notice: old statement, new statement, reason. | `[COR]` |
@@ -77,9 +77,11 @@ Terminology: "fractal" is an intuitive guide, not a main scientific term. "Bound
 
 ## 3. What we have learned — empirical state of the programme
 
-All results are at the **[NUM]** ceiling, common scope: the MM-1 family (inertial relational force + explicit Euler), Pair A (γ = 0.3, dt = 0.10, a = γdt = 0.03), 25-IC grid. **The κ range is campaign-specific:** N2/N3/gate κ ∈ [0.5, 3]; ISOA κ = 2.535 ± 0.16; TONGUESET and ORTHO κ ∈ [0.5, 8]. No generalisation beyond these.
+**Numerical scope.** All numerical results are at the **[NUM]** ceiling with the common scope: MM-1 family (inertial relational force + explicit Euler), 25-IC grid, Pair A (γ = 0.3, dt = 0.10, a = γdt = 0.03) — **except** the Pair B/C campaign (§3.6), which adds Pair B (γ = 1.0, dt = 0.10, a = 0.100) and Pair C (γ = 1.3, dt = 0.12, a = 0.156) on tri0 and path3 with the locked search domain κ ∈ [0.5, 15]. **The κ range is campaign-specific:** N2/N3/gate κ ∈ [0.5, 3]; ISOA κ = 2.535 ± 0.16; TONGUESET and ORTHO κ ∈ [0.5, 8]; PAIRBC κ ∈ [0.5, 15]. No generalisation beyond these.
 
-Notation used throughout COIL (fixed here): κ = K/K*₁ with K*₁ = γ/(dt·|σ|_max) the spark threshold of the degree-normalised coupling f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i); a = γdt; β_c = κ/(γdt) = κ/a (Stewart–McCumber identity, §3.3).
+**Analytic results** (S1, S2 in §3.2; the two-group theorem, §10.1) are `[THM]`/`[DERIVED]` statements about the MM-1 update rule and are not bounded by the numerical scope; their own assumptions are stated where they appear.
+
+**Notation (fixed for the live text; locked campaign definitions are not changed).** κ = K/K*₁, where K*₁ = γ/(dt·|σ|_max) is the spark threshold of the campaign in question and σ ranges over the eigenvalues of **that campaign's actual force Jacobian**, evaluated on the stated equilibrium or relative-equilibrium branch and in the campaign's own normalisation. Example — the sine realisation with degree-normalised coupling f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i), used in the N3 ladder and in PAIRBC: path3 |σ|_max = 2.0, tri0 1.5. The GATE code writes the same quantity for its three realisations (sine, scaled triangle, tanh) as K* = γ/(2c·dt) with c = g′(0), which is the path-3 degree-normalised value |σ|_max = 2c. The sine formula is therefore an instance, not the definition of the MM-1 family, and none of this applies to RTG's parameter-free generator T (RM-01). a = γdt; β_c = κ/(γdt) = κ/a (Stewart–McCumber identity, §3.3).
 
 **3.1 The two boundaries of the window separated.**
 - **Spark** (lower boundary) is born with parameterisation: in the isolated dyad, without a network, at the predicted place (RUN-RM02-N2-A → decision D2).
@@ -236,7 +238,7 @@ Rewritten for every phase. A claim whose criterion cannot be written cannot rece
 - **It is not claimed that MM-1 derives RTG or is equivalent to it** — different family, no named bridge.
 - **It is not claimed that S1/S2 are physical (continuous-time) phenomena** — they are structural properties of the discrete-time class; their ontological status depends on §10.1.
 - No cross-layer mapping has been made; all of §3 is inside the physical layer.
-- β_c(frac) is not claimed to be an invariant of any kind; the N3-ladder κ_frac values are Pair-A numbers.
+- β_c(frac) is not claimed to be an invariant of any kind. The N3-ladder κ_frac table of RUN-RM02-N3 (four rungs) is a Pair-A table; Pair B/C values exist only for tri0 and path3 (RUN-MM1-PAIRBC v1.0.1), and the triF rows have no B/C measurement.
 
 ## 12. Stopping rule
 

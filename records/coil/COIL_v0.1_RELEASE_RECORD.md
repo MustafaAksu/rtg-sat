@@ -41,6 +41,8 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | C7 | §9.1 Phase 2.5 | "candidate" | + "Not yet designed" | state from index §8 item 5 |
 | C8 | §10.1 | "legacy §12.5 `[OPEN]`" (read at v0.6) | §12.5 at `legacy-v0.7`: dt `[ONTO legacy]` "update resolution, not physical external time"; dt-independence `[OPEN]` as OPEN-L0L1-O5 | re-pinned at the tag actually read; COIL's question is unchanged |
 | C9 | §10.2 | "no answer yet" | + current state pointer: `[CAND] candidate bridge, wrong coordinate space`, OPEN-QUOTIENT-EQUILIBRIUM | state synchronisation from index S-2 |
+| C11 | §0.1 (rev. 2) | label column "nearest DSN grade" | "relation to DSN v1.4 (descriptive)"; `[VAL-in-scope]` no single counterpart; `[NUM-in-scope]` = `[NUM]` + own qualifiers; `[UNMEASURED]`/`[UNDEFINED]` evidence/definition states; `[EXPLORE]` not automatically `[OBS]` | PR #5 review item 1: the table is a comparison, not an automatic re-grading |
+| C12 | §3 lead (rev. 2) | one "throughout COIL" sine definition; all results Pair A | σ from each campaign's actual force Jacobian on the stated branch in its own normalisation, sine as instance, GATE's K* = γ/(2c·dt), c = g′(0) noted; numerical vs analytic scope separated; Pair B/C (a = 0.100, 0.156; κ ∈ [0.5, 15]) added as the exception; §11 N3-ladder sentence narrowed to the RUN-RM02-N3 table | PR #5 review item 2; locked campaign definitions unchanged |
 | C10 | change log §"Değişiklik günlüğü" | v0.1–v0.3 narrative | removed from live file | "current state only"; the narrative is preserved in the frozen source (hash above) and summarised here: v0.3 added rule-status taxonomy, §3, §10, §9.0 two-line [COR], Phase 2.5, §6.6–6.7, [OBS]/[ARBITRARY]; v0.2 cleaned claim levels, transition-first HYP-2, derivation prohibition, gates, non-claims; v0.1 first draft |
 
 ### 3.2 Index (`PROGRAM-INDEKSI.md` → `coil/COIL_INDEX.md`)
@@ -59,6 +61,7 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | I10 | §9 S-2 | v3.1 verdict + v3.0 retracted verdict + v2.0 verdict + v1.1 verdict, all inline | v3.1 verdict with `[COR]` `[RETRACTED]` line naming what v3.0 asserted and why it fell | the retraction is kept (note §6); the full v3.0 text is in the frozen source: K* applied to ringdiag reproduced `find_k_spark`'s θ = 0 fallback 23.305/24.857; v3.0 inferred "no fixed point exists structurally (5 restarts, residual grows with K)" — falsified by the relative equilibrium and θ_i = iπ; v2.0 had stated the carrier match and the Def-A/B vs Def-C open test |
 | I11 | §9 S-3 | current verdict + old `[EXPLORE]` pre-scan paragraph | current verdict; pre-scan named as `[EXPLORE]`, superseded | current state only; the pre-scan numbers (κ_frac ≈ 2.5 vs predicted 7.67/11.96, path-3 Pair A κ_frac = 2.30) are in the frozen source and in AUDIT-R5-PAIR-BC v1.0.1 |
 | I12 | §9 S-1 | "legacy DSN §12.5 dt-independence `[OPEN]`" (read at v0.6) | same, pinned at `legacy-v0.7` with the item name OPEN-L0L1-O5 | as C8 |
+| I14 | §9 S-1 precondition (carrier) | "MM-1's carrier class is absent from the current-generation RTG DSNs (Dyadic first-order/parameter-free; Discrete ℤ_N, chaos structurally absent as finite-state ⇒ eventually periodic, continuous→discrete import `[FAIL]`; Genesis saddle-node variational); the only open bridge candidate is the legacy ringdiag line" | "Ringdiag is the bridge candidate currently under investigation" | the source assessment dates from the v1.1 survey and cites no Dyadic/Discrete/Genesis owner pins; this migration pins only `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4`. The assessment is **not declared wrong**; it is recorded here as historical and **not re-verified**. Re-verification against owner tags is a separate task if COIL needs the exclusion |
 | I13 | §10 | "notes to be offered to RTG DSNs" | + route: `rtg-corpus/pipes/<STREAM>/` under `rtg-sat/CONVENTIONS.md` §4 | migration note §3 |
 
 ### 3.3 Notation fixes applied in both files
@@ -75,3 +78,8 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - No hash, approval or file content invented; the two source hashes are copied from `upload/coil/SHA256SUMS` (PR #3, independently re-verified in PR #4's intake review).
 - SG-PROG-1 sentence present (charter §0.2, §4, §9.0; index §10).
 - RTG grades copied as stated at the tag (charter §0.3).
+
+## 5. Revision log of this draft
+
+- rev. 1 (PR #5, `910337e`): batch-1 content.
+- rev. 2 (PR #5, review `5797938861`): C11, C12, I14; glossary spark note scoped to MM-1 with the ringdiag spark class left `[OPEN]`. Q4 and adoption of this record are PI decisions after batch 2; RM paths in the index stay provisional until then.
