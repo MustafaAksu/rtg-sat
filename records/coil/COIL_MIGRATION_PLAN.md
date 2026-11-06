@@ -119,7 +119,7 @@ Batch 0 can be pushed now (it contains no source content). Batches 1–4 wait fo
 - Q4 — RM records in `coil/records/` or flat in `coil/`?
 - Q5 — Source scope for batch 1: only `PROGRAM-INDEKSI.md` and `charter-v0.3.md`, or the PI's **whole** local folder at once (one upload, hashed once; later batches then only migrate)? A single upload is simpler for hash integrity; batch-wise uploads match the note's pace.
 
-Co-owner review of PR #2 (6 Nov 2026) proposed: Q3 one frozen zip with the zip and its members in the hash manifest; Q4 `coil/records/RM-01.md`, `RM-02.md`; Q5 the whole original COIL folder in one upload, migration still in four batches/PRs, **after a source-rights scan** so that no third-party or rights-unclear material reaches the public `upload/coil-sources` branch. These are proposals; the decisions are the PI's and are recorded here when he takes them.
+Co-owner review of PR #2 (6 Nov 2026) proposed: Q3 one frozen zip with the zip and its members in the hash manifest; Q4 `coil/records/RM-01.md`, `RM-02.md`; Q5 the whole original COIL folder in one upload, migration still in four batches/PRs, **after a source-rights scan** so that no third-party or rights-unclear material reaches the public `upload/coil-sources` branch. **PI decisions (6 Nov 2026):** Q3 — the ARSIV folder is migrated as **one frozen zip** in `evidence/coil/archive/` with the zip hash and its members' hashes in the manifest; Q4 — RM records live in **`coil/records/`**. Q5 was settled earlier by the whole-folder upload (PR #3). Batch 1 scope: index + charter only (PI, 6 Nov 2026).
 
 ## 6. What this session will not do
 
