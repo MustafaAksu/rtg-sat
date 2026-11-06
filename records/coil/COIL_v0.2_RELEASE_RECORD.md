@@ -14,7 +14,7 @@ Frozen filenames keep their original names and version strings: they are evidenc
 
 ### 1.2 Translations
 
-One `<name>.en.md` beside each frozen file, headed "Translation; the frozen original governs" with the original's hash. Rules: `evidence/coil/TRANSLATION_RULES.md`. Translations reproduce the original's statements including later-corrected ones; translator's notes only point to the later document. Translator's notes placed: listed in §3.2 once the translations are complete.
+One `<name>.en.md` beside each Turkish frozen file (21 of 25; the three WAVEFORM preregs and RUN-MM1-WAVEFORM-v1_0 are English originals and have none), headed "Translation; the frozen original governs" with the original's hash. Rules: `evidence/coil/TRANSLATION_RULES.md` (rule 9, locale number formats, added during the work). Translations reproduce the original's statements including later-corrected ones; translator's notes only point to the later document (§3.2). Produced by four parallel translation passes under the same rules; each pass reported its uncertain renderings, which were left literal, not corrected.
 
 ### 1.3 Live document
 
@@ -45,14 +45,23 @@ No new RTG material in this batch. Pins unchanged from v0.1.
 
 ### 3.2 Translator's notes placed in frozen-file translations
 
-(to be filled when the translations are committed)
+| File | Note points to | Passage |
+|---|---|---|
+| `RUN-MM1-GATE-v1.0.en.md` | `RUN-MM1-DYAD-v1.0.md`, `coil/MM-1.md`, `coil/COIL_CHARTER.md` | §3 S3′ blockquote (≥ 2 modes AND periodicity) — superseded by the single-mode tri-dyad fracture (S3″) |
+| `RUN-MM1-RANK-v1.0.en.md` | `RUN-MM1-RESOLVABILITY-v1.0.md` | §4 "Next" — T = 270 measured, T ≥ 540 LEFT-CENSORED |
+| `PREREG-MM1-RESOLVABILITY-v1.0.en.md` (4 notes) | `PREREG-MM1-RESOLVABILITY-v1.0.1-ADDENDUM.md` §A, §D, §B, §C/G4 | stratification classifier; program-level aggregation; h-grid extension j ≤ 40; censor-aware T_cross |
+| `PREREG-MM1-WAVEFORM-ISOA-v1.0.en.md` | `RUN-MM1-WAVEFORM-ISOA-v1.0.md` §2/§4, `coil/MM-1.md` §6a | §5 decision table — zero fracture in the locked window is `[ABSENT-in-window]`, tongue found at κ ≈ 3.10 outside |
+| `PREREG-MM1-WAVEFORM-TONGUESET-v1.0.en.md` (3 notes) | `PREREG-MM1-WAVEFORM-TONGUESET-v1.0.1-ADDENDUM.md` §E/G2b, §D, §A–C | certificate paragraph; Stage B κ de-duplication; T1 |
+
+Translator-flagged renderings left as written (no correction): "Hadi devam" kept as a quoted utterance; `k=2.90` lowercase k in RUN-RM02-N3; the broken LaTeX line break in the addendum's G4 heading preserved byte-for-byte; `\text{}` prose inside LaTeX translated (`\text{ve}` → `\text{and}` etc.); Turkish prose labels in backticks translated (`[eksik — eklendi]` → `[missing — added]`), identifier labels (`P-ara`, `P-κ`) kept.
 
 ## 4. Checks
 
 - Frozen bytes: every file's SHA-256 verified equal to its `upload/coil/SHA256SUMS` entry at placement (step-1 commit message lists the check).
-- Translations: numeric-token check — every number, label and filename of the original occurs in the translation (script run recorded in the PR).
+- Translations: numeric/label token check run on all 21 — every number and backticked label of each original occurs in its translation, the only differences being the rule-9 locale forms (`270.000` → `270,000`, `70.000` → `70,000`, `200.000` → `200,000`, `%x` → `x%`) and translated Turkish prose labels. Originals re-verified against `SHA256SUMS` after every pass.
 - No source file edited; no claim corrected inside a translation; no hash or approval invented.
 
 ## 5. Revision log
 
 - rev. 1: step 1 (placement) + compendium + this draft.
+- rev. 2: translations complete (21 files, 11 translator's notes); §1.2, §3.2, §4 filled; English originals have no `.en.md`.
