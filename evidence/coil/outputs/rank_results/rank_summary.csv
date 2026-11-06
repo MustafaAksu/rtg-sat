@@ -1,0 +1,10 @@
+h,sigma1,sigma2,r,above_floor
+0.01,2.707419818e+02,2.201272224e+02,8.130516772e-01,True
+0.005,5.295381471e+02,4.012329549e+02,7.577035895e-01,True
+0.0025,9.731968695e+02,5.744416890e+02,5.902625738e-01,True
+
+h1,h2,rho_conv_u,rho_conv_v,converged
+0.01,0.005,0.965994,0.951115,False
+0.005,0.0025,0.980654,0.957442,False
+
+VERDICT,INCONCLUSIVE,finite-difference responses do not converge under step halving
