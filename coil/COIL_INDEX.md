@@ -20,8 +20,8 @@
 
 | RM | Name | Type | Line | Path |
 |---|---|---|---|---|
-| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG | `coil/records/RM-01.md` *(path provisional, Q4)* |
-| RM-02 | Viability-window regime | REGIME | mixed (9 instances: 4 archival, 5 experimental) | `coil/records/RM-02.md` *(path provisional, Q4)* |
+| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG | `coil/records/RM-01.md` |
+| RM-02 | Viability-window regime | REGIME | mixed (9 instances: 4 archival, 5 experimental) | `coil/records/RM-02.md` |
 | RM-03 | Obligatory feedback | MECHANISM | not opened | — |
 | RM-04 | Path dependence | MECHANISM candidate | not opened | — |
 | RM-05 | Regeneration | MECHANISM | not opened | — |
@@ -99,7 +99,7 @@ Data: `stageA_*.csv`, `stageB_*_MERGED.csv`, `n3_merged/`, `mm1_merged/`, `*_res
 
 ## 7. Archive
 
-Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` *(batch 4; packaging pending PI decision Q3)*, with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
+Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` *(batch 4; one frozen zip — PI decision Q3, 6 Nov 2026)*, with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
 
 ## 8. Open work — priority order
 

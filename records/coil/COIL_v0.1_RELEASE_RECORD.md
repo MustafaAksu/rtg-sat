@@ -12,8 +12,8 @@
 | `coil/COIL_CHARTER.md` | `charter-v0.3.md` | `80cbbb236e4c3be874c15b508dbdb5ecb36fb216c2c2a4ff78a3d4f2da7f1e8b` | yes | 1 |
 | `coil/COIL_GLOSSARY.md` | — (new) | — | — | 0/1 |
 | `coil/COIL_RMT.md` | `RMT-v0.3.md` (content v0.3.8) | `4f60447429d09e95452a132ba4b25004102122ab4c24c4d8ff617aeddcfa3c2b` | yes | 2 |
-| `coil/records/RM-01.md` *(path provisional, Q4)* | `RM-01-kayit-v0.1.md` (content v0.2) | `879317e405365172e670d2ee40c2aa15063dd3d9a66625e2940260a17128ad01` | yes | 2 |
-| `coil/records/RM-02.md` *(path provisional, Q4)* | `RM-02-kayit-v0.3.md` (content v0.3.1) | `bcb8f4206d933caf2ac25e76ce328ba1a6c1e97d450c0bea0e0f703f968807b0` | yes | 2 |
+| `coil/records/RM-01.md` | `RM-01-kayit-v0.1.md` (content v0.2) | `879317e405365172e670d2ee40c2aa15063dd3d9a66625e2940260a17128ad01` | yes | 2 |
+| `coil/records/RM-02.md` | `RM-02-kayit-v0.3.md` (content v0.3.1) | `bcb8f4206d933caf2ac25e76ce328ba1a6c1e97d450c0bea0e0f703f968807b0` | yes | 2 |
 | `coil/MM-1.md` | `MM-1-minimal-model-extraction.md` (content v1.9) | `3ea2067d8a37f8b53c074ecc6004ab96aa827246a4fbe23a474d0213f2994051` | yes | 2 |
 | `coil/IDEALOG_COIL_RCSJ.md` | `IDEALOG-coil-RCSJ-eslesmesi.md` (content v1.2) | `7d61172e7914cd803015c9644754a96745da9fdaaa6f49107799b742ac1aa45d` | yes | 2 |
 
@@ -172,3 +172,4 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 3 (batch 2 PR): §1 batch-2 rows, §3.4 (T1–T5, R1–R10, M1–M10, N1–N6, L1–L6).
 - rev. 4 (PR #6, review `5799574800`): R11–R14, N7–N9, M11–M14, T6–T7, L7–L8; index RM-02 row (9 instances, path provisional); §4 batch-1/batch-2 hash sentences separated.
 - rev. 5 (PR #6, review `5799736041`): M15, L9; R5 marked superseded by R12.
+- rev. 6: PI decisions Q3 (ARSIV as one frozen zip) and Q4 (`coil/records/`) recorded, 6 Nov 2026; "provisional" path markers removed.

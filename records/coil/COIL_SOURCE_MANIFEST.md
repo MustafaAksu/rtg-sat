@@ -16,8 +16,8 @@ Columns: `old name` (as in the PI's folder) · `new path` · `kind` (live / froz
 | old name | new path | kind | translation | rights | SHA-256 | batch | upload commit |
 |---|---|---|---|---|---|---|---|
 | `owner-session-outputs/RMT-v0.3.md` | `coil/COIL_RMT.md` | live | yes | own | `4f60447429d09e95452a132ba4b25004102122ab4c24c4d8ff617aeddcfa3c2b` | 2 | `01a262e` |
-| `owner-session-outputs/RM-01-kayit-v0.1.md` | `coil/records/RM-01.md` (path pending Q4) | live | yes | own | `879317e405365172e670d2ee40c2aa15063dd3d9a66625e2940260a17128ad01` | 2 | `01a262e` |
-| `owner-session-outputs/RM-02-kayit-v0.3.md` | `coil/records/RM-02.md` (path pending Q4) | live | yes | own | `bcb8f4206d933caf2ac25e76ce328ba1a6c1e97d450c0bea0e0f703f968807b0` | 2 | `01a262e` |
+| `owner-session-outputs/RM-01-kayit-v0.1.md` | `coil/records/RM-01.md` | live | yes | own | `879317e405365172e670d2ee40c2aa15063dd3d9a66625e2940260a17128ad01` | 2 | `01a262e` |
+| `owner-session-outputs/RM-02-kayit-v0.3.md` | `coil/records/RM-02.md` | live | yes | own | `bcb8f4206d933caf2ac25e76ce328ba1a6c1e97d450c0bea0e0f703f968807b0` | 2 | `01a262e` |
 | `owner-session-outputs/MM-1-minimal-model-extraction.md` | `coil/MM-1.md` | live | yes | own | `3ea2067d8a37f8b53c074ecc6004ab96aa827246a4fbe23a474d0213f2994051` | 2 | `01a262e` |
 | `owner-session-outputs/IDEALOG-coil-RCSJ-eslesmesi.md` | `coil/IDEALOG_COIL_RCSJ.md` | live | yes | own | `7d61172e7914cd803015c9644754a96745da9fdaaa6f49107799b742ac1aa45d` | 2 | `01a262e` |
 

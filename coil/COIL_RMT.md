@@ -184,8 +184,8 @@ Charter §6.6 defines two event types: **execution failure** (code does not conf
 
 | RM | Name | Type | State | File |
 |---|---|---|---|---|
-| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG line; aligned to the RMT fields of this document; carries the MM-1 separation note | `coil/records/RM-01.md` *(path provisional, Q4)* |
-| RM-02 | Viability-window regime / bounded viable regime | REGIME | 9 instances (4 archival .a1/.a2/.b/.c, 5 experimental .d–.h) | `coil/records/RM-02.md` *(path provisional, Q4)* |
+| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG line; aligned to the RMT fields of this document; carries the MM-1 separation note | `coil/records/RM-01.md` |
+| RM-02 | Viability-window regime / bounded viable regime | REGIME | 9 instances (4 archival .a1/.a2/.b/.c, 5 experimental .d–.h) | `coil/records/RM-02.md` |
 | RM-03 | Obligatory feedback (state / adaptive distinguished) | MECHANISM | Not opened; input: the "RTG Synthesis P_floor cost law" `[CAND]` named in the source — an RTG-side item **not pinned** to any `rtg-corpus` tag in this migration; pointer only, no claim carried | — |
 | RM-04 | Path dependence | MECHANISM candidate | Not opened; **non-Markov positive-control laboratory identified** | — |
 | RM-05 | Regeneration (recovery / adaptation / regeneration distinguished) | MECHANISM | Not opened | — |
