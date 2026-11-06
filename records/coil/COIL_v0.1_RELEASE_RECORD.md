@@ -90,7 +90,7 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | R2 | p = 6 uniqueness | `[THM]` | "p = 6 linear order" `[ALG]`, `[v6.4.20: retagged from [THM]; content stated exactly]`, linear part only | tag grade and wording copied |
 | R3 | escape time | ln(R/ε)/ln φ² + O(1) | T_escape ≈ ln(1/ε)/ln(φ²) `[ALG]` | tag form copied, source form noted |
 | R4 | "master resonance parity lemma" `[THM]` | present | not located by that name | marked *not re-verified* |
-| R5 | det J formula | `[THM]` | stated in the ledger text without a separate tag | marked as such |
+| R5 | det J formula | `[THM]` | stated in the ledger text without a separate tag | marked as such — **superseded by R12** (this reading was wrong; kept as history) |
 | R6 | 47/54 healing coefficient | `[ALG]` | `[ALG]` with scope qualifier and a v6.4.10 `[COR]` on the one-block burst | qualifier added |
 | R7 | continuous counterpart | `[UNDEFINED]` | unchanged; an RTG-side `[THM]` smooth flow embedding (§6.17) is noted as **not asserted** to bear on the field | pointer only |
 | R8 | §12.5 time semantics | LEGACY v0.6 `[ONTO legacy]`, dt-independence `[OPEN]` | same at `legacy-v0.7`, item OPEN-L0L1-O5 | re-pinned |
@@ -117,6 +117,7 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | M11 | .e logical character (rev. 2) | "κ > κ_frac → CHAOS; necessary-and-sufficient-in-tested-scope" | three objects separated: first-fracture threshold on the grid, per-cell regime membership (predominant above κ_frac, not exhaustive), reversion islands | PR #6 review item 4: the summary contradicted its own κ = 2.90 island |
 | M12 | IV fracture row, result statement (rev. 2) | "periodicity → fracture; mode count shapes position/width" | periodicity a necessary-condition candidate, not sufficient; mode count a modifier candidate, not a proven cause; result statement labelled tested-scope attribution | PR #6 review item 4 |
 | M13 | IV rival table (rev. 2) | "complete robustness scan of the γdt axis at three points" | "minimal scan … not a complete one" | PR #6 review item 4; consistent with IDEALOG C.2(2) |
+| M15 | §IV `[COR]`, H0/H1, §V.3–4 (rev. 3) | "mode count as position/width effect"; "mode count as modifier"; .e summarised as "necessary-and-sufficient" | "mode count remains a modifier candidate; its causal and general role is open"; .e summaries name the operational grid/IC classification and its limits | PR #6 review `5799736041`: propagation of M11–M12 |
 | M14 | .h K*₁ values (rev. 2) | "K*₁ tri0 2.0, path3 1.5" | marked Pair A; K*₁ rescales per pair | PR #6 review item 4 |
 | M10 | header, change log | v0.1–v0.3 narrative | removed; summary: v0.1 three instances; v0.2 .a2, BIRTH-v0 layering; v0.3 RMT v0.3 fields, archival/experimental split, .d/.e/.f, birth-surface analysis measured; v0.3.1 .a1 `[COR]` from the recovered update rule | current state only |
 
@@ -144,6 +145,7 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | L4 | §A4 table | β_c one decimal | two decimals, "at Pair A (a = 0.03)" | notation |
 | L5 | §B2(iii), §C.2(4), §D3 | "legacy `[OPEN]`" | OPEN-L0L1-O5 at `legacy-v0.7`; D3 notes it is RTG's item | pin; boundary |
 | L7 | §A1 (rev. 2) | "Inertia = coil `[DERIVED]`; the coil is the precondition of the spark" | derived part (second-order term is the precondition of the spark) kept `[DERIVED]`; the "coil" identification demoted to `[CAND / HEUR]` because in A2's phase equation φ̈ carries the capacitance C, not an inductance | PR #6 review item 6: algebraic match ≠ physical identification; pre-existing in the source |
+| L9 | §C first bullet, §A3 (rev. 3) | "the κ ordering is a physical ordering"; "all of A3 structural except the last row" | ordering preserved at fixed a within the model convention `[DERIVED]`, no physical identification; A3 has two candidate/interpretive rows | PR #6 review `5799736041`: propagation of L7–L8 |
 | L8 | §A4 (rev. 2) | "independent support that the cross-rung comparison is physically legitimate" | dimensionless identity `[DERIVED]`; physical-legitimacy reading `[HEUR]`; not evidence of invariance (Pair B/C) | PR #6 review item 6 |
 | L6 | §A1 | "Dynamical Genesis's finding" | "(RM-02.a2, historical reading)" | pin state |
 
@@ -169,3 +171,4 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 2 (PR #5, review `5797938861`): C11, C12, I14; glossary spark note scoped to MM-1 with the ringdiag spark class left `[OPEN]`. Q4 and adoption of this record are PI decisions after batch 2; RM paths in the index stay provisional until then.
 - rev. 3 (batch 2 PR): §1 batch-2 rows, §3.4 (T1–T5, R1–R10, M1–M10, N1–N6, L1–L6).
 - rev. 4 (PR #6, review `5799574800`): R11–R14, N7–N9, M11–M14, T6–T7, L7–L8; index RM-02 row (9 instances, path provisional); §4 batch-1/batch-2 hash sentences separated.
+- rev. 5 (PR #6, review `5799736041`): M15, L9; R5 marked superseded by R12.

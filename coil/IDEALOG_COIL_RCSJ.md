@@ -31,7 +31,7 @@ The PI's "perhaps the dyad alone" intuition **pointed at the right rung**: the c
 | fracture threshold | around the switching current `[CAND]` |
 | (A1 reading) inertial term | "coil" — `[CAND / HEUR]`, see A1 |
 
-All of A3 is structural except the last row; the switching-current counterpart is **[CAND]** because the control knob differs (B1).
+A3 is structural except its last two rows: the switching-current counterpart is **[CAND]** because the control knob differs (B1), and the "coil" reading of the inertial term is **[CAND / HEUR]** (A1).
 
 ### A4. κ normalisation = Stewart–McCumber parameter `[DERIVED]`
 Computing β_c := ω_p²/γ² for K = κK* gives
@@ -85,7 +85,7 @@ The a_ij ↔ magnetic-flux correspondence is structurally clean, and the frustra
 
 ## C. Warning on what is not invariant
 
-- **κ itself is not invariant** — it is relative to each rung's K*. But A4 showed the κ ↔ β_c transformation is rung-independent, so **the κ ordering is a physical ordering**. (The raw-K ordering is not; the warning in the RUN-N3 report was right.)
+- **κ itself is not invariant** — it is relative to each rung's K*. A4 showed the κ ↔ β_c transformation is rung-independent: **at fixed a > 0, β_c = κ/a preserves ordering within the specified model convention** `[DERIVED]`. This identity does not establish a physical cross-rung or Josephson-system identification (A4, `[HEUR]`). The raw-K ordering is not even convention-preserving across rungs; the warning in the RUN-N3 report was right.
 - **The topology independence of ω** (cos ω = 1 − γdt/2) holds only *at the crossing*; as κ grows the observed ω drifts (0.173416 → 0.173039 in N3). In the nonlinear regime ω is not invariant.
 - **The β_c(frac) values** (35–88) were derived from one parameter pair (a = 0.03). Their a-dependence has since been **measured** (Pair B/C, RUN-MM1-PAIRBC v1.0.1): **P-κ** — κ_frac stays nearly constant across a = 0.03 / 0.100 / 0.156 (tri0 2.65 / 2.775 / 2.80; path3 2.35 / 2.525 / 2.55) while β_c(frac) falls ÷ 4.92 (tri0) / ÷ 4.79 (path3). β_c(frac) is **not** an invariant; the κ_frac ordering of Pair A is a Pair-A table (triF rows unmeasured at B/C). Detail: RM-02.h.
 
