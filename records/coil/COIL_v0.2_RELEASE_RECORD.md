@@ -1,6 +1,6 @@
-# COIL v0.2 — release record (DRAFT, batch 3)
+# COIL v0.2 — release and adoption record
 
-**Status:** DRAFT — not adopted. Follows `coil-v0.1` (batches 1–2, `COIL_v0.1_RELEASE_RECORD.md`). Becomes the adoption record of tag `coil-v0.2` when the PI adopts it. All "adopted" fields read *pending PI adoption*.
+**Status:** ADOPTED by PI Mustafa Aksu on 2026-11-09; publication tag `coil-v0.2`. The adopted scope and payload identity are fixed in §6.
 **Scope:** frozen preregistrations and run reports placed unchanged with English translations; the campaign compendium as a live document.
 
 ## 1. Files in this release
@@ -69,9 +69,9 @@ Translator-flagged renderings left as written (no correction): "Hadi devam" kept
 - rev. 2: translations complete (21 files, 11 translator's notes); §1.2, §3.2, §4 filled; English originals have no `.en.md`.
 - rev. 3 (PR #7, review `5822796099`): K11, K12.
 
-## 6. Candidate adoption manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
+## 6. Adopted payload manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
 
-**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the **content commit** `3d0306058495` (the last commit that changed any file in this set; this manifest-only commit comes after it, so no commit hashes its own content). Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+**Status: ADOPTED.** The manifest fixes the approved payload bytes at content commit `3d0306058495121df91e900a6ea9454185402462`. Publication changes only adoption/registry metadata, not these payloads. Any later payload change requires its own reviewed successor; this adopted record is frozen.
 
 | file | SHA-256 at reference commit |
 |---|---|
@@ -127,4 +127,12 @@ Translator-flagged renderings left as written (no correction): "Hadi devam" kept
 | `evidence/coil/run/RUN-RM02-N3-v1.0-FINAL.md` | `cb87122a88fc0feabc8050c2dedb90bdd1cef13d5e6bb3c0ec9284644fff1691` |
 | `evidence/coil/run/SHA256SUMS` | `21166ed41c94975591cd19e8ef42653bf2d3dba3752fcfe19645e17a25bb94ad` |
 
-**Adoption scope (to be filled by the PI at adoption):** which files above are adopted; the adopted tag name; the adoption date; any file excluded. Until filled: *pending PI adoption*.
+**PI adoption decision:** Mustafa Aksu, 2026-11-09. English rendering of the explicit decision in the COIL owner conversation: "I adopt the study in its present state." This record implements that decision; the reviewer does not substitute a review verdict for PI adoption.
+
+**Adopted tag:** `coil-v0.2` (annotated; publication follows the merge).
+**Adopted files:** all 51 entries in the manifest above, at their stated SHA-256 values and content commit `3d0306058495121df91e900a6ea9454185402462`.
+**Inherited scope:** The eight-file governing scope of coil-v0.1 is inherited unchanged, with its existing grades, limitations and corrections. This release adds the 51 entries above.
+**Exclusions:** no manifest row is excluded. The two unavailable historical sources remain unavailable; upload-only working material is not silently added to governing scope. Frozen originals remain the authority for preregistrations and run reports; translations and archives do not reinstate superseded scientific claims.
+**Scientific limits:** the current recorded study is adopted with every existing grade, assumption, negative result, retraction, scope limit and OPEN obligation. No new experiment, physical validation, cross-layer equivalence or transfer to RTG is asserted. Byte checks do not upgrade scientific grades. Existing DRAFT labels inside unchanged payload files do not override this explicit adoption record and its tag.
+**Publication binding:** the annotated tag identifies the exact publication commit and includes this release record's SHA-256. Verify every adopted payload hash at that target; the record is not required to contain its own commit or hash. All three scopes were adopted on 2026-11-09, not retroactively at the earlier migration merges.
+
