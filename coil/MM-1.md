@@ -5,7 +5,7 @@
 **Charter Phase 2 question:** *"extraction of the smallest layer-independent dynamical representation of the candidate signature observed in RTG: when RTG-specific symbols, coordinates and interpretations are removed, which state-space geometry, coupling form, control/order parameters and transition structure remain?"*
 **Inputs:** RUN-RM02-N2-A (D2) + RUN-RM02-N3 v1.0 FINAL (attribution) + `n3_prereg_certificate.py`.
 **Gate reminder:** this document does not open the gate by itself. The gate opens only when the minimal model reproduces the same macro signature in **at least one microdynamical realisation outside RTG/Kuramoto** (PREREG-MM1-GATE) — it did (§5).
-**Boundary:** MM-1 is an abstraction of the inertial-Kuramoto family the N2/N3 campaigns ran in. It has **no named bridge** to RTG's dyadic generator T (RM-01); SG-PROG-1 applies in full (§6).
+**Boundary:** MM-1 is an abstraction of the inertial-Kuramoto family the N2/N3 campaigns ran in. It has **no named bridge** to RTG's dyadic generator T (RM-01); SG-COIL-1 applies in full (§6).
 
 Notation: κ = K/K*₁ with K*₁ the spark threshold of the realisation in question (charter §3); a = γdt; β_c = κ/a.
 
@@ -84,7 +84,7 @@ Evidence structure kept apart:
 
 ## 6. What is NOT claimed
 
-- It is **not claimed** that MM-1 derives RTG's postulated dyadic generator (OPEN-P0) or is equivalent to it. MM-1 is the abstraction of the inertial-Kuramoto family the N2/N3 campaigns ran in; there is **no named bridge** to the RTG continuous branch (SG-PROG-1 in full force).
+- It is **not claimed** that MM-1 derives RTG's postulated dyadic generator (OPEN-P0) or is equivalent to it. MM-1 is the abstraction of the inertial-Kuramoto family the N2/N3 campaigns ran in; there is **no named bridge** to the RTG continuous branch (SG-COIL-1 in full force).
 - S1/S2 are not claimed to be "universal"; they have been **shown** to belong to the explicit-Euler second-order class (absent in Euler–Cromer — P4, PASS on four rungs).
 - No cross-layer mapping is claimed.
 

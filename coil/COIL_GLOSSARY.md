@@ -14,7 +14,7 @@ Turkish terms with a defined meaning in the COIL documents, translated once; the
 | Kampanya Künyesi | campaign compendium | verified (batch 1) | parameter map / guided reproduction; not a self-contained rerun contract |
 | kayıt aracı (RMT) | record tool (RMT) | verified (batch 1) | "İlişkisel Mekanizma Template'i" → Relational Mechanism Template |
 | RM kaydı | RM record (mechanism / regime record) | verified (batch 1) | |
-| hat (RTG hattı, MM-1 hattı) | line (RTG line, MM-1 line) | verified (batch 1) | no named bridge between the lines (SG-PROG-1) |
+| hat (RTG hattı, MM-1 hattı) | line (RTG line, MM-1 line) | verified (batch 1) | no named bridge between the lines (SG-COIL-1) |
 | kırılma | fracture | verified (batch 1) | upper boundary of the viability window; classifier outcome |
 | spark (used untranslated in the sources) | spark | verified (batch 1) | lower boundary of the viability window. In MM-1 it is born at the NS crossing (S1/S2); the dynamical class of the LEGACY ringdiag spark is `[OPEN]` on the RTG side (OPEN-L0L1-1 at `legacy-v0.7`) |
 | yaşayabilirlik penceresi | viability window | verified (batch 1) | |

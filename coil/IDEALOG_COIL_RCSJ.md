@@ -4,7 +4,7 @@
 **Source:** translation of the owner session's `IDEALOG-coil-RCSJ-eslesmesi.md` (content state v1.2; SHA-256 `7d61172e7914cd803015c9644754a96745da9fdaaa6f49107799b742ac1aa45d`, `upload/coil-sources`), current state only. Item D1 and §C's third bullet, written before Pair B/C, are brought to the closed result (release record).
 **Trigger:** the PI's naming of the conversation "Coil Like" and the intuition that the inertial structure might correspond to a coil ("perhaps the dyad alone").
 **Method note:** matching parts are laid on top of each other; **non-matching parts are not discarded** — for each, alternative readings are listed explicitly (we may have misunderstood; or the quantity we look at may not be invariant).
-**Boundary:** the Josephson plane is in the physical layer; there is **no named bridge** between it and MM-1, and none between either and RTG (SG-PROG-1). This log carries no cross-layer claim.
+**Boundary:** the Josephson plane is in the physical layer; there is **no named bridge** between it and MM-1, and none between either and RTG (SG-COIL-1; charter §0.2). This log carries no cross-layer claim.
 
 Notation: κ = K/K*₁; a = γdt; β_c = κ/a (charter §3).
 

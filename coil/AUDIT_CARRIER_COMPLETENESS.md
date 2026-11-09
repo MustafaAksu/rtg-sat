@@ -3,7 +3,7 @@
 **Document class:** `[DRAFT]`; live audit record. **Verdict in force:** carrier match **stands**; the onset bridge is **neither closed nor built** — `[CAND] candidate bridge, wrong coordinate space`; open item `OPEN-QUOTIENT-EQUILIBRIUM`.
 **Source:** translation of the owner session's `AUDIT-CARRIER-COMPLETENESS-v3.1.md` (SHA-256 in `records/coil/COIL_SOURCE_MANIFEST.md`, batch 4), current state only. The audit's history (v1.0 "cannot be established" → v1.1 handover → v2.0 "carrier MATCHES" → v3.0 "ONSET BRIDGE CLOSED" → v3.1 **retraction** of v3.0) is preserved in the frozen archive package (`evidence/coil/archive/`, members `AUDIT-CARRIER-COMPLETENESS-v1.0/2.0/3.0.md`) and summarised in `records/coil/COIL_v0.1_RELEASE_RECORD.md` I9–I10.
 **RTG pin:** ringdiag belongs to the LEGACY bridge DSN at `rtg-corpus` tag `legacy-v0.7` (§3.1 QR-defined spark boundary; recovery table). COIL's recovered update rule: `coil/RINGDIAG_UPDATE_RULE.md`; estimator definitions: `coil/KSPARK_DEF_DEGNORM.md`.
-**Boundary:** nothing here is an RTG result; no named bridge exists (SG-PROG-1). The RTG-side open items remain RTG's (OPEN-L0L1-0, OPEN-L0L1-1).
+**Boundary:** nothing here is an RTG result; no named bridge exists (SG-COIL-1, charter §0.2). The RTG-side open items remain RTG's (OPEN-L0L1-0, OPEN-L0L1-1).
 
 ---
 
@@ -76,7 +76,7 @@ v3.0's error is exactly the one the RMT's own absence discipline (§5b: `[ABSENT
 
 ## 8. What this audit does NOT establish
 
-- A named bridge between MM-1 and ringdiag (none exists; SG-PROG-1).
+- A named bridge between MM-1 and ringdiag (none exists; SG-COIL-1).
 - That 23.305 is the ringdiag spark threshold: the recorded legacy K_spark brackets are (12.54, 12.55) at φ = 1.26 and (13.48, 13.50) at φ = 1.28 (`legacy-v0.7` §3.1, `[NUM strong legacy-report]`, with the owner's source limitations); their attribution to a Def-C QR-Lyapunov run of the recovered engine is **source-reported, not owner-established**; the relation between the Def-A/B transverse crossing (a conditional spectral computation on the recovered engine) and the historical bracket is the open test (`OPEN-L0L1-KSPARK-DEF`, `coil/KSPARK_DEF_DEGNORM.md`).
 - That the recovered engine is the historical producer of the §3.1 numbers (LEGACY v0.7: engine compatibility audit, not a historical-trajectory rerun).
 - Any change to RTG's own grades or open items.

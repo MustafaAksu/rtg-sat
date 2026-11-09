@@ -2,7 +2,7 @@
 
 **Document class:** `[DRAFT]`; live record of what COIL knows about the legacy ringdiag dynamics, kept for the carrier-completeness comparison with MM-1. **Owner of the ringdiag object: RTG** (LEGACY bridge DSN, `rtg-corpus` tag `legacy-v0.7`, §3.1 and recovery table). COIL does not close, re-grade or restate RTG's open items.
 **Source:** the owner session's `ringdiag-update-rule-RECOVERED.md` (English original returned by the RTG session to the COIL handover `records/coil/HANDOVER_RINGDIAG_UPDATE_RULE.md`; SHA-256 in `records/coil/COIL_SOURCE_MANIFEST.md`, batch 4), brought to current state. The original is frozen in `evidence/coil/outputs/raw_from_pi/ringdiag-update-rule-RECOVERED.md`.
-**Boundary:** carrier match ≠ named bridge (SG-PROG-1). What COIL uses from this record: the update equation (§1-[2]) and the estimator classification (§1-[6]).
+**Boundary:** carrier match ≠ named bridge (SG-COIL-1, charter §0.2). What COIL uses from this record: the update equation (§1-[2]) and the estimator classification (§1-[6]).
 
 **Three layers, kept apart throughout this document (per LEGACY v0.7 §3.1, `[ENG]` "Engine compatibility audit — accepted archive-scope record, not a historical-trajectory rerun"):**
 
