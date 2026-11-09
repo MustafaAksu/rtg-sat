@@ -31,4 +31,21 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 
 ## 6. Candidate adoption manifest
 
-Added in a manifest-only commit after the content commit, as in v0.1–v0.3 §6: *(pending)*.
+**Status: CANDIDATE — not adopted.** Files changed in this release, SHA-256 of their bytes at the **content commit** `85118a8ba52b6b26fdcb0133918a758b80af0baf` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
+
+| file | SHA-256 at content commit |
+|---|---|
+| `coil/COIL_CHARTER.md` | `af5450af00c20437c6d348b182e3e8c18dacc0070599a4dd83ad6fcbdd59ca21` |
+| `coil/COIL_INDEX.md` | `126b4bed5d9dc3abd0353a6affd1c797a459c3478d25e992e796befa5e1298d8` |
+| `coil/COIL_GLOSSARY.md` | `38a28248b75bc43fa3e03db9f071798d09242cc9d1f6376c7ffc747ab9ef21f6` |
+| `coil/COIL_RMT.md` | `c04f0b9e89d62201be82b6a9f42f97b434e231ed5ef0bd5253a195ed08df48ea` |
+| `coil/records/RM-01.md` | `c38736197230f0b456bb348f832b621b382663221bd3d3ee9194304aebb657c2` |
+| `coil/records/RM-02.md` | `81eab406db499c12c28dcca5597b635ad9b774c075927669019a1198bd164fbb` |
+| `coil/MM-1.md` | `f7f5f974eb4d282f4b316d14a8ed12a7a61d80435b111cb4c54525676314164a` |
+| `coil/IDEALOG_COIL_RCSJ.md` | `b7e8003f0811197f86397f0895b8b3b265fa37ed97f5cbff92de350dc91490ce` |
+| `coil/AUDIT_CARRIER_COMPLETENESS.md` | `dd395e4aab7e53af9998ff8f59fbe6336286d34d61974832330cbe3f1a9fcd6e` |
+| `coil/RINGDIAG_UPDATE_RULE.md` | `a464a8e75c0deb692151dacbbd4bae1e0a5a8a1c4d10f1ae69e92f91a8815a0b` |
+| `REGISTRY.md` | `c43a2770e6356f655a1631c2d89b67285390821fb4845c0432997fb06979d65c` |
+| `pipes/COIL/20261109-SAT-maintenance-advisory.md` | `55ec0db9b3d9979fcb28ff4fe980955f666bf95681fad004d02c92146016c8ed` |
+
+**Adoption scope (to be filled by the PI at adoption):** files adopted; tag; date; exclusions. Until filled: *pending PI adoption*.
