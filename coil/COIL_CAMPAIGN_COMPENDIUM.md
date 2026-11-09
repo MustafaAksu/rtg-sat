@@ -3,9 +3,9 @@
 **Purpose:** a **parameter map and guided reproduction** for every campaign of the MM-1 line.
 **Document class:** `[DRAFT]`; derived compilation. **In case of conflict the locked preregistration and the run report govern** — this document summarises them, it does not replace them. Frozen originals: `evidence/coil/prereg/`, `evidence/coil/run/`.
 **Source:** translation of the owner session's `KAMPANYA-KUNYESI.md` (SHA-256 in `records/coil/COIL_SOURCE_MANIFEST.md`, batch 3), current state only.
-**Scope:** MM-1 line. The RTG line is separate (`coil/AUDIT_CARRIER_COMPLETENESS.md`, batch 4).
+**Scope:** MM-1 line. The RTG line is separate (`coil/AUDIT_CARRIER_COMPLETENESS.md`).
 
-⚠️ **Status: NOT yet a `self-contained rerun contract`.** The §4 table guides; for the **exact execution specification** see the §9 appendix and the CLI files (`evidence/coil/code/`, batch 4). The compendium becomes self-contained only when the completeness certificate of §10 PASSES; its first run FAILED by design (§10).
+⚠️ **Status: NOT yet a `self-contained rerun contract`.** The §4 table guides; for the **exact execution specification** see the §9 appendix and the CLI files (`evidence/coil/code/`). The compendium becomes self-contained only when the completeness certificate of §10 PASSES; its first run FAILED by design (§10).
 
 ---
 
@@ -42,7 +42,7 @@
 | triF (Φ = 3π/2) | triangle + flux | — | 2.3094 | 1 |
 | triF (Φ = π) | triangle + flux | — | 4.0000 | 1 |
 
-**Gauge rule:** β₁ = m − n + c. β₁ = 0 (dyad, path3) → **no** independent antisymmetric frustration coordinate; the triangle has exactly **one** cycle flux. Raw edge offsets do not count as separate architectures. (`coil/MEMO_GAUGE_CYCLE_FLUX.md`, batch 4.)
+**Gauge rule:** β₁ = m − n + c. β₁ = 0 (dyad, path3) → **no** independent antisymmetric frustration coordinate; the triangle has exactly **one** cycle flux. Raw edge offsets do not count as separate architectures. (`coil/MEMO_GAUGE_CYCLE_FLUX.md`.)
 
 ## 3. Waveform families — **five distinct families** `[COR]`
 

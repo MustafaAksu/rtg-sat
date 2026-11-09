@@ -2,7 +2,7 @@
 
 **Purpose:** which document is current, which preregistration is locked, which question is open — on one page. Status map only; the owner document of each item governs.
 **Source:** translation of the owner session's `PROGRAM-INDEKSI.md` (SHA-256 `86dec073a7638e729479157e878f549b0ae6a015544cbf5030ff01a8839a93df`, `upload/coil-sources`), current state only; version narratives and superseded verdicts are in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
-**Labels:** `coil/COIL_CHARTER.md` §0.1. **Filenames:** every file named here is placed in this repository (migration complete, batches 1–4); old names and source hashes in `records/coil/COIL_SOURCE_MANIFEST.md`.
+**Labels:** `coil/COIL_CHARTER.md` §0.1. **Filenames:** every **migrated** file named here is placed in this repository (migration complete, batches 1–4); old names and source hashes in `records/coil/COIL_SOURCE_MANIFEST.md`. Two historical sources were never held and remain **not available** (`AUDIT-R5-PAIR-BC-v1.0.md`, the co-owner memo of 3 Sep 2026; §7, manifest).
 
 ---
 
@@ -105,7 +105,7 @@ Superseded documents are kept (not deleted — the programme's provenance rule) 
 
 | # | Item | State |
 |---|---|---|
-| 1 | Pair B/C run | **CLOSED — P-κ + REPLICATION-CONCORDANT.** Design `PREREG-MM1-PAIRBC v1.0.3` (locked): primary holdout **tri0 × {B, C}** (unseen), replication arm path3, anchor Pair-A execution guard; primary quantity p_BC = log(κ_C/κ_B)/log(a_C/a_B) **+ mandatory level guard** r^β, q (p alone tests the slope, not the level — confirmed counter-example); H_β: p = 1, H_κ: p = 0; exhaustive table incl. P-other; bands ± 0.15. Result in charter §3.6. The earlier design was **not run**: R5 audit v1.0.1 found three blockers (N = 2 is not the source substrate of the target invariant `[ABSENT-in-tested-domain]`; κ window [0.5, 3] vs predicted 3.5–13.8; cross-pair semantics not preregistered). Audit `coil/AUDIT_R5_PAIR_BC.md` |
+| 1 | Pair B/C run | **CLOSED — P-κ + REPLICATION-CONCORDANT.** Design `PREREG-MM1-PAIRBC v1.0.3` (locked): primary holdout **tri0 × {B, C}** (unseen), replication arm path3, anchor Pair-A execution guard; primary quantity p_BC = log(κ_C/κ_B)/log(a_C/a_B) **+ mandatory level guard** r^β, q (p alone tests the slope, not the level — confirmed counter-example); H_β: p = 1, H_κ: p = 0; exhaustive table incl. P-other; bands ± 0.15. Result in charter §3.6. The earlier design was **not run**: R5 audit v1.0.1 found three blockers (N = 2 is not the source substrate of the target invariant `[ABSENT-in-tested-domain]`; κ window [0.5, 3] vs predicted 3.5–13.8; cross-pair semantics not preregistered). Audit `evidence/coil/audit/AUDIT-R5-PAIR-BC-v1.0.1.md` (frozen; translation `AUDIT-R5-PAIR-BC-v1.0.1.en.md` beside it — the original governs) |
 | 2 | MM-1 dyad Stage B | **DONE** — P-S3-dyad FAIL (tri) — S3′ → S3″ revision (RUN-MM1-DYAD) |
 | 2b | Iso-amplitude test | **DONE** — I3: A is not a cross-family descriptor; χ collapse is an intra-family proxy |
 | 2c | Tongue-set geometry map | **DONE** — T1 PASS; \|𝒯\| primary, N_comp resolution-dependent. Set-valued: onset, component count/widths, \|𝒯(t)\|, bounded gap multiset G(t) (at t = −0.300: κ ≈ 3.1/6.6/7.9) |
