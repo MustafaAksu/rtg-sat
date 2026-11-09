@@ -1,8 +1,8 @@
-# COIL v0.1 — release record (DRAFT, accumulating over batches 1–2)
+# COIL v0.1 — release and adoption record
 
-**Status:** DRAFT — not adopted. Becomes the adoption record of tag `coil-v0.1` when the PI adopts it after batch 2 (index, charter, record tool, records). Until then every "adopted" field reads *pending PI adoption*.
+**Status:** ADOPTED by PI Mustafa Aksu on 2026-11-09; publication tag `coil-v0.1`. The adopted scope and payload identity are fixed in §6.
 **Scope of the release:** first repository edition of the COIL live documents listed in §1. Frozen preregistrations, run reports, audits, code and outputs follow in later releases.
-**Adoption:** pending PI adoption. **Tag:** none yet.
+**Adoption:** PI decision 2026-11-09, recorded in §6. **Tag:** `coil-v0.1`.
 
 ## 1. Files in this release
 
@@ -174,9 +174,9 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 5 (PR #6, review `5799736041`): M15, L9; R5 marked superseded by R12.
 - rev. 6: PI decisions Q3 (ARSIV as one frozen zip) and Q4 (`coil/records/`) recorded, 6 Nov 2026; "provisional" path markers removed.
 
-## 6. Candidate adoption manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
+## 6. Adopted payload manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
 
-**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the **content commit** `3d0306058495` (the last commit that changed any file in this set; this manifest-only commit comes after it, so no commit hashes its own content). Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+**Status: ADOPTED.** The manifest fixes the approved payload bytes at content commit `3d0306058495121df91e900a6ea9454185402462`. Publication changes only adoption/registry metadata, not these payloads. Any later payload change requires its own reviewed successor; this adopted record is frozen.
 
 | file | SHA-256 at reference commit |
 |---|---|
@@ -189,4 +189,12 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 | `coil/MM-1.md` | `cd1e63b897fbfaecbe556f7ae2776572730139ecceaae97b6819507615c7a9ef` |
 | `coil/IDEALOG_COIL_RCSJ.md` | `07f819c546844b3720f005740ce10b11a26cb1e3b47db17c80e69305a175a289` |
 
-**Adoption scope (to be filled by the PI at adoption):** which files above are adopted; the adopted tag name; the adoption date; any file excluded. Until filled: *pending PI adoption*.
+**PI adoption decision:** Mustafa Aksu, 2026-11-09. English rendering of the explicit decision in the COIL owner conversation: "I adopt the study in its present state." This record implements that decision; the reviewer does not substitute a review verdict for PI adoption.
+
+**Adopted tag:** `coil-v0.1` (annotated; publication follows the merge).
+**Adopted files:** all 8 entries in the manifest above, at their stated SHA-256 values and content commit `3d0306058495121df91e900a6ea9454185402462`.
+**Inherited scope:** None; first repository edition. Files assigned only to later release manifests are not adopted by this release merely because they are present in its Git tree.
+**Exclusions:** no manifest row is excluded. The two unavailable historical sources remain unavailable; upload-only working material is not silently added to governing scope. Frozen originals remain the authority for preregistrations and run reports; translations and archives do not reinstate superseded scientific claims.
+**Scientific limits:** the current recorded study is adopted with every existing grade, assumption, negative result, retraction, scope limit and OPEN obligation. No new experiment, physical validation, cross-layer equivalence or transfer to RTG is asserted. Byte checks do not upgrade scientific grades. Existing DRAFT labels inside unchanged payload files do not override this explicit adoption record and its tag.
+**Publication binding:** the annotated tag identifies the exact publication commit and includes this release record's SHA-256. Verify every adopted payload hash at that target; the record is not required to contain its own commit or hash. All three scopes were adopted on 2026-11-09, not retroactively at the earlier migration merges.
+
