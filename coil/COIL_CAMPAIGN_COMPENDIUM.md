@@ -16,7 +16,7 @@
 | Dynamics (reduced) | φ⁺ = φ + w, w⁺ = (1 − a)w + dt²·K·F(φ), a := γ·dt |
 | Independent coordinates | **only (a, κ)** — two-group theorem, `coil/IDEALOG_COIL_RCSJ.md` §C.2. dt has no independent role |
 | Normalisation | κ = K/K*₁, K*₁ = γ/(dt·\|σ\|_max), σ over the eigenvalues of the campaign's force Jacobian on the synchronous branch (`coil/COIL_CHARTER.md` §3) |
-| **Coupling (N ≥ 3)** | **degree-normalised**: f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i) ⚠️ |
+| **Coupling (N ≥ 3)** | **degree-normalised** relational force f_i = (1/deg_i) Σ_j A_ij g(θ_j − θ_i − a_ij), with the campaign's waveform g and edge offsets a_ij (§3; a_ij = 0 except on the frustrated triF rungs, Φ ∈ {π, 3π/2}). The sine, offset-free form f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i) is the **instance** used in N2/N3/PAIRBC ⚠️ |
 | IC semantics | w₀ = dt·u₀ — **the dimensionless w₀ is held fixed across pairs** |
 | Classifier | per-update Benettin λ_max, ε_λ = 10⁻³, **four-quarter persistence** |
 | FRACTURE | CF ≥ 0.60 (≥ 15 of 25 IC) |
@@ -70,7 +70,7 @@
 | 6 | **ISOA** (`…-ISOA-v1.0`) | dyad, iso-A × 6, A | κ = 2.535 ± 0.16 | 70k/200k | **I3** | **no** fracture in the locked window `[ABSENT-in-window]`; A not a cross-family descriptor |
 | 7 | **TONGUESET** (`…-TONGUESET-v1.0` + addendum) | dyad, iso-A × 6, A | κ ∈ [0.5, 8] Δ0.01 → 0.0025 | 70k/200k | **T1 PASS** | N_comp 46 → 0; ρ = +0.468, p = 0.039 |
 | 8 | **ORTHO** (`…-ORTHO-v1.0`) | dyad, 7-harm × 9, A | κ ∈ [0.5, 8] Δ0.01 | 70k/200k | **A ∧ B change** | c₃ **and** H_high each insufficient alone |
-| 9 | **RANK** (`PREREG-MM1-RANK-v1.0`) | dyad, anchor ± h, A | h = 0.01·2^{−j}, j ≤ 20 | 70k/200k | **INCONCLUSIVE** | FD did not converge; C¹ violation **not shown** |
+| 9 | **RANK** (`PREREG-MM1-RANK-v1.0`) | dyad, anchor ± h·u, ± h·v, A | h ∈ {0.01, 0.005, 0.0025}; 12 perturbed points + anchor | 70k/200k | **INCONCLUSIVE** | FD did not converge (ρ_conv > 0.30 on both h-halvings); C¹ violation **not shown** |
 | 10 | **RESOLVABILITY** (`…-v1.0` + addendum) | dyad, anchor ± h, A | T = 270·2^m, m ≤ 6 | B:L = 7:20 | PI-stopped T = 4320 | h_res: T = 270 measured, T ≥ 540 LEFT-CENSORED; T ≥ 8640 `[UNMEASURED]` |
 | 11 | **PAIRBC** (`…-PAIRBC-v1.0.3`) | **tri0** (primary) + path3, **A/B/C** | κ ∈ [0.5, 15] Δ0.25 → 0.025 | 70k/200k | **P-κ** | β_c **NOT** invariant (÷ 4.92); replication CONCORDANT |
 
@@ -144,7 +144,7 @@ All files in `evidence/coil/code/` (batch 4).
 
 **ORTHO**: anchor + Arm A s ∈ {−0.080, −0.040, +0.020, +0.040} (c₃ fixed) + Arm B c ∈ {−0.100, −0.050, +0.030, +0.060} (H_high = H₀ = 0.041270142276 fixed) = **9 unique waveforms**; κ ∈ [0.5, 8] Δ0.01.
 
-**RANK**: directions u = (1, −1, 0)/√2, v = (1, 1, −1)/√3; h = 0.01·2^{−j}, j = 0..20; observable **pre-threshold** [λ, λ_{Q1..Q4}].
+**RANK**: directions u = (1, −1, 0)/√2, v = (1, 1, −1)/√3 (constraint δa + δb + 2δc = 0 exactly); perturbed points g₀ ± h·u, g₀ ± h·v for h ∈ {0.01, 0.005, 0.0025} — **12 points + anchor** (locked prereg §"Points to run"); convergence guard ρ_conv ≤ 0.30 on **both** halvings 0.01→0.005 and 0.005→0.0025; observable **pre-threshold** [λ, λ_{Q1..Q4}]. *(The long dyadic grid h = 0.01·2^{−j}, j ≤ 20/40, is RESOLVABILITY's h grid, not RANK's.)*
 
 **RESOLVABILITY**: B = 70·2^m, L = 200·2^m (ratio **7:20**), m = 0..6; h grid primary j ≤ 20 + deterministic extension j ≤ 40; ε = 0.10. **Strata (all/regular/chaos) are frozen from the canonical classification of the anchor baseline** (λ **and** four quarters > 10⁻³); not recomputed for the perturbed waveform.
 

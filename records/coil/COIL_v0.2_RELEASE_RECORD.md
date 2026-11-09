@@ -41,6 +41,8 @@ No new RTG material in this batch. Pins unchanged from v0.1.
 | K7 | §10 | — | "Pending certificate critique (not yet applied)" paragraph | open items from the consolidation review, listed in the index §8 item 8 |
 | K8 | §1 Pair A campaigns | list without WAVEFORM | WAVEFORM added | the campaign ran at Pair A (§4 row 5) |
 | K9 | §0 normalisation | K*₁ = γ/(dt·\|σ\|_max) | + σ over the force-Jacobian eigenvalues on the synchronous branch | charter C12 consistency |
+| K11 | §4 row 9, §9 RANK (rev. 2) | h = 0.01·2^{−j}, j ≤ 20 (copied from the source compendium) | h ∈ {0.01, 0.005, 0.0025}; 12 perturbed points + anchor; both-halvings convergence guard | PR #7 review `5822796099`: the source compendium misreported RANK's protocol (it carried RESOLVABILITY's h grid); corrected against the locked PREREG-MM1-RANK v1.0. Frozen prereg and its translation unchanged |
+| K12 | §0 coupling (rev. 2) | sine, offset-free force "common to all campaigns" | general form with waveform g and offsets a_ij; sine offset-free marked as the N2/N3/PAIRBC instance | PR #7 review: propagation of charter C12 / MM-1 N7 to the compendium |
 | K10 | section order | §8 placed after §10 | §8 before §9 | wording/order only |
 
 ### 3.2 Translator's notes placed in frozen-file translations
@@ -65,3 +67,4 @@ Translator-flagged renderings left as written (no correction): "Hadi devam" kept
 
 - rev. 1: step 1 (placement) + compendium + this draft.
 - rev. 2: translations complete (21 files, 11 translator's notes); §1.2, §3.2, §4 filled; English originals have no `.en.md`.
+- rev. 3 (PR #7, review `5822796099`): K11, K12.
