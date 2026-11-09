@@ -2,7 +2,17 @@
 
 **Document class:** `[DRAFT]`; live record of what COIL knows about the legacy ringdiag dynamics, kept for the carrier-completeness comparison with MM-1. **Owner of the ringdiag object: RTG** (LEGACY bridge DSN, `rtg-corpus` tag `legacy-v0.7`, §3.1 and recovery table). COIL does not close, re-grade or restate RTG's open items.
 **Source:** the owner session's `ringdiag-update-rule-RECOVERED.md` (English original returned by the RTG session to the COIL handover `records/coil/HANDOVER_RINGDIAG_UPDATE_RULE.md`; SHA-256 in `records/coil/COIL_SOURCE_MANIFEST.md`, batch 4), brought to current state. The original is frozen in `evidence/coil/outputs/raw_from_pi/ringdiag-update-rule-RECOVERED.md`.
-**Boundary:** carrier match ≠ named bridge (SG-PROG-1). What COIL uses from this record: the update equation (§2) and the estimator classification (§6).
+**Boundary:** carrier match ≠ named bridge (SG-PROG-1). What COIL uses from this record: the update equation (§1-[2]) and the estimator classification (§1-[6]).
+
+**Three layers, kept apart throughout this document (per LEGACY v0.7 §3.1, `[ENG]` "Engine compatibility audit — accepted archive-scope record, not a historical-trajectory rerun"):**
+
+| Object | Status |
+|---|---|
+| The **recovered engine**: `step_inertial` update equation, `build_ringdiag_spec` single-term coupling, `deg_vec = 5`, cancellation of the amplitude factor | established **for the recovered implementation** (inspected source; LEGACY v0.7 recovery table) |
+| The returned note's **attribution of the historical brackets to `k4/absolute_k_scan_lyap_rtg.py`** and its bracket extractors | **source-reported** (the RTG session's reading of the script collection); **not established at the pinned owner tag** — LEGACY v0.7 states that the frozen n = 10 driver, integrator, quotient, units and failure payload are required before either old bracket or plateau is reinterpreted, and infers no unrecovered historical driver |
+| The **historical brackets** (12.54, 12.55) at φ = 1.26 and (13.48, 13.50) at φ = 1.28 | owner grade `[NUM strong legacy-report]` with the owner's source limitations; produced by a historical run that has **not** been reproduced |
+
+Consequently the carrier match that COIL records is a match between MM-1 and the **recovered engine**; whether the historical brackets were produced by that engine under the stated CLI is the note's report, not an owner-verified identity.
 
 ---
 
@@ -41,12 +51,12 @@ Second order (inertial), explicit-Euler stepping. **This is the same update form
 `[recovered]` — γ enters as the velocity-decay coefficient A = 1 − γ·dt.
 
 ### [6] QR / Lyapunov protocol and the three K_spark definitions
-`[recovered]` — the §3.1 K_spark values were produced by `k4/absolute_k_scan_lyap_rtg.py`, **ringdiag code path** (run *without* `--k4`, which would switch to `build_k4_spec`, n = 4). The script's own docstring CLI matches §3.1 exactly:
+`[source-reported]` — the returned note attributes the §3.1 K_spark values to `k4/absolute_k_scan_lyap_rtg.py`, **ringdiag code path** (run *without* `--k4`, which would switch to `build_k4_spec`, n = 4), on the ground that the script's own docstring CLI matches §3.1's parameters exactly. This attribution is the note's; at `legacy-v0.7` the historical producer is not established (see the three-layer table above):
 ```
 python absolute_k_scan_lyap_rtg.py --n 10 --phi 1.26 --dt 0.09 --gamma 1.0 \
     --K-min 0.5 --K-max 8.0 --K-step 0.1 --q 2 --out scan_phi126.json
 ```
-Per K the script records `Lambda1_step`, `converged`, `reason`; bracket extraction (`esm/one18.py`–`one21.py`): last converged `ok` point with Λ₁ < 0 and first non-converged point → `BRACKET`. This is a literal match for **K_spark := min{K : QR fails or Λ₁ ≥ 0}** — a QR-Lyapunov **trajectory** quantity, not a Jacobian eigenvalue.
+Per K this script records `Lambda1_step`, `converged`, `reason`; the recovered bracket extractors (`esm/one18.py`–`one21.py`) take the last converged `ok` point with Λ₁ < 0 and the first non-converged point → `BRACKET`. This is a literal match for the **definition** K_spark := min{K : QR fails or Λ₁ ≥ 0} — a QR-Lyapunov **trajectory** quantity, not a Jacobian eigenvalue. The match is between the recovered code and the recorded definition; it does not by itself show that the historical numbers came from this code.
 
 ⚠️ **Three distinct K_spark definitions, never cross-validated on the same substrate** (`OPEN-L0L1-KSPARK-DEF`, spun off by the recovery; worked on in `coil/KSPARK_DEF_DEGNORM.md`):
 
@@ -56,7 +66,7 @@ Per K the script records `Lambda1_step`, `converged`, `reason`; bracket extracti
 | B | `find_ns_bracket` / `refine_ns` (`rtg_core.py`) | spectral NS bracket | `ns_first_lyapunov_*` pipeline |
 | C | `lyap_qr` + bracket (`absolute_k_scan_lyap_rtg.py`) | trajectory Λ₁ via QR iteration | **§3.1 (the recorded brackets)** |
 
-A and B are local Jacobian properties; C is a long-trajectory average. LEGACY v0.7's recovery table adds a caveat COIL carries as stated there: `lyap_qr`'s returned `lmax` "is a volume-growth sum of its computed cocycle, not the largest exponent", and its default θ₀ row/column deletion "is not justified as the relative-phase quotient". MM-1's K* is a Def-A/B-type object; a direct comparison with the Def-C brackets is therefore not yet licensed.
+A and B are local Jacobian properties; C is a long-trajectory average. LEGACY v0.7's recovery table adds a caveat COIL carries as stated there: the recovered helper `lyap_qr`'s returned `lmax` "is a volume-growth sum of its computed cocycle, not the largest exponent", and its default θ₀ row/column deletion "is not justified as the relative-phase quotient". This is a property of the **recovered helper**; it does not by itself show that the helper was the historical producer. MM-1's K* is a Def-A/B-type object; a direct comparison with the Def-C brackets is therefore not yet licensed.
 
 ### [7] Artifact provenance (as recovered; RTG's inventory, not COIL's)
 
@@ -66,7 +76,7 @@ A and B are local Jacobian properties; C is a long-trajectory average. LEGACY v0
 | Bracket extractors | `esm/one18.py` … `one21.py` — `[RECOVERED]` |
 | git hash | not present in the script collection — `[UNRECOVERABLE]` |
 | Output JSONs | `scan_phi126_refine2.json`, `scan_phi126_bracket_refine.json`, `scan_phi128_coarse.json`, `scan_phi128_bracket_refine2.json` — filenames `[RECOVERED]`; on-disk presence `[UNVERIFIED]` (local check on the PI's machine pending at the time of the record) |
-| Overall | `PARTIAL` — script chain, parameters and bracket logic recovered; raw numeric artifacts unverified. Reproducible in principle via the CLI above at `--K-min 12.0 --K-max 12.7 --K-step 0.01 --q 2` (not re-run by COIL) |
+| Overall | `PARTIAL` per the note — script chain, parameters and bracket logic recovered; raw numeric artifacts unverified; **historical producer not established at `legacy-v0.7`**. A rerun via the CLI above at `--K-min 12.0 --K-max 12.7 --K-step 0.01 --q 2` would test the recovered engine, not reproduce the historical trajectory (not run by COIL) |
 
 ## 2. Hazards surfaced by the recovery
 
@@ -82,5 +92,5 @@ A and B are local Jacobian properties; C is a long-trajectory average. LEGACY v0
 
 ## 4. What COIL takes from this record, and what it does not
 
-Takes: the update equation (§1-[2]) as the carrier for the MM-1 comparison; the estimator classification (§1-[6]); the normalisation facts (deg_vec = 5, amplitude cancels).
-Does not take: any RTG grade or closure; any claim that MM-1's K* equals the ringdiag spark threshold (open: `OPEN-QUOTIENT-EQUILIBRIUM`, `coil/AUDIT_CARRIER_COMPLETENESS.md` §5); any statement about the on-disk artifacts, which were not verified.
+Takes: the recovered engine's update equation (§1-[2]) as the carrier for the MM-1 comparison; the estimator classification (§1-[6]); the normalisation facts (deg_vec = 5, amplitude cancels) — all scoped to the recovered implementation.
+Does not take: the historical-producer attribution as owner-verified (source-reported only); any RTG grade or closure; any claim that MM-1's K* equals the ringdiag spark threshold (open: `OPEN-QUOTIENT-EQUILIBRIUM`, `coil/AUDIT_CARRIER_COMPLETENESS.md` §5); any statement about the on-disk artifacts, which were not verified.

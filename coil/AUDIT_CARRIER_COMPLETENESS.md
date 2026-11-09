@@ -53,7 +53,7 @@ $$K^*_{\rm transverse}=\frac{\gamma}{dt\,|\sigma|_{\max}}=23.305$$
 
 | Claim | State |
 |---|---|
-| Carrier structural match (update equation) | **STANDS** ✓ |
+| Carrier structural match (update equation) | **STANDS** ✓ — between MM-1 and the **recovered ringdiag engine** (`coil/RINGDIAG_UPDATE_RULE.md`, three-layer table); the historical producer of the §3.1 brackets is not established at `legacy-v0.7` |
 | No absolute synchronous FP (θ = 0, v = 0) | **TRUE** ✓ |
 | Equilibrium object **globally** undefined | **NOT SHOWN — falsified** ✗ |
 | ONSET BRIDGE CLOSED | **PREMATURE — withdrawn** ✗ |
@@ -77,5 +77,6 @@ v3.0's error is exactly the one the RMT's own absence discipline (§5b: `[ABSENT
 ## 8. What this audit does NOT establish
 
 - A named bridge between MM-1 and ringdiag (none exists; SG-PROG-1).
-- That 23.305 is the ringdiag spark threshold: the recorded legacy K_spark brackets are (12.54, 12.55) at φ = 1.26 and (13.48, 13.50) at φ = 1.28 (`legacy-v0.7` §3.1, `[NUM strong legacy-report]`), measured by Def-C; the relation between the Def-A/B transverse crossing and the Def-C orbit bracket is the open test (`OPEN-L0L1-KSPARK-DEF`, `coil/KSPARK_DEF_DEGNORM.md`).
+- That 23.305 is the ringdiag spark threshold: the recorded legacy K_spark brackets are (12.54, 12.55) at φ = 1.26 and (13.48, 13.50) at φ = 1.28 (`legacy-v0.7` §3.1, `[NUM strong legacy-report]`, with the owner's source limitations); their attribution to a Def-C QR-Lyapunov run of the recovered engine is **source-reported, not owner-established**; the relation between the Def-A/B transverse crossing (a conditional spectral computation on the recovered engine) and the historical bracket is the open test (`OPEN-L0L1-KSPARK-DEF`, `coil/KSPARK_DEF_DEGNORM.md`).
+- That the recovered engine is the historical producer of the §3.1 numbers (LEGACY v0.7: engine compatibility audit, not a historical-trajectory rerun).
 - Any change to RTG's own grades or open items.

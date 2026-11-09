@@ -4,6 +4,7 @@
 **Source:** the owner session's `kspark-def-degnorm-RESOLVED.md` (returned by the RTG session; SHA-256 in `records/coil/COIL_SOURCE_MANIFEST.md`, batch 4; frozen copy in `evidence/coil/outputs/raw_from_pi/`), brought to current state: its Block A conclusion is **superseded** by the carrier audit v3.1 (`coil/AUDIT_CARRIER_COMPLETENESS.md`) and is kept here as a `[COR]`.
 **Method of the original record:** `rtg_core.py` loaded and executed directly (n = 10, φ ∈ {1.26, 1.28}, dt = 0.09, γ = 1.0, ε_asym = 0.25); no new scan campaign (not required by the handover's acceptance criterion §7). Not re-run by COIL since.
 **Owner of the objects:** RTG (`legacy-v0.7` §3.1, §3.3, recovery table). COIL quotes; it does not close RTG items.
+**Scope caveat (per LEGACY v0.7 §3.1 `[ENG]`):** everything computed here was computed on the **recovered engine** (`rtg_core.py` as held in the script collection). The "Def-C bracket (recorded)" column quotes the owner's historical numbers; that those numbers were produced by the recovered `lyap_qr` path is **source-reported** by the returned note, not established at the pinned tag (`coil/RINGDIAG_UPDATE_RULE.md`, three-layer table). The Def-A/Def-C comparison is therefore a comparison between a recovered-engine computation and a historical report.
 
 ---
 
@@ -80,5 +81,5 @@ Of the handover's three branches (agree / disagree / Def-A not computable), the 
 
 - Block B: **closed** — the `deg_norm` uncertainty is resolved (flag inert; deg_i = 5; amplitude cancels).
 - Block A: **reopened in corrected form** — Def-A vs Def-C comparison pending on the quotient relative equilibrium; the fallback numbers 23.305 / 24.857 are candidate transverse thresholds, not discarded artefacts and not confirmed onsets.
-- Legacy caveat carried as stated at `legacy-v0.7`: `lyap_qr`'s `lmax` is a volume-growth sum, not the largest exponent — Def-C's object must be read with that caveat.
+- Legacy caveat carried as stated at `legacy-v0.7`: the recovered helper `lyap_qr`'s `lmax` is a volume-growth sum, not the largest exponent — a property of the recovered helper, which does not by itself identify it as the historical producer; the historical Def-C object must be read with both caveats.
 - RTG items (OPEN-L0L1-1, §3.3 `[FAIL]` finding on the fixed-point solver) remain RTG's; the §3.3 `[FAIL]` concerns the absolute fixed-point search and is consistent with A.1; COIL's A.2 does not re-grade it.
