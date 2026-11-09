@@ -1,0 +1,30 @@
+name: COIL adoption preparation
+on:
+  push:
+    branches: [chatgpt/coil-adoption-20261109]
+    paths:
+      - .github/workflows/coil-adoption-prepare.yml
+      - evidence/coil/verification/prepare_coil_adoption.py
+permissions:
+  contents: write
+concurrency:
+  group: coil-adoption-prepare-20261109
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Clone approved public repository at the exact workflow commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --no-checkout https://github.com/MustafaAksu/rtg-sat.git repo
+          git -C repo checkout --detach "$GITHUB_SHA"
+      - name: Verify hashes and record PI adoption on the review branch only
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python -I -B -u repo/evidence/coil/verification/prepare_coil_adoption.py repo
