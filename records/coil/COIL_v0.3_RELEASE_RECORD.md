@@ -86,9 +86,9 @@ No notes in the CLI/RUNBOOK/EXEC-PATCH or AUDIT-MM1-WAVEFORM translations. Trans
 - rev. 1: batch 4 complete.
 - rev. 2 (PR #8, review `5822800308`): G6, A5, S4, F5; §1 "not available" count (two); archive container vs member hashes distinguished.
 
-## 6. Candidate adoption manifest (English/live files as they stand on `main` at `878958641039`)
+## 6. Candidate adoption manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
 
-**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the reference commit. Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the **content commit** `3d0306058495` (the last commit that changed any file in this set; this manifest-only commit comes after it, so no commit hashes its own content). Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
 
 | file | SHA-256 at reference commit |
 |---|---|
@@ -151,5 +151,7 @@ No notes in the CLI/RUNBOOK/EXEC-PATCH or AUDIT-MM1-WAVEFORM translations. Trans
 | `evidence/coil/archive/SHA256SUMS` | `a6f39a5a1cf6016a4eed6a8e18594e8d0aa7cefd1bba048bc36fcfec06e7f79b` |
 | `evidence/coil/outputs/SHA256SUMS` | `32a6493948ba8d3902bb736f8b4a7bbc75f9c144afbd496708efa93a669a0258` |
 | `evidence/coil/outputs/README.md` | `cf97bc312533b547bebb08ba26c6bfe9ce38e1f702cab87ad09e621ad3be32e7` |
+
+**Scope note (v0.3):** `evidence/coil/outputs/SHA256SUMS` binds the 108 output files as frozen evidence by their checksums; adopting the checksum file adopts the byte identity of those outputs, not any scientific interpretation of them.
 
 **Adoption scope (to be filled by the PI at adoption):** which files above are adopted; the adopted tag name; the adoption date; any file excluded. Until filled: *pending PI adoption*.

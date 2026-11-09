@@ -174,13 +174,13 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 5 (PR #6, review `5799736041`): M15, L9; R5 marked superseded by R12.
 - rev. 6: PI decisions Q3 (ARSIV as one frozen zip) and Q4 (`coil/records/`) recorded, 6 Nov 2026; "provisional" path markers removed.
 
-## 6. Candidate adoption manifest (English/live files as they stand on `main` at `878958641039`)
+## 6. Candidate adoption manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
 
-**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the reference commit. Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the **content commit** `3d0306058495` (the last commit that changed any file in this set; this manifest-only commit comes after it, so no commit hashes its own content). Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
 
 | file | SHA-256 at reference commit |
 |---|---|
-| `coil/COIL_INDEX.md` | `eadcc9118fe6410757ba0273d45d68725107dc925b8f1e44968690fcf8861b05` |
+| `coil/COIL_INDEX.md` | `91622316278a1f8c6b4fb1633937a1c60c7bdb4ffcad96e0c243acb95f149fee` |
 | `coil/COIL_CHARTER.md` | `88ac08e7b026d00a6f16b51981029c3ca0db0ac0b4a6baa3a70a6d1df83fab3b` |
 | `coil/COIL_GLOSSARY.md` | `8849989b9e96c699d4418892f48249ffe2915a0d5c432a6d7f61ab6eb779b0e4` |
 | `coil/COIL_RMT.md` | `d21aeeeb9f2553f51787229f06876f18179998acece6238eeefc1b3871e33a4e` |

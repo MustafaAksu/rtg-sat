@@ -69,13 +69,13 @@ Translator-flagged renderings left as written (no correction): "Hadi devam" kept
 - rev. 2: translations complete (21 files, 11 translator's notes); §1.2, §3.2, §4 filled; English originals have no `.en.md`.
 - rev. 3 (PR #7, review `5822796099`): K11, K12.
 
-## 6. Candidate adoption manifest (English/live files as they stand on `main` at `878958641039`)
+## 6. Candidate adoption manifest (English/live files as they stand at content commit `3d0306058495121df91e900a6ea9454185402462`)
 
-**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the reference commit. Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the **content commit** `3d0306058495` (the last commit that changed any file in this set; this manifest-only commit comes after it, so no commit hashes its own content). Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
 
 | file | SHA-256 at reference commit |
 |---|---|
-| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `d11f3ac043eabdde28e14b5877aa2069ebb2ccc6306bc30b0a9b8eb3acafd463` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `85751eaae880621b24e5dcb88ff3e33c13ac224d295db99896861f959d3deeba` |
 | `evidence/coil/README.md` | `907451d1cf55310eaee398902b3df571bd214a3013fdca398c1ec53d1eaf1309` |
 | `evidence/coil/TRANSLATION_RULES.md` | `631b38aba89c4f497cbf5b00d01f6fa1a343ec4a3cf129d43261c411b03feadd` |
 | `evidence/coil/prereg/PREREG-MM1-GATE-v1.0.en.md` | `8009a3608105d74b8566ab8612b74245b774af7da151a0af3632b7eb9cd474c4` |
