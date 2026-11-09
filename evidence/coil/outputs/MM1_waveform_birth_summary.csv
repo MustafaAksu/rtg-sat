@@ -1,0 +1,6 @@
+q,status,A_peak,kappa_center,fracture_cells,note
+0.8350,ABSENT,1.1833925572,2.69817,0,locked boundary holdout
+0.8450,ABSENT,1.1912013811,2.68048,0,locked bisection holdout
+0.8500,PRESENT,1.1952768163,2.67134,1,locked high-horizon rerun; q had prior exploratory exposure
+0.8550,PRESENT,1.1994746662,2.66199,1,locked bisection holdout
+0.8750,PRESENT,1.2176409332,2.62803,1,locked high-q holdout
