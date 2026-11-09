@@ -1,6 +1,6 @@
 # COIL — Charter of the Research Programme "Cross-Layer Relational Dynamics"
 
-**Study key:** `coil` (`rtg-sat/REGISTRY.md`). **Governing edition:** the latest adopted tag `coil-v<version>` with its release record (`records/coil/`); currently **`coil-v0.3`** (PI-adopted 2026-11-09, `records/coil/COIL_v0.3_RELEASE_RECORD.md`). The `[DRAFT]` label below is COIL's **document-class** label (working text, revisable between releases); it says nothing about release or adoption status, which lives only in the release records and `REGISTRY.md`.
+**Study key:** `coil` (`rtg-sat/REGISTRY.md`). **Governing edition:** the latest adopted tag `coil-v<version>` with its release record (`records/coil/`); currently **`coil-v0.4`** (PI-adopted 2026-11-09, `records/coil/COIL_v0.4_RELEASE_RECORD.md`). The `[DRAFT]` label below is COIL's **document-class** label (working text, revisable between releases); it says nothing about release or adoption status, which lives only in the release records and `REGISTRY.md`.
 **Document class:** discussion and governance text, not a publication text. In COIL's own vocabulary: `[DRAFT]`.
 **Source:** translation of the owner session's `charter-v0.3.md` (SHA-256 `80cbbb236e4c3be874c15b508dbdb5ecb36fb216c2c2a4ff78a3d4f2da7f1e8b`, `upload/coil-sources`), brought to current state; changes of meaning are listed in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
 **Language:** English translation of a Turkish original; terms in `coil/COIL_GLOSSARY.md`.

@@ -6,8 +6,8 @@ date: 2026-11-09
 kind: notice
 object: COIL v0.3 (records/coil/COIL_v0.3_RELEASE_RECORD.md); coil/COIL_CHARTER.md line 3; SG-PROG-1 uses in coil/ and coil/records/
 tags: [coil-v0.3]
-state: dispositioned
-disposition: 2026-11-09 · accept with change · records/coil/COIL_v0.4_RELEASE_RECORD.md
+state: closed
+disposition: 2026-11-09 · accept with change · records/coil/COIL_v0.4_RELEASE_RECORD.md (PI-adopted 2026-11-09; item 5 deferred to the PI's PR #9 decision)
 ---
 The SAT review finds no migration-blocking issue. `coil-v0.1`–`v0.3`, the frozen originals and the adopted payload hashes stay as they are; later changes go into a reviewed successor release. For the next COIL maintenance release, the owners decide on:
 1. **Own guard instead of SG-PROG-1.** RTG's SG-PROG-1 (`programme-v1.4`) governs discrete ↔ continuous transfer inside RTG. COIL uses it in 9 places for "no named bridge between MM-1 and RM-01". Proposal: define a COIL guard (e.g. `SG-COIL-1`) in the charter and cite SG-PROG-1/SG-PROG-4 only for RTG-side material. The "no bridge" result itself does not change.

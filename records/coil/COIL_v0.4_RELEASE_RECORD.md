@@ -1,6 +1,6 @@
 # COIL v0.4 — release record (DRAFT, maintenance)
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.3` (`records/coil/COIL_v0.3_RELEASE_RECORD.md`). Becomes the adoption record of tag `coil-v0.4` when the PI adopts it. Triggered by the SAT advisory `pipes/COIL/20261109-SAT-maintenance-advisory.md` (disposition: accept with change).
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-09 ("benimsiyorum", COIL owner session, after co-owner review `5826058891` ACCEPT WITH MINOR CHANGES and its application); publication tag `coil-v0.4`. Successor of `coil-v0.3` (`records/coil/COIL_v0.3_RELEASE_RECORD.md`). Triggered by the SAT advisory `pipes/COIL/20261109-SAT-maintenance-advisory.md` (disposition: accept with change).
 **Scope:** maintenance of live documents only — guard naming, metadata, interfaces. No frozen file, translation, adopted release record or earlier tag is changed. No scientific claim, grade, negative result, retraction or OPEN item changes.
 
 ## 1. Changes of meaning
@@ -19,9 +19,9 @@ Carrier-audit v3.0 → v3.1 withdrawal; OPEN-QUOTIENT-EQUILIBRIUM parked; compen
 
 PR #9 (co-owner review tools auditing the pre-correction PR #10 candidates): merge as a historical review record with the limit note, or close. Owners' recommendation: merge with the note. Not part of this release.
 
-## 3b. Publication step (not part of the candidate)
+## 3b. Publication step (applied)
 
-At publication the governing-edition fields in `coil/COIL_CHARTER.md` (header) and `REGISTRY.md` are moved to `coil-v0.4`, the pipe item's state may move to `closed`, and the hashes of every file changed by that step are recomputed after the change and before the tag (§6 rewritten with the new content commit). This is the publication transform, not a defect of the candidate.
+Governing-edition fields in `coil/COIL_CHARTER.md` (header) and `REGISTRY.md` moved to `coil-v0.4`; the pipe item's state moved to `closed` (item 5 deferred to the PI's PR #9 decision, recorded in the disposition line); hashes of every changed file recomputed after this step (§6).
 
 ## 4. RTG pins
 
@@ -33,9 +33,9 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 - Every remaining `SG-PROG-1` occurrence in `coil/` refers to RTG-side material (listed in V1).
 - No hash, approval or file content invented.
 
-## 6. Candidate adoption manifest
+## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** Files changed in this release, SHA-256 of their bytes at the **content commit** `5d0de2a568dfb4ccc773cfa701fcadac56a025a4` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
+**Status: ADOPTED (2026-11-09).** Files changed in this release, SHA-256 of their bytes at the **content commit** `5d0de2a568dfb4ccc773cfa701fcadac56a025a4` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -52,4 +52,4 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 | `REGISTRY.md` | `c43a2770e6356f655a1631c2d89b67285390821fb4845c0432997fb06979d65c` |
 | `pipes/COIL/20261109-SAT-maintenance-advisory.md` | `55ec0db9b3d9979fcb28ff4fe980955f666bf95681fad004d02c92146016c8ed` |
 
-**Adoption scope (to be filled by the PI at adoption):** files adopted; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-09):** all files listed above as they stand at the content commit, plus everything inherited unchanged from `coil-v0.3`; tag `coil-v0.4`; no exclusions. What is adopted is the recorded current state of the study — its grades, assumptions, negative results, retractions and OPEN items as written; not a physical validation, a cross-layer equivalence or a transfer to RTG. PR #9 is outside this release.
