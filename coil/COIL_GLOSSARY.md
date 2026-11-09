@@ -44,5 +44,23 @@ Turkish terms with a defined meaning in the COIL documents, translated once; the
 | iki-grup teoremi | two-group theorem | verified (batch 1) | reduced dynamics on (γdt, κ) only |
 | dejenerasyon | degeneracy | verified (batch 1) | double NS of tri0 |
 | sürekli limit | continuous limit | verified (batch 1) | |
+| ilişkisel mekanizma | relational mechanism | verified (batch 2) | RMT §1 definition |
+| tür ayrımı | type distinction | verified (batch 2) | [MECHANISM] / [REGIME] / [OBSERVABLE] / [TRANSITION] |
+| sonuç-terfi duvarı / sonuç terfisi | result-promotion wall / promotion of results | verified (batch 2) | no promotion across instances |
+| zaman semantiği | time semantics | verified (batch 2) | [t-update] / [t-causal] / [t-metric] |
+| süreklilik karşılığı | continuous counterpart | verified (batch 2) | RMT field C, options (a)–(d) |
+| yokluk (ifadelerinin kapsamı) | absence (scope of absence statements) | verified (batch 2) | `[ABSENT-in-window]` etc. |
+| friction (template friction) | friction (used untranslated) | verified (batch 2) | RMT revision trigger |
+| bridge burden / köprü yükü | bridge burden | verified (batch 2) | RMT field H |
+| olay türü | event type | verified (batch 2) | execution / prediction failure; §5c candidates |
+| kayıt disiplini | record discipline | verified (batch 2) | RMT R1–R5 |
+| sınıf iddiası | class claim | verified (batch 2) | two tiers: dynamical vs phase-transition class |
+| Bu kaydın desteklemedikleri | What this record does NOT support | verified (batch 2) | mandatory RMT field |
+| null / rakip açıklama | null / rival explanation | verified (batch 2) | |
+| doğum-yüzeyi analizi | birth-surface analysis | verified (batch 2) | RM-02 §IV |
+| oturan / oturmayan kısımlar | matching / non-matching parts | verified (batch 2) | IDEALOG §A/§B |
+| kaçış kanalı / düzensizleşme | escape channel / destabilisation | verified (batch 2) | regime-transition channels |
+| delik yapısı | hole structure (perforated region) | verified (batch 2) | reversion islands |
+| winding-drift | winding drift | verified (batch 2) | phase slip / running state in the JJ dictionary |
 
 COIL status labels are declared in `coil/COIL_CHARTER.md` §0.1, not here.

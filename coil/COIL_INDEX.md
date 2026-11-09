@@ -11,7 +11,7 @@
 | Document | Path | Note |
 |---|---|---|
 | **Charter** | `coil/COIL_CHARTER.md` | empirical state §3; two-line structure §9.0; open questions §10; labels §0.1 |
-| **RMT** (record tool) | `coil/COIL_RMT.md` *(batch 2)* | tool only; catalogue index §8. Contains the bridge-type / null-rival / coarse-graining fields, the absence-scope rule, event-type candidates, the gauge precondition + R5 feasibility audit, and the RM-07 symmetry precondition and scope narrowing |
+| **RMT** (record tool) | `coil/COIL_RMT.md` | tool only; catalogue index §8. Contains the bridge-type / null-rival / coarse-graining fields, the absence-scope rule, event-type candidates, the gauge precondition + R5 feasibility audit, and the RM-07 symmetry precondition and scope narrowing |
 | Programme index | `coil/COIL_INDEX.md` | this document |
 | **Campaign compendium** | `coil/COIL_CAMPAIGN_COMPENDIUM.md` *(batch 3)* | **parameter map / guided reproduction.** **Not** a `self-contained rerun contract` — that status is raised only when the completeness certificate (`kunye_completeness_certificate.py`) passes; first run **FAIL** (expected) |
 | Glossary | `coil/COIL_GLOSSARY.md` | Turkish → English terms; provisional until verified against each source |
@@ -20,8 +20,8 @@
 
 | RM | Name | Type | Line | Path |
 |---|---|---|---|---|
-| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG | `coil/records/RM-01.md` *(batch 2; path pending PI decision Q4)* |
-| RM-02 | Viability-window regime | REGIME | mixed (7 instances) | `coil/records/RM-02.md` *(batch 2)* |
+| RM-01 | Order-6 elliptic resonance-driven healing | MECHANISM | RTG | `coil/records/RM-01.md` |
+| RM-02 | Viability-window regime | REGIME | mixed (9 instances: 4 archival, 5 experimental) | `coil/records/RM-02.md` |
 | RM-03 | Obligatory feedback | MECHANISM | not opened | — |
 | RM-04 | Path dependence | MECHANISM candidate | not opened | — |
 | RM-05 | Regeneration | MECHANISM | not opened | — |
@@ -33,8 +33,8 @@
 
 | Document | Path | Content |
 |---|---|---|
-| MM-1 minimal model | `coil/MM-1.md` *(batch 2)* | signature decomposition (S1/S2 structural-local, **S3″** empirical-global); gate result G1 |
-| Coil / RCSJ correspondence | `coil/IDEALOG_COIL_RCSJ.md` *(batch 2)* | Josephson plane; matching and non-matching parts; prediction B3 confirmed; §C.2 two-group theorem |
+| MM-1 minimal model | `coil/MM-1.md` | signature decomposition (S1/S2 structural-local, **S3″** empirical-global); gate result G1 |
+| Coil / RCSJ correspondence | `coil/IDEALOG_COIL_RCSJ.md` | Josephson plane; matching and non-matching parts; prediction B3 confirmed; §C.2 two-group theorem |
 | Gauge memo review | `coil/MEMO_GAUGE_CYCLE_FLUX.md` *(batch 4)* | β₁ rule adopted (integrated into the RMT); the N = 3 parameterisation confirmed retrospectively; feasibility audit adopted; §5b direction-aware floor h_coeff(d) |
 | Casebook F2 | `coil/CASEBOOK_F2_H_NOISE.md` *(batch 4)* | worked example h_noise, direction-indexed; T = {54, 108} validation task `[OPEN]` |
 
@@ -99,7 +99,7 @@ Data: `stageA_*.csv`, `stageB_*_MERGED.csv`, `n3_merged/`, `mm1_merged/`, `*_res
 
 ## 7. Archive
 
-Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` *(batch 4; packaging pending PI decision Q3)*, with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
+Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` *(batch 4; one frozen zip — PI decision Q3, 6 Nov 2026)*, with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
 
 ## 8. Open work — priority order
 
