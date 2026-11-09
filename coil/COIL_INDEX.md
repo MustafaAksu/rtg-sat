@@ -144,4 +144,4 @@ Superseded documents are kept (not deleted — the programme's provenance rule) 
 2. The same derivation makes §12.5's effective-parameter hypothesis decidable.
 3. The Genesis DSN's genesis-window quotation is consistent with the source paper's heuristic label; no contradiction.
 
-**Note:** no RTG-internal result was produced in these campaigns; under SG-PROG-1 and SG-L0L1-6 nothing is transferred to the DSNs and no version bump is needed. Any transfer would go through `rtg-corpus/pipes/<STREAM>/` under `rtg-sat/CONVENTIONS.md` §4, by PI decision.
+**Note:** no RTG-internal result was produced in these campaigns; under SG-COIL-1 (COIL) and SG-PROG-1/SG-L0L1-6 (RTG side) nothing is transferred to the DSNs and no version bump is needed. Any transfer would go through `rtg-corpus/pipes/<STREAM>/` under `rtg-sat/CONVENTIONS.md` §4, by PI decision.

@@ -3,7 +3,7 @@
 **Role:** the programme's record tool. It produces the form in which every mechanism, regime, observable or transition is described; the catalogue of records is indexed in §8 and lives in separate files.
 **Document class:** `[DRAFT]` (COIL label, `coil/COIL_CHARTER.md` §0.1).
 **Source:** translation of the owner session's `RMT-v0.3.md` (content state v0.3.8; SHA-256 `4f60447429d09e95452a132ba4b25004102122ab4c24c4d8ff617aeddcfa3c2b`, `upload/coil-sources`), current state only; the v0.1 → v0.3.8 change narrative is summarised in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
-**Boundary:** COIL is not RTG. Where this template names RTG objects it cites adopted `rtg-corpus` tags (charter §0.3); SG-PROG-1 applies.
+**Boundary:** COIL is not RTG. Where this template names RTG objects it cites adopted `rtg-corpus` tags (charter §0.3); SG-COIL-1 (charter §0.2) applies.
 
 ---
 
@@ -124,7 +124,7 @@ Power-law scaling is not the only valid signature. (This distinction is consiste
 | Cross-layer candidates | Each with its own status label |
 | Carrier completeness | Two systems sharing **the same update equation** does not mean they share **the same threshold/onset objects**. Threshold definitions are rooted not in the equation but in the equation's **solution structure** (does an equilibrium exist, of which type, how many). Before a bridge is built: (i) equation match and (ii) the threshold object being **defined on both sides** are verified separately. *Source case `[CAND — under quotient-equilibrium audit]`: MM-1's K* does not rest on an absolute synchronous fixed point in ringdiag; but the carrier audit (v3.1) showed the equilibrium **exists in the quotient space** — the case is probably not "no threshold object" but "sought in the wrong space". The general rule stands; this case is not used as a settled example (`coil/AUDIT_CARRIER_COMPLETENESS.md`, OPEN-QUOTIENT-EQUILIBRIUM).* |
 | Bridge type | The **kind** of bridge claimed: variable mapping / coarse-graining / effective-theory reduction / causal derivation / universality-class correspondence / analogy only / [UNDEFINED]. These are claims of different strength; "same universality class" and "the higher layer derives from the lower" are not confused |
-| Bridge burden | What is missing: which variable mapping, coarse-graining rule or derivation step is absent? **If [UNDEFINED], the link is analogy only.** Criterion for an RTG counterpart: a **named bridge theorem** or stronger (SG-PROG-1, `programme-v1.4`) |
+| Bridge burden | What is missing: which variable mapping, coarse-graining rule or derivation step is absent? **If [UNDEFINED], the link is analogy only.** Criterion for an RTG counterpart: a **named bridge theorem** or stronger (RTG: SG-PROG-1, `programme-v1.4`; COIL's MM-1/RM-01 rule: SG-COIL-1, charter §0.2) |
 
 ## 5. Classification vocabulary (for dynamical records)
 

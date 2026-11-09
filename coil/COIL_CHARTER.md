@@ -1,6 +1,6 @@
 # COIL — Charter of the Research Programme "Cross-Layer Relational Dynamics"
 
-**Study key:** `coil` (`rtg-sat/REGISTRY.md`). **Governing edition:** the latest adopted tag `coil-v<version>` with its release record (`records/coil/`); none yet.
+**Study key:** `coil` (`rtg-sat/REGISTRY.md`). **Governing edition:** the latest adopted tag `coil-v<version>` with its release record (`records/coil/`); currently **`coil-v0.3`** (PI-adopted 2026-11-09, `records/coil/COIL_v0.3_RELEASE_RECORD.md`). The `[DRAFT]` label below is COIL's **document-class** label (working text, revisable between releases); it says nothing about release or adoption status, which lives only in the release records and `REGISTRY.md`.
 **Document class:** discussion and governance text, not a publication text. In COIL's own vocabulary: `[DRAFT]`.
 **Source:** translation of the owner session's `charter-v0.3.md` (SHA-256 `80cbbb236e4c3be874c15b508dbdb5ecb36fb216c2c2a4ff78a3d4f2da7f1e8b`, `upload/coil-sources`), brought to current state; changes of meaning are listed in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
 **Language:** English translation of a Turkish original; terms in `coil/COIL_GLOSSARY.md`.
@@ -37,7 +37,7 @@ COIL grades its claims with its own labels. They are not DSN grades. The last co
 | `[RESOLVED]` | An open item closed by derivation or measurement, pointer given. Turkish original `[ÇÖZÜLDÜ]`. | none (workflow) |
 | `[COR]` | Correction notice: old statement, new statement, reason. | `[COR]` |
 | `[RETRACTED]` | Formal withdrawal of a verdict (used for the carrier audit v3.0 → v3.1). | `[RETRACTED]` |
-| `[DRAFT]` | Document status: working text, revisable. | none (document status) |
+| `[DRAFT]` | Document **class**: working text, revisable between releases. Not a release or adoption status — that is recorded only in the release records and `REGISTRY.md`. | none (document class) |
 
 Rule-status labels (§5) are a separate class and apply to COIL's own rules, not to claims: `[derived]`, `[precautionary]`, `[mixed]`, `[procedural]`.
 
@@ -45,7 +45,11 @@ Campaign outcome words used in run reports are decisions of locked preregistrati
 
 ### 0.2 Programme lines
 
-COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic generator T; suspended) and the **MM-1 line** (object: the inertial relational-force family MM-1; active). **There is no named bridge between them.** The separation rule of the RTG Programme Overview, SG-PROG-1, is kept in every COIL text: a reference, analogy or abstract isomorphism is not a bridge.
+COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic generator T; suspended) and the **MM-1 line** (object: the inertial relational-force family MM-1; active).
+
+> **SG-COIL-1 — MM-1/RM-01 separation.** Results established in either line are not transferred to the other without a named, proved bridge specifying the source and target objects, assumptions, domain and permitted conclusions. A reference, analogy, shared notation or abstract isomorphism is not such a bridge. Explicitly labelled reference-only comparisons remain permitted. A conditional bridge licenses only its stated implication; its assumptions remain explicit.
+
+**Current state:** no such bridge has been adopted. SG-COIL-1 is COIL's own guard and is the one cited in every COIL text for the MM-1/RM-01 boundary. RTG's SG-PROG-1 and SG-PROG-4 (`programme-v1.4`) govern transfer across RTG's own discrete/continuous branches and the non-authority of document location; COIL cites them **only for RTG-side material** it reads (§0.3), not as the name of its own separation rule.
 
 ### 0.3 RTG material cited by COIL (pinned)
 
@@ -53,9 +57,11 @@ COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic g
 |---|---|---|---|---|
 | RTG dyadic generator T (RM-01's object) | `dyad-v6.4.23` | `dsn/RTG_DYADIC_OSCILLATOR_DSN.md` v6.4.23 | `DYAD-DEF-PRIMITIVE-MAP` (§ "Dyad map") | `[DEF]` `[v6.4.11, provisional]` |
 | Legacy ringdiag update rule; §12.5 effective-parameter hypothesis (dt, γ) and dt-independence; OPEN-L0L1-0, OPEN-L0L1-1 | `legacy-v0.7` | `dsn/RTG_L0_L1_L2_BRIDGE_LEGACY_DSN.md` v0.7 | §3.1 QR-defined spark boundary; §12.5 (incl. `[OPEN]` OPEN-L0L1-O5: "establish any claimed dt-independence on a stated domain"); §9 OPEN items | §12.5 parameter entries `[ONTO legacy]` / `[MATH]`; dt-independence `[OPEN]`; OPEN items `[OPEN]` |
-| Separation guard SG-PROG-1; SG-L0L1-6 | `programme-v1.4`; `legacy-v0.7` | `dsn/RTG_PROGRAMME_OVERVIEW.md` v1.4; LEGACY DSN v0.7 | SG-PROG-1 (local guard and clarified wording); SG-L0L1-6 | guards, not graded claims |
+| RTG transfer guards that bind the RTG-side material COIL reads: SG-PROG-1 (cross-branch physical use), SG-PROG-4 (document location creates no transfer authority); SG-L0L1-6 (legacy non-export) | `programme-v1.4`; `legacy-v0.7` | `dsn/RTG_PROGRAMME_OVERVIEW.md` v1.4 §§3.2, 8; LEGACY DSN v0.7 | SG-PROG-1, SG-PROG-4; SG-L0L1-6 | guards, not graded claims. COIL's own MM-1/RM-01 rule is SG-COIL-1 (§0.2) |
 
 COIL does not restate RTG grades in a stronger form. OPEN-P0 (primitive ontology) is an RTG open item that conditions the RTG line; COIL does not work on it.
+
+**Interfaces.** COIL is not an admitted consumer of the RTG literature stream (LIT; `REGISTRY.md`: "not yet") and claims no LIT-backed validation of any statement. No COIL result passes to RTG except as an item in `rtg-corpus/pipes/<STREAM>/` carrying owner scope, evidence pointer and source tag; filing such an item is not an adopted use by the receiver. Items addressed to COIL arrive in `rtg-sat/pipes/COIL/` and are read at each owner pass and before each release.
 
 ---
 
@@ -113,7 +119,7 @@ Critical distinction: **a claim of ontological priority and a claim of epistemic
 
 **Scope guard (no-derivation shortcut):** relational ontology sets the programme's direction; it can never be used as the proof of any cross-layer derivation.
 
-**Warning — the gap between ground and body:** the programme's ontological justification rests on RTG, but **its entire empirical body is in the MM-1 family**, and between MM-1 and RTG's postulated generator there is **no named bridge** (SG-PROG-1; SG-L0L1-6 at `legacy-v0.7`). This gap is not hidden; it is the reason for the two-line structure in §9.
+**Warning — the gap between ground and body:** the programme's ontological justification rests on RTG, but **its entire empirical body is in the MM-1 family**, and between MM-1 and RTG's postulated generator there is **no named bridge** (SG-COIL-1; on the RTG side SG-L0L1-6 at `legacy-v0.7`). This gap is not hidden; it is the reason for the two-line structure in §9.
 
 ## 5. Epistemic discipline
 
@@ -198,7 +204,7 @@ The programme in fact runs **two lines**:
 |---|---|---|
 | Object | RTG's postulated generator T (conditional on OPEN-P0) | inertial relational-force family |
 | State | **Phase 0 partial** (RM-01, RM-02 records); Phase 1 **not started** | Phase 1 and Phase 2 **completed**, gate G1 open |
-| Firewall | SG-PROG-1, SG-L0L1-6 at full strength | — |
+| Firewall | SG-COIL-1 (§0.2); on the RTG side SG-PROG-1/SG-PROG-4, SG-L0L1-6 at full strength | SG-COIL-1 |
 | Relation | **There is NO named bridge between them** | |
 
 On which line will the cross-layer claim be built? There is no answer yet — this is the programme's largest open structural question (§10.2).
