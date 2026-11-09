@@ -68,3 +68,63 @@ Translator-flagged renderings left as written (no correction): "Hadi devam" kept
 - rev. 1: step 1 (placement) + compendium + this draft.
 - rev. 2: translations complete (21 files, 11 translator's notes); §1.2, §3.2, §4 filled; English originals have no `.en.md`.
 - rev. 3 (PR #7, review `5822796099`): K11, K12.
+
+## 6. Candidate adoption manifest (English/live files as they stand on `main` at `878958641039`)
+
+**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the reference commit. Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+
+| file | SHA-256 at reference commit |
+|---|---|
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `d11f3ac043eabdde28e14b5877aa2069ebb2ccc6306bc30b0a9b8eb3acafd463` |
+| `evidence/coil/README.md` | `907451d1cf55310eaee398902b3df571bd214a3013fdca398c1ec53d1eaf1309` |
+| `evidence/coil/TRANSLATION_RULES.md` | `631b38aba89c4f497cbf5b00d01f6fa1a343ec4a3cf129d43261c411b03feadd` |
+| `evidence/coil/prereg/PREREG-MM1-GATE-v1.0.en.md` | `8009a3608105d74b8566ab8612b74245b774af7da151a0af3632b7eb9cd474c4` |
+| `evidence/coil/prereg/PREREG-MM1-GATE-v1.0.md` | `a3cc0d072ffefaca8b2a448ea67bac9e2e27339a2d162208c1ecad29d069df9d` |
+| `evidence/coil/prereg/PREREG-MM1-PAIRBC-v1.0.3.en.md` | `806c10ae8e803c11c8c61d63900d0d409da38e3789d9d8742a8d6902f851adfa` |
+| `evidence/coil/prereg/PREREG-MM1-PAIRBC-v1.0.3.md` | `fd30d8ce83cb2dfe63a115b4be33e49294cc80f52df9187fe295c3d586360e84` |
+| `evidence/coil/prereg/PREREG-MM1-RANK-v1.0.en.md` | `6a3dcab521581a760ddf0561409f90f06933ce574f794da565196b6cb410b7c1` |
+| `evidence/coil/prereg/PREREG-MM1-RANK-v1.0.md` | `81f9a5c12257a2c41d3437c9218473fd67d657efe0afde2c2c47ece14d3368d7` |
+| `evidence/coil/prereg/PREREG-MM1-RESOLVABILITY-v1.0.1-ADDENDUM.en.md` | `26678a8815a9f54bb06986ebe1fb90c704951c94002519339d4945946de74bc4` |
+| `evidence/coil/prereg/PREREG-MM1-RESOLVABILITY-v1.0.1-ADDENDUM.md` | `f87a6ea2dfe34c75c6726c214fe57b251ec8cf4e4b2bac87352868a16015c8be` |
+| `evidence/coil/prereg/PREREG-MM1-RESOLVABILITY-v1.0.en.md` | `6c0d6fc0005351b59eed588aea232102f2788bc636bcae1ee0ae334cdc43de9e` |
+| `evidence/coil/prereg/PREREG-MM1-RESOLVABILITY-v1.0.md` | `42ccc4ebe175503707317c4a0e99f1b0415c20d179bfc87e6d7279fa64650bb3` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-BIRTH-v1_0.md` | `5a70f4424d8bd39ac173f96c3e0c68a6c16c8e60c1e7516886a09cc34770c552` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-BOUNDARY-v1_0.md` | `f5b3094b7a39d023d8622151daaa5fe7ef85bb6abf0b697062f33b20ad49309c` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-HOLDOUT-v1_0.md` | `621650397d6be0a7298c69993b70bff877e3167c7fef3c607097445e641e3751` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-ISOA-v1.0.en.md` | `5778456ed4660b8f6935d55b5b1be5ad31aec9eb9d973d6a696992f778b75081` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-ISOA-v1.0.md` | `78cbf98203e563f33c4ee0e6b73ddd17ffeafae46d4345a29f7a4d41e383944c` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-ORTHO-v1.0.en.md` | `e0da563cc77d505984c80d7d336b6830738e93f7d18e435ba37b350b3642fe68` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-ORTHO-v1.0.md` | `ed4a7416d1229575c5e0285b9eb1e09f3f96e61b1fed50b1e90c19b7960cc921` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-TONGUESET-v1.0.1-ADDENDUM.en.md` | `dba969548cc9493bc955d4fa90009100e77da33b76b30ea098625ee5af0a6d27` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-TONGUESET-v1.0.1-ADDENDUM.md` | `633c5647d17159e97057dd8028a2fb63eb6e80e9ed044ca96c570a5f6018d6d9` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-TONGUESET-v1.0.en.md` | `3b7a821debce8574c9b4c9f114f6b1d93656d31830d6af4e7ed5bb4a9ef57d39` |
+| `evidence/coil/prereg/PREREG-MM1-WAVEFORM-TONGUESET-v1.0.md` | `b6f8f2427dd87d729f9c60651e0fcc574a70f1653a4a4097c58515844612c54b` |
+| `evidence/coil/prereg/PREREG-RM02-N2-v1.0.en.md` | `506b1b5ed29a49d07dfde9af30e40a0a67bd7f7e6d83d69103f026e1d97f427b` |
+| `evidence/coil/prereg/PREREG-RM02-N2-v1.0.md` | `55fdec223fc48ab4c5095cb1ed473ddc41b1aa3e92b1a88300de1210ec219245` |
+| `evidence/coil/prereg/PREREG-RM02-N3-v1.0.en.md` | `a07ce4bb333ec7b3952571dddb4f1f7beea2b73032ff94ac7b233efff9980dc9` |
+| `evidence/coil/prereg/PREREG-RM02-N3-v1.0.md` | `5311126686b473ea8191e357f8dc595c96c12c04083b941e6c8e9525f3c9b1eb` |
+| `evidence/coil/prereg/SHA256SUMS` | `70c446ea2184622926836dee52f12c7ff7287fe8a903339f2e0c101ac625b7f3` |
+| `evidence/coil/run/RUN-MM1-DYAD-v1.0.en.md` | `3edaf0979f0770177ea111f5c51be60e76edc875af12b26451f426fb81742ed6` |
+| `evidence/coil/run/RUN-MM1-DYAD-v1.0.md` | `42c7bc0900a5969824ce5f1856fa3246754a5eff42b6d6bf96ecbf880253a567` |
+| `evidence/coil/run/RUN-MM1-GATE-v1.0.en.md` | `d31ef4614879053f188806224c9f1bb3f6106846e07c7efb6c409dd3653f9022` |
+| `evidence/coil/run/RUN-MM1-GATE-v1.0.md` | `f4f3382aa5a3613987ddc6f1f4633088dea5b42cb98e1065cfd9c910c6b9ba37` |
+| `evidence/coil/run/RUN-MM1-PAIRBC-v1.0.1.en.md` | `f022248de17d7b5e303242b9f3c0e9143f9bf28ef11aff02a78ada63bf68e77a` |
+| `evidence/coil/run/RUN-MM1-PAIRBC-v1.0.1.md` | `68be390792eb36d496b98af991f89a6b3708ca347c769849e7cd93be6ef31cf0` |
+| `evidence/coil/run/RUN-MM1-RANK-v1.0.en.md` | `65a5cc9d9936b80faa823e0e29811f7a9eb8c17f47ab9a9252ff61f8035053af` |
+| `evidence/coil/run/RUN-MM1-RANK-v1.0.md` | `04dcf46c158800ecdb09ad1dec02165e625103a61b53dd982109da680b62de7b` |
+| `evidence/coil/run/RUN-MM1-RESOLVABILITY-v1.0.en.md` | `199936f7b9b92b061be66d14094f982af29f310adfd4dbf6772e126ec45db831` |
+| `evidence/coil/run/RUN-MM1-RESOLVABILITY-v1.0.md` | `6cfc3c0114cadb17d655a12f329413fe88ece8bc20069665a5f0bd660edef582` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-ISOA-v1.0.en.md` | `b392f818ebee0d1a478360a70f2bda8f2f8eb242d494a20848557ef9d5603dd8` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-ISOA-v1.0.md` | `c48c9ed8ae6406abef87e3ee5f41fa9442398db24e551750c615611e32505903` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-ORTHO-v1.0.en.md` | `64209daa3ad606f3bbe39f12d7d1089ead01ef8293df5a631ac77889bd5934d5` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-ORTHO-v1.0.md` | `15ccc5ff6faaa598d7dc3ab0a54799ade62e0a5a213a10f918a206dfacb16dcb` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-TONGUESET-v1.0.en.md` | `de275ad30cf4f114fbbc56532b1633d8515647bd627ac05dc26e8a3e6ece3980` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-TONGUESET-v1.0.md` | `33ef275ef0d9df410e67fc6eb74a4a40e10055836219b038295e983599c8001a` |
+| `evidence/coil/run/RUN-MM1-WAVEFORM-v1_0.md` | `55d0ff85cf1110f9ab70f060d51585b0a6e566f003db1db22fe82aa7e6fb7c81` |
+| `evidence/coil/run/RUN-RM02-N2-A-v1.0.en.md` | `f783004f390b6ecdcf474bf2993a7f30bf7bd0673a84e6c359191f191ceb66dc` |
+| `evidence/coil/run/RUN-RM02-N2-A-v1.0.md` | `d0a8890f128146f071b859ee7f49d37a7f54bf00a007f0e2ca644802f96ee760` |
+| `evidence/coil/run/RUN-RM02-N3-v1.0-FINAL.en.md` | `72eb08360e03f4d45cf8108ae4ed4e7bcd0b26bba1d2587c4590aff0b3c5ca97` |
+| `evidence/coil/run/RUN-RM02-N3-v1.0-FINAL.md` | `cb87122a88fc0feabc8050c2dedb90bdd1cef13d5e6bb3c0ec9284644fff1691` |
+| `evidence/coil/run/SHA256SUMS` | `21166ed41c94975591cd19e8ef42653bf2d3dba3752fcfe19645e17a25bb94ad` |
+
+**Adoption scope (to be filled by the PI at adoption):** which files above are adopted; the adopted tag name; the adoption date; any file excluded. Until filled: *pending PI adoption*.

@@ -173,3 +173,20 @@ Wording changes (translation, reordering, table formatting) are not listed. Each
 - rev. 4 (PR #6, review `5799574800`): R11–R14, N7–N9, M11–M14, T6–T7, L7–L8; index RM-02 row (9 instances, path provisional); §4 batch-1/batch-2 hash sentences separated.
 - rev. 5 (PR #6, review `5799736041`): M15, L9; R5 marked superseded by R12.
 - rev. 6: PI decisions Q3 (ARSIV as one frozen zip) and Q4 (`coil/records/`) recorded, 6 Nov 2026; "provisional" path markers removed.
+
+## 6. Candidate adoption manifest (English/live files as they stand on `main` at `878958641039`)
+
+**Status: CANDIDATE — not adopted.** SHA-256 of each file's bytes at the reference commit. Adoption = the PI's decision that exactly these bytes are the governing edition of this release; if any file changes after this manifest (a status-only publication edit included), the hash is recomputed **after that change and before the tag**, and this section is rewritten with the new reference commit. Hashes from one `main` do not identify three releases at once: each record lists its own file set.
+
+| file | SHA-256 at reference commit |
+|---|---|
+| `coil/COIL_INDEX.md` | `eadcc9118fe6410757ba0273d45d68725107dc925b8f1e44968690fcf8861b05` |
+| `coil/COIL_CHARTER.md` | `88ac08e7b026d00a6f16b51981029c3ca0db0ac0b4a6baa3a70a6d1df83fab3b` |
+| `coil/COIL_GLOSSARY.md` | `8849989b9e96c699d4418892f48249ffe2915a0d5c432a6d7f61ab6eb779b0e4` |
+| `coil/COIL_RMT.md` | `d21aeeeb9f2553f51787229f06876f18179998acece6238eeefc1b3871e33a4e` |
+| `coil/records/RM-01.md` | `376f7debc5da87659cdb37956667f7bd7167d1a6a15558fc5414b6af01faee2d` |
+| `coil/records/RM-02.md` | `9dc6543150668c77f5dfc80cd938cefbe3c6e8fb1a54707cc65ffc0e03d4adae` |
+| `coil/MM-1.md` | `cd1e63b897fbfaecbe556f7ae2776572730139ecceaae97b6819507615c7a9ef` |
+| `coil/IDEALOG_COIL_RCSJ.md` | `07f819c546844b3720f005740ce10b11a26cb1e3b47db17c80e69305a175a289` |
+
+**Adoption scope (to be filled by the PI at adoption):** which files above are adopted; the adopted tag name; the adoption date; any file excluded. Until filled: *pending PI adoption*.

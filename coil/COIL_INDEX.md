@@ -2,7 +2,7 @@
 
 **Purpose:** which document is current, which preregistration is locked, which question is open — on one page. Status map only; the owner document of each item governs.
 **Source:** translation of the owner session's `PROGRAM-INDEKSI.md` (SHA-256 `86dec073a7638e729479157e878f549b0ae6a015544cbf5030ff01a8839a93df`, `upload/coil-sources`), current state only; version narratives and superseded verdicts are in `records/coil/COIL_v0.1_RELEASE_RECORD.md`.
-**Labels:** `coil/COIL_CHARTER.md` §0.1. **Filenames:** target paths of the migration (`records/coil/COIL_MIGRATION_PLAN.md` §2); a file not yet placed in this repository is marked *(batch N)* and its bytes are on `upload/coil-sources`. Old names in `records/coil/COIL_SOURCE_MANIFEST.md`.
+**Labels:** `coil/COIL_CHARTER.md` §0.1. **Filenames:** every file named here is placed in this repository (migration complete, batches 1–4); old names and source hashes in `records/coil/COIL_SOURCE_MANIFEST.md`.
 
 ---
 
@@ -13,7 +13,7 @@
 | **Charter** | `coil/COIL_CHARTER.md` | empirical state §3; two-line structure §9.0; open questions §10; labels §0.1 |
 | **RMT** (record tool) | `coil/COIL_RMT.md` | tool only; catalogue index §8. Contains the bridge-type / null-rival / coarse-graining fields, the absence-scope rule, event-type candidates, the gauge precondition + R5 feasibility audit, and the RM-07 symmetry precondition and scope narrowing |
 | Programme index | `coil/COIL_INDEX.md` | this document |
-| **Campaign compendium** | `coil/COIL_CAMPAIGN_COMPENDIUM.md` *(batch 3)* | **parameter map / guided reproduction.** **Not** a `self-contained rerun contract` — that status is raised only when the completeness certificate (`kunye_completeness_certificate.py`) passes; first run **FAIL** (expected) |
+| **Campaign compendium** | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | **parameter map / guided reproduction.** **Not** a `self-contained rerun contract` — that status is raised only when the completeness certificate (`kunye_completeness_certificate.py`) passes; first run **FAIL** (expected) |
 | Glossary | `coil/COIL_GLOSSARY.md` | Turkish → English terms; provisional until verified against each source |
 
 ## 2. RM records (mechanism / regime records)
@@ -35,12 +35,12 @@
 |---|---|---|
 | MM-1 minimal model | `coil/MM-1.md` | signature decomposition (S1/S2 structural-local, **S3″** empirical-global); gate result G1 |
 | Coil / RCSJ correspondence | `coil/IDEALOG_COIL_RCSJ.md` | Josephson plane; matching and non-matching parts; prediction B3 confirmed; §C.2 two-group theorem |
-| Gauge memo review | `coil/MEMO_GAUGE_CYCLE_FLUX.md` *(batch 4)* | β₁ rule adopted (integrated into the RMT); the N = 3 parameterisation confirmed retrospectively; feasibility audit adopted; §5b direction-aware floor h_coeff(d) |
-| Casebook F2 | `coil/CASEBOOK_F2_H_NOISE.md` *(batch 4)* | worked example h_noise, direction-indexed; T = {54, 108} validation task `[OPEN]` |
+| Gauge memo review | `coil/MEMO_GAUGE_CYCLE_FLUX.md` | β₁ rule adopted (integrated into the RMT); the N = 3 parameterisation confirmed retrospectively; feasibility audit adopted; §5b direction-aware floor h_coeff(d) |
+| Casebook F2 | `coil/CASEBOOK_F2_H_NOISE.md` | worked example h_noise, direction-indexed; T = {54, 108} validation task `[OPEN]` |
 
 ## 4. Preregistrations (LOCKED — never changed)
 
-Frozen originals with hashes in `evidence/coil/prereg/` *(batch 3)*; English translations beside them, marked "translation; the frozen original governs".
+Frozen originals with hashes in `evidence/coil/prereg/`; English translations beside them, marked "translation; the frozen original governs".
 
 | Prereg | Certificate | Decision |
 |---|---|---|
@@ -59,7 +59,7 @@ Frozen originals with hashes in `evidence/coil/prereg/` *(batch 3)*; English tra
 
 ## 5. Run reports
 
-Frozen originals in `evidence/coil/run/` *(batch 3)*.
+Frozen originals in `evidence/coil/run/`.
 
 | Report | Scope |
 |---|---|
@@ -79,7 +79,7 @@ Frozen originals in `evidence/coil/run/` *(batch 3)*.
 
 ## 6. Code and run instructions
 
-All in `evidence/coil/code/` *(batch 4)*; outputs in `evidence/coil/outputs/`.
+All in `evidence/coil/code/`; outputs in `evidence/coil/outputs/`.
 
 | Files | Function |
 |---|---|
@@ -99,21 +99,21 @@ Data: `stageA_*.csv`, `stageB_*_MERGED.csv`, `n3_merged/`, `mm1_merged/`, `*_res
 
 ## 7. Archive
 
-Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` *(batch 4; one frozen zip — PI decision Q3, 6 Nov 2026)*, with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
+Superseded documents are kept (not deleted — the programme's provenance rule) as one frozen package `evidence/coil/archive/` (one frozen zip — PI decision Q3, 6 Nov 2026), with the archive manifest `ARSIV/README.md` inside it. Contents: charter v0.1/v0.2 · RMT v0.1/v0.2.1 · RM-02 v0.1 · PREREG-RM02-N3 v0.9 draft · RUN-N3 and RUN-RESOLVABILITY interim reports · **AUDIT-CARRIER-COMPLETENESS v1.0/v2.0/v3.0** (the chain in which the verdict changed three times) · CLI-N3 remaining runs · three old versions of the n2_dyad script. `AUDIT-R5-PAIR-BC-v1.0.md` (superseded by v1.0.1): not available.
 
 ## 8. Open work — priority order
 
 | # | Item | State |
 |---|---|---|
-| 1 | Pair B/C run | **CLOSED — P-κ + REPLICATION-CONCORDANT.** Design `PREREG-MM1-PAIRBC v1.0.3` (locked): primary holdout **tri0 × {B, C}** (unseen), replication arm path3, anchor Pair-A execution guard; primary quantity p_BC = log(κ_C/κ_B)/log(a_C/a_B) **+ mandatory level guard** r^β, q (p alone tests the slope, not the level — confirmed counter-example); H_β: p = 1, H_κ: p = 0; exhaustive table incl. P-other; bands ± 0.15. Result in charter §3.6. The earlier design was **not run**: R5 audit v1.0.1 found three blockers (N = 2 is not the source substrate of the target invariant `[ABSENT-in-tested-domain]`; κ window [0.5, 3] vs predicted 3.5–13.8; cross-pair semantics not preregistered). Audit `coil/AUDIT_R5_PAIR_BC.md` *(batch 4)* |
+| 1 | Pair B/C run | **CLOSED — P-κ + REPLICATION-CONCORDANT.** Design `PREREG-MM1-PAIRBC v1.0.3` (locked): primary holdout **tri0 × {B, C}** (unseen), replication arm path3, anchor Pair-A execution guard; primary quantity p_BC = log(κ_C/κ_B)/log(a_C/a_B) **+ mandatory level guard** r^β, q (p alone tests the slope, not the level — confirmed counter-example); H_β: p = 1, H_κ: p = 0; exhaustive table incl. P-other; bands ± 0.15. Result in charter §3.6. The earlier design was **not run**: R5 audit v1.0.1 found three blockers (N = 2 is not the source substrate of the target invariant `[ABSENT-in-tested-domain]`; κ window [0.5, 3] vs predicted 3.5–13.8; cross-pair semantics not preregistered). Audit `coil/AUDIT_R5_PAIR_BC.md` |
 | 2 | MM-1 dyad Stage B | **DONE** — P-S3-dyad FAIL (tri) — S3′ → S3″ revision (RUN-MM1-DYAD) |
 | 2b | Iso-amplitude test | **DONE** — I3: A is not a cross-family descriptor; χ collapse is an intra-family proxy |
 | 2c | Tongue-set geometry map | **DONE** — T1 PASS; \|𝒯\| primary, N_comp resolution-dependent. Set-valued: onset, component count/widths, \|𝒯(t)\|, bounded gap multiset G(t) (at t = −0.300: κ ≈ 3.1/6.6/7.9) |
 | 2d | Orthogonal descriptor isolation | **DONE** — two candidate scalars each insufficient alone (c₃, H_high); the single-scalar class as a whole not falsified |
 | 2e | Descriptor-dimension lower-bound test | **DONE — INCONCLUSIVE**; FD derivative estimate did not converge at the tested h scales; **C¹ failure not shown**. The guard prevented a misreading of σ₂/σ₁ ≈ 0.6–0.8 |
 | 2g | Stratified derivative resolvability | **DONE — PI-stopped at T = 4320**; T ≥ 8640 `[UNMEASURED]`. Primary object: stratified h_res^{all/regular/chaos}(N); the observable-derivative pre-measurement (∂_θ λ_N, FD agreement 10⁻⁹, *one regular representative/one direction*) is not a class generalisation |
-| 2i | ringdiag update-rule recovery | **DONE** — `coil/RINGDIAG_UPDATE_RULE.md` *(batch 4)*; RTG's own debts (OPEN-L0L1-0 artifact gate, OPEN-L0L1-1 spark dynamical class, §12.5 dt-independence at `legacy-v0.7`) remain RTG's; the bridge information is a by-product |
-| 2j | OPEN-L0L1-KSPARK-DEF + deg_norm | **DONE** — `coil/KSPARK_DEF_DEGNORM.md` *(batch 4)*: Def-A (spectral) vs Def-C (orbit QR) on the same substrate + `deg_norm` production path |
+| 2i | ringdiag update-rule recovery | **DONE** — `coil/RINGDIAG_UPDATE_RULE.md`; RTG's own debts (OPEN-L0L1-0 artifact gate, OPEN-L0L1-1 spark dynamical class, §12.5 dt-independence at `legacy-v0.7`) remain RTG's; the bridge information is a by-product |
+| 2j | OPEN-L0L1-KSPARK-DEF + deg_norm | **DONE** — `coil/KSPARK_DEF_DEGNORM.md`: Def-A (spectral) vs Def-C (orbit QR) on the same substrate + `deg_norm` production path |
 | 2k | OPEN-QUOTIENT-EQUILIBRIUM | **parked** — is MM-1's K* the transverse crossing of ringdiag's quotient-space synchronous branch? To be asked **before** Def-B; perhaps no new threshold object is needed and the existing one was sought in the wrong space. Agreement → the estimator blocker lifts (**not** a named bridge); disagreement → the onset bridge closes (carrier match **preserved**) |
 | 3 | Open RM-04 | path dependence never tested; non-Markov positive-control laboratory identified |
 | 4 | Activate RM-07 | the regular-winding regime and reversion islands in MM-1 are direct data; **precondition:** the CF = 0.20 plateau (5/25 IC chaotic over a long κ range) is not yet metastability evidence — first compare the identities of the five chaotic ICs across κ (same five → basin-slice structure; changing membership → boundary/intermittency candidate) |
@@ -130,7 +130,7 @@ Superseded documents are kept (not deleted — the programme's provenance rule) 
 
 **S-1 — Is discreteness ontological or numerical?** MM-1's spark disappears in the continuous limit *(type b: limit exists, phenomenon does not)*. By the two-group theorem the dynamics depends on (γdt, κ) only; dt has no independent role → the question is **interpretive, not empirical, inside MM-1**. The answer must be sought on the RTG side: LEGACY DSN §12.5 (`legacy-v0.7`) treats dt as "update resolution, not physical external time" `[ONTO legacy]` and leaves dt-independence `[OPEN]` (OPEN-L0L1-O5) — i.e. whether the update index carries a physical tick. **Highest-leverage question — but the leverage is in the RTG line, not MM-1.** Parked until OPEN-QUOTIENT-EQUILIBRIUM.
 
-**S-2 — Cross-layer bridge status: `[CAND] candidate bridge, wrong coordinate space`.** `[COR]` `[RETRACTED]` The carrier audit v3.0 verdict "onset bridge closed" was **withdrawn** in v3.1: its premise "no equilibrium exists" was falsified (a synchronous drifting relative equilibrium **and** a twisted absolute equilibrium θ_i = iπ, both confirmed). The carrier match stands. New open question: **is MM-1's K* the transverse spectral crossing of the synchronous branch in the global-phase quotient?** Numerical hint: transverse |σ|_max = 0.47677 ⇒ K* = 23.305 — exactly the value of the fallback that RTG's `find_k_spark` discards as unphysical (23.305 / 24.857). `OPEN-QUOTIENT-EQUILIBRIUM`. **A named bridge has NOT been built.** Detail: `coil/AUDIT_CARRIER_COMPLETENESS.md` *(batch 4)*. Parked.
+**S-2 — Cross-layer bridge status: `[CAND] candidate bridge, wrong coordinate space`.** `[COR]` `[RETRACTED]` The carrier audit v3.0 verdict "onset bridge closed" was **withdrawn** in v3.1: its premise "no equilibrium exists" was falsified (a synchronous drifting relative equilibrium **and** a twisted absolute equilibrium θ_i = iπ, both confirmed). The carrier match stands. New open question: **is MM-1's K* the transverse spectral crossing of the synchronous branch in the global-phase quotient?** Numerical hint: transverse |σ|_max = 0.47677 ⇒ K* = 23.305 — exactly the value of the fallback that RTG's `find_k_spark` discards as unphysical (23.305 / 24.857). `OPEN-QUOTIENT-EQUILIBRIUM`. **A named bridge has NOT been built.** Detail: `coil/AUDIT_CARRIER_COMPLETENESS.md`. Parked.
 
 **S-3 — Is β_c(frac) invariant? `[CLOSED: NO]`** Preregistered, level-guarded, clean holdout (tri0): **P-κ**. β_c(frac) 88.33 → 17.95 (÷ 4.92) while κ_frac (A → C) changes only **+5.66 %**. Falsified: the general hypothesis "β_c(frac) is an a-invariant descriptor across the N3 ladder"; Pair A's 35–88 **table** cannot be carried as an a-independent invariant. **The direct confirmatory falsification comes from tri0; path3 was measured as a decision-free concordant replication; the triF rows were not measured.** No verdict on rung ordering (two rungs measured). Detail: RUN-MM1-PAIRBC v1.0.1; design PREREG-MM1-PAIRBC v1.0.3; audit AUDIT-R5-PAIR-BC v1.0.1 (the exploratory pre-scan that motivated the redesign — κ_frac staying near 2.5 for Pairs B and C — was `[EXPLORE]` and is superseded by the locked result).
 

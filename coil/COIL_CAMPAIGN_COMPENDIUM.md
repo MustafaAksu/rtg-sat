@@ -93,7 +93,7 @@
 
 ## 6. Code ↔ campaign mapping
 
-All files in `evidence/coil/code/` (batch 4).
+All files in `evidence/coil/code/`.
 
 | Campaign | Certificate | Experiment | CLI |
 |---|---|---|---|
