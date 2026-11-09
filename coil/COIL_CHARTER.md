@@ -49,7 +49,9 @@ COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic g
 
 > **SG-COIL-1 — MM-1/RM-01 separation.** Results established in either line are not transferred to the other without a named, proved bridge specifying the source and target objects, assumptions, domain and permitted conclusions. A reference, analogy, shared notation or abstract isomorphism is not such a bridge. Explicitly labelled reference-only comparisons remain permitted. A conditional bridge licenses only its stated implication; its assumptions remain explicit.
 
-**Current state:** no such bridge has been adopted. SG-COIL-1 is COIL's own guard and is the one cited in every COIL text for the MM-1/RM-01 boundary. RTG's SG-PROG-1 and SG-PROG-4 (`programme-v1.4`) govern transfer across RTG's own discrete/continuous branches and the non-authority of document location; COIL cites them **only for RTG-side material** it reads (§0.3), not as the name of its own separation rule.
+**Scope of the guard.** SG-COIL-1 names the MM-1/RM-01 boundary. The same COIL transfer discipline applies **separately** to the MM-1/recovered-LEGACY-ringdiag and MM-1/RCSJ comparison routes recorded in `coil/AUDIT_CARRIER_COMPLETENESS.md` and `coil/IDEALOG_COIL_RCSJ.md`. These are distinct source/target objects; neither ringdiag nor RCSJ is identified with RM-01 by this rule, and a bridge established on one route would license nothing on another.
+
+**Current state:** no such bridge has been adopted on any route. SG-COIL-1 is COIL's own guard and is the one cited in every COIL text for the MM-1/RM-01 boundary. RTG's SG-PROG-1 and SG-PROG-4 (`programme-v1.4`) govern transfer across RTG's own discrete/continuous branches and the non-authority of document location; COIL cites them **only for RTG-side material** it reads (§0.3), not as the name of its own separation rule.
 
 ### 0.3 RTG material cited by COIL (pinned)
 
