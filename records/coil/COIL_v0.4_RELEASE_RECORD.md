@@ -35,11 +35,11 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-09).** Files changed in this release, SHA-256 of their bytes at the **content commit** `5d0de2a568dfb4ccc773cfa701fcadac56a025a4` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
+**Status: ADOPTED (2026-11-09).** Files changed in this release, SHA-256 of their bytes at the **content commit** `4d2bcff2bbce5d8091a4eae825f5543fbbb90553` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `coil/COIL_CHARTER.md` | `160c9f314b1d9fe634770509a13dfafa781ec4d567db7461dbc161c5f7a440e5` |
+| `coil/COIL_CHARTER.md` | `904e467bc2e93c96847f262233cfbc6228c16a077f2913ce73b1163577cd3c9c` |
 | `coil/COIL_INDEX.md` | `126b4bed5d9dc3abd0353a6affd1c797a459c3478d25e992e796befa5e1298d8` |
 | `coil/COIL_GLOSSARY.md` | `38a28248b75bc43fa3e03db9f071798d09242cc9d1f6376c7ffc747ab9ef21f6` |
 | `coil/COIL_RMT.md` | `c04f0b9e89d62201be82b6a9f42f97b434e231ed5ef0bd5253a195ed08df48ea` |
@@ -49,7 +49,7 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 | `coil/IDEALOG_COIL_RCSJ.md` | `b7e8003f0811197f86397f0895b8b3b265fa37ed97f5cbff92de350dc91490ce` |
 | `coil/AUDIT_CARRIER_COMPLETENESS.md` | `dd395e4aab7e53af9998ff8f59fbe6336286d34d61974832330cbe3f1a9fcd6e` |
 | `coil/RINGDIAG_UPDATE_RULE.md` | `a464a8e75c0deb692151dacbbd4bae1e0a5a8a1c4d10f1ae69e92f91a8815a0b` |
-| `REGISTRY.md` | `c43a2770e6356f655a1631c2d89b67285390821fb4845c0432997fb06979d65c` |
-| `pipes/COIL/20261109-SAT-maintenance-advisory.md` | `55ec0db9b3d9979fcb28ff4fe980955f666bf95681fad004d02c92146016c8ed` |
+| `REGISTRY.md` | `ca9be597ad07029373f6d063059ceef20209e9f2be9e354d149cce0bae32311b` |
+| `pipes/COIL/20261109-SAT-maintenance-advisory.md` | `7daeccd0f10acf7fb33703e1a275bcdfe0ab4013d9c7072fedb9447a4ab2bb8d` |
 
 **Adoption scope (PI, 2026-11-09):** all files listed above as they stand at the content commit, plus everything inherited unchanged from `coil-v0.3`; tag `coil-v0.4`; no exclusions. What is adopted is the recorded current state of the study — its grades, assumptions, negative results, retractions and OPEN items as written; not a physical validation, a cross-layer equivalence or a transfer to RTG. PR #9 is outside this release.
