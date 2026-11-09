@@ -1,0 +1,61 @@
+# HHO — migration note to the study owners
+
+**To:** the owner sessions of the HHO study (Claude and ChatGPT)
+**From:** PI (Mustafa Aksu), drafted by Claude as SAT co-owner
+**Date:** 2026-11-09
+**Status:** working note; it changes by commit until the first HHO release, then it is closed.
+
+## 1. Why you are receiving this
+
+`MustafaAksu/rtg-sat` is the public repository for studies inspired by or related to RTG but outside the RTG programme (`CONVENTIONS.md`, PI-adopted 9 Nov 2026). HHO is registered there with key `hho` (tags `hho-v<version>`, inbox `pipes/HHO/`). You are its owners. Your task is to bring HHO's records into this repository, gradually and in your own order, under the same discipline that COIL followed (`records/coil/COIL_MIGRATION_NOTE.md`; COIL is now at `coil-v0.4`). The SAT internal check of 9 Nov 2026 found no repository-side obstacle. Nothing in this note is a scientific adoption.
+
+## 2. What HHO is and where it lives now
+
+HHO (Hurwitz–Hodge Obstruction) looks for general conditions under which Severn-type Hurwitz–Hodge transfer data cannot give a nonsplit, dominant Weil eightfold. It works through arithmetic obstructions (local discriminant, Hilbert symbols, norm classes), geometric obstructions (Riemann–Hurwitz, period-map rank), representation-theoretic obstructions (Clifford, Brauer blocks), and the core question (L)+(D)+(H) ⇒ [det h] = [1]. It makes no existence or nonexistence statement and no statement about the Hodge conjecture.
+
+Its records come from two conversations in the RTG Dyadic project:
+- **"Hodge Conjecture" (HCG).** HHO was opened here as track `HCG-HURWITZ-HODGE-OBSTRUCTION`: the opening note v0.1, the Δ28 entry in the HCG pending-delta log, gate catalogue G1–G12, the initial claim register (R1 d ≥ 53, G4A/G4B, T-PRIME, 2XB-REDUCTION, G4C, 2XB-SCAN, LSEP, T2) and safeguards HHO-SG-1…6.
+- **"HHO Hurwitz–Hodge obstruction research".** The independent line opened by the PI in Nov 2026. It contains the support-lemma review file with its dated, hash-verified addenda, the withdrawn HHO-CONJ-NPL and its C₃×F₂₀ counterexample, the tame-unimodular local lemma, the C₆ falsification test, the GAP/CTblLib data for G₃₄, and the open items (HHO-Q-LOCAL-CANCEL; (L)+(D) ⇒ split).
+
+The file inventory above is taken from the conversations, not from the files. Confirm it against what the PI uploads.
+
+## 3. Boundaries
+
+- **HHO is not RTG and not HCG.** Nothing in HHO is an RTG or HCG result. The registry's transfer rule applies: HHO findings pass to HCG or RTG only with PI adoption. Toward RTG they go only as a `rtg-corpus` pipe item (`CONVENTIONS.md` §4).
+- **HCG has no adopted repository edition.** Its session ledger v0.2 was adopted at chat level only, and there is no `hcg-v*` tag. So HHO cannot pin HCG. Where HHO uses HCG inputs — the definitions of (L), (D), (H0)–(H4), the witnesses W5/W6/W7/NEW01–04/BLOCK-01/ESCAPE, the C₆ separator, and the engines `cyclic_disc_claude.py` and `generic_engine.py` — bring the needed files in as **received inputs**. Store them unchanged and hashed in `evidence/hho/received/`, and label them "HCG input, not adopted, not an HHO result". Cite them by hash. Re-pin to an `hcg-v*` tag once one exists. Do not migrate HCG itself.
+- **RTG.** If HHO uses RTG material (for example the Eisenstein calibration that HCG imported from RTG), cite an adopted `rtg-corpus` tag (`CONVENTIONS.md` §3). If it does not, its registry row says "none".
+- **Third-party material.** `rtg-sat` is public. Severn's papers and Zenodo deposit, Schoen, Milne, Dettweiler–Wewers, Guralnick–Tiep, Hiss–Malle, Alexeev–Donagi–Farkas–Izadi–Ortega and similar sources are **cited bibliographically** (identifier/URL, version, SHA-256 where we hold a copy). Their texts are not stored here. Our own computed data (for example GAP output) may be stored; record the library name and version that produced it. LIT does not yet admit satellite consumers (`rtg-corpus` pipes item `20261109-SAT-satellite-consumers`; the LIT-side change is pending). So claim no LIT-backed validation until LIT admits HHO. Severn's results stay **CLAIMED**.
+
+## 4. How to work
+
+- **Access and branches.** Your sessions have read and write access to `rtg-sat`. Push only to your own prefix (`claude/hho-*`, `chatgpt/hho-*`) and open pull requests. The PI merges. Tags are created by the PI or under `CONVENTIONS.md` §2.1 (PI-authorized automated publication; write-permission workflows are single-use and are removed afterwards).
+- **Sources.** The PI uploads the original files **unchanged** to an `upload/hho-sources` branch, together with a `SHA256SUMS` file. Request batches from him. Verify the hashes, record every file in `records/hho/HHO_SOURCE_MANIFEST.md` (old name → new place, hash, which conversation it came from, received/own), and place files by follow-up commits. Never reconstruct a file from memory or from a conversation. A missing file is written "not available"; known gaps already include the Severn v2 primary text and the canonical (L)/(D)/(H) texts in the HHO conversation.
+- **Order.** A sensible order: (1) charter and claim register, (2) the support-lemma line and its addenda, (3) gate catalogue and dimension bounds, (4) scripts, GAP data and outputs. Each batch is its own pull request.
+- **Layout.**
+  - Live documents in `hho/`, with fixed filenames and no version or author in the name: `hho/HHO_CHARTER.md`, `hho/HHO_CLAIM_REGISTER.md`, and so on, not `HCG_HHO_…_v0_1.md` or `H3_HHO_…_CLAUDE.md`.
+  - Release records, reviews, the manifest and this note in `records/hho/`.
+  - Scripts, outputs, frozen addendum files and received HCG inputs in `evidence/hho/`.
+- **The append-only addendum files** (for example `HHO_SUPPORT_LEMMA_REVIEW_CLAUDE.md`) are frozen records. Keep them byte-identical in `evidence/hho/` with their final hash and the prefix-hash chain. The live files state only the current result of those exchanges.
+
+## 5. Notation, labels and identifiers
+
+- **Language.** HHO records are mostly in English already; anything in Turkish is translated, and a glossary is added only if it is needed.
+- **Grades and review states.** Keep HHO's evidence grades (`[THM]`, `[ALG]`, `[OPEN]`, …) apart from its review states (PROPOSED, CHECKED by two AIs, THIRD-FAMILY CHECKED, ACCEPTED). Declare both once in the charter. A review state is not a proof grade, and neither is an RTG grade.
+- **Identifiers.** The existing `HCG-HHO-…` and `HHO-…` RIDs were session-local. Decide on one namespace in the charter. Keep a rename map in the manifest, and never re-use a withdrawn RID (for example HHO-CONJ-NPL).
+- **Notation.** Fix inconsistencies in symbols and conventions (K = ℚ(√−3), [det h] ∈ ℚ^×/N(K^×), signature, (L)/(D)/(H) labels) in the live text. A change of meaning, as opposed to wording, gets a line in the pull request and in the release record.
+- **No machine-specific paths** in live files; write generic commands or repository paths.
+
+## 6. Checks before each pull request
+
+- Every claim keeps its scope, its source inputs (HHO-SG-2: listed at every restatement) and its evidence pointer (script, output, hash).
+- No assumption, OPEN item, withdrawal or counterexample is dropped. That includes the withdrawn HHO-CONJ-NPL with its C₃×F₂₀ counterexample, the add. 17 witness that "(L) ⇒ split" is false at the class-datum level, and the scaled-back novelty claims after the prior-art finding.
+- Scans certify their range only (HHO-SG-5).
+- No hash, approval or file content is invented.
+
+## 7. First release
+
+When the charter, the claim register and the source manifest are in place, prepare `records/hho/HHO_v0.1_RELEASE_RECORD.md`. It lists the adopted files and their hashes, the received inputs (HCG, RTG, third-party citations), the translation and notation changes, and the open items. An independent review by the other owner session follows, then the PI's adoption, then merge and the tag `hho-v0.1`.
+
+## 8. Questions and decisions
+
+File questions in the pull request or as items in `pipes/HHO/`. Owner decisions are recorded in your pull requests. The PI decides on scope, adoption, the first target (P1, still blank in the Δ28 entry) and any transfer to HCG or RTG.
