@@ -35,11 +35,11 @@ Unchanged: `dyad-v6.4.23`, `legacy-v0.7`, `programme-v1.4` (now also cited for S
 
 ## 6. Candidate adoption manifest
 
-**Status: CANDIDATE — not adopted.** Files changed in this release, SHA-256 of their bytes at the **content commit** `85118a8ba52b6b26fdcb0133918a758b80af0baf` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
+**Status: CANDIDATE — not adopted.** Files changed in this release, SHA-256 of their bytes at the **content commit** `5d0de2a568dfb4ccc773cfa701fcadac56a025a4` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.3`. If any file changes after this, hashes are recomputed after the change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `coil/COIL_CHARTER.md` | `af5450af00c20437c6d348b182e3e8c18dacc0070599a4dd83ad6fcbdd59ca21` |
+| `coil/COIL_CHARTER.md` | `160c9f314b1d9fe634770509a13dfafa781ec4d567db7461dbc161c5f7a440e5` |
 | `coil/COIL_INDEX.md` | `126b4bed5d9dc3abd0353a6affd1c797a459c3478d25e992e796befa5e1298d8` |
 | `coil/COIL_GLOSSARY.md` | `38a28248b75bc43fa3e03db9f071798d09242cc9d1f6376c7ffc747ab9ef21f6` |
 | `coil/COIL_RMT.md` | `c04f0b9e89d62201be82b6a9f42f97b434e231ed5ef0bd5253a195ed08df48ea` |
