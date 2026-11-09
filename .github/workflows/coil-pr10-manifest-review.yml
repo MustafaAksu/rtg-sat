@@ -1,0 +1,29 @@
+name: COIL PR10 candidate manifest review
+
+on:
+  push:
+    branches: [chatgpt/coil-migration-review-20261109]
+    paths:
+      - '.github/workflows/coil-pr10-manifest-review.yml'
+      - 'evidence/coil/verification/check_coil_pr10_manifests.py'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Clone the public repository at the exact reviewer commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --no-checkout https://github.com/MustafaAksu/rtg-sat.git repo
+          git -C repo checkout --detach "$GITHUB_SHA"
+          git -C repo rev-parse HEAD
+      - name: Check candidate manifests, nested artifact hashes and pointers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B -u repo/evidence/coil/verification/check_coil_pr10_manifests.py repo
