@@ -51,7 +51,7 @@ The Claude HHO session read the opening note in full, and the Δ27 entry, the HC
 | Severn, Weil classes for ℚ(√−3) | `hexagon:2610.00386`, `hexagon:2610.00387` (v1, v2) | **not available** to the HHO sessions; CLAIMED |
 | Shephard–Todd classification | as given in the Magma Handbook, *Construction of Finite Complex Reflection Groups* | quoted through ChatGPT's reading |
 | A. M. Cohen, *Finite complex reflection groups*, Ann. Sci. ÉNS 9 (1976), §§2.12–2.13 | numdam `ASENS_1976_4_9_3_379_0` | quoted through ChatGPT's targeted reading; not opened by Claude |
-| GAP Character Table Library (CTblLib) | tables `6_1.U4(3).2_2`, `6.U6(2)M6`, `12_1.U4(3)` | data used; **version of the PI's installation not recorded** |
+| GAP Character Table Library (CTblLib) | tables `6_1.U4(3).2_2`, `6.U6(2)M6`, `12_1.U4(3)` | data used; CTblLib 1.3.7 under GAP 4.12.1 on the PI's machine (reported by the PI on 10 Nov 2026). This is the same CTblLib version that HCG gate G10 records. |
 | Matsumoto–Sasaki–Takayama–Yoshida (1993), structure of G₃₄ | cited by ChatGPT | not opened by Claude |
 | D. Taylor, *Reflection subgroups of complex reflection groups* (2025) | cited by ChatGPT for the single reflection class of G₃₄ | not opened by Claude |
 | Classification inputs of gate G10 | Hiss–Malle 2001 with 2002 corrigenda; GT08; GT12; Katz–Tiep §16 | as recorded in HCG Δ27; not opened in the HHO conversation |

@@ -156,7 +156,7 @@ HHO uses no RTG result. Its registry row for RTG inputs is "none". If that chang
 | HHO-SG-5 | A finite scan certifies only its stated range and model. Scans stay PROPOSED until replayed independently. |
 | HHO-SG-6 | Witnesses that fail (D) are not counterexamples to any Severn theorem and say nothing about (H)-data. |
 
-**Added from the HHO conversation.**
+**Added from the HHO conversation.** Accepted by the PI on 10 Nov 2026, with the proviso that they are reconsidered if they prove too restrictive in practice.
 
 | Rule | Content | Reason |
 |---|---|---|
