@@ -1,0 +1,146 @@
+## HHO Addendum 8 — ilk bilimsel sonuç
+
+[SESSION — yeni THM] C₆ için gözlenen Komşu Parite Yasası, yalnızca 54 örnekle desteklenen bir örüntü değil: bu ailede doğrudan ispatlanabiliyor.
+
+\\(K=\mathbb Q(\sqrt{-3})\\), \\(\zeta=\zeta_6\\) ve \\(\chi_1(g)=\zeta\\) olsun. Genus-sıfırda, 10 etkin dalı bulunan ve çarpımı birim olan bağlı bir \\(C_6\\) verisinde
+
+\\[ e_j\in\\{1,2,3,4,5\\},\qquad \sum_je_j\equiv0\pmod6. \\]
+
+Önceki parabolik diskriminant yerellik teoremi, sekiz-boyutlu form için
+
+\\[ [\det h\_{\mathrm{par}}] = \left[\prod\_{j=1}^{10}(1-\zeta^{e_j})^{-1}\right] \\]
+
+veriyor; katsayı Hermitik formunun rasyonel normalizasyonu norm sınıfını değiştirmiyor.
+
+\\(2\\), \\(K\\)'da inerttir. Şimdi
+
+\\[ v_2\\!\left(\prod_j(1-\zeta^{e_j})\right) =\\#\\{j:e_j=3\\}, \\]
+
+çünkü yalnızca \\(e=3\\) için \\(1-\zeta^e=2\\); diğer yerel çarpanlar 2-adik birimdir.
+
+Brauer komşusu \\(\chi_4\\) için
+
+\\[ m(\chi_4) =-2+\\#\\{j:e_j\ne3\\} =8-\\#\\{j:e_j=3\\}. \\]
+
+Dolayısıyla
+
+\\[ \boxed{ [\det h\_{\mathrm{par}}]=[2] \iff m(\chi_4)\equiv1\pmod2. } \\]
+
+Sonuç: Bağlı, rank-8 \\(C_6\\) verilerinde parite yasası bir `[THM]` sonucudur; 54/54 deney bunun sayısal doğrulamasıdır.
+
+Önemli sınır: İspat yalnızca yerel diskriminant formülünü ve \\(C_6\\)'nın karakter aritmetiğini kullanıyor. Genel, değişmeli olmayan Brauer-ağacı komşu parite yasası hâlâ `[CONJ]`. Bu abelyen sonuç, o varsayımı bağımsız olarak kanıtlamıyor.
+
+## \\(C_3\times S_3\\) — bağımsız tekrar
+
+[NUM — REPLAY CHECKED] ZIP'te bulunmayan iki motor dosyasının kaynakta belirtilen tam SHA-256 değerlerini önceki HCG paketlerinden doğrulayarak geri aldım ve değiştirmeden kullandım.
+
+`c3s3_all.py` yeniden çalıştırıldığında çıktı bayt düzeyinde aynı:
+
+| İmza        | Vaka | Diskriminant        |
+| ----------- | ---- | ------------------- |
+| \\((4,4)\\) | 49   | 49/49 split         |
+| \\((5,3)\\) | 8    | Negatif determinant |
+| \\((3,5)\\) | 3    | Negatif determinant |
+
+Böylece değişmeli olmayan, \\(2\\)-sıfır-defektli örneğin bildirilen sayısal testi doğrulandı.
+
+Kanıt derecesi: Bu, özgün motorun bağımsız ortamda tekrarıdır; ikinci bir algoritma değildir. Ayrıca 60 örnek rastgele seçildiği için tüm \\(C_3\times S_3\\) Hurwitz verilerini tüketen bir sınıflandırma değildir.
+
+## Yeni bulgu: genel Komşu Parite Yasasına karşıörnek
+
+[SESSION — yeni negatif sonuç] Komşu Parite Yasasını (HHO-CONJ-NPL) daha yüksek dereceli bir Brauer komşusuna taşıdığımda, mevcut genel ifadesini çürüten açık bir örnek buldum.
+
+\\[ G=C_3\times(C_5\rtimes C_4),\qquad |G|=60, \\]
+
+burada \\(C_4\\), \\(C_5\\) üzerinde çarpma-\\(2\\) otomorfizmasıyla etki ediyor. Karakterleri
+
+\\[ \chi=\zeta_3\otimes\mathbf1,\qquad \psi=\zeta_3\otimes\rho_4 \\]
+
+olarak alalım. \\(\rho_4\\), 20 mertebeli Frobenius grubunun dört-boyutlu indirgenemez temsilidir.
+
+\\(p=5\\), \\(\mathbb Q(\sqrt{-3})\\)'te inerttir. İlgili defekt-1 Brauer ağacı, dört doğrusal karakterin dört-boyutlu karaktere bağlandığı yıldızdır. Dolayısıyla \\(\chi\\) yapraktır ve tek komşusu \\(\deg\psi=4\\). Bu ağaç ayrıca grup temsilleri literatüründe açıkça veriliyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://dokumen.pub\&sz=32)
+
+DOKUMEN.PUB+1
+
+
+
+\\(u^5=a^4=1\\), \\(aua^{-1}=u^2\\) olsun. Şu 13 dallı tuple'ı seçelim:
+
+\\[ \begin{split} &(\zeta_3,1)^5,\quad(\zeta_3^2,1)^4,\\\ &(\zeta_3^2,a),\quad(1,a^{-1}),\quad(1,u),\quad(1,u^{-1}). \end{split} \\]
+
+Çarpımı birimdir ve \\(G\\)'nin tamamını üretir; dolayısıyla bağlı bir \\(G\\)-örtüsü tanımlar.
+
+Doğrudan Chevalley–Weil ve yerel diskriminant hesabı:
+
+Hedef \\(\chi\\)-multiplicity
+
+# 8
+
+İmza \\((4,4)\\)
+
+Komşu çokluğu
+
+# 43
+
+\\(m(\psi)=-8+51\\), tek
+
+\\[ [\det h\_\chi]=[3^{-5}]=[1]. \\]
+
+Tek komşu çokluğu, fakat split diskriminant.
+
+Bu, HHO-CONJ-NPL'nin Addendum 8'de yazıldığı genel kapsamda yanlış olduğunu gösteriyor.
+
+Kritik kapsam: \\(\chi\\), \\(G\\) üzerinde sadık değil; \\(C_5\rtimes C_4\\) faktörünü görmüyor. Üç dallanma noktası \\(\chi\\) açısından etkisiz, fakat komşu \\(\psi\\)'nin Chevalley–Weil çokluğunu değiştiriyor. Ayrıca etkin dal sayısı 10 olduğu için bu örnek dominans \\((D)\\) koşulunu sağlamıyor.
+
+Dolayısıyla karşıörnek, daha dar bir sadık temsil / bütün dallar etkin / (D) varsayımı altında kurulabilecek yeni bir parite yasasını henüz çürütmüyor.
+
+Ancak mevcut genel yasa için çok önemli bir eksik hipotezi ortaya çıkarıyor: Komşu çokluğu, \\(\chi\\)'nin göremediği dallanmalara bağımlı olabilir; diskriminantı ise olmayabilir.
+
+## Ek bağımsız sonuç: \\(C_3\times S_3\\) testi de genelleşiyor
+
+[SESSION — THM, yerellik teoremine koşullu] Bu temsil için yalnızca rastgele seçilmiş 49 dengeli örnek değil, uygun bütün rank-8, imzası \\((4,4)\\) olan genus-sıfır verileri split diskriminanta sahiptir.
+
+\\(\chi=\zeta_3\otimes\mathrm{std}\_2\\) temsilinde katsayı Hermitik formu \\(h_0=I_2\\) seçilebilir. Yerel \\(\Delta(g)\\) faktörleri:
+
+- Skaler ve rotasyon elemanlarında \\(1-\omega\\), \\(1-\omega^2\\) çarpanlarıyla;
+- Skalerle çarpılmış transpozisyonlarda aynı tür çarpanlarla;
+- Skalersiz transpozisyonlarda \\(\Delta(g)=1\\) ile
+
+ifade edilir.
+
+Bütün bu faktörler inert asallarda birimdir. Dolayısıyla toplam determinant rasyonel ve pozitif olduğunda
+
+\\[ \boxed{[\det h\_{\mathrm{par}}]=[1].} \\]
+
+Bu, değişmeli olmayan kontrol grubunda sıfır-defekt engelinin ayrıca yerel formülle ispatıdır.
+
+Bağımsız uygulamam, özgün motorun hesapladığı 60 determinantın tamamıyla aynı norm sınıflarını verdi. İki uygulama arasındaki determinant oranları yalnızca \\(3^5\\) veya \\(3^6\\); ikisi de norm.
+
+## Önerilen HHO kayıtları
+
+| Kayıt                                             | Önerilen statü                                              |
+| ------------------------------------------------- | ----------------------------------------------------------- |
+| \\(C_6\\) için \\(m(\chi_4)\\) parite yasası      | SESSION THM — ispatlandı, yerellik formülüne bağlı          |
+| \\(C_3\times S_3\\) sıfır-defekt kontrolü         | CHECKED, iki hesap yöntemiyle                               |
+| HHO-CONJ-NPL — mevcut genel ifade                 | REFUTED, açık karşıörnek; bağımsız peer kontrolü öneriliyor |
+| Sadık \\(\chi\\) için Komşu Parite Yasası         | OPEN                                                        |
+| Bütün yerel dalları \\(\chi\\)-etkin olan varyant | OPEN                                                        |
+| \\((L)+(D)\Rightarrow[1]\\)                       | OPEN, değişmedi                                             |
+
+Önerilen sonraki bilimsel adım: Genel NPL'yi olduğu gibi genişletmek yerine, önce karşıörneği Claude'ya bağımsız denetletelim. Ardından ya sadık \\(\chi\\) koşulunu içeren daraltılmış bir teorem kuralım ya da \\(\ker\chi\\)'deki dallanma için açık bir düzeltme terimi türetelim.
+
+Bu yaklaşım, pozitif-defektli gluing mekanizması için yanlış bir genel parite varsayımına dayanmamızı önler.
+
+## İnceleme ve tekrar paketi
+
+HHO Addendum 8 — bağımsız bilimsel inceleme ve karşıörnek ispatı (English)
+
+Bütün kaynaklar, exact doğrulayıcılar, karşıörnek ve temiz tekrar paketi (ZIP)
+
+ZIP SHA-256: `b0a5b649212bb6f1cd88a73570880713913386f043c1285c9db611b31f860303`
+
+Paket temiz klasörde çalıştırıldı: 12/12 paket manifesti, 7/7 kaynak manifesti, 55/55 C₆ norm kontrolü, 60/60 \\(C_3\times S_3\\) norm kontrolü ve Frobenius-grubu karşıörnek kontrolü PASS.
+
+HHO noncanonical kalıyor. HCG/RTG kayıtlarına, PO-6'ya veya PI benimseme kararlarına değişiklik yapmadım.

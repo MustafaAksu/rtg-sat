@@ -1,0 +1,109 @@
+## HHO Addendum 9 — bağımsız inceleme
+
+[SESSION — karar] Komşu Parite Yasasının (HHO-CONJ-NPL) geri çekilmesi doğru. Yerine önerilen HHO-LOCAL-SUPPORT, pozitif-defektli Brauer bloklarıyla parabolik diskriminant arasında daha güvenilir bir araştırma çerçevesi sunuyor.
+
+Claude'nun `f20_check.py` dosyasını, daha önce doğrulanmış HCG motorunun değişmemiş kaynaklarıyla yeniden çalıştırdım.
+
+| Kontrol                                   | Bağımsız tekrar             |
+| ----------------------------------------- | --------------------------- |
+| \\(C_3\times F\_{20}\\), hedef \\(\chi\\) | \\(\dim H^1\_{\rm par}=8\\) |
+| Hermitik determinant                      | \\(1\\)                     |
+| İmza                                      | \\((4,4)\\)                 |
+| Diskriminant sınıfı                       | \\([1]\\)                   |
+| Brauer komşusu \\(\psi\\)                 | \\(m(\psi)=43\\)            |
+| Test betiği                               | PASS                        |
+
+[NUM — CHECKED] Bu, karşıörneğin ikinci motorla elde edilen sonucunu yeniden doğruluyor. Genel Komşu Parite Yasası mevcut ifadesiyle REFUTED olarak kalmalı.
+
+### Rank-bir yasa: koşullu teorem olarak geçerli
+
+[THM — lokalite formülüne koşullu] \\(K=\mathbb Q(\sqrt{-3})\\) üzerinde, \\(\dim_KH^1\_{\rm par}=8\\) ve imza \\((4,4)\\) olan rank-bir veride:
+
+\\[ \boxed{ [\det h\_{\rm par}] = [2^{\\,n\_{-1}}], \qquad n\_{-1}=\\#\\{j:\chi(g_j)=-1\\}. } \\]
+
+Gerekçe: Etkin dal sayısı 10 olduğundan, katsayı Hermitik formunun rasyonel normalizasyonu \\(q^{10}\\) gibi bir norm çarpanı verir. \\(K\\)'daki altıncı birim kökleri arasında inert asalda \\(1-\lambda\\)'yı birim olmayan yapan tek değer \\(\lambda=-1\\)'dir; o da yalnız \\(p=2\\)'de katkı verir.
+
+Böylece rank-bir \\(K\\)-değerli bir karakterin diskriminant desteğinde inert \\(p\ge5\\) bulunamaz. Bu, Brauer komşusunun Chevalley–Weil çokluğundan bağımsızdır.
+
+Karşıörnekte etkin değerler beş \\(\omega\\), beş \\(\omega^2\\):
+
+\\[ \prod_j(1-\chi(g_j)) =(1-\omega)^5(1-\omega^2)^5=3^5. \\]
+
+Dolayısıyla \\([3^{-5}]=[1]\\). Gram motorunun determinantı \\(1\\); yerel formülle farkı \\(3^5\\), yani bir norm.
+
+### Eski \\(C_6\\) taraması için sayım düzeltmesi
+
+[NUM — bağımsız exact kontrol] 55 dengeli desenin tamamında parite eşitliği geçiyor. Ancak tam \\(C_6\\) monodromisi üretmeyen iki desen var:
+
+\\[ (2^5,4^5),\qquad(3^{10}). \\]
+
+Bu yüzden doğru kayıt 55 biçimsel desen, 53 bağlı \\(C_6\\)-örtüsü olmalı. Önceki 54 sayısı, yalnız \\(m(\chi_4)<0\\) olan satır çıkarıldığında elde ediliyordu. Negatif teorem veya parite eşitliği değişmiyor.
+
+## HHO-LOCAL-SUPPORT: kesin yerel parite formülü
+
+[THM — SESSION, lokalite teoremine koşullu]
+
+\\(p\equiv2\pmod3\\) inert bir asal olsun. Tanımlayalım:
+
+\\[ E_j=\operatorname{im}(1-g_j),\quad a_j=\det(h_0|\_{E_j}),\quad b_j=\det((1-g_j)|\_{E_j}). \\]
+
+O zaman diskriminantın \\(p\\)-adik norm sınıfı şu pariteyle belirlenir:
+
+\\[ \boxed{ \epsilon_p\equiv \sum_j\bigl(v_p(a_j)-v\_{\mathfrak p}(b_j)\bigr) \pmod2. } \\]
+
+Bu, önerilen HHO-LOCAL-SUPPORT koşulundan daha güçlüdür: yalnızca olası destek kümesini değil, toplam değerlik paritesini verir.
+
+Bir \\(1-\lambda\\) çarpanı, inert \\(p\\)'de ancak \\(\lambda\ne1\\) saf \\(p\\)-kuvveti mertebesindeyse birim olmayabilir. Dolayısıyla Claude'nun iki olası destek kaynağı doğru. Ancak bunlar yeterli koşullar değildir; pay ve paydadaki değerlikler birbirini götürebilir.
+
+### Yeni yardımcı lemma
+
+[SESSION — THM adayı, ikinci inceleme gerekli]
+
+\\(g\\), \\(p\\)'de kendine-dual bir Hermitik kafesi korusun. Eğer \\(g\\)'nin hiçbir önemsiz olmayan özdeğeri saf \\(p\\)-kuvveti mertebeli değilse, hareket uzayı kafesi de kendine-dualdir.
+
+İspatın ana adımı:
+
+\\[ \det((1-g)|\_{E_g})\in R^\times \\]
+
+olduğundan \\(1-g\\), integral görüntüsü üzerinde tersinirdir. Bu da
+
+\\[ \Lambda=\ker(1-g)\perp\operatorname{im}(1-g) \\]
+
+integral ortogonal ayrışımını verir. \\(\Lambda\\) unimodüler olduğundan iki bileşen de unimodülerdir. Dolayısıyla yerel \\(\Delta(g)\\) faktörü \\(p\\)-adik birimdir.
+
+Bu, genel destek analizinde Brauer komşu çokluğuna ihtiyaç duymadan kullanılabilecek yeni bir yerel dışlama kriteri.
+
+## Lokalitenin kaynak sınırı
+
+Daha önceki ayrıntılı ikinci-AI incelemesinin tam metnine ulaştım: `H3_DISC_LOCALITY_PROOF_REVIEW_CLAUDE_v0_1.md`. Orada formülün işareti ve olası global çarpanlar satır satır denetlenmiş.
+
+Doğrulanan matematiksel ifade:
+
+\\[ \boxed{ [\det h\_{\mathrm{par}}] = \left[(-1)^n\prod_j\frac{a_j}{b_j}\right]. } \\]
+
+Global işaret \\((-1)^n\\) zorunludur. Baz değişimi ve katsayı formundan gelen ek determinant çarpanları norm olduğu için, formülde başka bir nonnorm global sınıf bulunmuyor. Tam determinantlar yine norm çarpanlarıyla farklı olabilir.
+
+Ancak asıl `HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_1.md` dosyası bu oturumda erişilebilir değil. Ulaşabildiğim belge onun ayrıntılı bilimsel çapraz incelemesi. Bu nedenle orijinal kaynak kimliğini doğrulanmış kabul etmiyorum.
+
+## Kayıt önerisi
+
+| Sonuç                                                                | Önerilen durum                       |
+| -------------------------------------------------------------------- | ------------------------------------ |
+| HHO-CONJ-NPL                                                         | WITHDRAWN — REFUTED                  |
+| \\(C_3\times F\_{20}\\) karşıörneği                                  | NUM CHECKED                          |
+| Rank-bir \\([2^{n\_{-1}}]\\) yasası                                  | SESSION THM, lokaliteye koşullu      |
+| HHO-LOCAL-SUPPORT parite formülü                                     | SESSION THM, lokaliteye koşullu      |
+| Kendine-dual kafes + saf \\(p\\)-kuvveti özdeğer bulunmaması lemması | PROPOSED — bağımsız inceleme gerekli |
+| Genel \\((L)+(D)\Rightarrow[1]\\)                                    | OPEN                                 |
+
+## İnceleme dosyaları
+
+HHO Addendum 9 — bağımsız matematiksel inceleme (English)
+
+Kaynaklar, değişmemiş motor, exact kontroller ve temiz tekrar paketi
+
+ZIP SHA-256: `63f388c0ba0a5ae408b05b1d108abc8c78b4dbcb0d5761d50eff94c444cbdb66` · Manifest 13/13 PASS · Temiz tekrar PASS
+
+Sonraki bilimsel öncelik: Genel destek lemmasını pozitif-defektli, sadık ve bütün dalları etkin bir temsilde sınamak. Öncelikle yeni kendine-dual kafes lemmasının bağımsız denetimi, ardından yerel \\(\epsilon_p\\) hesabı yapılmalı.
+
+HHO noncanonical statüsünde kalıyor. HCG/RTG ve PO-6 kayıtlarını değiştirmedim.

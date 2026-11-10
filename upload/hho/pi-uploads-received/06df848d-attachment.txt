@@ -1,0 +1,100 @@
+## HHO Addendum 11 — değerlendirme
+
+[SESSION] Addendum 10'daki `30/30 split` iddiasının geri çekilmesi yerinde. Yeni sonuç, önceki normalizasyon hatasını düzeltiyor ve sadık, değişmeli olmayan, bütün dalları etkin rank-8 bir yerel sistemde \\([5]\\) diskriminantının oluşabildiğini gösteriyor.
+
+Bu sonuç genel \\((L)+(D)\Rightarrow[1]\\) sorusunu çürütmüyor; örnekler dominant değil.
+
+### İlk yapısal çıkarım: bu rank-4 aile (D)'ye genişletilemez
+
+[THM — SESSION] Genus-sıfırda, global sabit vektörü olmayan rank-\\(d\\) katsayı temsili için:
+
+\\[ \dim_KH^1\_{\mathrm{par}}=\sum_jc_j-2d. \\]
+
+Hedef boyut 8 ve bütün dallar etkin olduğunda
+
+\\[ \sum_jc_j=2d+8,\qquad c_j\ge1. \\]
+
+Dolayısıyla
+
+\\[ \boxed{N\_{\mathrm{eff}}\le2d+8.} \\]
+
+Mevcut \\(d=4\\) temsilinde \\(N\_{\mathrm{eff}}\le16\\). Oysa 16-boyutlu period bölgesine genus-sıfır Hurwitz ailesinden dominans için \\(N\_{\mathrm{eff}}\ge19\\) gerekiyor.
+
+Sonuç: Aynı rank-4 temsil üzerinde dal sayısını artırarak \\((D)\\)'yi sağlamak mümkün değil. Sonraki test mutlaka farklı, daha yüksek ranklı bir katsayı temsili kullanmalı; rank-8 parabolik hedef korunmalı.
+
+### 2. Addendum 11'in hesapları doğrulandı
+
+[NUM — bağımsız tekrar ve ikinci uygulama]
+
+| Kontrol                            | Sonuç                                         |
+| ---------------------------------- | --------------------------------------------- |
+| İlk 643 satır                      | Önceki sürümle bayt düzeyinde aynı            |
+| Özgün \\(A_4\\) Gram hesabı        | 40/40, çıktı bayt düzeyinde aynı              |
+| Dengeli \\((4,4)\\) örnekler       | 27 split, 3 nonsplit                          |
+| Üç nonsplit determinant            | 405, 135, 1125                                |
+| Tuple çarpımları                   | 40/40 birim                                   |
+| Üretilen grup                      | 40/40 tam \\(C_3\times F\_{20}\\), mertebe 60 |
+| Ayrı yerel diskriminant uygulaması | 40/40 norm sınıfı eşleşti                     |
+
+[ALG] Ayrıca temsilin bütün 60 yerel grup elemanını, özgün Gram motorunu kullanmadan hesapladım.
+
+| Merkezi \\(C_3\\) bileşeni \\(k\\) | Eleman sayısı | \\(v_5(\Delta)\bmod2\\) |
+| ---------------------------------- | ------------- | ----------------------- |
+| 0                                  | 20            | 0                       |
+| 1                                  | 20            | 1                       |
+| 2                                  | 20            | 1                       |
+
+Bu hesap, Addendum 11'de gözlenen parite kuralını bütün temsil ailesine genişletiyor.
+
+### 3. Genel \\(F\_{20}\\) yerel parite lemması
+
+[THM — SESSION; parabolik diskriminant yerellik teoremine koşullu]
+
+\\[ G=C_3\times F\_{20},\qquad \sigma=\omega^k\otimes\rho_4, \\]
+
+\\[ h_0=I_4+J_4,\qquad \det h_0=5 \\]
+
+olsun.
+
+Yerel monodromi \\(g=(k,w)\\) için:
+
+\\[ \boxed{ v_5(\Delta(g))\equiv \begin{cases} 0,&k=0,\\\ 1,&k\ne0 \end{cases} \pmod2. } \\]
+
+İspat iki duruma ayrılıyor.
+
+\\(k=0\\): Permütasyonun her \\(\ell\\)-çevrimi, hareket uzayında bir \\(A\_{\ell-1}\\) parçası verir. Bu parçanın Gram determinantı da \\(1-w\\) operatörünün hareket uzayındaki determinantı da \\(\ell\\)'dir. Yerel faktörün 5-adik paritesi sıfırdır.
+
+\\(k\ne0\\): \\(C_3\\) bükülmesi, hareket uzayını tam dört boyuta çıkarır. Gram determinantı 5'tir. Buna karşılık \\(1-\omega^k\rho_4(w)\\) operatörü mod 5 tersinirdir; paydanın 5-adik değerliği sıfırdır.
+
+Dolayısıyla uygun rank-8, \\((4,4)\\) verilerinde:
+
+\\[ \boxed{ [\det h\_{\mathrm{par}}]=[5^t], \qquad t=\\#\\{j:k_j\ne0\\}. } \\]
+
+Bu, yalnız 40 örnek için değil, aynı katsayı temsilinin gerekli hipotezleri sağlayan bütün tuple'ları için koşullu bir teoremdir.
+
+### 4. Bilimsel karar
+
+| Kalem                                      | Önerilen durum                          |
+| ------------------------------------------ | --------------------------------------- |
+| Addendum 10'daki 30/30 split               | RETRACTED                               |
+| Addendum 11'in düzeltilmiş sonuçları       | NUM — CHECKED                           |
+| Tam grup üretimi ve çarpım-bir kontrolleri | COMPUTATIONAL CHECKED                   |
+| \\(v_5(\det h)\equiv t\pmod2\\)            | SESSION THM, yerellik teoremine koşullu |
+| Yerel kafes/cokernel uzunluk özdeşliği     | ALG THM                                 |
+| Genel \\((L)+(D)\Rightarrow[1]\\)          | OPEN                                    |
+
+Bu negatif kontrolü HHO'nun kalıcı test kümesine eklemeyi öneriyorum.
+
+Sonraki araştırma hedefi: Aynı 5-adik tek-parite mekanizmasını, \\(N\_{\mathrm{eff}}\ge19\\) ve \\(\sum c_j=2d+8\\) sağlayan daha yüksek ranklı bir temsilde aramak. Bu gerekli koşulları geçen adayda ayrıca period-map rankı 16 ve (L) bağımsız denetlenmeli.
+
+### İnceleme dosyaları
+
+HHO Addendum 11 — Independent Review (English)
+
+Bağımsız yerel/grup denetleyicisi — Python
+
+Kaynaklar, hesaplar ve tekrar paketi — ZIP
+
+ZIP SHA-256: `5dead45675d719e4ab5edc50c74c297d4382bcac8171db01c224a69c03bc57d7` · Manifest 10/10 PASS · İlk tam tekrar PASS · Temiz ZIP üzerindeki ikinci tam tekrar süre sınırına takıldı
+
+HHO noncanonical kalıyor. HCG/RTG, PO-6 ve PI benimseme kayıtlarında değişiklik yapılmadı.

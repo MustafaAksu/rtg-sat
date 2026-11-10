@@ -1,0 +1,58 @@
+## Addendum 1 — ilk değerlendirme
+
+[SESSION] Claude'nun tarihli Addendum 1'ini (123 satırlık dosyanın tamamını) okudum. İlk metin korunmuş; düzeltmeler ayrı kayıtlanmış.
+
+[THM — doğrulanan adım] \\(\operatorname{ev}\_u\\) enjeksiyonu doğru:
+
+\\[ W\_{\mathbb Q}=\operatorname{Hom}\_{\mathbb Q[G]}(U\_{\mathbb Q},H^1(C,\mathbb Q)), \qquad \operatorname{ev}\_u(f)=f(u). \\]
+
+\\(U\_{\mathbb Q}\\) indirgenemez ve \\(u\ne0\\) ise \\(f(u)=0\Rightarrow f=0\\). \\(U\\)'ya trivial ağırlık-sıfır Hodge yapısı verilmesiyle bu dönüşüm Hodge morfizmasıdır.
+
+Dolayısıyla \\(W\_{\mathbb Q}\\), Jacobian'ın \\(H^1\\)'i içinde ağırlık-bir rasyonel Hodge alt-yapısı olarak gerçekleşir. Jacobian polarizasyonunun bu alt-yapıya kısıtlanması da polarizasyondur.
+
+Bu, önceki (a) yükümlülüğünü matematiksel olarak kapatıyor. Ancak polarizasyonun belirli Morita Hermitik formuna tam olarak hangi skalerle karşılık geldiği, ayrı bir form-uyumluluğu kontrolüdür.
+
+### Polarizasyon eşleşmesi: (b) için gereken kesin ifade
+
+[SESSION — proof draft doğrulaması] Schur–Morita ayrışımı, Jacobian cup formu ve \\(K\\)-Hermitik normalizasyon uyumlu seçilirse
+
+\\[ (\operatorname{ev}\_u)^\*E_C = \operatorname{Tr}\_{K/\mathbb Q} \left(\delta^{-1}q\\,h_W\right), \qquad q=h_U(u,u)\in\mathbb Q\_{>0}, \\]
+
+elde edilir; ortak normalizasyon sabiti de rasyonel olmalıdır.
+
+\\[ [\det(qh_W)]=[\det h_W], \qquad q^8=N\_{K/\mathbb Q}(q^4). \\]
+
+Bu nedenle integral parabolik-form karşılaştırmasına gerek kalmadan rasyonel polarizasyon üzerinden destek teoremini tamamlama yaklaşımı geçerli.
+
+Yine de (b)'yi henüz koşulsuz CHECKED yapmıyorum: gerçek cup formunun Morita ayrışımıyla adjunction eşitliğini Severn'in konvansiyonlarında yazmak gerekiyor.
+
+### (c) ve (d): kaynak yükümlülükleri
+
+[OWNER: HCG v0.2 §6.16, yerel kopya] W5 için Jacobian kaynaklı polarizasyonun diskriminantla eşleşmesi doğrulanmış; genel PO-6 ise açık bırakılmış.
+
+[UNVERIFIED — doğrudan Severn v2 okuması bekliyor] Önceki kaynak çaprazlaması, Severn v2 Proposition 7.1'in istenen K-lineer/antilineer ve rasyonel-skaler karşılaştırmayı açıkça içerdiğini, Lemma 7.2'nin de cup formülünü verdiğini bildiriyor. V2'nin yayımlanmış kaydını doğruladım; PDF'nin ilgili ispatını doğrudan okuyamadım.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+Hexagon
+
+
+
+\\((D)\\)'nin generic \\(\operatorname{End}^0(A)=K\\) sonucunu verdiği adım, tam boyutlu period görüntüsü altında standart Mumford–Tate argümanıyla gerekçelendirilebilir. Ancak yalnız Jacobian kaynaklı polarizasyon kullanılacaksa bu adıma ihtiyaç yok.
+
+### Güncellenmiş durum
+
+| Yükümlülük                                                       | Karar                                            |
+| ---------------------------------------------------------------- | ------------------------------------------------ |
+| (a) `ev_u` enjeksiyonu, Hodge gerçekleşimi, polarizasyon varlığı | SESSION THM — CHECKED                            |
+| (b) Morita formuyla rasyonel ölçek eşitliği                      | SESSION proof draft                              |
+| (c) \\((D)\Rightarrow\operatorname{End}^0=K\\)                   | Koşullu; alternatif polarizasyonlar için gerekli |
+| (d) Severn v2 konvansiyonları ve \\(A\_\sigma\\) tanımı          | OPEN — owner doğrulaması                         |
+| HHO-HYP-SUPPORT                                                  | Koşullu THM                                      |
+| \\((L)+(D)\Rightarrow[1]\\)                                      | OPEN                                             |
+
+[SESSION — karar] Claude'nun önerisini kabul ediyorum: (a) ve (b) artık yalnızca `OPEN` olarak tutulmamalı. Ancak (b)'nin son kaynak/form eşleşmesi yapılmadan destek teoreminin bütünü kapatılmamalı.
+
+HHO Addendum 1 — bağımsız çapraz inceleme (English)
+
+Bir sonraki çalışma yalnızca Severn v2 §3.2, Proposition 7.1 Steps 2–4 ve Lemma 7.2 üzerindeki eşleştirme olmalı. Genel bir yeni hesap kampanyasına gerek yok. HHO noncanonical kalıyor; HCG/RTG bilimsel benimseme kayıtları değiştirilmedi.
