@@ -1,0 +1,88 @@
+Önerdiğin iki-AI çalışma protokolünü kabul ediyorum. H1/H2 için Claude ilk hesaplama ve ispat paketini hazırlasın; ben (ChatGPT) bağımsız doğrulayıcı olayım. H3 aşamasında ise iki ayrı literatür incelemesi yapıp sonuçları karşılaştıralım.
+
+Charter v0.1'i ve Dyadic v6.4.19 ile FMS v0.6.4'ün ilgili bölümlerini kontrol ettim. v0.2 için iki düzeltmeyi destekliyorum; R7 konusunda küçük ama önemli bir kanıt şartım var.
+
+## 1. Charter v0.2 için kararlar
+
+R6 — düzeltmeyi kabul ediyorum.
+
+[SESSION — ALG, önceki konuşmadan ithal]
+
+\\[ \Re\mu=-\frac12<0 \\]
+
+nedeniyle \\(T^6\\)'nın orijini yerel çekicidir. Bu ayrıca Dyadic v6.4.19 §6.14'teki `DYAD-THM-PRIM-CTR` ile güçlü biçimde destekleniyor.
+
+Dolayısıyla orijini sabitleyen bir yerel topolojik eşleniklik altında \\(T\\) ile \\(T^{-1}\\) özdeşleştirilemez. Bu sonuç için tersleyici involüsyon veya \\(C^3\\) düzgünlük gerekmiyor.
+
+R6'nın yeni ifadesi bu olmalı. RTG tarafından benimsenmiş yeni bir sonuç olarak değil, mevcut owner teoreminden çıkarılmış SESSION sonucu olarak tutulmalı.
+
+R7 — kabul, fakat kanıt kontrolü gerekli.
+
+[SESSION — ALG, FMS v0.6.4 §5.2]
+
+\\(a\_{05}\neq0\\) kullanılarak lineer çarpanların \\(\mu_6\\) ile sınırlanması makul ve FMS sonucuyla uyumlu.
+
+Ancak yalnızca \\(\bar z^5\\) katsayısına bakmak yeterli değil. FMS §5.2 açıkça ikinci dereceden koordinat düzeltmelerinin bu katsayıya katkı yapabileceğini belirtiyor.
+
+Kısa bağımsız kanıtın şu sırayı tamamlaması gerekiyor:
+
+1. Kübik karşılaştırmadan \\(|c|=1\\).
+2. Dördüncü derece karşılaştırmasından ikinci dereceden düzeltmenin sıfır olması.
+3. Beşinci derecedeki saf \\(\bar z^5\\) karşılaştırmasından \\(c=\bar c^5\\), dolayısıyla \\(c^6=1\\).
+
+İkinci adım ispatlanmadan R7'yi bağımsız doğrulanmış saymayacağım. v0.2'de `[SESSION-ALG: FMS kaynaklı; bağımsız kanıt incelemesi bekliyor]` etiketi uygun.
+
+## 2. İş bölümümüz
+
+| Görev                                         | İlk araştırmacı             | Bağımsız denetçi               |
+| --------------------------------------------- | --------------------------- | ------------------------------ |
+| Charter v0.2 düzenlemeleri                    | Claude                      | ChatGPT                        |
+| H1 — Eisenstein yapı, polarizasyon            | Claude                      | ChatGPT                        |
+| H2 — \\(E^2\\) integral NS bazı               | Claude                      | ChatGPT                        |
+| H2 — \\(E^4\\) Hodge halkası                  | Claude                      | ChatGPT                        |
+| H3 — Güncel literatür ve açık problem tespiti | Claude ve ChatGPT ayrı ayrı | Karşılıklı değerlendirme       |
+| Sonuç kabulü ve RTG handoff                   | PI                          | İki AI'ın raporları girdi olur |
+
+Özellikle H2 için yalnız aynı scripti iki kez çalıştırmak bağımsız doğrulama sayılmayacak.
+
+Claude'nun exact SymPy hesaplamasını ben farklı bir matematiksel kuruluştan kontrol edeceğim. \\(E^2\\) için Hermitik endomorfizm matrisi ve Néron–Severi özdeşliği; \\(E^4\\) için rasyonel exterior algebra üzerinde \\(K\\)-karakter değişmezleri ve divisor-product rank hesabı kullanılabilir.
+
+İlk doğrulamada Claude'nun scriptini ve çıktısını görmeden kendi sonucu üretmek, ardından karşılaştırmak daha sağlıklı.
+
+## 3. Ortak bilimsel kayıt protokolü
+
+Her sonuç için şu alanlar yeterli:
+
+İki-AI doğrulama kaydı
+
+| Claim ID          | H1-ALG-01 gibi sabit kimlik                  |
+| ----------------- | -------------------------------------------- |
+| Derivation        | Claude / ChatGPT                             |
+| Independent check | Diğer AI'ın yöntemi ve çıktısı               |
+| Status            | PROPOSED / CHECKED / DISPUTED / ACCEPTED     |
+| Evidence          | Script, hash, exact çıktı, literatür kaynağı |
+| PI decision       | Kabul / ret / yeniden inceleme               |
+
+`CHECKED`, bağımsız denetimin tamamlandığını; `ACCEPTED`, PI kararını ifade etsin. Böylece bilimsel doğruluk, denetim ve benimseme birbirine karışmaz.
+
+Anlaşmazlıklar `DISAGREEMENT_LOG.md` içinde kalır. Bir AI diğerinin denetimini taklit edemez ve sessizce kapatamaz.
+
+## 4. Claude'ya gönderilecek karar
+
+Charter v0.2'yi hazırlayalım.
+
+**İş bölümü:** H1/H2 için Claude birincil türetici ve exact hesaplama üreticisi; ChatGPT bağımsız doğrulayıcı olacak. H3 literatür araştırmasını her iki AI bağımsız yürütecek. Nihai kabul ve RTG'ye handoff kararı PI'ye ait.
+
+v0.2'de:
+
+1. R6'yı topolojik eşlenmezlik sonucuyla güncelle. Yerel çekicilik için Dyadic `DYAD-THM-PRIM-CTR` owner kaynağını, topolojik eşlenmezlik için önceki konuşmadan ithal SESSION türetimini ayır.
+2. R7 için yalnız (\bar z^5) katsayısını karşılaştırmakla yetinme. İkinci dereceden düzeltmenin sıfır olduğunu ispatlayan ara adımı da ver. Kanıt bağımsız olarak denetlenene kadar verified yazma.
+3. İki-AI çapraz denetim protokolünü, anlaşmazlık kaydını ve PI kabul kapısını ekle.
+4. RTG import ledger'ını ve tek yönlü bilimsel aktarım sınırını koru.
+5. H1/H2 için ilk exact script paketini hazırla; ayrı bir doğrulama yapabilmem için problem tanımlarını ve beklenen matematiksel sözleşmeleri script sonuçlarından ayrı sun.
+
+Sonuçları yalnız Claude'nun hesabına dayanarak verified olarak etiketlemeyelim.
+
+Bir ilave önerim: H1/H2'nin testlerini RTG'nin mevcut bilimsel scriptleriyle karıştırmayalım. Küçük, bağımsız bir çalışma dizininde çalıştırıp kaynak dosyaları RTG'den salt-okunur ithal edelim. Böylece ayrı araştırma oturumunun kayıtları gerçekten ayrı kalır.
+
+Bu protokol benim açımdan hazır. İlk adım Claude: charter v0.2 ve H1/H2 birincil paket; ChatGPT: kör bağımsız matematiksel doğrulama olsun.

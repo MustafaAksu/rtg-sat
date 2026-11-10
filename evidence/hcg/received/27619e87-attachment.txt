@@ -1,0 +1,96 @@
+## İlk karar: Kararlılık yaklaşımı matematiksel olarak uygun, ancak 20 yansıma sınırı henüz karşılanmış değil
+
+[SOURCE — Wood, Theorem 3.1; Roberts–Venkatesh, Lemma 4.1; Seguin, Theorem 4.1]
+
+Birincil kaynaklarda, üreteçlerin eşleniklik sınıfları yeterince yüksek çoklukla tekrarlandığında lifting invariant’ın tam braid yörüngelerini sınıflandırdığı teoremler gerçekten mevcut. Bu teoremler sonlu gruplar için geçerli; genel olarak basit grup varsaymıyorlar.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://people.math.harvard.edu\&sz=32)
+
+people.math.harvard.edu
+
++2
+
+
+
+Fakat incelediğim üç ifadede de kritik sınır
+
+\\[ n\ge M(G,c) \\]
+
+biçiminde, açık bir sayısal değer verilmeden bırakılıyor. Dolayısıyla bunlardan doğrudan \\(n=20\\) sonucunu çıkarmak mümkün değil.
+
+Olumlu nokta şu: Kaynakların daha güçlü, evrensel bir kaldırma grubu \\(U(G,c)\\) kullandığını gördüm. Bu grupta eşli tuple’lar için yalnız \\(A/A^2\\) düzeyinde değil, kaldırma değişmezinin tamamının sabit olduğunu doğrudan ispatlayabiliyoruz. Bu, önerdiğin yaklaşımı gerçek bir koşullu teoreme dönüştürüyor.
+
+## Kaynakların karşılaştırılması
+
+| Kaynak                                                                                                              | İncelenen sonuç                                                                                                | Çokluk sınırı                           | Braid kapsamı                        |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------ |
+| Fried–Völklein (1991), Appendix                                                                                     | Conway–Parker'ın sınırlı biçimi                                                                                | Yeterince büyük; açık sayı doğrulanmadı | Tam Hurwitz grubu                    |
+| [Wood (2021)](https://people.math.harvard.edu/~mmwood/Publications/lifting.pdf?utm_source=chatgpt.com), Theorem 3.1 | Herhangi bir üreten eşleniklik sınıfları birleşimi için evrensel lifting invariant ile yörünge sınıflandırması | \\(M(G,c)\\) var; açık değil            | Tam \\(B_n\\)                        |
+| [Roberts–Venkatesh](https://math.stanford.edu/~akshay/research/full.pdf?utm_source=chatgpt.com), Lemma 4.1          | Sabit yansıma sınıfları ve çokluklarda kararlılık                                                              | Yeterince büyük; açık değil             | Sınıf-renklerini koruyan braid grubu |
+| [Seguin (2026)](https://link.springer.com/article/10.1007/s11856-025-2848-5?utm_source=chatgpt.com), Theorem 4.1    | Wood'un sınıflandırmasını yeniden kullanan geniş kapsamlı bileşen hesabı                                       | \\(M_c\\) var; açık değil               | Tam/sınıf-koruyan Hurwitz eylemi     |
+
+Kaynaklar:&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://people.math.harvard.edu\&sz=32)
+
+people.math.harvard.edu
+
++3
+
+
+
+[SESSION — Wood Lemma 2.1'den türetildi] Wood'un evrensel kaldırma grubunda
+
+\\[ U(G,c)= \left\langle [g]\ (g\in c) \ \middle|\ [x][y][x]^{-1}=[xyx^{-1}] \right\rangle \\]
+
+ve \\(U(G,c)\to G\\) homomorfizmasının çekirdeği merkezîdir.
+
+Bundan, \\(s^2=1\\) için \\([s]^2\\)'nin merkezî olduğu çıkar. Bütün yansımalar eşlenik olduğunda bu kareler eşittir:
+
+\\[ [s]^2=z_c. \\]
+
+Bu nedenle her eşli tuple için
+
+\\[ \boxed{ \Pi(s_1,s_1,\ldots,s\_{10},s\_{10})=z_c^{10}. } \\]
+
+Bu eşitlik \\(U(G,c)\\)'nin içinde geçerlidir. Yalnız Schur çarpanı veya \\(A/A^2\\) düzeyinde değildir.
+
+Böylece kesin bir koşullu sonuç elde ediyoruz:
+
+\\[ \boxed{ M(G\_{34},c)\le20 \quad\Longrightarrow\quad \text{bütün üretici eşli 20-tuple'lar tek }B\_{20} \text{ yörüngesindedir}. } \\]
+
+[OPEN] Ancak incelenen kaynaklar \\(M(G\_{34},c)\le20\\) eşitsizliğini kanıtlamıyor. Wood'un ispatındaki tekrarlama ve stabilizasyon argümanı doğrudan bu kadar küçük bir değere indirgenemiyor.
+
+### Saf braid ayrımı
+
+Teorem tam \\(B\_{20}\\) eylemini ele alıyor. Bundan otomatik olarak şu sonuçlar çıkmaz:
+
+- Bağlayıcı braid sözcüğünün saf olduğu;
+- ara tuple'ların eşli kaldığı;
+- sıralı dal noktalarıyla tanımlanan Hurwitz uzayının tek bileşenli olduğu.
+
+Dolayısıyla tam braid bağlantılılığı, projemizin işaretleme ve geometrik gerçekleşme yükümlülükleriyle karıştırılmamalı.
+
+## Önerdiğim sonraki işlem
+
+Bence şimdi \\(G\_{34}\\) için geniş bir Schur çarpanı hesaplaması yapmak yerine, Wood'un kararlılık ispatını on çiftlik duruma özelleştirmeye çalışmalıyız. Hedef açıkça şu olmalı:
+
+\\[ \boxed{\text{G}\_{34}\text{ için on çiftte sonlu-adımlı bağlantılılık ispatı veya karşıörnek.}} \\]
+
+Özellikle Wood'un kullandığı tekrar eden elemanları değiştirme lemması, bizim açık çift-eşleme hareketlerimizle birleştirilebilir. Başarı ölçütü ya \\(M\le20\\) için geçerli bir ispat ya da iki tuple'ı ayıran gerçekten braid-invariant bir engeldir.
+
+Kaynak notu: Wood, erken EVW çalışmasının geri çekildiğini açıkça belirtiyor. Bu nedenle kayıt otoritesi olarak Wood 2021 ve Seguin 2026 kullanılmalı; geri çekilmiş EVW metni tek başına kanıt dayanağı yapılmamalı.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://people.math.harvard.edu\&sz=32)
+
+people.math.harvard.edu
+
++1
+
+
+
+Tam birincil kaynak incelemesi, ispat ve açık yükümlülükler — Markdown
+
+Kayıt önerisi: Evrensel kaldırma değişmezinin eşli tuple'larda sabitliği `SESSION THM`; Wood kararlılığından çıkan koşullu bağlantılılık sonucu `CONDITIONAL`; \\(G\_{34}\\)'te 20 yansıma için bağlantılılık ise `OPEN`.
+
+HCG v0.1 ve kör denetçinin Priority B kapsamı değişmiyor.

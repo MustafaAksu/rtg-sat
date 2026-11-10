@@ -1,0 +1,147 @@
+## Makaleyi okudum: doğrudan ilgili alan Dyadic’in analitik gerçekleşme problemi
+
+**[SOURCE REVIEW — 23 Ekim 2026]** Yüklediğin makalenin tamamını, teorem ve ispatlarını kapsayan 11 sayfayı okudum:
+
+**L. López-Hernanz, _Summable formal invariant curves of diffeomorphisms_, Ergodic Theory and Dynamical Systems 32 (2012), 211–221.** DOI: `10.1017/S0143385710000805`. PDF’nin kapak sayfasındaki 2011 tarihi çevrimiçi yayıma, makale başlığındaki 2012 ise dergi cildine ait.
+
+**Temel değerlendirme:** Bu kaynak HCG’nin kenar-akı veya polarizasyon zincirini doğrudan tamamlamıyor. **Dyadic \(F=T^6\) dönüşünün formal değişmez eğrilerini sektörel analitik nesnelere dönüştürmek için kullanılabilir.** Fakat formal karekökün veya altıncı kökün yakınsaklığını ispatlamıyor.
+
+İnceleme sırasında, mevcut Dyadic katsayılarıyla makaleye oldukça somut bir uygulama da çıkardım. Bu yeni türetim henüz bağımsız denetimden geçmedi.
+
+## 1. Makalenin verdiği sonuç ile bizim açık sorumuz farklı
+
+**[THM — dış kaynak, Theorem 6.1, s. 220]** Holomorfik
+\[
+F:(\mathbb C^2,0)\longrightarrow(\mathbb C^2,0),\qquad DF(0)=I
+\]
+germinin sabit noktası izoleyse, Camacho–Sad tipindeki formal değişmez eğriler uygun bir parametrelemede \(\ell\)-toplanabilir. Sektörel toplamları \(F\) veya \(F^{-1}\) için parabolik eğriler verir. Burada
+\[
+\ell\ge \operatorname{ord}(F)-1.
+\]
+Briot–Bouquet durumunda Theorem 5.1 ve Corollary 5.2, daha açık olarak \(1/k\)-Gevrey asimptotiği ve \(k\)-toplanabilirliği sağlıyor. Kaynak: 2012 - Summable formal invariant curves of diffeomorphisms.pdf[yüklediğin PDF, s. 213, 217 ve 220](sandbox:/mnt/data/2012%20-%20Summable%20formal%20invariant%20curves%20of%20diffeomorphisms.pdf).
+
+**Toplanan nesne, değişmez eğrinin parametre serisidir.** Sonuç şunları kendiliğinden vermiyor:
+\[
+\log F\text{ yakınsaktır},\qquad
+F^{1/2}\text{ yakınsaktır},\qquad
+F^{1/6}\text{ yakınsaktır}.
+\]
+
+**[OWNER: Dyadic v6.4.20, OPEN 20]** Bizde \(C^\infty\) gerçekleşme zaten kapalı; analitik \(F^{1/2}\) ve \(F^{1/6}\) soruları açık. Bu makale tek başına onları kapatmıyor. RTG_DYADIC_OSCILLATOR_DSN_v6_4\_…
+
+Ayrıca makalenin Lemma 5.4’ü, formal üretecin Gevrey sınıfı için ayrı bir 2009 çalışmasına dayanıyor. Bu dış kaynağın ispatını bu incelemede yeniden denetlemedim.
+
+## 2. Dyadic’e uygularken önce kompleksleştirme gerekiyor
+
+**[ALG — SESSION türetimi; owner katsayıları girdi]**
+
+Gerçek Dyadic harita
+\[
+T(\rho,\eta)=
+\bigl(\rho-\sin\eta,\;\eta+e^\rho-1-\sin\eta\bigr)
+\]
+iki bağımsız kompleks değişkene holomorfik olarak genişletilebilir. \(DT(0)^6=I\) olduğundan \(F=T^6\), makalenin gerektirdiği şekilde özdeşliğe teğettir.
+
+Burada önemli ayrım:
+\[
+F(z,\bar z)
+\]
+tek kompleks değişkenli holomorfik bir harita değildir. İncelemeyi, \(z,w\) bağımsız kompleks değişkenler olacak şekilde yapmalıyız. Gerçek Dyadic düzlemi sonradan \(w=\bar z\) kesiti olarak geri gelir.
+
+Adopted **sonlu analitik normalizasyon chart’ında**:
+\[
+\begin{aligned}
+F_1(z,w)&=z+\mu z^2w+a_{32}z^3w^2+a_{05}w^5+O_{\rm tot}(7),\\
+F_2(z,w)&=w+\bar\mu zw^2+\bar a_{32}z^2w^3+\bar a_{05}z^5+O_{\rm tot}(7),
+\end{aligned}
+\]
+\[
+\mu=-\frac12-\frac{2i\sqrt3}{3},
+\qquad
+a_{05}=-\frac{49}{8640}-\frac{307i\sqrt3}{25920}\ne0.
+\]
+Bu, yakınsaklığı bilinmeyen bütün-mertebeli normalizer’ı kullanmak değildir; Dyadic’in kayıtlı sonlu polynomial chart’ını kullanıyoruz. RTG_DYADIC_OSCILLATOR_DSN_v6_4\_…
+
+**Yeni yazılı çıkarım:** Bu jet, kompleks sabit noktanın izole olduğunu göstermeye yeterli. Raporda, varsayımsal sabit eğrinin iki koordinatındaki sıfırlanma mertebelerini karşılaştırarak ispatladım. Gerçek düzlemdeki çekiciliği, kompleks izolasyonun yerine kullanmadım.
+
+## 3. Somut yeni uygulama: iki blow-up ile Briot–Bouquet durumuna geçiş
+
+**[ALG — SESSION; exact katsayı kontrolü yapıldı, peer denetimi bekliyor]**
+
+Kübik yer değiştirme
+\[
+F_3=(\mu z^2w,\bar\mu zw^2)
+\]
+için karakteristik yön denklemi:
+\[
+zF_{3,2}-wF_{3,1}
+=(\bar\mu-\mu)z^2w^2.
+\]
+
+Yalnız koordinat eksenleri karakteristik yön; ikisinde de kübik vektör sıfır. Dolayısıyla makalenin **nondejenere karakteristik yön** teoremini orijinde doğrudan uygulayamıyoruz.
+
+Fakat \(z\)-ekseni yönünde iki ardışık blow-up,
+\[
+w=z^2u,
+\]
+veriyor:
+\[
+\begin{aligned}
+z'&=z+\mu uz^4+O(z^7),\\
+u'&=u+z^3\bigl[(\bar\mu-2\mu)u^2+\bar a_{05}\bigr]+O(z^5).
+\end{aligned}
+\]
+
+İstisnai bölen üzerinde
+\[
+u_0^2=\frac{\bar a_{05}}{2\mu-\bar\mu}
+\]
+denkleminin iki ayrı, sıfırdan farklı çözümü var. Her birinde \(u=u_0+y\) yazınca indirgenmiş üretecin özdeğer oranı:
+\[
+\boxed{
+\frac{\nu}{\lambda}
+=\frac{2(\bar\mu-2\mu)}{\mu}
+=-\frac{102}{19}-\frac{16i\sqrt3}{19}
+\notin\mathbb Q_{>0}.
+}
+\]
+
+Bu, makaledeki Briot–Bouquet koşulunu sağlıyor. Dönüştürülmüş germin mertebesi \(4\), dolayısıyla bu uygulamada
+\[
+k=3.
+\]
+
+**[THM adayı — SESSION PROPOSED]** Owner jetinin ve makaledeki teoremin kullanıldığı bu argüman, kompleksleştirilmiş Dyadic dönüş için **en az dört ayrı formal değişmez dalın 3-toplanabilir parametrelemeye sahip olduğunu** veriyor: iki dal \(z\)-ekseni üzerinde, iki eşlenik dal diğer eksen üzerinde.
+
+Bu ifade için üç sınırı koruyorum:
+
+- Bütün değişmez eğrileri sınıflandırdığımı söylemiyorum.
+- Serilerin gerçekten ıraksadığını söylemiyorum; yakınsak seriler de bu kapsamda olabilir.
+- Bunlar doğrudan gerçek Dyadic yörüngeleri değildir. Örneğin \(w=O(z^2)\) ile gerçek kesit \(w=\bar z\), yeterince küçük bölgede sıfır dışında kesişmez.
+
+Dolayısıyla bu sonuç, gerçek düzlemdeki çekicilik veya R6b ile çelişmez.
+
+## 4. Araştırmada ne değişiyor?
+
+| Başlık | Bu makalenin etkisi |
+|---|---|
+| Formal değişmez eğrilerin sektörel analitik gerçekleşmesi | Doğrudan kullanılabilir dış teorem |
+| Dyadic kompleks dönüşünün yerel eğri geometrisi | Yukarıdaki somut uygulama adayı |
+| OPEN 20 B-an / B-6 | **Açık kalıyor** |
+| \(C^\infty\) gerçekleşme | Owner’daki kapalı durum değişmiyor |
+| EDGEFLUX, P2/P3, NEW01 karma ağaç | Doğrudan sonuç yok |
+| PO-6 ve Severn’in genel teoremi | Statü değişikliği yok |
+
+**[HEUR — devam yönü]** Analitik kök problemi bakımından bu eğriler, sektörel inceleme için somut koordinatlar sağlayabilir. Ancak sonraki yükümlülük, yalnız eğrilerin toplamlanması değil, **sektörler arasındaki geçişlerin yarım ve altıda-bir iterasyonlarla uyumluluğu** olacaktır. Makale bu uyumluluğu ispatlamıyor.
+
+Bu nedenle yeni bir geniş tarama yerine önce yukarıdaki iki-blow-up uygulamasını bağımsız denetletmek daha verimli.
+
+## 5. İnceleme dosyaları
+
+**:chatgpt-content-reference{index="4"}[Tam kaynak incelemesi, kompleks izolasyon ispatı ve uygulama türetimi](sandbox:/mnt/data/LOPEZ_HERNANZ_2012_DYADIC_SCOPE_REVIEW_v0_1.md)**
+
+**LOPEZ_HERNANZ_2012_REVIEW_PACKAGE_v0_1.zip[Exact hesap betiği, JSON sonuçları, rapor ve hash manifesti](sandbox:/mnt/data/LOPEZ_HERNANZ_2012_REVIEW_PACKAGE_v0_1.zip)**
+
+Betik, owner’dan alınan katsayılarla blow-up cebirini ve özdeğer oranını doğruluyor; \(T^6\)’nın tarihsel katsayı sertifikalarını yeniden üretmiş veya analitik kök yakınsaklığını test etmiş değildir.
+
+**Önerdiğim görev:** Claude/Dyadic tarafı raporun §5–§6’sını bağımsız denetlesin: kompleks izolasyon, analitik kalanların blow-up altında mertebesi, formal logaritmadaki \(z^3\) çarpanı ve Briot–Bouquet teoreminin uygulanışı. Sonuç doğru bulunursa dar kapsamlı bir Dyadic SESSION kaydı açılabilir; **OPEN 20 kapatılmadan ve HCG ana zincirine aktarılmadan.**

@@ -1,0 +1,27 @@
+dim H^1_par = 8
+b_1..b_8: all cocycles (closure holds); parabolic by construction
+b_1..b_8 span H^1_par mod coboundaries: True
+engine Gram vs printed S: 64/64 match for variant(s): ['conj S', '-S transposed']
+curve  1 [1,8] ord(C)=1 k=1 m=1 rank_K N=4 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 4, 0)
+curve  2 [1,18] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve  3 [2,8] ord(C)=2 k=2 m=1 rank_K N=3 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 3, 1)
+curve  4 [3,8] ord(C)=1 k=1 m=1 rank_K N=3 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 3, 1)
+curve  5 [4,8] ord(C)=2 k=2 m=1 rank_K N=2 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 2, 2)
+curve  6 [5,6] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve  7 [5,8] ord(C)=1 k=1 m=1 rank_K N=2 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 2, 2)
+curve  8 [7,8] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve  9 [9,10] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve 10 [9,12] ord(C)=1 k=1 m=1 rank_K N=2 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 2, 2)
+curve 11 [9,16] ord(C)=1 k=1 m=1 rank_K N=4 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 4, 0)
+curve 12 [9,17] ord(C)=2 k=2 m=1 rank_K N=4 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 4, 0)
+curve 13 [9,18] ord(C)=1 k=1 m=1 rank_K N=4 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 4, 0)
+curve 14 [11,12] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve 15 [13,14] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+curve 16 [13,16] ord(C)=1 k=1 m=1 rank_K N=2 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 2, 2)
+curve 17 [15,16] ord(C)=1 k=1 m=1 rank_K N=1 block form:True printed X_j match 16/16 as X ; sig(D X_j)=(0, 1, 3)
+TOTAL printed-block entries matched: 272/272; all N_j in block form [[0,X],[0,0]] w.r.t. b_1..b_8: True
+(H1) N_j N_k = 0 (289 products): True
+(H2) dim_K I = 4 ; I = <b1..b4> isotropic (upper-left 4x4 block of printed S is zero): True
+(H4) Q-span rank of the 17 N_j = 16
+(H3) signature of sum_j D X_j on V/I: (0, 4, 0)
+printed table (k_j, m_j, rk N_j, sig) reproduced: True

@@ -1,0 +1,18 @@
+b = 24: d = 48, Sum c = 104; distributions enumerated: 1; RH needs Sum ind >= 48
+   max index by active cost  {24: 12, 25: 2, 26: 13, 27: 6, 28: 14}
+   max index by inactive cost {2: 1, 4: 2, 6: 3, 8: 4}
+   distributions surviving RH: 1 [(3, 16, (24, 24, 24), Counter({2: 16}), 52)]
+   after the determinant-parity filter: 0 left []
+b = 25: d = 50, Sum c = 108; distributions enumerated: 1; RH needs Sum ind >= 50
+   max index by active cost  {25: 13, 26: 2, 27: 14, 28: 6, 29: 15}
+   max index by inactive cost {2: 1, 4: 2, 6: 3, 8: 4}
+   distributions surviving RH: 0 []
+   after the determinant-parity filter: 0 left []
+b = 26: d = 52, Sum c = 112; distributions enumerated: 4; RH needs Sum ind >= 52
+   max index by active cost  {26: 13, 27: 2, 28: 14, 29: 6, 30: 15}
+   max index by inactive cost {2: 1, 4: 2, 6: 3, 8: 4}
+   distributions surviving RH: 3 [(3, 16, (26, 26, 26), Counter({2: 15, 4: 1}), 56), (3, 16, (26, 26, 28), Counter({2: 16}), 56), (3, 17, (26, 26, 26), Counter({2: 17}), 56)]
+   after the determinant-parity filter: 0 left []
+RESULT: b = 25 (d = 50): no cost distribution is compatible with Riemann-Hurwitz -> S_26 branch of 2 x 25 impossible
+        b = 24 (d = 48): RH leaves only (24,24,24)+2^16; determinant parity removes it (ChatGPT's proof)
+        b = 26 (d = 52): RH leaves 3 distributions; determinant parity removes all -> S_27 branch of 2 x 26 impossible

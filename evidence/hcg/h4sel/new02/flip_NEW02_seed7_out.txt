@@ -1,0 +1,20 @@
+NEW02 dim L = 4
+cuts: 170  pair-aligned: 45
+Q-rank unprojected pair-aligned cuts: 15
+Q-rank projected, all cuts: 16
+H0-valid triangles: 1138 of 1140
+H0-valid triangulations of the 20-gon: 474632697
+rank histogram over 0 uniform H0-valid triangulations: {}
+restart 0: HIT exact rank 16; intervals [(1, 12), (1, 14), (2, 11), (2, 12), (3, 4), (3, 6), (3, 11), (5, 6), (7, 8), (7, 10), (7, 11), (9, 10), (13, 14), (15, 18), (15, 19), (16, 18), (17, 18)]; all triangles H0 True
+restart 1: best rank reached 15
+restart 2: best rank reached 14
+restart 3: HIT exact rank 16; intervals [(1, 14), (1, 16), (1, 18), (2, 13), (2, 14), (3, 13), (4, 12), (4, 13), (5, 12), (6, 11), (6, 12), (7, 10), (7, 11), (8, 10), (9, 10), (15, 16), (17, 18)]; all triangles H0 True
+restart 4: best rank reached 15
+restart 5: best rank reached 15
+restart 6: best rank reached 15
+restart 7: best rank reached 15
+restart 8: best rank reached 15
+restart 9: best rank reached 15
+restart 10: best rank reached 15
+restart 11: best rank reached 15
+restart 12: HIT exact rank 16; intervals [(1, 8), (2, 8), (3, 4), (3, 6), (3, 8), (5, 6), (7, 8), (9, 10), (9, 12), (9, 16), (9, 17), (9, 18), (9, 19), (11, 12), (13, 16), (14, 15), (14, 16)]; all triangles H0 True

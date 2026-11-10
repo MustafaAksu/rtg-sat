@@ -1,0 +1,42 @@
+{
+  "r2_sha256": "c8d595aefefc2fe488d24c6d9db258a702df1b51a4a151bcb29a6723c1752b2c",
+  "adopted_sha256": "276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0",
+  "release_record_sha256": "967732cd1ea3bce0f0aa5083d6947761791f7bfe44ee4d5a7af302b3a29e1244",
+  "package_sha256": "f9f81a0616458296fde679066073c6cd1e5dd1b102bebab78e4519118d5d974f",
+  "diff_operations": [
+    {
+      "type": "replace",
+      "old_line": 7,
+      "old_count": 2,
+      "new_line": 7,
+      "new_count": 2
+    },
+    {
+      "type": "replace",
+      "old_line": 10,
+      "old_count": 1,
+      "new_line": 10,
+      "new_count": 1
+    },
+    {
+      "type": "insert",
+      "old_line": 1072,
+      "old_count": 0,
+      "new_line": 1072,
+      "new_count": 6
+    },
+    {
+      "type": "replace",
+      "old_line": 1206,
+      "old_count": 1,
+      "new_line": 1212,
+      "new_count": 1
+    }
+  ],
+  "exact_reverse": true,
+  "manifest_files": 5,
+  "source_rid_unique": 117,
+  "open_count": 8,
+  "provenance_match": true,
+  "release_replay": "PASS"
+}

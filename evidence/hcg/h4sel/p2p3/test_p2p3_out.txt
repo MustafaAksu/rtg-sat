@@ -1,0 +1,36 @@
+=== P2: inverse unitary pairs ===
+[P2:order3-refl] n=3 m=5 orders=[3, 3, 3, 3, 3] dimW=[1, 1, 1, 1, 1] d=2 dimH=4 S well-posed=True rank S=4
+   identity tests=224; nonzero cases=47: +h control rejected 47, wrong-inverse control rejected 0
+[P2:order6-refl] n=3 m=5 orders=[6, 6, 6, 6, 6] dimW=[1, 1, 1, 1, 1] d=2 dimH=4 S well-posed=True rank S=4
+   identity tests=224; nonzero cases=47: +h control rejected 47, wrong-inverse control rejected 0
+[P2:mixed-rank2] n=3 m=5 orders=[4, 4, None, None, 3] dimW=[2, 2, 2, 2, 1] d=6 dimH=12 S well-posed=True rank S=12
+   identity tests=2016; nonzero cases=445: +h control rejected 445, wrong-inverse control rejected 144
+[P2:G34-W5-order2] n=6 m=10 orders=[2, 2, 2, 2, 2, 2, 2, 2, 2, 2] dimW=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] d=4 dimH=8 S well-posed=True rank S=8
+   identity tests=3456; nonzero cases=574: +h control rejected 574, wrong-inverse control rejected 0
+=== P3: finite-order boundary projector ===
+[P3:G34-W5 odd intervals] n=6 r=20 dimH=8 S well-posed=True rank S=8
+   e=[2,3] k=3 dimFix=4 S-identity 64/64; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:True
+   e=[2,5] k=3 dimFix=4 S-identity 64/64; nonzero=9: k^2-control rejected 9, no-projector control rejected 9; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:False
+   e=[4,7] k=3 dimFix=4 S-identity 64/64; nonzero=16: k^2-control rejected 16, no-projector control rejected 16; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:False
+   e=[2,6] k=2 dimFix=5 S-identity 64/64; nonzero=16: k^2-control rejected 16, no-projector control rejected 16; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:False
+   e=[6,11] k=3 dimFix=4 S-identity 64/64; nonzero=4: k^2-control rejected 4, no-projector control rejected 4; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:False
+   e=[8,9] k=2 dimFix=4 S-identity 64/64; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:True
+   e=[2,7] k=3 dimFix=4 S-identity 64/64; nonzero=16: k^2-control rejected 16, no-projector control rejected 16; N^2=0 8/8; (Ny)(c)=0 8/8; N==0:False
+[P3:G(6,1,4) random] n=4 r=6 dimH=13 S well-posed=True rank S=13
+   e=[1,2] k=12 dimFix=0 S-identity 169/169; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:True
+   e=[2,3] k=9 dimFix=1 S-identity 169/169; nonzero=4: k^2-control rejected 4, no-projector control rejected 0; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:False
+   e=[1,3] k=18 dimFix=0 S-identity 169/169; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:True
+   e=[2,4] k=18 dimFix=1 S-identity 169/169; nonzero=4: k^2-control rejected 4, no-projector control rejected 0; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:False
+   e=[3,5] k=6 dimFix=0 S-identity 169/169; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:True
+   e=[1,4] k=3 dimFix=1 S-identity 169/169; nonzero=4: k^2-control rejected 4, no-projector control rejected 4; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:False
+   e=[4,5] k=6 dimFix=1 S-identity 169/169; nonzero=9: k^2-control rejected 9, no-projector control rejected 9; N^2=0 13/13; (Ny)(c)=0 13/13; N==0:False
+reflection tuple found: True
+[P3:G(3,1,3) reflection tuple r=8] n=3 r=8 dimH=2 S well-posed=True rank S=2
+   e=[1,2] k=6 dimFix=1 S-identity 4/4; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:True
+   e=[2,3] k=3 dimFix=1 S-identity 4/4; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:True
+   e=[1,3] k=9 dimFix=0 S-identity 4/4; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:True
+   e=[3,5] k=9 dimFix=0 S-identity 4/4; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:True
+   e=[2,5] k=6 dimFix=1 S-identity 4/4; nonzero=0: k^2-control rejected 0, no-projector control rejected 0; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:True
+   e=[4,7] k=6 dimFix=1 S-identity 4/4; nonzero=4: k^2-control rejected 4, no-projector control rejected 1; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:False
+   e=[1,5] k=2 dimFix=2 S-identity 4/4; nonzero=1: k^2-control rejected 1, no-projector control rejected 1; N^2=0 2/2; (Ny)(c)=0 2/2; N==0:False
+TOTAL FAILURES: 0

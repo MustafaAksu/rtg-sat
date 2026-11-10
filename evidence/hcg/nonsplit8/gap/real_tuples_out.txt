@@ -1,0 +1,16 @@
+G(3,1,3): |G| = 162, classes 22, real classes 4, FIRST-VERSION reduction (x+1 only; superseded, see real_reduction_check.g) holds on all real classes: true
+  product-one real tuples tried 1877, abs. irreducible with character field K: 1774; classes of prod a_j b_j: rec(
+  ("sign1_odd[ ]") := 1774 )
+G(6,1,3): |G| = 1296, classes 98, real classes 14, FIRST-VERSION reduction (x+1 only; superseded, see real_reduction_check.g) holds on all real classes: false
+  product-one real tuples tried 1760, abs. irreducible with character field K: 1712; classes of prod a_j b_j: rec(
+  ("sign1_odd[ ]") := 1712 )
+G(6,2,3): |G| = 216, classes 19, real classes 9, FIRST-VERSION reduction (x+1 only; superseded, see real_reduction_check.g) holds on all real classes: false
+  product-one real tuples tried 1732, abs. irreducible with character field K: 1675; classes of prod a_j b_j: rec(
+  ("sign1_odd[ ]") := 1675 )
+<two order-3 reflections> (order 24, G4-type): |G| = 24, classes 7, real classes 3, FIRST-VERSION reduction (x+1 only; superseded, see real_reduction_check.g) holds on all real classes: true
+  product-one real tuples tried 2640, abs. irreducible with character field K: 0; classes of prod a_j b_j: rec(
+<two order-3 reflections, (1 2)> (order 1296, G26-type): |G| = 1296, classes 48, real classes 8, FIRST-VERSION reduction (x+1 only; superseded, see real_reduction_check.g) holds on all real classes: true
+  product-one real tuples tried 1266, abs. irreducible with character field K: 1259; classes of prod a_j b_j: rec(
+  ("sign1_odd[ 2 ]") := 568,
+  ("sign1_odd[ ]") := 691 )
+EXIT=0

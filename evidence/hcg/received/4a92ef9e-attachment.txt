@@ -1,0 +1,124 @@
+## Lemma A′ ve B: bağımsız denetim olumlu
+
+[SESSION — PROOF CHECKED] Claude'nun bulduğu Galois-kararlılık boşluğu gerçek; önerdiği Clifford izotipik ayrışımıyla onarım geçerli. Lemma B'nin skaler-karakter maliyetini de bağımsız olarak doğruladım.
+
+Kaynak arşivin manifesti 5/5 PASS verdi. Claude'nun bütçe betiği dondurulmuş çıktıyı bayt düzeyinde yeniden üretti. Ayrıca ayrı bir uygulamayla bütün \\(k\ge3\\) blok biçimlerini ve \\(r=13,\ldots,22\\) skaler eşitsizliklerini kontrol ettim.
+
+### 1. Lemma A′ neden geçerli?
+
+[ALG — bağımsız ispat denetimi]
+
+Verilen kompleks blok sisteminin çekirdeği \\(\Lambda\triangleleft\Gamma\\) olsun. \\(\Gamma\subset GL_d(K)\\) olduğundan \\(\Lambda\\) de \\(K\\) üzerinde tanımlıdır.
+
+- \\(V|\_\Lambda\\) izotipik değilse, Clifford teoremi izotipik bileşenlerin \\(\Gamma\\) tarafından geçişli permüte edildiğini verir. Bu bileşenlerin oluşturduğu sistem Galois-kararlıdır.
+- Galois birden fazla yörünge oluşturursa, yörünge toplamları \\(K\\)-tanımlı yeni bir imprimitif sistem verir. \\(d<50\\) için önceden doğrulanan \\(K\\)-imprimitif dışlama bunu engeller. Dolayısıyla Galois izotipik bileşenlerde geçişlidir.
+- Bu kanonik sistem üzerinde blok-koruyan etkin elemanların her bloktaki hareket rankı eşittir. Böylece\
+  \\[\
+  \boxed{2r+2k^2-21k+8\ge0}\
+  \\]\
+  zorunlu olur. \\(d\le42,\ k\ge3,\ r\ge6\\) için bütün olasılıklar bu eşitsizliği ihlal ediyor.
+
+\\(V|\_\Lambda\\) izotipikse iki ayrı durum var. \\(\Lambda\\) skaler olduğunda en az 18 dal blok hareket ettirmek zorunda; bu \\(k\ge10\\), dolayısıyla \\(r\le4\\) verir ve period sınırıyla çelişir. Skaler olmayan izotipik durumda ise Clifford'un projektif tensor ayrışımı kullanılır. Bu, önceki factorwise-tensor bütçesine geri götürür. Bu ayrışımın klasik biçimiyle de eşleştiğini kontrol ettim.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://emis.de\&sz=32)
+
+emis.de+1
+
+
+
+### 2. Lemma B: iki-blok skaler maliyeti
+
+[ALG — PROOF CHECKED]
+
+Standart \\(S\_{r+1}\\) kolunda \\(\tau=\mathrm{std}\otimes\psi\\) ve
+
+\\[ T_r=r-\left\lfloor\frac{r+1}{2}\right\rfloor. \\]
+
+\\(\psi\\) önemsiz değilse \\(\mathbb P^1\\) üzerindeki en az iki yerel değeri önemsiz değildir. Blok-koruyan bir dal üzerinden gelen değer, Galois rank eşitliği sayesinde en az \\(2(T_r-1)\\) fazla hareket maliyeti yaratır. İki swap noktası üzerinden gelen değerler ise bundan daha pahalıdır.
+
+Oysa
+
+\\[ \boxed{2r-26<2(T_r-1),\qquad13\le r\le22.} \\]
+
+Bu yüzden \\(\psi\\) önemsizdir. Claude'nun kanıtı, iki liftin skaler değerlerini eşitlemeye ihtiyaç duymadığı için önceki önerimden daha temizdir.
+
+Bu iki lemma ve önceden CHECKED olan dışlamalar birlikte, \\((H)\\) altında bölünmemiş veri için \\(d\ge42\\) sonucunu destekliyor. \\(d=42\\)'de yalnız \\(3\otimes14\\) factorwise-tensor yapısı kalıyor.
+
+## Yeni bulgu: \\(d=42\\)'de kalan tensor yapısı da dışlanabilir
+
+[THM adayı — yeni SESSION türetimi; Claude denetimi bekliyor]
+
+A′ ve B incelemesi sırasında \\(d=42\\)'de açık kalan tek yapıyı ayrıca ele aldım:
+
+\\[ V=A\otimes B,\qquad \dim A=3,\quad \dim B=14. \\]
+
+Bu yapı için, grup sınıflandırmasına ihtiyaç duymayan kısa bir dışlama argümanı buldum.
+
+### 3. Hareket bütçesi yalnız üç özel dala izin veriyor
+
+\\(\mathrm{PGL}(A)\\)'da önemsiz olmayan yerel monodromilerin sayısı \\(t\\) olsun.
+
+- Böyle bir elemanın \\(A\otimes B\\) üzerindeki hareket rankı en az 14.
+- \\(A\\) üzerinde yalnız skaler olan etkin elemanın hareket rankı en az 3.
+- Mutlak indirgenemezlik ve çarpım-bir bağıntısı, \\(t\ge3\\) gerektirir.
+
+\\(d=42\\) için toplam rank bütçesi 92:
+
+\\[ 92=\sum_jc_j\ge14t+3(N-t), \qquad N\ge19. \\]
+
+Bunlardan zorunlu olarak
+
+\\[ \boxed{N=19,\qquad t=3} \\]
+
+çıkar. En küçük toplam 90'dır; yalnız iki birim fazlalık kalır.
+
+Bu nedenle üç özel dalın her birinde hareket rankı en fazla 16 olabilir. Sonuç olarak \\(A\\) faktöründeki her özel operatör, skaler normalizasyonla, özdeğer çoklukları \\((2,1)\\) olan bir ünitar kompleks yansımaya dönüşür.
+
+### 4. Üç yansıma lemması
+
+[ALG — yeni ispat] \\(R_1,R_2,R_3\in U(3)\\) birer kompleks yansıma ve
+
+\\[ R_1R_2R_3=\lambda I_3 \\]
+
+olsun.
+
+Bu durumda üçü de komütatiftir.
+
+İspat hareket doğrularına bakılarak yapılır. İlk iki doğru aynıysa üç yansıma aynı doğru üzerinde etkir. Farklıysa, \\(R_1R_2\\)'nin sabit uzayı bir boyutludur. Çarpımın skaler olması üçüncü hareket doğrusunu ilk ikisine dik olmaya zorlar; kalan iki hareket doğrusu da birbirine dik çıkar. Böylece üçü ortak bir bazda köşegenleşir.
+
+Bizim tensor verisinde diğer 16 yerel operatör \\(A\\) üzerinde yalnız skalerdir. Dolayısıyla bütün \\(A\\)-faktörü operatörleri ortak bir özdoğru korur. Bu da
+
+\\[ A\otimes B \\]
+
+temsilini indirgenebilir yapar; \\((H)\\)'nin mutlak indirgenemezlik koşuluyla çelişir.
+
+Bu yeni argüman da doğrulanırsa:
+
+\\[ \boxed{\text{Bölünmemiş dominant veri için }d\ge43.} \\]
+
+Şimdilik bu sınırı PROPOSED olarak tutuyorum. Bağımsız denetlenmiş sınır \\(d\ge42\\).
+
+## Kayıt önerisi
+
+| Kalem                                    | Önerilen statü                     |
+| ---------------------------------------- | ---------------------------------- |
+| Claude'nun Lemma A′ onarımı              | CHECKED                            |
+| Lemma B — iki-blok skaler maliyeti       | CHECKED                            |
+| \\(d\le41\\) kompleks-imprimitif dışlama | CHECKED, miras alınan hipotezlerle |
+| \\(d\ge42\\) gerekli sınırı              | CHECKED — koşullu                  |
+| \\(3\otimes14\\) tensor dışlaması        | PROPOSED                           |
+| \\(d\ge43\\) güçlendirmesi               | PROPOSED                           |
+
+### Denetim dosyaları
+
+Bağımsız Clifford/Lemma B incelemesi ve yeni tensor dışlama ispatı (English)
+
+Tam kaynak, bağımsız eşitsizlik kontrolleri ve yeniden üretim paketi
+
+Paket SHA-256: `eed089c4410df6cf356943f0796983acebb7e3345e9f918bc525555407e63959`
+
+Temiz tekrar: manifest PASS, kaynak manifesti 5/5 PASS, bağımsız bütçe hesapları PASS. Sayısal tekrarların yapısal ispatların yerine geçmediği raporda açıkça belirtiliyor.
+
+Sonraki önerim: Claude, yeni \\(3\otimes14\\) dışlamasındaki üç-yansıma lemmasını ve \\(N=19,t=3\\) zorunluluğunu bağımsız denetlesin. Geçerse \\(d=42\\) için ayrıca karakter tablosu veya grup taraması gerekmeyebilir.
+
+HCG v0.2 ADOPTED değişmedi, Δ27'nin PI karar alanına dokunulmadı ve Severn A/B/C `CLAIMED` kalıyor.

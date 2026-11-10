@@ -1,0 +1,185 @@
+## Üç genelleme doğrulandı; \(15\le d\le24\) için yeni bir dışlama ispatı adayı var
+
+**[SESSION — bağımsız ispat incelemesi]** Alan-bağımsız indüklenmiş period sınırını, \(d\le29\) için \(K\)-imprimitif dışlamayı ve genel skaler-üçlü lemmasını doğruladım. Bunlar için **CHECKED** öneriyorum.
+
+Daha önemlisi: **Huffman–Wales’in erişemediğimiz bütün makalelerini beklemeden, açık bıraktığımız \(15\le d\le24\) aralığını kapatabilecek bir ispat hazırladım.** İmprimitif dalda daha keskin bir bütçe, primitif dalda ise Guralnick–Tiep’in yayımlanmış Corollary 1.6’sı kullanılıyor. Bu yeni birleşik sonuç **PROPOSED; Claude’nun bağımsız denetimini bekliyor**. [ems.press](https://ems.press/content/serial-article-files/31824)
+
+## 1. Gönderdiğin sonuçların bağımsız değerlendirmesi
+
+**[ALG — yeniden üretim]** Kaynak manifesti **5/5 PASS**. Betiğin çıktısı, teslim edilen dosyayla bayt düzeyinde aynı: on spektral tip, 21.600 skaler üçlü ve bütçe kontrolleri geçti.
+
+Ayrıca Galois-çift karşılaştırmasını kullanmadan, \(\mathbb Q[z]/\Phi_{120}(z)\) içinde ayrı bir exact uygulama yazdım. O da aynı **on tipi** verdi.
+
+### Alan-bağımsız period sınırı
+
+**[THM — CHECKED önerisi]** Blokların \(K\) üzerinde tanımlı olması, period-rank sınırı için gerekmiyor. Seçilen kompleks gömmede
+
+\[
+\operatorname{Hom}_\Gamma(\operatorname{Ind}_H^\Gamma\tau,H^1(C,\mathbb C))
+\simeq
+\operatorname{Hom}_H(\tau,H^1(C,\mathbb C))
+\]
+
+Hodge filtrasyonuyla uyumlu. Sağ taraf \(C/\ker\tau\) üzerinden geliyor; bu örtü yalnız etkin \(\tau\)-monodromisi noktalarında dallanıyor.
+
+Dolayısıyla
+
+\[
+\operatorname{rank}d\mathrm{Per}
+\le 2r+5+(3-2r)\gamma.
+\]
+
+Rank \(16\) hedefinde:
+
+\[
+\boxed{r=1\ \text{elenir};\qquad r\ge2\Rightarrow\gamma=0,\ r\ge6.}
+\]
+
+**Alan sınırı korunuyor:** Bu sonuç, \(K\)-tanımlı olmayan bloklarda diskriminantın \(\tau\)’ya taşınmasını sağlamaz.
+
+### \(K\)-imprimitif durumda \(d\le29\)
+
+**[THM — CHECKED önerisi]** Bloklar \(K\)-tanımlıysa Lemma E uygulanır. \(k\ge2\) için \(r=d/k\le14\); önceki dışlama ve diskriminant korunumu sonucu verir. Dolayısıyla bölünmemiş dominant bir \(K\)-imprimitif veri için **\(d\ge30\)** gereklidir.
+
+Skaler-üçlü lemmasının bütün birim köklere genişlemesi de doğru. Rank \(\le12\) sonucunda **standart/skaler temsil modeli, çarpım-bir ve rasyonel olmayan karakter** koşulları korunmalı.
+
+## 2. Yeni sınır: listedeki bütün kompleks-imprimitif tipler eleniyor
+
+**[ALG — yeni SESSION türetimi; PROPOSED]**
+
+Önceki blok bütçesinde yansımasızlığın daha güçlü sonucu kullanılabilir:
+
+\[
+c_j=\operatorname{rank}(1-g_j)\ge2.
+\]
+
+\(d=kr\), blok permütasyonları \(\pi_j\) ve
+
+\[
+J=\sum_j\operatorname{ind}(\pi_j)=2(k-1)+2\gamma
+\]
+
+olsun. Blokları hareket ettiren dal sayısı \(t\le J\). Bu dallarda \(c_j\ge r\operatorname{ind}(\pi_j)\); diğer etkin dallarda \(c_j\ge2\). Böylece
+
+\[
+\begin{aligned}
+2kr+8=\sum_jc_j
+&\ge rJ+2(N-t)\\
+&\ge2N+(r-2)J\\
+&\ge38+2(r-2)(k-1+\gamma).
+\end{aligned}
+\]
+
+Sonuç:
+
+\[
+\boxed{r+2k\ge17+(r-2)\gamma.}
+\]
+
+Dominans altında \(\gamma=0,\ r\ge6\). Bu yeni eşitsizlikle
+
+\[
+\boxed{k\ge2,\ r\ge6\quad\Longrightarrow\quad d=kr\ge26.}
+\]
+
+Örneğin listedeki en yakın durum \((k,r)=(2,12)\): gereken hareket-rank toplamı en az **58**, kullanılabilir toplam ise **56**.
+
+Dolayısıyla **\(15\le d\le24\) listesindeki bütün kompleks-imprimitif olasılıklar**, bloklar \(K\)-tanımlı olmasa bile eleniyor. Hatta bu argüman \(d=25\)’i de imprimitif dalda dışlıyor.
+
+## 3. Kompleks-primitif dal: erişilebilir bir sınıflandırma sonucu bulundu
+
+**[SOURCE — hedefli birincil metin incelemesi]** Guralnick–Tiep, *A problem of Kollár and Larsen on finite linear groups and crepant resolutions*, JEMS 14 (2012), Corollary 1.6 ve §5.9’u okudum. Sonuç, \(d\ge11\) için sonlu, indirgenemez, kompleks-primitif, **tensor-indecomposable** grupları ele alıyor. Uygun nonterminal durumda standart alternating temsil/skaler dalı dışında, bütün junior elemanların merkezî olması seçeneği kalıyor. [EMS Press](https://ems.press/content/serial-article-files/31824)
+
+Bu kaynağı uygulamak için **tensor koşulunu ayrıca kapatmak gerekiyor**; atlamadım.
+
+### Tensor ayrışımı da bütçeyle dışlanıyor
+
+**[ALG — yeni SESSION türetimi; PROPOSED]**
+
+Önce, \(15\le d\le24\) için en az bir \(c_j=2\) eleman zorunlu:
+
+\[
+\#\{j:c_j=2\}\ge49-2d>0.
+\]
+
+\(V=A\otimes B\), \(\dim A=a\le b=\dim B\) olsun. Bir elemanın \(A\)-faktörü skaler değilse, özdeğer çokluklarından
+
+\[
+\operatorname{rank}(1-g)\ge b
+\]
+
+çıkar. İki faktör de skaler değilse rank en az \(\max(a,b)\)’dir. Rank-2 elemanın bulunması, bu boyut aralığında **\(a=2\)** ve o elemanın bir faktörde skaler olmasını zorunlu kılar.
+
+Öte yandan \(\Gamma\)’nın \(\mathrm{PGL}(A)\) görüntüsü döngüsel olamaz; aksi hâlde \(A\)’daki ortak özdoğru, \(V\)’de değişmez altuzay verir. Üreticilik ve çarpım-bir nedeniyle **en az üç dal elemanı** bu projektif görüntüde önemsiz değildir.
+
+Bu üç elemanın her biri en az \(b\) boyut hareket ettirir:
+
+\[
+4b+8=\sum_jc_j
+\ge3b+2(N-3)
+\ge3b+32.
+\]
+
+Dolayısıyla \(b\ge24\). Oysa incelenen aralıkta \(b=d/2\le12\). Çelişki.
+
+### Kalan primitif durumda sınıflandırma uygulanıyor
+
+**[THM adayı — SESSION]** Rank-2 bir elemanın iki önemsiz olmayan özdeğeri için
+
+\[
+\operatorname{age}(g)+\operatorname{age}(g^{-1})=2.
+\]
+
+Dolayısıyla ikisinden biri merkezî olmayan, age \(\le1\) elemandır. Yansımasız durumda bu, kaynağın Reid–Tai koşulunu karşılar; “bütün junior elemanlar merkezî” seçeneğini de dışlar. [EMS Press](https://ems.press/content/serial-article-files/31824)
+
+Geriye gerçek temsil düzeyinde standart alternating/skaler durum kalır. Bunun period rankı, bağımsız denetlenmiş Lemma F güçlendirmesiyle **en fazla 12**: hedef 16’ya ulaşamaz.
+
+**Burada grubun rank-2 elemanlarla üretildiğini varsaymıyoruz.** Böyle bir varsayım gerektiren Theorem 1.4’ü doğrudan kullanmak yerine, tam bu nedenle **Corollary 1.6** kullanılıyor.
+
+## 4. Yeni birleşik sonuç ve kaynak sınırı
+
+**[THM adayı — PROPOSED]**
+
+\[
+\boxed{
+\text{Belirtilen genus-0 sonlu-örtü fizibilite sınıfında,
+yansımasız ve dominant veri için }15\le d\le24\text{ mümkün değil.}
+}
+\]
+
+Önceki Teorem R ve \(d\le14\) dışlamasıyla birlikte bu, bölünmemiş adaylar için
+
+\[
+\boxed{d\ge25}
+\]
+
+gerekli koşulunu verir. **\(d=25\)’te bir aile bulunduğunu söylemiyor.**
+
+Bu yeni ispat, tekrarlı beş spektral tip için eksik Huffman–Wales metinlerine dayanmak zorunda değil. Bununla birlikte:
+
+- Huffman’ın Caltech kaydı, karşılıklı kübik/kuartik teorem ifadelerini doğruluyor; **tam tez ispatını yeni baştan okuyamadım**. [thesis.caltech.edu](https://thesis.caltech.edu/14100/)
+- İstenen tarihsel makalelerin tam metinlerini edinmiş değilim.
+- Guralnick–Tiep’in ilgili teorem ve uygulama bölümlerini okudum; bütün 53 sayfalık sınıflandırma ispatını yeniden kanıtlamadım. PDF görüntüleme denemeleri başarısız olduğundan bu kontrol **birincil metin çıkarımı** üzerinden yapıldı.
+
+Yeni dışlama, yayımlanmış teorem girdisi ve açık hipotez eşleştirmesiyle hazırlanmış bir **SESSION ispat adayıdır**; henüz iki-AI CHECKED değildir.
+
+## 5. Teslim ve sonraki kontrol
+
+**:chatgpt-content-reference{index="5"}[Claude raporunun bağımsız çapraz incelemesi](sandbox:/mnt/data/HCG_REFLECTIONFREE_CLAUDE_CROSS_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="6"}[\(15\le d\le24\) dışlaması — tam ispat adayı](sandbox:/mnt/data/HCG_D15_D24_EXCLUSION_PROPOSED_v0_1.md)**
+
+**HCG_REFLECTIONFREE_PEER_REVIEW_PACKAGE_v0_1.zip[Kaynaklar, exact kontroller, sonuçlar ve tekrar sürücüsü — ZIP](sandbox:/mnt/data/HCG_REFLECTIONFREE_PEER_REVIEW_PACKAGE_v0_1.zip)**
+
+Temiz klasörde tekrar: **manifest 14/14, kaynak manifesti 5/5, kaynak çıktısı ve bağımsız JSON bayt düzeyinde PASS**. Yeni kod, on spektral tipi ve 2.040 tensor-özdeğer kontrolünü doğruluyor; bu testler genel ispatların yerine geçmiyor.
+
+| Sonuç | Önerilen durum |
+|---|---|
+| Genel skaler-üçlü lemması | **CHECKED** |
+| Alan-bağımsız period sınırı | **CHECKED** |
+| \(K\)-imprimitif \(d\le29\) dışlaması | **CHECKED**, mevcut bağımlılıklarla |
+| \(r+2k\ge17\) güçlendirmesi | **PROPOSED** |
+| Tensor bütçesi ve \(15\le d\le24\) dışlaması | **PROPOSED** |
+| Bölünmemiş sekizli genel fizibilitesi | **OPEN** |
+
+**Sıradaki görev:** Claude yeni notta özellikle \(c_j\ge2\) kullanan blok bütçesini, projektif iki-boyutlu faktörde en az üç dal zorunluluğunu ve Guralnick–Tiep Corollary 1.6’nın hipotez eşleştirmesini bağımsız denetlesin. Bunlar geçerse, eksik tarihsel kaynakları beklemeden boyut alt sınırı 25’e yükseltilebilir. HCG v0.2, PI karar alanları ve Severn A/B/C statüleri değişmedi.

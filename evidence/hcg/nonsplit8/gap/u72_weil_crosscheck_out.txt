@@ -1,0 +1,54 @@
+degree-42 characters: 1   degree-43 characters: 2
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:23
+    x := List([0..2], k -> -Sum([0..2], i -> rho^(-i*k) * z[i+1][cl]));
+                                                          ^
+Weil formula matches CTblLib with zeta_1 = c43[2], zeta_2 = c43[1] on all 
+239 classes
+identity triple: [ 7, 0, 0 ]
+max f_j off identity: 6
+max sum f off identity: 7
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:42
+  m2 := Maximum(List(noid, i -> chi[i] * GaloisCyc(chi[i], -1)));
+                                ^^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:42
+  m2 := Maximum(List(noid, i -> chi[i] * GaloisCyc(chi[i], -1)));
+                                                   ^^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:44
+  cs := List(noid, i -> 43 - mult1(chi, i));
+                                   ^^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:47
+        List(Filtered([1..Length(noid)], j -> cs[j] = mn), j -> ClassNames(t)[\
+noid[j]]),
+                                              ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:47
+        List(Filtered([1..Length(noid)], j -> cs[j] = mn), j -> ClassNames(t)[\
+noid[j]]),
+                                                      ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:48
+        " with f-triples ", List(Filtered([1..Length(noid)], j -> cs[j] = mn),\
+ j -> trip[noid[j]]),
+                                                                  ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:48
+        " with f-triples ", List(Filtered([1..Length(noid)], j -> cs[j] = mn),\
+ j -> trip[noid[j]]),
+                                                                          ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:49
+        " and values ", List(Filtered([1..Length(noid)], j -> cs[j] = mn), j -\
+> chi[noid[j]]), "\n");
+                                                              ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:49
+        " and values ", List(Filtered([1..Length(noid)], j -> cs[j] = mn), j -\
+> chi[noid[j]]), "\n");
+                                                                      ^^
+Syntax warning: Unbound global variable in u72_weil_crosscheck.g:49
+        " and values ", List(Filtered([1..Length(noid)], j -> cs[j] = mn), j -\
+> chi[noid[j]]), "\n");
+                                                                              \
+  ^^^
+zeta_1: max |chi|^2 off identity = 463  (bound 4167/9 = 463)  <= bound: true
+zeta_1: min moving rank = 16 (>= 11: true)  attained at classes 
+[ "2b" ] with f-triples [ [ 5, 0, 0 ] ] and values [ 11 ]
+zeta_2: max |chi|^2 off identity = 463  (bound 4167/9 = 463)  <= bound: true
+zeta_2: min moving rank = 16 (>= 11: true)  attained at classes 
+[ "2b" ] with f-triples [ [ 5, 0, 0 ] ] and values [ 11 ]
+number of distinct realised f-triples off identity: 86

@@ -1,0 +1,7 @@
+Package manifest 19 / 19 PASS
+PASS disc_locality_proof_check_claude.py
+PASS g34_rank2_plane_census_claude.py
+PASS g34_scan_path_adapter.py
+PASS complete_w6_w7.py
+PASS independent W6/W7 frozen JSON
+PEER CLOSEOUT FRESH REPLAY PASS: all

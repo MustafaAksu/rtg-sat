@@ -1,0 +1,60 @@
+Evet. HCG v0.2 taslağının hazırlanmasını destekliyorum. Önerdiğin öncelik değişikliğine de katılıyorum. İç tarafta zaten denetlenmiş PO-1–PO-4 sonuçlarını yeniden incelemek yerine, eksik dış bağımlılıklara ve bilimsel kayıtların birleştirilmesine odaklanmak daha verimli.
+
+## 1. HCG v0.2 için kapsam kararı
+
+[SESSION — önerilen çalışma kapsamı]
+
+| Konu                                        | v0.2'deki durum                                     |
+| ------------------------------------------- | --------------------------------------------------- |
+| Δ1–Δ23                                      | Tekilleştirilmiş, güncel durum kaydı                |
+| Severn original → W5 bağlantısı             | CHECKED, cebirsel braid zinciri                     |
+| PO-5 / G34-D                                | Third-family CHECKED, doğrulanan bileşen kapsamıyla |
+| PO-6 / polarizasyon                         | Third-family CHECKED, W5 kaynaklı kapsamıyla        |
+| PO-1–PO-4                                   | Internal CHECKED; dış denetim bekleniyor            |
+| PO-1'in eightfold varsayımı                 | EXTERNAL DEPENDENCY — OPEN                          |
+| [19, Lemma 6.2] genel ispatı                | OPEN                                                |
+| Severn Theorem 6.2                          | CLAIMED                                             |
+| Genel \\(G\_{34}\\) yörünge sınıflandırması | Ayrı araştırma; Hodge zincirinin önkoşulu değil     |
+
+### 2. Severn bileşeni = S_W5 ifadesinde önemli bir hassasiyet
+
+[SESSION — kapsam değerlendirmesi]
+
+Açık braid zinciri şu özdeşliği destekliyor:
+
+\\[ [\text{Severn original}]\_{H/\Sigma} = [\text{W5}]\_{H/\Sigma}. \\]
+
+Bu artık hesaplamaya dayalı bir sonuçtur.
+
+Ancak v0.2'de Hurwitz bileşeninin eşitliği ile bu bileşenin üzerindeki polarize abelyen aileye ait sonuçların taşınmasını ayrı açıklamalıyız.
+
+Özellikle PO-6 için polarizasyonun, \\(K\\)-etkisinin ve ilgili projektörün aynı aile boyunca korunması kullanılan hipotezlerle belirtilmeli. Böylece bağlantının sağladığı kapsam genişlemesini kaydederken farklı polarizasyonlara veya başka bileşenlere gereksiz genelleme yapmamış oluruz.
+
+## 3. Taslak yapısı
+
+Yeni belgeyi bütün Δ kayıtlarının art arda eklenmiş hâli olarak değil, güncel bilimsel durumun konsolidasyonu olarak hazırlamanı öneriyorum.
+
+- Governing results: Benimsenmiş v0.1'den korunan sonuçlar ve v0.2 için önerilen yeni sonuçlar; statüleri ayrı.
+- Verified mathematical developments: EDGEFLUX, P2/P3, laminer indirgeme, rank engelleri ve braid sertifikaları.
+- Severn component connection: Δ21–Δ23'ün açık ispat ve sertifika zinciri.
+- Proof-obligation matrix: PO-1–PO-6 için iç denetim, üçüncü taraf denetimi, varsayımlar ve açık yükümlülükler.
+- External dependencies: [17] eightfold varsayımı ve [19, Lemma 6.2].
+- Negative findings and limitations: Klasik EDGEFLUX öncülleri, yanlışlanan sınırsız braid-varlık varsayımı ve geometrik transfer sınırları.
+
+Geçmiş Δ1–Δ23 kayıtlarını değiştirmeden muhafaza edelim. v0.2 içinde bunların hepsini tekrar anlatmak yerine, sonucu etkileyen bilimsel değişikliklere ve kaynaklara bağlantı verelim.
+
+## 4. Sonraki bağımsız araştırmamız
+
+v0.2 adayından sonra ilk hedef PO-1'in dış eightfold varsayımı olmalı.
+
+Burada inceleme sorusu yalnız [17]'de bir teorem bulunup bulunmadığı değil:
+
+\\[ \boxed{ \text{[17]'nin gerçekten ispatladığı sonuç} \Longrightarrow \text{PO-1'in ihtiyaç duyduğu evrensel eightfold varsayımı mı?} } \\]
+
+Özellikle “her üye”, “her rasyonel Weil sınıfı”, ilgili diskriminant hücresi ve kullanılan polarizasyon hipotezlerini ayrı denetlemeliyiz. Kaynak daha zayıf bir sonuç veriyorsa compensation argümanının kendi içinde doğru olması, genel transfer yükümlülüğünü kapatmaz.
+
+[19]'un genel ispatı ise bundan ayrı bir inceleme olmalı. W5 için bulunan alternatif DW dayanağı, genel lemmayı otomatik ispatlamaz.
+
+Kararım: v0.2 taslağına başlayabilirsin. Bu, henüz bilimsel benimseme veya v0.2 yayım izni değil; değişiklik odaklı inceleme için hazırlanacak bir adaydır. Taslakta özellikle iç CHECKED, üçüncü taraf CHECKED, koşullu sonuç ve açık dış varsayım ayrımının görünür olmasını istiyorum.
+
+Kör denetçinin Priority B çalışmasına müdahale etmeyelim.

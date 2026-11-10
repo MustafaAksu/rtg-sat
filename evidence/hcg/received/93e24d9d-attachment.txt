@@ -1,0 +1,183 @@
+## Blok açıklaması doğrulandı; ayrıca G₃₄ içinde yeni bir engel adayı bulundu
+
+**[ALG — bağımsız çapraz denetim]** Oyuncak örneğin yapısal ispatını doğruladım. `HCG-ALG-TOY-BLOCK-LEMMA` için **CHECKED** öneriyorum.
+
+Aynı yaklaşımı G₃₄’e taşımayı da denedim. **Tam G₃₄’ü üreten, 20 dal noktalı yeni bir tekrarlı-blok tuple’ında bütün karma kesimlerin toplam rankı 12; tek bir laminer ağacın ulaşabileceği maksimum ise 8 çıktı.** Bu yeni sonuç henüz yalnız benim türetimim ve hesabım; **PROPOSED** kalmalı. Önemli sınırı: bu aday A3’ü sağlamıyor.
+
+## 1. Oyuncak örnek: ispat ve hesap birbirini doğruluyor
+
+**[ALG — yeniden üretim]** Kaynak rapordaki dokuz tam hash eşleşti. Dört betiği yalnız dosya yollarını değiştirerek çalıştırdım; dört çıktı metni ve histogram JSON’u teslim edilenlerle **bayt düzeyinde aynı** oluştu.
+
+Ardından `generic_engine.py` kullanmadan ayrı bir uygulama yazdım. Kohomolojiyi nullspace hesabıyla değil, aşağıdaki açık blok koordinatlarıyla kurdum; 54 operatörü temel Artin hareketlerinden ürettim.
+
+| Kontrol | Bağımsız sonuç |
+|---|---:|
+| \(\dim_K H\) | 6 |
+| Karma kesim sayısı | 54 |
+| Sıfırdan farklı operatör | 27 |
+| Bütün operatörlerin \(\mathbb Q\)-span’i | 9 |
+| H0-geçerli üçgen | 220/220 |
+| Ağaç sayısı | 16.796 |
+| Rank dağılımı | 3:12.594 · 4:3.678 · 5:459 · 6:65 |
+| E/F çakışması bulunan ağaç | 0 |
+| Rank = kullanılan etiket sayısı | 15.176 ağaç |
+
+### Yapısal ispatın açık biçimi
+
+**[ALG — ispat kontrolü]** Bir dört-noktalı blokta kapanış
+\[
+a_1-a_2+a_3-a_4=0
+\]
+veriyor. Coboundary ile \(a_2=0\) ayarı seçildiğinde her sınıfın temsilcisi
+\[
+\boxed{(a_1,a_2,a_3,a_4)=(e,0,-f,e-f)}
+\]
+oluyor.
+
+Üç kök bağımsız olduğundan blokların ortak sabit kaymaları gerçekten bağımsız coboundary’lerdir. Böylece
+\[
+H\simeq K^6,\qquad
+(e_a,e_b,e_c,f_a,f_b,f_c)
+\]
+koordinatları doğrudan elde edilir. Bildirilen lineer-birinci konvansiyonda cup matrisi:
+\[
+S=
+\begin{pmatrix}
+0&-I_3\\
+I_3&0
+\end{pmatrix}.
+\]
+
+Tam bloklar görünmez. Kısmi uçlar ise senin tarif ettiğin etiketlere indirgeniyor:
+\[
+E_i=|e_i|^2,\quad F_i=|f_i|^2,\quad
+X_{ij}=c_{ij}e_i\overline{e_j}+\bar c_{ij}e_j\overline{e_i}.
+\]
+
+Burada bir ifade inceliği var: bir kesim her zaman *tek* etikete eşit değil. Üç çapraz kesimin gerçek formları, mevcut normalizasyonda
+\[
+R_{ij}=-2E_i-2E_j+X_{ij}.
+\]
+Dolayısıyla altı saf E/F doğrultusu ile üç \(R_{ij}\) doğrultusu, **dokuz bağımsız gerçek kesim-formu doğrultusu** oluşturuyor.
+
+E/F kesişme argümanın doğru: \(E_i\) kullanan bir kesim, \(F_i\)’nin orta çifti çevreleyen eğrisiyle kesişiyor. Bu nedenle bir laminer ailede en fazla üç köşegen ve üç çapraz etiket kullanılabilir:
+\[
+\boxed{\rho_T\le6.}
+\]
+
+Bu bir yapısal ispattır; 16.796 ağacı saymak ispatın yerine geçmiyor. Yeni uygulamamda rank dağılımını da her ağaçta yeniden matris rankı hesaplamak yerine, dokuz bağımsız doğrultunun **42 gerçekleşebilir destek maskesi** üzerinden dinamik programlamayla elde ettim.
+
+### “Ortak gerçel baz” açıklamasını tek bir iz dışlıyor
+
+**[ALG]** Mevcut köklerle
+\[
+c_{ab}=-1,\qquad c_{bc}=1+w,\qquad c_{ac}=-w.
+\]
+
+Rank-6 ağaçların form span’inde bütün \(E_i\) ve \(X_{ij}\) bulunuyor. \(G=E_a+E_b+E_c=I_3\) alırsak:
+\[
+\boxed{
+\operatorname{tr}\!\left(
+G^{-1}X_{ab}\,G^{-1}X_{bc}\,G^{-1}X_{ac}
+\right)=-w\notin\mathbb R.
+}
+\]
+
+Bu iz ortak kongrüans altında değişmez. Bütün formlar aynı bazda gerçel olsaydı iz de gerçel olurdu. Böylece negatif sonucun yalnız deneysel değil, kısa bir exact ispatı da var.
+
+**Kapsam notu:** Bütün 54 formun dokuz-boyutlu span’i, tek bir ortak \(H/I\)’nin Hermitik uzayı değildir. Bütün operatörlerin görüntüleri birlikte altı boyut geriyor. Üç-boyutlu \(H/I\), uygun **tek bir ağaç seçildikten sonra** ortaya çıkıyor.
+
+## 2. Yeni G₃₄ adayı: karma ağaçlara rağmen maksimum 8
+
+**[ALG — yeni SESSION türetimi; peer denetimi bekliyor]**
+
+Oyuncak argümanı şu düzene genişlettim. Bağımsız kök doğruları, tuple’da ikişerli veya dörderli ardışık bloklar halinde bulunsun:
+\[
+(s_i,s_i)
+\quad\text{veya}\quad
+(s_i,s_i,s_i,s_i).
+\]
+
+İki-noktalı blok kohomolojiye katkı yapmıyor; dört-noktalı blok bir \((e_i,f_i)\) çifti veriyor. Dört-noktalı blok sayısı \(b\), bunların kökleri arasındaki sıfır olmayan eşleşmelerin oluşturduğu grafın kenar kümesi \(\mathcal E\) olsun. Aynı uç-sınıflandırması:
+\[
+\boxed{
+\rho_{\rm all}=2b+|\mathcal E|,
+\qquad
+\rho_T\le b+|\mathcal E|
+}
+\]
+sonucunu veriyor. İkinci eşitsizlik yine E/F uyumsuzluğundan geliyor. Bu genel ifade ayrı bir **PROPOSED** türetimdir.
+
+### Somut G₃₄ verisi
+
+W5’in doğrulanmış kök orbitinden altı bağımsız kök seçtim. Bunların 756 minimal vektör üzerindeki sadık permütasyon etkisinin mertebesi:
+\[
+39\,191\,040.
+\]
+Yani ürettikleri grup bir altgrup değil, tam \(G_{34}\).
+
+20’li tuple:
+\[
+\boxed{
+(s_1^4,\ s_2^4,\ s_3^4,\ s_4^4,\ s_5^2,\ s_6^2).
+}
+\]
+
+İlk dört aktif kök arasında yalnız dört sıfırdan farklı çapraz eşleşme var:
+\[
+\mathcal E=\{\{1,2\},\{1,3\},\{1,4\},\{2,3\}\}.
+\]
+
+Dolayısıyla \(b=4\), \(\dim_KH=8\) ve H4 hedefi 16 iken:
+\[
+\boxed{\rho_{\rm all}=12,\qquad \rho_T\le8<16.}
+\]
+
+Bunu yalnız formül üzerinden bırakmadım:
+
+| Kontrol | Yeni exact sonuç |
+|---|---:|
+| Gerçek Artin hareketlerinden yeniden kurulan kesim | 170 |
+| Bütün kesim operatörlerinin \(\mathbb Q\)-rankı | **12** |
+| H0-geçerli üçgen | **1.140/1.140** |
+| E/F kesişme koşulu | Bütün ilgili kesim çiftlerinde sağlanıyor |
+| Bulunan bir laminer ağacın rankı | **8** |
+| Bu rank-8 ağaçta H1–H3 | Sağlanıyor |
+
+Üst sınır ispatı ve rank-8 örnek birlikte, bu sabit döngüsel aralık sınıfında maksimumun **tam olarak 8** olduğunu veriyor. Bütün 20-gen üçgenlemelerini taramadım.
+
+### Bu örneğin önemli sınırlaması: A3 başarısız
+
+**[ALG]** On çift-kök listesinin ilk sekiz girdisinden biri silindiğinde rank 6 kalıyor; dokuzuncu veya onuncu silindiğinde rank 5’e düşüyor. İki kök koordinatı coloop.
+
+Bu nedenle yeni örnek:
+
+- Tekrarlı/ortogonal kökler içeren **G₃₄ verisinde** sabit işaretlemeli engel adayını sağlıyor.
+- **A3’ü sağlayan G₃₄ tuple’larının** tümünde tam ranklı karma ağaç bulunup bulunamayacağını çözmüyor.
+- Başka braid işaretlemelerini veya aynı Hurwitz bileşenindeki başka tuple’ları dışlamıyor.
+- Period map’in hiçbir yerde baskın olamayacağını söylemiyor.
+
+## 3. Dosyalar ve kayıt önerisi
+
+**:chatgpt-content-reference{index="0"}[Oyuncak blok ispatı — bağımsız inceleme](sandbox:/mnt/data/HCG_TOY_BLOCK_CHATGPT_CROSS_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="1"}[Yeni G₃₄ tekrarlı-blok engeli — PROPOSED araştırma notu](sandbox:/mnt/data/HCG_G34_REPEATED_BLOCK_OBSTRUCTION_PROPOSED_v0_1.md)**
+
+**:chatgpt-content-reference{index="2"}[G₃₄ adayının açık kök verisi](sandbox:/mnt/data/HCG_G34_BLOCK_01_ROOTS_v0_1.json)**
+
+**HCG_TOY_BLOCK_CHATGPT_REPRO_v0_1.zip[Tam yeniden üretim paketi](sandbox:/mnt/data/HCG_TOY_BLOCK_CHATGPT_REPRO_v0_1.zip)** — kaynak betikleri, bağımsız Artin uygulaması, blok sayımı, grup üretimi, 170 operatör, çıktılar ve hash manifesti.
+
+**:chatgpt-content-reference{index="4"}[HCG v0.2 için ledger eki](sandbox:/mnt/data/HCG_TOY_BLOCK_CHATGPT_LEDGER_DELTA_v0_1.md)**
+
+Temiz geçici klasörde bağımsız hesaplar tekrar çalıştı ve bilimsel JSON’lar bayt düzeyinde eşleşti. Kaynak betiklerinin dört çıktısı ve histogramı da ayrıca yeniden eşleşti.
+
+| Kayıt | Önerilen durum |
+|---|---|
+| NEW02-MIXED-01 | CHECKED — değişmedi |
+| Oyuncak karma-ağaç engeli | **CHECKED** |
+| Oyuncak blok lemması | **CHECKED** |
+| Genel iki/dört-blok sınırı | **PROPOSED** |
+| Yeni `G34-BLOCK-01` | **PROPOSED** |
+| A3 altında veya bütün Hurwitz bileşeninde varlık | OPEN |
+
+**Sıradaki en değerli kontrol:** Claude yeni G₃₄ adayını kendi motoruyla yeniden kursun; tam grup üretimini, 170 operatörün rank 12’sini ve bloklardan gelen ≤8 sınırını denetlesin. Bu kontrol, büyük bir ağaç araması gerektirmiyor. HCG v0.1 ve Hodge denetçisinin Priority B süreci değişmeden kalmalı.

@@ -1,0 +1,34 @@
+Syntax warning: Unbound global variable in candidates_pmr.g:19
+  chis := Filtered(Irr(t), x -> x[1] = c[2] and Indicator(t,[x],2)[1] = 0 and \
+IsSubset(CF(3), Field(Rationals,x))
+                                                          ^
+Syntax warning: Unbound global variable in candidates_pmr.g:23
+    mr := List(noncen, i -> c[2] - eigmults(t, chi, i)[1]);
+                                            ^
+Syntax warning: Unbound global variable in candidates_pmr.g:24
+    pmr := List(noncen, i -> c[2] - Maximum(eigmults(t, chi, i)));
+                                                     ^
+3.O7(3) d=27 #chis=2 minMR=6 minPMR=6 at class 2a (order 2) mults [ 21, 6 ]
+   3.O7(3).2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+3.G2(3) d=27 #chis=4 minMR=12 minPMR=12 at class 2a (order 2) mults [ 15, 12 ]
+   3.G2(3).2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+U4(2) d=30 #chis=2 minMR=12 minPMR=12 at class 2a (order 2) mults [ 18, 12 ]
+   U4(2).2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+2.U4(2) d=36 #chis=2 minMR=18 minPMR=18 at class 2b (order 2) mults [ 18, 18 ]
+   2.U4(2).2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+3_2.U4(3) d=36 #chis=2 minMR=16 minPMR=16 at class 2a (order 2) mults 
+[ 20, 16 ]
+6.A7 d=36 #chis=2 minMR=24 minPMR=18 at class 4a (order 4) mults 
+[ 0, 18, 0, 18 ]
+   6.A7.2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+6.L3(4) d=36 #chis=2 minMR=16 minPMR=16 at class 2b (order 2) mults [ 20, 16 ]
+U4(2) d=40 #chis=2 minMR=20 minPMR=16 at class 2a (order 2) mults [ 16, 24 ]
+   U4(2).2: induced chi has norm 
+1 (norm 1 => chi NOT stable under the outer part; >1 => stable/extends)
+2.S8(3): TABLE NOT IN CTblLib
+S8(3) d=41 #chis=2 minMR=16 minPMR=13 at class 2a (order 2) mults [ 13, 28 ]

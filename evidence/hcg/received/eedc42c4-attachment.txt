@@ -1,0 +1,182 @@
+## Yazılı ispat ve bağımsız \(\tau\) kontrolü tamamlandı
+
+**[THM — bağımsız ispat incelemesi]** Teorem notunun tamamını, özellikle akı lemmasını, \(\tau\)’nun örtenliğini ve teleskop adımını kontrol ettim. **Belirtilen cebirsel model ve A1–A3 varsayımları altında ispatta bir boşluk bulmadım.** `HCG-THM-EDGEFLUX` için artık **CHECKED** öneriyorum; bu karar yalnızca sonlu testlere değil, yazılı ispatın bağımsız denetimine dayanıyor.
+
+**[ALG — exact hesap]** \(\tau\)’yu kendi kohomoloji motorumda tanımladım. On iki ağacın tamamında özdeşlik birebir doğrulandı.
+
+İstediğin önceki tam paket de mevcut:
+
+**HCG_H4_HOLDOUT_VERIFICATION_v0_1.zip[HCG H4 Holdout — önceki tam yeniden üretim ZIP’i](sandbox:/mnt/data/HCG_H4_HOLDOUT_VERIFICATION_v0_1.zip)**
+
+Bu turda onun `replay.py` betiğini de yeniden çalıştırdım: **FRESH REPLAY PASS**. Tahmin dosyasının `bab327f3…36bab1` hash’i değişmedi.
+
+## 1. İspatın kritik üç adımı
+
+### Akı ve \(\tau\)’nun örtenliği
+
+**[ALG — kaynak notunun bağımsız denetimi]** Tam çiftleri içeren bir aralıkta temsil önekleri sırayla \(1,s_i\) olduğundan,
+
+\[
+u(c_e)=\sum_{i\in P(e)}
+(a_{2i-1}-a_{2i})v_i
+=F_e(\tau u).
+\]
+
+Coboundary’lerin iki çift girdisi eşit olduğundan \(\tau\), kohomoloji sınıfları üzerinde iyi tanımlıdır.
+
+Örtenliği boyut hesabından bağımsız, yapıcı biçimde de gösterebiliyoruz. Her \(t\in L\) için
+
+\[
+u_t(g_{2i-1})=t_iv_i,\qquad u_t(g_{2i})=0
+\]
+
+seçelim. Kapanış koşulu \(\sum_i t_iv_i=0\) sayesinde sağlanır ve
+
+\[
+\boxed{\tau([u_t])=t.}
+\]
+
+Dolayısıyla \(\tau:H^1_{\mathrm{par}}\twoheadrightarrow L\).
+
+### Twist ve nilpotentlik
+
+**[ALG]** \(\rho(c_e)=1\) ile sol-kosikl özdeşliği,
+
+\[
+(N_eu)(g_k)=
+\begin{cases}
+(1-s_{p(k)})F_e(\tau u),&k\in e,\\
+0,&k\notin e
+\end{cases}
+\]
+
+veriyor. Çift girdileri eşit olduğundan
+
+\[
+\tau N_e=0,\qquad N_fN_e=0.
+\]
+
+Bu sonuç yalnız bir pants ağacındaki ayrık eğriler için değil, tanımlanan **tam çiftleri içeren aralıkların tamamı** için cebirsel olarak geçerli.
+
+### Teleskop özdeşliği
+
+**[ALG]** \(G_k=Q_k^{-1}F_k\) yazıldığında,
+
+\[
+G_{k+1}=s_{p(k)}G_k-c_k,
+\qquad
+(1-s_{p(k)})G_k+c_k=G_k-G_{k+1}.
+\]
+
+Bu ifade cup toplamını teleskoplaştırıyor. Aralığın iki ucunda \(Q_{b+1}=Q_a\) olduğundan,
+
+\[
+\boxed{
+S(x,N_ey)
+=-h\!\left(F_e(\tau x),F_e(\tau y)\right).
+}
+\]
+
+**İşaret gerçekten bütün eğriler için aynı \(-1\).** Eğri başına ölçek ayarlaması gerekmiyor; ancak bu ifade notta sabitlenen cup ve twist konvansiyonuna aittir.
+
+## 2. Bağımsız hesap: 13.056/13.056 girdi
+
+**[ALG — taahhüt sonrası bağımsız kontrol]** Claude’nun identity-check betiğini veya predictor’ını kullanmadım. Önceki ChatGPT motoruyla köklerden kohomoloji bölümünü yeniden kurdum; \(N_e\)’leri temel Artin hareketlerinden hesapladım. Özdeşlik, \(N_e\)’nin tanımı olarak kullanılmadı.
+
+| Kontrol | Sonuç |
+|---|---:|
+| A3: her kökün diğerlerinin span’inde olması | **40/40** |
+| \(\operatorname{rank}_K\tau\) | Dört tuple’da da **4** |
+| \(\tau\)’nun coboundary’leri sıfırlaması | **4/4** |
+| \(L\) baz vektörlerinin yapıcı kaldırılması | **16/16** |
+| Özdeşliğin matris girdileri | **13.056/13.056** |
+| \(\tau N_e=0\) | Bütün eğrilerde |
+| \(\sum_e\operatorname{im}N_e=\ker\tau\) | **12/12 ağaç** |
+| Yanlış işaret ve \(\tau\mapsto2\tau\) negatif kontrolleri | **12/12 ağaçta yakalandı** |
+
+13.056 sayısı, ağaçlarda tekrarlanan eğrileri de içeriyor. **100 farklı tuple–eğri çifti**, dolayısıyla **6.400 farklı matris girdisi** denetlendi.
+
+Bu sonuç, önceki holdout raporundaki eksik A3/\(\tau\) tanımı sınırını kapatıyor. Önceki testi geriye dönük olarak daha geniş kapsamlı göstermiyoruz; bu ayrı bir **post-commit** doğrulama.
+
+## 3. Sonuç yalnız rank eşitliğinden daha güçlü
+
+**[THM — belirtilen varsayımlar altında]** Nondejenere \(S\) ve örten \(\tau\), her \(B\in\operatorname{Herm}(L)\) için
+
+\[
+S(x,\Phi(B)y)=-B(\tau x,\tau y)
+\]
+
+koşuluyla tek bir operatör tanımlar. Böylece
+
+\[
+\Phi:\operatorname{Herm}(L)\hookrightarrow
+\operatorname{End}_K(H^1_{\mathrm{par}})
+\]
+
+**ortak, \(\mathbb Q\)-lineer ve birebir** bir eşlemedir; bütün uygun aralıklar için \(\Phi(B_e)=N_e\).
+
+Dolayısıyla aynı tuple üzerinde farklı pants ağaçlarına geçildiğinde yeniden ayrı bir eşleme seçmek gerekmiyor. Bütün rasyonel bağıntılar korunuyor:
+
+\[
+\boxed{
+\sum_e q_eN_e=0
+\iff
+\sum_e q_eB_e=0.
+}
+\]
+
+Bu, önceki ortak-bağıntı deneylerinin artık bir ispatla açıklanmasıdır.
+
+## 4. Ek güçlendirme: A3 toplam sonuçlar için kaldırılabilir
+
+**[ALG — yeni SESSION önerisi; Claude çapraz denetimi bekliyor]**
+
+Kaynak teoremi değiştirmeden ayrı kaydettim. Tüm çift operatörlerini toplayalım:
+
+\[
+M=\sum_iN_{\mathrm{pair}\,i},\qquad
+G(t,t')=\sum_i h(v_i,v_i)t_i\overline{t'_i}.
+\]
+
+\(G\), \(L\) üzerinde pozitif belirlidir. Ana özdeşlik,
+
+\[
+S(x,My)=-G(\tau x,\tau y)
+\]
+
+verir. \(\tau\)’nun örtenliğinden
+
+\[
+\ker M=\ker\tau.
+\]
+
+Ayrıca \(\operatorname{im}M\subseteq\ker\tau\) ve boyutlar eşit olduğundan
+
+\[
+\operatorname{im}M=\ker\tau.
+\]
+
+Bu ispat **A3 kullanmıyor**. Böylece A1, A2 ve bütün çift eğrilerini içeren ayrıştırma altında toplam görüntü ve H4 eşdeğerliği korunuyor. A3’ün ek işlevi, **her tekil çift operatörünün sıfırdan farklı olmasını** garanti etmek.
+
+Bu güçlendirmeyi ayrıca, A3’ün başarısız olduğu küçük bir exact örnekte sınadım. Ancak genel gerekçe örnek değil, yukarıdaki argümandır.
+
+## 5. Dosyalar ve kayıt kararı
+
+**:chatgpt-content-reference{index="2"}[Tam ispat inceleme raporu](sandbox:/mnt/data/HCG_EDGEFLUX_CHATGPT_PROOF_REVIEW_v0_1.md)**
+
+**HCG_EDGEFLUX_PROOF_CHECK_v0_1.zip[Yeni bağımsız kontrol paketi](sandbox:/mnt/data/HCG_EDGEFLUX_PROOF_CHECK_v0_1.zip)** — önceki tam holdout ZIP’ini de değiştirilmemiş hâliyle içeriyor; `replay.py --full-prior` ile iki tur birlikte çalıştırılabiliyor.
+
+**:chatgpt-content-reference{index="4"}[HCG v0.2 için ledger eki](sandbox:/mnt/data/HCG_EDGEFLUX_CHATGPT_LEDGER_DELTA_v0_1.md)**
+
+| Kayıt | Önerim |
+|---|---|
+| `HCG-THM-EDGEFLUX` | **CHECKED**, nottaki cebirsel kapsam ve A1–A3 altında |
+| Holdout-12 | CHECKED, değişmedi |
+| Yeni \(\tau\)/özdeşlik kontrolü | CHECKED — POST-COMMIT |
+| A3’ün kaldırılması | PROPOSED — ayrı SESSION çıkarımı |
+| Geometrik yorum, yenilik ve yüksek mertebeli genelleme | Ayrı açık yükümlülükler |
+| PO-6 / Severn Theorem 6.2 | Değişmedi |
+
+Notta iki küçük yazım açıklığı öneriyorum: §4’te katsayı uzayı \(V\) ile kohomoloji uzayını ayırıp \(H^1_{\mathrm{par}}/I\) yazmak ve nokta indisinde \(s_k\) yerine \(s_{p(k)}\) kullanmak. Bunlar ispatı bozan bulgular değil.
+
+**Sıradaki adım:** Claude yeni paketi yeniden oynatsın ve A3’ün kaldırıldığı kısa argümanı bağımsız denetlesin. Ana kenar-akı teoremi artık yalnız deneysel destek düzeyinde değil, **belirtilen cebirsel kapsamda iki tarafça incelenmiş bir ispat** düzeyinde kaydedilebilir; geometrik ve genel Hodge sonuçlarına otomatik statü aktarımı yapılmamalı.

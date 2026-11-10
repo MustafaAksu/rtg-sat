@@ -1,0 +1,8 @@
+root lines in orbit: 9
+start line tuple: (0, 0, 1, 1, 2, 2)
+hexagon trees: 14
+components (all tuples): 22  time 6.7 s
+components generating G(3,3,3): 1 ; sizes: [522720]
+components with rank-9 witness: 1
+NEGATIVE candidates (no rank-9 on any A3 node, exhaustive): 0
+  witness example: size 522720 tuple (0, 0, 1, 2, 5, 6) tree ((1, 3), (1, 4), (1, 5))

@@ -1,0 +1,126 @@
+## Severn v2 — bağımsız ardıl denetim
+
+### 1. Lemma 4.4: İspat doğrulandı
+
+[SESSION — PROOF CHECKED] Claude'nun olumlu hükmüne katılıyorum. Bu kez yalnız Severn v2'yi değil, doğrudan Schoen'in 1988 tarihli makalesinin 18–19. sayfalarını da karşılaştırdım.
+
+Schoen'in Sublemma 2.9 ispatında gereken \\(p\mid m\\), \\(p\nmid\alpha\_{2i-1}\\) seçimi, \\(m=12\\) ve \\(\alpha\_{2i-1}=6\\) olduğunda gerçekten yapılamıyor. Severn'in Lemma 4.4'ü bu adımın yerine farklı bir ispat koyuyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.numdam.org\&sz=32)
+
+numdam.org
+
++2
+
+
+
+İspatın dört belirleyici bağımsız kontrolü olumlu:
+
+1. Primitif karakter \\(\chi\\) sadık olduğundan, dallanma bölenlerinde \\((\beta\_{i\*}\mathbb C)^\chi\\) demetinin stalk'ları sıfırdır.
+2. Schoen'in özgün metni \\(E_i\to K\_{i-1}\\) üzerindeki iki ayrık kesiti ve diğer dallanma bileşenlerinin tam liflerden oluştuğunu doğruluyor.
+3. Kalan lifte, \\(\mathbb C^\times\\) üzerindeki önemsiz olmayan rank-bir yerel sistem için\
+   \\[\
+   H_c^q(\mathbb C^\times,L)=0\qquad(\forall q).\
+   \\]
+4. Proper base change sonucunda\
+   \\[\
+   R^qp\_(j\_!L)=0,\qquad H^(F_i,\mathbb C)^\chi=0.\
+   \\]
+
+Özellikle bu ispat \\(m/2\\) durumundan daha genel: ilgili yerel üs sıfır olmadığı sürece aynı argüman çalışıyor.
+
+Önerilen durum: `SEVERN-v2-LEMMA-4.4 → CHECKED`, iki ayrı yapay zekâ tarafından ispat düzeyinde incelenmiş, fakat Severn Theorem A/B'nin tamamı için benimseme anlamına gelmeyen sonuç.
+
+### 2. Lemma 7.2 ve Appendix A: Genel formül ile basılı sertifika uyuşuyor
+
+[SESSION — ALG/PROOF CHECKED] Severn v2'nin §7, Lemma 7.2 ispatındaki Δ-kompleks hesabını, işaret konvansiyonunu, coboundary sıfırlanmasını ve skew-Hermitikliği kontrol ettim. Yazılı ispatla çelişen bir adım bulmadım.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+Özellikle
+
+\\[ S(a,b)=\sum\_{i=1}^{r} h_W\\!\left(Q_i^{-1}F_i^a+a_i,\\;c_i^b\right) \\]
+
+formülünde, coboundary \\(a\mapsto a+\delta v\\) eklenince değişim
+
+\\[ \sum_i h_W(v,Q_ic_i^b) =h_W\\!\left(v,\sum_iQ_ic_i^b\right)=0 \\]
+
+oluyor. Benzer bir teleskoplama \\(S(a,b)=-\overline{S(b,a)}\\) özdeşliğini doğruluyor.
+
+[SESSION — INDEPENDENT EXACT COMPUTATION] Appendix A'nın basılı köklerinden, kosikl bazından ve kenar aralıklarından yeniden hesapladım:
+
+| Exact karşılaştırma                           | Sonuç           |
+| --------------------------------------------- | --------------- |
+| Zenodo tuple'ıyla yansıma matrisi girdileri   | 720/720         |
+| Basılı \\(8\times8\\) cup Gram matrisi        | 64/64           |
+| Basılı 17 adet \\(4\times4\\) \\(X_j\\) bloğu | 272/272         |
+| 17 operatörün \\(K\\)-rankları                | 17/17           |
+| Her \\(\beta_j\\)'nin yarı-belirliliği        | 17/17           |
+| Toplam form                                   | Negatif belirli |
+| \\(\mathbb Q\\)-span rankı                    | 16              |
+| Coboundary sıfırlanma kontrolleri             | 48/48           |
+
+Kritik yöntem ayrımı: Cup Gram matrisi doğrudan Lemma 7.2'den hesaplandı. \\(X_j\\) bloklarını ise önceden ayrı denetlenmiş P3 projektörlü akı özdeşliğiyle hesaplayıp v2'nin basılı matrisleriyle karşılaştırdım. Dolayısıyla 272 girdilik bu karşılaştırma, Severn'in Artin monodromi programını üçüncü kez bağımsız yazıp çalıştırdığım anlamına gelmiyor.
+
+Bununla birlikte v2 Appendix A'nın basılı 17 blok verisinin tamamı, farklı matematiksel formülden yapılan exact hesapla eşleşiyor. Önceki OPEN 3'ün basılı tabloya ilişkin alt yükümlülüğü için bu güçlü bir kapanış kanıtıdır.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+### 3. H0'ın kaldırılması: daha güçlü fakat koşullu bir sadeleştirme
+
+[SESSION — ALG/THM adayı] Claude'nun önerisini esas itibarıyla doğruluyorum.
+
+Severn v2, Proposition 8.5'te yalnızca (H1)–(H4) koşullarını istiyor. Lemma 8.3 ve Remark 8.6, gerçek geometrik dejenerasyon çerçevesinde pantolon bileşenlerinin parabolik kohomolojisinin sıfır olmasını Hodge–Tate yapısından çıkarıyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+Bizim daha dar laminer/P3 çerçevemizde H1 ve ortak yarı-belirlilik zaten sağlanıyor. H4'ün \\(d^2\\) rankı, önceki \\(r^2\\) sınırından H2'yi; belirli toplam da H3'ü veriyor. Dolayısıyla bu varsayımlar altında:
+
+\\[ \boxed{\text{H4, tek başına yeterli ek hesaplama kontrolüdür.}} \\]
+
+Ancak keyfî nilpotent operatörler için H4 tek başına H1–H3'ü ispatlamaz. Geometrik H0 sonucu da yalnız lineer cebirden çıkmıyor.
+
+Bu güçlendirmeyi `SESSION — CONDITIONAL THM` olarak kaydedip Claude'nun ayrıca denetlemesini öneriyorum.
+
+### 4. Önerilen HCG v0.3 statüleri
+
+| Kalem                                         | Değerlendirme                                       |
+| --------------------------------------------- | --------------------------------------------------- |
+| Severn v2 Lemma 4.4                           | CHECKED — iki ispat denetimi                        |
+| Severn v2 Lemma 7.2                           | CHECKED önerisi — yeni genel yazılı ispat incelendi |
+| OPEN 5 — genel cup formülü                    | Kapatılmaya aday, v2 Lemma 7.2 dayanağıyla          |
+| OPEN 3 — Appendix A basılı matris alt kalemi  | CHECKED — 64/64 ve 272/272                          |
+| Laminer H4-only kontrolü                      | CONDITIONAL, ikinci denetim bekliyor                |
+| v2'nin diğer teoremlerinin v1 ile eşdeğerliği | OPEN — hedefli ardıl inceleme gerekli               |
+
+Sonuçlar, daha önceki v1 incelemesinin tümünü v2'ye otomatik taşımıyor. Özellikle Theorem A/B CLAIMED kalıyor; HCG v0.2 ADOPTED değişmedi.
+
+### Denetim dosyaları
+
+Severn v2 — bağımsız ispat ve bilimsel inceleme raporu (English)
+
+Exact Python betikleri, 17 basılı matris karşılaştırması, sonuçlar ve tekrar oynatma paketi (ZIP)
+
+ZIP SHA-256: `c27404ea6584463f4b8c1abfe30132b04658c0a0536a43dca80c416347293088`
+
+Paketi temiz bir klasörde yeniden çalıştırdım: REPLAY PASS; manifest 8/8 PASS.
+
+Sonraki önerim: Lemma 4.4 ve 7.2 için yeni bir doğrulama kampanyası açmadan, v2'nin Theorem 5.1, Proposition 4.6/Corollary 4.7, Theorem 6.2, Proposition 7.1 ve Proposition 10.2 zincirini, önceki v1/[386] incelemeleriyle yalnız değişen hipotez ve ispat adımları üzerinden karşılaştıralım. Bu, `HCG-OPEN-SEVERN-V2` yükümlülüğünü kapatmaya yönelik en verimli kalan çalışma.

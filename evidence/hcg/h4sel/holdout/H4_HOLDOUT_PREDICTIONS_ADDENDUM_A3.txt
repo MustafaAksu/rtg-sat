@@ -1,0 +1,7 @@
+Addendum to H4_HOLDOUT_PREDICTIONS.json (sha256 bab327f3cf5639a25bdef7e881a33e63831c2173434ba15a888f46228536bab1)
+Theorem-based structural predictions (HCG-THM-EDGEFLUX, assumptions A1-A3), from roots only:
+NEW01: (A3) holds = True. Predicted for all 3 trees: H1 true; H2 true with dim_K I = 4 and I identical across the 3 trees; H3 true (each beta_e semidefinite of one sign, sum definite); every N_e satisfies N_e^2=0 (m_e = 1, k_e = 1).
+NEW02: (A3) holds = True. Predicted for all 3 trees: H1 true; H2 true with dim_K I = 4 and I identical across the 3 trees; H3 true (each beta_e semidefinite of one sign, sum definite); every N_e satisfies N_e^2=0 (m_e = 1, k_e = 1).
+NEW03: (A3) holds = True. Predicted for all 3 trees: H1 true; H2 true with dim_K I = 4 and I identical across the 3 trees; H3 true (each beta_e semidefinite of one sign, sum definite); every N_e satisfies N_e^2=0 (m_e = 1, k_e = 1).
+NEW04: (A3) holds = True. Predicted for all 3 trees: H1 true; H2 true with dim_K I = 4 and I identical across the 3 trees; H3 true (each beta_e semidefinite of one sign, sum definite); every N_e satisfies N_e^2=0 (m_e = 1, k_e = 1).
+Sign convention prediction: S(x, N_e y) = -h(F_e(tau x), F_e(tau y)) with the session cup form and twist convention.

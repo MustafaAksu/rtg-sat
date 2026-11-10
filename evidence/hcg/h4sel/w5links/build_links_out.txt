@@ -1,0 +1,5 @@
+NEW01 -> W5: pair conjugations 29, reduced letters 776; endpoint True, pure True, inverse True
+NEW02 -> W5: pair conjugations 29, reduced letters 450; endpoint True, pure True, inverse True
+NEW03 -> W5: pair conjugations 37, reduced letters 916; endpoint True, pure True, inverse True
+NEW04 -> W5: pair conjugations 33, reduced letters 850; endpoint True, pure True, inverse True
+BLOCK01 -> W5: pair conjugations 39, reduced letters 880; endpoint True, pure True, inverse True

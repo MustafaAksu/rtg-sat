@@ -1,0 +1,11 @@
+Claude intake log — ChatGPT framework round (2 Nov 2026)
+Received (attachments, unchanged; copies in cg_frame/received):
+57b211f86640e18ef17679550ac078d127435199ef859689b0c9182d73e34fcf  ff8c9434-attachment.txt
+aeb6f9e778f354af2c67b841dc6dda673eab0378aae9a75c5f1c2a34cf5eafd7  10041afe-HCG_HURWITZ_HODGE_OBSTRUCTION_FRAMEWORK_SESSION_v0_1.md
+No ZIP received. Scripts cited in the note (local_reciprocity_check.py, independent_cycle_screen.py, independent_twobudget.py) were not received and not run.
+Claude checks in this bundle: reciprocity_check_claude.py (exact K-arithmetic, generic_engine 66f2c253...), lemma_t_prime_claude.py, two_by_b_certificate_claude.py (b = 24..60), two_by_b_det_claude.py (control b = 59 --nodet; b = 24..64).
+Bundle-time reruns (fast scripts only):
+  reciprocity_check_claude.py: output identical
+  lemma_t_prime_claude.py: output identical
+  long scans (about 12 and 35 min) not re-run at bundle time; outputs are the frozen ones from the runs recorded in the report.
+Python: Python 3.13.16

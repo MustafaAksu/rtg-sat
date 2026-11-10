@@ -1,0 +1,5 @@
+original tuple: 20 matrices; reflections: True ; product one: True
+braid word length: 90 ; positive generators only: True
+original --90 moves--> paired tuple, exact entry-by-entry match: 20 / 20
+strand permutation of the 90-move word identity? False  (permutation: [9, 10, 8, 11, 7, 12, 6, 13, 5, 14, 4, 15, 3, 16, 2, 17, 1, 18, 0, 19] )
+chain original --90--> paired --P, 618--> W5 exact: True

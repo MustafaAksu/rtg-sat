@@ -1,0 +1,56 @@
+thresholds: [ [ 52, 6, 10 ] ]
+(1) perfect non-duplicate CTblLib tables scanned: 459
+2.F4(2) d=52 |Z|=2 ind=1 field=Rationals inK=true minMovingRank=16 -> field Rationals, minc 16 > 6: excluded by Lemma C
+2.S4(5) d=52 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=26 -> field not in K: excluded
+2.S4(5) d=52 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=26 -> field not in K: excluded
+3D4(2) d=52 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=16 -> field Rationals, minc 16 > 6: excluded by Lemma C
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=26 -> field Rationals, minc 26 > 6: excluded by Lemma C
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+L4(3) d=52 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=22 -> field Rationals, minc 22 > 6: excluded by Lemma C
+U3(4) d=52 |Z|=1 ind=0 field=CF(5) inK=false minMovingRank=24 -> field not in K: excluded
+U3(4) d=52 |Z|=1 ind=0 field=CF(5) inK=false minMovingRank=24 -> field not in K: excluded
+U3(4) d=52 |Z|=1 ind=0 field=CF(5) inK=false minMovingRank=24 -> field not in K: excluded
+U3(4) d=52 |Z|=1 ind=0 field=CF(5) inK=false minMovingRank=24 -> field not in K: excluded
+U4(4) d=52 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+(2) generic SL2(q) tables (faithful characters only; PSL2 quotients below)
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=36 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=Rationals inK=true minMovingRank=36 -> field Rationals, minc 36 > 6: excluded by Lemma C
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=36 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=36 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(53) d=52 |Z|=2 ind=-1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(103) d=52 |Z|=2 ind=0 field=NF(103,[ 1, 2, 4, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 23, 25, 26, 28, 29, 30, 32, 33, 34, 36, 38, 41, 46, 49, 50, 52, 55, 56, 58, 59, 60, 61, 63, 64, 66, 68, 72, 76, 79, 81, 82, 83, 91, 92, 93, 97, 98, 100 ]) inK=false minMovingRank=34 -> field not in K: excluded
+SL2(103) d=52 |Z|=2 ind=0 field=NF(103,[ 1, 2, 4, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 23, 25, 26, 28, 29, 30, 32, 33, 34, 36, 38, 41, 46, 49, 50, 52, 55, 56, 58, 59, 60, 61, 63, 64, 66, 68, 72, 76, 79, 81, 82, 83, 91, 92, 93, 97, 98, 100 ]) inK=false minMovingRank=34 -> field not in K: excluded
+(2') PSL2 quotients
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=26 -> field Rationals, minc 26 > 6: excluded by Lemma C
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(9,[ 1, 8 ]) inK=false minMovingRank=26 -> field not in K: excluded
+PSL2(53) d=52 |Z|=1 ind=1 field=NF(27,[ 1, 26 ]) inK=false minMovingRank=26 -> field not in K: excluded
+done

@@ -1,0 +1,4 @@
+product one: True ; tuple length 20
+dim H = 8 ; S rank = 8
+cuts: 170 ; nonzero: 66 ; Q-rank all: 12
+H0-valid triangles: 1140 of 1140

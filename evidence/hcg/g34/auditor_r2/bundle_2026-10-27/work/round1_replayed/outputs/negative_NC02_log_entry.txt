@@ -1,0 +1,10 @@
+
+STDERR:
+Traceback (most recent call last):
+  File "/home/claude/g34/auditor_r2/bundle_2026-10-27/work/round1_replayed/scripts/verify_w5_bridge.py", line 264, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/home/claude/g34/auditor_r2/bundle_2026-10-27/work/round1_replayed/scripts/verify_w5_bridge.py", line 164, in main
+    assert eq(T,dm(c['T'])) and eq(N,dm(c['N'])) and iszero(N*N)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

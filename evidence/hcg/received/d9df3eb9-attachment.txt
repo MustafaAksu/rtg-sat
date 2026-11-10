@@ -1,0 +1,170 @@
+## Karar: karakter-verisi denetimi tamamlandı; simplektik-tip dışlaması doğru
+
+**[ALG — bağımsız exact tekrar]** Ham JSON’u burada kendi doğrulayıcımla çalıştırdım. **20 karakterin tamamı geçti; sonuç dosyası Claude’nun çıktısıyla bayt düzeyinde aynı.**
+
+**[THM — ispat incelemesi]** Önerdiğin bütün-boyutlu simplektik-tip dışlamasını da doğruladım. Aynı argüman, \(p\in\{2,3\}\) kısıtına ihtiyaç duymadan çalışıyor.
+
+Bunların ardından **d=26 için yeni bir dışlama ispatı adayı** elde ettim. Bu ek sonuç henüz **PROPOSED**; mevcut CHECKED alt sınırı şimdilik \(d\ge26\) olarak koruyorum.
+
+## 1. Son karakter tablosu yükümlülüğü kapandı
+
+**[ALG — gerçekleştirilen kontroller]**
+
+| Kontrol | Sonuç |
+|---|---:|
+| Kaynak paket manifesti | **8/8 PASS** |
+| Ham JSON SHA-256 | `78030350…c58b63e3` — eşleşti |
+| Exact karakter doğrulaması | **20/20** |
+| Çıktının Claude’nun `verify_out.json` dosyasıyla karşılaştırılması | **Bayt düzeyinde aynı** |
+| Power-map girdileri | **9.872 kontrol** |
+| Merkezî sınıflar dâhil cyclic restriction hesapları | **1.408** |
+| Yeniden hesaplanan özdeğer çoklukları | **20.860** |
+| Bozulmuş veri negatif kontrolleri | **4/4 reddedildi** |
+
+\(3.O_7(3)\)’ün iki karakterinin de dış otomorfizma altında sabit olmadığı, fusion verisinden yeniden doğrulandı. Bütün hareket-rankı ve projektif hareket-rankı değerleri bildirilen tabloyla eşleşiyor.
+
+**Bağımsızlık sınırı:** GAP’ı burada yeniden çalıştırmadım. Bağımsız olan, ortak CTblLib değerleri ve power map’lerinden özdeğer çokluklarını **rasyonel siklotomik Fourier hesabıyla yeniden üretmek**. CTblLib verisinin kendisi veya Hiss–Malle sınıflandırmasının eksiksizliği bu hesapla yeniden ispatlanmıyor.
+
+Böylece:
+
+\[
+\boxed{
+25\le d\le42:
+\ \mathbb C\text{-ilkel, factorwise tensor-indecomposable,
+tensor-induced olmayan dal dışlanır.}
+}
+\]
+
+Bu sonucu **CHECKED**, önceki sınıflandırma ve Weil-teoremi bağımlılıkları korunarak kaydetmeyi destekliyorum. \(2.S_8(3)\)’ün 40-boyutlu satırı bu JSON’da yok; onun dışlaması, bağımsız denetlediğiniz düzeltilmiş Weil sınırına dayanıyor.
+
+## 2. Simplektik tip: bütün boyutlarda dışlama
+
+**[THM — bağımsız türetim]** Buradaki *simplektik tip*, indirgenemez etkili normal bir
+\[
+P=Z(P)E
+\]
+altgrubu ve extraspecial \(p\)-grup \(E\) içeren normal-altgrup seçeneğidir. Bütün sonlu simplektik grupların dışlanması değildir. GT08 Proposition 2.8(iii) ve ispatı, kullanılan bu seçeneği ve \(P\)’nin indirgenemez etkisini veriyor. [arXiv](https://arxiv.org/pdf/0810.0853)
+
+Miras alınan bütçemiz:
+\[
+N\ge19,\qquad \sum_jc(g_j)=2d+8.
+\]
+
+En küçük hareket ranklı bir dal elemanı \(g\) seçelim:
+\[
+c(g)\le\frac{2d+8}{19}.
+\]
+
+\(d\ge3\) için \(g\) skaler değildir. \(P\) indirgenemez etkidiğinden Schur lemmasıyla bir \(x\in P\) için
+\[
+h=[g,x]\ne1
+\]
+bulunur. Normalite ve rank eşitsizliği:
+\[
+h\in P,\qquad c(h)\le2c(g)\le\frac{4d+16}{19}.
+\]
+
+Öte yandan
+\[
+\frac{4d+16}{19}<\frac d2\qquad(d\ge3).
+\]
+Dolayısıyla \(h\) birim olmayan skaler de olamaz; \(P\)’de merkezî değildir.
+
+Extraspecial komütatör eşleşmesi, \(h\)’nin özdeğerlerini primitif \(p\). kökle çarpma altında eşit çokluklu yörüngelere ayırır. Bu yüzden:
+\[
+c(h)\ge d\left(1-\frac1p\right)\ge\frac d2.
+\]
+
+Çelişki:
+\[
+\boxed{
+\frac d2\le c(h)\le\frac{4d+16}{19}<\frac d2.
+}
+\]
+
+**Sonuç:** Önerdiğin dışlama doğru. Hatta ispat bütün asal \(p\)’ler için geçerli; \(P'\)’nin \(K\)-skalerleri üzerinden \(p=2,3\)’e indirmeye gerek yok. \(d=1,2\) zaten \(2d+8<19\) nedeniyle etkin dal bütçesini sağlayamaz.
+
+Skaler normalizasyon kullanılmışsa, eşit skaler genişlemeler altında konjugasyon ve komütatörlerin değişmediği açıklaması korunmalı. Bütün normalleştirici skalerlerin \(K\)’da olduğunu varsaymıyoruz.
+
+## 3. Yeni ispat adayı: d=26’daki son iki-blok durumu da elenebilir
+
+**[THM adayı — yeni SESSION sonucu; Claude denetimi bekliyor]**
+
+Önceki sonuçlar d=26’da yalnız **\(K\)-tanımlı olmayan iki adet rank-13 blok** bırakıyor. İndüklenmiş period sınırı, ara çift örtünün cinsini \(\gamma=0\)’a zorluyor.
+
+### A. Bütçede hiç boşluk kalmıyor
+
+İki blok üzerindeki permütasyonlara Riemann–Hurwitz uygulanınca tam iki dal elemanı blokları değiştiriyor. Her biri en az 13 boyut hareket ettirir; diğer etkin elemanların rankı en az 2:
+
+\[
+60=\sum_jc_j
+\ge26+2(N-2)
+\ge60.
+\]
+
+Bütün eşitsizlikler eşitliktir:
+\[
+\boxed{N=19,\qquad(c_j)=(13,13,2^{17}).}
+\]
+
+Blok değiştiren iki elemanın dönüş monodromisi birimdir; dolayısıyla **ikisinin de karesi birimdir**.
+
+### B. Blokların Galois eşlenikliği rankları eşitliyor
+
+Blok sabitleyicisi \(\Lambda\triangleleft\Gamma\), indeks 2 olsun. Kısıtlanan temsil:
+\[
+V_{\mathbb C}|_\Lambda=U_1\oplus U_2
+\]
+biçiminde, iki farklı indirgenemez rank-13 bileşenden oluşur.
+
+Matrisler \(K\)-tanımlı olduğundan \(\operatorname{Gal}(\bar K/K)\) bu iki bileşeni permüte eder. İkisini de ayrı ayrı sabitleseydi blok projektörleri \(K\)’ya inerdi; bu, önceden dışlanan \(K\)-imprimitif durum olurdu.
+
+Bu nedenle bileşenleri değiştiren bir Galois otomorfizmi vardır. Her \(h\in\Lambda\) için:
+\[
+\operatorname{rank}(1-h|_{U_1})
+=
+\operatorname{rank}(1-h|_{U_2}).
+\]
+
+On yedi blok-koruyan dalın toplam rankı 2 olduğundan, **her blokta rankı 1’dir**.
+
+### C. Rank-13 indükleyen grup yansımalarla üretiliyor
+
+Ara eğri \(Y=C/\Lambda\simeq\mathbb P^1\). Blok değiştiren iki dalın karesi birim olduğu için bunlar \(C\to Y\) üzerinde etkin monodromi bırakmaz. Diğer 17 dalın ikişer ön-görüntüsü vardır ve her birinde rank-1 monodromi bulunur.
+
+Dolayısıyla indükleyen rank-13 grup **34 yerel yansımayla üretilen, sonlu indirgenemez bir kompleks yansıma grubudur**.
+
+Shephard–Todd sınıflandırması rank 13’te yalnız iki seçenek bırakır: monomiyal \(G(m,p,13)\) veya standart \(S_{14}\) temsili. [Cambridge University Press](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4A59731DC35C3FEC99F39EB2C009FE3E/S0008414X00023725a.pdf/finite-unitary-reflection-groups.pdf)
+
+İkisi de çelişki verir:
+
+- **Monomiyal seçenek:** İndüksiyonun geçişliliğiyle tüm \(\sigma_{\mathbb C}\) monomiyal olur. Önceden CHECKED alan-bağımsız rank-bir period sınırı \(\le12<16\).
+- **Standart \(S_{14}\) seçeneği:** İndükleyen karakter rasyoneldir. İndüklenmiş karakter \(\Lambda\) üzerinde iki rasyonel değerin toplamı, \(\Gamma\setminus\Lambda\) üzerinde sıfırdır. Dolayısıyla tüm karakter alanı \(\mathbb Q\) olur; **tam olarak \(K\)** koşuluyla çelişir.
+
+**Bu argüman geçerse d=26 kapanır.** Daha önce d=27 de dışlandığından yeni gerekli sınır \(d\ge28\) olur. Ancak bunu henüz CHECKED kayda taşımıyorum.
+
+## 4. Kayıt ayrımı
+
+| Sonuç | Önerilen durum |
+|---|---|
+| 20 karakterin exact doğrulaması ve outer fusion | **CHECKED** |
+| \(25\le d\le42\) için belirtilen primitif dalın dışlanması | **CHECKED**, dış teorem girdileri korunarak |
+| Bütün-boyutlu simplektik-tip dışlaması | **CHECKED**, miras alınan bütçe altında |
+| Mevcut genel alt sınır \(d\ge26\) | **CHECKED — değişmedi** |
+| Yeni iki-blok/Galois argümanıyla d=26 dışlaması | **PROPOSED** |
+| Bunun sonucu olarak \(d\ge28\) | **PROPOSED**, önceki satırın denetimine bağlı |
+| d=42’de tensor ve imprimitif durumlar | **OPEN** |
+
+## 5. Teslim
+
+:chatgpt-content-reference{index="3"}[**Karakter-verisi tekrar raporu ve genel simplektik-tip ispatı**](sandbox:/mnt/data/HCG_D42_CHARACTER_REPLAY_AND_SYMPLECTIC_CLOSEOUT_v0_1.md)
+
+:chatgpt-content-reference{index="4"}[**d=26 iki-blok Galois/yansıma engeli — tam ispat adayı**](sandbox:/mnt/data/HCG_D26_TWO_BLOCK_GALOIS_REFLECTION_OBSTRUCTION_PROPOSED_v0_1.md)
+
+HCG_D42_DATA_AND_SYMPLECTIC_FINAL_REPRO_v0_1.zip[**Ham veriler, değişmemiş kaynak paket, exact doğrulayıcılar ve tekrar sürücüsü — ZIP**](sandbox:/mnt/data/HCG_D42_DATA_AND_SYMPLECTIC_FINAL_REPRO_v0_1.zip)
+
+ZIP temiz klasöre açılıp tekrar çalıştırıldı: **paket manifesti 20/20, kaynak manifesti 8/8, iki sonuç JSON’u bayt düzeyinde aynı**. Tekrarlanan exact Fourier hesapları önbelleğe alınıyor; önceden hesaplanmış ranklar hesap girdisi olarak kullanılmıyor.
+
+GT08 ve Shephard–Todd’un ilgili birincil metin bölümlerini okudum; PDF görüntüleme başarısız olduğundan bu turda görsel kontrol iddia etmiyorum. Yeni sayısal testler de Galois/Clifford ispatının yerine geçmiyor.
+
+**Sonraki belirleyici iş:** Claude, d=26 notundaki Galois eşleme adımını, ara rasyonel eğride yansıma üreticiliğini ve rank-13 sınıflandırmasının uygulanışını bağımsız denetlesin. HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

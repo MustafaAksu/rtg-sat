@@ -1,0 +1,84 @@
+## Severn v2 — Δ26 çapraz incelemesi
+
+Claude'nun ikinci inceleme raporu ve Δ26 kaydı, önceki değerlendirmemizle bilimsel olarak uyumlu. Özellikle iki farklı hesap yolu birbirini tamamlıyor: ChatGPT'nin projektörlü akı formülü ve Claude'nun doğrudan Artin monodromisi hesabı.
+
+İstenen önceki paket de bu oturumda mevcut; SHA-256 değeri doğrulandı:
+
+ChatGPT — Severn v2 bağımsız inceleme ve exact tekrar paketi (ZIP)
+
+SHA-256: `c27404ea6584463f4b8c1abfe30132b04658c0a0536a43dca80c416347293088`
+
+Bu paket, Severn'in programlarını içermez. Genel cup formülünün kontrolünü, yayımlanmış \\(S\\) matrisini ve 17 basılı \\(X_j\\) bloğunun karşılaştırmasını içerir.
+
+### Exact yeniden oynatma sonuçları
+
+[SESSION — COMPUTATIONAL CHECKED] İki hesap paketini tekrar çalıştırdım.
+
+| Kontrol                                                     | Sonuç                            |
+| ----------------------------------------------------------- | -------------------------------- |
+| Claude'nun Artin motoru, önceki dondurulmuş motor sürümüyle | PASS — çıktı bayt düzeyinde aynı |
+| ChatGPT paketinin manifesti                                 | 8/8 PASS                         |
+| ChatGPT'nin bağımsız cup/projektör hesabı                   | PASS — dondurulmuş JSON ile aynı |
+| Basılı 17 adet \\(X_j\\) bloğunun karşılaştırılması         | 272/272 PASS                     |
+| Gram matrisi                                                | 64/64 PASS                       |
+| Coboundary kontrolleri                                      | 48/48 PASS                       |
+| \\(\mathbb Q\\)-span rankı                                  | 16                               |
+| Negatif kontroller                                          | 2/2 PASS                         |
+
+Bu tekrarın önemli değeri, Claude'nun Artin yöntemi ile ChatGPT'nin projektör yönteminin gerçekten ayrı hesap yolları olması. Ortak girdileri Severn'in yayımlanmış tuple'ıdır. Dolayısıyla sonuç, kaynak-veri bağımsızlığı değil, yöntem ve hesap bağımsızlığı sağlar.
+
+### Ek bulgu: OPEN 3'ün H0 kalemi de doğrudan doğrulandı
+
+[SESSION — yeni bağımsız exact hesap] Severn'in 17 eğrisinin oluşturduğu ağacı yeniden kurup 18 pantolon bileşeninin sınır monodromilerini yalnız özgün `tuple_pairs_D3.json` verisinden hesapladım.
+
+Her bileşen \\(P\\) için
+
+\\[ \dim_K H^1\_{\mathrm{par}}(P,V) = \sum\_{i=1}^{3}\operatorname{rank}\_K(1-g_i) -2\dim_K V+2\dim_KV^{\langle g_1,g_2,g_3\rangle} \\]
+
+formülünü exact aritmetikle uyguladım.
+
+\\[ \boxed{18/18:\quad H^1\_{\mathrm{par}}(P,V)=0.} \\]
+
+Bu yeni kontrol Claude'nun Artin motorunu, ChatGPT'nin projektör kodunu veya Severn'in yazılımını kullanmıyor. OPEN 3'ün v0.2'de yazılmış son H0 yükümlülüğü de böylece doğrudan sınanmış oldu.
+
+Dolayısıyla `HCG-OPEN-APPA-REPLAY → CLOSED` önerisi artık yalnız v2'de H0'ın geometrik olarak türetilmesine dayanmıyor.
+
+## Δ26 için inceleme kararı
+
+[SESSION — CHANGE-FOCUSED QA] Δ26'nın bilimsel içeriğine katılıyorum. Yeni H0 hesabıyla birlikte önerdiğim durumlar:
+
+| Kayıt                                | Önerilen durum                 |
+| ------------------------------------ | ------------------------------ |
+| Severn v2 Lemma 4.4                  | CHECKED — iki ispat incelemesi |
+| Severn v2 Lemma 7.2                  | CHECKED — iki ispat incelemesi |
+| OPEN 5 — genel cup formülünün ispatı | CLOSED adayı                   |
+| OPEN 3 — Severn Appendix A tekrarı   | CLOSED adayı — H0–H4 dâhil     |
+| Laminer H4-only kriteri              | CONDITIONAL                    |
+| HCG-OPEN-SEVERN-V2                   | ACTIVE                         |
+| Severn Theorems A/B/C                | CLAIMED                        |
+
+Burada OPEN 5'in kapatılması, eski `[19, Lemma 6.2]` kaynağının tarihsel sorununu silmek anlamına gelmiyor. Genel formülün ispatı için v2 Lemma 7.2'nin yazılı ispatı yeni dayanak oluyor.
+
+### Yeni bağımsız QA paketi
+
+Δ26 ChatGPT Cross-QA — English Markdown
+
+Bağımsız H0 hesap betiği, 18 bileşenin exact sonuçları ve SHA-256 manifesti — ZIP
+
+ZIP SHA-256: `6390df50e1c13d79a80585460222a5bc61870b1afaa2f406925b01b905c9f67f`
+
+Paketi temiz bir dizinde tekrar çalıştırdım; manifest 5/5 PASS, H0 hesabı 18/18 PASS.
+
+## Sonraki araştırma
+
+Artık aynı Appendix A matrislerini yeniden hesaplamayı önermiyorum. En yüksek getirili kalan görev, v2'nin aşağıdaki beş kaynak halkasında hipotez ve ispat eşdeğerliğini kontrol etmek:
+
+- Theorem 5.1 — Brauer;
+- Proposition 4.6 / Corollary 4.7 — supplier;
+- Theorem 6.2 — spreading;
+- Proposition 7.1 — gerçek polarizasyon;
+- Proposition 10.2 — compensation.
+
+Özellikle Proposition 7.1'in, eski transfer makalesindeki Proposition 5.1 ile yalnız diskriminant sonucunda mı yoksa tam polarizasyon özdeşleştirmesinde mi eşdeğer olduğuna dikkat etmeliyiz.
+
+Δ26'yı bilimsel inceleme bakımından olumlu değerlendiriyorum; ancak PI karar alanı ve v0.3 benimsemesi ayrı kalmalı. HCG v0.2 ADOPTED değişmedi. Severn'in v2 metninin yazılı ve hesaplanabilir hâle gelmesi önemli bir ilerleme, fakat insan hakem yükümlülüğünü veya Theorems A/B/C'nin `CLAIMED` statüsünü değiştirmiyor.

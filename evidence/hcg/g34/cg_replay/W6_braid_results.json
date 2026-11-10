@@ -1,0 +1,22 @@
+{
+  "braid_rebuilt_exact": {
+    "1-2": true,
+    "3-4": true,
+    "5-6": true,
+    "7-8": true,
+    "9-10": true,
+    "11-12": true,
+    "13-14": true,
+    "15-16": true,
+    "17-18": true,
+    "19-20": true,
+    "1-4": true,
+    "1-6": true,
+    "1-8": true,
+    "1-10": true,
+    "1-12": true,
+    "1-14": true,
+    "1-16": true
+  },
+  "all_pass": true
+}

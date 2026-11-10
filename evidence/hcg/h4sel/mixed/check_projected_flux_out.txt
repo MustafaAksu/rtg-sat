@@ -1,0 +1,18 @@
+[1,2] d=1 complete pairs J=[1] endpoints partial=no: projected-flux formula True
+[3,4] d=1 complete pairs J=[2] endpoints partial=no: projected-flux formula True
+[3,19] d=2 complete pairs J=[2, 3, 4, 5, 6, 7, 8, 9] endpoints partial=yes: projected-flux formula True
+[5,16] d=1 complete pairs J=[3, 4, 5, 6, 7, 8] endpoints partial=no: projected-flux formula True
+[5,17] d=2 complete pairs J=[3, 4, 5, 6, 7, 8] endpoints partial=yes: projected-flux formula True
+[5,18] d=1 complete pairs J=[3, 4, 5, 6, 7, 8, 9] endpoints partial=no: projected-flux formula True
+[5,19] d=2 complete pairs J=[3, 4, 5, 6, 7, 8, 9] endpoints partial=yes: projected-flux formula True
+[6,14] d=2 complete pairs J=[4, 5, 6, 7] endpoints partial=yes: projected-flux formula True
+[6,16] d=2 complete pairs J=[4, 5, 6, 7, 8] endpoints partial=yes: projected-flux formula True
+[7,8] d=1 complete pairs J=[4] endpoints partial=no: projected-flux formula True
+[7,14] d=1 complete pairs J=[4, 5, 6, 7] endpoints partial=no: projected-flux formula True
+[9,10] d=1 complete pairs J=[5] endpoints partial=no: projected-flux formula True
+[9,12] d=1 complete pairs J=[5, 6] endpoints partial=no: projected-flux formula True
+[9,14] d=1 complete pairs J=[5, 6, 7] endpoints partial=no: projected-flux formula True
+[11,12] d=1 complete pairs J=[6] endpoints partial=no: projected-flux formula True
+[13,14] d=1 complete pairs J=[7] endpoints partial=no: projected-flux formula True
+[15,16] d=1 complete pairs J=[8] endpoints partial=no: projected-flux formula True
+ALL 17 curves: True

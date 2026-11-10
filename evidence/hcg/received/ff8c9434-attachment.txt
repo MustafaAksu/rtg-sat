@@ -1,0 +1,213 @@
+# Genel bir Hurwitz–Hodge engel teorisi kurabiliriz
+
+[SESSION — bilimsel değerlendirme]
+
+Evet. Elde ettiğimiz sonuçlar artık yalnızca \\(d=46,47,\ldots\\) boyutlarını tek tek elemekten daha güçlü bir şey yapmamıza izin veriyor: Severn tipi bir Hurwitz verisinin neden bölünmemiş diskriminantlı, dominant bir Weil sekizlisi ailesi oluşturamayacağını önceden belirleyen genel engel kriterleri kurabiliriz.
+
+Burada iki hedefi kesin ayırmalıyız:
+
+- Ulaşılabilir hedef: Severn'in genus-sıfır sonlu-örtü yönteminde geçerli genel bir no-go teoremi ve hesaplanabilir engel sertifikası.
+- Henüz kanıtlanmamış hedef: Bu yöntemle hiçbir boyutta bölünmemiş dominant sekizli elde edilemeyeceği.
+
+İlk hedefin önemli bir bölümü zaten ispatlı. İkinci hedef için mevcut veriler güçlü fakat yetersiz.
+
+## 1. En güçlü genel engel: yerel diskriminant
+
+[SESSION — THM, önceki iki-AI CHECKED yerellik teoreminden koroler]
+
+\\(K=\mathbb Q(\omega)\\), \\((V,h_0)\\) pozitif Hermitik bir \\(K\\)-uzayı, \\((g_1,\ldots,g_N)\\) çarpımı birim olan sonlu ünitar monodromi tuple'ı olsun.
+
+\\[ E_g=\operatorname{im}(1-g),\qquad \Delta(g)= \frac{\det(h_0|\_{E_g})} {\det((1-g)|\_{E_g})}. \\]
+
+Daha önce ispatladığımız yerellik teoremi:
+
+\\[ \boxed{ [\det h\_{\mathrm{par}}] = \left[(-1)^n\prod\_{j=1}^N\Delta(g_j)\right] \in\mathbb Q^\times/N\_{K/\mathbb Q}(K^\times) } \\]
+
+şeklindedir. Burada \\(\dim_KH^1\_{\mathrm{par}}=2n\\) ve norm sınıfı bütün rasyonel çarpım için alınır. Bu, parabolik cup formülünün bulunduğu Dettweiler–Wewers çerçevesiyle uyumludur.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.emis.de\&sz=32)
+
+emis.de
+
+
+
+### Yeni genel koroler: ters-eşleme engeli
+
+Yerel monodromiler, \\(K\\)-ünitar eşleniklik altında
+
+\\[ (g_1,g_1^{-1}),\ldots,(g_s,g_s^{-1}) \\]
+
+çiftlerine ayrılabiliyorsa,
+
+\\[ \Delta(g)\Delta(g^{-1}) = N\_{K/\mathbb Q}(\Delta(g)) \quad\bmod N(K^\times). \\]
+
+Dolayısıyla
+
+\\[ \boxed{[\det h\_{\mathrm{par}}]=[(-1)^n].} \\]
+
+Sekizli probleminde \\(n=4\\):
+
+\\[ \boxed{ \text{Ters-çiftli yerel monodromi} \Longrightarrow \text{split diskriminant}. } \\]
+
+Bu gerçekten genel bir engel. Grup derecesinden, belirli bir braid yörüngesinden ve sınır dejenerasyonu yönteminden bağımsız. Eşlerin ardışık olması da gerekmiyor.
+
+Örneklerimiz bunu açıkça gösteriyor:
+
+| Veri                         | Yerel simetri      | Diskriminant |
+| ---------------------------- | ------------------ | ------------ |
+| \\(G\_{34}\\), 20 involüsyon | Ters-çiftlenebilir | \\([1]\\)    |
+| \\(C_3\\), beş ters çift     | Ters-çiftlenebilir | \\([1]\\)    |
+| \\(C_6\\) ayırıcısı          | Ters-çiftlenemiyor | \\([2]\\)    |
+
+Ters-çiftlenebilirliğin bulunmaması bölünmemişliği garanti etmez. Yalnızca bu engelin geçilmesini sağlar.
+
+Bu sonuç yenilik iddiası taşımıyor; daha önce CHECKED olan yerellik teoremimizin açık bir koroleridir.
+
+## 2. Genel engel sertifikası nasıl tanımlanmalı?
+
+[ALG — önerilen formalizasyon]
+
+Bir Hurwitz verisini
+
+\\[ \mathcal D=(K,\Gamma,\sigma,(g_j),h_0) \\]
+
+ile gösterelim. \\(\dim_K\sigma=d\\), \\(c_j=\operatorname{rank}(1-\sigma(g_j))\\) olsun.
+
+Bölünmemiş, dominant bir Weil sekizlisi için aşağıdaki kapıların birlikte geçilmesi gerekir.
+
+| Engel                  | Gerekli koşul                                                          | Başarısızlığın anlamı                  |
+| ---------------------- | ---------------------------------------------------------------------- | -------------------------------------- |
+| Boyut bütçesi          | \\(\sum c_j=2d+8\\)                                                    | Hedef kohomoloji boyutu yanlış         |
+| Hurwitz boyutu         | \\(N\_{\mathrm{eff}}\ge19\\)                                           | Dominans mümkün değil                  |
+| Hodge–age              | \\(\sum\operatorname{age}(g_j)=\sum\operatorname{age}(g_j^{-1})=d+4\\) | İmza \\((4,4)\\) sağlanmıyor           |
+| Aritmetik diskriminant | \\([\prod\Delta(g_j)]\ne[1]\\)                                         | Bölünmemiş hücreye ulaşılamıyor        |
+| Period faktörizasyonu  | \\(\dim(\text{etkin varyasyon tabanı})\ge16\\)                         | Period haritası dominant olamaz        |
+| Temsil/grup engeli     | Normal altgrup için gerekli küçük hareket-ranklı eleman mevcut         | Lemma C veya sınıflandırmayla çelişki  |
+| Tedarikçi kafesi       | (L) sağlanıyor                                                         | Severn transfer mekanizması çalışmıyor |
+
+Bu kriterleri birleştirerek Hurwitz–Hodge obstruction certificate tanımlamayı öneriyorum.
+
+[THM — koşullu çıkarım] \\((H)\\)'nin yerleşik hipotezleri altında, yukarıdaki gerekli koşullardan herhangi biri ihlal ediliyorsa ilgili veri, Severn yönteminin hedeflediği bölünmemiş dominant aileyi sağlayamaz.
+
+Özellikle yerel sınıf çoklu kümesine dayanan ilk aritmetik kontroller braid altında değişmez. Böylece tek bir başarısız işaretleme değil, aynı yerel monodromi verisini taşıyan bütün Hurwitz bileşenleri aritmetik açıdan elenebilir.
+
+### \\(K=\mathbb Q(\sqrt{-3})\\) için daha pratik biçim
+
+Pozitif bir rasyonel diskriminant temsilcisi \\(D\\) için:
+
+\\[ [D]=[1] \iff v_p(D)\equiv0\pmod2 \quad\text{her }p\equiv2\pmod3\text{ asalında}. \\]
+
+Çünkü bu asallar \\(K\\)'da inerttir.
+
+Dolayısıyla diskriminant sertifikasını büyük Hermitik matrislerin determinantından değil, yerel monodromilerin verdiği rasyonel çarpımın inert asal değerliklerinin paritesinden oluşturabiliriz.
+
+Bu, yaklaşımın hesaplama bakımından en değerli parçalarından biri.
+
+## 3. \\(d=50\\)–52 sonuçları genel teoriyi nasıl destekliyor?
+
+[SESSION — kaynak ve hesap ayrımı]
+
+Claude'nun gönderdiği \\(d=50\\)–52 paketini kontrol ettim. Manifest 12/12 eşleşiyor. Kaynakta bildirilen iki temel hesap şunlar:
+
+| Yapı                   | Engel                                                                    | Durum                                 |
+| ---------------------- | ------------------------------------------------------------------------ | ------------------------------------- |
+| \\(2\otimes25\\)       | Riemann–Hurwitz için gereken indeks 50, mümkün olan en fazla 44          | Sonlu aritmetik kontrol olumlu        |
+| \\(2\otimes26\\)       | Riemann–Hurwitz sonrası kalan 3 dağılım determinant paritesiyle eleniyor | Sonlu aritmetik kontrol olumlu        |
+| \\(4\otimes13\\)       | Gerekli indeks 26, elde edilen 15                                        | Yapısal dışlama adayı                 |
+| Primitif \\(d=50\\)–52 | Hareket-rankı alt sınırları Lemma C eşiğinin üzerinde                    | Hiss–Malle/CTblLib verilerine koşullu |
+
+Bu sonuçlar, genel engelin tek bir eşitsizlik olmadığını gösteriyor. Aynı veri farklı biçimlerde elenebiliyor:
+
+\\[ \text{Rank bütçesi} \\;\Longrightarrow\\; \text{grup yapısı} \\;\Longrightarrow\\; \text{Riemann–Hurwitz} \\;\Longrightarrow\\; \text{determinant veya karakter engeli}. \\]
+
+Bu zincir bütün boyutlara tek seferde uygulanabilecek bir teorem için başlangıç noktası olabilir.
+
+Ancak \\(d=50\\)–52'nin tamamının dışlandığı hüküm, hâlâ bazı normalleyici ve sınıflandırma girdilerine dayanıyor. \\(d\ge53\\) sonucunu bu kayıtlar nihai olarak bağımsız denetlenmeden benimsenmiş bir teorem diye yazmamalıyız.
+
+## 4. Asıl hedef: boyut bağımsız bir imkânsızlık teoremi
+
+Bence bundan sonra \\(d=53,54,55,\ldots\\) sıralaması ana araştırma yöntemi olmamalı.
+
+Bunun yerine üç açık soruya odaklanalım.
+
+### A. (L) ile diskriminant arasında zorunlu bir ilişki var mı?
+
+Elimizde iki zıt örnek var:
+
+\\[ C_3:\quad(L)\text{ sağlanıyor},\ [\det h]=[1], \\]
+
+\\[ C_6:\quad(L)\text{ başarısız},\ [\det h]=[2]. \\]
+
+Buradan çıkarmak istediğimiz aday teorem:
+
+\\[ \boxed{ (L)+\text{diğer }(H)\text{ hipotezleri}+(D) \stackrel{?}{\Longrightarrow} [\det h]=[1]. } \\]
+
+[OPEN] Bunu henüz bilmiyoruz. İspatlanırsa boyut bağımsız güçlü bir engel olur: Severn'in aynı transfer yöntemi bölünmemiş hücreye doğrudan uygulanamaz.
+
+Ama (L)'nin yerel ters-eşleme simetrisini gerektirdiğini de bilmiyoruz. Bilinen inverse-conjugacy yeterlilik koşulunu ters yönde kullanmamalıyız.
+
+### B. Tensor ve imprimitif mekanizmaları tek teoremle kapatabilir miyiz?
+
+[SESSION — araştırma yönü] Özellikle
+
+\\[ V=A\otimes B,\qquad \dim A=2 \\]
+
+durumunda tekrar eden şu yapı dikkat çekici:
+
+- Az sayıda aktif dal yüksek hareket rankı tüketiyor.
+- Diğer dallar \\(B\\)'de yansıma biçimine zorlanıyor.
+- Riemann–Hurwitz, izin verilen çevrim yapılarını daraltıyor.
+- Çarpım-bir bağıntısı determinant veya temsilin indirgenemezliğiyle çelişiyor.
+
+Önceki sınırlı hesabı \\(24\le b\le34\\) aralığına kadar genişleten bir PROPOSED not da mevcut; fakat bu henüz bütün \\(b\\)'ler için teorem değil.
+
+Burada sonlu \\(U(2)\\) projektif görüntüleri ve simetrik grubun çevrim indisleri üzerinden tüm \\(b\\) için bir dışlama ispatı hedeflenebilir.
+
+### C. Primitif gruplarda hareket-rankı evrensel engeli
+
+Lemma C şu gerekli özelliği veriyor:
+
+\\[ \boxed{ \exists h\in L\setminus Z(L): \quad \operatorname{rank}(1-h) \le 2\left\lfloor\frac{2d+8}{19}\right\rfloor } \\]
+
+uygun normal-altgrup \\(L\\) için.
+
+Eğer grup ailesinin bütün merkezî olmayan elemanları bu eşiğin üzerinde hareket ediyorsa, herhangi bir Hurwitz tuple aramadan grup dışlanır.
+
+Şimdiye kadar Hiss–Malle ve Weil karakterleriyle yürüttüğümüz dışlamaların ortak matematiksel özü budur.
+
+Bu koşulu belirli gruplar yerine grup aileleri için ispatlayabilirsek, derece-derece CTblLib taraması önemli ölçüde azalır.
+
+## 5. Önerdiğim çalışma planı
+
+[SESSION — bilimsel öncelik]
+
+| Öncelik | Hedef                                                                          | Kapanış ölçütü                                         |
+| ------- | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| P1      | Yerel diskriminant ve ters-çift korolerini genel no-go ölçütü hâline getirmek  | Yazılı teorem, açık hipotezler, karşıörnek kontrolleri |
+| P2      | \\((L)\\) ile bölünmemiş diskriminantın birlikte gerçekleşebilirliğini sınamak | Genel ispat veya somut karşıörnek                      |
+| P3      | \\(2\otimes b\\) yapısının tüm \\(b\\) için incelenmesi                        | Evrensel dışlama veya en küçük kaçış boyutu            |
+| P4      | Primitif normal-altgrup hareket sınırı                                         | Sonsuz grup ailelerini dışlayan sınıflandırma koroleri |
+
+Bu sırayla ilerlemek, her yeni boyut için onlarca karakter tablosunu çalıştırmaktan daha anlamlı.
+
+## Nihai bilimsel değerlendirme
+
+[THM — mevcut CHECKED sonuçların kapsamı] Biz artık belirli sonlu monodromi verileri için oldukça güçlü, birbirini tamamlayan aritmetik, geometrik ve temsil-teorik engellere sahibiz.
+
+[OPEN] Henüz sahip olmadığımız şey, bu engellerin bütün olası \\((H)\\) verilerini kapsadığını gösteren evrensel teorem.
+
+Özellikle şu ikisi birbirinden farklıdır:
+
+\\[ \boxed{ \text{Severn tipi transfer verisi mümkün değil} } \\]
+
+ve
+
+\\[ \boxed{ \text{Bölünmemiş Weil sekizlisi mevcut değil}. } \\]
+
+İkincisi bizim sonuçlarımızdan çıkmıyor; Hodge varsayımı için de olumsuz bir sonuç elde etmiş olmuyoruz.
+
+Önerim: Artık araştırmaya ayrı bir HCG-HURWITZ-HODGE-OBSTRUCTION başlığı açalım. İlk sahibi yerel diskriminant no-go teoremi ve genel sertifika tanımı olsun; \\(d=50\\)–52 gibi boyut dışlamaları bunun örnek uygulamaları olarak kalsın. Bilimsel kabul ve HCG v0.3'e ekleme kararı ayrıca verilsin.
+
+General Hurwitz–Hodge Obstruction Framework — araştırma notu (English)
+
+Bu not henüz SESSION / PROPOSED. HCG v0.2 ADOPTED ve Severn A/B/C'nin `CLAIMED` statüleri değişmedi.

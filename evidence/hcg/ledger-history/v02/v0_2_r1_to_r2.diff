@@ -1,0 +1,128 @@
+--- HCG_HODGE_SESSION_DSN_v0_2_DRAFT_r1.md	2026-10-26 15:31:20.492851197 +0300
++++ HCG_HODGE_SESSION_DSN_v0_2_DRAFT_r2.md	2026-10-26 15:31:48.890287733 +0300
+@@ -5,6 +5,7 @@
+ **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
+ **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.21 are an *external-claim audit module*. In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
+ **Document status:** DRAFT — v0.2 candidate for change-focused review, prepared by Claude at the PI's request (26 Oct 2026; scope decision relayed from ChatGPT and approved by the PI). Not adopted. Adoption would **not** set any individual claim's review state to ACCEPTED, would not establish any external claim, and would not be an RTG adoption.
++**Revision:** DRAFT r2 (26 Oct 2026). Implements ChatGPT QA R01–R07 (`HCG_V02_DRAFT_CHATGPT_QA_v0_1.md`). DRAFT r1 (SHA-256 c15815efeefcdaafa97f3f98688661c27ff43263543fe1198b2c4eec8a33ab61) is preserved unchanged.
+ **Revision base:** `HCG_HODGE_SESSION_DSN_v0_1_ADOPTED.md` (SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7; preserved unchanged), with the change log `HCG_DSN_v0_2_PENDING_DELTAS.md` Δ1–Δ23 (SHA-256 8fb25dadfb4416136625d7b8d6eea9f20ea0d8234bdd32495f0ac12d069efd98 at build time; preserved unchanged). Built by `make_v02.py` (assertion-gated section replacements); the exact diff is shipped with this draft.
+ **Supersedes (on adoption):** HCG_HODGE_SESSION_DSN_v0.1 (adopted 22 Oct 2026). Until then v0.1 remains the governing record.
+ **Companion documents:** `HODGE_COMPLEX_GEOMETRY_STANDALONE_CHARTER_v0_2.md`; `VERIFICATION_LEDGER_v0_4.md` + addenda `v0_4a`–`v0_4d`; `HCG_DSN_v0_2_PENDING_DELTAS.md`; `SOURCE_MANIFEST.md`; the reports in §8.
+@@ -60,7 +61,7 @@
+ 
+ No row in this file is ACCEPTED (PI decision). Adoption of v0.2 would not change that.
+ 
+-### §1.1 Retained from v0.1 (unchanged text and grades)
++### §1.1 Retained scientific conclusions and review grades from v0.1
+ 
+ `[ALG]` **Calibration.**
+ - E = ℂ/ℤ[ζ₆] carries the principal polarization ω₀ = dx∧dy, compatible with J_Q = (2A−I)/√3.
+@@ -95,7 +96,7 @@
+ 
+ `[THM]`/`[ALG]` **H4-selection theory (new, outside the main chain; §6.18).** All INTERNAL CHECKED unless marked:
+ - HCG-THM-EDGEFLUX: for pair-containing decompositions, (H0)–(H3) are automatic and (H4) is equivalent to the edge forms spanning Herm(L). The orthogonal analogue is prior art (ADFIO).
+-- P2/P3 and the paired-endpoint factorization: every interval form of a paired tuple factors through the same τ.
++- P2/P3 and the paired-endpoint factorization: for a paired tuple whose rank-one involutions have **distinct root lines**, every form of a **consecutive interval** factors through the same τ (W5, NEW01–02 and that class; not repeated-line data such as the toy datum).
+ - Laminar reduction: for laminar interval trees in a fixed marking, Prop 4.2 reduces to (H0) + (H4).
+ - Rank obstructions: the series bound, the block bound, and the reality obstruction.
+ - Braid escapes: every fixed-marking obstruction found so far is escaped inside its braid orbit.
+@@ -199,10 +200,10 @@
+ Candidates: R6b, R7, the NS(E²) basis as an Eisenstein calibration.
+ Closure criterion: a dated noncanonical handoff note, with a decision by the RTG owner and the PI.
+ 
+-**OPEN 8 — Every-member scope of the PO-1 premise** [RID: HCG-OPEN-PO1-PREMISE] (new in v0.2)
++**OPEN 8 — Proof validation of the every-member scope of the PO-1 premise** [RID: HCG-OPEN-PO1-PREMISE] (new in v0.2)
+ Status: ACTIVE
+ Scheduling: READY for source reading. The proof check itself overlaps Priority B items 6–7; the PI decides whether to run it before the auditor reports.
+-Question: Prop 5.2 applies the eightfold hypothesis to the *special* member A × S. Does Thm 6.2(1), as proved ([387] Thm 2.9 = [386] Thm 7.1, with Lemma 2.10), reach every member of the [1] cell, including such special members?
++Question: The every-member scope is **explicit in the imported source**: [387] Thm 2.9 states its conclusion "for every polarized abelian 2n-fold of Weil type for K with discriminant d(S)", and Prop 5.2 applies it to the *special* member A × S. The open question is whether the **proof** ([386] §6–§7: spreading, Baire, Landherr; [387] Lemma 2.10) establishes that scope, including such special members. This is proof validation, not source-statement identification, and does not reopen the internal PO-1–PO-4 checks.
+ - Points to check: the Baire step gives M_alg = M on the whole connected Weil moduli space; Landherr and Lemma 2.10 reach every K-isogeny class of discriminant [1]; the special member A × S is polarized of Weil type with the discriminant computed in Lemma 5.1.
+ Closure criterion: a line-by-line review of these steps against [386] §6–§7 and [387] §2, §5. Severn's own remark ([387] Prop 5.2 proof): "it is enough to know algebraicity at very general points of the full 2n-fold cell, after the relative-Hilbert spreading argument of [23] and K-isogeny invariance".
+ Note: this replaces the provisional "[17] eightfold assumption" item of 26 Oct, which rested on a mis-attribution (§6.20).
+@@ -213,7 +214,7 @@
+ - NF/R7 :: CLOSED :: `[THM]` :: §6.4
+ - CUP-FORM-VALIDATION :: CLOSED :: `[ALG]` :: §6.13
+ - G34-D on S_W5 :: CLOSED at third-family grade :: `[THM]` :: §6.15
+-- W6/W7 algebraic :: CLOSED :: `[ALG cert]` :: §6.14
++- W6/W7 finite (H0)–(H4) algebraic witness checks :: CLOSED (internal only) :: `[ALG cert]` :: §6.14
+ - Severn tuple chain to W5 :: CLOSED (internal) :: `[ALG cert]` :: §6.19
+ 
+ ---
+@@ -790,7 +791,7 @@
+ 
+ This section keeps the v0.1 blocks HCG-ALG-H4-BOUND and HCG-ALG-H4-OBS, and records the developments of Δ3–Δ20. Full statements, proofs and evidence are in the cited change records and reports; they are not repeated here.
+ 
+-**Notation.** Paired tuple (s₁,s₁,…,s₁₀,s₁₀) of reflections with root vectors v_i; L = ker(t ↦ Σ t_i v_i); τ: H → L the paired-coordinate map; F_e the restriction to the pairs of e; for a curve e with boundary C, N̂_e = T_e^{ord C} − 1 = (ord C/(k m))·N_e (Severn's k_j and m_j).
++**Notation.** Paired tuple (s₁,s₁,…,s₁₀,s₁₀) of reflections with root vectors v_i; L = ker(t ↦ Σ t_i v_i); τ: H → L the paired-coordinate map; F_e the restriction to the pairs of e; for a curve e with boundary product C_e, q_e = ord(C_e) and N̂_e = T_e^{q_e} − 1 = (q_e/(k_e m_e))·N_e, where k_e (least exact tuple return) and m_e (semisimple order) are Severn's and are kept distinct from q_e.
+ 
+ #### §6.18.1 Retained from v0.1
+ 
+@@ -818,7 +819,7 @@
+ 
+ `[ALG]` [RID: HCG-ALG-P2-INVPAIRS] [provenance: CHECKED (Δ9–Δ10)] Inverse-pair formula for unitary r_i with ΣW_i = V, intervals of whole pairs. Algebraic scope only.
+ 
+-`[ALG]` [RID: HCG-ALG-P3-PROJECTOR] [provenance: CHECKED (Δ9–Δ10)] S(x, N̂_e y) = −k·h(Π_C u_x(c), Π_C u_y(c)) with N̂_e = T_e^k − 1, k = ord C (factor k, not k²). Literature priority (DW, Völklein): OPEN.
++`[ALG]` [RID: HCG-ALG-P3-PROJECTOR] [provenance: CHECKED (Δ9–Δ10)] S(x, N̂_e y) = −q_e·h(Π_{C_e} u_x(c_e), Π_{C_e} u_y(c_e)) with N̂_e = T_e^{q_e} − 1, q_e = ord(C_e) (factor q_e, not q_e²). Literature priority (DW, Völklein): OPEN.
+ 
+ `[ALG]` [RID: HCG-ALG-PAIRED-ENDPOINT-FACTOR] [provenance: CHECKED (Δ10)] For a paired tuple with distinct rank-one involution lines and consecutive intervals: P u(c) = P F_J(τu). Every interval form therefore factors through the same τ and lies in Φ(Herm(L)).
+ 
+@@ -828,7 +829,7 @@
+ 
+ `[ALG cert]` [RID: HCG-ALG-H4-NEW01-MIXED] [provenance: CHECKED (Δ10–Δ11)] 17-curve mixed tree on NEW01: (H0)–(H4), Q-rank 16, relation N_[3,19] = 2N_[1,2].
+ `[ALG]` [RID: HCG-ALG-NEW02-PROJ-SPAN] [provenance: CHECKED (Δ11)] Unprojected pair cuts rank 15; projected cuts rank 16.
+-`[ALG cert]` [RID: HCG-ALG-H4-NEW02-MIXED] [provenance: CHECKED (Δ11–Δ12)] (H0)–(H4), Q-rank 16; relations N_[16,18] = N_[17,18] and N̂_[16,18] = 2N̂_[17,18].
++`[ALG cert]` [RID: HCG-ALG-H4-NEW02-MIXED] [provenance: CHECKED (Δ11–Δ12)] (H0)–(H4), Q-rank 16; relations N_[16,18] = N_[17,18] and N̂_[16,18] = 2N̂_[17,18]. Curve [16,18] has q_e = 2 and k_e = 1.
+ 
+ Source note: Severn's own Appendix-A tree is mixed (k = 2 on [2,8], [4,8], [9,17]); the pair-containing restriction was the session's, not Severn's (Δ10).
+ 
+@@ -895,12 +896,12 @@
+ - Not checked: the general Δ-complex / Alexander–Whitney reduction and the edge relations; Severn's Certificate E (not accessed). The identification of the cited [19] with "Draft v0.11" is NOT VERIFIED (auditor; ChatGPT intake).
+ - Mitigation for W5 only: DW06 Thm 2.6 (published) via HCG-ALG-CUPVAL. This does not prove the general lemma.
+ 
+-**E-2. The PO-1 eightfold premise.** Status: located inside the chain; every-member scope OPEN (OPEN 8).
++**E-2. The PO-1 eightfold premise.** Status: located inside the chain. The every-member scope is explicit in the source statement; whether the proof establishes it is OPEN (OPEN 8; blind Priority B items 6–7).
+ - The premise of Prop 5.2 (n = 4, δ = 1) is "the Weil classes of every polarized abelian eightfold of Weil type for K with discriminant [1] are algebraic". This is the conclusion of Thm 6.2(1), i.e. [387] Thm 2.9 (= [386] Thm 7.1) for D, together with Lemma 2.10.
+ - Source text: [387] §2.3: "nothing in this paper uses [17]"; [387] Rem 6.3: Thm 6.2 uses "none of the unrefereed manuscripts that [23] uses conditionally". The conditional layer of [386] (Hypothesis (C), Gale suppliers, Thm 7.2, Cor 11.1) concerns Q(i) and is not on this chain.
+ - So the dependency is internal: it is as strong as PO-2 to PO-6 together, and its every-member scope rests on PO-3 (spreading and Baire) and Lemma 2.10 (isogeny). These are internal two-AI CHECKED and are Priority B items 6–7 for the auditor.
+ 
+-**Correction (dated 26 Oct 2026, Claude).** In its 26 Oct proposal to the PI, Claude wrote that PO-1's eightfold assumption "rests on an outside unrefereed source (Severn's [17]; openai/math manuscript)". That attribution was wrong. [17] in [387] is OpenAI, *Weil classes and Hodge classes on abelian powers* (30 Sep 2026), cited only for context on split sixfolds and powers, and explicitly not used. ChatGPT's planned next review ("does what [17] proves imply the universal eightfold assumption?") inherited the error. The question to review instead is OPEN 8. No earlier record is edited by this note.
++**Correction (dated 26 Oct 2026, Claude).** In its 26 Oct proposal to the PI, Claude wrote that PO-1's eightfold assumption "rests on an outside unrefereed source (Severn's [17]; openai/math manuscript)". That attribution was wrong. [17] in [387] is OpenAI, *Weil classes and Hodge classes on abelian powers* (30 Sep 2026), cited only for context on split sixfolds and powers, and explicitly not used. ChatGPT's planned next review ("does what [17] proves imply the universal eightfold assumption?") inherited the error. The question to review instead is OPEN 8. ChatGPT independently verified this correction against the source (QA of 26 Oct, `HCG_V02_DRAFT_CHATGPT_QA_v0_1.md` §3); no other outside premise replaces [17]. No earlier record is edited by this note.
+ 
+ **E-3. Other unrefereed imports.** Unchanged from v0.1 (§7): [386] Thm 7.1, Lemmas 6.1–6.2, Prop 3.7, Cor 3.8, Prop 5.1, Lemma 2.4; [387] Thm 3.1, Prop 4.2, Prop 5.2. Their proofs were read and checked, not refereed.
+ 
+@@ -997,7 +998,7 @@
+ - [RID: HCG-ART-AUDITOR-R2P] :: `auditor_r2/AUDITOR_R2_PARTIAL_DISC_received.md` (5b318e3fb96bd009) :: R2 discriminant (partial) :: RECEIVED, transcribed from the PI's message
+ - Sources: the PDFs and hashes are in `SOURCE_MANIFEST.md` §A.
+ 
+-**v0.2 additions to the registry.** SHA-256 values below are 16-hex prefixes computed by `make_v02.py` from the session files at build time. "Claude workspace" means present in this workspace; ChatGPT and auditor packages are referenced in the Δ records by the hashes stated there.
++**v0.2 additions to the registry.** SHA-256 values below are 16-hex prefixes computed by `make_v02.py` from the session files at build time. "Claude workspace" means present in this workspace; ChatGPT and auditor packages are referenced in the Δ records by the hashes stated there. A standalone replay of `make_v02.py` rebuilds these rows from the frozen `registry_hashes.tsv`; it verifies the frozen registry only, not the bytes or availability of the referenced artifacts, whose lineage is in the Δ records.
+ 
+ - [RID: HCG-ART-EDGEFLUX] :: `h4sel/theorem/H3_H4SEL_EDGEFLUX_THEOREM_v0_2.md` (1e99898a33d7fc2f) :: EDGEFLUX theorem note v0.2 :: AVAILABLE (Claude workspace)
+ - [RID: HCG-ART-EDGEFLUX] :: `h4sel/theorem/H3_H4SEL_EDGEFORM_THEOREM_CLAUDE_v0_1.md` (4e2aaa0fd014ab62) :: theorem note v0.1 (preserved) :: AVAILABLE (Claude workspace)
+@@ -1068,7 +1069,19 @@
+ 
+ ## Appendix A — Version History
+ 
+-### v0.2 DRAFT — 26 October 2026 — DRAFT (change-focused review candidate)
++### v0.2 DRAFT r2 — 26 October 2026 — DRAFT
++
++- **Basis [governance]:** ChatGPT QA of r1 (`HCG_V02_DRAFT_CHATGPT_QA_v0_1.md`; disposition "revise, then recheck"). r1 reproduced byte-exactly by ChatGPT; D-8 independently verified against [387]. r1 preserved (c15815ef…a33ab61).
++- **R01 [packaging]:** replay manifest no longer lists itself.
++- **R02 [scientific scope]:** §1.2 factorization summary carries the hypotheses of §6.18.3 (distinct root lines, consecutive intervals).
++- **R03 [notation]:** boundary order written q_e = ord(C_e), kept distinct from Severn's k_e, m_e (§6.18).
++- **R04 [scope]:** OPEN 8 and §6.20 E-2 typed as proof validation; the every-member scope is explicit in the source statement.
++- **R05 [label]:** W6/W7 closed-module line reads as finite witness checks.
++- **R06 [evidence]:** §8 states that a standalone replay verifies the frozen registry, not the artifacts' bytes.
++- **R07 [editorial]:** §1.1 heading.
++- No grade, RID or OPEN status changed beyond R04's wording.
++
++### v0.2 DRAFT r1 — 26 October 2026 — DRAFT (change-focused review candidate)
+ 
+ - **Basis [governance]:** PI approval to start the draft (26 Oct 2026), with the scope and structure relayed from ChatGPT: governing results with separate statuses; verified developments; Severn component connection; PO matrix; external dependencies; negative findings. Not an adoption and not a release permission.
+ - **Build [governance]:** `make_v02.py` from the byte-verified v0.1 ADOPTED (75b5f58c…f86c6b7) and the change log `HCG_DSN_v0_2_PENDING_DELTAS.md` (8fb25dad…69efd98). Both inputs are preserved unchanged; Δ1–Δ23 are linked, not rewritten. Exact diff shipped.
+@@ -1190,4 +1203,4 @@
+ 
+ ---
+ 
+-*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.2 · DRAFT 26 Oct 2026 · not adopted (v0.1 ADOPTED governs until a PI decision) · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted.*
++*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.2 · DRAFT r2 26 Oct 2026 · not adopted (v0.1 ADOPTED governs until a PI decision) · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted.*

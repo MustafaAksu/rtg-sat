@@ -1,0 +1,24 @@
+closure rank = 6  coboundary rank = 6  dim Z_par = 14  dim H1_par = 8
+S vanishes on coboundaries (both slots): True
+S skew-Hermitian on H1_par: True   nondegenerate: True
+h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 2125764
+discriminant class: det(h) = 2125764  -> split [1] (norm, n=4 even): True
+intervals of length 2 done
+intervals of length 3 done
+intervals of length 4 done
+intervals of length 5 done
+intervals of length 6 done
+intervals of length 7 done
+intervals of length 8 done
+intervals of length 9 done
+intervals of length 10 done
+intervals of length 11 done
+intervals of length 12 done
+intervals of length 13 done
+intervals of length 14 done
+intervals of length 15 done
+intervals of length 16 done
+intervals of length 17 done
+intervals of length 18 done
+distinct decompositions tested: 400  passing: 0  best Q-span: 15
+exit=0

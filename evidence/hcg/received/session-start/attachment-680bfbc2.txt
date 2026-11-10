@@ -1,0 +1,226 @@
+Your review advances the imaginary-unit question considerably. I agree with the Eisenstein-arithmetic distinction, the fifth-order symmetry argument, and the need to distinguish the \\(G_6\\)-centralizer from the \\(T\\)-centralizer.
+
+However, checking these against adopted Dyadic v6.4.18 produces three important developments:
+
+1. The fifth-order obstruction coefficient is already known exactly and is nonzero. We do not need to calculate it again.
+2. A smooth orientation-reversing time reversor of \\(T\\) is already excluded at cubic order. This is a stronger new deduction than the proposed order-5/7 reversor search.
+3. The smooth sixth root is unique in the relevant class. Consequently, the nonlinear order-six generator does not suffer from the root-choice ambiguity suggested in your note.
+
+These change which questions are genuinely open.
+
+## 1. The fifth-order obstruction is already present
+
+[OWNER: Dyadic v6.4.18 §6.14, `DYAD-ALG-NF6`; §6.9, `DYAD-ALG-BRIDGE-LEMMA`]
+
+The adopted polynomial-conjugacy chart gives the six-step normal-form jet
+
+\\[ F\_{\mathrm{NF}}^{[5]}(z) =z+\mu z^2\bar z+a\_{32}z^3\bar z^2+a\_{05}\bar z^5, \\]
+
+with
+
+\\[ \boxed{ a\_{05}=-\frac{49}{8640}-i\frac{307\sqrt3}{25920}\ne0. } \\]
+
+Your monomial selection argument is correct:
+
+\\[ a-b\equiv1\pmod6 \\]
+
+is the condition for sixfold equivariance, whereas
+
+\\[ a-b\equiv1\pmod4 \\]
+
+is required for a quarter-turn equivariance.
+
+The cubic term \\(z^2\bar z\\) satisfies both. The fifth-order term \\(\bar z^5\\) satisfies only the first.
+
+[SESSION — ALG: direct substitution into the adopted normal-form jet]
+
+\\[ \begin{aligned} F\_{\mathrm{NF}}^{[5]}(iz)-iF\_{\mathrm{NF}}^{[5]}(z) &=(-i-i)a\_{05}\bar z^5\\\ &=\boxed{-2ia\_{05}\bar z^5\ne0}. \end{aligned} \\]
+
+Therefore the linear quarter-turn \\(z\mapsto iz\\) is not a symmetry of the adopted fifth-order normal-form jet.
+
+This establishes presence of the first possible symmetry-breaking term, rather than just identifying its permitted degree.
+
+It is not by itself a proof excluding every nonlinear commuting map with derivative \\(i\\). That stronger conclusion is supported by the separate FMS formal-centralizer classification, which currently has SESSION rather than adopted-owner status.
+
+## 2. A stronger result: \\(T\\) has no local smooth time reversor
+
+This is the most important addition to the analysis.
+
+[OWNER: Dyadic v6.4.18 §§6.2, 6.14]
+
+The six-step return \\(F=T^6\\), in the adopted complex frame, has
+
+\\[ F(z)=z+\mu z^2\bar z+O(|z|^4), \\]
+
+where
+
+\\[ \mu=-\frac12-\frac{2i\sqrt3}{3}. \\]
+
+Suppose a local \\(C^3\\) orientation-reversing involution \\(R\\) existed near the origin with
+
+\\[ R^2=\mathrm{id},\qquad RTR=T^{-1}. \\]
+
+At linear order, since \\(A\\) has nonreal conjugate eigenvalues, \\(DR(0)\\) must be antilinear in this complex frame:
+
+\\[ DR(0)z=u\bar z,\qquad |u|=1. \\]
+
+Because \\(R\\) reverses \\(T\\), it must also reverse \\(F=T^6\\):
+
+\\[ RFR=F^{-1}. \\]
+
+[SESSION — ALG: cubic-jet obstruction]
+
+The cubic term of \\(RFR\\) is
+
+\\[ \bar\mu z^2\bar z, \\]
+
+independently of the higher-order coefficients of \\(R\\). This follows because \\(R^2=\mathrm{id}\\) and \\(F-\mathrm{id}\\) starts at degree three.
+
+But
+
+\\[ F^{-1}(z)=z-\mu z^2\bar z+O(|z|^4). \\]
+
+Matching cubic terms requires
+
+\\[ \bar\mu=-\mu, \\]
+
+or equivalently,
+
+\\[ \boxed{\Re\mu=0.} \\]
+
+The adopted Dyadic result gives
+
+\\[ \boxed{\Re\mu=-\frac12\ne0.} \\]
+
+That is a contradiction.
+
+Therefore:
+
+\\[ \boxed{ \text{No local }C^3\text{ involutive reversor }R \text{ satisfies }RTR=T^{-1} } \\]
+
+near the dyadic origin.
+
+This proof concerns the declared \\(C^3\\) local category. It does not depend on fifth- or seventh-order coefficients and is not a claim about every possible physical reversal operation on a larger state space.
+
+An additional distinction is essential: local invertibility and dynamical reversibility are different properties. The dyadic map is locally invertible near the origin, but it is not locally conjugate to its inverse through the proposed reversing involution.
+
+This is consistent with the known radial contraction of the six-step return.
+
+## 3. The smooth sixth root is actually unique
+
+[OWNER: Dyadic v6.4.18 §6.17, `DYAD-THM-SMOOTH-EMBEDDING`, E2–E4]
+
+Your chart-dependence observation is correct, but the second proposed source of non-canonicity needs correction.
+
+The adopted theorem provides
+
+\\[ K_6=\varphi_X^{1/6} \\]
+
+and establishes its uniqueness among \\(C^\infty\\) tangent-to-identity sixth roots of \\(F\\). Thus
+
+\\[ G_6=T\circ K_6^{-1} \\]
+
+is fixed as a smooth germ within this class.
+
+[SESSION — ALG]
+
+Since \\(AJ_Q=J_QA\\), the nonlinear operation
+
+\\[ \mathscr I=\Phi^{-1}J_Q\Phi \\]
+
+obeys
+
+\\[ \boxed{\mathscr I G_6=G_6\mathscr I} \\]
+
+and
+
+\\[ \boxed{\mathscr I^2=G_6^3,\qquad \mathscr I^4=\mathrm{id}.} \\]
+
+Your first tightening should definitely be included.
+
+The remaining chart ambiguity can be exhibited explicitly. In complex coordinates let
+
+\\[ h(z)=z+\varepsilon\bar z^5 \\]
+
+for sufficiently small real \\(\varepsilon\ne0\\). With \\(\omega=e^{i\pi/3}\\),
+
+\\[ h(\omega z)=\omega h(z), \\]
+
+but
+
+\\[ h(iz)-ih(z)=-2i\varepsilon\bar z^5\ne0. \\]
+
+So \\(h\\) commutes with the sixfold linear action without commuting with the B-quarter-turn.
+
+This is an exact example of your proposed distinction between \\(A\\)-equivariant and \\(J_Q\\)-equivariant charts.
+
+One metric refinement is also needed: \\(J_Q\\) is a quarter-turn in the fixed \\(B\\)-metric, whereas the nonlinear \\(\mathscr I\\) is naturally a quarter-turn for the transported metric \\(\Phi^\*B\\). It need not preserve the original constant \\(B\\)-metric globally.
+
+## 4. Eisenstein arithmetic is a genuine new direction for Number Genesis
+
+[SESSION — ALG: exact consequence of the adopted dyadic linearization]
+
+I agree with your integral refinement:
+
+\\[ \boxed{\mathbb Z[A]\cong\mathbb Z[\omega]} \\]
+
+and
+
+\\[ \boxed{\mathbb Z[A]^\times=\langle A\rangle\cong C_6.} \\]
+
+The dyadic linearization selects the Eisenstein integer lattice algebra under its chosen integral basis, not the Gaussian integer algebra.
+
+This gives us a useful hierarchy:
+
+| Algebraic layer | Structure                                   | What it establishes                                              |
+| --------------- | ------------------------------------------- | ---------------------------------------------------------------- |
+| Integral        | \\(\mathbb Z[A]\cong\mathbb Z[\omega]\\)    | Sixfold unit symmetry; no scalar \\(i\\)                         |
+| Rational        | \\(\mathbb Q[A]\cong\mathbb Q(\sqrt{-3})\\) | Quadratic imaginary extension                                    |
+| Real            | \\(\mathbb R[A]\cong\mathbb C\\)            | Normalized complex structure \\(J_Q\\)                           |
+| Smooth local    | \\(G_6,\mathscr I\\)                        | Nonlinear quarter-turn commuting with \\(G_6\\), chart-dependent |
+
+[SESSION — HYP] This hierarchy suggests that the underlying sixfold dyadic resonance and the conventional fourfold imaginary-unit operation are different mathematical structures. The latter can be represented using the former after extending the allowed scalar operations.
+
+This is worth forwarding to Number Genesis. It should not yet be called a physical derivation of Eisenstein integers or complex numbers from relational events.
+
+## 5. What changes for OFN-OPA?
+
+The reversor result permits a sharper statement than the one you proposed, but not an automatic resolution of orientation physicality.
+
+[SESSION — ALG] Within the chosen oriented complex frame,
+
+\\[ J(A^{-1})=-J(A). \\]
+
+Thus reversing the dyadic step changes the sign of the induced complex-structure operator.
+
+[SESSION — ALG] The cubic-return coefficient excludes a local \\(C^3\\) reversing involution conjugating the fixed \\(T\\) to \\(T^{-1}\\).
+
+[OWNER: OFN v0.10 §9, `RTG-OFN-OPEN-OPA`] OFN separately asks whether oriented variables are physically observable, which transformations are passive descriptions, and whether an orientation requires conservation or accounting. The absence of a dynamical reversor does not by itself settle these matters.
+
+I would therefore revise your proposed closing sentence to:
+
+> The sign of the dyadic complex structure is tied to the direction of the selected primitive step. Its reversal is not implemented by a local \\(C^3\\) time-reversing involution of the fixed dyadic dynamics, as already obstructed by the cubic radial term. Whether this mathematical asymmetry selects a physically meaningful orientation remains an open OFN question.
+
+That distinguishes a mathematical asymmetry of the selected generator from the physical selection of orientation.
+
+## 6. Revised research priorities
+
+| Task                                       | Evidence status                                                                                 | Next action                                                        |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Fifth-order \\(i\\)-symmetry obstruction   | Nonzero \\(a\_{05}\\) already [OWNER — ALG]; full formal-centralizer conclusion [SESSION — ALG] | Independently review FMS proof for owner adoption                  |
+| Local \\(C^3\\) time reversibility         | Excluded by cubic coefficient [SESSION — ALG]                                                   | Referee the short proof; no order-7 search necessary               |
+| Smooth sixth-root existence and uniqueness | Closed [OWNER — THM], Dyadic v6.4.18                                                            | No new existence computation                                       |
+| Integral Eisenstein representation         | [SESSION — ALG]                                                                                 | Number Genesis representation note                                 |
+| Physical orientation selection             | [OWNER — OPEN], OFN v0.10                                                                       | Add a scoped irreversibility result as input; preserve OPA as open |
+
+My conclusion: The two proposed symbolic computations are largely superseded by existing owner data and the short cubic argument above. The most valuable remaining mathematical task is to independently validate the FMS claim that the nonzero fifth-order lattice coefficient excludes every formal \\(T\\)-commuting map with derivative \\(J_Q\\), not just the linear quarter-turn.
+
+We now have a useful separation of mechanisms:
+
+\\[ \begin{aligned} \text{Degree 3:}\quad& \Re\mu\ne0 &&\Longrightarrow\ \text{local time-reversal obstruction},\\\ \text{Degree 5:}\quad& a\_{05}\ne0 &&\Longrightarrow\ \text{linear quarter-turn symmetry obstruction}. \end{aligned} \\]
+
+The second implication concerns the normalized jet; the stronger nonlinear centralizer exclusion remains at FMS SESSION grade pending independent proof review.
+
+This is a more precise foundation for studying \\(i\\) within RTG: the sixfold structure permits a B-quarter-turn, cubic dissipation breaks time reversibility, and fifth-order resonance breaks the naive fourfold symmetry. The physical interpretation remains a separate model-selection problem.
+
+Source boundary: adopted Dyadic v6.4.18, OFN v0.10, and Number Genesis v1.20.7; FMS v0.6.4 is noncanonical SESSION material. The new reversor argument and the direct fifth-order substitution were derived in this exchange, not registered as owner results. No DSN was modified.

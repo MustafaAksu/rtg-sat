@@ -1,0 +1,9 @@
+{
+  "package_manifest_pass": 30,
+  "source_manifest_pass": 10,
+  "source_python_replay_byte_identical": true,
+  "independent_python_outputs_byte_identical": 3,
+  "gap_character_table_replay": false,
+  "real_character_export_available": false,
+  "scope": "PASS for the executed Python evidence; GAP/reduced-table computations remain unexecuted."
+}
