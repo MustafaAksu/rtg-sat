@@ -1,0 +1,160 @@
+## NEW02-MIXED-01 doğrulandı; oyuncak örnekte karma ağaçlara rağmen engel kalıyor
+
+**[ALG cert — bağımsız çapraz denetim]** NEW02 tanığını köklerden başlayarak yeniden kurdum. **H0–H4’ün tamamı sağlanıyor.** `HCG-ALG-H4-NEW02-MIXED` için **CHECKED** öneriyorum; kapsam, gönderilen sabit tuple ve tek ağaçtır.
+
+Önerdiğin oyuncak örneği de karma ağaçlarla sınadım. **Bütün karma kesimler birlikte hedef rank 9’a ulaşıyor; fakat sabit döngüsel işaretlemedeki 16.796 ağacın hiçbirinde rank 6 aşılmıyor.** Bu ikinci sonuç yeni bir ChatGPT hesabıdır; bağımsız peer denetimine kadar **PROPOSED** kalmalı.
+
+## 1. NEW02: operatörler ve form bağımsız olarak eşleşti
+
+**[ALG — yöntem]** Claude’nun `generic_engine.py` motorunu kullanmadan, önceki ChatGPT motoruyla yeni bir parabolik kohomoloji bazı kurdum. \(S\)’yi DW formülünden, twist’leri temel Artin hareketlerinden hesapladım. Projektörlü akı formülü, \(N_e\)’leri üretmek için değil, **sonradan karşılaştırmak için** kullanıldı.
+
+Ayrıca iki motorun kohomoloji bazları arasında açık, tersinir bir \(P\) matrisi hesapladım:
+
+\[
+S_{\mathrm{Claude}}=P^tS_{\mathrm{ChatGPT}}\bar P,
+\qquad
+N_{\mathrm{ChatGPT},e}P=PN_{\mathrm{Claude},e}.
+\]
+
+**64 cup girdisi ve 17/17 operatör bu baz değişimiyle tam eşleşti.**
+
+| Kontrol | Bağımsız exact sonuç |
+|---|---|
+| \(H^1_{\mathrm{par}}\) | \(K\)-boyutu 8 |
+| H0 | 18/18 pants katkısı sıfır |
+| H1 | 289/289 \(N_iN_j=0\) |
+| H2 | \(\dim_K I=4\), izotropik, bütün \(N_jI=0\) |
+| Ortak uzay | \(I=\ker\tau\) |
+| H3 | Bütün \(\beta_j\le0\); toplam \(H/I\) üzerinde negatif belirli |
+| H4 | \(\mathbb Q\)-rank **16** |
+| Bağıntı uzayı | Bir boyutlu: \(N_{[16,18]}=N_{[17,18]}\) |
+
+H3’ü yaklaşık özdeğerlerle değil, bölüm uzayındaki Hermitik matrislerin **bütün asal minörleriyle** denetledim. Benim bölüm bazımda toplamın önde gelen minörleri:
+
+\[
+-117,\qquad 6660,\qquad -476064,\qquad 23447556.
+\]
+
+### \(d=2,\ k=1\) ayrımı gerçekten gerekli
+
+**[ALG]** \([16,18]\) için
+
+\[
+d=\operatorname{ord}(C)=2,\qquad k=1,\qquad m=1.
+\]
+
+Gerçek dönüş operatörü \(T=I+N\) ve \(N^2=0\) olduğundan,
+
+\[
+\widehat N=T^2-I=2N.
+\]
+
+Dolayısıyla iki normalizasyondaki doğru bağıntılar farklıdır:
+
+\[
+\boxed{N_{[16,18]}=N_{[17,18]}}
+\]
+
+ama
+
+\[
+\boxed{\widehat N_{[16,18]}=2\widehat N_{[17,18]}.}
+\]
+
+Rank değişmez; **bağıntı katsayıları değişir**. Yanlış biçimde \(\widehat N=N\) alınması exact kontrolde reddedildi.
+
+### Arama kaydının denetlenmiş kısmı
+
+**[ALG]** Üçgen koşullarını ve dinamik programlama sayımını ayrıca yeniden hesapladım:
+
+\[
+1138/1140\ \text{H0-geçerli üçgen},\qquad
+474\,632\,697\ \text{H0-geçerli üçgenleme}.
+\]
+
+3000 örnekli taramayı ve tavlama kampanyasını yeniden çalıştırmadım; seçilen tanığın doğruluğu, keşif yolunun tekrarına bağlı değil.
+
+Kaynak rekonstrüksiyon betiğinin çıktısını da yeniden ürettim. Doğrudan çalıştırma süre sınırına takıldığı için yalnız tekrarlanan **exact matris çarpımlarını önbelleğe aldım**; matematiksel formüller değişmedi. Kaynak bilimsel çıktı dosyası bayt düzeyinde aynı oluştu.
+
+## 2. Oyuncak örnekte daha güçlü bir uyumluluk engeli bulundu
+
+**[ALG cert — yeni SESSION sonucu, PROPOSED]**
+
+Önceki oyuncak örneğin aynısını kullandım:
+
+\[
+\begin{aligned}
+v_1=v_2&=(1,-1,0),\\
+v_3=v_4&=(0,1,-1),\\
+v_5=v_6&=(1,-w,0).
+\end{aligned}
+\]
+
+Eşli tuple’da 12 dal noktası ve \(\dim_KH=6\) var; H4 hedefi \(3^2=9\).
+
+Bu defa yalnız çiftleri koruyan formları değil, **54 uygun döngüsel kesimin tamamının gerçek Artin operatörlerini** hesapladım. Ardından bütün planar ağaçları taradım.
+
+| Nicelik | Exact sonuç |
+|---|---:|
+| Bütün karma kesim operatörlerinin \(\mathbb Q\)-span’i | **9** |
+| H0-geçerli üçgenler | **220/220** |
+| H0-geçerli planar ağaçlar | **16.796** |
+| Tek ağaçta en yüksek rank | **6** |
+| Rank 9 veren ağaç | **0** |
+
+Tam dağılım:
+
+| Rank | Ağaç sayısı |
+|---:|---:|
+| 3 | 12.594 |
+| 4 | 3.678 |
+| 5 | 459 |
+| 6 | 65 |
+
+İlk hesap **exact \(\mathbb Q\)-ranklarıyla rekürsif enumerasyon** yaptı. Ayrı bir flip-grafı dolaşımı da 16.796 farklı ağaca ulaştı ve modüler rank kontrolüyle aynı dağılımı üretti. Üst sınırın dayanağı ilk exact hesaptır; modüler kontrol destekleyicidir.
+
+Rank-6 bir ağaçta H1–H3’ü ayrıca denetledim: 81 sıfır çarpım, üç boyutlu izotropik \(I\) ve belirli bölüm toplamı sağlanıyor. Dolayısıyla o örnekte eksik kalan gerçekten H4.
+
+### Bu neyi gösteriyor, neyi göstermiyor?
+
+**[ALG — sonucun yorumu]**
+
+\[
+\boxed{
+\text{Bütün kesimler birlikte yeterli}
+\;\not\Rightarrow\;
+\text{tek bir uyumlu ağaç yeterli}.
+}
+\]
+
+Engel, bu oyuncak örnekte karma kesimlere izin verilince de sürüyor.
+
+Ancak bu veri **tekrarlanan kök doğruları** içeriyor. Dolayısıyla farklı kök doğrularına sahip \(G_{34}\) tuple’ları için bir karşıörnek değil. W5/NEW01’deki ortak-\(\tau\) faktörizasyonunu da buraya otomatik taşıyamayız. Nitekim oyuncak örnekte bütün 54 operatörün ortak görüntü span’i altı boyutlu ve kesişen \([1,2]\), \([2,3]\) eğrileri için \(N_eN_f\ne0\).
+
+Sonuç yalnız **bu sabit tuple ve sabit döngüsel işaretlemedeki interval/planar ağaçlar** hakkındadır. Başka bir braid işaretlemesini veya aynı Hurwitz bileşenindeki başka tuple’ları dışlamıyor.
+
+## 3. Dosyalar ve önerilen kayıt
+
+**:chatgpt-content-reference{index="0"}[NEW02 bağımsız inceleme raporu](sandbox:/mnt/data/HCG_NEW02_MIXED_CHATGPT_CROSS_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="1"}[NEW02-MIXED-01 — yeni exact sertifika](sandbox:/mnt/data/HCG_NEW02_MIXED_01_CERTIFICATE_CHATGPT_v0_1.json)**
+
+**:chatgpt-content-reference{index="2"}[Oyuncak örneğin karma-ağaç engeli — araştırma notu](sandbox:/mnt/data/HCG_TOY_MIXED_RANK_OBSTRUCTION_CHATGPT_v0_1.md)**
+
+**HCG_NEW02_MIXED_CHATGPT_REPRO_v0_1.zip[Tam yeniden üretim paketi](sandbox:/mnt/data/HCG_NEW02_MIXED_CHATGPT_REPRO_v0_1.zip)** — kaynaklar, iki motorun baz karşılaştırması, exact matrisler, ağaç sayımları, çıktılar ve hash manifesti.
+
+**:chatgpt-content-reference{index="4"}[HCG v0.2 için ledger eki](sandbox:/mnt/data/HCG_NEW02_MIXED_CHATGPT_LEDGER_DELTA_v0_1.md)**
+
+`replay.py --full-source` temiz geçici klasörde çalıştı; bütün bilimsel JSON’lar ve kaynak çıktısı yeniden eşleşti.
+
+| Kayıt | Öneri |
+|---|---|
+| `HCG-ALG-H4-NEW02-MIXED` | **CHECKED** |
+| NEW02 üçgen/DP sayımı | CHECKED |
+| Oyuncak karma-ağaç engeli | **PROPOSED**, Claude denetimi bekliyor |
+| Genel \(G_{34}\) varlık sorusu | OPEN |
+| HCG v0.1, PO-6 ve denetçinin Priority B süreci | Değişmedi |
+
+Dyadic için ayrı SESSION kaydı açılması uygun; önceki dört dal uygulamasıyla sınırlı tutulmalı ve OPEN 20 değiştirilmemeli. Bu turda Dyadic owner belgesine müdahale etmedim.
+
+**Sıradaki en değerli iş, Claude’nun oyuncak örneğin 54 karma operatörünü ve 16.796-ağaç sonucunu bağımsız doğrulaması; ardından “neden en fazla 6?” sorusuna enumerasyondan bağımsız, yapısal bir açıklama aranmasıdır.** Bu paket HCG iç çalışması olarak kalmalı, kör Hodge denetçisine gönderilmemeli.

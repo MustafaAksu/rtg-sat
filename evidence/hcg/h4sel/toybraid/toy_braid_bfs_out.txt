@@ -1,0 +1,7 @@
+root lines in orbit: 9
+start line tuple: (0, 0, 1, 1, 2, 2)
+hexagon trees: 14
+start best pair-tree rank: (6, ((1, 3), (1, 5), (3, 5)), 3)
+states explored: 310  found rank 9: True
+pair moves (pair index i, kind 0=left conj by right / 1=right conj by left): [(1, 0), (1, 1), (3, 0), (2, 0)]
+final lines: (0, 3, 8, 5, 2, 2)  tree (pair intervals): ((1, 5), (2, 5), (3, 5))

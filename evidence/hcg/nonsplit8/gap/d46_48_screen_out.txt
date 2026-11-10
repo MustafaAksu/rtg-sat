@@ -1,0 +1,153 @@
+thresholds: [ [ 46, 6, 10 ], [ 47, 6, 10 ], [ 48, 6, 10 ] ]
+(1) perfect non-duplicate CTblLib tables scanned: 459
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_1.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+12_2.L3(4) d=48 |Z|=12 ind=0 field=NF(60,[ 1, 49 ]) inK=false minMovingRank=24 -> field not in K: excluded
+2.A10 d=48 |Z|=2 ind=0 field=NF(24,[ 1, 5, 7, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+2.A10 d=48 |Z|=2 ind=0 field=NF(24,[ 1, 5, 7, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+2.A8 d=48 |Z|=2 ind=-1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+2.A9 d=48 |Z|=2 ind=0 field=NF(24,[ 1, 5, 7, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+2.A9 d=48 |Z|=2 ind=0 field=NF(24,[ 1, 5, 7, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.L2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+2.S6(2) d=48 |Z|=2 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+3.U3(5) d=48 |Z|=3 ind=0 field=CF(3) inK=true minMovingRank=24 -> field CF(3), minc 24 > 10: excluded by Lemma C
+A9 d=48 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=20 -> field Rationals, minc 20 > 6: excluded by Lemma C
+L2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=NF(12,[ 1, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=NF(8,[ 1, 7 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+L2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+L2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+L2(47) d=46 |Z|=1 ind=1 field=NF(8,[ 1, 7 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=NF(12,[ 1, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+L2(47) d=47 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+L2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+(2) generic SL2(q) tables (faithful characters only; PSL2 quotients below)
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(16,[ 1, 15 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(16,[ 1, 15 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(16,[ 1, 15 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(16,[ 1, 15 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=46 |Z|=2 ind=-1 field=NF(48,[ 1, 47 ]) inK=false minMovingRank=30 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(47) d=48 |Z|=2 ind=-1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(49) d=48 |Z|=2 ind=-1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(97) d=48 |Z|=2 ind=-1 field=NF(97,[ 1, 2, 3, 4, 6, 8, 9, 11, 12, 16, 18, 22, 24, 25, 27, 31, 32, 33, 35, 36, 43, 44, 47, 48, 49, 50, 53, 54, 61, 62, 64, 65, 66, 70, 72, 73, 75, 79, 81, 85, 86, 88, 89, 91, 93, 94, 95, 96 ]) inK=false minMovingRank=32 -> field not in K: excluded
+SL2(97) d=48 |Z|=2 ind=-1 field=NF(97,[ 1, 2, 3, 4, 6, 8, 9, 11, 12, 16, 18, 22, 24, 25, 27, 31, 32, 33, 35, 36, 43, 44, 47, 48, 49, 50, 53, 54, 61, 62, 64, 65, 66, 70, 72, 73, 75, 79, 81, 85, 86, 88, 89, 91, 93, 94, 95, 96 ]) inK=false minMovingRank=32 -> field not in K: excluded
+(2') PSL2 quotients
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(12,[ 1, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(8,[ 1, 7 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(8,[ 1, 7 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(12,[ 1, 11 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=46 |Z|=1 ind=1 field=NF(24,[ 1, 23 ]) inK=false minMovingRank=22 -> field not in K: excluded
+PSL2(47) d=47 |Z|=1 ind=1 field=Rationals inK=true minMovingRank=24 -> field Rationals, minc 24 > 6: excluded by Lemma C
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(47) d=48 |Z|=1 ind=1 field=NF(23,[ 1, 22 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(5,[ 1, 4 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+PSL2(49) d=48 |Z|=1 ind=1 field=NF(25,[ 1, 24 ]) inK=false minMovingRank=24 -> field not in K: excluded
+done

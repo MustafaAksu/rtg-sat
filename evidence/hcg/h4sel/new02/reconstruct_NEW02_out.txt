@@ -1,0 +1,46 @@
+dim H^1_par = 8 ; |Z1|= 14 ; |B1|= 6
+17 curves, laminar: True , all proper (not whole sphere): True
+  pants outer=(1, 12) children=[(1, 1), (2, 12)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(1, 14) children=[(1, 12), (13, 14)] c=[0, 0, 0] dimFix=6 defect=0
+  pants outer=(2, 11) children=[(2, 2), (3, 11)] c=[1, 1, 2] dimFix=4 defect=0
+  pants outer=(2, 12) children=[(2, 11), (12, 12)] c=[2, 1, 1] dimFix=4 defect=0
+  pants outer=(3, 4) children=[(3, 3), (4, 4)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(3, 6) children=[(3, 4), (5, 6)] c=[0, 0, 0] dimFix=6 defect=0
+  pants outer=(3, 11) children=[(3, 6), (7, 11)] c=[0, 1, 1] dimFix=5 defect=0
+  pants outer=(5, 6) children=[(5, 5), (6, 6)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(7, 8) children=[(7, 7), (8, 8)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(7, 10) children=[(7, 8), (9, 10)] c=[0, 0, 0] dimFix=6 defect=0
+  pants outer=(7, 11) children=[(7, 10), (11, 11)] c=[0, 1, 1] dimFix=5 defect=0
+  pants outer=(9, 10) children=[(9, 9), (10, 10)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(13, 14) children=[(13, 13), (14, 14)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(15, 18) children=[(15, 15), (16, 18)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=(15, 19) children=[(15, 18), (19, 19)] c=[0, 1, 1] dimFix=5 defect=0
+  pants outer=(16, 18) children=[(16, 16), (17, 18)] c=[1, 0, 1] dimFix=5 defect=0
+  pants outer=(17, 18) children=[(17, 17), (18, 18)] c=[1, 1, 0] dimFix=5 defect=0
+  pants outer=None children=[(1, 14), (15, 19), (20, 20)] c=[0, 1, 1] dimFix=5 defect=0
+number of pants = 18 ; (H0) all defects zero: True
+S Gram rank = 8
+curve [1,12] ord(C)=1 k=1 m=1 rank_K N=4 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [1,14] ord(C)=1 k=1 m=1 rank_K N=3 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [2,11] ord(C)=3 k=3 m=1 rank_K N=4 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [2,12] ord(C)=2 k=2 m=1 rank_K N=4 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [3,4] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [3,6] ord(C)=1 k=1 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [3,11] ord(C)=2 k=2 m=1 rank_K N=4 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [5,6] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [7,8] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [7,10] ord(C)=1 k=1 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [7,11] ord(C)=2 k=2 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [9,10] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [13,14] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [15,18] ord(C)=1 k=1 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [15,19] ord(C)=2 k=2 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [16,18] ord(C)=2 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [17,18] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+(H1) all 289 products N_j N_k = 0: True
+(H2) dim_K I = 4; isotropic: True; all N_j kill I: True
+(H3) beta signatures (pos,neg,zero) on H: [(0, 4, 4), (0, 3, 5), (0, 4, 4), (0, 4, 4), (0, 1, 7), (0, 2, 6), (0, 4, 4), (0, 1, 7), (0, 1, 7), (0, 2, 6), (0, 2, 6), (0, 1, 7), (0, 1, 7), (0, 2, 6), (0, 2, 6), (0, 1, 7), (0, 1, 7)]
+(H3) common-sign semidefinite: True; sum signature (0, 4, 4) -> definite on H/I: True
+(H4) Q-span rank of the 17 N_j = 16
+Q-relation space dim = 1 ; relations: [['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-1', '1']]
+tau N_j = 0 for all 17 curves: True

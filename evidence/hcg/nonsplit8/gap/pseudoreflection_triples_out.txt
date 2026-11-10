@@ -1,0 +1,12 @@
+Hessian-type <diag(1,1,w), M diag(1,1,w) M^-1>: |G|=
+24 projective pseudoreflections=9 noncommuting ordered pairs=
+48 pairs (x,y) completed to scalar-product triples=
+8 non-commuting such triples=0
+same + coordinate transposition: |G|=1296 projective pseudoreflections=
+198 noncommuting ordered pairs=
+28512 pairs (x,y) completed to scalar-product triples=
+2592 non-commuting such triples=0
+monomial G(3,1,3): |G|=162 projective pseudoreflections=
+45 noncommuting ordered pairs=
+1296 pairs (x,y) completed to scalar-product triples=
+162 non-commuting such triples=0

@@ -1,0 +1,19 @@
+pants outer=(1, 8) children=[(1, 1), (2, 8)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(1, 18) children=[(1, 8), (9, 18)] ranks=[0, 0, 0] dimFix=6 dim H1_par=0
+pants outer=(2, 8) children=[(2, 2), (3, 8)] ranks=[1, 0, 1] dimFix=5 dim H1_par=0
+pants outer=(3, 8) children=[(3, 3), (4, 8)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(4, 8) children=[(4, 4), (5, 8)] ranks=[1, 0, 1] dimFix=5 dim H1_par=0
+pants outer=(5, 6) children=[(5, 5), (6, 6)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(5, 8) children=[(5, 6), (7, 8)] ranks=[0, 0, 0] dimFix=6 dim H1_par=0
+pants outer=(7, 8) children=[(7, 7), (8, 8)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(9, 10) children=[(9, 9), (10, 10)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(9, 12) children=[(9, 10), (11, 12)] ranks=[0, 0, 0] dimFix=6 dim H1_par=0
+pants outer=(9, 16) children=[(9, 12), (13, 16)] ranks=[0, 0, 0] dimFix=6 dim H1_par=0
+pants outer=(9, 17) children=[(9, 16), (17, 17)] ranks=[0, 1, 1] dimFix=5 dim H1_par=0
+pants outer=(9, 18) children=[(9, 17), (18, 18)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(11, 12) children=[(11, 11), (12, 12)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(13, 14) children=[(13, 13), (14, 14)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=(13, 16) children=[(13, 14), (15, 16)] ranks=[0, 0, 0] dimFix=6 dim H1_par=0
+pants outer=(15, 16) children=[(15, 15), (16, 16)] ranks=[1, 1, 0] dimFix=5 dim H1_par=0
+pants outer=None children=[(1, 18), (19, 19), (20, 20)] ranks=[0, 1, 1] dimFix=5 dim H1_par=0
+(H0): 18/18 pants have H^1_par = 0

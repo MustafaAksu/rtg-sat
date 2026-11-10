@@ -1,0 +1,8 @@
+minimal vectors: 756
+lines: 126
+pairs: 7875
+(|h(v,w)|^2, lines in plane): pair counts = {(9, 3): 5040, (0, 2): 2835}
+two-line planes = 2835  three-line planes = 1680  (each 3-line plane counted by 3 pairs)
+type |h|^2=0: g=s_v s_w order 2; root-basis a=det Gram=36 (imag 0), b=det(1-g|E)=(Fraction(4, 1), Fraction(0, 1)), a*b=144
+type |h|^2=9: g=s_v s_w order 3; root-basis a=det Gram=27 (imag 0), b=det(1-g|E)=(Fraction(3, 1), Fraction(0, 1)), a*b=81
+CENSUS DONE

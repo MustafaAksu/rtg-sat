@@ -36,24 +36,32 @@ def origin(rel):
 
 
 def main():
+    placed = {}
+    pm = 'evidence/hcg/PLACEMENT_MAP.tsv'
+    if os.path.exists(pm):
+        for l in open(pm, encoding='utf-8').read().split('\n')[1:]:
+            if l:
+                d, h, r = l.split('\t')
+                placed[r] = d
     rows = []
     for line in open(os.path.join(UP, 'SHA256SUMS'), encoding='utf-8'):
         h, rel = line.rstrip('\n').split('  ./', 1)
         got = hashlib.sha256(open(os.path.join(UP, rel), 'rb').read()).hexdigest()
         assert got == h, rel
-        note = ''
+        notes = ['`evidence/hcg/%s`' % placed[rel]] if rel in placed else []
         if rel == LEDGER:
-            note = 'placed byte-identical as `hcg/HCG_STUDY_LEDGER.md`'
+            notes.append('also byte-identical as `hcg/HCG_STUDY_LEDGER.md`')
         elif rel in HHO_COPIES:
-            note = 'HHO consumer copy, byte-identical: `%s`' % HHO_COPIES[rel]
+            notes.append('HHO consumer copy, byte-identical: `%s`' % HHO_COPIES[rel])
         elif rel.startswith(HHO_TRACK):
-            note = 'HHO-track source evidence; custody HHO'
+            notes.append('HHO-track source evidence; custody HHO')
+        note = '; '.join(notes)
         rows.append((rel, h, origin(rel), note))
     head = open('records/hcg/HCG_SOURCE_MANIFEST_HEAD.md', encoding='utf-8').read()
     with open('records/hcg/HCG_SOURCE_MANIFEST.md', 'w', encoding='utf-8') as f:
         f.write(head)
         f.write('\n## 5. File table (%d files)\n\n' % len(rows))
-        f.write('Paths are relative to `upload/hcg/`. An empty placement cell means "not placed yet".\n\n')
+        f.write('Paths are relative to `upload/hcg/`. Placement paths are from `evidence/hcg/PLACEMENT_MAP.tsv`.\n\n')
         f.write('| Upload path | SHA-256 | Origin | Placement / consumer copies |\n|---|---|---|---|\n')
         for rel, h, o, note in rows:
             f.write('| `%s` | `%s` | %s | %s |\n' % (rel, h, o, note))

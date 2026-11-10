@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "root_input_sha256": "480cd6dc95f1a802943a621df632693eeb9aa7e8a9057ff5099e444950c9e35a",
+  "orbit_size": 756,
+  "spanning_input_roots_in_orbit": true,
+  "root_span_rank_K": 6,
+  "action_faithful": true,
+  "permutation_group_order": 39191040,
+  "finite_group_proved": true,
+  "classification_name_verified_from_primary_classification": false,
+  "orbit_file_sha256": "34c0f0aff59d2f5f51d8c34f73bcc42db122c8135f3b7621f70c7e9c738d0252",
+  "sympy_version": "1.14.0",
+  "elapsed_seconds": 2.18420672416687,
+  "scope": "Finiteness/order of this matrix group; not a braid-orbit identification with a different tuple."
+}

@@ -1,0 +1,254 @@
+--- ../HCG_HODGE_SESSION_DSN_v0_1.md	2026-10-22 15:29:18.404812058 +0300
++++ HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r2.md	2026-10-22 16:48:05.324200624 +0300
+@@ -1,16 +1,17 @@
+-# HCG_HODGE_SESSION_DSN_v0.1
++# HCG_HODGE_SESSION_DSN_v0.1 — DRAFT r2
+ 
+ **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, and the G₃₄ boundary-witness programme)
+ **Date:** 22 October 2026
+ **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
+ **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.17 are an *external-claim audit module*. In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
+-**Document status:** DRAFT. Not PI-adopted. All PI-decision fields are blank.
++**Document status:** DRAFT r2. Not PI-adopted. All PI-decision fields are blank.
++**Revision base:** DRAFT v0.1 (`HCG_HODGE_SESSION_DSN_v0_1.md`, SHA-256 0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722; preserved unchanged). r2 implements the ChatGPT QA findings F01–F09 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`); see Appendix A.
+ **Supersedes:** none. This is the first consolidated DSN of the session. It consolidates, and does not replace, the immutable working records listed in §8 and Appendix A: charter v0.2, ledgers v0.1–v0.4 with addenda v0.4a–v0.4d, and all reports.
+ **Companion documents:** `HODGE_COMPLEX_GEOMETRY_STANDALONE_CHARTER_v0_2.md`; `VERIFICATION_LEDGER_v0_4.md` + addenda `v0_4a`–`v0_4d`; `SOURCE_MANIFEST.md`; the reports in §8.
+ **DSN Methodology:** DSN_METHODOLOGY_v1.3 (adopted 20 Sep 2026). The v1.4 amendment draft in the RTG project was not applied.
+ **Status summary:**
+ - **H1/H2 calibration and the RTG-dynamics results are settled at two-AI CHECKED grade.** These are the Eisenstein realization, integral NS bases, the E⁴ and E⁶ Hodge-ring controls, the normal form of T, R6b and R7.
+-- **The H3 audit has reduced Severn's Theorem 6.2 to checked components.** Every link has been reviewed by two AIs. The geometric dominance bridge (D) has been independently verified, *on the component S_W5 of this session's own witness*, by a third model family. The discriminant d(S_W5) = [1] is three-family checked.
++- **The H3 audit has reduced Severn's Theorem 6.2 to reviewed components, at different review levels.** The main PO-1–PO-4 arguments have two-AI cross-review. PO-5, the geometric dominance bridge (D), has been independently verified by a third model family *on the component S_W5 of this session's own witness*. For PO-6, the cup-form invariant [det(ϑS)] = [1] on W5 is checked by three model families. Its identification with the discriminant d(S_W5) of the actual polarized factor (Severn Prop 5.1, Lemma 2.4) has only a sealed one-AI review, and an independent audit is pending. Transfer conclusions therefore remain conditional.
+ - **Open items.** The third-family audit of the transfer chain (round 2, Priority B) is still pending, and Severn's own Appendix A certificate has not been replayed. The theorem therefore remains **CLAIMED, not ESTABLISHED**: no human referee has reviewed it, and the sources are unrefereed.
+ 
+ **Owner / custodian:** Session PI Mustafa. The session is standalone, outside the RTG project; see SG-1.
+@@ -65,7 +66,7 @@
+ - PO-1 (compensation) and PO-4 ((L) via Brauer) are CHECKED.
+ - PO-2 (supply) is CHECKED. PO-3 (transfer) is CHECKED conditionally on (D).
+ - (D) holds on S_W5 at THIRD-FAMILY CHECKED grade.
+-- d(S_W5) = [1] is three-family checked. The bridge from the cup form to the actual polarization (Prop 5.1) is reviewed by Claude, and its third-family check is pending.
++- The cup-form invariant [det(ϑS)] = [1] on W5 is three-family checked. The identification d(S_W5) = [det(ϑS)] for the actual polarized factor (Prop 5.1) has a sealed one-AI review (Claude) and is pending independent audit.
+ 
+ Overall: **CLAIMED; not ESTABLISHED** (§6.6–§6.17).
+ 
+@@ -218,8 +219,8 @@
+ | L-GEO (geometric realization) | Hurwitz component S_W5; admissible-cover degeneration; polarized VHS over (Δ*)¹⁷; period map to Gr(4,8) | third-family auditor (written argument), reviewed here | Applies Schmid (4.12)/(6.16), DW06 Thm 1.3, RW06 Thm 5.6 and ACV. Not inferred from script PASS lines (SG-6). |
+ 
+ Conventions:
+-- ω = ζ₃ in L-G34, and ω = ζ₆ in the L-DYN formulas (NF-05). These are distinct symbols; the context fixes which.
+-- θ = ϑ = 1 + 2ω = √−3.
++- In L-G34, ω = ζ₃ and θ = ϑ = 1 + 2ω = √−3.
++- In L-DYN the formulas of NF-05 write ω for ζ₆ = 1 + ζ₃. There ϑ = 2ζ₆ − 1; the expression 1 + 2ω must not be reused with ω = ζ₆.
+ - Discriminant classes are written [·] in ℚ^×/N(K^×), and N(K^×) ⊂ ℚ_{>0}.
+ - Split means hyperbolic: [−1] for sixfolds (n = 3) and [1] for eightfolds (n = 4).
+ 
+@@ -233,13 +234,14 @@
+ 
+ | Claim | Valid form and scope | Forbidden overclaim | Owner RID / section |
+ |---|---|---|---|
+-| Severn Thm 6.2(2) | CLAIMED in an unrefereed draft. Every link two-AI checked. (D) third-family checked on S_W5. Transfer-chain third-family check pending. | "proved", "verified", "ESTABLISHED", "the Hodge conjecture for sixfolds is solved" | HCG-EXT-SEVERN-62 / §6.6 |
++| Severn Thm 6.2(2) | CLAIMED in an unrefereed draft. PO-1–PO-4 two-AI cross-reviewed. (D) third-family checked on S_W5. PO-6: cup-form class three-family checked; polarization identification one-AI reviewed. Transfer-chain third-family check pending. | "proved", "verified", "ESTABLISHED", "the Hodge conjecture for sixfolds is solved" | HCG-EXT-SEVERN-62 / §6.6 |
+ | (D) for G₃₄ | Period-map rank 16 on the Hurwitz component S_W5, by the auditor's written argument | "(D) on Severn's component"; "(D) on every component" | HCG-THM-G34D-SW5 / §6.15 |
+ | W5/W6/W7 | Exact finite (H0)–(H4) certificates | "geometric dominance from the matrices alone" | HCG-ALG-W5/W6/W7 / §6.14 |
+ | Distinct witnesses | Three independent search draws | "three distinct Hurwitz components" | HCG-OPEN-COMPONENT / §2 |
+ | E⁶ control | Weil classes on CM points E⁶ are divisor-generated | "progress on non-split generic sixfolds" | HCG-ALG-E6-CONTROL / §6.5 |
+ | R7 | Linear parts of formal/C⁵ centralizer = μ₆ | "the full centralizer is ⟨T⟩"; "J_Q is a symmetry" | HCG-THM-R7 / §6.4 |
+ | H4 selection | Exact finite obstruction data; injectivity bound | "new Hurwitz theorem"; "RTG-derived criterion" | HCG-OPEN-H4SEL / §6.18 |
++| d(S_W5) = [1] | [det(ϑS)] = [1] three-family checked; d(S_W5) = [det(ϑS)] via Prop 5.1 one-AI reviewed | "d(S_W5) = [1] three-family checked" | HCG-ALG-W5-DISC, HCG-EXT-PO6 / §6.14, §6.16 |
+ | e_j = 1 at W5 nodes | No node-ramification (Kummer) base change | "no finite base change at all" (pointing, level and μ₆ covers may still be used) | §6.15; D-3 |
+ 
+ ---
+@@ -295,7 +297,7 @@
+   with α_k = −(a_k/2)v_k.
+ - h = ϑS.
+ - Dehn twist on an interval [a,b]: g_i ↦ c g_i c⁻¹, with c = g_a⋯g_b, raised to the exact return power k.
+-- T_j = (u ↦ u∘φ^k), and N_j = log T_j^{m}.
++- T_j = (u ↦ u∘φ^{k_j}), and N_j = log(T_j^{m_j}), where m_j is the order of the semisimple part of T_j.
+ - β_j(x,y) = S(x, N_j y) on V/I. With S(x,y) = xᵗSȳ, its Gram matrix is S·N̄_j (auditor E04; the session engine uses this form).
+ 
+ ---
+@@ -413,7 +415,9 @@
+ 
+ Schoen's own normalization has not been read in the primary source.
+ 
+-**Evidence map, K = ℚ(√−3), signature (n,n)** [RID: HCG-RESULT-T1R] (alias H3-T1-R):
++`[RESULT]` `[from: HYP]` [scope: dated evidence inventory as of 22 Oct 2026; not a coverage theorem] [RID: HCG-RESULT-T1R] (alias H3-T1-R) [provenance: CHECKED (H3 literature reviews by both AIs, reconciled through the PI)]
++
++**Evidence map, K = ℚ(√−3), signature (n,n):**
+ 
+ | Dim | Cell | Established (refereed/published) | Claimed (unrefereed) | Session evidence |
+ |---|---|---|---|---|
+@@ -443,22 +447,22 @@
+ 
+ ```
+ Thm 6.2(2) all K-sixfolds, all δ
+-  ⇐ PO-1 compensation (Lemma 5.1, Prop 5.2)              CHECKED-CONDITIONAL (two independent proofs)
++  ⇐ PO-1 compensation (Lemma 5.1, Prop 5.2)              CHECKED (two independent proofs; [assuming: split-eightfold algebraicity])
+   ⇐ Thm 6.2(1) all split K-eightfolds
+       = [386] Thm 7.1 for D = (G34, σ; 20·R) on one component S
+       ├ PO-4 (L) by Brauer + reality                       CHECKED (unconditional for D)
+       ├ PO-2 supply (Schoen + Milne; Prop 3.7, Cor 3.8)    CHECKED
+       ├ PO-3 spreading + transfer (Lemmas 6.1–6.2, Thm 7.1) CHECKED, conditional on (D)
+       ├ PO-5 (D) on S = S_W5                               THIRD-FAMILY CHECKED (auditor R1)
+-      └ PO-6 d(S_W5) = [1]                                 arithmetic: three-family CHECKED;
+-                                                            polarization bridge (Prop 5.1): REVIEWED (Claude), third-family pending
++      └ PO-6 d(S_W5) = [1]                                 [det(ϑS)] = [1]: THIRD-FAMILY CHECKED;
++                                                            d(S_W5) = [det(ϑS)] (Prop 5.1): PROPOSED (sealed Claude review), audit pending
+ ```
+ 
+-Depends on: HCG-THM-PO1, HCG-THM-PO2, HCG-THM-PO3, HCG-THM-PO4, HCG-THM-G34D-SW5, HCG-ALG-W5-DISC, HCG-THM-PO6. Thm 6.2 as a whole stays `[EXT-CLAIM]`. Its premises PO-2/3/4 are themselves imports from unrefereed drafts; their proofs were read and checked, but not refereed.
++Depends on: HCG-THM-PO1, HCG-THM-PO2, HCG-THM-PO3, HCG-THM-PO4, HCG-THM-G34D-SW5, HCG-ALG-W5-DISC, HCG-EXT-PO6. Thm 6.2 as a whole stays `[EXT-CLAIM]`. Its premises PO-2/3/4 are themselves imports from unrefereed drafts; their proofs were read and checked, but not refereed.
+ 
+ ### §6.8 PO-1 — compensation `[THM]` {#sec-po1}
+ 
+-`[THM]` [assuming: the Weil classes of every member of the target eightfold cell [δ] are algebraic] [RID: HCG-THM-PO1] (alias H3-PO-1) [provenance: CHECKED-CONDITIONAL — two independent proofs: Claude (contraction plus α* twist) and ChatGPT (L_ξ isomorphism, the cleaner argument); Claude accepted ChatGPT's proof as primary]
++`[THM]` [assuming: the Weil classes of every member of the target eightfold cell [δ] are algebraic] [RID: HCG-THM-PO1] (alias H3-PO-1) [provenance: CHECKED — two independent proofs (the condition is carried in [assuming:]): Claude (contraction plus α* twist) and ChatGPT (L_ξ isomorphism, the cleaner argument); Claude accepted ChatGPT's proof as primary]
+ 
+ Lemma 5.1, checked in the exact model:
+ - Take E with ϑ acting by U and Ē with ϑ acting by −U, polarized by ω₀ and mω₀.
+@@ -526,7 +530,7 @@
+ | Minimal vectors | 756 |
+ | Reflection lines | 126 |
+ | Group order | 39,191,040 |
+-| Centre | contains −I and ωI, so it is μ₆ |
++| Centre | −I, ωI ∈ G give μ₆ ⊆ Z(G). Conversely, by absolute irreducibility Z(G) acts by K-scalars of finite order, which lie in μ₆(K) = μ₆. Hence Z(G) = μ₆. |
+ | Orbit on minimal vectors | transitive (one reflection class) |
+ | Commutant of the generators | K, so σ is absolutely irreducible |
+ | Character field | K: trace(s₁s₂s₃) ∉ ℚ; the auditor found tr = 2 − w |
+@@ -545,7 +549,7 @@
+ - The closure rank is 6 and the coboundary rank is 6, so dim_K H¹_par = 20 − 6 − 6 = 8. ChatGPT's B0 reduction gives the same.
+ - S vanishes on coboundaries in both slots, and is skew-Hermitian and nondegenerate.
+ - h = ϑS is Hermitian with signature (4,4). This agrees with DW06 Thm 2.3: (20·½ − 6, 20·½ − 6).
+-- The values of det h depend on the basis but are always norms. On the gate-A tuple, det h = 2²·3¹², class [1].
++- A change of K-basis P multiplies det h by N_{K/ℚ}(det P), so the class of det h modulo N(K^×) is basis-independent. This does **not** make every Hermitian determinant a norm: diag(1,1,1,1,−1,−1,−1,−2) has signature (4,4) and determinant 2 ∉ N(K^×). For the specific G₃₄ tuples computed here the class is [1] (gate-A tuple: det h = 2²·3¹²). No assertion is made for all Hurwitz components.
+ 
+ `[ALG]` [RID: HCG-ALG-CUPVAL] (alias CUP-FORM-VALIDATION) [provenance: CHECKED — ChatGPT implemented DW06 Thm 2.6 / Eq. (26); Claude verified the translation against the primary text; THIRD-FAMILY: auditor R1 obligation 2, with one recorded global convention sign]
+ 
+@@ -571,14 +575,14 @@
+ - (H4) dim_ℚ span N_j = dim_K span N_j = 16.
+ - All k_j = 1 and all m_j = 1.
+ 
+-`[ALG cert]` [RID: HCG-ALG-W5-DISC] (aliases G34-C-W5-DISC, G34-D-DISC-W5) [provenance: THREE-FAMILY CHECKED — Claude engine; ChatGPT `h3_w5_disc_crosscheck_v0_1.py` (witness 3⁶(1+2w)); auditor R2 from a fresh basis (witness 729(2+w)); Claude re-verified both norms]
++`[ALG cert]` [scope: the matrix invariant det(ϑS) of the W5 cup form; its identification with d(S_W5) is HCG-EXT-PO6] [RID: HCG-ALG-W5-DISC] (aliases G34-C-W5-DISC, G34-D-DISC-W5) [provenance: THIRD-FAMILY CHECKED (three families: Claude, ChatGPT, auditor) — Claude engine; ChatGPT `h3_w5_disc_crosscheck_v0_1.py` (witness 3⁶(1+2w)); auditor R2 from a fresh basis (witness 729(2+w)); Claude re-verified both norms]
+ 
+ On W5:
+ - det S = 3⁹ and det h = 3¹³ = N(729(2+w));
+ - the class is [1];
+ - h ≅_K [[0,I₄],[I₄,0]], hyperbolic of signature (4,4).
+ 
+-`[ALG cert]` [horizon: `g34_cert_W6_comb.json` ae904878…, `g34_cert_W7_comb.json` 45097b30…] [RID: HCG-ALG-W6, HCG-ALG-W7] (aliases G34-C-W6, G34-C-W7) [provenance: CHECKED — Claude derivation; ChatGPT independent implementation; ChatGPT's six scripts replayed by Claude, all PASS]
++Common data for W6 and W7 (table below); the two claim-blocks follow it.
+ 
+ | | W6 | W7 |
+ |---|---|---|
+@@ -591,9 +595,15 @@
+ | Σβ_j leading minors | (−57, 2871, −121824, 3746331) | (−234, 10008, −306774, 12331116) |
+ | All k_j | 1 | 1 |
+ 
+-Independence boundary: both AIs used the same root list and quotient basis. The cup construction is algorithmically independent but not principle-independent; the DW grounding was done on W5 only.
++`[ALG cert]` [horizon: `g34_cert_W6_comb.json` ae9048784171da49…] [RID: HCG-ALG-W6] (alias G34-C-W6) [provenance: CHECKED — Claude derivation; ChatGPT independent implementation; ChatGPT's scripts replayed by Claude, all PASS]
++The W6 column of the table holds: (H0)–(H4) pass, ℚ-rank 16, det h = (729/2)², class [1].
++
++`[ALG cert]` [horizon: `g34_cert_W7_comb.json` 45097b3042f30dcb…] [RID: HCG-ALG-W7] (alias G34-C-W7) [provenance: CHECKED — as for HCG-ALG-W6]
++The W7 column of the table holds: (H0)–(H4) pass, ℚ-rank 16, det h = 729², class [1].
+ 
+-`[ALG cert]` [RID: HCG-ALG-NEG] (aliases G34-C-NEG, G34-C-NEG-2) [provenance: RECORDED (non-decisive, SG-8)]
++Independence boundary (both blocks): both AIs used the same root list and quotient basis. The cup construction is algorithmically independent but not principle-independent; the DW grounding was done on W5 only.
++
++`[ALG cert]` [RID: HCG-ALG-NEG] (aliases G34-C-NEG, G34-C-NEG-2) [provenance: PROPOSED (Claude-run searches; not independently replicated); non-decisive, SG-8]
+ - Tuple #0: 1500 random interval decompositions; 1499 pass (H0)–(H3) and none passes (H4) (spans 7–15).
+ - Tuples #1–#4 fail.
+ - Severn's interval pattern applied to tuple #0 gives span 14.
+@@ -652,9 +662,9 @@
+ - E05: some sources were not inspected.
+ - E06: no global theorem is certified.
+ 
+-### §6.16 PO-6 — discriminant of the actual polarized factor `[THM]` {#sec-po6}
++### §6.16 PO-6 — discriminant of the actual polarized factor `[EXT-CLAIM]` {#sec-po6}
+ 
+-`[THM]` [import: hexagon:2610.00386v1 Prop 5.1, Lemma 2.4, §2.2 | RID unavailable] [RID: HCG-THM-PO6] (alias H3-PO-6) [provenance: REVIEWED (Claude, sealed note `auditor_r2/H3_PROP51_POLARIZATION_BRIDGE_CLAUDE_SEALED_v0_1.md`); ChatGPT: "follows conditionally from Prop 5.1"; third-family pending (R2 item 1, bridge part)]
++`[EXT-CLAIM]` [import: hexagon:2610.00386v1 Prop 5.1, Lemma 2.4, §2.2 | RID unavailable] [assuming: Severn [386] Lemma 5.2 = [19, Lemma 6.2] (hexagon:2610.00246v2), not yet reviewed] [RID: HCG-EXT-PO6] (alias H3-PO-6; Replaces: HCG-THM-PO6 of v0.1, retyped) [provenance: PROPOSED — evidence: source inspected and sealed Claude review (`auditor_r2/H3_PROP51_POLARIZATION_BRIDGE_CLAUDE_SEALED_v0_1.md`); ChatGPT treats it as following conditionally from Prop 5.1 (no full review); third-family audit pending (R2 item 1, bridge part)]
+ 
+ disc H|_{A_σ(C)} = [det h] for C a point of S, and this class is constant on S (Lemma 2.4). The steps:
+ - H¹(C,K)_σ = V_σ ⊗ H¹_par(U_C, L′).
+@@ -663,7 +673,7 @@
+ - H|_{A_σ} = ±q·h (or its conjugate), with q = 2h_V(v,v)c ∈ ℚ^×.
+ - Since the rank is even, q^{2n} = N(q^n).
+ 
+-Applied to W5: d(S_W5) = [1].
++Applied to W5, *if* this identification holds: d(S_W5) = [det(ϑS)] = [1]. The arithmetic part is HCG-ALG-W5-DISC; the identification is the open part.
+ 
+ Open dependency: Severn's Lemma 5.2 is his [19, Lemma 6.2] (hexagon:2610.00246v2), which is not yet reviewed (OPEN 5). The independent support is DW06 Thm 2.6 (§6.13).
+ 
+@@ -675,8 +685,8 @@
+ 
+ `[RESULT]` `[from: HYP]` [scope: application to Thm 6.2(1)] [RID: HCG-RESULT-SW5-SUFFICES]
+ 
+-S_W5 with (D) (§6.15) and d(S_W5) = [1] (§6.14, §6.16) is a sufficient witness for Thm 6.2(1). Identifying S_W5 with the Appendix A component is not required.
+-Depends on: HCG-THM-ANYCOMP, HCG-THM-G34D-SW5, HCG-ALG-W5-DISC, HCG-THM-PO6, and the unrefereed transfer theorem itself (hence `[from: HYP]`).
++S_W5 with (D) (§6.15) and d(S_W5) = [1] (cup-form class §6.14; identification §6.16, still pending audit) is a sufficient witness for Thm 6.2(1). Identifying S_W5 with the Appendix A component is not required.
++Depends on: HCG-THM-ANYCOMP, HCG-THM-G34D-SW5, HCG-ALG-W5-DISC, HCG-EXT-PO6, and the unrefereed transfer theorem itself (hence `[from: HYP]`).
+ Consequence of E01: Severn's *own* Appendix A certificate has not been confirmed by anyone in this session (OPEN 3).
+ 
+ ### §6.18 H4 selection — exploratory branch `[ALG]` — mixed content {#sec-h4sel}
+@@ -725,7 +735,9 @@
+ - [RID: DYAD-THM-SMOOTH-EMBEDDING] :: R5 smooth flow embedding of T⁶; order-six generator G₆ :: DYAD v6.4.18 §6.17 :: context only :: local smooth germ, not holomorphic
+ - [RID: DYAD-THM-PRIM-CTR] :: R6(a) the origin is a local attractor of T⁶ :: DYAD v6.4.19 §6.14 :: premise of HCG-THM-R6B :: fixed T on the dyadic carrier
+ - [RID: RTG SG-PROG-1] :: R8 programme boundary :: RTG_PROGRAMME_OVERVIEW v1.2; OFN v0.10 :: governs SG-2 :: interpretation only
+-- Reference only, not load-bearing: FMS v0.6.4 §5.2 (noncanonical) is consistent with R7.
++- Reference only, not load-bearing: FMS v0.6.4 §5.2 (noncanonical) is consistent with R7. FMS R3 (SESSION) already restricts the formal linear multipliers of T to μ₆ via a₀₅ ≠ 0; R7 gives a self-contained proof that also covers C⁵ germs. The owner theorem DYAD-THM-FORMAL-CENTRALIZER concerns the tangent-to-identity centralizer of F = T⁶ and is not the same statement.
++
++**Synchronization note (r2, F07).** The evidence pins above (DYAD v6.4.18/19) are kept as historical citations, not repinned. The current adopted owner edition is RTG_DYADIC_OSCILLATOR_DSN v6.4.20 (adopted 21 Oct 2026). Its Appendix A records "Unchanged: every earlier statement, grade, scope and OPEN status", with every v6.4.19 identifier kept (135 → 148 RIDs; the 13 new RIDs include DYAD-THM-SMOOTH-EQUIVARIANT-CHART). Checked by project search of the v6.4.20 text (Appendix A excerpt, §6.17, §7.0), not by a full reread. On that basis the imported R1–R6(a) contents are unaffected. The RID DYAD-ALG-Q-INVARIANT-FORM and the GENESIS pins were not re-searched.
+ 
+ **External mathematical imports.** All Severn and Hippeläinen documents are unrefereed Hexagon drafts (SG-5). File hashes are in `SOURCE_MANIFEST.md`.
+ 
+@@ -749,7 +761,7 @@
+ 
+ ## §8 Artifact and Script Registry
+ 
+-Package root: the session workspace, directories `hodge_session/` and `g34/` (with subdirectories `auditor_r1/`, `auditor_r2/`, `cg_w6w7_in/`, `cg_replay/`, `h4sel/`). Full hash lists are in `SHA256SUMS_SESSION.txt` (53 artifacts, 21 Oct), `SHA256SUMS_W6W7.txt`, `auditor_r1/SHA256SUMS_AUDITOR_R1.txt`, `auditor_r2/SHA256SUMS_AUDITOR_R2.txt` and `h4sel/SHA256SUMS_H4SEL.txt`. Hashes below are 16-hex prefixes.
++Package root: the session workspace, directories `hodge_session/` and `g34/` (with subdirectories `auditor_r1/`, `auditor_r2/`, `cg_w6w7_in/`, `cg_replay/`, `h4sel/`). Full hash lists are in `SHA256SUMS_SESSION.txt` (53 artifacts, 21 Oct), `SHA256SUMS_W6W7.txt`, `auditor_r1/SHA256SUMS_AUDITOR_R1.txt`, `auditor_r2/SHA256SUMS_AUDITOR_R2.txt` and `h4sel/SHA256SUMS_H4SEL.txt`. Hashes below are 16-hex prefixes. "AVAILABLE" means present in this session workspace. It does not mean "supplied to an outside reviewer": artifacts not sent to a reviewer are "not supplied to that reviewer", which is distinct from missing or lost.
+ 
+ - [RID: HCG-ART-H1H2] :: `h1_h2_exact_checks.py` (3b3deb4c5db2636f) :: H1/H2/NF exact checks :: EXECUTED (Claude), 28/28 PASS; log `h1_h2_run_log.txt` (3c8db6710f5dcfd9)
+   Independence: ChatGPT used fresh code with different constructions. The checks are algorithmically independent but **not historically blind**, because the sealed bundle arrived together with the contract.
+@@ -804,6 +816,20 @@
+ 
+ ## Appendix A — Version History
+ 
++### v0.1 DRAFT r2 — 22 October 2026 — DRAFT
++
++- **Basis [governance]:** ChatGPT independent QA of v0.1 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`; disposition "accept with targeted corrections; not yet PI-adoption-ready"). v0.1 is preserved byte-unchanged (SHA-256 0818a709…b3df3722). r2 was built from that byte-verified input by `make_r2.py` (assertion-gated replacements), with an exact diff.
++- **F01 [scientific scope]:** Separated the three-family-checked matrix invariant [det(ϑS)] = [1] from the identification d(S_W5) = [det(ϑS)] (Prop 5.1), which has only a sealed one-AI review. Updated: §0, §1, §5 (new row), §6.7, §6.14, §6.16, §6.17. HCG-THM-PO6 is retyped `[EXT-CLAIM]` as HCG-EXT-PO6 (Replaces recorded at the claim), with the unreviewed Lemma 5.2 / [19, Lemma 6.2] as an explicit `[assuming:]`.
++- **F02 [scientific scope]:** Withdrew "det h … always norms" (§6.13), which was false as a general statement. Counterexample diag(1,1,1,1,−1,−1,−1,−2). Replaced by basis-independence of the norm class; the class is [1] only for the tuples computed. Recorded in Appendix B.
++- **F03 [notation]:** ϑ = 1 + 2ω = √−3 restricted to L-G34 (ω = ζ₃). In L-DYN, ϑ = 2ζ₆ − 1.
++- **F04 [scope/typing]:** Review states normalized to PROPOSED / CHECKED / THIRD-FAMILY CHECKED / ACCEPTED. CHECKED-CONDITIONAL → CHECKED with the condition in [assuming:]. THREE-FAMILY CHECKED → THIRD-FAMILY CHECKED (three families named). RECORDED → PROPOSED. REVIEWED (PO-6) → PROPOSED with an evidence note.
++- **F05 [governance]:** W6 and W7 given separate claim-blocks (HCG-ALG-W6, HCG-ALG-W7).
++- **F06 [scope]:** "Every link reviewed by two AIs" replaced by per-link review levels (§0, §5).
++- **F07 [evidence]:** Synchronization note against DYAD v6.4.20 added to §7. Historical pins kept. Relation of R7 to FMS R3 and DYAD-THM-FORMAL-CENTRALIZER stated.
++- **F08 [evidence]:** The H4 obstruction data stay PROPOSED (Claude only). Unchanged; already so.
++- **F09 [editorial/typing]:** N_j = log(T_j^{m_j}). The Z(G) = μ₆ argument completed. §6.6 evidence map tagged as a dated inventory. §8 availability wording.
++- **Unchanged:** every claim grade other than the PO-6 retyping (which narrows); all RIDs except HCG-THM-PO6 → HCG-EXT-PO6; SG-1…SG-10; the OPEN registry; the Severn Thm 6.2 status (CLAIMED); the distribution guard.
++
+ ### v0.1 — 22 October 2026 — DRAFT (consolidation)
+ 
+ - **All sections [governance]:** First consolidated DSN of the session, written to DSN Methodology v1.3. It consolidates without changing scientific content. Inputs:
+@@ -820,7 +846,7 @@
+   - H3-PO-5: CONDITIONAL-HOLD → CHECKED on S_W5.
+   - G34-D-DISC-W5: three-family checked.
+   - W6/W7: CHECKED.
+-  - H3-PO-6: REVIEWED.
++  - H3-PO-6: REVIEWED (in r2: PROPOSED with evidence note; see F04).
+   - The Severn Thm 6.2 grade is unchanged (CLAIMED).
+ 
+ **Underlying session chronology** (immutable records; 21–22 Oct 2026):
+@@ -865,8 +891,10 @@
+ 
+ `[FAIL]` [RID: HCG-ALG-CUP-UNIQ-ATTEMPT, route only] Route: certify S as the intersection form through uniqueness of monodromy-invariant forms, using sampled braids. Basis: all sampled elements commute (a 34-dimensional invariant space); this is a sampling limitation, not evidence against S. Replacement: HCG-ALG-CUPVAL (DW06 Thm 2.6). Recorded in: W5 cup addendum v0.1.
+ 
++`[RETRACTED]` [RID: HCG-ALG-G34B, sentence only] Original (v0.1 §6.13, from the gate B/C report): "The values of det h depend on the basis but are always norms." Reason: false as a general statement. Basis change multiplies det h by a norm; it does not force det h into N(K^×). Counterexample: diag(1,1,1,1,−1,−1,−1,−2) over ℚ(√−3) has determinant 2 ∉ N(K^×) (F02, ChatGPT QA). The computed G₃₄ results (class [1] for the tuples examined) are unaffected. Replacement: §6.13 r2 wording. Recorded in: v0.1 DRAFT r2.
++
+ `[COR]` [admin key G34-D-STATUS] Ledger v0.4 and ChatGPT's W6/W7 delta (22 Oct, written before auditor R1) record G34-D as "EXPERT-SIGNOFF-PENDING". Superseded by HCG-THM-G34D-SW5 (THIRD-FAMILY CHECKED on S_W5). Recorded in: addenda v0.4b and v0.4d.
+ 
+ ---
+ 
+-*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 · DRAFT · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted, not PI-adopted.*
++*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 DRAFT r2 · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted, not PI-adopted.*

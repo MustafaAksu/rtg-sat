@@ -1,0 +1,174 @@
+## Lemma B–D doğrulandı; fakat d=10’da da ek bir boyut engeli var
+
+**[THM — bağımsız ispat incelemesi]** Normal yansıma altgrubu argümanını ve Lemma B–D’yi doğruladım. Belirtilen varsayımlar altında **d=7,8,9 ve 11 dışlamaları için CHECKED** öneriyorum.
+
+Ancak “sonraki arama d=10 olsun” kararını henüz vermeyelim. İnceleme sırasında, kalan iki indüklenmiş durumda period haritasının rankını sırasıyla **15 ve 9** ile sınırlayan ayrı bir argüman türettim. Bu yeni sonuç **PROPOSED; Claude’nun bağımsız denetimini bekliyor.**
+
+## 1. Paket ve hesap denetimi
+
+**[ALG — yeniden üretim]**
+
+| Kontrol | Sonuç |
+|---|---|
+| Kaynak paketin manifesti | **6/6 PASS** |
+| Ayrı rapor ile ZIP içindeki rapor | Bayt düzeyinde aynı |
+| `nonsplit8_budget_screen_claude.py` | Başarıyla yeniden çalıştı |
+| Üretilen tablo | Teslim edilen çıktıyla bayt düzeyinde aynı |
+| Ayrı uygulamayla blok-rank özdeşliği | **366/366 exact kontrol** |
+| Normalleyici ispatının sonlu eşitsizlik kontrolleri | **29.412/29.412** |
+
+Son iki satır ispatın yerine geçmiyor; aşağıdaki genel argümanların uygulama kontrolleridir. Önceki 85 saniyelik locality kapanış kampanyasını yeniden çalıştırmadım; tamamladığın tekrar ayrı kanıt kaydı olarak korunuyor.
+
+## 2. Normal yansıma altgrubu: üç ana adım geçerli
+
+**[ALG — bağımsız türetim]** Etkin dal noktaları üzerinden
+\[
+c_j=\operatorname{rank}(1-g_j),\qquad
+\sum_jc_j=2d+8,\qquad
+\varepsilon=\sum_j(c_j-1)\le2d-11
+\]
+kullanıyoruz. Temsilin **mutlak indirgenemezliği**, karakter alanının tam olarak \(K\) olması ve sabit vektör bulunmaması açık hipotezler olarak kalmalı.
+
+### Monomiyal normalleyici
+
+\(W_R=G(m,p,d)\), \(m\ge2,d\ge5\) durumunda koordinat doğrularını, üzerlerinden en fazla yansıma hiperdüzlemi geçen doğrular olarak ayıran argüman doğru.
+
+\(\eta=1\) koordinat hiperdüzlemleri varsa, aksi durumda \(\eta=0\) olsun. \(z\) sıfır koordinatlı bir doğru için üst sınır:
+\[
+m\binom z2+\binom{d-z}2+\eta z.
+\]
+
+Koordinat doğrusunun sayısı, \(0\le z\le d-2\) aralığındaki her değerden kesin büyük. Dolayısıyla normalleyici koordinat doğrularını permüte eder ve monomiyaldir. Bu sonuç Marin–Michel Lemma 4.2’nin, rank en az beşte diagonal altgrubun karakteristik olmasıyla verdiği ayrı açıklamayla da uyuşuyor. [arXiv](https://arxiv.org/pdf/math/0701266)
+
+**Küçük düzeltme:** Rapordaki ilk üst sınırda `+z` yerine tutarlı biçimde `+\eta z` kullanılmalı. Sonraki hesapların zaten doğru ayrımı yapıyor.
+
+### Gerçel Weyl normalleyicisi
+
+**[ALG]** \(A_d,E_6,E_7,E_8\) için
+\[
+N_{\mathrm{GL}(V)}(W_R)=\mathbb C^\times W_R
+\]
+argümanı geçerli. Bunu kök toplamları yerine değişmez simetrik form üzerinden de doğruladım: \(g^tQg=\lambda^2Q\); dolayısıyla \(\lambda^{-1}g\), normalize edilmiş kökleri işaretlere kadar permüte eden bir kök otomorfizmidir. İlgili normalleyici ve diagram otomorfizmi ayrımı birincil kaynakla uyumlu. [arXiv](https://arxiv.org/pdf/math/0701266)
+
+Karakter alanı rasyonel değilse çarpım-bir tuple’da en az iki gerçel-olmayan skaler sınıfı gerekir. Böylece verdiğin alt sınırlar doğru:
+\[
+\varepsilon\ge
+\begin{cases}
+2\left(d-\lfloor(d+1)/3\rfloor-1\right),&A_d,\\[2mm]
+2\left(\lceil d/2\rceil-1\right),&E\text{-tipleri}.
+\end{cases}
+\]
+
+### Bloklu durum
+
+**[ALG]** \(d=kr\) ve \(\pi_j\), \(g_j\)’nin blok permütasyonu olsun. Yalnız eşitsizlik değil, şu exact özdeşlik geçerli:
+\[
+\boxed{
+\operatorname{rank}(1-g_j)
+=
+r\,\operatorname{ind}(\pi_j)
++\sum_{\text{çevrim }a}\operatorname{rank}(1-P_{j,a}),
+}
+\]
+burada \(P_{j,a}\), ilgili çevrim boyunca başlangıç bloğuna dönüş monodromisidir.
+
+Ara örtünün cinsini \(\gamma\) ile gösterirsek Riemann–Hurwitz:
+\[
+\sum_j\operatorname{ind}(\pi_j)=2(k-1)+2\gamma
+\]
+verir. Dolayısıyla senin sınırının biraz daha bilgilendirici biçimi:
+\[
+\boxed{\varepsilon\ge2(r-1)(k-1+\gamma).}
+\]
+
+Bu, d=10’da kalan iki durumun da **\(\gamma=0\)** olmasını zorunlu kılıyor.
+
+## 3. Boyut tablonun hükmü doğru — “hayatta kalma” yalnız bütçe düzeyinde
+
+**[THM — mevcut hipotezler altında]** Shephard–Todd listesi ve normalleyici adımları birleştirildiğinde:
+
+| \(d\) | Sonuç |
+|---:|---|
+| 6 | \(G_{34}\) kalır; bölünmemiş durum önceki locality sonucuyla koşullu dışlanır |
+| 7 | Dışlanır |
+| 8 | Dışlanır |
+| 9 | Dışlanır |
+| 10 | Yalnız \((k,r)=(2,5)\) ve \((5,2)\), **bu bütçe eleğinden** geçer |
+| 11 | Dışlanır |
+
+Kullanılan yüksek-rank sınıflandırması, rank 6’da \(G_{34},E_6\), rank 7’de \(E_7\), rank 8’de \(E_8\) ve diğer simetrik/monomiyal ailelerle uyumlu. [magma.maths.usyd.edu.au](https://magma.maths.usyd.edu.au/magma/handbook/text/1228)
+
+Burada “dışlanır”, **belirtilen Hurwitz yapısında rank-16 dominans sağlayamaz** demektir; bu boyutlarda hiçbir sonlu grup, tuple veya Weil ailesi bulunmadığı anlamına gelmez. Monomiyal dışlama da ana hükümde açık bağımlılık olarak korunuyor.
+
+## 4. Yeni sonuç adayı: d=10’un kalan iki durumu da dominans sağlayamıyor
+
+**[THM adayı — yeni SESSION türetimi, peer denetimi bekliyor]**
+
+\[
+\sigma=\operatorname{Ind}_{H}^{G}\tau,\qquad
+\dim_K\tau=r,\qquad Y=C/H
+\]
+olsun. Sonlu örtüde Frobenius–Shapiro özdeşliği, ilgili çokluk uzayını
+\[
+M_\sigma\simeq H^1_{\mathrm{par}}(Y,\mathcal L_\tau)
+\]
+ile tanımlar. Parabolik kohomolojinin burada kullanılan \(H^1(Y,j_*\mathcal L)\) modeli yayımlanmış DW çerçevesidir. [emis.de](https://www.emis.de/ft/47210)
+
+**Kritik nokta yalnız boyut eşitliği değil:** Bu özdeşleştirme Hodge filtrasyonuyla uyumludur. Sonlu grup etkisinden gelen Frobenius karşılıklılığı, \(H^1(C)\)’nin Hodge ayrışımıyla komüte eder.
+
+\(Y\)’nin cinsi \(\gamma\), \(\tau\)-monodromisinin gerçekten önemsiz olmadığı nokta sayısı \(s\) olsun. \(\tau\)’nun sabit vektörü yoksa:
+\[
+8=2r(\gamma-1)+\sum_{y}a_y,
+\qquad a_y=\operatorname{rank}(1-h_y)\ge1.
+\]
+Böylece
+\[
+s\le8+2r(1-\gamma).
+\]
+
+Sonlu monodromi verisi, sabit işaretli eğri üzerinde ayrık veridir. Dolayısıyla period haritası, **\(Y\to\mathbb P^1\) haritasını unutan**, yalnız \((Y,D_\tau)\) ve sonlu yerel sistemi tutan modül uzayı üzerinden geçer. Bu nedenle:
+\[
+\boxed{
+\operatorname{rank}_{\mathbb C}d\mathrm{Per}_\sigma
+\le3\gamma-3+s
+\le2r+5+(3-2r)\gamma.
+}
+\]
+
+d=10’un iki kalanı için \(\gamma=0\):
+
+| Blok yapısı | İndükleyen rank \(r\) | Etkin nokta üst sınırı | Period rankı üst sınırı |
+|---|---:|---:|---:|
+| İki rank-5 blok | 5 | 18 | **15** |
+| Beş rank-2 blok | 2 | 12 | **9** |
+
+İkisi de hedef 16’nın altında.
+
+**Bu çıkarım doğru kabul edilirse, \(G_{33}\) rank-5 bloğundan indükleme d=10’u kurtarmıyor.** Grup büyük olsa bile, hedef Hodge varyasyonu en fazla 18 etkin noktalı rasyonel eğri üzerinden geçiyor.
+
+İspatta ayrıca, \(Y\to\mathbb P^1\)’in dallanmış olduğu fakat \(\tau\)-monodromisinin birim olduğu noktaların neden unutulabildiğini yazdım. **Claude’nun öncelikle denetlemesi gereken adım bu Hodge-faktörizasyonudur.** Salt Euler hesabı yeterli olmaz.
+
+Bu yeni sonucu henüz `CHECKED` veya “d=10 kapandı” diye kaydetmiyorum.
+
+## 5. Kayıt ve teslim
+
+| Kalem | Önerim |
+|---|---|
+| Normal yansıma altgrubu, Lemma B–D | **CHECKED**, belirtilen bağımlılıklarla |
+| d=7,8,9,11 dışlamaları | **CHECKED — kapsamlı koşullarla** |
+| d=10’da yalnız iki blok tipinin kalması | **CHECKED — gerekli koşul sınıflandırması** |
+| İndüklenmiş sistem için period-boyutu sınırı | **PROPOSED** |
+| Bu sınırdan d=10 dışlaması | **PROPOSED** |
+| Genel nonsplit sekizli fizibilitesi | **OPEN** |
+
+**:chatgpt-content-reference{index="5"}[Bağımsız Lemma B–D incelemesi](sandbox:/mnt/data/HCG_NORMAL_REFLECTION_SCREEN_CHATGPT_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="6"}[İndüklenmiş period-boyutu sınırı — tam ispat adayı](sandbox:/mnt/data/HCG_INDUCED_PERIOD_DIMENSION_BOUND_PROPOSED_v0_1.md)**
+
+**HCG_NORMAL_REFLECTION_AND_D10_REVIEW_v0_1.zip[Kaynak arşiv, iki rapor, exact kontroller ve tekrar sürücüsü — ZIP](sandbox:/mnt/data/HCG_NORMAL_REFLECTION_AND_D10_REVIEW_v0_1.zip)**
+
+Paketi temiz bir klasöre çıkarıp çalıştırdım: **manifest 8/8, kaynak manifesti 6/6, kaynak çıktı ve bağımsız JSON tekrarları bayt düzeyinde PASS.**
+
+**Sonraki önerim:** d=10 için grup/tuple aramasına başlamadan önce Claude yeni nottaki Hodge–Shapiro özdeşliğini ve etkisiz noktaları unutma adımını bağımsız denetlesin. Geçerse d=10 da hesap kampanyası gerekmeksizin elenir. d=12’nin mümkün olduğu sonucunu ise bundan çıkarmıyoruz.
+
+HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

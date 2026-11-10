@@ -1,0 +1,42 @@
+(4x13) forced: t = 4, N = 19, actives (pseudoreflection on A) x scalar on B, 15 inactives I x pseudoreflection;
+       W_B = S_14: Riemann-Hurwitz on 14 sheets needs Sum ind >= 26, available 15*1 + 4*0 = 15  -> excluded
+=== d = 50, Sum c = 108 ===
+  K-defined imprimitive: needs d >= 100 (Lemma E + nonsplit => d >= 50)  -> excluded
+  imprimitive (k,r)=(2,25): excluded (Lemma B', non-K-defined)
+  imprimitive (k,r)=(5,10): excluded (A', E_k = -27)
+  block size < 6: period bound; isotypic scalar kernel: r <= 5 < 6
+  factorwise 2 x 25: excluded (W-structure + Riemann-Hurwitz, two_by_b_rh)
+  factorwise 5 x 10: excluded (budget)
+  tensor-induced: d < 256;  symplectic type: never;  A_{d+1} natural: Lemma F
+  generic SL2(q) degree solutions: [(49, 'q+1'), (101, '(q-1)/2')]
+    L2(49) principal series, 3 rational chars field Q: min c = 24 > 6  -> excluded (Lemma C)
+    O8+(2)                             field Q: min c = 16 > 6  -> excluded (Lemma C)
+    S4(4)                              field Q: min c = 20 > 6  -> excluded (Lemma C)
+  OPEN: none
+=== d = 51, Sum c = 110 ===
+  K-defined imprimitive: needs d >= 100 (Lemma E + nonsplit => d >= 50)  -> excluded
+  imprimitive (k,r)=(3,17): excluded (A', E_k = -3)
+  block size < 6: period bound; isotypic scalar kernel: r <= 5 < 6
+  factorwise 3 x 17: excluded (3 x b lemma)
+  tensor-induced: d < 256;  symplectic type: never;  A_{d+1} natural: Lemma F
+  generic SL2(q) degree solutions: [(101, '(q+1)/2'), (103, '(q-1)/2')]
+    S8(2)                              field Q: min c = 16 > 6  -> excluded (Lemma C)
+    O8-(2)                             field Q: min c = 16 > 6  -> excluded (Lemma C)
+  OPEN: none
+=== d = 52, Sum c = 112 ===
+  K-defined imprimitive: needs d >= 100 (Lemma E + nonsplit => d >= 50)  -> excluded
+  imprimitive (k,r)=(2,26): excluded (Lemma B', non-K-defined)
+  imprimitive (k,r)=(4,13): excluded (A', E_k = -18)
+  block size < 6: period bound; isotypic scalar kernel: r <= 5 < 6
+  factorwise 2 x 26: excluded (W-structure + Riemann-Hurwitz + det parity, two_by_b_rh)
+  factorwise 4 x 13: excluded (Lemma T equality + Riemann-Hurwitz, above)
+  tensor-induced: d < 256;  symplectic type: never;  A_{d+1} natural: Lemma F
+  generic SL2(q) degree solutions: [(53, 'q-1'), (103, '(q+1)/2')]
+    L4(3)                              field Q: min c = 22 > 6  -> excluded (Lemma C)
+    U4(4)                              field Q: min c = 24 > 6  -> excluded (Lemma C)
+    3D4(2)                             field Q: min c = 16 > 6  -> excluded (Lemma C)
+    2.F4(2)                            field Q: min c = 16 > 6  -> excluded (Lemma C)
+    L2(53) discrete series, 1 rational char field Q: min c = 26 > 6  -> excluded (Lemma C)
+    SL2(53) faithful, 1 rational char  field Q: min c = 36 > 6  -> excluded (Lemma C)
+  OPEN: none
+RESULT: every branch closes at d = 50, 51, 52

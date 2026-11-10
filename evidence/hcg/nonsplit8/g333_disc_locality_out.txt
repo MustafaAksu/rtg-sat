@@ -1,0 +1,4 @@
+|G(3,3,3)| = 54
+reflection conjugacy classes in G(3,3,3): 1
+N=8 dim=2 local classes (0, 0, 0, 0, 0, 0, 0, 0): det classes ['NEG']
+N=10 dim=4 local classes (0, 0, 0, 0, 0, 0, 0, 0, 0, 0): det classes ['[1]']

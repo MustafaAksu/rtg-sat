@@ -1,0 +1,3 @@
+dim H = 4 ; S rank = 4 ; S entries all rational (b=0) in this rational basis: True
+all 18 interval-curve operators (pair-aligned + mixed), fixed marking: Q-rank = 4 (d^2 = 4)
+max Q-rank over all interval curves after 15 random pure braids: 7

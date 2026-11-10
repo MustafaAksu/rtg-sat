@@ -1,0 +1,9 @@
+g34_cert_tuple5_balanced.json k set = [1]
+  nullity = 1
+  relation: {'(17, 18)': '-1', '(19, 20)': '-1', '(1, 16)': '1'}
+g34_cert_W6_comb.json k set = [1]
+  nullity = 1
+  relation: {'(1, 2)': '-2', '(3, 4)': '-1', '(5, 6)': '-1', '(9, 10)': '-1', '(1, 6)': '2', '(1, 8)': '-2', '(1, 10)': '2'}
+g34_cert_W7_comb.json k set = [1]
+  nullity = 1
+  relation: {'(17, 18)': '-1', '(19, 20)': '-1', '(1, 16)': '1'}

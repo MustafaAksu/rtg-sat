@@ -1,0 +1,51 @@
+closure rank = 6  coboundary rank = 6  dim Z_par = 14  dim H1_par = 8
+S vanishes on coboundaries (both slots): True
+S skew-Hermitian on H1_par: True   nondegenerate: True
+h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 1594323
+discriminant class: det(h) = 1594323  -> split [1] (norm, n=4 even): True
+
+--- decomposition comb: pairs + [1,4],[1,6],...,[1,16]: 17 curves (1-based intervals)
+   [ 1, 2] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 3, 4] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 5, 6] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 7, 8] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 9,10] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [11,12] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [13,14] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [15,16] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [17,18] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [19,20] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 1, 4] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   [ 1, 6] k=1 m=1 rkK(N)=3 sig(beta)=(0, 3, 1)
+   [ 1, 8] k=1 m=1 rkK(N)=4 sig(beta)=(0, 4, 0)
+   [ 1,10] k=1 m=1 rkK(N)=4 sig(beta)=(0, 4, 0)
+   [ 1,12] k=1 m=1 rkK(N)=3 sig(beta)=(0, 3, 1)
+   [ 1,14] k=1 m=1 rkK(N)=3 sig(beta)=(0, 3, 1)
+   [ 1,16] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+   beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+   dimQ span(N_j)=15 -> H4=False
+
+--- decomposition balanced: pairs + [1,4],[5,8],[9,12],[13,16],[1,8],[9,16],[1,16]: 17 curves (1-based intervals)
+   [ 1, 2] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 3, 4] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 5, 6] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 7, 8] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 9,10] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [11,12] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [13,14] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [15,16] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [17,18] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [19,20] k=1 m=1 rkK(N)=1 sig(beta)=(0, 1, 3)
+   [ 1, 4] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   [ 5, 8] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   [ 9,12] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   [13,16] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   [ 1, 8] k=1 m=1 rkK(N)=4 sig(beta)=(0, 4, 0)
+   [ 9,16] k=1 m=1 rkK(N)=4 sig(beta)=(0, 4, 0)
+   [ 1,16] k=1 m=1 rkK(N)=2 sig(beta)=(0, 2, 2)
+   H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+   beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+   dimQ span(N_j)=16 -> H4=True
+
+(H0) all pants contributions vanish for both decompositions: boundary products of every curve are 1 (paired tuple), so each pants with three trivial boundaries gives 0-12+12=0, and each pair-pants (s,s,1) gives 1+1+0-12+2*5=0: True

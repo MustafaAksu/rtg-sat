@@ -1,0 +1,8 @@
+root lines in orbit: 9
+start line tuple: (0, 0, 1, 1, 2, 2)
+hexagon trees: 14
+components (all tuples): 22  time 6.1 s
+line permutation group size: 18
+component size 522720 ; histogram {'A3-fail': 97200, 6: 6480, 7: 106704, 8: 200880, 9: 111456}
+conjugation classes 23640 ; per-tuple mismatches (uncached vs canonical-class): 0
+per-tuple table sha256: 2a8eda53f1cfa9df8b48185bd2a41502128cb1ee86e7c1017cf9a401c2bda847

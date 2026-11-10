@@ -1,0 +1,122 @@
+## İlk önemli bulgu: Severn v2, v1'in yalnızca kaynakça güncellemesi değil
+
+[SOURCE — doğrulandı] [Severn v2 PDF](https://hexagonmath.org/pdf/2610.00387v2?utm_source=chatgpt.com) erişilebilir durumda. Ayrıca [v1 PDF](https://hexagonmath.org/pdf/2610.00387v1?utm_source=chatgpt.com) de açılıyor. Bu nedenle v2'yi yeniden yüklemenize gerek yok.
+
+İlk karşılaştırma önemli bir sürüm farkını ortaya çıkardı:
+
+|                 | v1                                    | v2                                     |
+| --------------- | ------------------------------------- | -------------------------------------- |
+| PDF uzunluğu    | 17 sayfa                              | 31 sayfa                               |
+| İç belge sürümü | Draft v0.5                            | Version 1.5                            |
+| Theorem 6.2     | Ana altılı/sekizli cebirsellik sonucu | Yayma ve bütün hücreye transfer sonucu |
+| G₃₄ uygulaması  | Önceki §6–Ek A zinciri                | Ayrı §9'da düzenlenmiş                 |
+
+[SESSION] Dolayısıyla eski RID ve teorem numaralarını v2'ye otomatik aktarmamalıyız. Bilimsel sonuçların ne ölçüde korunduğu, numara benzerliğinden değil hipotez ve ispat karşılaştırmasından anlaşılmalı.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+## 1. Boyut tavanı: gerekli eşitsizlikler doğru, genel imkânsızlık sonucu henüz değil
+
+[SESSION — ALG CHECKED] Claude'nun boyut hesabını bağımsız doğruladım.
+
+\\(d=\dim_K\sigma\\), \\(N\\) gerçek dal noktası sayısı ve \\(\dim_K H^1\_{\mathrm{par}}=2n\\) olsun. İndirgenemez, sabit vektörü olmayan temsil için:
+
+\\[ 2n=\sum\_{j=1}^{N}\operatorname{rank}(1-\sigma(g_j))-2d. \\]
+
+Dominans için \\(N-3\ge n^2\\) gerektiğinden:
+
+\\[ \boxed{d\ge\frac{n^2-2n+3}{2}}. \\]
+
+Buna göre:
+
+| Hedef                                 | Doğrulanmış gerekli koşul |
+| ------------------------------------- | ------------------------- |
+| Sekizli, \\(n=4\\)                    | \\(d\ge6\\)               |
+| Onlu, \\(n=5\\)                       | \\(d\ge9\\)               |
+| Onlu, hiç rank-1 yansıma bulunmuyorsa | \\(d\ge23\\)              |
+
+G₃₄ için \\(d=6\\), 20 yansıma ve \\(n=4\\) verisi bütçeyi sağlıyor. Aynı temsil 22 yansımayla \\(n=5\\) verdiğinde Hurwitz boyutu 19, hedef modül boyutu 25 oluyor; dominans imkânsız. Severn v2 §9 bunu açıkça kaydediyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+[SESSION — SCIENTIFIC OBJECTION] Fakat şu çıkarım geçerli değil:
+
+> Yüksek dereceli primitif yansıma grubu yoksa, yansıma içeren yüksek dereceli primitif sonlu grup da yoktur.
+
+Bir grup yansıma içerebilir, fakat onlarla üretilmeyebilir. Örneğin \\(d\ge9\\) için standart \\(S\_{d+1}\\) yansıma temsilini \\(\omega I_d\\) skalerini ekleyerek genişletirsek, karakter alanı \\(K=\mathbb Q(\omega)\\) olan, gerçek rank-1 yansımalar içeren bir sonlu grup elde ederiz; buna karşın tüm grup yansımalarla üretilmez.
+
+Bu örnek Severn'in (L) koşulunu sağlayan bir aile değildir. Ancak kullanılan sınıflandırma adımının, bütün sonlu grupları dışlamadığını gösterir.
+
+Daha kesin bir bütçe hesabı da elde ediyoruz:
+
+\\[ \sum_j\bigl(\operatorname{rank}(1-g_j)-1\bigr) \le 2d-18\qquad(n=5). \\]
+
+Bu nedenle \\(d=9\\) durumunda bütün dal monodromileri yansıma olmak zorundadır. \\(d=10\\) durumunda ise en fazla iki rank-fazlası bulunabilir. İlk durumda Shephard–Todd sınıflandırması gerçekten güçlü bir dışlama sağlar; sonraki durumlar ayrıca incelenmelidir.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.magma-maths.org\&sz=32)
+
+Magma Handbook
+
++1
+
+
+
+Hüküm: Boyut bütçesi `CHECKED`; “Severn'in bütün yöntemi sekizlilerde kesin olarak tıkanıyor” sonucu `NOT PROVED`.
+
+## 2. v2 karşılaştırmasında daha önemli bir bilimsel değişiklik var
+
+v2, yalnız ispatları genişletmiyor; Schoen tedarikçi döngülerinin kullanımında özel bir ispat adımı ekliyor.
+
+[SOURCE: Severn v2, Lemma 4.4 ve Remark 9.2] G₃₄ için belirtilen 84 tedarikçiden üçünün mertebesi 12. Bütün yerel üslerin \\(m/2\\) olduğu durumda Schoen'in kullandığı belirli asal-seçimi argümanı uygulanamıyor. v2, Lemma 4.4 ile bunun yerine yeni bir kohomolojik argüman veriyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+Bu önemli bir yeni denetim yükümlülüğü. v1 üzerinde doğrulanan B5 raporunu, söz konusu yeni ispat adımını hiç denetlemeden v2'ye taşıyamayız.
+
+Ayrıca teorem adları ve bölüm numaraları kapsamlı biçimde değişmiş. v1'deki ana Theorem 6.2, v2'de Theorem A/B/C şeklinde ayrılıyor. v2'nin Theorem 6.2'si artık yayma/transfer sonucudur. Kaynak numaraları da değişti; örneğin v2'nin `[17]` kaynağı bir Markman ön baskısıdır.
+
+### Önerdiğim bilimsel sıralama
+
+Önce v2'deki Lemma 4.4 → tedarikçi cebirselliği → Proposition 4.6 → Theorem 5.1 → Theorem 6.2 → Theorem A/B zincirini değişiklik odaklı inceleyelim. Bu, doğrudan elimizdeki Hodge sonucunun mevcut kaynağa göre sağlamlığını ilgilendiriyor. Daha sonra onluların mümkün olup olmadığına veya iç-nokta period-map yöntemine geçelim.
+
+v2'de ayrıca sıralı Hurwitz uzayı için saf braid yörüngesi tanımı açıkça kullanılıyor. Bizim 90 harflik saf olmayan Severn bağlantısının, sınıf-permütasyonuna izin veren geometrik bölümdeki rolü de yeni kaynak konvansiyonuyla açıkça eşleştirilmeli.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+## 3. Δ24 kararı
+
+27 Ekim'deki “1- Delta24 ü onaylıyorum” ifadeniz, Δ24'ün bekleyen değişiklik kaydında kabulü için açık PI yetkisidir. Aynı kararın yeniden alınması gerekmez. Ancak bu, HCG v0.3'ün benimsenmesi anlamına gelmez.
+
+Kayıtta PI onayı 27 Ekim tarihli olarak yer alabilir. v0.2 benimsenmiş sürüm olarak korunur.
+
+## İnceleme dosyası
+
+HCG — Tenfold Budget and Severn v1/v2 Scope Review (English)
+
+Bu raporda eşitsizliklerin ispatını, sınıflandırma çıkarımındaki sınırlamayı, v1→v2 kaynak karşılıklarını ve yeni ispat yükümlülüklerini ayırdım. v2'nin tüm ispatları okunmuş veya doğrulanmış değildir; inceleme hedefli bölümlerle sınırlıdır.
+
+Kararım: Rank sınırı yeni olmayan doğru bir koroler. Onlu boyut tavanı güçlü bir araştırma engeli, fakat genel imkânsızlık teoremi değil. En yüksek öncelik artık Severn v2'nin değişen bilimsel zincirinin denetlenmesidir; v1 üzerinde tamamladığımız çalışmaları tekrarlamadan, yalnız yeni ve etkilenen kanıt adımlarını incelemeliyiz.

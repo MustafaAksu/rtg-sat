@@ -1,0 +1,38 @@
+--- ../r3/HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r3.md	2026-10-22 17:49:02.289223270 +0300
++++ HCG_HODGE_SESSION_DSN_v0_1_ADOPTED.md	2026-10-22 18:08:46.804159592 +0300
+@@ -1,11 +1,12 @@
+-# HCG_HODGE_SESSION_DSN_v0.1 — DRAFT r3 (final acceptance candidate)
++# HCG_HODGE_SESSION_DSN_v0.1
+ 
+ **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, and the G₃₄ boundary-witness programme)
+ **Date:** 22 October 2026
+ **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
+ **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.17 are an *external-claim audit module*. In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
+-**Document status:** DRAFT r3 (final acceptance candidate). Not PI-adopted. All PI-decision fields are blank.
+-**Revision base:** DRAFT r2 (`HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r2.md`, SHA-256 959f6a036f8cacf530de427a3e26a9f7f2cb7fc6974e72071b183e961aa519dc; preserved unchanged), itself built from DRAFT v0.1 (`HCG_HODGE_SESSION_DSN_v0_1.md`, SHA-256 0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722; preserved unchanged). r2 implements the ChatGPT QA findings F01–F09 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`); see Appendix A.
++**Document status:** ADOPTED (scoped) — PI decision, 22 October 2026, 18:08 +03:00 ("evet ediyorum"). Adopted as the scoped scientific-record consolidation of the HCG session. Adoption does **not** set any individual claim's review state to ACCEPTED, does not establish any external claim (Severn Thm 6.2 stays CLAIMED; HCG-EXT-PO6 stays PROPOSED), and is not an RTG adoption. Release record: `HCG_HODGE_SESSION_DSN_v0_1_RELEASE_RECORD.md`.
++**Release source:** DRAFT r3 (`HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r3.md`, SHA-256 a783e2da7095c6ae89043c26acf4cc164514f9f5a9c2776d972284b68b432162; preserved unchanged), released by `release_v0_1.py` (labels and metadata only).
++**Revision base of r3:** DRAFT r2 (`HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r2.md`, SHA-256 959f6a036f8cacf530de427a3e26a9f7f2cb7fc6974e72071b183e961aa519dc; preserved unchanged), itself built from DRAFT v0.1 (`HCG_HODGE_SESSION_DSN_v0_1.md`, SHA-256 0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722; preserved unchanged). r2 implements the ChatGPT QA findings F01–F09 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`); see Appendix A.
+ **Supersedes:** none. This is the first consolidated DSN of the session. It consolidates, and does not replace, the immutable working records listed in §8 and Appendix A: charter v0.2, ledgers v0.1–v0.4 with addenda v0.4a–v0.4d, and all reports.
+ **Companion documents:** `HODGE_COMPLEX_GEOMETRY_STANDALONE_CHARTER_v0_2.md`; `VERIFICATION_LEDGER_v0_4.md` + addenda `v0_4a`–`v0_4d`; `SOURCE_MANIFEST.md`; the reports in §8.
+ **DSN Methodology:** DSN_METHODOLOGY_v1.3 (adopted 20 Sep 2026). The v1.4 amendment draft in the RTG project was not applied.
+@@ -816,6 +817,13 @@
+ 
+ ## Appendix A — Version History
+ 
++### v0.1 — adopted 22 October 2026 (scoped)
++
++- **Owner decision [governance]:** PI adoption, 22 Oct 2026, 18:08 +03:00 ("evet ediyorum"), of DRAFT r3 (a783e2da…432162) in the scope proposed by the ChatGPT r3 QA (`HCG_DSN_v0_1_DRAFT_r3_CHATGPT_QA_v0_1.md`, disposition ACCEPT SCOPED). The scope: the session's scientific-record consolidation. PO-6 stays PROPOSED and Thm 6.2 stays CLAIMED. Auditor round 2, the [19, Lemma 6.2] review and human refereeing stay OPEN. No RTG transfer. The distribution guard stays in force.
++- **Release edits [editorial]:** title line, document status, release-source line, this entry, footer. No scientific text, grade, RID or OPEN status changed.
++- **R3-H01 (editorial, nonblocking) [provenance]:** The r3 version-history sentence below, that the reproduced r2 entry "keeps its original wording", is imprecise. Its F01 dependency wording was retrospectively clarified in the r3 display ("Lemma 5.2 / [19, Lemma 6.2]" → "Lemma 5.2 (resting on [19, Lemma 6.2])"). The actual DRAFT r2 file, SHA-256 959f6a03…a519dc, is byte-preserved. No scientific claim, adoption status or proof dependency changes arise from this clarification.
++- **Chain:** v0.1 DRAFT (0818a709…b3df3722) → r2 (959f6a03…a519dc) → r3 (a783e2da…432162) → this file. Each step was reproduced byte-exactly by ChatGPT.
++
+ ### v0.1 DRAFT r3 — 22 October 2026 — DRAFT (final acceptance candidate)
+ 
+ - **Basis [governance]:** ChatGPT QA of r2. It reproduced r2 byte-exactly from v0.1 with `make_r2.py` and found F01–F09 correctly addressed. It recommended one source-dependency wording change before acceptance. r2 is preserved unchanged (959f6a03…a519dc); r3 was built from the byte-verified r2 by `make_r3.py`.
+@@ -903,4 +911,4 @@
+ 
+ ---
+ 
+-*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 DRAFT r3 (final acceptance candidate) · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted, not PI-adopted.*
++*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 · ADOPTED (scoped) 22 Oct 2026 · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted; PI-adopted as a scoped session-record consolidation only.*

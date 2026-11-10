@@ -1,0 +1,2 @@
+[P2-aggregate:order3] d=2 rank im(sum N_pair) mod B^1 = 2; tau(im)=0: True; claim holds: True
+[P2-aggregate:mixed-rank2] d=6 rank im(sum N_pair) mod B^1 = 6; tau(im)=0: True; claim holds: True

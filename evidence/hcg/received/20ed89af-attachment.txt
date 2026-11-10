@@ -1,0 +1,59 @@
+## İlk somut bağlantılılık testi: altı G₃₄ tanığı aynı saf braid yörüngesinde
+
+[SESSION — yeni exact sonuç; bağımsız ikinci denetim bekliyor]
+
+Önerdiğin W5 bağlantı testini gerçekleştirdim. Mevcut sertifika paketlerindeki kökleri kullanarak NEW01–04 ve G34-BLOCK-01'in her birini W5'e bağlayan açık Artin sözcükleri buldum.
+
+Yalnız eşleniklik veya grup mertebesi karşılaştırması yapmadım. Sözcükleri 20 yansımanın tamamına uyguladım, sonuçları kök birimleri dışında tam olarak eşleştirdim ve ters sözcüklerle başlangıca döndüm.
+
+| Bağlantı      | Çift-eşleme işlemi | Sadeleştirilmiş Artin harfi | Doğrulama |
+| ------------- | ------------------ | --------------------------- | --------- |
+| NEW01 → W5    | 29                 | 776                         | PASS      |
+| NEW02 → W5    | 29                 | 450                         | PASS      |
+| NEW03 → W5    | 37                 | 916                         | PASS      |
+| NEW04 → W5    | 33                 | 850                         | PASS      |
+| BLOCK-01 → W5 | 39                 | 880                         | PASS      |
+
+Beş sözcüğün tamamı saf braid: 20 dal noktasının son permütasyonu birim. Başka bir deyişle, bunlar yalnız tam \\(B\_{20}\\) grubunda değil, \\(P\_{20}\\) içinde de bağlantı veriyor.
+
+Böylece söz konusu altı tanık için bileşen eşitliği artık Wood'un bilinmeyen \\(M(G\_{34},c)\\) sınırına bağlı değil. Ancak bütün üretici G₃₄ tuple'larının bağlı olduğunu henüz göstermiyor.
+
+## İkinci kontrol ve araştırma kararı
+
+[SESSION — exact tekrar] Altı bağlantıyı iki yöntemle sınadım. Birincisi, \\(\mathbb Z[\omega]\\) üzerinde 20 kök vektörüne temel Artin hareketlerini uygulayan exact hesap. İkincisi, \\(\mathbb F\_{10007}[\omega]\\) üzerinde doğrudan \\(6\times6\\) yansıma matrislerinin çarpımı. Altı bağlantının tamamı iki kontrolden de geçti.
+
+Ayrıca önceki `BLOCK-ESCAPE-01` tanığı da W5’e bağlanıyor:
+
+\\[ \mathrm{BLOCK\\!-\\!ESCAPE} \xrightarrow{\\;868\ \text{ters harf}\\;} \mathrm{BLOCK} \xrightarrow{\\;880\ \text{harf}\\;} \mathrm{W5}. \\]
+
+Birleşik 1.748 harflik saf braid exact olarak doğrulandı.
+
+### Severn kapsamındaki düzeltmen
+
+[SOURCE — Severn, Draft v0.5, Proposition 4.2 Step 0] Haklısın. Bütün 20 yerel monodromi aynı eşleniklik sınıfında olduğundan \\(\Sigma=S\_{20}\\). Dolayısıyla (D) için tam braid bağlantılılığı yeterlidir; saf braid şartını eklemek gerekmiyor. Bizim yeni sertifikalarımız daha güçlü bir bağlantı sağlıyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
+
+
+Bu sonuç Wood'un \\(M(G\_{34},c)\le20\\) sınırını kanıtlama gereğini bilinen altı tanığı birbirine bağlama problemi açısından ortadan kaldırıyor. Ancak evrensel bağlantılılık teoremi hâlâ açık.
+
+### Teslim dosyaları
+
+Bilimsel rapor — kaynaklar, ispat mekanizması ve kapsam
+
+Altı açık braid sertifikası, kaynak kökler, exact doğrulayıcılar ve SHA-256 manifesti — ZIP
+
+ZIP SHA-256: 00b93b575fbddd9a041fb695d6ca8c76d9d98a044e876f8431448cdbf3a6eec6
+
+Paketi temiz klasöre çıkarıp üç yeniden üretim komutunu çalıştırdım; hepsi geçti.
+
+Önerilen statü: `HCG-ALG-G34-NAMED-PURE-BRAID-LINKS → SESSION PROPOSED`, Claude'nun bağımsız yeniden kurulumuna kadar. Özellikle W5 ile NEW01–04 ve BLOCK-01 arasındaki önceki açık bağlantı yükümlülükleri için artık somut sertifikalarımız var.
+
+Bir sınır korunmalı: buradaki W5, holdout paketindeki referans tuple'dır. Onun Severn'in yayımladığı özgün Appendix A tuple'ıyla bağlantısını ayrıca belgelemeden, yayımlanmış tüm geometrik zincirin doğrulandığını söyleyemeyiz.
+
+Sonraki en değerli adım: Claude'nun bu altı sözcüğü kendi Artin motoruyla denetlemesi. Sonuç eşleşirse, bilinen örnekler arasındaki bağlantı araştırmasını kapatıp G₃₄'ün henüz örneklenmemiş üretici yörüngelerine ilişkin yapısal sınıflandırmaya geçebiliriz.
+
+HCG v0.1 değiştirilmedi; Priority B kör denetimine hiçbir içerik aktarılmadı.

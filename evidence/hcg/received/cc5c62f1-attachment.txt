@@ -1,0 +1,99 @@
+## Severn v2 — beş halkalı ardıl inceleme tamamlandı
+
+[SESSION — CHANGE-FOCUSED SCIENTIFIC REVIEW]
+
+Karar: Claude'nun beş teorem halkasına ilişkin karşılaştırmasını doğruladım. Engelleyici bir bilimsel uyumsuzluk bulmadım.
+
+`HCG-OPEN-SEVERN-V2`, Theorem A/B kanıt zincirinin v1/[386] → v2 ardıl incelemesi kapsamında kapatılmaya hazır. Bu, v2'nin bütün teoremlerinin yeniden ispatlandığı veya insan hakem denetiminden geçtiği anlamına gelmiyor.
+
+### 1. Bağımsız karşılaştırma sonuçları
+
+Üç birincil kaynağın ilgili teorem ifadelerini ve ispat bölümlerini hedefli olarak karşılaştırdım: `hexagon:2610.00387v1`, `hexagon:2610.00386v1` ve `hexagon:2610.00387v2`.
+
+| Kanıt halkası                          | Sonuç               | Önemli kapsam farkı                                                                                             |
+| -------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Brauer / (L) — v2 Thm 5.1              | CHECKED             | v1 Thm 3.1 ile aynı çıkarım; kuaterniyonik parite gerekçesi genişletilmiş                                       |
+| Supplier / PO-2 — v2 Prop 4.6, Cor 4.7 | CHECKED             | [386] ile aynı mekanizma; yeni Lemma 4.4, Schoen'deki eksik durumu kapatıyor                                    |
+| Spreading / PO-3 — v2 Thm 6.2          | CHECKED             | Aynı hipotezler ve gerçekten her üye sonucu                                                                     |
+| Polarizasyon / PO-6 — v2 Prop 7.1      | CHECKED — crosswalk | Tam \\(H\simeq qh\\) veya \\(q\bar h\\) özdeşliği [386]'nın ispatında zaten mevcut                              |
+| Compensation / PO-1 — v2 Prop 10.2     | CHECKED             | Eski genel önerme, bölünmüş diskriminant durumuna özelleştirilmiş; \\(w_j\cup w_j=0\\) artık açıkça ispatlanmış |
+
+Bunlar metinlerin harfiyen aynı olduğu anlamına gelmiyor. Özellikle supplier halkasında yeni bir ispat, compensation halkasında ise kapsam daraltması var. Ancak Theorem A/B için gereken çıkarımlar korunuyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++4
+
+
+
+### 2. Bileşen bağlantısı v2'ye doğrudan uygulanıyor
+
+[SOURCE + SESSION] v2 §3.1, sıralı dal noktalarını ve pure-braid yörüngelerini kullanıyor. §9 da Severn'in eşli tuple'ını doğrudan başlangıç verisi olarak seçiyor.
+
+Bu nedenle önceden doğruladığımız 618 harflik saf braid, Severn'in v2 datumunu W5 ile aynı sıralı Hurwitz bileşenine yerleştiriyor. Saf olmayan ilk 90 hamle bu sonuca ulaşmak için artık gerekli değil.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+### 3. H0 için ek exact kontrol
+
+Claude'nun `h0_pants_severn.py` dosyasında küçük bir uygulama kusuru buldum:
+
+```
+assert P == eye(n) or True
+```
+
+Bu satır her zaman geçiyor; sınır çarpımının birim olduğunu denetlemiyor.
+
+[SESSION — INDEPENDENT COMPUTATION] Bunun için Python standart kütüphanesiyle ayrı bir exact uygulama yazdım. Özgün `tuple_pairs_D3.json` dosyasından:
+
+Sınır çarpımı
+
+# 18/18
+
+Birim, exact
+
+H0
+
+# 18/18
+
+\\(H^1\_{\mathrm{par}}=0\\)
+
+Bu küçük uygulama kusuru artık bağımsız kontrolle giderilmiş bir kanıt boşluğudur; yeni revizyon turunu gerektirmez.
+
+## 4. Önerilen HCG kayıt durumu
+
+| Kayıt                                  | Önerilen durum                                        |
+| -------------------------------------- | ----------------------------------------------------- |
+| Δ26 addendum 2 — beş halkalı crosswalk | CHECKED                                               |
+| `HCG-OPEN-SEVERN-V2`                   | CLOSED adayı, Theorem A/B ardıl incelemesiyle sınırlı |
+| OPEN 3 — Appendix A tekrarı            | Önceki CLOSED adayı korunur                           |
+| OPEN 5 — genel cup formülü             | Önceki CLOSED adayı korunur; v2 Lemma 7.2 dayanağıyla |
+| Severn v2 Theorems A/B/C               | CLAIMED                                               |
+| v2 §11 ve §12                          | Bu incelemenin dışında                                |
+| HCG v0.2 ADOPTED                       | Değişmedi                                             |
+
+Üçüncü aile denetimi özgün olarak v1/[386] için yapılmıştı. Bu karşılaştırma, aynı kanıt halkalarının v2'de korunduğunu doğruluyor; üçüncü tarafın v2'yi ayrıca okuduğu şeklinde kaydedilmemeli.
+
+## 5. Denetim paketi
+
+Bağımsız beş halkalı karşılaştırma raporu — English Markdown
+
+Tam yeniden üretim paketi — ZIP
+
+Paket SHA-256:
+
+`5f08ecc20aceb1df83ce74b8cb3d600af8a83eda92e1d82651961d77e8eefed4`
+
+Paket, Claude'nun değiştirilmemiş raporunu, bağımsız H0 betiğini, exact sonuçları ve manifesti içeriyor. Temiz tekrar PASS; manifest 6/6 PASS.
+
+Sonuç: Δ26'nın son bilimsel inceleme yükümlülüğü de karşılandı. PI'nin kayıt kararıyla `HCG-OPEN-SEVERN-V2` belirtilen kapsamda kapatılabilir. Aynı zinciri tekrar incelemek yerine, HCG araştırmasının yeni matematiksel hedeflerine geçmek daha verimli olacaktır.
+
+HCG v0.2 geçerli kalıyor; v0.3 için henüz benimseme veya yayın işlemi yapılmadı.

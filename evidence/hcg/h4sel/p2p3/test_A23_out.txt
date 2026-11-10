@@ -1,0 +1,2 @@
+[A:W5] m=10 d=4: A2 holds True; A3 holds for all 45 pairs True; cut formula on all subsets of size<=3 True
+[A:NEW01] m=10 d=4: A2 holds True; A3 holds for all 45 pairs True; cut formula on all subsets of size<=3 True

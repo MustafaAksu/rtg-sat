@@ -1,0 +1,14 @@
+INITIAL MANIFESTS PASS
+{
+  "power_entries_checked": 9872,
+  "cyclic_restrictions_checked_including_center": 1408,
+  "individual_eigenmultiplicities_checked": 20860,
+  "characters_checked": 20,
+  "tables_checked": 9
+}
+NEGATIVE CONTROLS 4
+ALL RAW-DATA AND EXACT BUDGET CHECKS PASS
+PACKAGE MANIFEST 20/20 PASS
+SOURCE MANIFEST 8/8 PASS
+CHARACTER OUTPUT: 20/20; BYTE-IDENTICAL TO SOURCE VERIFY_OUT.JSON
+FRESH REPLAY PASS — NO GAP EXECUTED; SHARED CTBLLIB INPUT
