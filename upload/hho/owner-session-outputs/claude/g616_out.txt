@@ -1,0 +1,10 @@
+P1 n(-1)=1: d(-1),d(z),d(w^2),d(w^2) + 8 pairs   predict [2] | group order (capped 50000): 50000
+P1 n(-1)=1: d(-1),d(z),d(w^2),d(w^2) + 8 pairs   predict [2]: N=20 sum c=20 dim=8 det=54 sig=(4, 4, 0) class=[2]
+P2 n(-1)=1: d(-1),d(w),d(w),d(z^-1) + 8 pairs    predict [2] | group order (capped 50000): 50000
+P2 n(-1)=1: d(-1),d(w),d(w),d(z^-1) + 8 pairs    predict [2]: N=20 sum c=20 dim=8 det=54 sig=(4, 4, 0) class=[2]
+P3 n(-1)=3: 3 d(-1), d(z),d(w^2),d(w^2) + 7 pairs predict [2] | group order (capped 50000): 50003
+P3 n(-1)=3: 3 d(-1), d(z),d(w^2),d(w^2) + 7 pairs predict [2]: N=20 sum c=20 dim=8 det=27/8 sig=(4, 4, 0) class=[2]
+Q0 n(-1)=0: d(z),d(z^-1),d(z),d(z^-1) + 8 pairs  predict [1] | group order (capped 50000): 50006
+Q0 n(-1)=0: d(z),d(z^-1),d(z),d(z^-1) + 8 pairs  predict [1]: N=20 sum c=20 dim=8 det=324 sig=(4, 4, 0) class=[1]
+Q2 n(-1)=2: d(-1),d(-1),d(z),d(z^-1) + 8 pairs   predict [1] | group order (capped 50000): 50000
+Q2 n(-1)=2: d(-1),d(-1),d(z),d(z^-1) + 8 pairs   predict [1]: N=20 sum c=20 dim=8 det=81 sig=(4, 4, 0) class=[1]

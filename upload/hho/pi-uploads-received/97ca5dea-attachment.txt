@@ -1,0 +1,110 @@
+## HHO Addendum 12 — temel karar
+
+[SESSION — ALG/NUM CHECKED] P1–P3 gerçekten \\(d=6\\), parabolik boyut 8, imza \\((4,4)\\) ve bölünmemiş \\([2]\\) diskriminantını sağlıyor. Ancak \\((D)\\) dominans koşulunu sağlamıyorlar. Bunu sayısal period-rank aracına ihtiyaç duymadan, önceki HCG indüklenmiş-period teoremiyle gösterebiliyoruz.
+
+Bu önemli bir ayrım:
+
+\\[ N=20,\qquad \dim\mathcal H=17\ge16 \\]
+
+olması dominans için yalnızca gerekli koşuldur. P1–P3'te period haritası daha küçük boyutlu bir modül uzayı üzerinden faktörleşiyor.
+
+### 1. P1–P3 için kesin period-rank üst sınırı
+
+Monomiyal temsil, altı yapraklı ara örtü \\(Y\to\mathbb P^1\\) üzerinde rank-bir yerel sistemden indükleniyor.
+
+Önceki HCG indüklenmiş-period sonucu:
+
+\\[ \operatorname{rank}d\mathrm{Per}\_{\sigma} \le 3g(Y)-3+s, \\]
+
+burada \\(s\\), indükleyen rank-bir sistemin \\(Y\\) üzerindeki etkin monodromi noktalarının sayısıdır.
+
+| Veri | Transpozisyon dalı | \\(g(Y)\\) | \\(s\\) | Period rankı üst sınırı |
+| ---- | ------------------ | ---------- | ------- | ----------------------- |
+| P1   | 16                 | 3          | 4       | 10                      |
+| P2   | 16                 | 3          | 4       | 10                      |
+| P3   | 14                 | 2          | 6       | 9                       |
+| Q0   | 16                 | 3          | 4       | 10                      |
+| Q2   | 16                 | 3          | 4       | 10                      |
+
+Riemann–Hurwitz:
+
+\\[ 2g(Y)-2=-12+N\_{\mathrm{swap}}. \\]
+
+Transpozisyon dallarının kareleri birim olduğundan indükleyen rank-bir yerel sistem bu noktalar üzerinde etkin monodromi taşımıyor; etkin noktalar yalnız diagonal dallardan geliyor.
+
+Dolayısıyla
+
+\\[ \boxed{ \operatorname{rank}d\mathrm{Per}\_{\rm P1}, \operatorname{rank}d\mathrm{Per}\_{\rm P2}\le10, \qquad \operatorname{rank}d\mathrm{Per}\_{\rm P3}\le9. } \\]
+
+Hedef 16 olduğundan üçü de \\((D)\\)'yi ihlal ediyor.
+
+Bu, monomiyal dışlamanın P1–P3 üzerinde tam olarak nasıl işlediğini açıklıyor. \\((L)\\)'nin geçerli olup olmadığını bilmemiz gerekmiyor.
+
+### 2. Üretilen grup da kesin olarak belirlendi
+
+[ALG — bağımsız ispat] Kaynak betiğinin 50.000 elemanlık taraması, üretilen grubun tam \\(G(6,1,6)\\) olduğunu kanıtlamıyordu.
+
+Bunu grup enumerasyonu yapmadan doğruladım:
+
+- Transpozisyonların kenarları altı koordinatı bağlıyor; permütasyon görüntüsü \\(S_6\\).
+- Her tuple, \\(\zeta_6\\) veya \\(\zeta_6^{-1}\\) değerli bir diagonal yansıma içeriyor.
+- Konjugasyonla bütün koordinatlardaki diagonal \\(\mu_6\\) grupları üretiliyor.
+
+Dolayısıyla beş tuple'ın tamamında
+
+\\[ \boxed{ \Gamma=G(6,1,6),\qquad |\Gamma|=6^6\cdot6!=33\\,592\\,320. } \\]
+
+Bu, bağlılık ve mutlak indirgenemezlik açısından önceki 50.000 sınırından daha güçlü bir sertifikadır.
+
+### 3. Hesapların yeniden üretimi
+
+[NUM — SAME-ENGINE REPLAY] Kaynak ZIP manifesti 4/4 PASS. Orijinal Gram motorunda yalnız kesmeli grup enumerasyonu atlandı; parabolik kohomoloji ve Hermitik determinant hesapları değiştirilmedi.
+
+| Veri | Determinant | İmza        | Norm sınıfı |
+| ---- | ----------- | ----------- | ----------- |
+| P1   | 54          | \\((4,4)\\) | \\([2]\\)   |
+| P2   | 54          | \\((4,4)\\) | \\([2]\\)   |
+| P3   | \\(27/8\\)  | \\((4,4)\\) | \\([2]\\)   |
+| Q0   | 324         | \\((4,4)\\) | \\([1]\\)   |
+| Q2   | 81          | \\((4,4)\\) | \\([1]\\)   |
+
+Ayrı bir standart-kütüphane uygulamasıyla beş tuple için çarpım-bir, grup üretimi, Chevalley–Weil yaşları, ara örtü cinsi ve period-rank sınırlarını da kontrol ettim. Bu ikinci uygulama Gram determinantlarını yeniden hesaplamıyor; o kontroller aynı motora dayalı.
+
+### 4. Severn ve HCG kaynak karşılaştırması
+
+[SESSION — TARGETED SOURCE REVIEW]
+
+HCG'nin `HCG_DSN_v0_3_PENDING_DELTAS (6).md`, Δ27 addendum 1 metnini okudum. Orada \\(d=6\\) durumunun \\(G\_{34}\\)'e indirgenmesi kaydediliyor; ancak bu sonuç monomiyal grubun dışlanmasına bağlı.
+
+29 Ekim tarihli `H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` §2 ise Severn v1 §8'deki monomiyal dışlamayı yeniden türetiyor:
+
+\\[ \dim H^1\_{\rm par}=8 \Longrightarrow 2\gamma-2+s=8 \Longrightarrow \operatorname{rank}d\mathrm{Per}\le\gamma+7\le12<16. \\]
+
+Bizim P1–P3 üst sınırlarımız bu genel teoremin daha kesin uygulamalarıdır.
+
+Kaynak sınırı: Severn v1 §8'in birincil PDF metnine doğrudan erişemedim. Dolayısıyla asıl makaledeki satırlarla özdeşliği doğruladığımı söylemiyorum. Fakat HCG'nin önceki bağımsız matematiksel türetimi, monomiyal dışlamayı P1–P3 için tamamlamaya yeterli.
+
+### 5. HHO kayıt kararı
+
+| Bulgu                                            | Önerilen statü                                                       |
+| ------------------------------------------------ | -------------------------------------------------------------------- |
+| \\((D)\\) dal sayısı bütçesi                     | THM — CHECKED                                                        |
+| P1–P3 nonsplit \\([2]\\), dengeli rank-8 veriler | ALG/NUM CHECKED                                                      |
+| Beş tuple'ın tam \\(G(6,1,6)\\) üretmesi         | ALG CHECKED                                                          |
+| P1–P3 için dominansın başarısızlığı              | THM — CHECKED, indüklenmiş-period teoremine bağlı                    |
+| P1–P3 için (L)                                   | OPEN, fakat (D) başarısız olduğundan fizibilite kararını etkilemiyor |
+| Genel \\((L)+(D)\Rightarrow[1]\\)                | OPEN                                                                 |
+
+Bilimsel sonuç: Addendum 12, HCG'nin monomiyal dışlamasını çürütmüyor. Tam tersine, nonsplit diskriminant ile doğru Hurwitz boyutunun birlikte bulunmasının dominansı garanti etmediğini somut olarak gösteriyor.
+
+Bu nedenle P1 üzerinde ayrıca sayısal 16×16 period-rank hesabı yapmak zorunlu değil: analitik üst sınır 10 zaten kesin bir dışlama sertifikası.
+
+HHO Addendum 12 — bağımsız bilimsel inceleme (English)
+
+Kaynak ZIP, bağımsız grup/bütçe betiği ve hesap çıktıları
+
+ZIP SHA-256: `5f64412e3a44af4ef32d830f6ac5603da753a0377361b737423e364c86f3e0c9` · Manifest 6/6 PASS
+
+Sonraki araştırma önceliği: Daha fazla \\(d=6\\) monomiyal tuple taramak yerine, period faktörizasyonundan kaçabilen, sadık ve nonsplit temsilleri araştırmak daha değerli. HHO genel engel programında bu, aritmetik diskriminant engellerinin yanına güçlü bir geometrik engel olarak eklenmeli.
+
+HHO noncanonical kalıyor; HCG/RTG kayıtlarında ve PI benimseme kararlarında değişiklik yapılmadı.

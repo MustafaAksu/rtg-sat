@@ -1,0 +1,105 @@
+## HHO Addendum 5 — bağımsız inceleme sonucu
+
+[SESSION] G₃₄'ün 5-blok verileri doğru. Önerilen Brauer-ağacı yaprak kriteri, açık hipotezlerle geçerli bir teorem adayına dönüşüyor. Ancak W5 için henüz yeni bir diskriminant dışlaması elde edilmiş değil.
+
+### 1. GAP sonuçlarının kontrolü
+
+Gönderilen GAP çıktısını ve Addendum 5'i okudum. Ayrışım matrisini bağımsız Python hesabıyla yeniden çözdüm.
+
+| Kontrol                                  | Sonuç                                |
+| ---------------------------------------- | ------------------------------------ |
+| Grup mertebesi                           | \\(39\\,191\\,040=2^9 3^7 5\cdot7\\) |
+| \\(p=2\\) blok defekti                   | 9, karakter yüksekliği 1             |
+| \\(p=5\\) blok defekti                   | 1                                    |
+| Sıradan karakter dereceleri              | \\(6,84,126,336,384\\)               |
+| Brauer dereceleri                        | \\(6,78,126,258\\)                   |
+| Brauer ağacı                             | \\(6-84-336-384-126\\)               |
+| Altı-boyutlu karakterin konumu           | Yaprak                               |
+| \\(S\\)'yi içeren diğer sıradan karakter | Yalnız \\(\psi\_{84}\\)              |
+
+[SOURCE] Grup tanımlaması için de ek doğrulama buldum: 1993 tarihli Matsumoto–Sasaki–Takayama–Yoshida makalesi \\(G\_{34}\\)'ü \\(6.PSU(4,3).2\\) yapısıyla tanımlıyor. CTblLib de `6_1.U4(3).2_2` ile `6.U6(2)M6` adlarını aynı altgrup yapısında kullanıyor. Bununla birlikte dört adaydan hangisinin seçilmiş W5 yansıma karakteri olduğu hâlâ belirlenmeli.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://numdam.org\&sz=32)
+
+numdam.org+1
+
+
+
+### 2. Yaprak kriterinin matematiksel değerlendirmesi
+
+[THM — koşullu, ispat denetlendi]
+
+\\(L=M\cap V\_\Omega\\), \\(L'=M\cap V\_\Omega^\perp\\) ve \\(M\\) unimodüler olsun.
+
+Standart integral gluing teorisi:
+
+\\[ L^\\#/L\simeq L'^\\#/L' \\]
+
+verir; bu izomorfizma \\(G\\)-eşdeğişimlidir.
+
+\\(\chi\\)'nin mod-5 indirgemesi tek bir basit modül \\(S\\) olduğundan \\(L^\\#/L\\)'nin bileşim faktörleri yalnız \\(S,\bar S\\) olabilir.
+
+Öte yandan ayrışım matrisine göre \\(\chi\\)'nin dışında \\(S\\)'yi taşıyan tek sıradan karakter \\(\psi\_{84}\\)'tür. Dolayısıyla
+
+\\[ m(\psi\_{84})=0 \\]
+
+ise \\(L'\\) bu bileşim faktörlerini taşıyamaz. Böylece
+
+\\[ \boxed{L^\\#/L=0.} \\]
+
+Bu gluing çıkarımını doğru buluyorum.
+
+Bir düzeltme gerekli: \\(\chi\\) ve \\(\bar\chi\\)'nin 5-blok idempotentleri genellikle tek tek selfadjoint değildir; adjoint altında birbirlerine dönüşürler. Toplamları selfadjoint'tir. İspat bu eşlenik blok çiftini kullanmalı.
+
+### 3. Sekiz-boyutlu diskriminanta geçiş
+
+[SESSION — koşullu THM] \\(\chi\\)'nin \\(K_5\\) üzerinde gerçekleştirildiği ve integral Hermitik Morita eşleştirmesinin korunduğu varsayımıyla, altı-boyutlu basit modülün mutlak indirgenemezliği tam matris cebiri verir:
+
+\\[ R[G]\twoheadrightarrow M_6(R), \qquad R=\mathcal O\_{K,5}. \\]
+
+Bu durumda \\(L\\)'nin unimodülerliği, multiplicity kafesinin Hermitik formunun mükemmelliğine taşınır.
+
+Sonuç:
+
+\\[ \boxed{ m(\psi\_{84})=0 \Longrightarrow (\det h_W,-3)\_5=+1. } \\]
+
+Bu, pozitif defektte yeni ve anlamlı bir destek engeli. Sıfır-defekt teoreminin doğal bir genişletmesi.
+
+Ancak \\(m(\psi\_{84})>0\\) durumunda diskriminantın mutlaka 5-katkısı taşıdığını söyleyemeyiz. Brauer ağacı hangi modüllerin gluing'e katılabileceğini gösteriyor; gluing grubunun uzunluğunu ve determinant paritesini tek başına belirlemiyor.
+
+## 4. W5 için hesap tek bir karakter değerine indirgeniyor
+
+[ALG] Genus-sıfır, 20 involüsyonlu örtü için tam \\(H^1(C)\\) içindeki \\(\psi\_{84}\\) çokluğu:
+
+\\[ m(\psi\_{84}) = -168+\sum\_{j=1}^{20} \operatorname{rank}(1-\psi\_{84}(g_j)). \\]
+
+Eğer bütün dallar aynı yansıma sınıfındaysa:
+
+\\[ \boxed{ m(\psi\_{84})=672-10\psi\_{84}(g\_{\mathrm{ref}}). } \\]
+
+Altı-boyutlu yansıma karakterinde \\(\chi(g\_{\mathrm{ref}})=4\\) olması, doğru sınıfı belirlemek için kullanılabilir.
+
+Bunun için ayrıca büyük bir GAP taramasına gerek yok. Dört aday karakterin mertebe-2 sınıflarını, ilgili \\(\psi\_{84}\\) komşusunu ve Chevalley–Weil değerlerini çıkaran hedefli bir betik hazırladım.
+
+### 5. Kayıt ve sonraki adım
+
+| Kalem                                               | Önerilen durum                                        |
+| --------------------------------------------------- | ----------------------------------------------------- |
+| 5-blok ve ayrışım matrisi                           | SOURCE-CHECKED + bağımsız aritmetik kontrol           |
+| Yaprak/gluing lemması                               | SESSION THM — koşullu                                 |
+| İntegral Morita ile \\(h_W\\)'ye geçiş              | Kanıt güçlendirildi; form uyumluluğu açıkça korunmalı |
+| W5 için \\(m(\psi\_{84})\\)                         | OPEN                                                  |
+| \\(5\\)'te diskriminant katkısının zorunlu olmaması | OPEN                                                  |
+| Genel \\((L)+(D)\Rightarrow[1]\\)                   | OPEN                                                  |
+
+Tam bağımsız inceleme raporu (English)
+
+GAP hedefli betiği
+
+Kaynaklar, exact matris kontrolü ve tekrar paketi
+
+Paket temiz dizinde 7/7 manifest PASS ve Python çıktısı bayt düzeyinde aynı. GAP betiğini burada çalıştırmadım.
+
+Önerdiğim öncelik: Önce W5'in \\(\psi\_{84}\\) çokluğunu belirleyelim. Eğer sıfırsa yeni yaprak kriteri G₃₄'ün 5-adik diskriminant desteğini kapatır. Pozitifse araştırma, ilgili gluing uzunluğu ve paritesine geçer.
+
+HHO noncanonical kalıyor; HCG/RTG kaynakları, PO-6 ve PI benimseme kararları değişmedi.
