@@ -32,6 +32,19 @@ FROZEN_SHA256 = "1e35ee664a6e6cea4e4d9402398d22e7b0d39f1452007b52705c47139ff61c4
 def _sha(path):
     return hashlib.sha256(open(path, "rb").read()).hexdigest()
 
+# locked execution contract (prereg sections 3, 5, 6); validated against the ACTUAL values
+# recorded in every cell row and in the G-CODE record
+LOCKED_BURN, LOCKED_LYAP, LOCKED_NQ, LOCKED_EPS = 70000, 200000, 4, 1e-3
+INSTRUMENT_SHA256 = _sha(os.path.abspath(__file__))     # identity of this executor as run
+
+def contract_fields(burn, lyap, nq, eps):
+    """Actual horizons / quarter count / threshold / executor identity, as strings."""
+    return {"burn": str(int(burn)), "lyap": str(int(lyap)), "nq": str(int(nq)),
+            "eps_lam": repr(float(eps)), "instrument_sha256": INSTRUMENT_SHA256}
+
+def locked_contract():
+    return contract_fields(LOCKED_BURN, LOCKED_LYAP, LOCKED_NQ, LOCKED_EPS)
+
 def load_frozen():
     h = _sha(FROZEN)
     if h != FROZEN_SHA256:
@@ -62,7 +75,7 @@ CLUSTER_IDX = (0, 6, 12, 18, 24)
 TOL_CLUSTER_ORBIT = 0.0        # bitwise: any nonzero |th1-th2| + |w1-w2| over burn + measurement
 LEAK_FRACTION     = 1e-6       # f_perp above this: leakage detected (not dominance)
 DOMINANT_FRACTION = 0.5        # f_perp above this: cluster-breaking sector dominates the tangent
-CAPTURED_FRACTION = 0.99       # f_perp at the END of the window at or above this: sector captured
+CAPTURED_FRACTION = 0.99       # f_perp at the LAST STEP at or above this: endpoint statement only
 TOL_CONTRACT      = 1e-8       # |lambda_hist - neutral-aware prediction| per window (in-sector runs only)
 
 # spatial orthonormal basis for tri0 (node order 0,1,2)
@@ -106,6 +119,7 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
     (p0, p1), (u0, u1) = ics[ic_index]
     th = np.array([0.0, p0, p0+p1]); w = np.array([0.0, u0, u1])*dt
     rec = {"ic": ic_index, "theta0": th.tolist(), "w0": w.tolist(), "status": "ok"}
+    rec.update(contract_fields(burn, lyap, NQ, pe.EPS_LAM))     # actual values used by this run
     is_cluster = (rung == "tri0" and ic_index in CLUSTER_IDX)
     max_dist = 0.0
     ok = True
@@ -198,7 +212,7 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
             rec["fperp_Q"] = list(fperp_q); rec["fperp_final"] = fperp_last
             rec["sector_status"] = ("orbit-left-cluster" if max_dist > TOL_CLUSTER_ORBIT else
                                     "SECTOR-CAPTURED" if fperp_last >= CAPTURED_FRACTION else
-                                    "TRANSVERSE-DOMINANT-NOT-SUSTAINED" if dominance_step is not None else
+                                    "DOMINANCE-DETECTED-NOT-99PCT-CAPTURED" if dominance_step is not None else
                                     "SECTOR-LEAKAGE-DETECTED" if leak_step is not None else "in-sector")
             eps = pe.EPS_LAM
             par_pos = all(x > eps for x in rec["lamQ_par_block"]) and rec["lam_par_block"] > eps
@@ -217,7 +231,8 @@ FIELDS = ["cell", "rung", "pair", "kappa", "role", "hist_ref", "ic", "cluster", 
           "cluster_max_orbit_dist", "lam_par_block", "lam_perp_block", "lamQ_par_block", "lamQ_perp_block",
           "lam_hist_pred", "lamQ_hist_pred", "contract_max_dev", "lam_par6", "lam_perp6",
           "leak_hist_t", "leak_par6", "leak_perp6", "sector_status", "leak_step", "dominance_step", "fperp_Q", "fperp_final", "cluster_growth_type", "seed6_crosscheck",
-          "theta0", "w0", "frozen_sha256", "numpy", "python"]
+          "theta0", "w0", "frozen_sha256", "numpy", "python",
+          "burn", "lyap", "nq", "eps_lam", "instrument_sha256"]
 
 def fmt(x):
     if isinstance(x, float): return repr(x)
@@ -245,31 +260,40 @@ def run_cell(pe, cid, outdir="icid_results", log=print):
     log(f"cell {cid}: n_chaos = {nch}  (historical reference: {ref})  -> {path}")
     return nch
 
-def gcode(pe, log=print):
-    """G-CODE, full horizon: frozen chaos_fraction vs instrumented H count on cells 1-4."""
+def gcode(pe, outdir="icid_results", log=print):
+    """G-CODE: frozen chaos_fraction vs instrumented H count on cells 1-4, both at the frozen
+    module's current horizons (pe.BURN_A, pe.LYAP_A), which are written into the record."""
     allok = True
+    cf = contract_fields(pe.BURN_A, pe.LYAP_A, pe.N_QUARTERS, pe.EPS_LAM)
     for cid in (1, 2, 3, 4):
         rung, pair, kappa, ref, _ = CELLS[cid]
         n_frozen = int(round(pe.chaos_fraction(rung, pair, kappa)*pe.N_IC))
-        n_inst = sum(run_ic(pe, rung, pair, kappa, ic, diagnostics=False).get("class") == "CHAOS"
-                     for ic in range(pe.N_IC))
+        n_inst = sum(run_ic(pe, rung, pair, kappa, ic, burn=pe.BURN_A, lyap=pe.LYAP_A,
+                            diagnostics=False).get("class") == "CHAOS" for ic in range(pe.N_IC))
         good = (n_frozen == n_inst); allok &= good
         log(f"G-CODE cell {cid} {rung}/{pair} kappa={kappa}: frozen={n_frozen} instrumented={n_inst} "
             f"{'PASS' if good else 'FAIL'}")
-    os.makedirs("icid_results", exist_ok=True)
-    with open(os.path.join("icid_results", "icid_gcode.txt"), "w") as f:
-        f.write("G-CODE " + ("PASS" if allok else "FAIL") + " frozen_sha256=" + FROZEN_SHA256 + "\n")
+    os.makedirs(outdir, exist_ok=True)
+    with open(os.path.join(outdir, "icid_gcode.txt"), "w") as f:
+        f.write("G-CODE " + ("PASS" if allok else "FAIL") + " frozen_sha256=" + FROZEN_SHA256
+                + "".join(f" {k}={v}" for k, v in cf.items()) + "\n")
     return allok
 
 def validate(outdir):
     """Fail-closed completeness/identity validation of the result set (prereg section 6)."""
     import glob
     problems = []; cells = {}
+    want = locked_contract()
     g = os.path.join(outdir, "icid_gcode.txt")
     if not os.path.exists(g): problems.append("G-CODE result file missing")
     else:
         t = open(g).read().strip()
-        if not t.startswith("G-CODE PASS") or FROZEN_SHA256 not in t: problems.append(f"G-CODE not PASS: {t!r}")
+        if not t.startswith("G-CODE PASS") or f"frozen_sha256={FROZEN_SHA256}" not in t.split():
+            problems.append(f"G-CODE not PASS: {t!r}")
+        kv = dict(x.split("=", 1) for x in t.split() if "=" in x)
+        badg = sorted(k for k in want if kv.get(k) != want[k])
+        if badg: problems.append("G-CODE record does not match the locked execution contract "
+                                 f"(horizons / quarters / epsilon / executor identity): {badg}")
     paths = sorted(glob.glob(os.path.join(outdir, "icid_cell*.csv")))
     for p in paths:
         rows = list(csv.DictReader(open(p)))
@@ -284,6 +308,9 @@ def validate(outdir):
             if (r["rung"], r["pair"], r["role"]) != (rung, pair, role) or abs(float(r["kappa"])-kappa) > 1e-12 \
                or r["frozen_sha256"] != FROZEN_SHA256 or r["hist_ref"] != ("" if ref is None else str(ref)):
                 problems.append(f"cell {cid}: row metadata does not match the locked CELLS table"); break
+        badc = sorted({k for r in rows for k in want if r.get(k) != want[k]})
+        if badc: problems.append(f"cell {cid}: recorded execution contract does not match the locked one "
+                                 f"(horizons / quarters / epsilon / executor identity): {badc}")
         ics = sorted(int(r["ic"]) for r in rows)
         if ics != list(range(25)): problems.append(f"cell {cid}: IC set is not exactly 0..24 ({len(ics)} rows)")
         cl = sorted(int(r["ic"]) for r in rows if r["cluster"] == "1")
@@ -300,7 +327,8 @@ def summary(outdir="icid_results", log=print):
     out = []
     valid = not problems
     if valid:
-        out.append("RESULT SET: COMPLETE AND VALID (14 cells x 25 ICs, G-CODE PASS)")
+        out.append("RESULT SET: COMPLETE AND VALID (14 cells x 25 ICs, G-CODE PASS; "
+                   + " ".join(f"{k}={v}" for k, v in locked_contract().items()) + ")")
     else:
         out.append("RESULT SET: INCOMPLETE-OR-INVALID -- no decision is issued; lines below are partial diagnostics only")
         out += [f"  problem: {p}" for p in problems]
@@ -334,9 +362,15 @@ def summary(outdir="icid_results", log=print):
             if st == "in-sector": verdict = "CONTRACT-OK" if dev <= TOL_CONTRACT else "CONTRACT-DEVIATION"
             elif st == "orbit-left-cluster": verdict = "unresolved (orbit-left-cluster)"
             elif st == "SECTOR-LEAKAGE-DETECTED": verdict = f"SECTOR-LEAKAGE-DETECTED at step {r['leak_step']} (contract not tested)"
-            elif st == "TRANSVERSE-DOMINANT-NOT-SUSTAINED":
-                verdict = f"TRANSVERSE-DOMINANT at step {r['dominance_step']}, not sustained (f_perp final {float(r['fperp_final']):.3g})"
-            else: verdict = f"SECTOR-CAPTURED (leak step {r['leak_step']}, dominance step {r['dominance_step']}, f_perp final {float(r['fperp_final']):.6f})"
+            elif st == "DOMINANCE-DETECTED-NOT-99PCT-CAPTURED":
+                ff = float(r["fperp_final"])
+                verdict = (f"DOMINANCE-DETECTED-NOT-99PCT-CAPTURED (first f_perp > 0.5 at step {r['dominance_step']}; "
+                           f"f_perp at last step {ff:.6f}: {'still > 0.5' if ff > DOMINANT_FRACTION else 'no longer > 0.5'})")
+            else: verdict = (f"SECTOR-CAPTURED [endpoint statement: f_perp at last step {float(r['fperp_final']):.6f} >= 0.99] "
+                             f"(leak step {r['leak_step']}, dominance step {r['dominance_step']})")
+            if st not in ("in-sector", "orbit-left-cluster"):
+                verdict += (" | f_perp at quarter ends " + r["fperp_Q"] + " | quarter rates hist " + r["lamQ_hist"]
+                            + " par " + r["lamQ_par_block"] + " perp " + r["lamQ_perp_block"])
             out.append(f"{tag}cell {cid} IC {r['ic']}: {verdict} | dev={dev:.3e} lam_hist={float(r['lam_hist']):+.6f} "
                        f"lam_par={float(r['lam_par_block']):+.6f} lam_perp={float(r['lam_perp_block']):+.6f} "
                        f"class={r['class']} growth={r['cluster_growth_type']} | 6-D seed cross-check: {r['seed6_crosscheck']}")

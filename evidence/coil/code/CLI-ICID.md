@@ -14,6 +14,8 @@ conda activate RTG
 
 # 0) hash of the frozen script in this clone (deposited: 1E35EE664A6E6CEA4E4D9402398D22E7B0D39F1452007B52705C47139FF61C46)
 Get-FileHash .\pairbc_experiment.py -Algorithm SHA256
+# executor identity; must equal the icid_experiment.py entry of the release manifest and is written into every result row
+Get-FileHash .\icid_experiment.py -Algorithm SHA256
 
 # 1) certificate (about 2 minutes) -- last line must be "CERTIFICATE PASS []"
 python -B icid_certificate.py
@@ -24,7 +26,7 @@ python -B icid_experiment.py --gcode
 # 3) the 14 cells, sequential (about 5-6 minutes per cell)
 python -B icid_experiment.py --all
 
-# 4) decision summary -- first line must be "RESULT SET: COMPLETE AND VALID"
+# 4) decision summary -- first line must start with "RESULT SET: COMPLETE AND VALID"
 python -B icid_experiment.py --summary
 Compress-Archive -Path .\icid_results -DestinationPath $HOME\icid_results.zip -Force
 ```
