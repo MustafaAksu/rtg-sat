@@ -53,27 +53,27 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 
 ## 5. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `0000000000000000000000000000000000000000`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `893d1e82f022df80a8a745f6bb483bbab91a193b`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/icid_experiment.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/icid_certificate.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/CLI-ICID.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/prereg/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/run/RUN-MM1-ICID-v1.0.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/run/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/README.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-icid-results/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-icid-chat-attachments/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-icid-chat-attachments/README.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `.gitignore` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/records/RM-02.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_INDEX.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_RMT.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md` | `d51bdb8112ecc80d826699240fbf9c7155b08faf59eda27117a37ccf570e5471` |
+| `evidence/coil/code/icid_experiment.py` | `8e6c9c3540913b54b9c08cecdded20cf5a2debfa8252c4204d9d775f9924513c` |
+| `evidence/coil/code/icid_certificate.py` | `09086b25b812c30b5a48f8f6f8c4d01e2db0119389a92b8032e149677990e22b` |
+| `evidence/coil/code/CLI-ICID.md` | `69fa1ce75861a7fd66ca605e59edf3e998521f159c177e7a31320e2766035f87` |
+| `evidence/coil/code/SHA256SUMS` | `c20a822851b8a3e9eae6f95b49e5d5b68e27a680c9549f128c1c66eadfd15473` |
+| `evidence/coil/prereg/SHA256SUMS` | `d59e21a58e4ee02a4f67dd9d79b04577858177ac0f6394e60caf04208247d285` |
+| `evidence/coil/run/RUN-MM1-ICID-v1.0.md` | `54626fe4e948f2e2f00034eae982e2af0f05856cb4e9cc7ccd4ec32d5a8d8b06` |
+| `evidence/coil/run/SHA256SUMS` | `52ff98babfbee9ee3dd9764dcb0957479fb937652622c5ace4b3580dc6158c37` |
+| `evidence/coil/outputs/SHA256SUMS` | `d4c801366d810db99725aec43e4313d1c3e551e449e77c0b5a6eefe1bd2b1227` |
+| `evidence/coil/outputs/README.md` | `0ed99d7f8924cd964aec981ed8437cadca1dde2bee0d1db2176f212a6ed70051` |
+| `upload/coil-icid-results/SHA256SUMS` | `f6d6a03ec066060ad6b1ccef86be05a694c1d2bed21493ec9c63cdc89cea135e` |
+| `upload/coil-icid-chat-attachments/SHA256SUMS` | `5cd2844ffb4f98ddd664b12c48e971e9a180921f21a82f4441dacd5da5f0d1ea` |
+| `upload/coil-icid-chat-attachments/README.md` | `0320e3b87e74c62d2a45f85442dc1ba65fc007b867bcbe0dfa24d3471d597495` |
+| `.gitignore` | `7efd758ab66a46571f0c5b4ac82e793369cfb4da548119765b9c2dece99d4a81` |
+| `coil/records/RM-02.md` | `aa60bb77926f8704d284c08bca9959b0a07ad1149b6693a6873c5e73652d7c83` |
+| `coil/COIL_INDEX.md` | `7c979d025fc8dcecf231be5a13b6e10513e298492b3d78d3e5340096ed4bc9cc` |
+| `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
