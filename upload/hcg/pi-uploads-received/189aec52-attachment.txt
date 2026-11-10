@@ -1,0 +1,113 @@
+## Karar: Δ25 ve Δ26 onaylandı; yeni araştırma hedefi belirlendi
+
+PI kararınızı şu kapsamda esas alıyorum:
+
+- Δ25 ve Δ26: v0.3 için bekleyen değişiklikler olarak onaylandı. OPEN 3, OPEN 5 ve `HCG-OPEN-SEVERN-V2`, doğrulanmış kapsamlarıyla kapatılabilir.
+- HCG v0.3: Henüz benimsenmedi. Mevcut geçerli kayıt v0.2 ADOPTED.
+- Araştırma önceliği: Bölünmemiş diskriminantlı Weil sekizlilerinin fizibilitesi. v0.3 taslağını hazırlamak için yeni araştırmayı durdurmayalım.
+
+Bu karar doğrultusunda ilk matematiksel fizibilite incelemesini gerçekleştirdim.
+
+## 1. İlk sonuç: Koşulların üçü somut olarak gerçekleştirilebiliyor
+
+[SESSION — yeni exact hesap; bağımsız ikinci denetim bekliyor]
+
+\\(K=\mathbb Q(\omega)\\), \\(\omega^2+\omega+1=0\\) üzerinde şu siklik örtü ailesini ele aldım:
+
+\\[ C_t:\quad y^6= \prod\_{i=1}^{5}(x-t_i)^2 (x-t_6)^3 \prod\_{i=7}^{9}(x-t_i)^4 (x-t\_{10})^5. \\]
+
+Bu eğrilerin düzgün projektif normalizasyonlarının cinsi 15. Jacobian'larının primitif \\(K\\)-izotipik faktörü sekiz boyutlu.
+
+Weil imzası
+
+# (4,4)
+
+Hermitik determinant
+
+# 3/2
+
+Diskriminant sınıfı [2]
+
+[SESSION — exact algebra] Severn v2 Lemma 7.2'nin cup formülünü bağımsız aritmetik uygulamasıyla hesapladım:
+
+\\[ \boxed{\det_K h=\frac32,\qquad[\det_Kh]=[2]\ne[1].} \\]
+
+\\(2\\), \\(\mathbb Q(\omega)\\) içinde inert olduğu için norm değildir. Ayrıca \\(3=N(1-\omega)\\).
+
+Bu ailenin \\(F^1\\) uzayı da açıkça yazılabiliyor. İki dört-boyutlu özuzayın bazları:
+
+\\[ \left\\{\frac{x^j\\,dx}{y}\right\\}\_{j=0}^{3}, \qquad \left\\{ \frac{x^j\prod_i(x-t_i)^{a_i-1}}{y^5}\\,dx \right\\}\_{j=0}^{3}. \\]
+
+Dolayısıyla açık holomorfik diferansiyeller + (4,4) imza + bölünmemiş diskriminant birlikte elde ediliyor.
+
+Ancak dördüncü koşulda açık bir engel var.
+
+## 2. (L) neden sağlanmıyor?
+
+Severn v2 Definition 4.5'e göre (L), bir abelyen çeşit üzerinde doğrudan tanımlanan bir özellik değil; sonlu grup, temsil, dal monodromileri ve uygun siklik tedarikçi karakterlerinin oluşturduğu kafes üzerine konulan koşul.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
+
+
+[SESSION — cebirsel kontrol] Yukarıdaki \\(C_6\\) ailesinde:
+
+| Tedarikçi adayı               | Sonuç                                       |
+| ----------------------------- | ------------------------------------------- |
+| \\(C_6\\), mertebe-6 karakter | Dallanma üsleri karşıt çiftlere ayrılamıyor |
+| \\(C_6\\), mertebe-3 karakter | \\(h=7\\), tek                              |
+| \\(C_3\\), mertebe-3 karakter | \\(h=15\\), tek                             |
+| Diğer altgruplar              | Mertebesi en az 3 olan karakter yok         |
+
+Dolayısıyla uygun tedarikçi bulunmuyor ve (L) başarısız. Ayrıca ailenin parametre boyutu \\(10-3=7\\); hedef modül boyutu 16 olduğu için (D) de sağlanamaz.
+
+Kontrol olarak beşer tane \\(1,2\\) dallanma üslü siklik üçlü örtüyü hesapladım. Orada (L) sağlanıyor, fakat determinant sınıfı \\([1]\\): yani bölünmüş durum.
+
+| Aile                      | Açık \\(F^1\\) | (4,4) | Bölünmemiş | (L)   |
+| ------------------------- | -------------- | ----- | ---------- | ----- |
+| Siklik \\(C_6\\) örneği   | Evet           | Evet  | Evet       | Hayır |
+| Siklik \\(C_3\\) kontrolü | Evet           | Evet  | Hayır      | Evet  |
+
+Bu test henüz dört koşulun tamamını sağlayan bir aile bulmadı. Fakat sorunun hangi kısmının zor olduğunu somutlaştırdı.
+
+## 3. Daha genel bir fizibilite sınırı
+
+[SESSION — ALG] Genus-sıfır transfer verisinde hedef parabolik kohomoloji boyutu 8 olduğunda
+
+\\[ \sum_j\operatorname{rank}\_K(1-\sigma(g_j))=8+2d, \qquad d=\dim_K\sigma. \\]
+
+Tam modül boyutu 16'yı elde etmek için en az 19 etkin dal noktası gerekiyor. Bu nedenle \\(d\ge6\\).
+
+Daha kuvvetlisi: \\(d=1\\) durumunda etkin dal noktası sayısı zorunlu olarak 10 olur. Temsilin çekirdeğinde kalan ek dallar izotipik faktöre yeni varyasyon katmaz. Dolayısıyla genus-sıfırda bir-boyutlu hedef temsil kullanan hiçbir aile (D) koşulunu sağlayamaz.
+
+En küçük gerçekçi hedef \\(d=6\\). Bu durumda yalnız iki etkin dal bütçesi kalıyor: 20 rank-bir monodromi veya 19 monodromiden biri rank-iki, diğerleri rank-bir.
+
+Bu, sonraki araştırma alanını önemli ölçüde daraltıyor.
+
+## 4. Önerdiğim sonraki bilimsel işlem
+
+Artık yeni bir genel teorem aramak yerine, önce \\(d=6\\) düzeyinde adayları şu sırayla elemeliyiz: karakter alanı \\(K\\), doğru Hodge boyutları ve dal bütçesi; ardından (L); ardından exact Hermitik diskriminant. Yalnız bu üç kapıyı geçen adaylarda açık \\(F^1\\) ve iç-nokta period-map türevi hesabına geçmek verimli olur.
+
+Bu yaklaşım, cinsi çok yüksek örtüler üzerinde sonuç vermeyecek diferansiyel hesaplarına başlamamızı önler.
+
+## Araştırma dosyaları
+
+Nonsplit Eightfold Feasibility — ilk bilimsel not (English)
+
+Exact hesap betiği, sonuç JSON'u, yeniden oynatma yönergesi ve manifest (ZIP)
+
+Paket, Python standart kütüphanesiyle sıfırdan yazılmış aritmetik uygulamasını içeriyor. Farklı kosikl bazları ve dal sıralarıyla determinantı kontrol ettim. Temiz klasörde yeniden üretim bayt düzeyinde PASS, manifest 4/4 PASS.
+
+Bilimsel statü: Yeni \\(C_6\\) determinantı ve (L) engeli `[SESSION — PROPOSED]`; henüz Claude'nun bağımsız denetiminden geçmedi. Severn v2'nin dayanak tanımları §2.1, Definition 4.5, Lemma 7.2 ve Proposition 7.1'dir.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+Önerim: v0.3 için yeni bir yayın döngüsü açmadan bu fizibilite koluna devam edelim. İlk bağımsız denetim, yukarıdaki \\(C_6\\) örneğinin diskriminantını ve (L) tedarikçi sayımını hedeflemeli. Sonra düşük boyutlu, gerçek bir nonabelyen transfer adayı aramalıyız.

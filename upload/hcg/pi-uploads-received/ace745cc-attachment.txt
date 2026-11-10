@@ -1,0 +1,210 @@
+## Sonuç: Lemma E, Lemma F ve Teorem R ispat denetimini geçti
+
+**[SESSION — THM, bağımsız inceleme]** Belirtilen varsayımlar altında üç sonuca da **CHECKED** öneriyorum. Böylece **\(d\le14\) dışlaması**, yalnız tarama sonucu değil, yazılı bir koşullu teorem hâline geliyor.
+
+Ancak sonraki literatür taramasını etkileyen bir kapsam düzeltmesi gerekiyor: **\(K\) üzerinde primitif olmak ile \(\mathbb C\) üzerinde primitif olmak aynı şey değil.** Lemma E’nin indirgemesi ilkini sağlıyor; Huffman’ın sınıflandırması ikincisini istiyor.
+
+Ayrıca Lemma F’yi güçlendiren ayrı bir çıkarım elde ettim: uygun simetrik/skaler durumda period rankı **15 değil, en fazla 12**. Bu güçlendirme henüz yalnız benim türetimim; ana denetim hükmünden ayrı **PROPOSED** kalmalı.
+
+## 1. Yeniden üretim ve kanıt kapsamı
+
+**[ALG — exact yeniden oynatma]** Paket manifesti **5/5 PASS**. Betiğin gerektirdiği `generic_engine.py` yeni ZIP’te bulunmuyordu; önceki özgün arşivden aynı hash’li sürümü kurtardım. Yalnız import yolunu değiştirerek çalıştırdım:
+
+\[
+\boxed{60/60\text{ PASS; çıktı dosyası bayt düzeyinde aynı}.}
+\]
+
+Buna ek olarak, kaynak motorunu kullanmayan ayrı bir uygulamada **27 blok-çevrimi determinant testi** yaptım. Hepsi geçti. \(\det(h_\tau)^{\ell-1}\) çarpanını kaldıran yanlış kontrol, beklenen 18 durumda reddedildi.
+
+Bu hesaplar **Lemma E’nin genel ispatının yerine geçmiyor**. Genel hükmü Hodge özdeşleştirmesi ve aşağıdaki eşleşme argümanı üzerinden değerlendirdim.
+
+## 2. Lemma E: indirgeme ve diskriminant korunumu doğru
+
+**[THM — iki bağımsız ispat incelemesi]**
+
+\[
+\sigma=\operatorname{Ind}_H^\Gamma\tau,\qquad
+Y=C/H,\qquad
+Y_\tau=C/\ker\tau
+\]
+
+kuruluşunda kritik adımı doğru kesinleştirmişsin: \(Y_\tau\to Y\), yalnız \(\tau\)-monodromisinin önemsiz olmadığı noktalarda dallanıyor. Dolayısıyla ilgili Hodge yapısı, \(Y\to\mathbb P^1\) haritasını değil, **\((Y,D_\tau)\) ve ayrık sonlu monodromi verisini** görüyor.
+
+Böylece
+\[
+\operatorname{rank}d\mathrm{Per}_\sigma
+\le 3\gamma-3+s
+\le 2r+5+(3-2r)\gamma.
+\]
+
+\(r\ge2\) ve \(\gamma\ge1\) olduğunda sağ taraf en fazla \(8\). Hedef rank \(16\) olduğundan:
+\[
+\boxed{\gamma=0,\qquad r\ge6.}
+\]
+
+Bu, yayımlanmış parabolik kohomoloji modeliyle uyumlu bir sonlu-örtü Hodge indirgemesidir; yalnız Euler karakteristiği hesabı değildir. [emis.de](https://emis.de/ft/47210)
+
+### Diskriminant adımı
+
+İndükleyen bloğa kısıtlama, \(H^1(C)\) üzerindeki çokluk eşleşmelerini özdeşleştiriyor. \(C\to Y_\tau\) pullback’i cup formunu pozitif tam sayı dereceyle çarpıyor. Trace normalizasyonları ayrıca rasyonel çarpan getirebilir; gereken sonuç:
+\[
+h_{M_\sigma}\cong q\,h_{M_\tau}
+\quad\text{veya eşlenik biçimi},\qquad q\in\mathbb Q^\times.
+\]
+
+Çokluk boyutu sekiz olduğundan
+\[
+q^8=N_{K/\mathbb Q}(q^4),
+\]
+ve dolayısıyla
+\[
+\boxed{[\operatorname{disc}M_\sigma]=[\operatorname{disc}M_\tau].}
+\]
+
+**İki sınır:** İndükleyen blok burada **\(K\)-tanımlı** olmalı. Ayrıca bu argüman, Severn’in tedarikçi kafesi koşulu **(L)’nin de taşındığını söylemiyor**. Yeni dışlama ispatında (L) kullanılmadığı için bu ikinci sınır sonucu bozmaz.
+
+## 3. Lemma F ve Teorem R
+
+### Lemma F’nin mevcut ispatı geçerli
+
+**[THM]** Simetrik standart temsil için
+\[
+\sigma\oplus\chi
+\simeq \operatorname{Ind}\chi'
+\]
+tamamlaması doğru. Önemsiz olmayan skaler yerel monodromilerin sayısı \(t\) ise:
+\[
+\dim H^1_{\mathrm{par}}(Y,\chi')=6+t,
+\]
+\[
+\operatorname{rank}d\mathrm{Per}_\sigma
+\le\gamma+5+t
+\le9+\frac{3t}{2}.
+\]
+
+Bütçeden \(t\le4\) çıkarımın doğru; böylece mevcut **rank \(\le15\)** hükmü geçiyor. Bu sonucu yalnız soyut bir “projektif bölüm \(A_{d+1}\) veya \(S_{d+1}\)” bilgisine değil, nottaki **gerçek standart/skaler temsil özdeşleştirmesine** bağlamalıyız.
+
+### Teorem R’nin bütün durumları kapanıyor
+
+**[THM — belirtilen (H) altında]** Normal yansıma altgrubunun hareket doğruları \(K\)-tanımlıdır. Bu nedenle onun ortogonal bileşenleriyle yapılan indirgeme, Lemma E’nin alan koşulunu gerçekten karşılıyor.
+
+İndirgemeden sonra rank en az altı olan indirgenemez yansıma altgrubu için sınıflandırma ve normalleyici adımları şu seçenekleri bırakıyor: monomiyal gruplar, \(A\)-tipi, \(E_6/E_7/E_8\) ve \(G_{34}\). İlgili sınıflandırma listesi ve normalleyici bilgilerini hedefli olarak yeniden kontrol ettim. [magma.maths.usyd.edu.au](https://magma.maths.usyd.edu.au/magma/handbook/text/1228)
+
+Monomiyal durum rank-bir indükleme sınırıyla; \(A\)-tipi Lemma F ile; \(E\)-tipleri bütçeyle eleniyor. \(G_{34}\) ise daha önce denetlenmiş yerellik teoremi ve rank-2 sınıflandırmasıyla bölünmüş sınıf veriyor.
+
+Doğru nihai ifade:
+\[
+\boxed{
+\begin{gathered}
+\dim_KM_\sigma=8,\quad
+\operatorname{rank}d\mathrm{Per}_\sigma=16,\quad
+\text{(H)’nin diğer koşulları},\\
+\Gamma\text{ bir kompleks yansıma içeriyor}
+\quad\Longrightarrow\quad
+[\operatorname{disc}M_\sigma]=[1].
+\end{gathered}
+}
+\]
+
+**Dominans koşulu çıkarılamaz.** Önceki \(C_6\) bölünmemiş ayırıcımız bu yüzden karşıörnek değildir.
+
+Bölünmemiş dominant durumda bütün etkin \(c_j\ge2\) olacağından:
+\[
+38\le2N_{\mathrm{eff}}\le\sum_jc_j=2d+8,
+\qquad
+\boxed{d\ge15.}
+\]
+
+**Sonuç:** \(d=10\) dâhil **\(d\le14\), belirtilen fizibilite sınıfında olumsuz kapanabilir**. Bu, bütün nonsplit sekizli ailelerin veya başka geometrik yöntemlerin dışlanması değildir.
+
+## 4. “Primitif grup” sonucunda gerekli düzeltme
+
+**[ALG — kapsam bulgusu]** Lemma E’den doğrudan şu çıkar:
+
+> \(K\)-tanımlı indüklemeler altında minimal bir temsilciye inebiliriz.
+
+Şunlar ise aynı önerme değildir:
+
+- Başlangıçtaki grup görüntüsü mutlaka primitiftir.
+- Minimal temsilci, \(\mathbb C\) üzerinde primitiftir.
+
+Bu farkın somut bir örneğini de kurdum. \(AGL(1,7)\)’nin altı boyutlu silinmiş permütasyon temsilini bağımsız bir kübik skaler karakterle bükelim. Temsil mutlak indirgenemez, karakter alanı \(K\); fakat:
+
+- \(\mathbb C\) üzerinde, normal \(C_7\)’nin Fourier doğruları üzerinden monomiyal;
+- \(K\) üzerinde primitif, çünkü \(C_7\)’nin \(\Phi_7\) karakteristik polinomu \(K\) üzerinde indirgenemez.
+
+Bu örnek dominant bir aday değildir; monomiyal period sınırıyla zaten elenir. **Alan ayrımının gerçek olduğunu** gösterir.
+
+Bu düzeltme **Teorem R’yi etkilemez**: R’nin kullandığı normal-yansıma blokları zaten \(K\)-tanımlıydı. Fakat Huffman’a geçerken “kompleks primitif” varsayımı ayrıca kurulmalı; \(K\)-primitiflikten sessizce çıkarılmamalı.
+
+## 5. İki yeni araştırma eki
+
+### F için daha keskin sınır: rank \(\le12\)
+
+**[ALG — yeni SESSION önerisi; peer denetimi bekliyor]** Skalerler \(\mu_6\)’da ve çarpımları birim. En az ikisi gerçel değil.
+
+Dört veya daha fazla önemsiz olmayan skaler için:
+\[
+\varepsilon\ge
+2\left(d-\left\lfloor\frac{d+1}{3}\right\rfloor-1\right)
++
+2\left(d-\left\lfloor\frac{d+1}{2}\right\rfloor-1\right)
+>2d-11.
+\]
+Dolayısıyla \(t\le3\).
+
+Üç skalerin çarpımı birimse, mertebeleri \(q_1,q_2,q_3\) için
+\[
+\frac1{q_1}+\frac1{q_2}+\frac1{q_3}\le1.
+\]
+Bu da
+\[
+\varepsilon\ge2d-4>2d-11
+\]
+verir. Böylece **\(t=2\)** zorunludur.
+
+Rank-bir indüklenmiş sistemin parabolik boyutu tekrar sekiz olur ve
+\[
+\boxed{\operatorname{rank}d\mathrm{Per}_\sigma\le12.}
+\]
+
+Bu güçlendirme R’nin ispatı için gerekli değil; ayrı öneri olarak kaydettim.
+
+### Kodboyutu-2 taramasını on spektral tipe indirebiliriz
+
+**[ALG — yeni SESSION önerisi]** Yansıma içermeyen bir \(\Gamma\subset GL_d(K)\) grubunda, \(c(g)=2\) olan sonlu mertebeli bir elemanın iki önemsiz olmayan özdeğeri **aynı mertebede** olmalı. Aksi hâlde bir kuvveti yansıma olur.
+
+Karakteristik polinomun iki dereceli parçasının \(K\)’da olmasıyla olası mertebeler:
+\[
+\boxed{2,\ 3,\ 4,\ 6,\ 12.}
+\]
+
+Bunlar toplam **on semisimple spektral tipe** indirgeniyor. Tam liste ve ispat teknik ekte mevcut. Bu, grup sınıflandırması değil; literatürde hangi teorem maddelerinin gerektiğini belirleyen bir elektir.
+
+Huffman’ın erişilebilen tez özeti, unimodüler kompleks primitif gruplarda özellikle \((\omega,\bar\omega)\) ve \((i,-i)\) tiplerini kapsıyor. **Tam teze ve diğer tipleri kapsayan makalelerin ispatlarına bu turda erişemedim.** Dolayısıyla \(15\le d\le24\) aralığını henüz kapatmıyorum. [thesis.caltech.edu](https://thesis.caltech.edu/14100/)
+
+Unimodülerlik için de geçerli bir ara adım var: seçilen elemanın determinantı zaten birimse, projektif grubun \(SL_d(\mathbb C)\) içindeki tam ters görüntüsüne geçilebilir; o eleman ve spektrumu değişmez. **Determinantı birim olmayan elemanı skalerle düzeltmek ise sabit-uzay kodboyutunu genellikle değiştirir** ve aynı teoremi uygulamaya yetmez.
+
+## 6. Dosyalar ve kayıt önerisi
+
+**:chatgpt-content-reference{index="4"}[Lemma E/F/R — tam bağımsız inceleme raporu](sandbox:/mnt/data/HCG_REFLECTION_DICHOTOMY_CHATGPT_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="5"}[Rank \(\le12\), on spektral tip ve alan/normalizasyon sınırları — PROPOSED teknik not](sandbox:/mnt/data/HCG_REFLECTIONFREE_NEXT_SCREEN_PROPOSED_v0_1.md)**
+
+**HCG_REFLECTION_DICHOTOMY_REVIEW_PACKAGE_v0_1.zip[Tam yeniden üretim paketi](sandbox:/mnt/data/HCG_REFLECTION_DICHOTOMY_REVIEW_PACKAGE_v0_1.zip)**
+
+**:chatgpt-content-reference{index="7"}[Önerilen ledger eki](sandbox:/mnt/data/HCG_REFLECTION_DICHOTOMY_LEDGER_PROPOSAL_v0_1.md)**
+
+Paketi temiz geçici klasörde tekrar çalıştırdım: **manifest 18/18, kaynak manifesti 5/5, kaynak 60-test çıktısı ve bağımsız JSON bayt düzeyinde PASS**.
+
+| Sonuç | Önerilen durum |
+|---|---|
+| İndüklenmiş period sınırı; \(d=10\) dışlaması | **CHECKED** |
+| Lemma E | **CHECKED**, \(K\)-tanımlı indükleme kapsamında |
+| Lemma F | **CHECKED**, özgün rank \(\le15\) ifadesiyle |
+| Teorem R ve \(d\le14\) koroleri | **CHECKED**, (H) altında |
+| Genel kompleks-primitif indirgeme | **Ek gerekçe gerekiyor** |
+| Rank \(\le12\) güçlendirmesi ve spektral elek | **PROPOSED** |
+| \(15\le d\le24\) dışlaması | **OPEN** |
+
+**Sıradaki çalışma, büyük bir grup taraması değil: on spektral tipin tam birincil sınıflandırmayla eşleştirilmesi ve \(K\)-primitif/kompleks-primitif ayrımının kapatılması olmalı.** HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

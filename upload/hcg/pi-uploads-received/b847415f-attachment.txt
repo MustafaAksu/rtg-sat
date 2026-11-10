@@ -1,0 +1,92 @@
+## HCG OPEN 5 — bağımsız çapraz denetim tamamlandı
+
+[SESSION-ALG — CHECKED] Claude'nun Lemma 6.2 incelemesinin ana sonuçlarını doğruladım. Kararına katılıyorum:
+
+\\[ \boxed{\text{HCG-OPEN-LEMMA62: PARTIAL}} \\]
+
+Bununla birlikte önemli bir ayrım var: W5 için cup formülünün kullanılmasını destekleyen bağımsız kanıt mevcut. Açık kalan kısım, Severn'in genel geometrik ispatındaki Δ-kompleks adımının yeniden kurulması.
+
+### 1. Exact hesap sonuçları
+
+Claude'nun betiğini W5, W6 ve W7 üzerinde yeniden çalıştırdım. Ardından daha önce bağımsız olarak yazdığım paired-reflection cup algoritmasını da üç tanıkta çalıştırdım.
+
+| Kontrol                                | W5    | W6    | W7    |
+| -------------------------------------- | ----- | ----- | ----- |
+| Severn formülü = sertifikadaki \\(S\\) | 64/64 | 64/64 | 64/64 |
+| Bağımsız paired-cup = \\(S\\)          | 64/64 | 64/64 | 64/64 |
+| Ön-görüntü seçiminden bağımsızlık      | PASS  | PASS  | PASS  |
+| Coboundary radikali                    | PASS  | PASS  | PASS  |
+| Hermitik imza                          | (4,4) | (4,4) | (4,4) |
+
+[SESSION-ALG] Cebirsel ispatı da yeniden türettim. Özellikle
+
+\\[ S(a,b)+\overline{S(b,a)}=0 \\]
+
+eşitliği, \\(T_i\\)'lerin ünitarlığı ve
+
+\\[ F\_{i+1}=F_i+Q_ic_i,\qquad F_1=F\_{n+1}=0 \\]
+
+koşullarından teleskop toplamla çıkıyor.
+
+Coboundary'lerin sıfırla eşleşmesini ve ön-görüntü seçiminin sonucu değiştirmediğini de sertifika verilerine dayanmayan genel argümanlarla doğruladım.
+
+### 2. Geometrik ispatın açık kalan kısmı
+
+[SOURCE REVIEW — PARTIAL] Severn'in `hexagon:2610.00246v2` makalesinin 13–14. sayfalarını, kompleks eşlenik işaretleri dâhil görüntü üzerinden kontrol ettim. Kaynak gerçekten bir Δ-kompleks ve Alexander–Whitney cup çarpımı kullanıyor. Ancak üçgenlerin tam yönelim ve yüz listesi verilmediğinden, geometrik indirgemeyi yalnızca yazılı ispatla sertifikalandıramadım.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
+
+
+Buna karşılık yayımlanmış Dettweiler–Wewers, Variation of parabolic cohomology and Poincaré duality Theorem 2.6 ve denklem (26), cup eşlemesini ayrı bir geometrik yöntemle kuruyor. W5 için önceki bağımsız 64/64 doğrulama bu dayanağı sağlıyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://emis.de\&sz=32)
+
+emis.de
+
+
+
+Dolayısıyla şu iki hükmü ayırıyorum:
+
+- W5 uygulaması: Lemma 6.2 formülü, bağımsız yayımlanmış eşleme üzerinden destekleniyor.
+- Genel Lemma 6.2 ispatı: Severn'in Δ-kompleks indirgemesi hâlâ doğrulanmış değil.
+
+Bu nedenle PO-6 yükseltilmemeli. Gerçek polarize faktörle karşılaştırma, denetçinin Round 2 Priority A çalışmasını bekliyor.
+
+## 3. Çapraz denetim dosyaları
+
+ChatGPT Lemma 6.2 Independent Cross-Review v0.1
+
+Cebirsel türetmeler, exact tekrarlar, kaynak incelemesi ve kapanış sınırları
+
+İnceleme raporunu indir
+
+Bağımsız yeniden üretim paketi
+
+Üç JSON sertifikası, iki ayrı hesap yöntemi, betikler, exact çıktılar ve hash manifesti
+
+Reproduction ZIP
+
+Önerilen DSN ledger değişikliği
+
+Ledger delta v0.1
+
+Paketi ayrı bir klasöre açarak bütün hash'leri ve `replay_all.py` çalışmasını da tekrar doğruladım. Altı hesap yolu sorunsuz tamamlandı.
+
+## 4. Ekip için karar önerim
+
+| RID                             | Önerilen durum       |
+| ------------------------------- | -------------------- |
+| HCG-OPEN-LEMMA62                | PARTIAL              |
+| W5'e özgü Lemma 6.2 uygulaması  | CHECKED              |
+| Genel Δ-kompleks/AW indirgemesi | OPEN                 |
+| HCG-EXT-PO6                     | PROPOSED — değişmedi |
+| Severn Theorem 6.2              | CLAIMED — değişmedi  |
+
+Önerim: Claude bu çapraz denetimi HCG v0.2'nin öneri kayıtlarına ekleyebilir. Benimsenmiş v0.1'e dokunulmasın. Denetçiye de bu iç inceleme gönderilmesin; Priority A/B kör çalışması devam etsin.
+
+Araştırma önceliği bakımından OPEN 5'in W5'i etkileyen kısmı artık yeterince desteklenmiş durumda. Genel Δ-kompleksin yeniden kurulması değerli, ancak şimdi en kritik halka PO-6'nın gerçek polarizasyon köprüsü.
+
+Paralel araştırma kolumuzdaki H4 seçilim mekanizması da sıradaki bağımsız matematiksel çalışma olarak kalıyor.

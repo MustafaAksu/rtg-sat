@@ -1,0 +1,120 @@
+## Δ27 — ilk karar: aramaya \\(d=6\\) ve \\(G\_{34}\\) ile başlayalım
+
+[SESSION — bağımsız kaynak ve cebir incelemesi] Claude'nun C₆/C₃ denetimini okudum. İki hesap motoru determinantlarda farklı temsilci bulsa da norm sınıfları, imzalar ve (L) sonuçları aynı. Bu nedenle C₆ ayırıcısı için `CHECKED` değerlendirmesine katılıyorum.
+
+Asıl yeni bulgu, en küçük mümkün temsil boyutunda arama uzayının beklediğimizden dar olması.
+
+### \\(d=6\\) için yansıma-grubu indirgemesi
+
+Genus-sıfır Hurwitz verisinde hedef \\(\dim_KH^1\_{\mathrm{par}}=8\\) ve dominans için \\(N\ge19\\) olsun. O zaman
+
+\\[ \sum\_{j=1}^N\operatorname{rank}(1-\sigma(g_j))=20. \\]
+
+Bütün etkin yerel monodromilerin rankı en az 1 olduğundan yalnız iki olasılık var:
+
+| Dal sayısı | Yerel monodromi rankları                       |
+| ---------- | ---------------------------------------------- |
+| \\(N=20\\) | 20 adet rank-1 yansıma                         |
+| \\(N=19\\) | 18 adet rank-1 yansıma ve 1 adet rank-2 eleman |
+
+[SESSION — ALG/THM] İkinci durumda da temsil görüntüsü yansımalarla üretilir. Çünkü çarpım-bir koşulu altında tek rank-2 eleman
+
+\\[ g\_{\mathrm{exceptional}} =(g_1\cdots g\_{18})^{-1} \\]
+
+olmak zorundadır. Dolayısıyla diğer 18 yansımanın ürettiği grubun içindedir.
+
+\\[ \boxed{ d=6,\ (D)\text{ için yeterli dal bütçesi} \quad\Longrightarrow\quad \sigma(G)\text{ bir sonlu kompleks yansıma grubudur}. } \\]
+
+Bu, \\(d\ge10\\) için haklı olarak koyduğumuz “yansıma içermek, yansımalarla üretilmek değildir” çekincesini \\(d=6\\) durumunda ortadan kaldırıyor.
+
+Shephard–Todd sınıflandırmasıyla, monomiyal temsiller ve rasyonel karakterli gerçek yansıma grupları dışarıda bırakıldığında, altı boyutlu adayların doğal merkezi \\(G\_{34}\\) oluyor. Bu, Severn'in monomiyal dışlama sonucunun geçerli hipotezleri altında bir indirgemedir; henüz bütün \\(G\_{34}\\) Hurwitz verilerinin sınıflandırılması değildir.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://docs.magma-maths.org\&sz=32)
+
+Magma Handbook+1
+
+
+
+## 2. Hangi grup sınıflarını taramalıyız?
+
+| Öncelik       | Aile                                                                      | İlk matematiksel kapı                                                                    |
+| ------------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| P1            | \\(G\_{34}\\), 20 yansıma                                                 | Bilinen eşli bileşenin dışında, bölünmemiş diskriminant veren bir Nielsen sınıfı var mı? |
+| P2            | \\(G\_{34}\\), 18 yansıma + 1 rank-2 eleman                               | Üretici, çarpımı birim olan tuple; (L) ve diskriminant                                   |
+| P3            | \\(d=7,8\\), düşük ranklı monodromileri bol olan primitif grup temsilleri | Rank-fazlası bütçesi, karakter alanı ve (L)                                              |
+| Düşük öncelik | Genel \\(d\ge9\\) sonlu gruplar                                           | Önce daha düşük boyutların elenmesini beklemeli                                          |
+
+[SESSION — ALG] P1'de ilginç bir sadeleşme var. \\(G\_{34}\\)'ün 20 mertebe-2 yansımasından oluşan üretici tuple'larında Chevalley–Weil hesabı \\((4,4)\\) imzasını veriyor. Her yerel monodromi kendi tersine eşit olduğundan Severn v2 Theorem 5.1'in inverse-conjugacy koşulu da sağlanıyor; bu teoremin diğer varsayımları altında (L) otomatik.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+Hexagon
+
+
+
+Böylece ilk araştırma sorusu oldukça kesin:
+
+\\[ \boxed{ \begin{gathered} G=G\_{34},\quad N=20,\quad g_1\cdots g\_{20}=1,\\\ \langle g_1,\ldots,g\_{20}\rangle=G\_{34},\\\ \operatorname{disc}(H^1\_{\rm par})\ne[1]\\;? \end{gathered} } \\]
+
+Bilinen Severn/W5 braid bileşeninde diskriminant \\([1]\\). Dolayısıyla bölünmemiş örnek bulunursa farklı bir Hurwitz bileşeninde olmalı. Böyle bir örneğin bulunması dahi henüz (D)'yi kanıtlamaz; fakat araştırmayı doğrudan en kritik kapıya taşır.
+
+## 3. Yeni hesap: 39 milyon dereceli örtüyle başlamak gerekmiyor
+
+[SESSION — yeni exact kombinatorik kontrol; Claude denetimi bekliyor]
+
+Mevcut W5 sertifikasındaki 756 vektörlük \\(G\_{34}\\) permütasyon temsilinden iki ara örtü hesabı çıkardım.
+
+| Ara örtü                                | Derece     | Cins        |
+| --------------------------------------- | ---------- | ----------- |
+| Tam \\(G\_{34}\\) Galois örtüsü         | 39.191.040 | 156.764.161 |
+| Vektör sabitleyicisinin ara örtüsü      | 756        | 1.675       |
+| Kök doğrusu sabitleyicisinin ara örtüsü | 126        | 275         |
+
+756 vektör üzerindeki her yerel yansıma 270 sabit nokta ve 243 ikili çevrim taşıyor. Riemann–Hurwitz ile:
+
+\\[ 2g-2=-2(756)+20(243)=3348, \qquad \boxed{g=1675}. \\]
+
+Önemli nokta: 756 vektörden birini sabitleyen altgrup, altı boyutlu \\(G\_{34}\\) temsilinde sıfırdan farklı bir vektörü gerçekten sabitliyor. Frobenius karşılıklılığı nedeniyle hedef temsil, bu 756 dereceli permütasyon temsilinde bulunuyor.
+
+126 dereceli örtü daha küçük olsa da \\(G\_{34}\\)'ün merkezî skaler etkisini kaybettiğinden aynı hedef temsili taşımıyor.
+
+Bu, açık \\(F^1\\) hesabını çözmüyor. Ancak tam Galois örtüsünün devasa cinsinin kaçınılmaz olduğunu varsaymamamız gerektiğini gösteriyor. Gelecekte bir nonsplit \\(G\_{34}\\) tuple'ı bulunursa, 756 dereceli ara örtü üzerinde diferansiyel hesabı denenebilir.
+
+## 4. Bir ek eleme: basit skaler genişlemeler
+
+[SESSION — ALG/THM adayı] Gerçel bir sonlu matris grubuna yalnız \\(\omega I_d\\) merkezî skalerini ekleyerek oluşturulan
+
+\\[ G=\langle W,\omega I_d\rangle,\qquad W\subset GL_d(\mathbb R) \\]
+
+grupları da güçlü bir rank engeliyle karşılaşıyor.
+
+Gerçel \\(w\\) matrisinin eşlenik karmaşık özdeğerleri aynı çoklukta olduğu için \\(\omega w\\)'nin sabit uzay kodimansiyonu en az \\(\lceil d/2\rceil\\). Çarpım-bir ve tüm grubu üretme koşulları en az iki böyle eleman gerektiriyor.
+
+Dolayısıyla
+
+\\[ \sum_j(c_j-1)\ge 2(\lceil d/2\rceil-1). \\]
+
+Bu alt sınır, dominans bütçesi olan \\(2d-11\\)'i \\(d=6,7,8,9\\) için aşıyor.
+
+Bu sonuç yalnız belirtilen skaler genişleme sınıfını eliyor; genel karmaşık karakterli primitif grupları değil. Claude'nun bağımsız ispat denetimine sunulmalı.
+
+## 5. Bilimsel durum ve teslim
+
+| Sonuç                                | Önerilen statü                         |
+| ------------------------------------ | -------------------------------------- |
+| C₆ nonsplit ayırıcısı ve C₃ kontrolü | CHECKED — iki ayrı hesap               |
+| \\(d=6\\) yansıma-grubu indirgemesi  | SESSION THM — peer denetimi bekliyor   |
+| \\(G\_{34}\\) için P1/P2 önceliği    | SESSION araştırma kararı               |
+| 756 dereceli ara örtü, cins 1675     | SESSION EXACT — peer denetimi bekliyor |
+| Skaler genişleme engeli              | SESSION THM — peer denetimi bekliyor   |
+| HCG-OPEN-NONSPLIT8                   | OPEN                                   |
+
+Nonsplit Eightfold — Group Screen and Intermediate Quotient (English)
+
+Exact permütasyon hesabı, 756 vektör girdisi ve yeniden üretim paketi (ZIP)
+
+Paket SHA-256: `5ee120ff26f836744e59e89efee7b8298fdafcfbaaae702bc707e81c4a993069` · Manifest 4/4 PASS
+
+Önerdiğim kesin sonraki hareket: Claude önce \\(d=6\\) indirgemesini ve 756 dereceli ara örtü hesabını bağımsız doğrulasın. Ardından \\(G\_{34}\\)'ün 20 yansımalı, çarpımı birim olan ve bilinen W5 bileşeni dışında kalabilecek tuple'larında diskriminant taramasına geçelim.
+
+Bu, yüksek dereceli belirsiz grup listelerinde arama yapmaktan çok daha hedefli bir yol. Δ27 henüz açık SESSION araştırmasıdır; HCG v0.2 ADOPTED değişmedi.

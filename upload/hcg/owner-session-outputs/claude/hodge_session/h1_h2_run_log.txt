@@ -1,0 +1,49 @@
+
+=== H1: Eisenstein elliptic realization ===
+[PASS] H1-01: A^2 - A + I = 0
+[PASS] H1-02: A^3 = -I and A^6 = I
+[PASS] H1-03: A^T B A = B
+[PASS] H1-04: J_Q^2 = -I and J_Q^T B J_Q = B
+[PASS] H1-05: A = I/2 + (sqrt3/2) J_Q, and J_Q commutes with A
+[PASS] H1-06: In z = x + zeta3*y: A acts as *zeta6 and J_Q as *i
+[PASS] H1-07: A integral with det 1 (A in SL2(Z)), so Lambda = Z[zeta6] is A-stable
+[PASS] H1-08: Integral centralizer of A in M2(Z) is Z[A] (CM by Z[zeta6], rank 2)  -> general commuting X = [[c + d, -c], [c, d]] = {p: d, q: c}
+[PASS] H1-09: j(E) = 0 [numerical cross-check; exact reason: zeta6*Lambda = Lambda forces g2 = 0]  -> |kleinJ(zeta3)| = 2.0106e-154
+[PASS] H1-10: omega_B = (sqrt3/2) dx^dy and omega_0 = dx^dy (integral on Z^2, value 1 on (e1,e2))
+[PASS] H1-11: Riemann conditions: omega_0(Ju,Jw)=omega_0(u,w); omega_0(u,Jw) symmetric positive definite  -> omega_0(u,Jw) matrix = [[2*sqrt(3)/3, -sqrt(3)/3], [-sqrt(3)/3, 2*sqrt(3)/3]] = (2/sqrt3) B
+
+=== H2a: integral Neron-Severi basis of E x E ===
+   class[D1={O}xE] = {(0, 1): 1}
+   class[D2=Ex{O}] = {(2, 3): 1}
+   class[D3=Delta] = {(0, 1): 1, (0, 3): -1, (1, 2): 1, (2, 3): 1}
+   class[D4=Gamma_A] = {(0, 1): 1, (0, 2): 1, (0, 3): -1, (1, 3): 1, (2, 3): 1}
+[PASS] H2-01: Intersection matrix of D1..D4 equals [[0,1,1,1],[1,0,1,1],[1,1,0,1],[1,1,1,0]]  -> [[0, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [1, 1, 1, 0]]
+[PASS] H2-02: det M = -3  -> -3
+[PASS] H2-03: dim_Q (H^{1,1} ∩ H^2(Q)) on E^2 = rank ker D_U on Λ^2 Q^4 = 4  -> rank D_U = 2
+[PASS] H2-04: Each [D_i] is of type (1,1) (killed by D_U)
+[PASS] H2-05: Z-span of [D1..D4] is saturated in Λ^2 Z^4 (all SNF invariants = 1)  -> SNF invariants [1, 1, 1, 1]
+   => H2-03+H2-04+H2-05: span_Z[D_i] = (H^{1,1} ∩ H^2(Z)) = NS(E^2) by Lefschetz (1,1): a direct proof of index 1, not using the classical discriminant value.
+[PASS] H2-06: C3=D3-D1-D2, C4=D4-D1-D2 orthogonal to <D1,D2> with Gram [[-2,-1],[-1,-2]] (A_2(-1))  -> [[-2, -1], [-1, -2]]
+
+=== H2b: Hodge ring of E^4 and divisor-product spans ===
+[PASS] H2-07: All 16 explicit divisors on E^4 are of type (1,1)
+[PASS] H2-08: dim_Q Hodge classes in H^{2k}(E^4,Q), k=0..4, equals (1,16,36,16,1)  -> [1, 16, 36, 16, 1]
+[PASS] H2-09: Q-span of products of the 16 explicit divisors equals the full Hodge space in each degree  -> ranks [1, 16, 36, 16, 1]
+   integral index [ (H^{k,k} ∩ H^{2k}(Z)) : Z-span of divisor products ], k=0..4: [1, 1, 1, 1, 1]
+   (nontrivial SNF invariants per k: [[], [], [], [], []])
+[PASS] H2-10: [informational] k=1: 16 explicit divisors are a Z-basis of NS(E^4) (index 1)  -> 1
+
+=== R7 support: Poincaré-Dulac normal form of T through degree 5 (exact, Q(zeta3)) ===
+[PASS] NF-01: Linear part of T in z = rho + zeta3*eta is multiplication by zeta6
+[PASS] NF-02: Normal form T_NF through degree 5 has only resonant monomials (a-b ≡ 1 mod 6)
+   tau  (z^2 zb)  = 1/8 - 7*sqrt(3)*I/72
+   tau05 (zb^5)   = 43/17280 - 227*sqrt(3)*I/155520
+[PASS] NF-03: tau != 0 and tau05 != 0 (cubic and z̄^5 resonant coefficients of T itself)
+[PASS] NF-04: F = T_NF^6 = z + (deg 3) + (deg 5): no even-degree terms through degree 5
+[PASS] NF-05: Iterate identities: mu = 6*conj(omega)*tau and a05 = 6*conj(omega)*tau05
+   mu  (computed) = -1/2 - 2*sqrt(3)*I/3   owner: -1/2 - 2*sqrt(3)*I/3
+   a05 (computed) = -49/8640 - 307*sqrt(3)*I/25920   owner: -49/8640 - 307*sqrt(3)*I/25920
+[PASS] NF-06: Computed mu equals owner value -1/2 - 2i*sqrt3/3 (chart z = rho + zeta3*eta)
+[PASS] NF-07: Computed a05 equals owner value -49/8640 - 307i*sqrt3/25920
+
+28/28 checks passed.

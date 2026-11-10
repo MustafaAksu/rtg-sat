@@ -1,0 +1,36 @@
+dim H = 6  S rank = 6
+cuts: 54  ord(C) values: [1, 2, 3]
+Q-span of all 54 cut operators: 9
+dim_K of joint image of all 54: 6
+H0-valid triangles: 220 of 220
+H0-valid trees: 16796
+e_L = a4-a3 on all basis cocycles: True
+functionals e_a,e_b,e_c,f_a,f_b,f_c K-independent on H: True
+rank predicted 9 forms: 9 ; rank predicted + 54 cut forms: 9
+(1, 2) uses ['E_a']
+(1, 6) uses ['E_b']
+(1, 10) uses ['E_c']
+(2, 3) uses ['F_a']
+(2, 6) uses ['E_b']
+(2, 10) uses ['E_c']
+(3, 4) uses ['E_a']
+(3, 5) uses ['E_a']
+(3, 6) uses ['E_a', 'E_b', 'X_ab']
+(3, 7) uses ['E_a']
+(3, 8) uses ['E_a']
+(3, 9) uses ['E_a']
+(3, 10) uses ['E_a', 'E_c', 'X_ac']
+(3, 11) uses ['E_a']
+(4, 6) uses ['E_b']
+(4, 10) uses ['E_c']
+(5, 6) uses ['E_b']
+(5, 10) uses ['E_c']
+(6, 7) uses ['F_b']
+(6, 10) uses ['E_c']
+(7, 8) uses ['E_b']
+(7, 9) uses ['E_b']
+(7, 10) uses ['E_b', 'E_c', 'X_bc']
+(7, 11) uses ['E_b']
+(8, 10) uses ['E_c']
+(9, 10) uses ['E_c']
+(10, 11) uses ['F_c']

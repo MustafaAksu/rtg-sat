@@ -1,0 +1,5 @@
+(1) D_min closed form vs brute force, 2 <= a <= 12, 3 <= t <= 19: agree
+(2) S_27: pairs with m_x + m_y >= 24 at index J >= 9 other than {1,-1}: 0
+    index maxima at active costs 26, 27, 28: 13, 2, 14
+(3) multiplicity bounds m_1 = b - J, m_z <= floor((b+1)/q), m_z <= J/(q-1): violations 0
+ALL PASS

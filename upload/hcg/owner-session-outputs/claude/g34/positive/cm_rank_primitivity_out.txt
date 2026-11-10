@@ -1,0 +1,21 @@
+balanced vectors: 20  ordered pairs: 400  dot products: [-6, -2, 2, 6]
+6T1  |G+|=6    C(6) = 6 = 3[x]2                           rank 5 primitive: 12, rank 3 imprimitive: 6, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 0; imprimitive with trivial left stabilizer: 0]
+6T2  |G+|=6    D_6(6) = [3]2                              rank 3 imprimitive: 18, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 0; imprimitive with trivial left stabilizer: 0]
+6T3  |G+|=12   D(6) = S(3)[x]2                            rank 5 primitive: 12, rank 3 imprimitive: 6, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T4  |G+|=12   A_4(6) = [2^2]3                            rank 5 primitive: 12, rank 3 imprimitive: 8   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T5  |G+|=18   F_18(6) = [3^2]2 = 3 wr 2                  rank 5 primitive: 18, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 18; imprimitive with trivial left stabilizer: 0]
+6T6  |G+|=24   2A_4(6) = [2^3]3 = 2 wr 3                  rank 5 primitive: 12, rank 3 imprimitive: 8   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T7  |G+|=24   S_4(6d) = [2^2]S(3)                        rank 5 primitive: 12, rank 3 imprimitive: 8   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T8  |G+|=24   S_4(6c) = 1/2[2^3]S(3)                     rank 5 primitive: 12, rank 3 imprimitive: 8   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T9  |G+|=36   F_18(6):2 = [1/2.S(3)^2]2                  rank 5 primitive: 18, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 18; imprimitive with trivial left stabilizer: 0]
+6T10 |G+|=36   F_36(6) = 1/2[S(3)^2]2                     rank 5 primitive: 18, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 18; imprimitive with trivial left stabilizer: 0]
+6T11 |G+|=48   2S_4(6) = [2^3]S(3) = 2 wr S(3)            rank 5 primitive: 12, rank 3 imprimitive: 8   [primitive with nontrivial left stabilizer: 12; imprimitive with trivial left stabilizer: 0]
+6T12 |G+|=60   L(6) = PSL(2,5) = A_5(6)                   rank 5 primitive: 20   [primitive with nontrivial left stabilizer: 20; imprimitive with trivial left stabilizer: 0]
+6T13 |G+|=72   F_36(6):2 = [S(3)^2]2 = S(3) wr 2          rank 5 primitive: 18, rank 1 imprimitive: 2   [primitive with nontrivial left stabilizer: 18; imprimitive with trivial left stabilizer: 0]
+6T14 |G+|=120  L(6):2 = PGL(2,5) = S_5(6)                 rank 5 primitive: 20   [primitive with nontrivial left stabilizer: 20; imprimitive with trivial left stabilizer: 0]
+6T15 |G+|=360  A6                                         rank 5 primitive: 20   [primitive with nontrivial left stabilizer: 20; imprimitive with trivial left stabilizer: 0]
+6T16 |G+|=720  S6                                         rank 5 primitive: 20   [primitive with nontrivial left stabilizer: 20; imprimitive with trivial left stabilizer: 0]
+
+enumeration cross-check (exceptional exponent vectors, |a_k| <= r <= 3): rank 5 <=> none, for all 320 pairs (group, type); smallest r with an exceptional class, by (group, rank):
+   {'6T1 rank 1': [1], '6T1 rank 3': [1], '6T2 rank 1': [1], '6T2 rank 3': [1], '6T3 rank 1': [1], '6T3 rank 3': [1], '6T4 rank 3': [1], '6T5 rank 1': [1], '6T6 rank 3': [1], '6T7 rank 3': [1], '6T8 rank 3': [1], '6T9 rank 1': [1], '6T10 rank 1': [1], '6T11 rank 3': [1], '6T13 rank 1': [1]}
+primitive balanced types with rank < 5: 0

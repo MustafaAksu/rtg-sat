@@ -1,0 +1,222 @@
+{
+  "script_sha256": "3b3deb4c5db2636f6b41ad434e38e7f7614ae0efef40e1dd5828355a72fc5049",
+  "sympy": "1.14.0",
+  "python_flint": "0.9.0",
+  "hodge_dims_E4": [
+    1,
+    16,
+    36,
+    16,
+    1
+  ],
+  "divisor_product_ranks_E4": [
+    1,
+    16,
+    36,
+    16,
+    1
+  ],
+  "integral_index_E4": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "intersection_matrix_E2": [
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "results": [
+    {
+      "id": "H1-01",
+      "desc": "A^2 - A + I = 0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-02",
+      "desc": "A^3 = -I and A^6 = I",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-03",
+      "desc": "A^T B A = B",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-04",
+      "desc": "J_Q^2 = -I and J_Q^T B J_Q = B",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-05",
+      "desc": "A = I/2 + (sqrt3/2) J_Q, and J_Q commutes with A",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-06",
+      "desc": "In z = x + zeta3*y: A acts as *zeta6 and J_Q as *i",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-07",
+      "desc": "A integral with det 1 (A in SL2(Z)), so Lambda = Z[zeta6] is A-stable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-08",
+      "desc": "Integral centralizer of A in M2(Z) is Z[A] (CM by Z[zeta6], rank 2)",
+      "pass": true,
+      "detail": "general commuting X = [[c + d, -c], [c, d]] = {p: d, q: c}"
+    },
+    {
+      "id": "H1-09",
+      "desc": "j(E) = 0 [numerical cross-check; exact reason: zeta6*Lambda = Lambda forces g2 = 0]",
+      "pass": true,
+      "detail": "|kleinJ(zeta3)| = 2.0106e-154"
+    },
+    {
+      "id": "H1-10",
+      "desc": "omega_B = (sqrt3/2) dx^dy and omega_0 = dx^dy (integral on Z^2, value 1 on (e1,e2))",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H1-11",
+      "desc": "Riemann conditions: omega_0(Ju,Jw)=omega_0(u,w); omega_0(u,Jw) symmetric positive definite",
+      "pass": true,
+      "detail": "omega_0(u,Jw) matrix = [[2*sqrt(3)/3, -sqrt(3)/3], [-sqrt(3)/3, 2*sqrt(3)/3]] = (2/sqrt3) B"
+    },
+    {
+      "id": "H2-01",
+      "desc": "Intersection matrix of D1..D4 equals [[0,1,1,1],[1,0,1,1],[1,1,0,1],[1,1,1,0]]",
+      "pass": true,
+      "detail": "[[0, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [1, 1, 1, 0]]"
+    },
+    {
+      "id": "H2-02",
+      "desc": "det M = -3",
+      "pass": true,
+      "detail": "-3"
+    },
+    {
+      "id": "H2-03",
+      "desc": "dim_Q (H^{1,1} \u2229 H^2(Q)) on E^2 = rank ker D_U on \u039b^2 Q^4 = 4",
+      "pass": true,
+      "detail": "rank D_U = 2"
+    },
+    {
+      "id": "H2-04",
+      "desc": "Each [D_i] is of type (1,1) (killed by D_U)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H2-05",
+      "desc": "Z-span of [D1..D4] is saturated in \u039b^2 Z^4 (all SNF invariants = 1)",
+      "pass": true,
+      "detail": "SNF invariants [1, 1, 1, 1]"
+    },
+    {
+      "id": "H2-06",
+      "desc": "C3=D3-D1-D2, C4=D4-D1-D2 orthogonal to <D1,D2> with Gram [[-2,-1],[-1,-2]] (A_2(-1))",
+      "pass": true,
+      "detail": "[[-2, -1], [-1, -2]]"
+    },
+    {
+      "id": "H2-07",
+      "desc": "All 16 explicit divisors on E^4 are of type (1,1)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "H2-08",
+      "desc": "dim_Q Hodge classes in H^{2k}(E^4,Q), k=0..4, equals (1,16,36,16,1)",
+      "pass": true,
+      "detail": "[1, 16, 36, 16, 1]"
+    },
+    {
+      "id": "H2-09",
+      "desc": "Q-span of products of the 16 explicit divisors equals the full Hodge space in each degree",
+      "pass": true,
+      "detail": "ranks [1, 16, 36, 16, 1]"
+    },
+    {
+      "id": "H2-10",
+      "desc": "[informational] k=1: 16 explicit divisors are a Z-basis of NS(E^4) (index 1)",
+      "pass": true,
+      "detail": "1"
+    },
+    {
+      "id": "NF-01",
+      "desc": "Linear part of T in z = rho + zeta3*eta is multiplication by zeta6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "NF-02",
+      "desc": "Normal form T_NF through degree 5 has only resonant monomials (a-b \u2261 1 mod 6)",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "NF-03",
+      "desc": "tau != 0 and tau05 != 0 (cubic and z\u0304^5 resonant coefficients of T itself)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "NF-04",
+      "desc": "F = T_NF^6 = z + (deg 3) + (deg 5): no even-degree terms through degree 5",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "id": "NF-05",
+      "desc": "Iterate identities: mu = 6*conj(omega)*tau and a05 = 6*conj(omega)*tau05",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "NF-06",
+      "desc": "Computed mu equals owner value -1/2 - 2i*sqrt3/3 (chart z = rho + zeta3*eta)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "id": "NF-07",
+      "desc": "Computed a05 equals owner value -49/8640 - 307i*sqrt3/25920",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+## Round 2 — Priority A3: 17-to-16 map and dominance
+
+VERIFIED — with a wording correction
+
+[ALG] The supplied W5 logarithms define
+
+\\[ \mathcal N:\mathbb C^{17}\longrightarrow \operatorname{Hom}\_{\mathbb C}(F\_\infty^1,V\_\iota/F\_\infty^1). \\]
+
+The independently reconstructed exact data give
+
+\\[ \operatorname{rank}\_{\mathbb C}\mathcal N=16, \qquad \ker\mathcal N =\mathbb C(e\_{17}-e_9-e\_{10}), \\]
+
+because
+
+\\[ \boxed{N\_{17}=N_9+N\_{10}.} \\]
+
+Thus \\(\mathcal N\\) is surjective, not an isomorphism. It induces an isomorphism after quotienting its kernel:
+
+\\[ \mathbb C^{17}/\ker\mathcal N \xrightarrow{\\;\sim\\;} \mathbb C^{16}. \\]
+
+The exact \\(16\times16\\) minor from curves 1–16 is
+
+\\[ 6144(1+w)\ne0,\qquad w^2+w+1=0. \\]
+
+Dominance implication: the correction does not invalidate the rank argument. Surjectivity is sufficient for the period map to have full rank \\(16\\) at nearby interior points, provided the simultaneous geometric VHS and nilpotent-orbit hypotheses established in the scoped Round-1 assessment hold.
+
+Sign convention: retain the linear-first pairing
+
+\\[ S(x,y)=x^tS\bar y,\qquad \operatorname{Gram}(S(x,N_jy))=S\bar N_j. \\]
+
+Only one global orientation reversal is permitted, changing every \\(N_j\\) simultaneously. Independent curve-by-curve sign choices are not justified. The linear relation and rank are preserved under a common reversal.
+
+Source: Severn, Weil Classes on Every Abelian Sixfold of Weil Type for \\(\mathbb Q(\sqrt{-3})\\), Draft v0.5, Proposition 4.2, Step 4 (pp. 7–8), together with the independently preserved W5 output.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
+
+
+Priority A3 is therefore closed at the scoped W5 level. This does not certify any global algebraicity conclusion.
+
+## Priority B4 — Brauer induction and reality
+
+VERIFIED — at the abstract theorem level
+
+[THM] Severn Draft v0.5, Theorem 3.1 (p. 5), establishes the implication
+
+\\[ \text{real class datum}\quad\Longrightarrow\quad (L). \\]
+
+I checked its proof against the stated supplier definitions in the companion Draft v0.15, §§3.1–3.2, and the role of Brauer induction.
+
+The critical cases are:
+
+| Obligation                         | Result                                                                                                                                                                                    |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Characters of order 1 or 2         | Their free character coordinates vanish; quaternionic coordinates vanish by even multiplicity of self-dual one-dimensional eigenspaces in a symplectic representation.                    |
+| Positive supplier dimension        | Zero-dimensional suppliers have zero lattice character and may be discarded; surviving \\(h>0\\) suppliers remain.                                                                        |
+| Nonprimitive branch exponents      | Coprimality with the cyclic order is not required.                                                                                                                                        |
+| \\(\alpha\leftrightarrow-\alpha\\) | Conjugacy of each local monodromy to its inverse pairs the induced cyclic exponents. Self-inverse exponents occur in even multiplicity because their sum is zero modulo the cyclic order. |
+| Quaternionic parity                | The \\(\mathbb Z/2\\) coordinates are retained throughout the character identity and contraction.                                                                                         |
+
+[ALG] In particular, if \\(\chi\\) has order \\(m\\), reality yields a branch-exponent multiset invariant under negation. The only possible nonzero self-inverse exponent is \\(m/2\\). If its multiplicity is \\(k\\), the product-one relation gives
+
+\\[ k\frac m2\equiv0\pmod m \quad\Longrightarrow\quad k\equiv0\pmod2. \\]
+
+Thus the surviving supplier has a simple exponent tuple and even \\(h=2q-2+s\\), satisfying the Schoen admissibility condition when \\(h>0\\).
+
+Application to W5: its local generators are involutions, so the datum is real. Condition (L) depends on the conjugacy-class datum, not on a chosen Hurwitz component. No identification of \\(S\_{\mathrm{W5}}\\) with Appendix A is required for this step.
+
+Limit: this verifies the representation-theoretic implication, using standard Brauer induction. It does not independently produce algebraic cycles; that is B5.
+
+Sources: Severn v0.5, Theorem 3.1 and Remark 3.2 (p. 5); companion v0.15, Definition 3.1 and Lemmas 3.3–3.5 (pp. 7–8).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+## Priority B5 — algebraic supplier cycles and contraction
+
+VERIFIED — conditional on established Schoen and Milne theorems
+
+### Primary-source check
+
+[THM] The original publication is:
+
+Chad Schoen, Hodge classes on self-products of a variety with an automorphism, Compositio Mathematica 65 (1988), no. 1, pp. 3–32.
+
+Its Theorem 2.0 (p. 11) constructs algebraic cycles for simple cyclic branch data; Corollary 3.1 (pp. 24–25) transfers the resulting Weil classes to the primitive Jacobian factor. The theorem's definition permits nonzero branch exponents that are not individually coprime to \\(m\\).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.numdam.org\&sz=32)
+
+numdam.org
+
+
+
+### The algebraic correspondence
+
+The companion manuscript's Proposition 3.7 (pp. 8–9) supplies more than a character identity.
+
+Given a relation
+
+\\[ \xi=\sum_i n_i a(\chi_i) \\]
+
+with admissible suppliers, choose nonzero rational algebraic classes \\(y_i\\) supplied by Schoen. The proof constructs a class \\(\Gamma\\) on \\(B\times X\\) whose total character is trivial, including the quaternionic parity coordinates.
+
+Its algebraicity is justified by two additional facts:
+
+1. The centralizer \\(S(J(C))\\) of the full endomorphism algebra lies inside the centralizer \\(U\\) of \\(G\\).
+2. Milne's Theorem 3.2 establishes that \\(S(J(C))\\)-invariant cohomology classes on powers of \\(J(C)\\) are generated by divisor classes.
+
+The rational group-algebra idempotents become actual homomorphisms of abelian varieties after clearing denominators. Their graphs, pullbacks and pushforwards provide the algebraic correspondences needed to transfer Milne's result back to \\(B\times X\\). This is stronger than an unimplemented character cancellation.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++1
+
+
+
+### Nonvanishing and rational descent
+
+[ALG] With the supplier decompositions \\(y_i=\sum_t c\_{i,t}v\_{i,t}\\), the manuscript's contraction gives
+
+\\[ \Gamma\_\*(Y)= \pm\left(\prod_i c\_{i,t_i}^{|n_i|}\right)x. \\]
+
+Each \\(c\_{i,t_i}\neq0\\): a nonzero vector in the one-dimensional \\(E\_{\chi_i}\\)-module of Weil classes remains nonzero after every embedding of \\(E\_{\chi_i}\\). The contraction therefore produces the desired eigenline, not merely the zero class.
+
+Corollary 3.8 separately obtains both complex determinant lines, with characters \\(e\_\sigma\\) and \\(-e\_\sigma\\). Faithful extension of scalars then yields
+
+\\[ \boxed{ W_K(A\_\sigma)\subseteq \operatorname{Span}\_{\mathbb Q} \\{\text{classes of algebraic cycles}\\}. } \\]
+
+This addresses the entire two-dimensional rational Weil subspace, not just a nonzero rational vector.
+
+Scope: this result applies pointwise to every member of every Hurwitz component once (L) holds. It does not require a relative family of supplier cycles, dominance, or the auxiliary unrefereed Gale-supplier hypothesis.
+
+Sources: companion v0.15, Lemma 3.4, Proposition 3.7, Corollary 3.8 and Remarks 3.9–3.10 (pp. 7–9); Schoen (1988), Theorem 2.0 and Corollary 3.1; Milne, Lefschetz classes on abelian varieties, Duke Mathematical Journal 96 (1999), Theorem 3.2 and Lemma 3.1 (pp. 14–15).&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+## Priority B6 — spreading and transfer
+
+VERIFIED as a conditional transfer theorem
+
+[THM] The proof of Lemmas 6.1–6.2 and Theorem 7.1 in companion Draft v0.15 (pp. 18–19) passes the first-round logical audit, provided (L), (D) and the polarized discriminant are established for the designated datum/component.
+
+### Full-plane algebraicity
+
+The key object is the rational rank-two local system
+
+\\[ \mathcal W=\bigwedge_K^{2n}R^1f\_\*\mathbb Q \subset R^{2n}f\_\*\mathbb Q. \\]
+
+Lemma 6.1 constructs the locus where the entire fibre \\(\mathcal W_t\\) lies in the rational span of algebraic cycle classes.
+
+The relative Hilbert-scheme argument works with finite tuples of cycles, not one class. For each tuple, their cohomology classes form a flat rational subspace \\(F\\) after passage to an appropriate connected parameter space. Inclusion \\(\mathcal W\subseteq F\\) is locally constant. Properness of the Hilbert schemes makes the resulting images closed algebraic subsets, and there are only countably many relevant tuples.
+
+Hence
+
+\\[ M\_{\mathrm{alg}}=\bigcup\_{j\ge1}Z_j, \qquad Z_j\subseteq M\ \text{closed algebraic}. \\]
+
+This addresses the entire Weil plane.
+
+### From an open subset to every member
+
+[THM] Lemma 6.2 uses the Baire property: if a nonempty Euclidean open subset of the connected, irreducible Weil moduli variety \\(M\\) lies in \\(M\_{\mathrm{alg}}\\), one of the \\(Z_j\\) contains an open subset and therefore equals \\(M\\).
+
+Theorem 7.1 obtains that open set through full period-map rank \\(n^2\\). Landherr classification matches the rational Hermitian spaces; commensurable lattices yield \\(K\\)-linear isogenies. These preserve algebraicity of the Weil plane.
+
+Thus the chain is
+
+\\[ \begin{aligned} (L)&\Rightarrow\text{cycles at Hurwitz fibres},\\\ (D)+d(S)&\Rightarrow\text{open image in }M(K,n,d),\\\ \text{Hilbert/Baire}&\Rightarrow M\_{\mathrm{alg}}=M,\\\ \text{Landherr/isogeny}&\Rightarrow\text{every object of class }d. \end{aligned} \\]
+
+Important consequence: special products \\(A\times S\\), even when they have extra endomorphisms or smaller Mumford–Tate groups, are included. The proof does not stop at very general members or at one nonzero algebraic Weil class.
+
+Dependency: application to W5 remains conditional on the scoped G34-D realization and the identification of the computed cup discriminant with the actual factor polarization. The component need not equal Appendix A's component.
+
+Limitation: I verified the mathematical structure against the primary manuscript and standard relative Hilbert-scheme and monodromy arguments; I have not reconstructed an entire moduli-theoretic formalization independently. No gap requiring an unproved variational Hodge conjecture was found in the inspected argument.
+
+Sources: companion v0.15, §2.3, Lemmas 2.4–2.5, 6.1–6.2, Theorem 7.1 and Remarks 7.3–7.4.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+## Priority B7 — sixfold compensation
+
+VERIFIED as a conditional reduction
+
+[THM] Severn Draft v0.5, Lemma 5.1 and Proposition 5.2 (pp. 10–11), give a valid product-and-contraction argument, conditional on algebraicity of the full Weil plane for every eightfold in the chosen discriminant cell.
+
+### Discriminant control
+
+Let \\(A\\) be an arbitrary polarized Weil sixfold with discriminant \\([t]\\), where \\(t<0\\). For \\(n=4\\), take
+
+\\[ S=E\times\bar E \\]
+
+with product-polarization degrees \\((1,m)\\). Lemma 5.1 yields
+
+\\[ \operatorname{disc}(S)=[-m],\qquad \operatorname{disc}(A\times S)=[-tm]. \\]
+
+Choose \\(m>0\\) such that \\([-tm]=[1]\\). This is always possible: writing \\(t=-a/b\\), with positive integers \\(a,b\\), take \\(m=ab\\). Then
+
+\\[ -tm=a^2=N\_{K/\mathbb Q}(a). \\]
+
+Thus \\(A\times S\\) belongs to the split eightfold discriminant class, including when \\(A\\) itself has nonsplit discriminant.
+
+This construction is compatible with the \\(K\\)-action and gives signature \\((4,4)\\).
+
+### Recovery of both rational Weil classes
+
+[ALG] The \\(K\\)-exterior-power identity is
+
+\\[ \bigwedge_K^8 H^1(A\times S,\mathbb Q) \simeq \bigwedge_K^6 H^1(A,\mathbb Q) \otimes_K \bigwedge_K^2 H^1(S,\mathbb Q). \\]
+
+Choose a nonzero rational algebraic Weil class \\(\xi\\) on \\(A\times S\\) and a nonzero rational divisor class \\(y\in W_K(S)\\). Fibre integration defines an algebraic class
+
+\\[ z=\operatorname{pr}\_{A\*} \left(\xi\smile\operatorname{pr}\_S^\*y\right) \in W_K(A). \\]
+
+The determinant-line pairings show \\(z\neq0\\).
+
+One rational class is insufficient. The proof obtains a second by applying an endomorphism \\(\alpha\in\mathcal O_K\\) to \\(S\\) before contraction. Under the two \\(K\\)-embeddings, the surviving coefficient changes by \\(\bar\iota(\alpha)^2\\).
+
+For \\(K=\mathbb Q(w)\\), take \\(\alpha=1\\) and \\(\alpha=w\\), where \\(w^2+w+1=0\\). Then
+
+\\[ \bar\iota(w)^2=w\notin\mathbb Q. \\]
+
+Therefore the two rational classes have distinct nonrational coefficient ratios and are \\(\mathbb Q\\)-linearly independent. Since
+
+\\[ \dim\_{\mathbb Q}W_K(A)=2, \\]
+
+they span the full Weil plane.
+
+An independent exact script verifies the discriminant construction and the rank-two coefficient test. As a negative control, using \\(\alpha=1\\) and \\(\alpha=2\\) yields a rational ratio and correctly fails to produce rank two.
+
+Conclusion: all sixfold discriminants are covered, provided Priority B6 supplies algebraicity at every eightfold, including the special product \\(A\times S\\). A merely generic eightfold assertion would be insufficient.
+
+Powers: no conclusion is drawn for arbitrary powers here. The separate powers result requires \\(Hg(A)=SU_H\\) for the particular sixfold, as stated in Theorem 2.11.
+
+Source: Severn v0.5, Lemma 5.1, Proposition 5.2, Remark 5.3 and Theorem 6.2.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+## Round 2 — final audit package
+
+The remaining assessments are complete. The report separates verified exact algebra, theorem-level arguments, conditional geometric and transfer steps, and unresolved verification limitations.
+
+Download complete Round-1 + Round-2 audit package
+
+Read the final mathematical report
+
+Replay instructions
+
+SHA-256 manifest
+
+### Reproducibility results
+
+| Check                             | Result                 |
+| --------------------------------- | ---------------------- |
+| Original Round-1 SHA-256 entries  | 34/34 PASS             |
+| Round-1 exact scripts             | 3/3 PASS               |
+| Round-1 corruption controls       | 4/4 correctly rejected |
+| New Round-2 exact tests           | 19/19 PASS             |
+| Final package integrity           | PASS                   |
+| Replay from freshly extracted ZIP | PASS                   |
+
+Important correction: the previously reported five-file integrity discrepancy resulted from my modifying a working extraction before validating it. Re-extraction confirms that the original Round-1 archive is intact. This audit-handling error and its correction are documented in the final report.
+
+### Final scientific status
+
+[THM — conditional assessment] B4–B7 form a coherent transfer and compensation chain under their stated geometric and published-theorem hypotheses. The review found no fatal mathematical error in those steps, but it is not an independent formal proof of all underlying results.
+
+[OPEN] The identification of \\(S\_{\mathrm{W5}}\\) with the original Appendix A component remains unverified, although it is not required by the alternative-witness formulation reviewed here. The two Severn manuscripts remain unrefereed.
+
+The global theorem is not certified as established by this audit. The package preserves the independent findings for subsequent adversarial comparison and human mathematical review.

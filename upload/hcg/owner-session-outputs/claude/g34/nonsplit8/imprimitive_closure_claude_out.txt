@@ -1,0 +1,32 @@
+(1) every Galois-stable system shape (k>=2, r>=6, kr<=42):
+   d=27 (k,r)=(3,9) E_k=-19
+   d=28 (k,r)=(4,7) E_k=-30
+   d=30 (k,r)=(3,10) E_k=-17
+   d=30 (k,r)=(5,6) E_k=-35
+   d=32 (k,r)=(4,8) E_k=-28
+   d=33 (k,r)=(3,11) E_k=-15
+   d=35 (k,r)=(5,7) E_k=-33
+   d=36 (k,r)=(3,12) E_k=-13
+   d=36 (k,r)=(4,9) E_k=-26
+   d=36 (k,r)=(6,6) E_k=-34
+   d=39 (k,r)=(3,13) E_k=-11
+   d=40 (k,r)=(4,10) E_k=-24
+   d=40 (k,r)=(5,8) E_k=-31
+   d=42 (k,r)=(3,14) E_k=-9
+   d=42 (k,r)=(6,7) E_k=-32
+   d=42 (k,r)=(7,6) E_k=-29
+   all k>=3 shapes with d<=42 have E_k<0
+(2) two-block (k=2) lemma, r=13..22: E=2r-26, scalar cost 2(T_r-1), finer systems (2k',r/k') with r/k'>=6:
+   r=13 d=26 E<= 0 scalar-cost>=10 scalar-trivial=True finer=[] finer-excluded=True reflection-present=True
+   r=14 d=28 E<= 2 scalar-cost>=12 scalar-trivial=True finer=[(4, 7, -30)] finer-excluded=True reflection-present=True
+   r=15 d=30 E<= 4 scalar-cost>=12 scalar-trivial=True finer=[] finer-excluded=True reflection-present=True
+   r=16 d=32 E<= 6 scalar-cost>=14 scalar-trivial=True finer=[(4, 8, -28)] finer-excluded=True reflection-present=True
+   r=17 d=34 E<= 8 scalar-cost>=14 scalar-trivial=True finer=[] finer-excluded=True reflection-present=True
+   r=18 d=36 E<=10 scalar-cost>=16 scalar-trivial=True finer=[(4, 9, -26), (6, 6, -34)] finer-excluded=True reflection-present=True
+   r=19 d=38 E<=12 scalar-cost>=16 scalar-trivial=True finer=[] finer-excluded=True reflection-present=True
+   r=20 d=40 E<=14 scalar-cost>=18 scalar-trivial=True finer=[(4, 10, -24)] finer-excluded=True reflection-present=True
+   r=21 d=42 E<=16 scalar-cost>=18 scalar-trivial=True finer=[(6, 7, -32)] finer-excluded=True reflection-present=True
+   r=22 d=44 E<=18 scalar-cost>=20 scalar-trivial=True finer=[(4, 11, -22)] finer-excluded=True reflection-present=True
+(3) isotypic case: scalar Lambda needs >=18 block-moving branches, J=2(k-1)>=18 => k>=10 => r<=d/10: max r for d<=42 = 4 (< 6, excluded)
+(4) factorwise tensor shapes a<=b, ab<=42, passing 2ab+8 >= 3b+16*max(a,2): [(3, 14)]
+ALL PASS

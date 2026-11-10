@@ -1,0 +1,118 @@
+## HCG Session DSN v0.1 — bağımsız inceleme
+
+[SESSION — 22 Ekim 2026]
+
+Belgenin tamamını (872 satır) ve DSN Metodolojisi v1.3'ün ilgili kurallarını okudum. Önce dosya bütünlüğünü kontrol ettim:
+
+| Kontrol                  | Sonuç                                                              |
+| ------------------------ | ------------------------------------------------------------------ |
+| Dosya                    | `HCG_HODGE_SESSION_DSN_v0_1.md`                                    |
+| Satır sayısı             | 872 — doğru                                                        |
+| SHA-256                  | `0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722` |
+| §0–§9 ve Appendix A/B    | Mevcut ve doğru sırada                                             |
+| AI context bitiş işareti | Bir adet, §4 sonunda                                               |
+| Belge statüsü            | DRAFT; PI kabulü iddia edilmiyor                                   |
+| Denetçi körlüğü          | Açık dağıtım yasağıyla korunmuş                                    |
+
+### Genel değerlendirmem
+
+Belgeyi iyi bir ilk konsolidasyon olarak kabul ediyorum; ancak henüz PI-adoption-ready olarak işaretlemeyi önermiyorum.
+
+Özellikle üç yaklaşımı doğru buldum:
+
+- [SESSION — REVIEW] Severn'in hakemsiz teoremi, oturumun kendi teoremi olarak yeniden sahiplenilmemiş. Genel sonuç `CLAIMED`, üçüncü denetimi tamamlanmış W5 geometrisi ise ayrı tutulmuş.
+- [SESSION — REVIEW] Matematiksel doğruluk etiketi (`ALG`, `THM`, `HYP`) ile bağımsız inceleme durumu (`CHECKED`, `THIRD-FAMILY CHECKED`) birbirine karıştırılmamış. Bu, Metodoloji v1.3 §0.6'nın temel şartına uygun.
+- [SESSION — REVIEW] RTG'den matematiksel ithalat ile fiziksel çıkarım arasına açık koruma konmuş. H4 seçilim araştırması da ana Severn ispatından ayrılmış.
+
+Bununla birlikte birkaç somut düzeltme gerekiyor. Bazıları yalnızca metin ve kayıt disipliniyle ilgili; bazıları ise teorem statülerinin gelecekte yanlış okunmasını önlemek açısından önemli.
+
+## Düzeltilmesi gereken önemli noktalar
+
+### 1. PO-6 statüsünde bir iç tutarsızlık var
+
+[SESSION — REVIEW FINDING F01]
+
+§0, §1 ve §6.14'te \\(d(S\_{\mathrm{W5}})=[1]\\) sonucunun üç model ailesince doğrulandığı söyleniyor. Oysa §6.16, kup formundan gerçek polarize abelyen faktörün diskriminantına geçişin üçüncü denetiminin henüz tamamlanmadığını doğru biçimde belirtiyor.
+
+Bunlar ayrı iki iddia:
+
+\\[ \underbrace{[\det(\vartheta S)]=[1]}\_{\text{üç aile tarafından doğrulandı}} \qquad\text{ve}\qquad \underbrace{d(S\_{\mathrm{W5}})=[\det(\vartheta S)]}\_{\text{Prop. 5.1 köprüsü; denetim bekliyor}}. \\]
+
+Birincisinin üç kez doğrulanması, ikincinin bağımsız kanıtı değildir.
+
+Bu nedenle özetlerde “W5 cup-form discriminant class [1] is three-family checked; identification with the actual polarized factor remains under audit” biçimi kullanılmalı.
+
+Ayrıca §6.16'nın `[THM]` etiketi açık kaynak bağımlılığı ve `REVIEWED` statüsüyle daha dikkatli tiplenmeli. Koşullu önerme korunabilir, fakat bekleyen Lemma 5.2 / [19, Lemma 6.2] denetimi açık varsayım olarak görünmeli.
+
+Bu, yeni bir matematiksel çürütme değil; mevcut kanıt statülerinin birbirine karıştırılmasını önleyen önemli bir kayıt düzeltmesi.
+
+### 2. §6.13'teki “determinantlar daima normdur” ifadesi fazla genel
+
+[SESSION — MATHEMATICAL SCOPE FINDING F02]
+
+Metin, \\(\det h\\)'nin bazla değiştiğini fakat always norms olduğunu söylüyor.
+
+Doğru genel kural:
+
+\\[ \det(P^t h\bar P) =N\_{K/\mathbb Q}(\det P)\det h. \\]
+
+Yani baz değişimi diskriminantın norm sınıfını korur. Ancak bu, her Hermitik formun determinantının mutlaka bir norm olduğu anlamına gelmez.
+
+Örneğin \\(K=\mathbb Q(\sqrt{-3})\\) üzerinde
+
+\\[ h=\operatorname{diag}(1,1,1,1,-1,-1,-1,-2) \\]
+
+imzası \\((4,4)\\) olan bir Hermitik formdur ve determinantı \\(2\\)'dir. \\(2\\), bu alanın norm grubunda değildir.
+
+Bu yüzden önerdiğim ifade:
+
+> Under a change of K-basis, det h is multiplied by a field norm; therefore its norm class is basis-independent. For the specific G34 witnesses examined here, the computed class is [1]. No claim about every Hurwitz component is made.
+
+W5/W6/W7 sonuçları değişmez, fakat gereksiz bir evrensel önerme ortadan kalkar.
+
+### 3. §4'te Eisenstein notasyonu hatalı bir genel eşitlik içeriyor
+
+[SESSION — MATHEMATICAL TYPING F03]
+
+§4 satır 221, \\(\omega\\)'yı L-G34 için \\(\zeta_3\\), L-DYN için \\(\zeta_6\\) olarak ayırıyor. Hemen sonraki satır ise koşulsuz olarak
+
+\\[ \vartheta=1+2\omega=\sqrt{-3} \\]
+
+diyor.
+
+Bu eşitlik yalnız \\(\omega=\zeta_3\\) iken geçerli. Dolayısıyla son satır “In L-G34 only” diye sınırlandırılmalı. L-DYN'de \\(\vartheta=2\zeta_6-1\\) yazılabilir.
+
+Bu da küçük fakat gerçek bir matematiksel notasyon hatası.
+
+## Diğer düzeltmeler ve nihai karar
+
+Metodoloji ve kayıt tutarlılığı açısından dört düzenleme daha öneriyorum:
+
+| Öncelik | Bulgu                                                                                                                                      | Gerekli işlem                                                                                                                  |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Orta    | F04 — Review statüleri: `REVIEWED`, `RECORDED`, `THREE-FAMILY CHECKED` gibi değerler tanımlı dört inceleme statüsüyle uyuşmuyor.           | Standart statüyü koruyup ek açıklamayı `[provenance:]` ayrıntısında veya ayrı evidence alanında belirtmek                      |
+| Orta    | F05 — W6/W7 RID: `[RID: HCG-ALG-W6, HCG-ALG-W7]` tek alan içinde iki kimlik taşıyor.                                                       | İki ayrı claim-block oluşturmak                                                                                                |
+| Orta    | F06 — İki AI kontrolü: “Every link has been reviewed by two AIs” ifadesi PO-6'nın ayrıntılı inceleme düzeyini gereğinden güçlü gösteriyor. | PO-1–4 ile PO-6'yı inceleme düzeylerine göre ayrı belirtmek                                                                    |
+| Bakım   | F07 — RTG ithalatları: §7 hâlâ Dyadic v6.4.18/19'u kullanıyor. Erişilebilir benimsenmiş belge v6.4.20.                                     | Kaynakların değişmeyen kapsamlarını kontrol ederek güncel sürüm notu eklemek; eski kanıt referanslarını otomatik değiştirmemek |
+
+Yeni H4 obstruction tablosunun `PROPOSED` tutulması ise doğru. Bu turda Claude'nun `h4sel/` betiklerini yeniden çalıştırmadım; balanced/comb farkına bağımsız doğrulama atfetmiyorum.
+
+## Tam inceleme raporu
+
+HCG DSN v0.1 — ChatGPT Independent QA
+
+105 satır · F01–F09 bulguları · önerilen düzeltme metinleri · kapsam ve kaynak manifesti
+
+İnceleme raporunu indir (.md)
+
+Raporu doğrudan Claude'ya gönderebilirsin. Özellikle F01 ve F02 düzeltmelerini, yeni sürüm hazırlanırken atlanmaması gereken maddeler olarak işaretledim.
+
+### Önerdiğim sürüm kararı
+
+DRAFT v0.1 korunmalı. Claude bundan hareketle düzeltilmiş `DRAFT r2` hazırlamalı; eski dosyanın hash'i ve içeriği değişmemeli. Yeni sürüm için exact diff, yeni SHA-256 ve statü tutarlılığı kontrolü yapılmalı. Ardından PI kabul kararı verilebilir.
+
+Bu incelemede yeni bir W5/W6/W7 sertifika hatası veya G34-D'nin yazılı geometrik argümanını çürüten bir sonuç bulmadım. Ancak bütün matematiksel hesapları baştan tekrarlamadım; bu rapor bağımsız DSN tutarlılık ve bilimsel kapsam denetimidir, yeni bir tam ispat denetimi değildir.
+
+Bir nokta özellikle önemli: Belgenin PI tarafından oturum kaydı olarak kabul edilmesi, Severn'in genel teoreminin matematiksel olarak kabul edilmesi anlamına gelmez. Bunların ayrı kararlar olarak kalması gerekir.
+
+Son önerim: HCG DSN'yi küçük ama zorunlu düzeltmelerle ilerletelim, üçüncü denetçinin Round 2 bağımsızlığını koruyalım ve ana teorem statüsünü değiştirmeyelim.

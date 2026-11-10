@@ -1,0 +1,13 @@
+{
+  "input_sha256": "172766a91017aeac62e5c299a72b2c7582b0bb186c4feaa8b1906144eafb952e",
+  "field": "Q(w), w^2+w+1=0",
+  "theta": "1+2*w=sqrt(-3)",
+  "matrix_size": 8,
+  "skew_hermitian_S": true,
+  "hermitian_h": true,
+  "det_S": "19683",
+  "det_h": "1594323",
+  "norm_witness": "3^6*(1+2*w)",
+  "norm_value": "1594323",
+  "discriminant_class": "[1]"
+}

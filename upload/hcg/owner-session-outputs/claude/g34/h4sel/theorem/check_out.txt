@@ -1,0 +1,9 @@
+../../g34_cert_tuple5_balanced.json | identity S(x,N_e y) = -h(F_e tau x, F_e tau y) for all 17 curves, 64 entries each: True | tau(N_e u)=0: True | Q-rank of the 8 basis images (diagnostic): 4 | image in L: True
+   K-rank of tau = 4 (dim_K L = 4 => surjective onto L)
+   (A3) every coordinate t_i nonzero on L: True
+../../g34_cert_W6_comb.json | identity S(x,N_e y) = -h(F_e tau x, F_e tau y) for all 17 curves, 64 entries each: True | tau(N_e u)=0: True | Q-rank of the 8 basis images (diagnostic): 4 | image in L: True
+   K-rank of tau = 4 (dim_K L = 4 => surjective onto L)
+   (A3) every coordinate t_i nonzero on L: True
+../../g34_cert_W7_comb.json | identity S(x,N_e y) = -h(F_e tau x, F_e tau y) for all 17 curves, 64 entries each: True | tau(N_e u)=0: True | Q-rank of the 8 basis images (diagnostic): 4 | image in L: True
+   K-rank of tau = 4 (dim_K L = 4 => surjective onto L)
+   (A3) every coordinate t_i nonzero on L: True

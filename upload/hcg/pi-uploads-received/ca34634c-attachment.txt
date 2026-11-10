@@ -1,0 +1,82 @@
+## G34-BLOCK-01 — bağımsız tekrar raporunun değerlendirmesi
+
+[SESSION — kaynak ve kanıt kaydı] Claude'nun `H3_BRAID_ESCAPE_REPLAY_v0_1.zip` paketini açıp inceleme raporunu, iki hesap betiğini, çıktı kayıtlarını ve hash manifestini okudum.
+
+İlk sonuç olumlu: ChatGPT'nin önerdiği braid-escape tanığı, Claude'nun farklı motoruyla bağımsız olarak yeniden kurulmuş. Bildirilen bütün cebirsel sonuçlar önceki sertifikayla uyumlu.
+
+| Kanıt yükümlülüğü                                        | Claude'nun yeniden kurulumu               |
+| -------------------------------------------------------- | ----------------------------------------- |
+| 868 harflik braid'in saf olması                          | PASS                                      |
+| Son tuple'ın hedef köklerle eşleşmesi                    | PASS                                      |
+| Ters braid ile başlangıca dönülmesi                      | PASS                                      |
+| 8 kohomoloji temsilcisinin ve 6 coboundary'nin taşınması | PASS                                      |
+| Cup formunun korunması                                   | PASS                                      |
+| Başlangıçta A3 başarısız, hedefte başarılı               | PASS                                      |
+| H0–H3                                                    | PASS                                      |
+| H4                                                       | \\(\operatorname{rank}\_{\mathbb Q}=16\\) |
+| Tek bağıntı                                              | \\(N\_{[1,4]}=N\_{[1,2]}+N\_{[3,4]}\\)    |
+
+Paketin manifestindeki bir yol eksikliğini de belirledim: `cert.json` ZIP'in içinde değil. Ancak aynı sertifika önceki ChatGPT tesliminde bulunuyor ve hash'i (`44030b5f…dcb2e6`) manifestteki değerle eşleşiyor. Bu, hesap verisinin çelişmesi değil, paketin kendi başına yeniden oynatılabilirliğinde küçük bir eksiklik.
+
+## G34-BLOCK-01 — çapraz denetim sonucu
+
+[SESSION — REVIEW] Claude'nun yeniden kurulumunu kabul ediyorum. `HCG-ALG-G34-BLOCK-BRAID-ESCAPE-01 → CHECKED` statüsünü öneriyorum.
+
+Bu turda ayrıca özgün sertifikadan ayrı bir exact kontrol yaptım:
+
+| Kontrol                        | Sonuç                                  |
+| ------------------------------ | -------------------------------------- |
+| 868 harflik braid permütasyonu | Birim — saf braid                      |
+| 17 adet \\(T_j=I+N_j\\)        | PASS                                   |
+| 289 adet \\(N_iN_j=0\\)        | PASS                                   |
+| \\(\mathbb Q\\)-span rankı     | 16                                     |
+| \\(K\\)-span rankı             | 16                                     |
+| Rasyonel bağıntı uzayı         | Boyut 1                                |
+| Tek bağıntı                    | \\(N\_{[1,4]}=N\_{[1,2]}+N\_{[3,4]}\\) |
+
+Claude'nun farklı motorla yaptığı kök, braid, cup ve H0–H4 kontrolleriyle uyuşmazlık yok.
+
+Bir kayıt sınırı: Claude'nun betiklerini bu turda baştan çalıştırmayı denedim, ancak 868 harflik exact replay süre sınırına takıldı. Dolayısıyla sonuç, Claude'nun bağımsız hesap raporu ve mevcut exact sertifikanın benim tarafımdan yeniden denetlenebilen kısmı üzerine dayanıyor.
+
+## Matematiksel sonuç
+
+[ALG — belirtilen sabit işaretleme ve braid kapsamı]
+
+\\[ \boxed{ \rho\_{\mathrm{tree}}^{\mathrm{initial}}\le8, \qquad \rho\_{\mathrm{tree}}^{\mathrm{braided}}=16. } \\]
+
+Bu örnek, sabit işaretlemedeki rank engelinin aynı saf braid yörüngesinde aşılabildiğini gösteriyor.
+
+Ayrıca
+
+\\[ \boxed{ \mathrm{A3(initial)}=\mathrm{false},\qquad \mathrm{A3(final)}=\mathrm{true}. } \\]
+
+Dolayısıyla A3 braid-yörüngesi değişmezi değildir.
+
+Ancak bundan her \\(G\_{34}\\) Hurwitz bileşeninde tam rank veren bir işaretleme bulunduğu sonucu çıkmaz.
+
+## Sıradaki bilimsel hedef
+
+İki önerinden birincisini önceliklendiriyorum, fakat evrensel varlık iddiasıyla başlamayalım.
+
+| Araştırma                                            | Öncelik | Gerekçe                                                       |
+| ---------------------------------------------------- | ------- | ------------------------------------------------------------- |
+| Saf braid yörüngelerinde tam-rank işaretleme varlığı | P1      | Yeni bir matematiksel sınıflandırma veya karşıörnek verebilir |
+| Küçük oyuncak örneğin braid ile kaçışı               | P1      | Daha ucuz ve yanlışlanabilir ilk test                         |
+| BLOCK-01 ile W5 arasında braid bulma                 | P2      | Faydalı bileşen bilgisi; ana ispat için zorunlu değil         |
+| Yeni rastgele \\(G\_{34}\\) sertifikaları            | P3      | Şu an yapısal bilgi üretme getirisi daha düşük                |
+
+Özellikle küçük oyuncak örnekte, başlangıç işaretlemesindeki maksimum rank 6 iken hedef 9. Bu engel de saf braid altında aşılabiliyor mu? İlk sınanması gereken soru bu.
+
+Eğer aşılamazsa, elimizde bileşen düzeyinde bir engel adayı olabilir. Aşılırsa, tekrarlı-blok engelinin neden işaretleme kaynaklı olduğunu açıklayan daha genel bir mekanizma aramalıyız.
+
+## Denetim dosyaları
+
+Çapraz denetim ve bilimsel kapsam raporu
+
+Claude'nun raporu, özgün sertifika, kaynak betikler, exact loglar ve hash manifesti
+
+İkinci paket, Claude'nun ZIP'inde eksik olan `cert.json` dosyasını doğru hash'li sertifikayla tamamlıyor. Betiklerdeki özgün çalışma ortamı yolları korunmuştur.
+
+Kayıt önerim: G34-BLOCK-01-BRAID-ESCAPE-01 ve A3'ün braid altında değişebilirliği `CHECKED`; tüm saf braid yörüngeleri için tam-rank varlık problemi `OPEN`. Bu sonuçlar HCG v0.2 bekleyen kayıtlara eklenebilir. Benimsenmiş v0.1, PO-6 ve Severn teoreminin statüleri değişmez.
+
+Denetçinin Priority B incelemesine bu iç araştırma kolunu henüz göndermeyelim.

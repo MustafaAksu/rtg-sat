@@ -1,0 +1,3 @@
+root norms: [(Fraction(6, 1), Fraction(0, 1)), (Fraction(6, 1), Fraction(0, 1)), (Fraction(6, 1), Fraction(0, 1)), (Fraction(6, 1), Fraction(0, 1)), (Fraction(6, 1), Fraction(0, 1)), (Fraction(6, 1), Fraction(0, 1))]  K-rank of roots: 6
+vectors in closure (units included): 756
+group order (faithful on these vectors): 39191040

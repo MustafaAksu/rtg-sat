@@ -1,0 +1,3 @@
+[P2-random:order3] identity tests=168 failures so far=0; nonzero=166; wrong-inverse control rejected 166/166
+[P2-random:order6] identity tests=168 failures so far=0; nonzero=168; wrong-inverse control rejected 168/168
+TOTAL FAILURES: 0

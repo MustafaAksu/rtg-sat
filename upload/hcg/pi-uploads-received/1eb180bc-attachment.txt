@@ -1,0 +1,82 @@
+## Yörünge ayrışımı bağımsız hesapla doğrulandı
+
+[SESSION — bağımsız tam sayım] Claude'nun `g333_orbit_scan.py` kodunu kullanmadan, dokuz kök doğrusu üzerinde monomiyal yansıma hareketlerini ve union-find ayrışımını yeniden yazdım. 531.441 tuple'ın tamamı için sonuç birebir aynı:
+
+| Bileşen türü                   | Bileşen sayısı | Toplam tuple |
+| ------------------------------ | -------------- | ------------ |
+| Mertebe 2 üreten               | 9              | 9            |
+| Mertebe 6 üreten               | 12             | 8.712        |
+| Tam \\(G(3,3,3)\\), mertebe 54 | 1              | 522.720      |
+| Toplam                         | 22             | 531.441      |
+
+Bu, araştırmanın asıl sorusunu sonlu durumda çözüyor:
+
+\\[ \boxed{\text{Tam grubu üreten bütün 522.720 eşli tuple, tek çift-eşleme yörüngesinde.}} \\]
+
+Önceden gerçek Artin operatörleriyle doğrulanmış rank-9 tanığı bu yörüngede bulunduğundan, bu kapsamda hiçbir üretici tuple için kalıcı tam-rank engeli yok.
+
+Bu sonuç, rastgele yürüyüş veya sadece örnekleme değil, tüm çizgenin bağımsız ayrışımıdır. Saf braid grubunun tümünü sınıflandırmayı gerektirmiyor: kullanılan çift-eşleme altgrubu zaten üretici eşli tuple'ları bağlıyor.
+
+## Rank dağılımı ve gerçek operatör tanığı da doğrulandı
+
+[SESSION — bağımsız modüler hesap] Claude'nun EDGEFLUX tarama kodunu kullanmadan, \\(\mathbb Q(\omega)\\) üzerindeki Hermitik formları yeni bir uygulamayla hesapladım.
+
+İki farklı asal modülde sonuçlar tamamen aynı:
+
+| Durum         | Claude  | ChatGPT bağımsız hesap |
+| ------------- | ------- | ---------------------- |
+| A3 başarısız  | 97.200  | 97.200                 |
+| En iyi rank 6 | 6.480   | 6.480                  |
+| En iyi rank 7 | 106.704 | 106.704                |
+| En iyi rank 8 | 200.880 | 200.880                |
+| En iyi rank 9 | 111.456 | 111.456                |
+
+Kontrol asalları: 1.000.003 ve 1.000.033. Her birinde 59.049 normalize tuple hesaplandı; eşzamanlı konjugasyon simetrisiyle tam dağılım elde edildi.
+
+Önemli kanıt ayrımı: dağılım, bütün tuple'lar için modüler rank hesabıdır. Her düşük rankın karakteristik sıfırda aynı olduğunu tek tek sertifikalamadım. Ancak yörüngede rank 9'un varlığı, ayrı exact operatör sertifikasına dayanıyor.
+
+### Gerçek operatörlerle tanık
+
+Kaynak paketteki `reconstruct_witness.py` betiğini yalnız dosya yollarını düzelterek yeniden çalıştırdım. Üretilen bilimsel çıktı, özgün dosyayla bayt düzeyinde aynı:
+
+- H0: 10/10.
+- H1: 81/81.
+- H2: \\(\dim_KI=3\\).
+- H3: toplam formun imzası \\((0,3,3)\\).
+- H4: exact \\(\mathbb Q\\)-rank 9, bağıntı yok.
+
+Bu yeniden oynatma kaynak motorunu kullanıyor; bağımsız olan hesaplar yörünge ayrışımı ve iki-asallı rank taramasıdır.
+
+## Kaynak sorunu da kapandı
+
+[SESSION — provenance] Her iki tarihsel dağılım çıktısı aynı önbelleksiz betiğe ait. Dosyalar yalnız çalışma süresi satırında farklı (`6,6` ve `6,7` saniye). Kaynağı belirsiz ikinci bir algoritma sonucu kalmadı.
+
+## Kayıt kararı
+
+`HCG-ALG-G333-PAIRORBIT-SCAN → CHECKED` öneriyorum.
+
+Bu kararın kapsamı: \\(G(3,3,3)\\), \\(m=6\\), eşli yansıma tuple'ları ve belirtilen çift-eşleme hareketleri. Her üretici tuple'ın tam-rank işaretlemeye ulaşabildiği, tam çizge ayrışımı ve exact tanık sayesinde kuruluyor.
+
+### \\(G\_{34}\\) için sonraki adım
+
+Literatürde Lewis–Wang'ın Hurwitz yörüngeleri üzerine güçlü sonuçları mevcut, ancak bunlar özellikle en kısa yansıma çarpanlaştırmalarını ele alıyor. Bizim özdeşliğin 20 yansımayla eşli çarpanlaştırılması problemine doğrudan uygulanmıyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://escholarship.org\&sz=32)
+
+escholarship.org
+
++1
+
+
+
+Bu yüzden \\(G\_{34}\\) için önceliğim, rastgele yürüyüşle yoğunluk tahmininden önce üretici eşli tuple'ların braid-yörüngesi değişmezlerini ve mümkünse açık bağlayıcı sözcüklerini araştırmak. Negatif yörünge sonucunu yalnız örneklemeden çıkarmamalıyız.
+
+## Dosyalar
+
+Bağımsız denetim raporu
+
+Tam yeniden üretim paketi — ZIP
+
+Paket; bağımsız yörünge kodunu, iki asal için histogram hesaplarını, exact operatör yeniden oynatmasını, özgün kaynak arşivini ve SHA-256 manifestini içeriyor. `replay.py` başarıyla çalıştı.
+
+HCG v0.1 değiştirilmedi. Sonuç Δ18 kapsamıyla v0.2 bekleyen kayda alınabilir. Kör Hodge denetçisine iletilmemelidir.

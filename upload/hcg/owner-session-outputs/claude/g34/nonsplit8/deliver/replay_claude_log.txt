@@ -1,0 +1,28 @@
+MANIFEST PASS 40
+REPLAY audit_sampling_counts.py
+REPLAY local_determinant_independent.py
+REPLAY independent_random_replay.py
+REPLAY g34_rank2_local_census.py
+PRODUCER REPLAY g34_scan_path_adapter.py
+PRODUCER REPLAY locality_path_adapter.py
+PRODUCER REPLAY locality_path_adapter.py G313
+{
+  "source_sampler_counts.json": {
+    "byte_equal": true,
+    "sha256": "ab8b5a270844b8c36288dac2e1007b822293f2f7c3057912262d83065bb0a3a8"
+  },
+  "independent_locality_exact.json": {
+    "byte_equal": true,
+    "sha256": "e387f3a28c3d48de32cdca2f56619d270ecd34ab7d28845d4b0de299fee7d791"
+  },
+  "independent_random_320.json": {
+    "byte_equal": true,
+    "sha256": "f2b528c911b0b5f77dd9ab4ef131a7860b183385caaf0adc477655a321985dd8"
+  },
+  "g34_rank2_local_census.json": {
+    "byte_equal": true,
+    "sha256": "d9edeb313a6b84e44909a12d5956ddfd176aa987f4c5084eb75b61466e413176"
+  },
+  "source_replay": "PASS; W6/W7 deliberately absent and not counted"
+}
+FRESH REPLAY PASS

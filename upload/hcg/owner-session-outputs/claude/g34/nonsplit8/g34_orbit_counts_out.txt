@@ -1,0 +1,8 @@
+orbit of v1 under <s_1..s_10>: 756
+lines: 126
+reflection: fixed vectors 270 (2-cycles 243); fixed lines 46 (2-cycles 40)
+reflection: fixed vectors 270 (2-cycles 243); fixed lines 46 (2-cycles 40)
+reflection: fixed vectors 270 (2-cycles 243); fixed lines 46 (2-cycles 40)
+genus of 756-cover with 20 reflections: 2g-2 = 3348 -> g = 1675
+genus of 126-cover: g = 275
+orders of s_1*s over the other 125 reflections: {3: 80, 2: 45}

@@ -1,0 +1,141 @@
+## Sonuç: d=26 kapanışı ve d=28,30,32 genişletmesi geçti
+
+**[SESSION — bağımsız inceleme]** Claude’nun raporunu ve paketi denetledim. Paket manifesti **5/5 PASS**; `two_block_budget_claude.py` dondurulmuş çıktıyı bayt düzeyinde yeniden üretiyor.
+
+Önerdiğim durumlar:
+
+| Sonuç | Statü |
+|---|---|
+| d=26 iki-blok Galois/yansıma engeli | **CHECKED** |
+| d=28,30,32 iki-blok genişletmesi | **CHECKED** |
+| Bunun sonucu olarak gerekli alt sınır | **\(d\ge33\), CHECKED** |
+| HCG-OPEN-NONSPLIT8 | **OPEN** |
+
+### Neden genişletme çalışıyor?
+
+İki-blok durumda \(d=2r\) ve ara çift örtü \(Y\simeq\mathbb P^1\). Galois iki bloğu değiştiriyor, dolayısıyla blok-koruyan her yerel elemanın iki bloktaki hareket rankları eşit.
+
+Bütçe fazlası:
+\[
+E\le2r-26.
+\]
+
+\(r=13,14,15,16\) için bu:
+
+\[
+E=0,2,4,6.
+\]
+
+Bu bütçe:
+
+- indükleyen rank-\(r\) grupta en az bir yansıma bulunmasını;
+- daha ince blok sistemlerinin period/bütçe sınırını geçememesini;
+- \(S_{r+1}\) durumunda bütün yerel monodromilerin nontrivial skaler çarpan taşıyamayacak kadar düşük ranklı olmasını
+
+zorunlu kılıyor.
+
+Böylece monomiyal, daha ince imprimitif ve \(S_{r+1}\) dallarının üçü de kapanıyor.
+
+## Daha güçlü iki yeni öneri
+
+İnceleme sırasında, sonraki arama alanını ciddi biçimde daraltan iki ek eşitsizlik çıktı. Bunları **PROPOSED** bırakıyorum.
+
+### A. \(k\ge3\) blok için genel Galois-bütçe sınırı
+
+\(d=kr\), bloklar \(K\)-tanımlı değil ve Galois bloklar üzerinde geçişli olsun. Ara blok örtüsünün cinsi \(0\) olduğunda:
+
+\[
+J:=\sum\operatorname{ind}(\pi_j)=2(k-1).
+\]
+
+Blok-koruyan etkin dal en az \(k\) boyut; blok-hareketli dal en az
+\[
+r\,\operatorname{ind}(\pi_j)
+\]
+boyut hareket ettirir. \(N\ge19\) ile:
+
+\[
+2kr+8
+\ge
+2r(k-1)+k(21-2k).
+\]
+
+Dolayısıyla zorunlu koşul:
+
+\[
+\boxed{
+E_k:=2r+2k^2-21k+8\ge0.
+}
+\]
+
+Önceden açık kalan \(d\le42\) çok-bloklu şekillerin **tamamında** \(E_k<0\).
+
+Bu doğruysa şu tipler doğrudan elenir:
+
+\[
+(3,11),\ (5,7),\ (3,12),\ (4,9),\ (6,6),\ (3,13),\ (4,10),\ (5,8)
+\]
+
+ve \(d=42\)’deki \((3,14),(6,7),(7,6)\) tipleri.
+
+### B. İki-blok \(S_{r+1}\) skaler kolu r=20’nin ötesine kadar kapanıyor
+
+Standart durumda
+\[
+\tau\simeq\mathrm{std}_{S_{r+1}}\otimes\psi.
+\]
+
+Nontrivial bir skaler yerel monodrominin minimum hareket rankı:
+
+\[
+T_r=r-\left\lfloor\frac{r+1}{2}\right\rfloor.
+\]
+
+\(\psi\) bir \(\mathbb P^1\) yerel sistemi olduğundan, yalnız tek bir nontrivial skaler yerel değer olamaz. En ucuz nontrivial durum bile bütçede en az
+
+\[
+2(T_r-1)
+\]
+
+harcar.
+
+Fakat
+\[
+E=2r-26<2(T_r-1)
+\]
+eşitsizliği \(13\le r\le22\) boyunca geçerli.
+
+Dolayısıyla skaler karakter bu aralıkta zorunlu olarak trivial.
+
+Bu özellikle:
+
+\[
+r=17,18,19,20
+\]
+
+yani
+\[
+d=34,36,38,40
+\]
+
+için Claude’nun “S-durumu açık kalıyor” engelini ortadan kaldırıyor.
+
+**Eğer A ve B bağımsız kontrolden geçerse**, \(d\le41\)’de kalan bütün kompleks-imprimitif tipler de kapanır. \(d=42\)’de ise imprimitive dal kapanır; fakat **\(3\otimes14\) factorwise tensor dalı hâlâ açık** kalır. Bu nedenle henüz genel \(d\ge43\) sonucu söylemiyorum.
+
+## Kayıt önerisi
+
+- Δ27 içindeki d=26 kaydı: **CHECKED**
+- d=28,30,32 genişletmesi: **CHECKED**
+- Alt sınır \(d\ge33\): **CHECKED**
+- Genel \(k\)-blok bütçe lemması: **PROPOSED**
+- İki-blok skaler güçlendirmesi: **PROPOSED**
+- Genel nonsplit sekizli fizibilitesi: **OPEN**
+
+:chatgpt-content-reference{index="0"}[Bağımsız inceleme ve yeni blok lemaları](sandbox:/mnt/data/hcg_two_block_extension_review/HCG_D26_D32_CHATGPT_CROSS_REVIEW_AND_BLOCK_EXTENSION_v0_1.md)
+
+HCG_D26_D32_CHATGPT_REVIEW_PACKAGE_v0_1.zip[Exact eşitsizlik kontrolü ve yeniden üretim paketi](sandbox:/mnt/data/HCG_D26_D32_CHATGPT_REVIEW_PACKAGE_v0_1.zip)
+
+Paket SHA-256:
+`52ac8e3d2c7c97c185637b7cf552ca9cbd8a8e4ec25d4e4d50e833ca4a8b9542`
+
+**Sıradaki en değerli iş:** Claude yeni \(k\ge3\) bütçe lemmasını ve skaler-karakter maliyet argümanını bağımsız denetlesin. İkisi de geçerse arama alanı doğrudan \(d=42\)’deki tensor dalına ve daha yüksek boyutlara sıçrar.

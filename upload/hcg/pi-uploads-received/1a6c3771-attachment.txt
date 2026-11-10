@@ -1,0 +1,93 @@
+## d=44–45 dışlaması — bağımsız inceleme
+
+[SESSION — ilk karar] Gönderilen hesapların aritmetik kısmı doğrulandı. Özellikle açık kalan \\(r=22\\) iki-blok durumu kapanıyor. \\(d=44,45\\) için Hiss–Malle listesinin ve karakter verisinin kontrolünde de şimdilik bir uyuşmazlık bulmadım.
+
+### 1. \\(r=22\\) için Lemma B
+
+\\[ d=44,\qquad r=22,\qquad E=2r-26=18. \\]
+
+Standart \\(S\_{23}\\) kolunda önemsiz olmayan skaler karakterin en düşük hareket maliyeti
+
+\\[ T_r=r-\left\lfloor\frac{r+1}{2}\right\rfloor =11 \\]
+
+olduğundan,
+
+\\[ \boxed{2(T_r-1)=20>18=E.} \\]
+
+Ürün-bir koşulu nedeniyle skaler karakter yalnız bir etkin yerel noktada önemsiz olamaz. İki-blok Galois eş-rank koşuluyla birlikte bu, \\(\psi=1\\) sonucunu verir.
+
+Diğer iki kol da kapanıyor: yansıma varlığı için \\(17>E/2=9\\); daha ince dört-blok sisteminde \\(E_4=-22\\).
+
+Karar: `d=44, r=22 two-block obstruction → CHECKED` öneriyorum.
+
+### 2. Kaynak paketinin durumu
+
+[SESSION — COMPUTATIONAL QA]
+
+- Paket SHA-256: `103fac3c…e06e` — eşleşti.
+- Manifest: 9/9 PASS.
+- `d44_45_closure_claude.py`: aynı çıktıyla yeniden çalıştı.
+- GAP günlüğü: 68/68 `excluded` satırı.
+- GAP karakter verisi bu ortamda tekrar üretilmedi; mevcut günlük, kaynak kodu ve birincil sınıflandırma tablolarına karşı değerlendiriliyor.
+
+### 3. d=44 ve d=45 için diğer dallar
+
+[SESSION — SOURCE/ALG CHECKED] Hiss–Malle 2001 genel aileler tablosunu ve 2002 düzeltilmiş tablonun 44–45 boyutlu satırlarını karşılaştırdım. Karakteristik sıfıra ait adaylar ile yalnız modüler karakteristikte bulunan satırların ayrımı doğru.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.cambridge.org\&sz=32)
+
+cambridge.org+1
+
+
+
+| Dal                                                     | d=44                                           | d=45                                                            |
+| ------------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
+| Çok-bloklu imprimitif                                   | \\((4,11)\\): \\(E_4=-22\\)                    | \\((3,15),(5,9)\\): \\(E_3=-7,\ E_5=-29\\)                      |
+| Factorwise tensor                                       | \\(2\otimes22,\ 4\otimes11\\): bütçe yetersiz  | \\(3\otimes15\\): önceki lemma; \\(5\otimes9\\): bütçe yetersiz |
+| Rasyonel, kendine-dual normal temsil                    | Minimum hareket rankı en az 14; gerekli eşik 6 | Minimum en az 16; eşik 6                                        |
+| Karakter alanı \\(K\\) olan kendine-dual olmayan temsil | Aday kalmıyor                                  | \\(U_4(2)\\): minimum 24; eşik 10                               |
+
+Genel \\(L_2(q)\\), \\(SL_2(q)\\) aileleri ve \\(2.M\_{12}\\) satırı da dikkate alınmış. İlgili diğer karakter alanları \\(K\\)'nın altalanı değil.
+
+Sonuç:
+
+\\[ \boxed{ (H)\text{ altında bölünmemiş dominant veri} \Longrightarrow d\ge46. } \\]
+
+Önerilen statü: `CHECKED — external-theorem conditional`. Hiss–Malle sınıflandırmasının eksiksizliği ve önceki Lemma A′/B/C/E/F/S sonuçları açık bağımlılıklardır. GAP'taki ham karakterleri ikinci kez üretmedim; 68 günlük satırının tamamını ve cebirsel eşikleri ayrı denetledim. Ayrıca 68 satır, tekrar eden genel-aile kontrolleri nedeniyle 68 farklı temsil anlamına gelmiyor.
+
+### 4. Yeni araştırma adayı: d=46 eşitliği de kapanabilir
+
+[SESSION — PROPOSED]
+
+\\(d=46\\)'daki iki-blok durumda \\(r=23\\) için:
+
+\\[ E=20,\qquad T\_{23}=11,\qquad 2(T\_{23}-1)=20. \\]
+
+Önceki Lemma B katı eşitsizlik vermediğinden bu durum açık bırakılmıştı.
+
+Fakat eşitlik sağlanacaksa, skaler karakterin önemsiz olmayan yerel değerleri tek bir blok-koruyan dalın iki liftinde bulunmak zorunda. Her birinin hareket rankı tam 11 olmalı.
+
+\\(S\_{24}\\)'ün standart temsilinde, mertebesi \\(q\ge3\\) olan bir skaler çarpan hareket rankını en az
+
+\\[ 23-\left\lfloor\frac{24}{q}\right\rfloor\ge15 \\]
+
+yapar. Dolayısıyla rank 11 yalnız skaler \\(-1\\) ile mümkün. Bu da \\(\psi\\)'yi rasyonel karaktere zorluyor.
+
+İlk değerlendirme: \\(d=46\\)'nın iki-blok skaler kolu da elenebilir. Ancak bu, primitif \\(d=46\\) adaylarını elemez ve genel alt sınırı henüz yükseltmez. Claude'nun bağımsız denetimini gerektirir.
+
+### 5. Nihai kayıt önerisi
+
+- d=44–45 dışlaması: CHECKED önerisi; gerekli sınır \\(d\ge46\\).
+- \\(r=22\\) Lemma B: CHECKED.
+- \\(r=23\\) eşitlik dışlaması: PROPOSED.
+- HCG-OPEN-NONSPLIT8: OPEN.
+- Severn A/B/C: CLAIMED.
+- HCG v0.2 ADOPTED: Değişmedi.
+
+Bağımsız matematiksel inceleme raporu (English)
+
+Kaynak paket, doğrulayıcı ve SHA-256 manifesti (ZIP)
+
+Temiz dizinde manifest 6/6 PASS ve bağımsız QA betiği PASS. Paket özgün Claude arşivini değiştirilmeden içeriyor.
+
+Sonraki önerim: Claude önce \\(r=23\\) eşitlik argümanını denetlesin; paralelde \\(d=46\\) primitif karakter listesini çıkarsın. Böylece yeni bir geniş taramaya başlamadan iki açık dalı ayrı ayrı kapatma imkânımız olur.

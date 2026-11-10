@@ -1,0 +1,6 @@
+root lines in orbit: 9
+start line tuple: (0, 0, 1, 1, 2, 2)
+hexagon trees: 14
+components (all tuples): 22  time 6.6 s
+component size 522720 ; distribution of best pair-tree rank over its nodes: {'A3-fail': 97200, 7: 106704, 6: 6480, 8: 200880, 9: 111456}
+tuples outside it (non-generating): 8721 ; total 531441

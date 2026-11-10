@@ -1,0 +1,29 @@
+(1) min_w rank(1 - lambda w | std) = r - floor((r+1)/q) for ord(lambda) = q: verified over all cycle types, r = 2..30
+(2)  r   d  E_max  R2  R3 | old B: 2(R2-1)>E | B'(a): 2(R3-1)>E  B'(b): R3+R2>E | refl 17>E/2 | finer systems
+   13  26    0    6   9 | True            | True              True           | True        | [] ok
+   14  28    2    7   9 | True            | True              True           | True        | [(4, 7, -30)] ok
+   15  30    4    7  10 | True            | True              True           | True        | [] ok
+   16  32    6    8  11 | True            | True              True           | True        | [(4, 8, -28)] ok
+   17  34    8    8  11 | True            | True              True           | True        | [] ok
+   18  36   10    9  12 | True            | True              True           | True        | [(4, 9, -26), (6, 6, -34)] ok
+   19  38   12    9  13 | True            | True              True           | True        | [] ok
+   20  40   14   10  13 | True            | True              True           | True        | [(4, 10, -24)] ok
+   21  42   16   10  14 | True            | True              True           | True        | [(6, 7, -32)] ok
+   22  44   18   11  15 | True            | True              True           | True        | [(4, 11, -22)] ok
+   23  46   20   11  15 | False           | True              True           | True        | [] ok
+   24  48   22   12  16 | False           | True              True           | True        | [(4, 12, -20), (6, 8, -30), (8, 6, -20)] ok
+   25  50   24   12  17 | False           | True              True           | True        | [] ok
+   26  52   26   13  17 | False           | True              True           | True        | [(4, 13, -18)] ok
+   27  54   28   13  18 | False           | True              True           | True        | [(6, 9, -28)] ok
+   28  56   30   14  19 | False           | True              True           | True        | [(4, 14, -16), (8, 7, -18)] ok
+   29  58   32   14  19 | False           | True              True           | True        | [] ok
+   30  60   34   15  20 | False           | True              True           | False       | [(4, 15, -14), (6, 10, -26), (10, 6, 10)] OPEN
+   31  62   36   15  21 | False           | True              False          | False       | [] ok
+   32  64   38   16  21 | False           | True              False          | False       | [(4, 16, -12), (8, 8, -16)] ok
+   33  66   40   16  22 | False           | True              False          | False       | [(6, 11, -24)] ok
+   34  68   42   17  23 | False           | True              False          | False       | [(4, 17, -10)] ok
+    two-block (non-K-defined) datum excluded for r in 13 .. 29 : True
+    caveat: for d = 2r >= 50 the K-defined (K-imprimitive) two-block case is a separate, still-open branch
+(3) r = 23: values of order >= 3 cost >= min(28, 26) > E = 20; order-2 values give a rational character. CLOSED.
+    r = 24 (d = 48): old Lemma B is again an equality (22 = 22); Lemma B' closes it (30, 28 > 22).
+ALL PASS

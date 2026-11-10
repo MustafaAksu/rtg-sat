@@ -1,0 +1,102 @@
+## \\(d=46\\)–49 incelemesi: ilk iki lemma doğrulandı
+
+[SESSION — COMPUTATIONAL CHECKED] Gönderilen `H3_R23_REVIEW_CLAUDE_v0_1.zip` paketindeki 11/11 SHA-256 kaydı eşleşti. `two_block_quadratic_claude.py` ve `d46_49_closure_claude.py` yeniden çalıştırıldı; iki çıktı da dondurulmuş kayıtlarla bayt düzeyinde aynı.
+
+### Lemma B′ — CHECKED
+
+İki-bloklu, blokları \\(K\\) üzerinde tanımlı olmayan ve indükleyen grubun standart \\(S\_{r+1}\\) normalleyicisine düştüğü durumda, skaler karakterin mutlaka önemsiz olması gerekmiyor. Yalnız \\(\\{\pm1\\}\\)-değerli olması, indüklenmiş karakterin rasyonelliğini ve dolayısıyla karakter-alanı çelişkisini veriyor.
+
+\\[ R_q(r)=r-\left\lfloor\frac{r+1}{q}\right\rfloor \\]
+
+yerel hareket-rank sınırı doğru. Mertebesi en az üç olan skalerleri dışlayan bütçe eşitsizliklerini \\(13\le r\le29\\) için doğruladım.
+
+Dolayısıyla Lemma B′, diğer miras alınan iki-blok dallarıyla birlikte bu aralıkta geçerlidir. Bu kapsamda \\(r=23\\) ve \\(r=24\\) eşitlik sorunları çözülüyor.
+
+### Lemma T — CHECKED
+
+Ortak özvektör argümanı da geçerli. En büyük özuzayların kodboyutları toplamı \\(a\\)'dan küçükse kesişimleri sıfır değildir; bu da \\(A\otimes B\\) temsilinde değişmez bir altuzay oluşturur.
+
+Buradan çıkan gerekli koşul
+
+\\[ \boxed{b\ge19-a-\frac8a} \\]
+
+doğrudur. Özellikle \\(4\otimes12\\) için gerekli hareket-rank toplamı 108, mevcut bütçe 104; bu yapı dışlanır.
+
+### Lemma \\(2\otimes24\\) — CHECKED, ikinci bir ispatla
+
+[SESSION — bağımsız cebirsel ispat] Claude'nun yansıma-grubu ayrıştırması doğru. Son \\(W=S\_{25}\\) durumunu ise üç-yansıma lemmasını kullanmadan kapatabiliyorum.
+
+\\(d=48\\) ve \\(\sum c_j=104\\) bütçesi zorunlu olarak:
+
+\\[ N=19,\qquad 3\text{ aktif dal }(c=24),\qquad 16\text{ pasif dal }(c=2) \\]
+
+veriyor.
+
+\\(S\_{25}\\)'in standart 24-boyutlu temsilinde pasif dalların görüntüleri transpozisyondur. Aktif dalların görüntüleri ise involüsyondur ve permütasyon indeksleri en fazla 12'dir.
+
+25 dereceli ara örtüde Riemann–Hurwitz:
+
+\\[ \sum_j\operatorname{ind}(w_j)=48+2\gamma\ge48. \\]
+
+Pasif dallar 16 katkı verdiğinden üç aktif dalın toplam katkısı en az 32. İkisi en fazla 24 verebilir; dolayısıyla üçünün de görüntüsü birim olmayan involüsyondur.
+
+Bu durumda rank-24 koşulu, iki-boyutlu faktördeki her aktif matrisin özdeğerlerini \\(\\{1,-1\\}\\) yapar. Dolayısıyla
+
+\\[ \boxed{ \det\left(\prod_j A'\_j\right)=(-1)^3=-1 } \\]
+
+oysa toplam monodromi çarpımı birim olduğundan determinant \\(1\\) olmalıdır. Çelişki.
+
+Bu, Claude'nun ispatından bağımsız, daha kısa bir kapanış. \\(2\otimes24\\) dışlaması için CHECKED öneriyorum.
+
+### \\(d=46\\)–49: bütün dallar kapanıyor
+
+[SESSION — SOURCE-CONDITIONAL REVIEW]
+
+| \\(d\\) | Son kalan dallar                                                                                    | Hüküm                                                                 |
+| ------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 46      | İki-blok \\((2,23)\\), primitif \\(L_2(47)\\)                                                       | B′ ve karakter-rank eleğiyle dışlandı                                 |
+| 47      | Primitif \\(L_2(47)\\)                                                                              | Karakter-rank eleğiyle dışlandı                                       |
+| 48      | İmprimitif, \\(2\otimes24\\), \\(3\otimes16\\), \\(4\otimes12\\), \\(6\otimes8\\), primitif adaylar | B′, A′, T, yeni \\(2\otimes24\\) ispatı ve karakter eleğiyle dışlandı |
+| 49      | İmprimitif \\((7,7)\\), tensor \\(7\otimes7\\), primitif \\(L_2(49)\\) ve \\(L_2(97)\\)             | Bütçe ve karakter-alanı/rank eleğiyle dışlandı                        |
+
+Karakteristik-sıfır aday listesinin eksiksizliği, Hiss–Malle, Low-dimensional representations of quasi-simple groups ve düzeltmesine bağlıdır.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.cambridge.org\&sz=32)
+
+Cambridge Core+1
+
+
+
+Kanıt sınırlaması: GAP'ın 459 tabloyu tarayan uygulamasını bu ortamda yeniden çalıştırmadım. Kaynak kodunu ve sonuçlarını denetledim; bağımsız olan aritmetik bütçe hesabı ve \\(2\otimes24\\) ispatıdır.
+
+Bu koşullarla önerdiğim sonuç:
+
+\\[ \boxed{ (H)\text{ altında bölünmemiş dominant veri} \Longrightarrow d\ge50. } \\]
+
+Statü: CHECKED — dış sınıflandırma ve karakter verisi koşullu. HCG v0.2 ADOPTED ve Severn A/B/C'nin `CLAIMED` durumları değişmiyor.
+
+### Yeni bir kapsam düzeltmesi: \\(d=50\\)'de \\(K\\)-imprimitif dal açık değil
+
+[ALG — yeni SESSION koroleri; peer denetimi bekliyor]
+
+Claude'nun bir sonraki sınır haritasındaki bu satırı düzeltmemiz gerekiyor.
+
+Önceden CHECKED olan Lemma E, \\(K\\)-tanımlı \\(k\ge2\\) bloklu bir veriyi, diskriminantı ve rank-16 period özelliğini koruyarak rank-\\(r\\) indükleyen veriye indiriyor.
+
+Zaten doğrulanmış genel alt sınır \\(r\ge46\\) olduğundan:
+
+\\[ \boxed{ d=kr,\quad k\ge2,\quad r\ge46 \Longrightarrow d\ge92. } \\]
+
+Dolayısıyla \\(K\\)-imprimitif dal \\(d=50\\)'de yeniden açılmıyor. Eski \\(d\ge50\\) imprimitif eşiği, genel alt sınır henüz 25 iken elde edilmişti; güncel sınırla birlikte güçleniyor.
+
+Bu yeni gözlem doğru kabul edilirse \\(d=50\\)'de asıl inceleme iki kola iner: factorwise \\(2\otimes25\\) ve 50-boyutlu primitif temsil verileri. \\(K\\)-tanımlı olmayan iki-blok durumu da Lemma B′'nin \\(r=25\\) kapsamıyla zaten eleniyor.
+
+## Denetim dosyaları
+
+Bağımsız bilimsel rapor — English
+
+Kaynak paket, yeni exact denetleyici, sonuç JSON'u ve hash manifesti — ZIP
+
+ZIP SHA-256: `29661d890ebde3c3c1ec409b8900cf7a97022ecb9e16f048ddad609cf500efcd` · Manifest 5/5 PASS
+
+Önerilen sonraki görev: Claude özellikle yeni Riemann–Hurwitz/determinant ispatını ve \\(K\\)-imprimitif eşik güncellemesini denetlesin. Bunlar olumluysa \\(d=50\\) araştırmasını artık yalnız iki gerçek açık dala odaklayabiliriz.

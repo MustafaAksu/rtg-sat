@@ -1,0 +1,358 @@
+{
+  "status": "PASS",
+  "input_sha256": "172766a91017aeac62e5c299a72b2c7582b0bb186c4feaa8b1906144eafb952e",
+  "sympy_version": "1.14.0",
+  "field": "Q(w), w^2+w+1=0",
+  "root_norms": [
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ],
+    [
+      "6",
+      "0"
+    ]
+  ],
+  "root_span_rank": 6,
+  "root_graph_connected": true,
+  "irreducibility_argument": "Unitary reflections; spanning roots and connected nonorthogonality graph.",
+  "closure_rank": 6,
+  "coboundary_rank": 6,
+  "H1par_dim_K": 8,
+  "stored_basis_verified": true,
+  "cup_matches_supplied": true,
+  "DW_direct_matches_negative_gram": true,
+  "cup_global_sign_note": "One global convention sign; no curvewise signs used.",
+  "curves": [
+    {
+      "j": 1,
+      "interval": [
+        1,
+        2
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 2,
+      "interval": [
+        3,
+        4
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 3,
+      "interval": [
+        5,
+        6
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 4,
+      "interval": [
+        7,
+        8
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 5,
+      "interval": [
+        9,
+        10
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 6,
+      "interval": [
+        11,
+        12
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 7,
+      "interval": [
+        13,
+        14
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 8,
+      "interval": [
+        15,
+        16
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 9,
+      "interval": [
+        17,
+        18
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 10,
+      "interval": [
+        19,
+        20
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 1,
+      "quotient_beta_inertia": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "j": 11,
+      "interval": [
+        1,
+        4
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 2,
+      "quotient_beta_inertia": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "j": 12,
+      "interval": [
+        5,
+        8
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 2,
+      "quotient_beta_inertia": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "j": 13,
+      "interval": [
+        9,
+        12
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 2,
+      "quotient_beta_inertia": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "j": 14,
+      "interval": [
+        13,
+        16
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 2,
+      "quotient_beta_inertia": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "j": 15,
+      "interval": [
+        1,
+        8
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 4,
+      "quotient_beta_inertia": [
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "j": 16,
+      "interval": [
+        9,
+        16
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 4,
+      "quotient_beta_inertia": [
+        0,
+        4,
+        0
+      ]
+    },
+    {
+      "j": 17,
+      "interval": [
+        1,
+        16
+      ],
+      "boundary_product_identity": true,
+      "exact_return_k": 1,
+      "nilpotent_rank_K": 2,
+      "quotient_beta_inertia": [
+        0,
+        2,
+        2
+      ]
+    }
+  ],
+  "all_289_products_zero": true,
+  "common_image_dim_K": 4,
+  "common_image_isotropic": true,
+  "sum_N_rank_K": 4,
+  "sum_beta_inertia": [
+    0,
+    4,
+    0
+  ],
+  "rank_Q_N": 16,
+  "rank_K_N": 16,
+  "rank16_minor_curve_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "rank16_block_minor_determinant": [
+    "6144",
+    "6144"
+  ],
+  "pants_count": 18,
+  "rational_double_cover_components_types": 10,
+  "trivial_cover_components_types": 8,
+  "graph_multiplicity_C1_dim_K": 102,
+  "graph_multiplicity_C0_dim_K": 98,
+  "graph_H1_multiplicity_dim_K": 4,
+  "complement_19_20_equals_1_18_on_H1par": true,
+  "negative_control_one_sign_flip_detected": true,
+  "elapsed_seconds": 6.817625999450684,
+  "scope": "Exact algebra and labelled-tree checks, not geometric theorem automation."
+}

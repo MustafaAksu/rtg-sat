@@ -1,0 +1,151 @@
+## G34-BLOCK-01’de engel braid değişimiyle aşılabiliyor
+
+**[ALG cert — yeni ChatGPT sonucu; bağımsız peer denetimi bekliyor]** Önerdiğin testi gerçekleştirdim. Başlangıçtaki **G34-BLOCK-01’den açık bir saf braid sözcüğüyle**, H0–H4’ün tamamını sağlayan yeni bir tuple ve ağaca ulaştım.
+
+\[
+\boxed{
+\text{Başlangıç işaretlemesinde maksimum }8
+\quad\longrightarrow\quad
+\text{aynı saf braid yörüngesinde rank }16.
+}
+\]
+
+Yeni tanığın adı **`G34-BLOCK-01-BRAID-ESCAPE-01`**. Statüsü **PROPOSED**; henüz Claude tarafından yeniden kurulmadı. Bu sonuç, önceki blok engelini yanlışlamıyor: **engelin Hurwitz bileşeninin değil, kullanılan standart aralık işaretlemesinin bir özelliği olduğunu gösteren somut bir aday veriyor.**
+
+## 1. Genel korolerin doğru
+
+**[ALG — Claude önerisi, ChatGPT bağımsız ispat kontrolü]** Önceki blok lemmasının varsayımları altında:
+
+\[
+\rho_T\le b+|\mathcal E|
+\le b+\binom b2
+=\frac{b(b+1)}2.
+\]
+
+Dolayısıyla \(b\ge2\) için
+
+\[
+\boxed{
+b^2-\rho_T\ge\frac{b(b-1)}2>0.
+}
+\]
+
+Bağımsız köklerden oluşan 2/4-blok tuple’ları, **sabit döngüsel standart-aralık sınıfında** H4’ü kaçırır. Bu koroler için CHECKED önerisine katılıyorum. Sayının gerçek simetrik matris uzayının boyutuyla örtüşmesi, ortak bir gerçel baz bulunduğu anlamına gelmez.
+
+**[ALG — kaynak yeniden oynatması]** Yeni pakette bulunan altı tam hash pini eşleşti. `group_order.py` betiğini yalnız import yolunu değiştirerek çalıştırdım; çıktısı bayt düzeyinde aynı ve grup mertebesi \(39\,191\,040\). Raporda hash’i verilen `block_ops.pkl` ZIP’te bulunmuyor; bu turda kaynak motorun 170-operatör hesabını veya tavlama kampanyasını tekrar çalıştırdığımı iddia etmiyorum.
+
+## 2. Bileşeni sınıflandırmadan nasıl ilerledim?
+
+**[ALG — açık braid özdeşliği]** Kullanılan Artin konvansiyonunda, aşağıdaki hareketler **soldan sağa sırayla uygulanırsa**:
+
+\[
+(s,s,t,t)
+\xrightarrow{\;\sigma_2,\sigma_1,\sigma_1,\sigma_2\;}
+(tst,tst,t,t).
+\]
+
+Bu sözcük saftır: dört dal noktasının son permütasyonu birimdir. Böylece bir yansıma çiftini diğeriyle eşleyerek değiştirebiliyoruz; çift yapısı korunuyor.
+
+Uzak çiftler için önce çiftleri yan yana taşıyıp bu işlemi uyguladım, ardından taşıma sözcüğünü tam tersiyle geri aldım. Her böyle işlem yine saf braid veriyor.
+
+**[ALG cert — exact sonuç]** Bulduğum ve kısalttığım yol:
+
+- **29 çift-eşleme işlemi**;
+- açılım ve serbest sadeleştirme sonrasında **868 temel Artin harfi**;
+- 20 dal noktasının permütasyonu tam olarak birim;
+- başlangıç tuple’ından hedef tuple’a exact eşleşme;
+- ters sözcükle başlangıca exact dönüş.
+
+Sözcüğün en kısa olduğunu iddia etmiyorum. Tamamı sertifikada mevcut.
+
+Braid yörüngelerinin Hurwitz bileşenlerini belirlemesi, standart topolojik örtü inşasının sonucudur. Burada bir bileşen eşitliğini grup mertebesi veya diskriminant benzerliğinden çıkarmıyoruz: **bağlayan sözcük açıkça verilmiş durumda.** [EMIS](https://emis.de/ft/47206)
+
+## 3. Yeni tanık: gerçek operatörlerle H0–H4
+
+**[ALG — yöntem sınırı]** Adayı bulurken modüler kenar-formu rankını filtre olarak kullandım. Son doğrulamada ise **kenar-formu tahminini operatör tanımı olarak kullanmadım**: kohomolojiyi köklerden yeniden kurdum; bütün \(T_e,N_e\)’leri temel Artin hareketlerinden hesapladım.
+
+Hedef ağaç:
+
+```text
+[1,2], [1,4], [1,6], [1,12], [3,4], [5,6],
+[7,8], [7,12], [9,10], [9,12], [11,12],
+[13,14], [13,18], [15,16], [15,18], [17,18], [19,20].
+```
+
+Bu ağaç on çift eğrisinin tamamını içeriyor. Yeni kök doğruları ise artık on farklı doğru; başlangıçtaki bağımsız altı kökün 2/4-blok düzeni korunmuyor.
+
+| Kontrol | Exact sonuç |
+|---|---:|
+| Kök span’i / \(\dim_KH\) / cup rankı | \(6/8/8\) |
+| H0 | **18/18** katkı sıfır |
+| H1 | **289/289** \(N_iN_j=0\) |
+| H2 | \(\dim_KI=4\), izotropik, bütün \(N_jI=0\) |
+| H3 | Bütün \(\beta_j\) negatif yarı-belirli; toplam negatif belirli |
+| H4 | **\(\mathbb Q\)-rank 16** |
+| H4 için açık \(16\times16\) rasyonel minör | **\(-1024\)** |
+| Dönüş kuvvetleri | Bütün eğrilerde \(d_e=k_e=m_e=1\) |
+| A3 silme-rankları | Onunun tamamında **6** |
+
+Tek doğrusal bağıntı:
+
+\[
+\boxed{
+N_{[1,4]}=N_{[1,2]}+N_{[3,4]}.
+}
+\]
+
+H3 toplamının benim bölüm bazımdaki önde gelen asal minörleri:
+
+\[
+-120,\qquad 5787,\qquad -239139,\qquad 6644349.
+\]
+
+### Yalnız tuple değil, kohomoloji taşıması da doğrulandı
+
+**[ALG]** Başlangıçtaki sekiz kohomoloji temsilcisini ve altı coboundary’yi 868 braid hareketi boyunca birlikte taşıdım. Hesaplanan tek bir tersinir \(P\) matrisi için
+
+\[
+\boxed{
+S_{\rm başlangıç}=P^tS_{\rm hedef}\bar P.
+}
+\]
+
+Ters braid, kök temsilcileri doğru birimlerle eşleştirildikten sonra **14 kosiklin tamamını** geri veriyor. Böylece yalnız son kök listesinin doğru olduğunu değil, cup eşleşmesinin aynı taşıma üzerinden korunduğunu da denetledim.
+
+## 4. Araştırma sorusunda ne değişti?
+
+**[ALG — yeni tanığın sonucu, peer kontrolüne bağlı]**
+
+Bu özel örnekte “braid hamleleriyle rank 16 geri kazanılabilir mi?” sorusuna **evet** diyen exact tanık var. Dolayısıyla G34-BLOCK-01’i bileşen düzeyinde kalıcı bir engel olarak araştırmayı sürdürmek yerine, şu ayrımı kaydetmeliyiz:
+
+\[
+\underbrace{\text{sabit standart aralık ailesinde engel}}_{\text{CHECKED}}
+\quad\ne\quad
+\underbrace{\text{bütün braid yörüngesinde engel}}_{\text{bu aday tarafından aşılıyor}}.
+\]
+
+Önceki \(\rho_T\le8\) teoremi aynen geçerli. Yeni ağaç, yeni işaretlemede standart aralıklarla yazılıyor; eski işaretlemeye geri taşınan eğriler, önceki sınırlı standart-aralık ailesinde olmak zorunda değil.
+
+Ayrıca başlangıçta başarısız olan A3, hedefte sağlanıyor. **A3 de bu örnekte saf braid yörüngesi boyunca değişebiliyor.**
+
+Şunlar hâlâ gösterilmedi:
+
+- Bu bileşenin W5 veya Severn’in Appendix A bileşeniyle aynı olması.
+- Her G₃₄ braid yörüngesinde tam ranklı tanık bulunması.
+- Yeni tanık üzerinden geometrik period-map köprüsünün ayrıca denetlenmesi.
+
+Genel Hodge/transfer statülerinde otomatik değişiklik yok.
+
+## 5. Dosyalar ve sonraki kontrol
+
+**:chatgpt-content-reference{index="2"}[İspat, kaynak incelemesi ve yeni tanık raporu](sandbox:/mnt/data/HCG_G34_BLOCK_BRAID_ESCAPE_CHATGPT_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="3"}[868 harflik braid, baz taşıması ve 17 operatör — exact sertifika](sandbox:/mnt/data/HCG_G34_BLOCK_BRAID_ESCAPE_01_CERTIFICATE_v0_1.json)**
+
+**HCG_G34_BLOCK_BRAID_ESCAPE_REPRO_v0_1.zip[Tam yeniden üretim paketi](sandbox:/mnt/data/HCG_G34_BLOCK_BRAID_ESCAPE_REPRO_v0_1.zip)**
+
+**:chatgpt-content-reference{index="5"}[HCG v0.2 için ledger eki](sandbox:/mnt/data/HCG_G34_BLOCK_BRAID_ESCAPE_LEDGER_DELTA_v0_1.md)**
+
+`replay.py --rediscover` temiz geçici klasörde çalıştı. Keşif girdileri yeniden eşleşti; exact sertifika JSON’u **bayt düzeyinde aynı** üretildi. Eksik braid harfi, bozulmuş \(N\) ve yanlış cup işareti negatif kontrolleri de reddedildi.
+
+**Önerilen sonraki görev:** Claude, bu somut saf braid sözcüğünü ve hedef ağacı kendi motoruyla yeniden kursun. Kontrol olumlu çıkarsa, G34-BLOCK-01’in engelinin bileşen boyunca kalıcı olmadığı sorusunu bu örnek için kapatabiliriz. Yeni tanık o zamana kadar **PROPOSED**; HCG v0.1 değişmeden ve paket kör denetçiden ayrı kalmalı.

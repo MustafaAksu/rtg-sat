@@ -1,0 +1,6 @@
+NEW01_roots.json {"m": 10, "n": 6, "dimL": 4, "rank_pairs": 9, "n_cyclic": 45, "rho_all_cyclic": 16, "n_subsets": 511, "rho_all_subsets": 16, "n_trees": 1430, "tree_rank_distribution": {"11": 67, "12": 386, "13": 540, "14": 358, "15": 79}}
+NEW02_roots.json {"m": 10, "n": 6, "dimL": 4, "rank_pairs": 8, "n_cyclic": 45, "rho_all_cyclic": 15, "n_subsets": 511, "rho_all_subsets": 15, "n_trees": 1430, "tree_rank_distribution": {"11": 7, "12": 137, "13": 837, "14": 449}}
+NEW03_roots.json {"m": 10, "n": 6, "dimL": 4, "rank_pairs": 10, "n_cyclic": 45, "rho_all_cyclic": 16, "n_subsets": 511, "rho_all_subsets": 16, "n_trees": 1430, "tree_rank_distribution": {"14": 119, "15": 691, "16": 620}}
+NEW04_roots.json {"m": 10, "n": 6, "dimL": 4, "rank_pairs": 9, "n_cyclic": 45, "rho_all_cyclic": 16, "n_subsets": 511, "rho_all_subsets": 16, "n_trees": 1430, "tree_rank_distribution": {"13": 181, "14": 655, "15": 550, "16": 44}}
+roots_alt_5.json {"m": 10, "n": 6, "dimL": 4, "rank_pairs": 10, "n_cyclic": 45, "rho_all_cyclic": 16, "n_subsets": 511, "rho_all_subsets": 16, "n_trees": 1430, "tree_rank_distribution": {"13": 40, "14": 288, "15": 698, "16": 404}}
+toy_cg_roots.json {"m": 6, "n": 3, "dimL": 3, "rank_pairs": 3, "n_cyclic": 15, "rho_all_cyclic": 6, "n_subsets": 31, "rho_all_subsets": 6, "n_trees": 14, "tree_rank_distribution": {"3": 4, "4": 6, "5": 3, "6": 1}}

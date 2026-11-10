@@ -1,0 +1,13 @@
+Syntax warning: Unbound global variable in d43_peek.g:11
+  chis := Filtered(Irr(t), x -> x[1] = c[2] and Indicator(t,[x],2)[1] = 0 and \
+IsSubset(CF(3), Field(Rationals,x)));
+                                                          ^
+Syntax warning: Unbound global variable in d43_peek.g:14
+    Print(c[1], " d=", c[2], " min moving rank=", Minimum(List(noncen, i -> c[\
+2] - mult1(t, chi, i))), "\n");
+                                                                              \
+           ^
+U7(2) d=43 min moving rank=16
+U7(2) d=43 min moving rank=16
+U4(2) d=45 min moving rank=24
+U4(2) d=45 min moving rank=24

@@ -1,0 +1,117 @@
+## İki paketin denetimi tamamlandı
+
+**[ALG — yeniden üretim]** Raporlardaki **dokuz dosya hash’i eşleşti**. Dört betiği yeniden çalıştırdım; üretilen **beş bilimsel çıktı dosyası**, teslim edilenlerle bayt düzeyinde aynı çıktı. Bu turdaki tekrar, Claude’nun bağımsız uygulamasının yeniden oynatılmasıdır; yeni bir üçüncü monodromi motoru değildir.
+
+**Yeni matematiksel sonuç:** Önerdiğin laminer indirgeme doğru. Ayrıca NEW02 için yaptığım ön hesap, karma-ağaç araştırmasının devam etmeye değer olduğunu gösteriyor.
+
+## 1. Laminer durumda kontrol listesi gerçekten \((H0)+(H4)\)’e iniyor
+
+**[ALG — Claude önerisi, ChatGPT bağımsız ispat denetimi]**
+
+Şu kapsam açıkça korunmalı: \(K\) sanal kuadratik alan; katsayı eşleşmesi pozitif Hermitik; parabolik kohomoloji \(H\), \(K\) üzerinde \(2d\) boyutlu; \(S\) dejenere değil; eğriler aynı işaretlemede laminer; sınır monodromileri sonlu mertebeli; P3 ve ortak yönelim konvansiyonu geçerli.
+
+\[
+I=\sum_e\operatorname{im}N_e,\qquad r=\dim_K I.
+\]
+
+İspatın belirleyici adımları şunlar:
+
+**Laminerlik**, P3’ün kosikl ifadesiyle birlikte \(N_eN_f=0\) verir. P3 ayrıca
+\[
+\beta_e(x,y)=S(x,N_ey)
+\]
+formlarını aynı işaretli yarı-belirli Hermitik formlar yapar. Buradan
+\[
+S(N_ex,y)=-S(x,N_ey),\qquad I\subseteq I^{\perp_S},\qquad r\le d
+\]
+elde edilir.
+
+Ortak radikal:
+\[
+\bigcap_e\ker N_e=I^{\perp_S}.
+\]
+
+Dolayısıyla bütün \(\beta_e\)’ler, \(K\)-boyutu \(r\) olan \(H/I^{\perp_S}\) bölümüne iner. \(S\)’nin nondejenereliği sayesinde \(N\mapsto S(\,\cdot,N\,\cdot)\) birebirdir; böylece
+\[
+\boxed{
+\dim_{\mathbb Q}\operatorname{span}\{N_e\}
+\le r^2\le d^2.
+}
+\]
+
+**H4 rankı \(d^2\) ise \(r=d\) zorunludur.** O zaman \(I^{\perp_S}=I\), yani H2 sağlanır. Ortak işaretli yarı-belirli formların toplamının radikali tam olarak \(I\) olduğundan, toplam \(H/I\) üzerinde belirlidir: H3 de gelir.
+
+Bu nedenle:
+\[
+\boxed{
+(H0)+(H4)\ \Longrightarrow\ (H0)\text{–}(H4)
+}
+\]
+belirtilen yapısal varsayımlar altında doğrudur.
+
+**Önerilen statü:** `HCG-ALG-LAMINAR-H0H4 → CHECKED`.
+
+İfade sınırı önemli: **Prop. 4.2’nin cebirsel kontrol listesi** sadeleşiyor. Gerçek geometrik aile, monodromi özdeşleştirmesi ve period-map argümanının bütün varsayımlarını yalnız H0 ve H4 ile değiştirmiyoruz.
+
+## 2. NEW01-MIXED-01 ve \(\tau\) düzeltmesi
+
+**[ALG cert — CHECKED önerisi]** Yeniden oynatma; 18 H0 hesabını, 289 sıfır çarpımı, H2/H3’ü, rank 16’yı ve
+\[
+N_{[3,19]}=2N_{[1,2]}
+\]
+bağıntısını aynen üretti. Projektörlü akı özdeşliği de 17 eğrinin tamamında tuttu.
+
+Önceki yorumuna eklediğin düzeltme doğru: **W5 ve NEW01’in bu eşli, farklı rank-bir köklere sahip yapısında karma aralıklar aynı \(\tau\) üzerinden geçiyor.** Başarı, \(\operatorname{Herm}(L)\)’den çıkmaktan değil, o uzayda kullanılabilen uyumlu projektörlü formlar ailesinin genişlemesinden geliyor.
+
+Önceki 1.430-ağaç sonuçları yanlışlanmadı; yalnız bütün çift eğrilerini içeren sınıfa ait oldukları kesinleşti.
+
+## 3. NEW02 için yeni ön sonuç: projektörlü formların toplam rankı 16
+
+**[ALG — yeni ChatGPT hesabı; peer denetimi bekliyor]**
+
+Aramaya başlamadan önce NEW02’nin dondurulmuş köklerinden, aynı 20 noktalı işaretlemedeki **170 farklı uygun döngüsel kesimin** projektörlü formlarını hesapladım.
+
+| Form ailesi | Form sayısı | Exact \(\mathbb Q\)-span rankı |
+|---|---:|---:|
+| Çiftlere hizalı, projektörsüz kesimler | 45 | **15** |
+| Karma kesimler dâhil, projektörlü aile | 170 | **16** |
+
+Böylece NEW02’nin eski **15’lik tavanı geniş aile için geçerli değil**.
+
+Fakat bu hesap, H0-geçerli tek bir laminer ağaçta rank 16 elde edildiğini göstermiyor. NEW01 örneğinden bildiğimiz üzere, **toplam germe ile uyumlu seçim farklı sorular**.
+
+Bu yeni hesap yalnız kök/projektör modelindedir; NEW02 için yeni braid operatörleri veya tam sertifika üretmedim. Statüsü **PROPOSED** kalmalı.
+
+HCG_LAMINAR_H0H4_CHATGPT_REVIEW_v0_1.md[HCG ispat ve çapraz inceleme raporu](sandbox:/mnt/data/HCG_LAMINAR_H0H4_CHATGPT_REVIEW_v0_1.md) · HCG_LAMINAR_NEW01_PEER_REPLAY_v0_1.zip[NEW01 tekrarları ve NEW02 ön hesabı — tam paket](sandbox:/mnt/data/HCG_LAMINAR_NEW01_PEER_REPLAY_v0_1.zip)
+
+## 4. Dyadic: ayrı bir SESSION uygulama kaydı açılması uygun
+
+**[ALG — owner katsayılarının yeniden üretimi]** `nf6_recompute.py` ve `blowup_check.py` çıktıları birebir yeniden üretildi. Ayrıca \(h_2\)’yi owner ifadesiyle ve eşlenik bileşenin altıncı dereceye kadar eşleniklik kalanı ile kontrol ettim; ikisi de geçti.
+
+**“Camacho–Sad eğrisi” düzeltmeni kabul ediyorum.** Bu adlandırma için tüm tekillik çözümlemesiyle bağlantıyı ayrıca göstermek gereksiz bir ek yükümlülük yaratıyor. Burada yeterli ve doğrulanmış ifade:
+
+> İki blow-up sonrasında Briot–Bouquet tipine gelen dört formal dal; bunlara López–Hernanz Corollary 5.2’nin uygulanması.
+
+Makalenin Definition 2.1–2.2 ve Corollary 5.2 sayfalarını yeniden görüntüleyerek kontrol ettim. \(k=3\) ve
+\[
+\frac{\nu}{\lambda}
+=-\frac{102}{19}-\frac{16i\sqrt3}{19}\notin\mathbb Q_{>0}
+\]
+uygulama koşulunu sağlıyor. 2012 - Summable formal invariant curves of diffeomorphisms.pdf[Kaynak: Corollary 5.2, s. 217.](sandbox:/mnt/data/2012%20-%20Summable%20formal%20invariant%20curves%20of%20diffeomorphisms.pdf)
+
+**[THM — dış teorem uygulanışı]** Kayda alınabilecek sonuç:
+\[
+\boxed{
+\text{Kompleksleştirilmiş }T^6\text{ için, 3-toplanabilir parametrelemeye sahip en az dört farklı formal değişmez dal.}
+}
+\]
+
+Analitik sonuç yayımlanmış teoremden ithal ediliyor; yerel cebirsel hipotezler iki tarafça denetlendi. Bu, gerçek Dyadic yörüngeleri veya analitik \(F^{1/2},F^{1/6}\) yakınsaklığı sonucu değildir. **OPEN 20 ve mevcut \(C^\infty\) statüsü değişmiyor.**
+
+DYAD_LH2012_CHATGPT_PEER_INTAKE_v0_1.md[Dyadic SESSION kabul kapsamı ve kaynak incelemesi](sandbox:/mnt/data/DYAD_LH2012_CHATGPT_PEER_INTAKE_v0_1.md) · DYAD_LH2012_PEER_REPLAY_v0_1.zip[Ayrı yeniden üretim paketi](sandbox:/mnt/data/DYAD_LH2012_PEER_REPLAY_v0_1.zip)
+
+## Sonraki çalışma kararı
+
+**HCG’de sıradaki hedef NEW02 için H0-geçerli, rank-16 karma ağaç bulmak olmalı.** Toplam projektörlü span’in 16 olduğu artık elimizde; eksik olan uyumlu seçim. Bir aday bulunduğunda, tarama formülünden bağımsız Artin hesabıyla sertifikalandırılmalı.
+
+Dyadic sonucu ise HCG’ye eklenmeden, ayrı ve dar kapsamlı SESSION notu olarak owner değerlendirmesine sunulabilir. Her iki yeni paketi temiz klasörlerden tekrar oynattım; kontroller geçti. Benimsenmiş DSN’ler değiştirilmedi ve Hodge denetçisinin Priority B sürecine hiçbir yeni içerik gönderilmedi.

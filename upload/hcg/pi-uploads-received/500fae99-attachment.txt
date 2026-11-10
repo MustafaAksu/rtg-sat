@@ -1,0 +1,87 @@
+## HCG araştırmasına devam — HHO'dan bağımsız
+
+HHO genel engel teorisini ayrı oturumda bırakıyoruz. Burada Hodge sınıflarının cebirselliğini doğrudan kuran pozitif araştırma hattına dönüyoruz.
+
+Mevcut durumumuz:
+
+- HCG v0.2 ADOPTED geçerli bilimsel kayıt.
+- Severn v2'nin Theorem A/B kanıt zinciri iki yapay zekâ tarafından incelendi; üçüncü aile denetiminin önceki sürümdeki kapsamı ayrıca kayıtlı.
+- Severn A/B/C hâlâ CLAIMED; insan hakem değerlendirmesi bekleniyor.
+- HHO'daki boyut dışlamalarını burada tekrar hesaplamayacağız.
+
+### Yeni ve önemli bir kaynak
+
+[EXTERNAL CLAIM — henüz bizim tarafımızdan denetlenmedi]
+
+25 Ekim 2026 tarihli [The Hodge conjecture for all powers of Eisenstein Weil sixfolds](https://rstation.ai/problems/hodge_conjecture/papers/56?utm_source=chatgpt.com) çalışması, Severn'in koşullu Theorem C'sinden daha güçlü bir sonuç ileri sürüyor:
+
+\\[ \boxed{ \text{Her }K=\mathbb Q(\sqrt{-3})\text{ Weil altılısının her kuvvetinde HC.} } \\]
+
+Kaynak, genel \\(Hg(A)=SU_H\\) şartını kaldırdığını; özel, CM ve ayrışabilir üyeleri de kapsadığını söylüyor. Ayrıca \\(G\_{34}\\) üzerinden, önceki sınır dejenerasyonu yönteminden farklı bir Hurwitz–Hodge kesişim hesabı kullanıyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://rstation.ai\&sz=32)
+
+rStation
+
+
+
+Bu henüz hakemlenmiş veya bizim doğruladığımız bir teorem değil. Fakat HCG'nin bundan sonraki araştırma yönünü belirlemek için doğrudan ilgili.
+
+## İlk bağımsız matematiksel kontrol
+
+### [THM] Genel \\(SU_H\\) durumunda bütün kuvvetler
+
+\\(Hg(A)\_{\mathbb C}=SL_6\\) olsun. \\(A^r\\)'nin birinci kohomolojisi
+
+\\[ H^1(A^r,\mathbb C) \simeq (V\otimes\mathbb C^r)\oplus(V^\vee\otimes\mathbb C^r) \\]
+
+şeklinde ayrılır.
+
+Klasik \\(SL(V)\\) invariant teorisi, bütün invariantları iki türden üretir:
+
+- \\(V\otimes V^\vee\\) eşleşmeleri: bölen sınıfları.
+- \\(\bigwedge^6V\\) ve \\(\bigwedge^6V^\vee\\): Weil sınıfları.
+
+Weil sınıflarının bütün rasyonel düzlemi cebirselse, bunların farklı kopyalar arasındaki yerleşimleri toplama morfizmleri ve cebirsel endomorfizmlerle elde edilir. Dolayısıyla:
+
+\\[ \boxed{ W_K(A)\text{ cebirsel},\quad Hg(A)=SU_H \ \Longrightarrow\ HC(A^r),\quad\forall r\ge1. } \\]
+
+[SESSION — ispat kontrolü] Bu koşullu çıkarımı yeniden kurdum. Yeni bir teorem değil; Severn'in Theorem C sonucunun invariant-teorik temelidir.
+
+### [NUM] Özel CM üyelerde ilk kontrol
+
+Yeni çalışmanın CM argümanındaki dengeli işaret vektörlerini bağımsız hesapladım.
+
+\\[ s\in\\{\pm1\\}^6,\qquad\sum_i s_i=0. \\]
+
+20 vektör, 400 sıralı çift:
+
+\\[ \boxed{s\cdot t\in\\{-6,-2,2,6\\};\quad s\cdot t\ne0.} \\]
+
+Daha hassas bir kontrol de yaptım: döngüsel CM Galois modeli altında bu 20 CM tipi için rasyonel yörünge rankları:
+
+| Rank | CM tipi sayısı | CM tipinin stabilizatörü |
+| ---- | -------------- | ------------------------ |
+| 5    | 12             | Trivial                  |
+| 3    | 6              | Trivial değil            |
+| 1    | 2              | Trivial değil            |
+
+[SESSION] Bu, makalenin ispatındaki önemli bir sınırı doğruluyor: dengeli imza tek başına rank 5'i zorlamıyor. Basitlik/primitif CM tipi koşulu gerçekten gerekli.
+
+Bu sayım genel CM sınıflandırmasının ispatı değildir.
+
+## Şimdi hangi problemi incelemeliyiz?
+
+Kararım: Özel üyeler için bütün kuvvetler iddiasını bağımsız denetleyelim.
+
+Öncelikle yeni çalışmanın §§8–9 bölümlerinde üç kapı var: basit CM altılılarda Hodge torusunun rankı ve Milne'nin almost-neat koşulu; basit fakat genel \\(SU_H\\)'den daha küçük Hodge grupları; ayrışabilir üyelerde farklı faktörler arasında oluşan karma Hodge sınıfları.
+
+Bunlar, Severn'in önceki Theorem C'sinin ötesine geçen gerçek matematiksel yükümlülüklerdir. Sonraki aşamada yeni \\(G\_{34}\\) kesişim hesabının ve bağımlı olduğu determinant-döngü teoreminin bağımsız denetimine geçebiliriz.
+
+[OPEN] Bu yeni makalenin Theorem B sonucunu henüz doğrulamadık. Kaynağın kendi olumlu değerlendirme raporu insan hakem incelemesinin yerine geçmez.
+
+HCG — Positive Lane: All-Powers Scope, ilk araştırma notu (English)
+
+Bu çalışma, HHO'dan ayrı bir HCG SESSION araştırmasıdır. HCG v0.2 ADOPTED değiştirilmedi; Severn A/B/C `CLAIMED` kalıyor.
+
+Bilimsel hedefimiz: Önceki sonlu sertifikaları çoğaltmak değil, genel \\(SU_H\\) varsayımı kaldırıldığında Hodge sınıflarının cebirselliğinin hangi ek matematiksel mekanizmalarla korunduğunu bağımsız olarak belirlemek.

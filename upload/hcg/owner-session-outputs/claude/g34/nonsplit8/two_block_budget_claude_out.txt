@@ -1,0 +1,20 @@
+r=13 d=26 E<= 0  rho_max= 1 P_max= 0 S-threshold= 6 reflection-present=True finer-blocks-surviving=[] S-case-closed=True -> EXCLUDED
+r=14 d=28 E<= 2  rho_max= 2 P_max= 2 S-threshold= 7 reflection-present=True finer-blocks-surviving=[] S-case-closed=True -> EXCLUDED
+r=15 d=30 E<= 4  rho_max= 3 P_max= 4 S-threshold= 7 reflection-present=True finer-blocks-surviving=[] S-case-closed=True -> EXCLUDED
+r=16 d=32 E<= 6  rho_max= 4 P_max= 6 S-threshold= 8 reflection-present=True finer-blocks-surviving=[] S-case-closed=True -> EXCLUDED
+r=17 d=34 E<= 8  rho_max= 5 P_max= 8 S-threshold= 8 reflection-present=True finer-blocks-surviving=[] S-case-closed=False -> OPEN
+r=18 d=36 E<=10  rho_max= 6 P_max=10 S-threshold= 9 reflection-present=True finer-blocks-surviving=[(2, 9), (3, 6)] S-case-closed=False -> OPEN
+r=19 d=38 E<=12  rho_max= 7 P_max=12 S-threshold= 9 reflection-present=True finer-blocks-surviving=[] S-case-closed=False -> OPEN
+r=20 d=40 E<=14  rho_max= 8 P_max=14 S-threshold=10 reflection-present=True finer-blocks-surviving=[(2, 10)] S-case-closed=False -> OPEN
+imprimitive shapes (k,r) with r>=6, r+2k>=17, 26<=d<=41:
+  d=26: [(2, 13)]
+  d=28: [(2, 14)]
+  d=30: [(2, 15)]
+  d=32: [(2, 16)]
+  d=33: [(3, 11)]
+  d=34: [(2, 17)]
+  d=35: [(5, 7)]
+  d=36: [(2, 18), (3, 12), (4, 9), (6, 6)]
+  d=38: [(2, 19)]
+  d=39: [(3, 13)]
+  d=40: [(2, 20), (4, 10), (5, 8)]

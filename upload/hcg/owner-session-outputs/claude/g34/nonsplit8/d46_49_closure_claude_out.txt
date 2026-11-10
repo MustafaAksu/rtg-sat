@@ -1,0 +1,54 @@
+(0) Lemma T vs the old factorwise budget: smallest b allowed for each a (b >= a)
+    a= 2: old needs b>= 24 (d>= 48);  Lemma T needs b>= 24 (d>= 48)
+    a= 3: old needs b>= 14 (d>= 42);  Lemma T needs b>= 14 (d>= 42)
+    a= 4: old needs b>= 12 (d>= 48);  Lemma T needs b>= 13 (d>= 52)
+    a= 5: old needs b>= 11 (d>= 55);  Lemma T needs b>= 13 (d>= 65)
+    a= 6: old needs b>= 10 (d>= 60);  Lemma T needs b>= 12 (d>= 72)
+    a= 7: old needs b>= 10 (d>= 70);  Lemma T needs b>= 11 (d>= 77)
+    a= 8: old needs b>= 10 (d>= 80);  Lemma T needs b>= 10 (d>= 80)
+    a= 9: old needs b>= 10 (d>= 90);  Lemma T needs b>= 10 (d>= 90)
+    a=10: old needs b>= 10 (d>=100);  Lemma T needs b>= 10 (d>=100)
+    factorwise shapes with d <= 60 surviving Lemma T and the 3 x b lemma: [(48, 2, 24), (50, 2, 25), (52, 2, 26), (52, 4, 13), (54, 2, 27), (56, 2, 28), (56, 4, 14), (57, 3, 19), (58, 2, 29), (60, 2, 30), (60, 3, 20), (60, 4, 15)]
+=== d = 46, Sum c = 100 ===
+  imprimitive (k,r)=(2,23): excluded (two-block, Lemma B')
+  block size r < 6: field-free period bound;  isotypic scalar kernel: r <= 4 < 6
+  factorwise 2 x 23: excluded (budget 101 > 100)
+  K-imprimitive: excluded (d < 50);  tensor-induced: d < 256
+  generic SL2(q) degree solutions: [(47, 'q-1')];  A_47 natural: Lemma F
+    L2(47) discrete series, 3 rational chars   field Q: min c = 24 > 6: excluded (Lemma C)
+  OPEN: none
+=== d = 47, Sum c = 102 ===
+  block size r < 6: field-free period bound;  isotypic scalar kernel: r <= 4 < 6
+  K-imprimitive: excluded (d < 50);  tensor-induced: d < 256
+  generic SL2(q) degree solutions: [(47, 'q')];  A_48 natural: Lemma F
+    L2(47) Steinberg                           field Q: min c = 24 > 6: excluded (Lemma C)
+  OPEN: none
+=== d = 48, Sum c = 104 ===
+  imprimitive (k,r)=(2,24): excluded (two-block, Lemma B')
+  imprimitive (k,r)=(3,16): excluded (A', E_k = -5)
+  imprimitive (k,r)=(4,12): excluded (A', E_k = -20)
+  imprimitive (k,r)=(6,8): excluded (A', E_k = -30)
+  imprimitive (k,r)=(8,6): excluded (A', E_k = -20)
+  block size r < 6: field-free period bound;  isotypic scalar kernel: r <= 4 < 6
+  factorwise 2 x 24: budget-tight (104 = 104): excluded by Lemma 2x24 (PROPOSED)
+  factorwise 3 x 16: excluded (3 x b lemma, CHECKED)
+  factorwise 4 x 12: excluded (Lemma T 108 > 104)
+  factorwise 6 x 8: excluded (budget 120 > 104)
+  K-imprimitive: excluded (d < 50);  tensor-induced: d < 256
+  generic SL2(q) degree solutions: [(47, 'q+1'), (49, 'q-1'), (97, '(q-1)/2')];  A_49 natural: Lemma F
+    A9                                         field Q: min c = 20 > 6: excluded (Lemma C)
+    2.A8                                       field Q: min c = 24 > 6: excluded (Lemma C)
+    2.S6(2)                                    field Q: min c = 24 > 6: excluded (Lemma C)
+    3.U3(5) (6 chars)                          field K: min c = 24 > 10: excluded (Lemma C)
+  OPEN: none
+=== d = 49, Sum c = 106 ===
+  imprimitive (k,r)=(7,7): excluded (A', E_k = -27)
+  block size r < 6: field-free period bound;  isotypic scalar kernel: r <= 4 < 6
+  7 x 7: square -- tensor-induced (d < 256) or factorwise:   factorwise 7 x 7: excluded (budget 133 > 106)
+  K-imprimitive: excluded (d < 50);  tensor-induced: d < 256
+  generic SL2(q) degree solutions: [(49, 'q'), (97, '(q+1)/2')];  A_50 natural: Lemma F
+    L2(49) Steinberg                           field Q: min c = 24 > 6: excluded (Lemma C)
+  OPEN: none
+(2x24) budget forces (N, t) = (19, 3), active c = 24, inactive c = 2; in S_25: std(w) has <= 2 eigenvalues iff w^2 = 1;
+       mu*std(w) is a pseudoreflection iff mu = 1 and w is a transposition.
+RESULT: every branch closes at d = 46, 47, 48, 49 (with Lemmas B', T, 2x24 PROPOSED)

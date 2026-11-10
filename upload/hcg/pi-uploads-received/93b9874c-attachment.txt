@@ -1,0 +1,188 @@
+## Karar: tensor-induced kapanış geçti; \((H)\) altında alt sınır artık \(d\ge25\)
+
+**[THM — bağımsız ispat incelemesi]** Önerdiğin kapanışı doğruladım. Önceden denetlenmiş period sınırları ve Guralnick–Tiep girdisiyle birlikte, **\(15\le d\le24\) dışlaması için CHECKED** öneriyorum.
+
+Genel \(d\ge42,\ d\ge256,\ d\ge50\) sınırları da doğru. Yalnız \(d\ge256\) ispatında **\(a=2\) ayrı yazılmalı**; bu düzeltme sonucu değiştirmiyor.
+
+Ayrıca \(d=25\) için daha dar bir **yerel spektrum eleği** çıkardım: kalan primitif durumda rank-3 dal elemanlarının yalnız beş hareket spektrumu olabilir. Bu yeni ek **PROPOSED**, henüz Claude denetiminden geçmedi.
+
+## 1. Kaynak ve yeniden üretim
+
+**[ALG — exact tekrar]** Gönderdiğin raporu ve betiği bütünüyle okudum; kaynak kodu değiştirmeden çalıştırdım.
+
+| Kontrol | Sonuç |
+|---|---|
+| Kaynak manifesti | **5/5 PASS** |
+| Ayrı rapor ile ZIP içindeki rapor | Bayt düzeyinde aynı |
+| Claude betiğinin çıktısı | **Bayt düzeyinde aynı** |
+| Ayrı ChatGPT uygulaması | 638 tensor-permütasyon durumu ve 175.273 küçük tensor spektrumu geçti |
+| Yeni teslim paketinin temiz tekrarı | **FRESH REPLAY PASS** |
+| Teslim manifesti | **17/17 PASS** |
+
+Sonlu kontroller, aşağıdaki genel ispatları destekliyor; sınıflandırma teoreminin veya geometrik dominansın yerine geçmiyor.
+
+## 2. Tensor-induced rank lemması doğru
+
+**[ALG — bağımsız türetim]** \(V=A^{\otimes m}\), \(\dim A=a\), \(d=a^m\) ve
+\[
+g=(A_1\otimes\cdots\otimes A_m)P_\pi,\qquad \pi\ne1
+\]
+olsun.
+
+Sonlu mertebe sayesinde her permütasyon çevrimindeki çarpım köşegenleştirilebilir. Uygun tensor bazında \(g\), **ağırlıklı bir permütasyon** olur. Her baz-orbiti en fazla bir sabit vektör katkısı verir. \(\ell=\operatorname{ord}(\pi)\) için:
+
+\[
+\dim\operatorname{Fix}(g)
+\le\frac1\ell\sum_{j=0}^{\ell-1}a^{\,\#\mathrm{cycles}(\pi^j)}
+\le\frac{a^m+a^{m-1}}2.
+\]
+
+Dolayısıyla
+\[
+\boxed{\operatorname{rank}(1-g)\ge
+\frac{a^{m-1}(a-1)}2.}
+\]
+
+Faktörleri permüte etmeyen, en az bir faktörde skaler olmayan elemanda ise
+\[
+\operatorname{rank}(1-g)\ge a^{m-1}.
+\]
+
+| Tensor yapısı | Boyut | Faktör permüte eden elemanın alt sınırı | Skaler olmayan taban elemanının alt sınırı |
+|---|---:|---:|---:|
+| \(2^{\otimes4}\) | 16 | 4 | 8 |
+| \(4^{\otimes2}\) | 16 | 6 | 4 |
+| \(5^{\otimes2}\) | 25 | 10 | 5 |
+
+Böylece \(d=16\)’daki kodboyutu-2 zorunluluğuyla çelişki kuruluyor. \(d=25\)’teki \(5\otimes5\) durumunda da her etkin eleman en az beş boyut hareket ettirir; \(19\cdot5>58\).
+
+### Kaynak kapsamına ilişkin düzeltme
+
+**[SOURCE]** Guralnick–Tiep §2.6 tensor ayrışımı ile tensor indüksiyonunu ayrı açıklıyor. Proposition 5.14 açıkça **“primitive, tensor indecomposable, but tensor induced”** durumunu ele alıyor. Dolayısıyla tensor-induced olmak, makalenin terminolojisinde tensor-indecomposable olmakla çelişmiyor. [EMS Press](https://ems.press/content/serial-article-files/31824)
+
+Bu nedenle kaydı **“yayımlanmış teoremde kanıtlanmış bir boşluk”** olarak değil, **bizim önceki hipotez eşleştirmemizde açıklığa kavuşturulan bir nokta** olarak tutalım. Ek rank lemman yine değerlidir: ilgili boyutları terminolojiye dayanmadan dışlıyor.
+
+## 3. Genel boyut sınırları: üçü de geçerli
+
+**[THM — belirtilen \((H)\) kapsamında]**
+
+### Faktörleri ayrı koruyan tensor yapı: \(d\ge42\)
+
+\(V=A\otimes B\), \(2\le a\le b\). \(\mathrm{PGL}(A)\) görüntüsü döngüsel olamaz; aksi hâlde ortak bir \(A\)-özdoğrusu, \(V\)’de değişmez altuzay verir. Üretici, çarpımı birim tuple’da en az üç dalın bu projektif görüntüsü önemsiz değildir.
+
+Böylece
+\[
+2ab+8\ge3b+16a.
+\]
+
+Bu gerekli eşitsizliği sağlayan en küçük boyut:
+\[
+\boxed{d=42,\qquad(a,b)=(3,14).}
+\]
+
+Bu, boyut 42’de bir aile bulunduğu anlamına gelmez.
+
+### Faktörleri gerçekten permüte eden tensor-induced yapı: \(d\ge256\)
+
+\(u=a^{m-1}\) yazalım. **\(a\ge3\)** için permütasyonlu elemanın maliyeti taban elemanından küçük değildir. En az iki permütasyonlu dal gerektiğinden
+\[
+2au+8\ge u(a+16),
+\qquad
+u(16-a)\le8.
+\]
+
+\(3\le a\le15\) için \(u\ge a\) ve \(a(16-a)\ge15\); dolayısıyla \(a\ge16\), \(d\ge256\).
+
+**\(a=2\) için ayrı adım:** Diğer dallar da faktörleri permüte edebilir; onları otomatik olarak taban elemanı sayamayız. Doğru ortak sınır
+\[
+\sum_jc_j\ge19\,\frac d4>2d+8\qquad(d\ge4)
+\]
+olduğundan bu durum tamamen elenir.
+
+Sonuç doğru; rapordaki \(u(a+16)\) eşitsizliğine **\(a\ge3\)** koşulu eklenmesi yeterli. Betiğin zaten `min(perm,base)` kullandığı için sayısal sonucu etkilenmiyor.
+
+### \(K\)-tanımlı imprimitif yapı: \(d\ge50\)
+
+Lemma E ile indirilen bölünmemiş dominant verinin boyutu \(r\ge25\) olmalı. \(k\ge2\) olduğundan
+\[
+\boxed{d=kr\ge50.}
+\]
+
+Bu hüküm, **yalnız kompleks alanda tanımlı bloklara** genişletilmiyor.
+
+## 4. \(d=25\) deseni ve age toplamları doğrulandı
+
+**[ALG — gerekli koşul]** \(d=25\)’te imprimitif ve tensor durumları eleniyor. Kalan primitif, tensor-indecomposable durumda kodboyutu-2 eleman bulunması, Guralnick–Tiep ve önceki Lemma F üzerinden yine çelişki verir. Bu nedenle
+\[
+c_j\ge3,\qquad \sum_jc_j=58,\qquad N\ge19
+\]
+ve zorunlu olarak
+\[
+\boxed{N=19,\qquad(c_j)=(3^{18},4).}
+\]
+
+\(25\le d\le41\) için verdiğin kompleks-imprimitif boyut listesi de yeniden hesaplamayla aynı:
+\[
+26,28,30,32,33,34,35,36,38,39,40.
+\]
+Bunlar **bütçeyi henüz ihlal etmeyen boyutlar**, kurulmuş aileler değil.
+
+**[THM — Chevalley–Weil uygulaması]** Age özdeşliğini kaynak formülden de doğruladım. Genel \((p,q)\) durumunda \(g_j\) veya \(g_j^{-1}\)’in hangi Hodge sayısıyla eşleştiği, etki/dual konvansiyonuna bağlıdır. Ancak bizim \((4,4)\) durumumuzda:
+\[
+\boxed{
+\sum_j\operatorname{age}(g_j)
+=
+\sum_j\operatorname{age}(g_j^{-1})
+=d+4.
+}
+\]
+Bu, örneklerden çıkarılan bir örüntü değil, Chevalley–Weil’in doğrudan sonucudur. Candelori’nin Theorem 3.1 ifadesini PDF görüntüsünden de kontrol ettim. [sigma-journal.com](https://sigma-journal.com/2018/071/sigma18-071.pdf)
+
+Dolayısıyla \(d=25\)’te iki toplam da **29** olmalı.
+
+## 5. Yeni daraltma: kalan primitif dalda junior eleman yok
+
+**[ALG — yeni SESSION çıkarımı; PROPOSED]**
+
+Mutlak indirgenemezlik ve \(K=\mathbb Q(\sqrt{-3})\) üzerinde tanımlılık:
+\[
+Z(\Gamma)\subseteq\mu_6,\qquad |Z(\Gamma)|\le6
+\]
+verir.
+
+Guralnick–Tiep Corollary 1.6’nın merkezî-junior seçeneği, nonterminal durumda \(|Z(\Gamma)|\ge d\) gerektiriyor. \(d\ge25\)’te bu mümkün değil; alternating-standart seçenek de Lemma F ile elenmişti. Böylece kalan dalda **hiç junior eleman bulunamaz**. [EMS Press](https://ems.press/content/serial-article-files/31824)
+
+Bu, \(d=25\)’teki 18 rank-3 eleman için çok somut bir elek sağlıyor. Üç önemsiz olmayan özdeğerin mertebeleri farklı olsaydı, bir kuvvet rank 1 veya 2’ye düşerdi; bu da noncentral junior eleman doğururdu. Dolayısıyla mertebeleri aynı olmalı.
+
+\(K\)-Galois koşulu ve bütün kuvvetlerin age \(>1\) olması birlikte yalnız şu **beş** hareket spektrumunu bırakıyor:
+
+\[
+\begin{array}{c|c}
+\text{Hareket spektrumu}&\operatorname{age}\\ \hline
+(-1,-1,-1)&3/2\\
+(\omega,\omega,\bar\omega)&4/3\\
+(\omega,\bar\omega,\bar\omega)&5/3\\
+(\zeta_6,\zeta_6,\bar\zeta_6)&7/6\\
+(\zeta_6,\bar\zeta_6,\bar\zeta_6)&11/6
+\end{array}
+\]
+
+Genel gerekçeyi ayrı notta yazdım; exact betik de 13 Galois-uyumlu aday spektrumun bütün kuvvetlerini kontrol edip aynı beşini bıraktı.
+
+**Bu yeni eleğin sınırı:** Henüz bir grup, çarpımı birim üretici tuple, bölünmemiş diskriminant veya dominant aile kurmuyor. Rank-4 dal elemanının sınıflandırması da bu notta yapılmadı.
+
+## 6. Dosyalar ve kayıt önerisi
+
+:chatgpt-content-reference{index="4"}[**Tam bağımsız inceleme ve genel bütçe ispatları**](sandbox:/mnt/data/HCG_TENSOR_FRONTIER_CHATGPT_CROSS_REVIEW_v0_1.md)
+
+:chatgpt-content-reference{index="5"}[**\(d=25\) terminal/rank-3 spektrum eleği — PROPOSED not**](sandbox:/mnt/data/HCG_D25_TERMINAL_LOCAL_SIEVE_PROPOSED_v0_1.md)
+
+HCG_TENSOR_FRONTIER_REVIEW_PACKAGE_v0_1.zip[**Kaynak arşiv, bağımsız betikler, sonuçlar ve temiz tekrar sürücüsü — ZIP**](sandbox:/mnt/data/HCG_TENSOR_FRONTIER_REVIEW_PACKAGE_v0_1.zip)
+
+:chatgpt-content-reference{index="7"}[**Önerilen ledger güncellemesi**](sandbox:/mnt/data/HCG_TENSOR_FRONTIER_LEDGER_PROPOSAL_v0_1.md)
+
+**Statü önerim:** Tensor-induced kapanış, \(d\ge25\) koroleri, genel tensor bütçeleri ve dengeli age özdeşliği **CHECKED**, belirtilen bağımlılıklarla. Merkez üzerinden terminalite güçlendirmesi ve beş spektral tip **PROPOSED**.
+
+Guralnick–Tiep’in ilgili birincil metin bölümlerini okudum; PDF görüntüleme denemeleri başarısız olduğundan o kaynak için görsel kontrol iddia etmiyorum. Tam sınıflandırma ispatı dış teorem girdisi olarak kalıyor.
+
+**Sıradaki somut iş:** Claude beş-tip eleğinin ispatını denetlesin; ardından \(d=25\)’te bu 18 rank-3 sınıfı ve tek rank-4 sınıfını, iki age toplamı \(29\), üreticilik, çarpım-bir ve yerel diskriminant koşullarıyla birlikte karşılayan temsil verisi aranmalı. HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

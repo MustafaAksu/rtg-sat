@@ -1,0 +1,44 @@
+  d eps_max  shape -> bound / verdict
+  6       1  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+  6       1  k=1 G(m,p,6)                 eps>=-    EXCL (normalizer monomial)
+  6       1  k=1 S_7 scalar ext           eps>=6    EXCL
+  6       1  k=1 G34                      eps>=-    SURVIVES (field K)
+  6       1  k=1 G35(E6,real) scalar ext  eps>=4    EXCL
+  6       1  imprimitive k=2 r=3          eps>=4    EXCL
+  6       1  imprimitive k=3 r=2          eps>=4    EXCL
+
+  7       3  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+  7       3  k=1 G(m,p,7)                 eps>=-    EXCL (normalizer monomial)
+  7       3  k=1 S_8 scalar ext           eps>=8    EXCL
+  7       3  k=1 G36(E7,real) scalar ext  eps>=6    EXCL
+
+  8       5  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+  8       5  k=1 G(m,p,8)                 eps>=-    EXCL (normalizer monomial)
+  8       5  k=1 S_9 scalar ext           eps>=8    EXCL
+  8       5  k=1 G37(E8,real) scalar ext  eps>=6    EXCL
+  8       5  imprimitive k=2 r=4          eps>=6    EXCL
+  8       5  imprimitive k=4 r=2          eps>=6    EXCL
+
+  9       7  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+  9       7  k=1 G(m,p,9)                 eps>=-    EXCL (normalizer monomial)
+  9       7  k=1 S_10 scalar ext          eps>=10   EXCL
+  9       7  imprimitive k=3 r=3          eps>=8    EXCL
+
+ 10       9  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+ 10       9  k=1 G(m,p,10)                eps>=-    EXCL (normalizer monomial)
+ 10       9  k=1 S_11 scalar ext          eps>=12   EXCL
+ 10       9  imprimitive k=2 r=5          eps>=8    SURVIVES
+ 10       9  imprimitive k=5 r=2          eps>=8    SURVIVES
+
+ 11      11  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+ 11      11  k=1 G(m,p,11)                eps>=-    EXCL (normalizer monomial)
+ 11      11  k=1 S_12 scalar ext          eps>=12   EXCL
+
+ 12      13  monomial (r=1)               eps>=-    EXCL (Severn v1 Sec.8)
+ 12      13  k=1 G(m,p,12)                eps>=-    EXCL (normalizer monomial)
+ 12      13  k=1 S_13 scalar ext          eps>=14   EXCL
+ 12      13  imprimitive k=2 r=6          eps>=10   SURVIVES
+ 12      13  imprimitive k=3 r=4          eps>=12   SURVIVES
+ 12      13  imprimitive k=4 r=3          eps>=12   SURVIVES
+ 12      13  imprimitive k=6 r=2          eps>=10   SURVIVES
+
