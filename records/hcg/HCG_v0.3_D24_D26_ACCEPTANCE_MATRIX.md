@@ -2,7 +2,7 @@
 
 **Date:** 10 November 2026. **Prepared by:** the Claude HCG owner session. **Review:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-review package, PROPOSAL. Nothing here is adopted. `hcg-v0.2` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed.
+**Status:** owner-review package, PROPOSAL, **revision 2** (after the ChatGPT co-owner review of PR #27; §7). Nothing here is adopted. `hcg-v0.2` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed.
 
 **What this is.** For every row of Δ24, Δ25 and Δ26 in the pending-delta log, the matrix gives the source, the proposed change, the hypotheses, the kind of evidence, how Severn v1 relates to v2, the negative findings, and a recommendation for a later edition `hcg-v0.3`.
 
@@ -64,9 +64,9 @@ The matrix proposes that the proof-obligation table of v0.3 carry **two separate
 | 24.2 | `HCG-THM-PO2` (§6.9) | `[THM]` import → same | INTERNAL CHECKED → THIRD-FAMILY CHECKED, conditional | B5 "VERIFIED conditional on cited classical theorems" | accept |
 | 24.3 | `HCG-THM-PO3` (§6.10) | `[THM]` import, conditional → same | INTERNAL CHECKED → THIRD-FAMILY CHECKED, conditional implication | B6 "VERIFIED as a conditional implication" | accept |
 | 24.4 | `HCG-THM-PO1` (§6.8) | `[THM]` → same | INTERNAL CHECKED → THIRD-FAMILY CHECKED, conditional reduction | B7 "VERIFIED as conditional reduction" | accept |
-| 24.5 | `HCG-ALG-E02` (§6.14, line 687) and the Prop 4.2 Step 4 wording | `[ALG]` → same | CHECKED → THIRD-FAMILY CHECKED | A3 "VERIFIED with wording correction" | accept |
+| 24.5 | `HCG-ALG-E02` (§6.14, line 687) and the Prop 4.2 Step 4 wording | `[ALG]` → same | RID as a whole: CHECKED → **CHECKED (unchanged)**. New sub-line for **W5 only**: THIRD-FAMILY CHECKED | A3 "VERIFIED with wording correction", on W5 | **accept with change** (R1) |
 | 24.6 | `HCG-OPEN-AUDITOR-R2` (OPEN 1) | `[OPEN]` PARTIAL → CLOSED | — | all items 1–7 delivered | accept |
-| 24.7 | `HCG-OPEN-PO1-PREMISE` (OPEN 8) | `[OPEN]` ACTIVE → CLOSED "at third-family theorem level" | — | B6, B7 | **accept with change** |
+| 24.7 | `HCG-OPEN-PO1-PREMISE` (OPEN 8) | `[OPEN]` ACTIVE → CLOSED (scoped), obligation transferred to OPEN 6; or PARTIAL | — | B6, B7 (theorem level) | **accept with change** (R2) |
 | 24.8 | `HCG-EXT-SEVERN-62` (§6.6) | `[EXT-CLAIM]` → same | CLAIMED → CLAIMED | "Public global statement: NOT VERIFIED as independently established theorem" | accept |
 | 24.9 | `HCG-OPEN-LEMMA62` (OPEN 5), `HCG-OPEN-HUMAN-REF` (OPEN 6) | unchanged by Δ24 | — | — | accept (OPEN 5 is then treated in row 26.3) |
 | 24.10 | W5 ↔ Appendix A (§6.19) | `[ALG cert]` → same | INTERNAL CHECKED → same | "NOT VERIFIED and NOT REQUIRED" | accept |
@@ -77,12 +77,13 @@ The matrix proposes that the proof-obligation table of v0.3 carry **two separate
 - **24.2.** Conditional on Schoen 1988 (Thm 2.0, Cor 3.1) and Milne 1999 (Thm 3.2, Lemma 3.1), read and applied, not reproved. No cycle was constructed by computer.
 - **24.3.** Conditional on (L), on (D) at S_W5, and on d(S_W5) = [1]. It covers the full rational Weil plane and every member, including the special member A × S. The auditor does not call it a formal moduli-theoretic proof.
 - **24.4.** Conditional on PO-3. All sixfold discriminants, both rational Weil classes. **Powers are not covered:** they need Hg(A) = SU_H separately.
-- **24.5.** The correction is to wording: "isomorphism" becomes "surjection" in Prop 4.2 Step 4. Rank 16 and the dominance argument are unaffected.
-- **24.7. Change proposed.** OPEN 8 asked for a line-by-line review of the every-member scope. What exists is an AI theorem-level reading by three model families. The matrix proposes:
-  - close OPEN 8 as "CLOSED (scoped): three-family theorem-level reading";
-  - add one line to OPEN 6 (human referee) naming the every-member scope and the special member A × S as points for the referee.
-
-  Otherwise the residual doubt disappears from the open registry.
+- **24.5. Change required (R1 of the co-owner review).** `HCG-ALG-E02` bundles three identities, one each for W5, W6 and W7 (ledger lines 689–691). The auditor's A3 (R2 §2) checked **W5 only**: N₁₇ = N₉ + N₁₀, rank 16, a unique relation, and the wording correction "isomorphism" → "surjection" in Prop 4.2 Step 4.
+  - The Δ24 row in the log upgrades the whole RID to THIRD-FAMILY CHECKED. That is too wide, and the first version of this matrix repeated it.
+  - Corrected proposal: the RID keeps its v0.2 state CHECKED. A sub-line records "W5 relation, rank 16 and the surjection wording: THIRD-FAMILY CHECKED (A3)". The W6 and W7 identities stay at their two-AI states; no third-family check of them is claimed.
+  - Rank 16 and the dominance argument are unaffected.
+- **24.7. Change required (R2).** The closure criterion of OPEN 8 in the adopted ledger is "a line-by-line review" of the every-member proof, including the special member A × S. **That criterion has not been met.** What exists is a theorem-level reading by three model families; the auditor's B6 and B7 are scoped critiques and are expressly not a formal proof certification. At theorem level, B6 does cover the whole rational Weil plane and every member.
+  - Two dispositions are honest: (i) leave OPEN 8 PARTIAL; or (ii) close it as "CLOSED (scoped)" with a sentence in v0.3 saying that the original line-by-line obligation was **not fulfilled** and is **transferred to OPEN 6** (human referee), naming the every-member scope and the special member A × S.
+  - The matrix recommends (ii). It must not be described as the original criterion having been completed. The choice is the PI's.
 - **24.8.** The ledger sentence proposed by Δ24, "every chain link now third-family checked at theorem level on S_W5", must stand next to the auditor's own sentence that the public global statement is not verified as an independently established theorem, and next to "unrefereed; no human referee".
 
 **Negative findings and incidents to keep:**
@@ -106,7 +107,7 @@ The Claude review is the file with the appended addendum: the log cites its pre-
 
 | # | Item | Grade proposed | Review state proposed | Recommendation |
 |---|---|---|---|---|
-| 25.1 | `HCG-COR-BOUNDARY-WITT` (new) | `[ALG]`, a corollary; no novelty | CHECKED (ChatGPT derivation, Claude proof review) | **accept with change** |
+| 25.1 | `HCG-COR-BOUNDARY-WITT` (new) | `[ALG]`, a corollary; no novelty | CHECKED (ChatGPT derivation, Claude proof review; re-derived by ChatGPT in the review of PR #27) | **accept with change** |
 | 25.2 | `HCG-ALG-DIM-BUDGET` (new) | `[ALG]` | CHECKED (Claude, ChatGPT) | accept |
 | 25.3 | "Severn's method is capped at split eightfolds" (Claude) | none: withdrawn | NOT PROVED | accept **as a retired claim** |
 | 25.4 | `HCG-OPEN-SEVERN-V2` (new OPEN) | `[OPEN]` ACTIVE | — | accept as history; its later state is row 26.9 |
@@ -116,14 +117,16 @@ The Claude review is the file with the appended addendum: the log cites its pre-
 
 - **25.1.** Statement: dim_ℚ span{N_i} ≤ r² ≤ w_K(S)², so a nonsplit (4,4) form gives at most 9 < 16.
   - It follows from `HCG-ALG-LAMINAR` (ledger line 826) and Landherr's theorem. It inherits the laminar premises.
-  - It is a statement about **boundary rank witnesses of this laminar kind**. It is not a statement that nonsplit dominant families do not exist.
+  - It is a statement about **simultaneous boundary degenerations of this laminar kind** (N_iN_j = 0, the N_i skew-adjoint for S). It is not a statement that nonsplit dominant families do not exist.
   - **Change proposed.** The log lists prior statements of the same conclusion: Severn v1 §6 (D∂), v2 Prop 8.5 / Rem 8.6, and "Brosnan arXiv:2609.14169". The Brosnan item is a *source report*: HCG holds no copy and no hash of it. Before v0.3 cites it, its bibliographic identity is confirmed through LIT. Until then the row reads "prior statements in Severn v1/v2; a further preprint reported, identity not yet confirmed".
 - **25.2.** Genus-0 base; σ absolutely irreducible without invariants.
   - d ≥ (n² − 2n + 3)/2; with no reflections d ≥ n² − n + 3.
   - For n = 5: d ≥ 9, Σ(c_j − 1) ≤ 2d − 18, and at d = 9 every branch element is a reflection.
-  - Genus-1 base: n ≤ 2.
-  - These are counting bounds, necessary conditions only.
-- **25.3. The withdrawn claim must not return in any form.** Its failing step was "contains a reflection ⇒ needs a primitive reflection subgroup without real field". ChatGPT's diagnostic group ⟨S_{d+1}, ωI⟩ contains reflections and is not generated by them. What survives is only: the case d = 9 is excluded; d ≥ 10 was OPEN at the time. The matrix proposes an Appendix B entry `[RETRACTED]` with exactly this wording, and no sentence about a "cap" anywhere in the main text.
+  - **Genus-1 base, a separate setup with its own hypotheses** (not the genus-0 count): with the analogous irreducibility and no-invariant conditions, 2n = Σ c_j ≥ N, and the space of genus-1 curves with N marked points has dimension N. Dominance then needs n² ≤ N ≤ 2n, hence n ≤ 2.
+  - These are counting bounds, necessary conditions only. They reproduce no group classification.
+- **25.3. The withdrawn claim must not return in any form.** Its failing step was "contains a reflection ⇒ needs a primitive reflection subgroup without real field". ChatGPT's diagnostic group ⟨S_{d+1}, ωI⟩ contains reflections and is not generated by them. What survives is only the narrow d = 9 obstruction, and it is **conditional on its source hypotheses**: a non-real character field, irreducibility, the classification of primitive complex reflection groups, and Severn v1 §8's exclusion of monomial representations (which covers only representations to which monomial induction applies). d ≥ 10 was OPEN at the time.
+  - The claim was a PROPOSED item of Claude's in the pending log. It was **never part of v0.2** and must not be shown as a retired adopted claim.
+  - The matrix proposes an Appendix B entry "`[RETRACTED]` proposal" with exactly this wording and ChatGPT's diagnostic group, and no sentence about a "cap" anywhere in the main text.
 - **25.4.** The entry also records that v1 grades, including Δ24, "do not transfer to v2 without a successor audit". That sentence stays in v0.3 as the reason for §1 above.
 - **25.5.** The legs paired tuple → W5 (618 letters) and W5 → NEW/BLOCK/ESCAPE are pure braids. Only Severn's own gate → paired word (90 moves) is not. So Severn's deposited paired tuple and W5 lie in one ordered component. The placement of the gate tuple depends on v2's convention.
 
@@ -175,9 +178,10 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 - **26.3.** OPEN 5 asked for a proof of the cocycle formula. v2 Lemma 7.2 supplies a written proof, and both AIs reviewed the Δ-complex reduction.
   - **Change proposed (a).** The closure reads "CLOSED on v2 Lemma 7.2 (unrefereed; two-AI)". The historical note stays: the printed proof in [19] could not be reconstructed, and the "Draft v0.11" attribution stays NOT VERIFIED.
   - **Change proposed (b): a gap in Δ26.** The log does not say what happens to `HCG-EXT-PO6` (ledger §6.16). In v0.2 its general statement is "PROPOSED … general proof PARTIAL, OPEN 5". If OPEN 5 closes, PO-6 needs an explicit new line. Proposal:
-    - grade stays `[EXT-CLAIM]`;
-    - general statement: CHECKED (two AIs), through v2 Prop 7.1 with Lemma 7.2 and the crosswalk;
-    - THIRD-FAMILY CHECKED stays limited to the W5 application.
+    - grade stays `[EXT-CLAIM]`, conditional on Severn's unrefereed source;
+    - general statement: CHECKED (two AIs) **only in this sense**: the conditional argument as read in v2 Prop 7.1 with Lemma 7.2, plus the two-AI proof-level crosswalk. It is a proof-path review. It is not a new independent general proof and not a third-family verification of the general statement (R3);
+    - THIRD-FAMILY CHECKED stays limited to the W5 application;
+    - nothing is upgraded for the polarized-family identifications of W6 and W7.
 
     This is an owner decision that Δ26 left open; it is listed in §5.
 - **26.4.** Claude's Artin route and ChatGPT's projector route both give 64/64 and 272/272. They share one input, the deposited tuple. The v2 printed roots equal the deposited tuple (20/20), and the printed basis, S, all 17 X_j and the table are reproduced. It certifies the finite assertions only (ledger SG-6).
@@ -201,17 +205,34 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 
 | # | Point | Proposed by this matrix |
 |---|---|---|
-| Q1 | Two-column presentation of third-family verdicts (v1/[386]) and v2 locations (crosswalk) | adopt it (§1) |
-| Q2 | OPEN 8: close outright, or close as scoped with a named line in OPEN 6 | scoped, with the line (24.7) |
-| Q3 | `HCG-EXT-PO6` after OPEN 5 closes | explicit new provenance line (26.3 b) |
-| Q4 | Unaudited v2 §11–§12 | new narrower open item (26.9) |
-| Q5 | The Brosnan preprint cited in 25.1 | LIT identity check before citing |
-| Q6 | The withdrawn "cap" claim | Appendix B entry with the exact failing step (25.3) |
-| Q7 | Evidence not in the repository (deposit tuple, held-back bundle, two ZIPs never received) | state it in the v0.3 evidence notes; ask ChatGPT to upload what it holds that carries no third-party data |
-| Q8 | The verbatim PI wording for the Δ25/Δ26 approval | the PI may restate it for the record |
+| Q1 | Two-column presentation of third-family verdicts (v1/[386]) and v2 locations (crosswalk) | adopt it (§1). Review: ACCEPT |
+| Q2 | OPEN 8: PARTIAL, or closed as scoped with the unmet line-by-line obligation transferred to OPEN 6 | scoped with transfer (24.7). Review: ACCEPT WITH CHANGE |
+| Q3 | `HCG-EXT-PO6` after OPEN 5 closes | explicit proof-path line, two-AI scope only (26.3 b). Review: ACCEPT WITH CHANGE |
+| Q4 | Unaudited v2 §11–§12 | new narrower open item (26.9). Review: ACCEPT |
+| Q5 | The Brosnan preprint cited in 25.1 | an unverified reported lead; LIT identity check before citing. Review: ACCEPT |
+| Q6 | The withdrawn "cap" claim | Appendix B entry as a retracted proposal, with the exact failing step (25.3). Review: ACCEPT |
+| Q7 | Evidence not in the repository (deposit tuple, held-back bundle, two ZIPs never received) | state it in the v0.3 evidence notes; ChatGPT uploads only original bytes it actually holds that are safe to redistribute, through the normal intake. Review: ACCEPT |
+| Q8 | The verbatim PI wording for the Δ25/Δ26 approval | the relayed decision stays as recorded; the PI may corroborate it separately. Review: DEFER, non-blocking |
 
 ## 6. What this matrix does not cover
 
 - Δ27 (nonsplit eightfolds), Δ28 (HHO opening) and Δ29 (positive lane).
 - The RTG RID and grade review.
 - Any re-run of a computation or re-reading of a proof. The matrix organises what the log and the auditor's report state.
+
+## 7. Revision history
+
+| Revision | Commit | What changed |
+|---|---|---|
+| 1 | `74408559e94e2d9cd4eb7adf4d0b7db37aeaa91d` (SHA-256 `1f72179e11a17c2425ccdcde761a65866d39e4a3644047b9031cf7d7d0d9ab1c`) | first version |
+| 2 | this commit | The four corrections of the ChatGPT co-owner review `5842469549` (ACCEPT CORE WITH REQUIRED SCOPING CORRECTIONS). |
+
+**The corrections of revision 2:**
+- **R1 (row 24.5).** The third-family check of `HCG-ALG-E02` is narrowed to W5. Revision 1 repeated the log's too-wide upgrade of the whole RID; that was an error of this matrix.
+- **R2 (row 24.7).** The matrix now says that the original closure criterion of OPEN 8 is unmet and is transferred to OPEN 6.
+- **R3 (row 26.3).** The general PO-6 state is bound to a two-AI proof-path review.
+- **R4 (rows 25.2, 25.3).** The genus-1 hypotheses are stated separately, and the d = 9 obstruction is qualified by its source hypotheses.
+
+The review's dispositions of Q1–Q8 are entered in §5.
+
+The reviewer also re-derived the two bounds of Δ25 under their stated hypotheses (Boundary-Witt and the genus-0 budget): PASS, as necessary conditions only.
