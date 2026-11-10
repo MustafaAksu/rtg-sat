@@ -12,11 +12,14 @@ I4  neutral-aware identity on the fixed-orbit fixture (q = r = 0, a = 0.10, kapp
     log-space evaluation stays finite for a synthetic long window (L = 200000, lambda = 0.01)
 I5  short-horizon code equivalence: frozen chaos_fraction vs instrumented per-IC count
     (same patched horizons) on five cells
-I6  short-horizon contract: on tri0 cluster ICs, whenever the historical tangent's
-    cluster-breaking fraction stays below tolerance, the instrumented historical lambda
-    equals the neutral-aware prediction from the block products (total and quarters);
-    a capture of the tangent by the cluster-breaking sector (roundoff-seeded) is flagged
-    with its step; the cluster orbit itself never leaves the cluster
+I6  short-horizon contract: on tri0 cluster ICs, when the historical tangent's
+    cluster-breaking norm-square fraction f_perp never exceeds 1e-6 (in-sector), the
+    instrumented historical lambda equals the neutral-aware prediction (total, quarters);
+    otherwise the status is one of SECTOR-LEAKAGE-DETECTED (f_perp > 1e-6),
+    TRANSVERSE-DOMINANT-NOT-SUSTAINED (f_perp > 0.5 at some step, < 0.99 at the end),
+    SECTOR-CAPTURED (f_perp >= 0.99 at the end) and is consistent with its thresholds;
+    the cluster orbit distance is exactly 0.0
+I7  the summary refuses to issue decisions on an incomplete result set
 """
 import math, sys
 import numpy as np
@@ -92,22 +95,30 @@ for rung, pair, kap in (("tri0", "A", 2.65), ("tri0", "A", 2.60), ("path3", "A",
     ni = sum(ie.run_ic(pe, rung, pair, kap, ic, burn=BURN_S, lyap=LYAP_S, diagnostics=False).get("class") == "CHAOS"
              for ic in range(pe.N_IC))
     chk(f"I5 short-horizon count {rung}/{pair} kappa={kap}", nf == ni, f"frozen={nf} instrumented={ni}")
-dist = 0.0; n_ok = 0; n_cap = 0; bad = []
+dist = 0.0; n_in = 0; n_out = 0; bad = []
 for pair, kap in (("A", 1.50), ("A", 2.65), ("C", 2.80)):
     for ic in ie.CLUSTER_IDX:
         r = ie.run_ic(pe, "tri0", pair, kap, ic, burn=BURN_S, lyap=LYAP_S)
-        dist = max(dist, r["cluster_max_orbit_dist"])
-        if r["sector_status"] == "ok":
-            n_ok += 1
-            if r["contract_max_dev"] > ie.TOL_CONTRACT: bad.append((pair, kap, ic, r["contract_max_dev"]))
-        elif r["sector_status"] == "sector-captured":
-            n_cap += 1
-            if r["capture_step"] is None or r["leak_hist_t"] <= ie.TOL_SECTOR_LEAK: bad.append((pair, kap, ic, "flag"))
-chk("I6 contract holds whenever the historical tangent stays in its sector", not bad and n_ok >= 1,
-    f"in-sector runs={n_ok} captured runs={n_cap} violations={bad}")
-chk("I6 cluster orbit stays in cluster (bitwise symmetry of the orbit update)", dist <= ie.TOL_CLUSTER_ORBIT, f"max dist={dist:.1e}")
-print(f"NOTE  I6 sector capture by roundoff observed in {n_cap} short-horizon run(s) -- expected whenever "
-      f"cluster-breaking growth exceeds within-cluster growth; declared in the prereg's pre-observation register")
+        dist = max(dist, r["cluster_max_orbit_dist"]); st = r["sector_status"]
+        if st == "in-sector":
+            n_in += 1
+            if r["leak_hist_t"] > ie.LEAK_FRACTION or r["contract_max_dev"] > ie.TOL_CONTRACT: bad.append((pair, kap, ic, st))
+        else:
+            n_out += 1
+            ok_flag = (r["leak_step"] is not None and r["leak_hist_t"] > ie.LEAK_FRACTION)
+            if st == "SECTOR-CAPTURED": ok_flag &= (r["fperp_final"] >= ie.CAPTURED_FRACTION and r["dominance_step"] is not None)
+            if st == "TRANSVERSE-DOMINANT-NOT-SUSTAINED": ok_flag &= (r["dominance_step"] is not None and r["fperp_final"] < ie.CAPTURED_FRACTION)
+            if st == "SECTOR-LEAKAGE-DETECTED": ok_flag &= (r["dominance_step"] is None)
+            if not ok_flag: bad.append((pair, kap, ic, st))
+chk("I6 contract holds on in-sector runs; leakage / dominance / capture statuses consistent with their thresholds",
+    not bad and n_in >= 1, f"in-sector runs={n_in} other={n_out} violations={bad}")
+chk("I6 cluster orbit distance exactly 0.0 (bitwise symmetry of the orbit update)", dist == 0.0, f"max dist={dist!r}")
+# I7 summary is fail-closed on an incomplete result set
+import tempfile, os
+with tempfile.TemporaryDirectory() as td:
+    chk("I7 summary refuses an empty/incomplete result set", ie.summary(td, log=lambda *_: None) is False)
+print(f"NOTE  short-horizon instrument observation: {n_out} run(s) left the in-sector state (roundoff-seeded "
+      f"cluster-breaking component); declared in the prereg's pre-observation register; not campaign data")
 
 print("\nCERTIFICATE", "PASS" if not FAILS else "FAIL", FAILS)
 sys.exit(0 if not FAILS else 1)

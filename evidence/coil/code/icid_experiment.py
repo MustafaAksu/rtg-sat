@@ -59,9 +59,11 @@ CELLS = {
     14: ("tri0",  "C", 2.00,  None, "new-diagnostic"),
 }
 CLUSTER_IDX = (0, 6, 12, 18, 24)
-TOL_CLUSTER_ORBIT = 1e-12      # max |th1-th2| + |w1-w2| over burn + measurement
-TOL_SECTOR_LEAK   = 1e-6       # max out-of-sector fraction of a seeded 6-D tangent
-TOL_CONTRACT      = 1e-8       # |lambda_hist - neutral-aware prediction| per window
+TOL_CLUSTER_ORBIT = 0.0        # bitwise: any nonzero |th1-th2| + |w1-w2| over burn + measurement
+LEAK_FRACTION     = 1e-6       # f_perp above this: leakage detected (not dominance)
+DOMINANT_FRACTION = 0.5        # f_perp above this: cluster-breaking sector dominates the tangent
+CAPTURED_FRACTION = 0.99       # f_perp at the END of the window at or above this: sector captured
+TOL_CONTRACT      = 1e-8       # |lambda_hist - neutral-aware prediction| per window (in-sector runs only)
 
 # spatial orthonormal basis for tri0 (node order 0,1,2)
 C_VEC = np.array([1.0, 1.0, 1.0])/math.sqrt(3.0)
@@ -125,7 +127,8 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
             seeds["par6"] = seed6(P_VEC); seeds["perp6"] = seed6(T_VEC)
     sacc = {k_: [0.0]*NQ for k_ in seeds}
     leak = {"hist_t": 0.0, "par6": 0.0, "perp6": 0.0}
-    capture_step = None                    # first measurement step with hist t-fraction > tol
+    leak_step = None; dominance_step = None   # first steps with f_perp > LEAK / DOMINANT fraction
+    fperp_q = [0.0]*NQ; fperp_last = 0.0      # f_perp at quarter ends / last step
     bpar = np.array([1.0, 0.0]); bperp = np.array([1.0, 0.0])
     lpar = 0.0; lperp = 0.0                 # accumulated log norms of block products
     lpar_q = [0.0]*(NQ+1); lperp_q = [0.0]*(NQ+1)   # cumulative at quarter ends
@@ -158,7 +161,9 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
                 bperp = Jt@bperp; n2 = np.linalg.norm(bperp); lperp += math.log(n2); bperp /= n2
                 ft = sector_fraction(v, T_VEC)
                 leak["hist_t"] = max(leak["hist_t"], ft)
-                if capture_step is None and ft > TOL_SECTOR_LEAK: capture_step = step_i
+                fperp_last = ft
+                if leak_step is None and ft > LEAK_FRACTION: leak_step = step_i
+                if dominance_step is None and ft > DOMINANT_FRACTION: dominance_step = step_i
                 leak["par6"] = max(leak["par6"], 1.0 - sector_fraction(seeds["par6"], P_VEC))
                 leak["perp6"] = max(leak["perp6"], 1.0 - sector_fraction(seeds["perp6"], T_VEC))
         tn = th + w; w = (1-a)*w + dt*dt*K*pe._force(th, A); th = tn
@@ -167,7 +172,7 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
             if d > max_dist: max_dist = d
         cnt += 1; step_i += 1
         if diagnostics and is_cluster and step_i % ql == 0 and step_i//ql <= NQ:
-            lpar_q[step_i//ql] = lpar; lperp_q[step_i//ql] = lperp
+            lpar_q[step_i//ql] = lpar; lperp_q[step_i//ql] = lperp; fperp_q[step_i//ql - 1] = fperp_last
         if cnt == ql and qi < NQ-1: qi += 1; cnt = 0
     if not ok:
         rec["status"] = "nonfinite-lyap"; rec["class"] = "not-chaos"; return rec
@@ -189,16 +194,19 @@ def run_ic(pe, rung, pair, kappa, ic_index, burn=None, lyap=None, diagnostics=Tr
             rec["lamQ_hist_pred"] = [(B[i+1]-B[i])/(2.0*ql) for i in range(NQ)]
             rec["lam_par6"] = sum(sacc["par6"])/lyap; rec["lam_perp6"] = sum(sacc["perp6"])/lyap
             rec["leak_hist_t"] = leak["hist_t"]; rec["leak_par6"] = leak["par6"]; rec["leak_perp6"] = leak["perp6"]
-            rec["capture_step"] = capture_step
+            rec["leak_step"] = leak_step; rec["dominance_step"] = dominance_step
+            rec["fperp_Q"] = list(fperp_q); rec["fperp_final"] = fperp_last
             rec["sector_status"] = ("orbit-left-cluster" if max_dist > TOL_CLUSTER_ORBIT else
-                                    "sector-captured" if capture_step is not None else "ok")
+                                    "SECTOR-CAPTURED" if fperp_last >= CAPTURED_FRACTION else
+                                    "TRANSVERSE-DOMINANT-NOT-SUSTAINED" if dominance_step is not None else
+                                    "SECTOR-LEAKAGE-DETECTED" if leak_step is not None else "in-sector")
             eps = pe.EPS_LAM
             par_pos = all(x > eps for x in rec["lamQ_par_block"]) and rec["lam_par_block"] > eps
             perp_pos = all(x > eps for x in rec["lamQ_perp_block"]) and rec["lam_perp_block"] > eps
             rec["cluster_growth_type"] = ("in-cluster+transverse" if par_pos and perp_pos else
                                           "in-cluster" if par_pos else
                                           "transverse-only" if perp_pos else "none")
-            rec["seed6_crosscheck"] = ("leak" if max(leak["par6"], leak["perp6"]) > TOL_SECTOR_LEAK else "ok")
+            rec["seed6_crosscheck"] = ("leak" if max(leak["par6"], leak["perp6"]) > LEAK_FRACTION else "ok")
             dev = [abs(rec["lam_hist"]-rec["lam_hist_pred"])] + \
                   [abs(x-y) for x, y in zip(rec["lamQ_hist"], rec["lamQ_hist_pred"])]
             rec["contract_max_dev"] = max(dev)
@@ -208,7 +216,7 @@ FIELDS = ["cell", "rung", "pair", "kappa", "role", "hist_ref", "ic", "cluster", 
           "lam_hist", "lamQ_hist", "lam_g1", "lam_g2", "lam_g3", "lamQ_g1", "lamQ_g2", "lamQ_g3",
           "cluster_max_orbit_dist", "lam_par_block", "lam_perp_block", "lamQ_par_block", "lamQ_perp_block",
           "lam_hist_pred", "lamQ_hist_pred", "contract_max_dev", "lam_par6", "lam_perp6",
-          "leak_hist_t", "leak_par6", "leak_perp6", "sector_status", "capture_step", "cluster_growth_type", "seed6_crosscheck",
+          "leak_hist_t", "leak_par6", "leak_perp6", "sector_status", "leak_step", "dominance_step", "fperp_Q", "fperp_final", "cluster_growth_type", "seed6_crosscheck",
           "theta0", "w0", "frozen_sha256", "numpy", "python"]
 
 def fmt(x):
@@ -250,25 +258,60 @@ def gcode(pe, log=print):
             f"{'PASS' if good else 'FAIL'}")
     os.makedirs("icid_results", exist_ok=True)
     with open(os.path.join("icid_results", "icid_gcode.txt"), "w") as f:
-        f.write("G-CODE " + ("PASS" if allok else "FAIL") + "\n")
+        f.write("G-CODE " + ("PASS" if allok else "FAIL") + " frozen_sha256=" + FROZEN_SHA256 + "\n")
     return allok
 
-def summary(outdir="icid_results", log=print):
+def validate(outdir):
+    """Fail-closed completeness/identity validation of the result set (prereg section 6)."""
     import glob
-    cells = {}
-    for p in sorted(glob.glob(os.path.join(outdir, "icid_cell*.csv"))):
+    problems = []; cells = {}
+    g = os.path.join(outdir, "icid_gcode.txt")
+    if not os.path.exists(g): problems.append("G-CODE result file missing")
+    else:
+        t = open(g).read().strip()
+        if not t.startswith("G-CODE PASS") or FROZEN_SHA256 not in t: problems.append(f"G-CODE not PASS: {t!r}")
+    paths = sorted(glob.glob(os.path.join(outdir, "icid_cell*.csv")))
+    for p in paths:
         rows = list(csv.DictReader(open(p)))
-        cells[int(rows[0]["cell"])] = rows
+        if not rows: problems.append(f"{os.path.basename(p)}: empty"); continue
+        ids = {r["cell"] for r in rows}
+        if len(ids) != 1: problems.append(f"{os.path.basename(p)}: mixed cell ids"); continue
+        cid = int(rows[0]["cell"])
+        if cid not in CELLS: problems.append(f"{os.path.basename(p)}: unknown cell {cid}"); continue
+        if cid in cells: problems.append(f"cell {cid}: duplicate file"); continue
+        rung, pair, kappa, ref, role = CELLS[cid]
+        for r in rows:
+            if (r["rung"], r["pair"], r["role"]) != (rung, pair, role) or abs(float(r["kappa"])-kappa) > 1e-12 \
+               or r["frozen_sha256"] != FROZEN_SHA256 or r["hist_ref"] != ("" if ref is None else str(ref)):
+                problems.append(f"cell {cid}: row metadata does not match the locked CELLS table"); break
+        ics = sorted(int(r["ic"]) for r in rows)
+        if ics != list(range(25)): problems.append(f"cell {cid}: IC set is not exactly 0..24 ({len(ics)} rows)")
+        cl = sorted(int(r["ic"]) for r in rows if r["cluster"] == "1")
+        if rung == "tri0" and cl != list(CLUSTER_IDX): problems.append(f"cell {cid}: cluster flags wrong")
+        if any(r["status"] not in ("ok",) for r in rows):
+            problems.append(f"cell {cid}: non-ok row status present ({sorted({r['status'] for r in rows})})")
+        cells[cid] = rows
+    missing = sorted(set(CELLS) - set(cells))
+    if missing: problems.append(f"missing cells: {missing}")
+    return cells, problems
+
+def summary(outdir="icid_results", log=print):
+    cells, problems = validate(outdir)
     out = []
-    # G-REF
+    valid = not problems
+    if valid:
+        out.append("RESULT SET: COMPLETE AND VALID (14 cells x 25 ICs, G-CODE PASS)")
+    else:
+        out.append("RESULT SET: INCOMPLETE-OR-INVALID -- no decision is issued; lines below are partial diagnostics only")
+        out += [f"  problem: {p}" for p in problems]
+    tag = "" if valid else "[PARTIAL-DIAGNOSTIC] "
     for cid, rows in sorted(cells.items()):
         ref = CELLS[cid][3]; n = sum(r["class"] == "CHAOS" for r in rows)
         members = sorted(int(r["ic"]) for r in rows if r["class"] == "CHAOS")
         if ref is None: gref = "n/a (new bounded diagnostic)"
         else: gref = "AGREE" if n == ref else "REPRODUCTION-MISMATCH -- cause unresolved"
-        out.append(f"cell {cid:2d} {CELLS[cid][0]}/{CELLS[cid][1]} kappa={CELLS[cid][2]}: n_chaos={n} "
+        out.append(f"{tag}cell {cid:2d} {CELLS[cid][0]}/{CELLS[cid][1]} kappa={CELLS[cid][2]}: n_chaos={n} "
                    f"ref={ref} G-REF={gref} members={members if n <= 12 else '(>12 ICs)'}")
-    # D-ID and D-MEMBERSHIP, within pair, tri0, cells with n_chaos == 5
     for pair in ("A", "B", "C"):
         five = {}; other = []
         for cid, rows in sorted(cells.items()):
@@ -276,36 +319,32 @@ def summary(outdir="icid_results", log=print):
             mem = frozenset(int(r["ic"]) for r in rows if r["class"] == "CHAOS")
             if len(mem) == 5: five[cid] = mem
             else: other.append((cid, len(mem)))
-        if len(five) < 2:
-            did = "INSUFFICIENT-CELLS"
-        else:
-            did = "fixed-membership" if len(set(five.values())) == 1 else "variable-membership"
-        memb = []
-        for cid, mem in five.items():
-            cl = frozenset(CLUSTER_IDX)
-            memb.append(f"cell {cid}: " + ("cluster-aligned" if mem == cl else
-                                            "disjoint" if not (mem & cl) else "mixed") + f" {sorted(mem)}")
-        out.append(f"pair {pair}: five-member cells={sorted(five)} D-ID={did}; "
+        if len(five) < 2: did = "INSUFFICIENT-CELLS"
+        else: did = "fixed-membership" if len(set(five.values())) == 1 else "variable-membership"
+        cl = frozenset(CLUSTER_IDX)
+        memb = [f"cell {cid}: " + ("cluster-aligned" if mem == cl else "disjoint" if not (mem & cl) else "mixed")
+                + f" {sorted(mem)}" for cid, mem in five.items()]
+        out.append(f"{tag}pair {pair}: five-member cells={sorted(five)} D-ID={did}; "
                    f"cells with n_chaos != 5: {other}; D-MEMBERSHIP: {memb}")
-    # D-CONTRACT
     for cid, rows in sorted(cells.items()):
         if CELLS[cid][0] != "tri0": continue
         for r in rows:
             if r["cluster"] != "1" or not r.get("contract_max_dev"): continue
             dev = float(r["contract_max_dev"]); st = r["sector_status"]
-            lq = [float(x) for x in r["lamQ_perp_block"].split(";")]
-            blind = (all(x > 1e-3 for x in lq) and r["class"] != "CHAOS")
-            verdict = ("unresolved (orbit-left-cluster)" if st == "orbit-left-cluster" else
-                       f"SECTOR-CAPTURED at step {r['capture_step']}" if st == "sector-captured" else
-                       "CONTRACT-OK" if dev <= TOL_CONTRACT else "CONTRACT-DEVIATION")
-            out.append(f"cell {cid} IC {r['ic']}: {verdict} dev={dev:.3e} lam_hist={float(r['lam_hist']):+.6f} "
+            if st == "in-sector": verdict = "CONTRACT-OK" if dev <= TOL_CONTRACT else "CONTRACT-DEVIATION"
+            elif st == "orbit-left-cluster": verdict = "unresolved (orbit-left-cluster)"
+            elif st == "SECTOR-LEAKAGE-DETECTED": verdict = f"SECTOR-LEAKAGE-DETECTED at step {r['leak_step']} (contract not tested)"
+            elif st == "TRANSVERSE-DOMINANT-NOT-SUSTAINED":
+                verdict = f"TRANSVERSE-DOMINANT at step {r['dominance_step']}, not sustained (f_perp final {float(r['fperp_final']):.3g})"
+            else: verdict = f"SECTOR-CAPTURED (leak step {r['leak_step']}, dominance step {r['dominance_step']}, f_perp final {float(r['fperp_final']):.6f})"
+            out.append(f"{tag}cell {cid} IC {r['ic']}: {verdict} | dev={dev:.3e} lam_hist={float(r['lam_hist']):+.6f} "
                        f"lam_par={float(r['lam_par_block']):+.6f} lam_perp={float(r['lam_perp_block']):+.6f} "
-                       f"class={r['class']} growth={r['cluster_growth_type']}"
-                       + (" | historical estimator did not see cluster-breaking growth on this orbit" if blind and st == "ok" else "")
-                       + (f" | 6-D seed cross-check: {r['seed6_crosscheck']}"))
+                       f"class={r['class']} growth={r['cluster_growth_type']} | 6-D seed cross-check: {r['seed6_crosscheck']}")
     text = "\n".join(out)
+    os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "icid_summary.txt"), "w") as f: f.write(text + "\n")
     log(text)
+    return valid
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -313,7 +352,7 @@ if __name__ == "__main__":
     ap.add_argument("--all", action="store_true"); ap.add_argument("--summary", action="store_true")
     a = ap.parse_args()
     if a.summary:
-        summary(); sys.exit(0)
+        sys.exit(0 if summary() else 3)
     pe = load_frozen()
     if a.gcode:
         sys.exit(0 if gcode(pe) else 1)
