@@ -1,12 +1,14 @@
 # evidence/hcg — frozen HCG files: ledgers, reports, code, certificates, outputs
 
-Every file here is an **unchanged copy** of a file in `upload/hcg/`. Nothing was edited, renamed or re-saved. Working folders are kept whole, so scripts, their inputs and their outputs stay together.
+This folder holds two kinds of file.
+- **The 754 historical source files** listed in `SHA256SUMS`. Each is an **unchanged copy** of a file in `upload/hcg/`: nothing was edited, renamed or re-saved. Working folders are kept whole, so scripts, their inputs and their outputs stay together.
+- **Files written for this repository:** this `README.md`, the indexes `SHA256SUMS`, `PLACEMENT_MAP.tsv` and `NAME_ALIASES.tsv`, and the scripts in `verification/`. These are not session originals and are not covered by the "unchanged copy" statement.
 
 - `SHA256SUMS` lists all 754 placed files.
 - `PLACEMENT_MAP.tsv` gives, for each placed file, its SHA-256 and its path in `upload/hcg/`.
 - `verification/place_evidence.py` made the placement. It checks each source against `upload/hcg/SHA256SUMS` and re-hashes each copy.
 
-A frozen file is never edited. It keeps its original wording, including statements that were later corrected, its INTERNAL labels and its session paths (`/home/claude/...`). The current state of the study is in `hcg/`, not here.
+A historical source file is frozen and is never edited. It keeps its original wording, including statements that were later corrected, its INTERNAL labels and its session paths (`/home/claude/...`). The current state of the study is in `hcg/`, not here.
 
 **Placement is not adoption.** A file's presence here says nothing about the review state of what it contains.
 
