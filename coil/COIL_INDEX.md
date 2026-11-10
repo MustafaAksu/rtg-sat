@@ -26,7 +26,7 @@
 | RM-04 | Path dependence | MECHANISM candidate | not opened | — |
 | RM-05 | Regeneration | MECHANISM | not opened | — |
 | RM-06 | Frustration / local constraint conflict | MECHANISM | not opened | — |
-| RM-07 | Metastability / attractor switching | `[SPEC]` parked | **activation candidate** (precondition: IC-identity test of the CF = 0.20 plateau, §8 item 4) | — |
+| RM-07 | Metastability / attractor switching | `[SPEC]` parked | parked. The IC-identity precondition test is done (ICID, §8 item 4): the CF = 0.20 plateau is **not** metastability evidence; the regular-winding regime and reversion islands remain the only activation material | — |
 | RM-08 | Adaptive permeability | `[SPEC]` parked | — | — |
 
 ## 3. Model and analysis documents
@@ -56,6 +56,7 @@ Frozen originals with hashes in `evidence/coil/prereg/`; English translations be
 | PREREG-MM1-RANK v1.0 | R-G1…R-G5 PASS | **INCONCLUSIVE** (convergence guard FAIL) |
 | PREREG-MM1-RESOLVABILITY v1.0 + v1.0.1 addendum | C1–C10 PASS | **DONE — PI-stopped at T = 4320.** T = 270 measured; T ≥ 540 LEFT-CENSORED (locked status) + the double-precision FD instrument did not resolve (post-hoc diagnosis); S(T) ≈ C·e^{0.065T} `[EXPLORE, R² > 0.999]`; T ≥ 8640 `[UNMEASURED]` |
 | PREREG-MM1-PAIRBC v1.0.3 | C1–C9 PASS; anchor guard PASS | **P-κ**; replication path3 **CONCORDANT** |
+| PREREG-MM1-ICID v1.0 | I1–I8 PASS; G-CODE PASS | G-REF 8/8 AGREE; D-ID fixed-membership (A, B, C); D-MEMBERSHIP cluster-aligned (9/9); D-CONTRACT 60/60 SECTOR-CAPTURED (bounded diagnostic audit, no new threshold) |
 
 ## 5. Run reports
 
@@ -75,6 +76,7 @@ Frozen originals in `evidence/coil/run/`.
 | RUN-MM1-RANK v1.0 | **INCONCLUSIVE** — the derivative estimate did not converge in the tested h range; the theorem could not be applied numerically (mathematical non-differentiability **not shown**) |
 | RUN-MM1-RESOLVABILITY v1.0 | T = 270 measured (h_res 3.64e-14 regular, 2.33e-12 chaos); T ≥ 540 LEFT-CENSORED; S(T) exponential `[EXPLORE]`; h_sep = 1/S `[HEUR]` ≠ h_res; direction-aware floor h_coeff(d) |
 | RUN-MM1-PAIRBC v1.0.1 | **CLOSED**: P-κ + REPLICATION-CONCORDANT; β_c not a-invariant |
+| RUN-MM1-ICID v1.0 | **CLOSED**: the CF = 0.20 plateau members are the five cluster-subspace ICs; their CHAOS label is tangent growth transverse to an invariant orbit; historical reference counts reproduced; P-κ unchanged |
 | EXEC-PATCH-RM02-N2-001 | the event in which the criterion stopped the code |
 
 ## 6. Code and run instructions
@@ -87,6 +89,7 @@ All in `evidence/coil/code/`; outputs in `evidence/coil/outputs/`.
 | `n3_prereg_certificate.py` · `n3_ladder_experiment.py` · `RUNBOOK-N3.md` | N = 3 ladder |
 | `mm1_certificate.py` · `mm1_gate_experiment.py` · `CLI-MM1-GATE.md` | MM-1 gate |
 | `pairbc_certificate.py` · `pairbc_experiment.py` · `CLI-PAIRBC.md` | Pair B/C β_c invariance test (degree-normalised stiffness, force and Jacobian; frozen Pair-A references κ_A = 2.65 tri0 / 2.35 path3) |
+| `icid_certificate.py` · `icid_experiment.py` · `CLI-ICID.md` | IC-identity and estimator-contract audit of the PAIRBC plateau (imports the frozen `pairbc_experiment.py` by hash; fail-closed result-set validation) |
 | `kunye_completeness_certificate.py` | **compendium completeness gate** (read-only, presence-only; C1–C9). First run **FAIL** — expected |
 | `isoa_certificate.py` · `isoa_experiment.py` · `CLI-ISOA.md` | iso-amplitude causal isolation |
 | `tongueset_certificate.py` · `tongueset_experiment.py` · `CLI-TONGUESET.md` | tongue-set geometry map |
@@ -116,7 +119,7 @@ Superseded documents are kept (not deleted — the programme's provenance rule) 
 | 2j | OPEN-L0L1-KSPARK-DEF + deg_norm | **DONE** — `coil/KSPARK_DEF_DEGNORM.md`: Def-A (spectral) vs Def-C (orbit QR) on the same substrate + `deg_norm` production path |
 | 2k | OPEN-QUOTIENT-EQUILIBRIUM | **spectral sub-question resolved conditionally** (`coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` `[DERIVED]`): on the explicitly specified recovered-engine model the synchronous relative equilibrium's first transverse crossing is K*_⊥ = γ/(dt(1+√5/4)cos φ) — 23.304788 / 24.857412 at φ = 1.26 / 1.28 — with a **4D real critical space** (m = 3, 7). **Open:** nonlinear bifurcation under that degeneracy, basin selection, identification with the historical Def-C estimator and bracket, any cross-model bridge. Agreement on those would lift the estimator blocker (**not** a named bridge) |
 | 3 | Open RM-04 | path dependence never tested; non-Markov positive-control laboratory identified |
-| 4 | Activate RM-07 | the regular-winding regime and reversion islands in MM-1 are direct data; **precondition:** the CF = 0.20 plateau (5/25 IC chaotic over a long κ range) is not yet metastability evidence — first compare the identities of the five chaotic ICs across κ (same five → basin-slice structure; changing membership → boundary/intermittency candidate), and test the structural null that the five cluster-subspace ICs of the realised PAIRBC ensemble (RM-02.h `[COR]`) explain the count. **Locked:** `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md` (Package B; certificate PASS; run pending on the PI's machine, `evidence/coil/code/CLI-ICID.md`) |
+| 4 | Activate RM-07 | the regular-winding regime and reversion islands in MM-1 are direct data. **IC-identity test of the CF = 0.20 plateau: DONE** (`evidence/coil/run/RUN-MM1-ICID-v1.0.md`; `[NUM | tri0, PAIRBC's realised ensemble, Pairs A/B/C, κ ∈ {1.50, 2.00} and the three bracket cells]`): the five CHAOS members are the same five ICs in every tested cell and are the five cluster-subspace ICs (RM-02.h); their orbits stay in the cluster subspace exactly, the within-cluster rate is ≈ 0, and the CHAOS label is tangent growth **transverse to that invariant orbit**, reached by the historical tangent through roundoff seeding. The plateau is therefore **not** metastability or partial-chaos evidence and is not an activation ground. **Open:** the fate of orbits perturbed off the cluster subspace; the within-cluster motion; plateau cells not run (κ < 1.50). RM-07 stays parked |
 | 5 | Phase 2.5 calibration plane (RCSJ) | preconditions: control-knob mismatch (B1) and continuity problem (B2); not designed |
 | 6 | Robustness forks | horizon × 2, grid halving, IC resampling — partial |
 | 7 | Casebook F2 validation T = {54, 108} | `[OPEN]` |
