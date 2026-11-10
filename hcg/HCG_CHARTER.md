@@ -36,7 +36,7 @@ The study's statements, grades and open items are in the study ledger, not in th
 |---|---|
 | Study ledger (the claims, their grades and review states, safeguards, open items, imports, retired claims) | `hcg/HCG_STUDY_LEDGER.md` |
 | This charter | `hcg/HCG_CHARTER.md` |
-| Source manifest, source dictionary, migration note, release records, reviews | `records/hcg/` |
+| Source manifest, source dictionary, pre-intake source inventory, release records, reviews | `records/hcg/` |
 | Scripts, certificates, outputs, frozen historical files | `evidence/hcg/` |
 | Original files as uploaded | `upload/hcg/` (unchanged; see its `README.md` and `SHA256SUMS`) |
 
@@ -54,7 +54,7 @@ The study's statements, grades and open items are in the study ledger, not in th
 |---|---|---|
 | Session ledger v0.1 | PI, chat level, 22 Oct 2026 | SHA-256 `75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7` |
 | Session ledger v0.2 | PI, chat level, 26 Oct 2026 (scoped) | SHA-256 `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` |
-| `hcg-v0.2` (first repository edition) | **not yet adopted in this repository** | `hcg/HCG_STUDY_LEDGER.md` is byte-identical to the chat-adopted v0.2 (PI decision of 10 Nov 2026: Option A) |
+| `hcg-v0.2` (first repository edition) | **not yet adopted in this repository** | `hcg/HCG_STUDY_LEDGER.md` is byte-identical to the chat-adopted v0.2 (PI decision 1 of 10 Nov 2026, recorded in `upload/hcg/README.md`) |
 
 **What the v0.2 adoption covered.** It adopted the consolidated record as the governing session record. It did not make any claim `ACCEPTED`: every claim kept its own review state.
 

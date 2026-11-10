@@ -2,7 +2,9 @@
 
 **Status:** **DRAFT — not adopted.** This record becomes the release record of `hcg-v0.2` only when the PI's adoption is entered in §8. Until then there is no HCG edition in this repository.
 
-**Release:** first repository edition of the HCG study. It publishes the session ledger v0.2 that the PI adopted at chat level on 26 October 2026, **byte-exact** (PI decision of 10 Nov 2026, "A": Option A of `records/hcg/HCG_MIGRATION_NOTE.md` §6).
+**Release:** first repository edition of the HCG study. It publishes the session ledger v0.2 that the PI adopted at chat level on 26 October 2026, **byte-exact** (PI decision 1 of 10 Nov 2026, "A", recorded verbatim in `upload/hcg/README.md`).
+
+**On "Option A".** The option was named in the SAT advisory note `records/hcg/HCG_MIGRATION_NOTE.md`. That note is **not on `main`**: it exists only on the unmerged branch of PR #18 (read at commit `cfe708ff95940748cf64e1d1e23b06984d908141`). It is an advisory and not a source of this release. Option A means: the first repository tag is `hcg-v0.2`, reproducing the chat-adopted v0.2 byte-exact, with Δ24–Δ29 left pending.
 
 **Prepared by:** the Claude HCG owner session. **Review:** the ChatGPT HCG owner session. **Adoption:** PI Mustafa Aksu.
 
