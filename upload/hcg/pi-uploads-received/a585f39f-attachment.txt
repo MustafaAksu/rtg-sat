@@ -1,0 +1,77 @@
+Karar: Lifting invariant yaklaşımını araştırmayı destekliyorum; fakat önerilen klasik çarpım değişmezini doğrudan hesaplamaya başlamayalım. Eşli tuple yapımızda bu değişmezin zorunlu olarak sabit kalmasına yol açabilecek bir cebirsel engel var.
+
+[SESSION — ön matematiksel değerlendirme] Merkezi bir genişleme alalım:
+
+\\[ 1\longrightarrow A\longrightarrow\widetilde G \xrightarrow{\pi}G\longrightarrow1. \\]
+
+Her \\(s_i^2=1\\) yansımasının seçilmiş kaldırımı \\(\widetilde s_i\\) olsun. Eşli tuple için klasik kaldırılmış çarpım
+
+\\[ \Lambda(s_1,s_1,\ldots,s_m,s_m) =\prod\_{i=1}^{m}\widetilde s_i^{\\,2} \\]
+
+olur.
+
+Her kaldırma mertebe 2 ise \\(\Lambda=1\\). Mertebe 4 gibi başka durumlarda ise \\(\widetilde s_i^2\in A\\) merkezîdir. Dolayısıyla yansımaların tek bir eşleniklik sınıfından geldiği ve kaldırma seçiminin eşleniklikle uyumlu olduğu durumda
+
+\\[ \boxed{\Lambda=a^m,\qquad a\in A.} \\]
+
+Bu değer tuple'ın köklerinden, sırasından ve braid yörüngesinden bağımsızdır.
+
+Yani standart Fried–Serre tipi çarpım değişmezi eşli involüsyon tuple'larını ayırmak için tamamen etkisiz olabilir. Önce bu engelin \\(G\_{34}\\)'ün gerçek yansıma sınıfları ve aday genişlemeleri için geçerli olup olmadığını kesinleştirmeliyiz.
+
+## Literatür kontrolü: \\(G\_{34}\\) için klasik lifting invariant ayırıcı değil
+
+[SOURCE — Lewis–Wang, Remark 4.4] The Hurwitz Action in Complex Reflection Groups çalışmasının ilgili bölümünü kontrol ettim. Makale açıkça \\(G\_{34}\\)'te bütün yansımaların tek eşleniklik sınıfında bulunduğunu belirtiyor. Ayrıca aynı grubu üreten, aynı yansıma sınıfından gelen fakat farklı Hurwitz yörüngelerinde bulunan en kısa çarpanlaştırmalar gösteriyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://escholarship.org\&sz=32)
+
+escholarship.org
+
++1
+
+
+
+Bu iki bilgi önemli: yörünge ayrışması gerçekten karmaşık olabilir, ancak klasik kaldırılmış çarpım eşli tuple'larda bu karmaşıklığı göremiyor.
+
+### Daha güçlü cebirsel sonuç
+
+[SESSION — THM, cebirsel ispat] Herhangi bir merkezî genişlemede, \\(s^2=1\\) için
+
+\\[ \alpha(s)=[\widetilde s^{\\,2}]\in A/A^2 \\]
+
+tanımlayabiliriz. Burada \\(A^2=\\{a^2:a\in A\\}\\).
+
+Bu sınıf kaldırma seçiminden bağımsızdır: \\(\widetilde s\mapsto a\widetilde s\\) değişimi kareyi yalnız \\(a^2\\) ile çarpar. Aynı zamanda eşleniklik altında değişmezdir.
+
+Dolayısıyla eşli tuple'ın kaldırılmış çarpımı, en azından seçimden bağımsız bölümde,
+
+\\[ [\Lambda]=\prod\_{i=1}^{m}\alpha(s_i) \\]
+
+olur.
+
+\\(G\_{34}\\)'ün tek yansıma sınıfı nedeniyle, \\(m=10\\) için
+
+\\[ [\Lambda]=\alpha(s)^{10}=1, \\]
+
+çünkü \\(A/A^2\\)'nin her elemanının karesi birdir.
+
+\\[ \boxed{\text{\\(G\_{34}\\)'ün bütün 10-çiftli tuple'larında klasik kaldırma sınıfı triviyaldir.}} \\]
+
+Bu, yalnız belirli bir Schur örtüsüne değil, herhangi bir merkezî genişlemenin \\(A/A^2\\) bölümüne ilişkin bir sonuçtur.
+
+Ayrıca \\(G\_{34}\\)'ün kendi skaler merkezi \\(\mu_6\\), doğrudan \\(G\_{34}\\)'ün genişlemesi değildir; doğal dizi \\(\mu_6\to G\_{34}\to G\_{34}/\mu_6\\) biçimindedir. Dolayısıyla hangi grubu kaldırdığımızı da açıkça seçmeliyiz.
+
+## Revize çalışma kararı
+
+G(3,3,3) üzerinde kapsamlı bir lifting-invariant kampanyası başlatmayı önermiyorum. İlk kontrolün sonucunu zaten cebirsel olarak biliyoruz.
+
+Bunun yerine aşağıdaki dar kapsamlı çalışmayı onaylıyorum:
+
+1. Klasik kaldırma değişmezinin etkisizliğini kaydet: Yukarıdaki önerme, varsayımlarıyla birlikte `[SESSION — THM]` olarak incelenebilir. Sonuç, bütün olası ikincil merkezî-genişleme değişmezlerinin etkisiz olduğu anlamına gelmez.
+2. İkincil engelleri araştır: Özellikle yansıma sınıfının bir Schur örtüsünde nasıl ayrıştığı, merkezleyici komütatörleri ve çift-eşleme hareketlerinin kaldırılmış eylemi. Her aday için seçimden bağımsızlık ve braid invariansı ispatlanmalı.
+3. Lewis–Wang karşıörneklerinden yararlan: Makaledeki farklı \\(G\_{34}\\) Hurwitz yörüngelerinin hangi özelliklerle ayrıldığını incele. Ancak bunlar özdeşliğin 20 faktörlü eşli çarpanlaştırmaları değil; bizim sınıfa doğrudan karşıörnek olarak aktarılamaz.
+
+Önerilen öncelik: Önce üçüncü maddeyle literatürde gerçekten ayrılabilen yörüngelerin mekanizmasını anlayalım; ardından ikinci maddede bu mekanizmanın eşli tuple'lara aktarılabilecek bir biçimi olup olmadığını test edelim.
+
+Bu yaklaşım, sonucu baştan sabit olan bir lifting-invariant hesabına kaynak harcamamızı önler.
+
+Kayıt durumu: `HCG-ALG-G34-PAIRED-LIFTING-NOGO → SESSION THM / peer review pending` öneriyorum. \\(G\_{34}\\)'ün farklı eşli Hurwitz bileşenlere sahip olup olmadığı OPEN kalıyor. HCG v0.1 ve kör denetçinin Priority B incelemesi değişmiyor.

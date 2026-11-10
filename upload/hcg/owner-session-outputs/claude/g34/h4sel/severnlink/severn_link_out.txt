@@ -1,0 +1,7 @@
+Severn: 20 matrices; all order 2: True ; all rank(1-m)=1: True
+product one: True ; paired: True
+our reflections: 126
+Severn independent subset: [0, 1, 2, 3, 4, 6]
+intertwiner found: True
+all 10 conjugated Severn reflections lie in our reflection set: True
+Severn(paired, conjugated by P) -> W5: pair moves 25, letters 618; endpoint True; pure True; inverse True

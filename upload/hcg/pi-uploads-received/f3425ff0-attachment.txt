@@ -1,0 +1,139 @@
+## W(A₂) denetimi tamamlandı; \\(G(3,3,3)\\) içinde yeni bir karşılaştırma örneği buldum
+
+Karar: Claude'nun gerçellik engeli için CHECKED değerlendirmesine katılıyorum. Ancak önerdiği “gerçel olmayan grubun içinde gerçel alt-tuple” testini bir adım ileri götürdüm.
+
+[SESSION — yeni exact sonuç] Gerçel \\(W(A_2)\\) altgrubu içeren, fakat karakter alanı gerçekten \\(K=\mathbb Q(\omega)\\) olan bir \\(G(3,3,3)\\) tuple'ı kurdum. Bu tuple, çift içeren tek bir pants ağacında tam H4 rankı 9 veriyor.
+
+Dolayısıyla gerçel bir altgrubun varlığı tek başına braid altında kalıcı bir H4 engeli değildir.
+
+## 1. W(A₂) değerlendirmesi
+
+Claude'nun kaynak hash'leri eşleşti. 132 ağacın tamamını ve 15 örnek saf braid işaretlemesini içeren hesabı yeniden çalıştırdım.
+
+| Kontrol                                      | Sonuç |
+| -------------------------------------------- | ----- |
+| \\(\dim_KH\\) / cup rankı                    | 4 / 4 |
+| Sabit işaretlemede 132 ağacın maksimum rankı | 3     |
+| 15 örnek saf braid sonrası maksimum          | 3     |
+| H4 hedefi                                    | 4     |
+
+[SESSION — ispat kontrolü] Gerçellik sınırının doğru kapsamı şöyle:
+
+Ortak bir \\(\mathbb Q\\)-yapısı üzerinde monodromi operatörleri ve cup formu rasyonelse, laminer/P3 koşulları altında
+
+\\[ \boxed{\rho_T\le \frac{r(r+1)}2\le\frac{d(d+1)}2.} \\]
+
+Burada \\(r=\dim_K\sum_e\operatorname{im}N_e\\).
+
+İspat, her ağacın operatör formlarının rasyonel simetrik formlar olarak \\(r\\)-boyutlu bir bölümde yaşamasına dayanıyor.
+
+İki kapsam notu gerekiyor:
+
+- \\(d>1\\) için \\(d(d+1)/2\<d^2\\); \\(d=1\\) için katı eşitsizlik yok.
+- Yalnız matrislerin rasyonel görünmesi yeterli değil. Cup/polarizasyon yapısıyla uyumlu ortak bir rasyonel gerçekleşme gerekiyor.
+
+Bu koşullarla gerçellik engeli sağlamdır. Farklı ağaçların \\(I\\) uzayları değişebildiğinden, bütün eğrilerin birleşik span'ine aynı sınır uygulanmaz.
+
+## 2. Yeni \\(G(3,3,3)\\) örneği
+
+SESSION — EXACT ALGEBRA; CLAUDE DENETİMİ BEKLİYOR
+
+\\(V=K^3\\), standart pozitif Hermitik çarpım ve \\(\omega^2+\omega+1=0\\) alalım.
+
+Altı kök:
+
+\\[ \begin{aligned} v_1&=(1,-1,0),& v_2&=(0,1,-1),& v_3&=(1,0,-1),\\\ v_4&=(1,0,-\omega),& v_5&=(1,-\omega,0),& v_6&=(0,1,-\omega). \end{aligned} \\]
+
+Bunların eşli yansımalarından oluşan 12 noktalı tuple'ı kullandım.
+
+Gerçel altgrup
+
+# 6
+
+\\(W(A_2)\\)
+
+Tam grup
+
+# 54
+
+\\(G(3,3,3)\\)
+
+Ağaç H4 rankı
+
+# 9/9
+
+Tam rank
+
+İlk iki yansıma gerçel \\(W(A_2)\\) altgrubunu üretiyor. Dördüncü kökü eklediğimizde üretilen grup \\(54\\) elemanlı tam \\(G(3,3,3)\\).
+
+Bu grubun merkezinde \\(\omega I_3\\) bulunuyor:
+
+\\[ \operatorname{tr}(\omega I_3)=3\omega\notin\mathbb Q. \\]
+
+Dolayısıyla tüm temsilin karakter alanı gerçekten \\(K\\). Bu, \\(W(A_2)\\) örneğindeki rasyonel-karakter engelinden farklı.
+
+### Tam rank sertifikası
+
+\\[ d=m-n=6-3=3,\qquad d^2=9. \\]
+
+Altı çift eğrisine ek olarak şu üç eğriyi seçtim:
+
+\\[ [1,4],\qquad[5,8],\qquad[5,10]. \\]
+
+[SESSION — exact hesap] Dokuz Hermitik kenar formunun rasyonel koordinat matrisinde
+
+\\[ \boxed{\det=-64\ne0.} \\]
+
+Böylece \\(\mathbb Q\\)-rank 9.
+
+Ek kontroller:
+
+| Kontrol                                                  | Sonuç                                     |
+| -------------------------------------------------------- | ----------------------------------------- |
+| Altı silme-rankı — A3                                    | 6/6 rank 3                                |
+| \\(\dim_KH\\) / cup rankı                                | 6 / 6                                     |
+| Gerçek Artin twist operatörlerinin \\(\mathbb Q\\)-rankı | 9                                         |
+| 81 adet \\(N_iN_j\\)                                     | Sıfır                                     |
+| H0–H3                                                    | Eşli ağaç teoreminin koşulları sağlanıyor |
+
+Form determinantını yeni yazdığım exact aritmetik uygulamasıyla hesapladım. Gerçek Artin operatörlerini karşılaştırmak için ayrıca Claude'nun önceki `generic_engine.py` motorunu kullandım. Bu ikinci kontrol yararlı, fakat üçüncü bağımsız monodromi motoru olarak sunulmamalı.
+
+## 3. Braid altında gerçekten ne korunuyor?
+
+[SESSION — cebirsel çıkarım] Hurwitz dönüşümü
+
+\\[ (g_i,g\_{i+1}) \longmapsto (g_ig\_{i+1}g_i^{-1},g_i) \\]
+
+üretilen matris grubunu değiştirmez.
+
+Bu nedenle tam monodromi grubunun karakter alanı ve uygun anlamda rasyonel tanımlanabilirliği braid-yörüngesi değişmezleridir.
+
+Fakat uygun bir öz altgrubun gerçel olması yeterli değildir. Yeni örnek bunu somut biçimde gösteriyor:
+
+\\[ \boxed{ \text{Gerçel }W(A_2)\subset G(3,3,3) \quad\text{ve}\quad \rho_T=d^2=9. } \\]
+
+Buna göre, gerçellikten daha ince bir engel ararken yalnız köklerin bir kısmının gerçek olmasına bakmak yerine tam monodromi temsilini, onun karakter alanını ve polarizasyonla uyumlu iniş yapısını birlikte incelemeliyiz.
+
+Kök doğruları arasındaki üçlü fazlar, sabit işaretleme hakkında yararlı bilgi verir; ancak tek tek bu fazların braid-yörüngesi değişmezi oldukları varsayılmamalı.
+
+## 4. Sonraki araştırma kararı
+
+Benim önerim artık yeni başarılı örnekleri çoğaltmaktan ziyade şu soruyu hedeflemek:
+
+> Karakter alanı gerçekten \\(K\\) olan, \\(d^2\le2m-3\\) ve A1–A3 koşullarını sağlayan bir monodromi yörüngesi, bütün braid işaretlemelerinde H4'ü yine de kaçırabilir mi?
+
+Bu soruyu önce \\(G(3,3,3)\\), ardından \\(G\_{34}\\) için ele almak daha verimli.
+
+Böylece iki ayrı engeli ayırabiliriz: tam temsilin değişmez cebirsel kısıtları ile belirli bir işaretlemedeki uyumlu ağaç seçimi kısıtları.
+
+## 5. Denetim dosyaları
+
+W(A₂) ve yeni \\(G(3,3,3)\\) bulgusu — bilimsel rapor
+
+Exact betikler, çıktı dosyaları, özgün kaynak ve hash manifesti — tam ZIP
+
+Yeniden üretim betiği `REPLAY PASS` verdi.
+
+Önerilen statüler: `HCG-OBS-PURE-BRAID-REALITY → CHECKED`, niteliksiz varlık iddiası `FALSE`, yeni \\(G(3,3,3)\\) karma gerçel/kompleks örneği `PROPOSED` — Claude'nun bağımsız denetimini bekliyor.
+
+HCG v0.1 değiştirilmedi; sonuçlar yalnız v0.2 bekleyen kayıtları için adaydır. Kör Hodge denetçisine aktarılmamalıdır.

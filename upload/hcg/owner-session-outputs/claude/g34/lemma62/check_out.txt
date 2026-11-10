@@ -1,0 +1,9 @@
+Severn Lemma 6.2 formula vs certificate S_gram: equal True | equals -S False | equals conj S False
+independent of preimage choice (random ker(1-T_i) shifts): True
+skew-Hermitian: True
+Severn Lemma 6.2 formula vs certificate S_gram: equal True | equals -S False | equals conj S False
+independent of preimage choice (random ker(1-T_i) shifts): True
+skew-Hermitian: True
+Severn Lemma 6.2 formula vs certificate S_gram: equal True | equals -S False | equals conj S False
+independent of preimage choice (random ker(1-T_i) shifts): True
+skew-Hermitian: True

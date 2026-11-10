@@ -1,0 +1,23 @@
+dim H = 6  S rank = 6
+cuts: 54  ord(C) values: [1, 2, 3]
+Q-span of all 54 cut operators: 9
+dim_K of joint image of all 54: 6
+H0-valid triangles: 220 of 220
+H0-valid trees: 16796
+tree rank 6, dim I=3: non-rational traces 264/819
+tree rank 6, dim I=3: non-rational traces 180/819
+tree rank 6, dim I=3: non-rational traces 240/819
+tree rank 6, dim I=3: non-rational traces 180/819
+tree rank 6, dim I=3: non-rational traces 114/819
+tree rank 4, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 4, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 4, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819
+tree rank 3, dim I=3: non-rational traces 0/819

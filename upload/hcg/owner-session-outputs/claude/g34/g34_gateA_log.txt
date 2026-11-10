@@ -1,0 +1,12 @@
+minimal vectors: 756
+reflection lines: 126
+all reflections preserve the 756 minimal vectors: True  order 2: True
+|G| = 39191040
+10 generating reflections (indices into line list): [67, 45, 74, 3, 107, 29, 115, 112, 49, 46]
+-I in G: True   wI in G: True
+orbit of a minimal vector under G: 756
+dim_Q commutant = 2 (2 means End = K: irreducible over K)
+non-real trace of a triple product (a,b,c,(re,w-coeff)): (0, 1, 2, ('3', '1')) | also chi(wI)=6w since wI in G
+20-tuple product is identity: True
+m_sigma = 8  Hodge (h10,h01) = (Fraction(4, 1), Fraction(4, 1))  Hurwitz dim r-3 = 17
+sha256(script) = b6b80208f7cb13c32dfc76a6fa29c26b983855950317d24cc24765a747ceadf5

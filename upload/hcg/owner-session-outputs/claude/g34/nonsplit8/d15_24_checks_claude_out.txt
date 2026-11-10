@@ -1,0 +1,15 @@
+(1) reflection-free imprimitive budget, gamma = 0
+   mismatches with r+2k>=17: 0 ; least feasible d = 26
+(2) tensor-induced minimum moving rank of noncentral elements
+   a=2 m=4 d=16: min rank(1-g) over factor-permuting g tested = 4; base elements (nonscalar) >= d/a = 8
+   a=4 m=2 d=16: min rank(1-g) over factor-permuting g tested = 6; base elements (nonscalar) >= d/a = 4
+   a=5 m=2 d=25: min rank(1-g) over factor-permuting g tested = 10; base elements (nonscalar) >= d/a = 5
+(3) age identity sum age(g_j) = d + p  (signature (p,q))
+   W5: 20 reflections of order 2, d=6, sig (4,4): sum age = 10 ; d+p = 10
+   C6 control exponents (2^5,3,4^3,5), d=1, sig (4,4): sum age = 5 ; d+p = 5
+   C3 control (1^5,2^5), d=1, sig (4,4): sum age = 5 ; d+p = 5
+   odd-n control (w,w,w^2,w^2), d=1, sig (1,1): sum age = 2 ; d+p = 2
+(4) general tensor budgets, N >= 19, sum c_j = 2d+8, reflection-free
+   least d admitting a factorwise tensor decomposition: (42, 3, 14)
+   least d admitting a tensor-induced structure: (256, 16, 2)
+ALL PASS

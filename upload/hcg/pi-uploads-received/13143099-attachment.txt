@@ -1,0 +1,177 @@
+## İki sonuç: seri-sınıf sınırı doğrulandı; W5 polarizasyon köprüsü üçüncü denetimde kapandı
+
+**[ALG — bağımsız kontrol]** Seri-sınıf sınırının ispatını doğruladım. NEW01–NEW04, W5 ve küçük örnekte seri sınıflarını ve çift-form ranklarını ayrı kodla yeniden hesapladım; tamamı Claude’nun sonuçlarıyla eşleşti.
+
+**[THIRD-PARTY REPORT]** Denetçinin yeni notu da PO-6’nın **W5 ve Jacobian’dan indüklenen polarizasyon** kapsamındaki açık halkasını kapatıyor. Bu sonuç Priority B’nin tamamlandığı anlamına gelmiyor.
+
+## 1. P2/P3 notunu doğrudan yeniden paylaşıyorum
+
+Özgün teknik notu hem ilk mühürlü literatür paketinden hem sonraki karşılaştırma paketinden çıkardım. **İki kopya bayt düzeyinde aynı.**
+
+**:chatgpt-content-reference{index="3"}[Özgün teknik not — doğrudan Markdown](sandbox:/mnt/data/CHATGPT_RESEARCH_DERIVATIONS_PROPOSED_v0_1.md)**
+
+**HCG_P2_P3_ORIGINAL_NOTE_REDELIVERY_v0_1.zip[Yalnız teknik not, açıklama ve hash manifesti — küçük ZIP](sandbox:/mnt/data/HCG_P2_P3_ORIGINAL_NOTE_REDELIVERY_v0_1.zip)**
+
+Önceki tam paket de burada:
+
+HCG_EDGEFLUX_LITERATURE_COMPARISON_AND_SCOPE_TESTS_v0_1.zip[Literatür karşılaştırması ve exact kapsam testleri — tam ZIP](sandbox:/mnt/data/HCG_EDGEFLUX_LITERATURE_COMPARISON_AND_SCOPE_TESTS_v0_1.zip)
+
+Teknik notun SHA-256’sı:
+
+```text
+bfd9332656ed0a8d91d62d9959b3ebdf71013cc2aadd1be13a19d927fcffdbcf
+```
+
+Notta **§B = P2** ters ünitarlı çiftler; **§C = P3** sonlu mertebeli sınır ürünü ve \(\Pi_C\) projektörüdür. §A, kesim-formu faktörizasyonunu; §D, yanlışlama testlerini içeriyor.
+
+**Bu not değiştirilmedi ve hâlâ PROPOSED.** Yeniden paylaşılması, içindeki genellemelerin doğrulandığı anlamına gelmez.
+
+## 2. Seri-sınıf sınırı: doğru ve biraz daha kesin yazılabilir
+
+**[ALG — Claude türetimi, ChatGPT bağımsız ispat kontrolü]**
+
+\[
+L=\ker\!\left(K^m\longrightarrow V,\quad
+t\longmapsto\sum_i t_iv_i\right),\qquad d=\dim_KL.
+\]
+
+Koordinat fonksiyonellerini \(\ell_i=t_i|_L\), çift formlarını da
+
+\[
+B_i(t,s)=q_i\,\ell_i(t)\overline{\ell_i(s)},
+\qquad q_i=h(v_i,v_i)\in\mathbb Q_{>0}
+\]
+
+olarak yazalım.
+
+\(\ell_i=\lambda\ell_j\), \(\lambda\in K^\times\) ise
+
+\[
+\boxed{
+B_i=\frac{q_i}{q_j}N_{K/\mathbb Q}(\lambda)\,B_j.
+}
+\]
+
+Dolayısıyla çift formları her paralellik sınıfından en fazla bir rasyonel boyut alır.
+
+Çift formlarının gerçek rankını
+\[
+r_0=\dim_{\mathbb Q}\operatorname{span}\{B_i\}
+\]
+ile gösterirsek daha kesin sınır şudur:
+
+\[
+\boxed{
+\rho_T\le
+\min\{d^2,\;r_0+m-3\}
+\le
+\min\{d^2,\;c+m-3\}.
+}
+\]
+
+İspat: çiftleri koruyan üç-değerlikli bir pants ağacında \(m\) çift eğrisi ve \(m-3\) diğer eğri bulunur; her ek form ranka en fazla bir katkı verir.
+
+**Küçük tanım koşulu:** Paralellik, **sıfırdan farklı** \(\ell_i\)’ler arasında ve \(\lambda\ne0\) ile tanımlanmalı. A3 altında bütün \(\ell_i\ne0\), dolayısıyla mevcut örneklerde sorun yok. A3 kaldırılırsa sıfır koordinatlar ayrı tutulmalı ve \(c\), yalnız sıfır olmayan paralellik sınıflarını saymalı.
+
+Aynı koşulla, kök matroidindeki seri-çift yorumu da doğru. “İki kökü silince rank bir azalıyor” ölçütü, tek başına coloop bulunan genel verilere uygulanmamalı.
+
+### Exact yeniden hesaplama
+
+| Veri | Seri sınıfları | \(c\) | \(r_0\) | Sınır | Önceden doğrulanan planar maksimum |
+|---|---|---:|---:|---:|---:|
+| NEW01 | \(\{3,10\}\) | 9 | 9 | 16 | 15 |
+| NEW02 | \(\{3,10\},\{6,7\}\) | 8 | 8 | 15 | 14 |
+| NEW03 | Yok | 10 | 10 | 16 | 16 |
+| NEW04 | \(\{4,6\}\) | 9 | 9 | 16 | 16 |
+| W5 | Yok | 10 | 10 | 16 | 16 |
+| Küçük örnek | Üç ikili sınıf | 3 | 3 | 6 | 6 |
+
+Bu turda seri sınıflarını, \(r_0\)’ı ve **240 çift için silme-rankı eşdeğerliğini** yeniden hesapladım. 1.430 ağaçlık dağılımları tekrar taramadım; bunlar önceki iki bağımsız uygulamanın ortak sonucu.
+
+\(m=10,d=4\) için tam rankın gerekli koşulu \(c\ge9\). A3 altında bu, **en fazla bir ikili seri sınıfı** bulunmasına izin verir; daha büyük bir seri sınıfını da dışlar. Yeterlilik sonucu değildir.
+
+**Öneri:** `HCG-ALG-H4-SERIESBOUND → CHECKED`, yukarıdaki kapsamla.
+
+## 3. NEW02’de hâlâ ikinci bir engel var
+
+**[ALG — kapsam düzeltmesi]** Seri-sınıf sınırı NEW02 için rank 16’yı dışlıyor; fakat **gözlenen maksimumun neden 14 olduğunu açıklamıyor**. Ayrıca tek başına bütün altküme formlarının rankının 15 olduğunu da ispatlamıyor.
+
+Dolayısıyla ayrım şöyle:
+
+\[
+\begin{array}{c|ccc}
+& \text{hedef} & \rho_{\rm all} & \rho_{\rm tree}\\
+\hline
+\mathrm{NEW01}&16&16&15\\
+\mathrm{NEW02}&16&15&14
+\end{array}
+\]
+
+NEW01’de yalnız mevcut sıradaki uyumluluk kaybı görülüyor. NEW02’de ise **hem kök/faz kaybı hem ilave uyumlu seçim kaybı** var.
+
+Bunu araştırmak için en temiz uzay:
+
+\[
+U_0=\operatorname{span}_{\mathbb Q}\{B_i\},
+\qquad
+\rho_T=r_0+
+\dim_{\mathbb Q}
+\operatorname{span}\{[B_e]\in\operatorname{Herm}(L)/U_0\}.
+\]
+
+Her iki örnekte de bütün kullanılabilir iç-kenar sınıfları bu bölümde **7 boyut** geriyor; tek bir sabit-sıralı planar ağaç ise en fazla **6 boyut** seçebiliyor. R1’in bir sonraki hedefi bu eksik boyutu, 1.430 durumu tek tek saymadan açıklayan bir engel olmalı.
+
+Özgün P2/P3 notunun §A’sında ayrıca şu genel özdeşlik var:
+
+\[
+\operatorname{span}\{\text{tüm aralık formları}\}
+=
+\operatorname{span}\{\text{tüm altküme formları}\}.
+\]
+
+Bu, karışık terimlerin dört aralık formunun ikinci farkıyla yazılmasından çıkıyor. Dolayısıyla 45 ve 511 formun aynı span’i vermesi modelin yapısal özelliği; asıl zor problem bunlardan **uyumlu bir seçimin** yeterli olması.
+
+Bir kapsam sınırını koruyalım: NEW01, **sabit döngüsel sıra ve interval/planar ağaç sınıfında** karşıörnektir. Küçük örneğin tüm altküme span’i hedefin altında olduğundan onun engeli daha geneldir. Hiçbiri aynı Hurwitz bileşenindeki başka tuple’lara geçiş sorusunu çözmüyor.
+
+## 4. Denetçinin yeni PO-6 hükmü nasıl kaydedilmeli?
+
+**[THIRD-PARTY REPORT + kaynak çapraz kontrolü]** Artık yalnız
+\[
+[\det(\vartheta S)]=[1]
+\]
+aritmetiği değil, bunun **gerçek \(A_\sigma\) faktörünün indüklenen polarizasyon diskriminantı** olduğu da denetçi tarafından doğrulanmış.
+
+Proposition 5.1’in ilgili sayfalarını yeniden kontrol ettim: temsil faktörü \(V_\sigma\) üzerindeki Schur–Morita ayrışımı, cup/trace uyumluluğu ve Rosati-sabit projektöre kısıtlama ayrı adımlar. **Çokluk uzayı \(M_\sigma\)’nın indirgenemezliği kullanılmıyor.** [Hexagon Math](https://hexagonmath.org/pdf/2610.00386v1)
+
+Son determinant adımı:
+
+\[
+H_{A_\sigma}\cong qh\ \text{veya}\ q\bar h,\qquad
+q^8=N_{K/\mathbb Q}(q^4),\qquad
+\det\bar h=\det h.
+\]
+
+Böylece W5 için \(\operatorname{disc}(A_\sigma)=[1]\). Lemma 2.4 bunu **aynı bileşende**, sabit \(K\)-etkisi ve polarizasyonla taşır; keyfî bileşenlere veya keyfî polarizasyon değişikliklerine genişletmez. [Hexagon Math](https://hexagonmath.org/pdf/2610.00386v1)
+
+| Kayıt | Önerilen durum |
+|---|---|
+| PO-6’nın **W5 uygulaması** | **THIRD-FAMILY CHECKED** |
+| Genel Proposition 5.1’in bağımsız denetim kapsamı | Denetçinin açıkça değerlendirdiği kapsamla sınırlı |
+| `[19] = Draft v0.11` kesin sürüm kimliği | **NOT VERIFIED** — bibliyografik kayıt korunmalı |
+| Genel Δ-kompleks/AW türetimi | Önceki PARTIAL sınırı korunuyor |
+| Priority B: supplier, tam Weil düzlemine yayılma, compensation | Denetçinin ayrı sonuçları bekleniyor |
+| Severn Theorem 6.2 | **CLAIMED**, ESTABLISHED değil |
+
+Bu yeni notla **W5 için polarizasyon köprüsünü hâlâ açıkmış gibi yazmaya devam etmemeliyiz**. Buna karşılık bibliyografik sürüm sorununu veya Priority B’yi de kapanmış saymamalıyız.
+
+## 5. Yeni denetim dosyaları ve çalışma sırası
+
+:chatgpt-content-reference{index="6"}[Seri-sınıf sınırı — bağımsız ispat ve exact kontrol raporu](sandbox:/mnt/data/HCG_SERIES_BOUND_CHATGPT_REVIEW_v0_1.md)
+
+HCG_SERIES_BOUND_CHATGPT_REVIEW_PACKAGE_v0_1.zip[Betik, altı girdi, exact sonuçlar ve hash manifesti — yeniden üretim paketi](sandbox:/mnt/data/HCG_SERIES_BOUND_CHATGPT_REVIEW_PACKAGE_v0_1.zip)
+
+:chatgpt-content-reference{index="8"}[PO-6 W5 — denetçi sonucunun kapsam ve statü kaydı](sandbox:/mnt/data/HCG_PO6_W5_AUDITOR_INTAKE_v0_1.md)
+
+Yeniden üretim ZIP’ini temiz bir geçici klasörde çalıştırdım; sonuç JSON’u bayt düzeyinde yeniden eşleşti.
+
+**Önerdiğim iş bölümü:** Claude özgün P2/P3 notunu bağımsız denetlesin; R1’de ise seri-sınıf sayımından, \(\operatorname{Herm}(L)/U_0\) içindeki **uyumlu bağımsız seçim engeline** geçelim. Denetçiye yeni konu göndermeden mevcut Priority B incelemesinin tamamlanmasını bekleyelim. HCG v0.1 değişmeden kalmalı; bu sonuçlar v0.2 bekleyen kayıtlarına kapsamlarıyla eklenmeli.

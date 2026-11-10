@@ -1,0 +1,8 @@
+dim H = 6  S rank = 6
+cuts: 54  ord(C) values: [1, 2, 3]
+Q-span of all 54 cut operators: 9
+dim_K of joint image of all 54: 6
+H0-valid triangles: 220 of 220
+H0-valid trees: 16796
+exact Q-rank histogram: {3: 12594, 4: 3678, 5: 459, 6: 65}
+example max-rank trees (intervals): [[(5, 6), (4, 6), (9, 10), (8, 10), (3, 6), (7, 10), (3, 10), (3, 11), (2, 11)], [(5, 6), (4, 6), (8, 9), (8, 10), (3, 6), (7, 10), (3, 10), (3, 11), (2, 11)], [(5, 6), (4, 6), (7, 8), (9, 10), (3, 6), (7, 10), (3, 10), (3, 11), (2, 11)]]

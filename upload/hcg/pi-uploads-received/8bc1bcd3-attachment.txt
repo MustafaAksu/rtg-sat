@@ -1,0 +1,188 @@
+## Lemma S/C doğru; \(25\le d\le42\) dışlamasının ispat zinciri tutarlı, GAP verilerinin bağımsız tekrarı henüz eksik
+
+**[SESSION — bağımsız inceleme]** Önerdiğin dışlamada giderilemeyen bir matematiksel sorun bulmadım. İki gerekçeyi tamamladım: Lemma C’de komütatörün **merkezî olmadığını** açıkça gösterdim; \(2.S_8(3)\) satırındaki hatalı \(b\le6\) ara sınırını düzelterek, gerekli **hareket rankı \(\ge9\)** sonucunu birincil kaynaklardan ispatladım.
+
+**Kanıt sınırı:** Bu ortamda GAP bulunmadığı ve kurulamadığı için karakter tablosu hesaplarını yeniden çalıştırmadım. Dolayısıyla bütün \(25\le d\le42\) sonucuna henüz **“iki bağımsız hesapla CHECKED”** demiyorum. İspat düzeyindeki değerlendirmem olumlu; kalan bağımsız hesap yükümlülüğü dar ve açık.
+
+## 1. Gerçekleştirilen kontroller
+
+**[ALG — yeniden üretim]**
+
+| Kontrol | Sonuç |
+|---|---|
+| Kaynak manifesti | **10/10 PASS** |
+| Ayrı rapor ile arşivdeki rapor | Bayt düzeyinde aynı |
+| Python sayım betiği | Yalnız dosya yolu değiştirilerek çalıştı; çıktı bayt düzeyinde aynı |
+| GAP betikleri ve sonuç günlükleri | Tamamı okundu; **çalıştırılmadı** |
+| Ayrı cebir/bütçe kontrolleri | PASS |
+| Yeni paketin temiz tekrarı | **30/30 manifest; mevcut Python hesapları PASS** |
+
+Kaynak Python betiğinde profil sayımları exact; GT iz-farkı karşılaştırmaları ise `cmath` kullanıyor. Bunları tek bir “tamamı exact” etiketi altında birleştirmedim.
+
+## 2. Lemma S ve Lemma C
+
+### Lemma S: alternating form için genişletme doğru
+
+**[THM — ispat kontrolü]** Normal \(L\)’ye kısıtlanan temsil indirgenemez ve kendine-dual olsun. Korunan simetrik veya alternating forma \(B\) dersek,
+
+\[
+B(gx,gy)=a_gB(x,y)
+\]
+
+ve \(g\mapsto a_g\) bir karakterdir. \(a_g\ne1\) olduğunda \(\operatorname{Fix}(g)\) tamamen izotropiktir:
+
+\[
+c(g)\ge\left\lceil\frac d2\right\rceil.
+\]
+
+Bütün dal üreteçlerinde \(a_g=1\) olsaydı, tüm temsil kendine-dual olur; sonlu grup karakteri gerçel ve \(K\)-değerli olduğundan rasyonel olurdu. Bu, karakter alanının tam olarak \(K\) olmasıyla çelişir. Çarpım-bir koşulu en az iki önemsiz olmayan çarpan gerektirir.
+
+Böylece daha kesin bütçe:
+
+\[
+\boxed{
+2d+8\ge 2\left\lceil\frac d2\right\rceil+51.
+}
+\]
+
+Bu, belirttiğin \(25\le d\le42\) aralığını eliyor. Küçük bir güçlendirme: **\(d=43\) de bu kendine-dual dalda elenir**; ilk mümkün bütçe derecesi 44’tür. Bu, bütün derece-43 adaylarının elendiği anlamına gelmez.
+
+### Lemma C: eksik cümle \(2c_{\min}<d\)
+
+**[THM — ispat kontrolü]** Seçilen \(g\), normal altgrubu merkezlemediğinden bir \(x\) için
+\[
+h=[g,x]\ne1,\qquad c(h)\le2c(g)
+\]
+elde ediliyor.
+
+Ancak **\(h\ne1\), tek başına \(h\)’nin merkezî olmadığını göstermez**. Burada gereken ve mevcut olan ek gerekçe:
+
+\[
+0<c(h)\le2c_{\min}<d.
+\]
+
+Birim olmayan bir skalerin hareket rankı \(d\)’dir. Dolayısıyla \(h\) skaler değildir; normal altgrup indirgenemez etkidiğinden merkezî de değildir.
+
+Bu ekle Lemma C geçiyor. Eşikler:
+\[
+2c_{\min}\le
+\begin{cases}
+6,&25\le d\le33,\\
+8,&34\le d\le42.
+\end{cases}
+\]
+
+Normal altgrup skaler normalizasyonla kurulmuşsa \(H'=\Gamma'\) ilişkisini korumak gerekir. GT08’in Proposition 2.8’i bu normalizasyonu ve gerekli alternatifleri açıkça ayırıyor. [arXiv](https://arxiv.org/pdf/0810.0853)
+
+**Symplectic-type \(d=27,32\) dışlaman da geçerli:** merkezî olmayan elemanın hareket rankı sırasıyla en az 18 ve 16; ikisi de komütatör eşiğini aşar.
+
+## 3. \(2.S_8(3)\): ara eşitsizlik yanlış, sonuç doğru
+
+**[ALG — kaynak raporuna düzeltme]** 
+\[
+a=\dim_{\mathbb F_3}\ker(h-I),\qquad
+b=\dim_{\mathbb F_3}\ker(h+I)
+\]
+için rapordaki **“merkezî olmayan her \(h\) için \(b\le6\)”** doğru değil. Bir transveksiyon \(T\) alırsak \(h=-T\) için
+\[
+(a,b)=(0,7).
+\]
+Bunu ayrıca açık \(8\times8\) simplektik matrislerle kontrol ettim.
+
+Doğru simetrik koşullar:
+\[
+a,b\le7,\quad a+b\le8,\quad
+a=7\Rightarrow b=0,\quad b=7\Rightarrow a=0.
+\]
+
+Son iki çıkarım, rank-bir \(h-I\) ve \(\det h=1\) koşullarından gelir.
+
+**[SOURCE — yeni doğrulanan dış girdi]** Thomas’ın Theorem 1A’sı, toplam Weil karakteri için
+\[
+|\chi_W(h)|^2=3^a
+\]
+özdeşliğini veriyor. Katz–Tiep §2 ise toplam 81-boyutlu temsilin 40 ve 41 boyutlu merkez-parite parçalarına ayrıldığını açıklıyor. [arXiv](https://arxiv.org/pdf/math/0610644)
+
+Bundan
+\[
+|\chi_{40}(h)|,\ |\chi_{41}(h)|
+\le\frac{3^{a/2}+3^{b/2}}2
+\le\frac{1+27\sqrt3}{2}<24
+\]
+çıkar. Son katı eşitsizlik exact:
+\[
+47^2-3\cdot27^2=22>0.
+\]
+
+Sonlu mertebeli \(D\)-boyutlu bir matris için
+\[
+c(h)\ge\frac{D-\operatorname{Re}\chi(h)}2
+\ge\frac{D-|\chi(h)|}2.
+\]
+Dolayısıyla
+\[
+\boxed{c_{40}(h)\ge9,\qquad c_{41}(h)\ge9.}
+\]
+
+Bu ispat **hem \(2.S_8(3)\)’ün 40-boyutlu hem \(S_8(3)\)’ün 41-boyutlu satırını** Lemma C ile dışlıyor. İkinci satır için GAP’ın bildirdiği exact minimum 16’ya ihtiyaç kalmıyor. Minimumun 9 olduğunu iddia etmiyoruz; **9 alt sınırı yeterli**.
+
+## 4. Aday listesi uygun; hesap kapsamını dikkatli kaydedelim
+
+**[SOURCE — hedefli karşılaştırma]** Hiss–Malle’nin özgün generic tablosunu ve düzeltilmiş karakteristik-sıfır tablosunun 25–42 satırlarını karşılaştırdım. Bildirdiğin on grup–derece adayıyla uyuşuyor. Özellikle modular-only satırlar dışarıda tutulmalı; generic alternating ve \(SL_2(q)\) aileleri de yalnız düzeltme tablosuna bakılarak atlanmamalı. [Cambridge University Press](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E38996E7B21A5CC48280AC441B6054AA/S1461157000000796a.pdf/lowdimensional_representations_of_quasisimple_groups.pdf)
+
+PDF metinleri erişilebildi; görüntüleme denemeleri başarısız oldu. **Tabloları görsel olarak kontrol ettiğimi söylemiyorum.**
+
+GAP kodunda şu sınırlama var:
+```gap
+for chi in chis{[1]} do
+```
+`candidates_pmr.g`, yalnız ilk uygun karakteri inceliyor. Buna karşılık geniş `quasisimple_scan.g` bütün karakterleri dolaşıyor. Günlüğündeki **20 uygun karakter satırı** şöyle dağılmış: \(3.G_2(3)\) için dört, diğer sekiz grup–derece çifti için ikişer.
+
+Bu, mevcut argümanı tek başına bozmaz: bütün \(3.G_2(3)\) karakterleri geniş taramada aynı alt sınırı veriyor. İnce projektif-rank/outer adımı esas olarak \(3.O_7(3)\)’te gerekiyor; onun iki karakteri eşlenik.
+
+**\(3.O_7(3)\) için şartlı çıkarım doğru:** ATLAS, basit bölümün dış otomorfizma grubunun mertebesini 2 veriyor. Bildirilen index-two fusion ve karakter-stabilitesi hesabı doğruysa
+\[
+\Gamma\subseteq\mathbb C^\times L
+\]
+ve minimum projektif hareket rankı 6 nedeniyle
+\[
+\sum c_j\ge19\cdot6=114>62.
+\]
+Bu son sayısal/fusion girdisini henüz kendi uygulamamla yeniden hesaplamadım. [brauer.maths.qmul.ac.uk](https://brauer.maths.qmul.ac.uk/Atlas/clas/O73/)
+
+## 5. Sonucun doğru kapsamı ve kayıt kararı
+
+**[SESSION — değerlendirme]** Matematiksel zincir, yukarıdaki iki gerekçe tamamlandıktan sonra tutarlı. Ancak nihai hükmü şöyle ayırıyorum:
+
+| Kalem | ChatGPT değerlendirmesi |
+|---|---|
+| Lemma S | **CHECKED** |
+| Lemma C | **CHECKED**, merkezî olmama gerekçesi eklenerek |
+| Symplectic-type 27/32 dışlaması | **CHECKED**, incelenen kapsamda |
+| Hiss–Malle aday listesi | Birincil metinle karşılaştırıldı |
+| 40/41-boyutlu Weil alt sınırı | Kaynak destekli düzeltilmiş ispat; peer kontrolüne sunuldu |
+| GAP hareket-rankları ve outer fusion | Kod/günlük incelendi; **bağımsız hesap tekrarı yapılmadı** |
+| \(25\le d\le42\) dışlamasının tamamı | **Tablo verilerine koşullu olumlu ispat değerlendirmesi** |
+
+Başlıkta **“kompleks-primitif, tensor-indecomposable ve tensor-induced olmayan dal”** açık yazılmalı. **Bütün primitif \(d=42\) temsilleri elenmiş değil:** önceki bütçe \(3\otimes14\) factorwise tensor durumuna hâlâ izin veriyor.
+
+Bu nedenle genel alt sınır şimdilik \(d\ge26\) olarak korunuyor; “artık bütün nonsplit verilerde \(d\ge43\)” sonucu çıkmıyor. \(d\le41\) için verdiğin imprimitif kalanlar listesi, tabloya dayanan dışlama kabul edildiğinde doğru koşullu sonuçtur.
+
+## 6. Eksik tekrarı küçük, taşınabilir bir kontrole indirdim
+
+Yeni bir 459-tablo taraması istemiyorum. Pakete iki araç koydum:
+
+- Dokuz mevcut grup–derece çiftindeki **20 karakterin tamamını**, power map’leri ve \(3.O_7(3)\to3.O_7(3).2\) fusion’ını JSON’a çıkaran GAP betiği.
+- Bu ham veriden özdeğer çokluklarını **Python standart kütüphanesiyle exact siklotomik Fourier hesabıyla** yeniden kuran ayrı doğrulayıcı.
+
+**GAP dışa-aktarıcı bu ortamda çalıştırılmadı.** Python okuyucusunun sentetik pozitif ve negatif testleri geçti; gerçek tablo verisiyle çalıştırılmış gibi sunulmuyor.
+
+:chatgpt-content-reference{index="5"}[**Tam bağımsız inceleme raporu**](sandbox:/mnt/data/HCG_D42_PRIMITIVE_CHATGPT_CROSS_REVIEW_v0_1.md)
+
+:chatgpt-content-reference{index="6"}[**\(Sp_8(3)\) Weil alt sınırı — kaynaklı düzeltme ispatı**](sandbox:/mnt/data/HCG_SP8_WEIL_BOUND_SOURCE_REPAIR_v0_1.md)
+
+HCG_D42_PRIMITIVE_CHATGPT_REVIEW_PACKAGE_v0_1.zip[**Kaynaklar, betikler, çıktılar ve taşınabilir karakter kontrolü — ZIP**](sandbox:/mnt/data/HCG_D42_PRIMITIVE_CHATGPT_REVIEW_PACKAGE_v0_1.zip)
+
+:chatgpt-content-reference{index="8"}[**Önerilen ledger eki**](sandbox:/mnt/data/HCG_D42_PRIMITIVE_LEDGER_PROPOSAL_v0_1.md)
+
+**Sıradaki tek hesap yükümlülüğü:** Ham karakter/power-map JSON’unu mevcut GAP ortamında üretip hash’iyle paylaşmak. Böylece tabloların eksiksizliği literatüre, sayısal dışlamalar ise ayrı exact okuyucuya dayandırılarak bu tur kapatılabilir. HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

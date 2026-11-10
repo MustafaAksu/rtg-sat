@@ -1,0 +1,61 @@
+## Karar: Δ24 onaylandı; HCG araştırmasını yeni bir matematiksel probleme taşıyalım
+
+Üç kararınızı şu şekilde uygulamayı öneriyorum:
+
+1. Δ24 kabul edildi. PO-1–PO-4, koşulları korunarak `THIRD-FAMILY CHECKED` olarak v0.3 bekleyen değişikliklerine işlenebilir. OPEN 1 ve OPEN 8, belirtilen üçüncü aile denetimi kapsamında kapanabilir. Bu, v0.3'ün henüz benimsendiği anlamına gelmez.
+2. Denetçiyle yeni karşılaştırma turu açmayalım. A ve B incelemeleri tamamlandı. Yeni bir matematiksel çelişki ortaya çıkmadıkça aynı zincirin tekrar tartışılması düşük getirili.
+3. İnsan hakem sürecini ayrı tutalım. Siz organize ettiğinizde mevcut kanıt arşivi kullanılabilir. Bu süreç başlamadığı için araştırmayı durdurmaya gerek yok.
+
+[SESSION — source integrity] Yüklediğiniz denetçi arşivinin SHA-256 değeri `aa43b59f…` ile eşleşiyor; manifestindeki 84 dosyanın tamamının hash'i doğrulandı. Claude'nun ayrı yeniden çalıştırma raporunu da okudum. Ancak ben bu turda 19 exact testi ve Round-1 betiklerini yeniden çalıştırmadım. Claude'nun `19/19`, `34/34`, `3/3` ve `4/4` sonuçları ayrı hesap kaydı olarak korunmalı.
+
+Bilimsel sonuçta önemli sınır değişmiyor: B5–B7'nin koşullu teorem denetimleri olumlu; bu, somut cebirsel döngülerin bilgisayarla üretildiği veya Severn Theorem 6.2'nin artık hakemlenmiş, yerleşik bir sonuç olduğu anlamına gelmiyor.
+
+## İlk yeni araştırma sonucu: dejenerasyon yöntemi için kesin bir rank sınırı
+
+[SESSION — ALG/THM adayı] Önceki H4 ve laminer monodromi çalışmalarımızdan, bölünmüş olmayan Hermitik uzaylar için yararlı bir yapısal sınır çıkardım.
+
+\\(H\\), \\(K\\) üzerinde \\(2d\\) boyutlu; \\(S\\) nondejenere skew-Hermitik olsun. Aynı dejenerasyondaki operatörler
+
+\\[ N_iN_j=0,\qquad S(N_ix,y)+S(x,N_iy)=0 \\]
+
+koşullarını sağlasın. \\(I=\sum_i\operatorname{im}N_i\\) ve \\(r=\dim_K I\\) tanımlayalım.
+
+O zaman:
+
+\\[ \boxed{ \dim\_{\mathbb Q}\operatorname{span}\\{N_i\\} \le r^2\le w_K(S)^2 } \\]
+
+Burada \\(w_K(S)\\), Hermitik yapının \\(K\\)-Witt indeksidir.
+
+İspatın özü: \\(I\\) izotropiktir; bütün \\(N_i\\)'ler \\(H/I^\perp\to I\\) üzerinden geçer. \\(S(x,N_iy)\\) formları da \\(K\\)-boyutu \\(r\\) olan bölümde Hermitik formlardır. Bu formların \\(\mathbb Q\\)-boyutu \\(r^2\\)'dir.
+
+Sekiz boyutlu bir uzayda maksimal izotropik \\(K\\)-altuzay bulunmuyorsa \\(w_K(S)\le3\\). Bu nedenle aynı laminer nilpotent mekanizması için:
+
+\\[ \boxed{\rho\_{\mathrm{boundary}}\le9<16.} \\]
+
+Bu, tam period-map rankının 16 olamayacağı anlamına gelmez. Yalnızca kullandığımız eşzamanlı, kare-sıfır nilpotent sınır sertifikasının yeterli olamayacağını gösterir. Brosnan'ın maksimal dejenerasyon engeliyle uyumludur.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://arxiv.org\&sz=32)
+
+arxiv.org
+
+
+
+Dolayısıyla özgün araştırmayı daha verimli bir yöne taşıyabiliriz: maksimal sınır dejenerasyonu gerektirmeyen, iç noktada period-map diferansiyelini exact hesaplayan bir yöntem geliştirmek. İlk kabul ölçütü, somut bir polarize aile için hedef boyutta sıfırdan farklı Jacobian minörü üretmek olmalı. Cebirsel döngü tedariki bundan ayrı denetlenmeli.
+
+Bu ilk yapısal sonucu, kanıtı ve sınırlamalarıyla ayrı bir SESSION notuna yazdım:
+
+HCG — Structural Rank Bound and Next Research Gate (English)
+
+Bu not benimsenmiş bilim değil; bağımsız denetime açık, öncelik veya literatür yeniliği iddiası taşımayan bir matematiksel çıkarımdır.
+
+Ayrıca güncel kaynak kontrolünde Severn'in Hexagon kaydının artık `2610.00387v2` sürümünü gösterdiğini doğruladım; önceki v1 27, v2 ise 35 kaynak listeliyor. Yeni araştırmada bu sürüme dayanacaksak önce değişen teorem ve hipotezleri hedefli karşılaştırmamız gerekir; önceki denetimi otomatik olarak v2'ye yaymamalıyız.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+Hexagon
+
++1
+
+
+
+Sonuç: Δ24'ü onayınız kapsamında kayda alalım, denetçiye yeni tur açmayalım ve insan hakem sürecini beklerken matematiksel araştırmaya devam edelim. Benim önceliğim, mevcut dejenerasyon sertifikalarının doğal sınırını aşabilecek doğrudan period-map rank yöntemi olacaktır.

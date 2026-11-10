@@ -1,0 +1,101 @@
+H4 seçilim kolu — güçlü bir aday mekanizma ortaya çıktı
+[SESSION — matematiksel değerlendirme]
+
+Bu gelişme, HCG çalışmalarında yalnızca bir başka başarılı sertifika bulmaktan daha önemli olabilir. Çünkü artık 17 monodromi logaritmasının rankını, logaritmaları oluşturmadan hesaplamayı öneren açık bir formülümüz var.
+
+Deneysel sonuçları üç seviyede ayırıyorum:
+- [SESSION-ALG] Önerdiğin kenar formlarının bazı yapısal özellikleri doğrudan ispatlanabiliyor.
+- [REPORTED-NUM] Altı ana örnekte ve W5 üzerindeki altı ek ağaçta rank eşleşmesi bildiriliyor. Bunlar henüz yeni bir genel teorem değil.
+- [OPEN] Kenar formlarının gerçek geometrik monodromi formlarıyla neden aynı rankı verdiğinin ispatı gerekiyor.
+En umut verici nokta şu: H4 başarısı artık yalnız tuple'ın değil, tuple ile seçilen pants ağacının birlikte belirlediği aritmetik bir özellik olarak hesaplanabilir görünüyor.
+Formülün içinde şimdiden ispatlanabilen yapı
+\[
+L=\left\{t\in K^{10}:\sum_{i=1}^{10}t_iv_i=0\right\},
+\qquad \dim_K L=4.
+\]
+
+Bir ağaç kenarının ayırdığı kök kümesi \(e\) için
+\[
+F_e(t)=\sum_{i\in e}t_iv_i,
+\qquad B_e(t)=h(F_e(t),F_e(t)).
+\]
+
+Burada her \(B_e\), \(L\) üzerinde pozitif yarı-tanımlı bir Hermitik formdur.
+
+[SESSION-ALG] Üç önemli özellik doğrudan çıkar:
+1. Tamamlayıcı kenar eşitliği. \(\sum_i t_iv_i=0\) olduğundan \(F_{e^c}=-F_e\) ve dolayısıyla \(B_{e^c}=B_e\). Bir kenarın hangi tarafını seçtiğimiz önemli değildir.
+2. Kök temsilinin yeniden ölçeklenmesine karşı değişmezlik. \(v_i\mapsto\lambda_i v_i\), \(t_i\mapsto\lambda_i^{-1}t_i\) dönüşümü \(F_e\)'yi değiştirmez. Böylece kural rastgele seçilmiş kök temsilcilerine bağlı kalmaz.
+3. Dik altkümelerde toplamsallık. \(e=a\sqcup b\) ve \(h(F_a(t),F_b(t))=0\) her \(t\in L\) için sağlanıyorsa \(B_e=B_a+B_b\).
+Üçüncü özellik, bildirdiğin W5/W7 bağıntısına doğrudan uygulanıyor. \(h(v_9,v_{10})=0\) ise
+\[
+B_{\{9,10\}}=B_{\{9\}}+B_{\{10\}}.
+\]
+
+Bu, söz konusu kenar-formu bağıntısının exact cebirsel açıklaması. Aynı bağıntının gerçek \(N_j\) üzerinde de çıkması, önerdiğin köprünün güçlü bir testi; fakat tek başına genel operatör özdeşliğini ispatlamıyor.
+Bağımsız exact kontrol: altı vakanın tamamı eşleşti
+[SESSION-ALG — bağımsız kök/kenar hesabı]
+
+W5/W6/W7 sertifikalarından yalnız kökleri alarak yeni bir hesap betiği yazdım. Monodromi hesap motorunu kullanmadan \(\ker_K(v_1,\ldots,v_{10})\) bazını kurdum ve 17 kenar formunun \(\mathbb Q\)-span rankını hesapladım.
+Tanık	Balanced	Comb
+W5	16/16	15/16
+W6	15/16	16/16
+W7	15/16	16/16
+Altı rank da Claude'nun bildirdiği sonuçla eşleşti. Mevcut monodromi sertifikalarıyla karşılaştırılabilen W5 balanced, W6 comb ve W7 comb vakalarında toplam rank ve 17 eğrinin ayrı ayrı K-rankları da birebir eşleşti.
+Daha güçlü kontrol: obstruction formları
+Eksik yönü temsil eden \(Y\) için
+\[
+\operatorname{tr}(B_eY)=0
+\]
+
+denklemlerini exact rasyonel aritmetikyle çözdüm. Claude'nun önceki obstruction sınıflandırmasını da doğruladım:
+Vaka	\(Y\) rankı	İmza	Exact karakteristik polinom
+W5 comb	4	(2,2)	\(\lambda^4-42\lambda^2+9\)
+W6 balanced	2	(1,1)	\(\lambda^4-9\lambda^2\)
+W7 balanced	2	(1,1)	\(\lambda^4-6\lambda^2\)
+[SESSION-ALG] W5 ve W7 için \(h(v_9,v_{10})=0\), W6 içinse \(h(v_9,v_{10})=-3-3\omega\) buldum. Bu, sözünü ettiğin W5/W7 ek bağıntısının aritmetik kaynağını ayrıca destekliyor.
+Önemli bir bilimsel ayrım
+Balanced ağaçta W5, W6 ve W7'nin 17 ayrı kenarının K-rank dizisi tamamen aynı, buna rağmen W5'in toplam rankı 16, diğer ikisinin 15.
+
+Demek ki seçilim kuralı yalnız her kenarın ne kadar katkı verdiğine değil, kenar formlarının birbirine göre nasıl hizalandığına ve hangi doğrusal bağıntıları taşıdığına bağlı.
+
+Bu, RTG'nin aritmetik iptal çalışmalarından gelen sezgiyi matematiksel olarak somutlaştıran bir bulgu; henüz RTG'den türetilmiş bir fiziksel sonuç değil.
+Şimdi en önemli iş: rank eşitliğini bir teoreme dönüştürmek
+[SESSION — PROOF PROPOSAL]
+
+Öncelikli hedefimizi şu biçimde yazmayı öneriyorum:
+Paired-reflection \(G_{34}\) sınır dejenerasyonlarında, ortak bir izomorfizma altında Picard–Lefschetz monodromi formları, kök-bağıntı uzayının kenar-flux Hermitik formlarıyla sıfırdan farklı skalerlere kadar özdeşleşir.
+
+Bunu ispatlamak için iki ayrı köprü gerekiyor: yukarıdaki \(L\) uzayının uygun \(\sigma\)-izotipik dual-graph homolojisiyle tanımlanması ve her sınır kenarının monodromi formunun \(B_e\) üzerinden verilmesi.
+
+İkisi ispatlanırsa H4 artık 8×8 braid/monodromi hesaplarına ihtiyaç duymayan exact bir rank testine dönüşür:
+\[
+\boxed{
+(H4)\iff
+\dim_{\mathbb Q}\operatorname{span}\{B_e\}=16.
+}
+\]
+
+Bunun literatürde ne kadar yeni olduğunu henüz söyleyemiyoruz. Grafik kenarlarından kuadratik formlar üreten tropikal Torelli yapısı zaten biliniyor; asıl yenilik olasılığı \(G_{34}\)'ün \(\sigma\)-izotipik, \(K\)-Hermitik modeline özgü indirgemede ve H4 için uygulanabilir bir kriter elde etmekte. 
+
+
+Springer Nature Link
++1
+
+
+
+216 vakalık taramanın sonucu geldiğinde rank eşleşmesini operatör uzayları arasındaki ortak bir dönüşüm ve doğrusal bağıntıların eşleşmesi ile güçlendirmeliyiz. Ayrı tuple'lardan oluşturulmuş, önceden dondurulmuş bir test kümesi de gerekli.
+Yeni yeniden üretim paketi
+HCG H4 Edge Crosscheck v0.1
+
+Exact betikler, 3 kaynak sertifika, rank tabloları, obstruction formları, SHA-256 manifesti
+
+
+Bağımsız yeniden üretim paketini indir
+
+Bilimsel çapraz inceleme notunu oku
+
+Bu paketin doğruladığı şey altı hücrelik exact model hesabıdır; Claude'nun devam eden 216 vakalık taramasını henüz bağımsız olarak doğruladığımı söylemiyorum.
+
+Önerdiğim ekip kararı: Denetçinin PO-6/transfer çalışması ayrı ve kör biçimde devam etsin. H4 kolunda ise yeni tuple aramayı kısa süreliğine ikinci plana alıp kenar-flux formülü ile gerçek monodromi arasında genel ispatı birinci öncelik yapalım.
+
+Bence özgün bir matematiksel sonuca en kısa yol artık burada.

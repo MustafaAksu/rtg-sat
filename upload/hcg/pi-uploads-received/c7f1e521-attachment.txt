@@ -1,0 +1,118 @@
+## Hurwitz–Hodge engel çerçevesi — bağımsız değerlendirme
+
+[SESSION — REVIEW] Genel engel araştırmasının ayrı bir HCG çalışma kolu olarak yürütülmesini destekliyorum. Boyutları tek tek dışlamak yerine, gerekli koşulları ispatlı ve yeniden üretilebilir engel sertifikalarına dönüştürmek daha yüksek bilimsel değer taşıyor.
+
+Claude’nun raporundaki üç temel kontrolün sonucu:
+
+| Sonuç                                                   | Değerlendirme                                                      |
+| ------------------------------------------------------- | ------------------------------------------------------------------ |
+| Ters-eşlenik yerel monodromiler ⇒ split diskriminant    | CHECKED, \\(K\\)-ünitar eşleniklik kapsamında                      |
+| \\(\mathbb Q(\sqrt{-3})\\) için inert-asal norm kriteri | CHECKED, pozitif rasyonel diskriminantlarda                        |
+| \\(2\otimes b\\), \\(S\_{b+1}\\) kolunda üç aktif dal   | CHECKED, belirtilen factorwise temsil ve normalleyici koşullarıyla |
+| Yeni Lemma T′ — Euler kapısı                            | İspat olumlu; bağımsız aritmetik kontrol olumlu                    |
+| \\(24\le b\le64\\) determinantlı tarama                 | Kaynakta raporlandı; bağımsız tam tarama henüz yapılmadı           |
+
+### 1. Genel ters-eşleme engeli
+
+[THM — CHECKED] Önceden doğrulanmış yerellik teoreminden
+
+\\[ [\det h\_{\rm par}] = \left[(-1)^n\prod_j\Delta(g_j)\right] \\]
+
+elde ediliyor. Eğer yerel monodromiler \\(K\\)-ünitar eşleniklik altında ters çiftlere ayrılıyorsa,
+
+\\[ \boxed{[\det h\_{\rm par}]=[(-1)^n].} \\]
+
+Özellikle \\(n=4\\) için diskriminant split.
+
+Claude’nun kapsam düzeltmesi gerekli: yalnızca kompleks matris eşlenikliği yeterli değildir. Hareket uzaylarındaki katsayı Hermitik formlarının da uygun biçimde özdeşleştirilmesi gerekir.
+
+Bu, boyut ve grup sınıflandırmasından bağımsız bir Hurwitz-bileşeni engeli verir.
+
+### 2. Lemma T′ gerçekten daha güçlü bir genel kapı
+
+[THM — SESSION, ispat ve bağımsız optimizasyon kontrolü]
+
+\\(V=A\otimes B\\), \\(\dim A=a\\) olsun. \\(A\\)-faktöründe projektif olarak etkin yerel elemanlar için
+
+\\[ \delta_i=a-\max\_{\lambda}\dim\ker(A_i-\lambda I) \\]
+
+tanımlayalım. Projektif \\(A\\)-temsilinin indirgenemezliği altında:
+
+\\[ \boxed{\sum_i\delta_i-\max_i\delta_i\ge a.} \\]
+
+İspat: En büyük \\(\delta_i\\)'ye sahip bir dalı ayırıp diğer bütün yerel kaldırımları, en büyük özuzaylarının özdeğeri \\(1\\) olacak şekilde normalize ediyoruz. Son dal toplam monodrominin birim olması için kalan skaler çarpanı alıyor. Böylece rank-\\(a\\) yerel sistemin parabolik Euler hesabı
+
+\\[ \sum_i\operatorname{rank}(1-A_i')\ge2a \\]
+
+veriyor. Son dalın rankı en fazla \\(a\\) olduğundan sonuç çıkıyor.
+
+Uzun kaynak taramasından bağımsız bir tam sayılı optimizasyonla eşikleri doğruladım:
+
+| \\(a\\) | Önceki Lemma T: en küçük \\(b\\) | Lemma T′: en küçük \\(b\\) |
+| ------- | -------------------------------- | -------------------------- |
+| 3       | 14                               | 19                         |
+| 4       | 13                               | 16                         |
+| 5       | 13                               | 15                         |
+| 6       | 12                               | 13                         |
+| 7       | 11                               | 12                         |
+| 8       | 10                               | 11                         |
+
+Özellikle \\(4\otimes13\\), \\(4\otimes14\\), \\(4\otimes15\\) sınıflandırma veya Riemann–Hurwitz hesabı gerektirmeden eleniyor.
+
+Önerilen statü: `HCG-THM-FACTORWISE-EULER-GATE → CHECKED`, belirtilen projektif indirgenemezlik ve genus-sıfır koşullarıyla.
+
+### 3. \\(2\otimes b\\): \\(d=50\\) ve \\(d=52\\) için taramadan bağımsız kapanış
+
+[SESSION — yeni analitik kontrol] Claude’nun büyük taramasından bağımsız olarak, \\(S\_{b+1}\\) kolundaki iki kritik durumu kısa kombinatorik ispatla kapattım.
+
+\\(b=25\\), \\(d=50\\): Hareket-rank bütçesi üç aktif elemanın maliyetini \\((25,25,26)\\) olarak zorunlu kılıyor. Bunların permütasyon indekslerinin toplamı en fazla \\(13+13+2\\). Diğer dalların katkısı 16:
+
+\\[ \sum_j\operatorname{ind}(w_j)\le44<50, \\]
+
+oysa Riemann–Hurwitz en az 50 gerektiriyor. Çelişki.
+
+\\(b=26\\), \\(d=52\\): Bütçeyle uyumlu dört maliyet deseni var. Bunların biri Riemann–Hurwitz’i doğrudan ihlal ediyor. Diğer üçünde, her aktif dalın permütasyon indeksi en az 9 olmak zorunda. Standart \\(S\_{27}\\) temsilinin özdeğer çoklukları bu koşullarda her aktif \\(A'\\)-matrisinin spektrumunu \\(\\{1,-1\\}\\) yapıyor. Dolayısıyla
+
+\\[ \prod\_{\text{aktif}}\det A'\_j=(-1)^3=-1, \\]
+
+ama toplam monodromi birim olduğundan aynı çarpım \\(1\\) olmalı. Çelişki.
+
+Bu, \\(b=26\\) için daha önce yalnız hesap taramasıyla desteklenen determinant engelini ayrı bir matematiksel ispata dönüştürüyor.
+
+### 4. \\(d\ge53\\) hakkında kararım
+
+[SESSION — önerilen durum] Artık \\(d=50\\)–52 dışlamasını, önceki sınıflandırma girdilerine koşullu CHECKED olarak kaydetmeyi uygun buluyorum.
+
+Çünkü kritik tensor dalları \\(2\otimes25\\), \\(2\otimes26\\), \\(4\otimes13\\) ve \\(3\otimes17\\) bağımsız cebirsel gerekçelerle kapandı. Diğer dallar önceden denetlenmiş normalleyici ve Clifford lemmalarına dayanıyor.
+
+Geriye yeni bir ispat boşluğu değil, Hiss–Malle sınıflandırmasının ve CTblLib karakter verilerinin dış kaynak olarak kullanılması kalıyor. Bu turda 459 karakter tablosu bağımsız olarak yeniden hesaplanmadı. Söz konusu koşul, \\(d\ge50\\) için kabul ettiğimiz kanıt derecesiyle aynı.
+
+\\[ \boxed{ (H)\text{ altında bölünmemiş dominant veri} \Longrightarrow d\ge53 } \\]
+
+Bu bir HCG oturum teoremi değerlendirmesidir; Severn yönteminin bütün boyutlarda imkânsız olduğunu söylemez.
+
+## 5. Yeni çalışma kolu için önerim
+
+HCG-HURWITZ-HODGE-OBSTRUCTION adıyla ayrı bir noncanonical HCG araştırma kolu açılmasını destekliyorum. Bunu doğrudan yeni bir canonical RTG akışı veya benimsenmiş DSN olarak başlatmayalım.
+
+İlk araştırma hedefi şu olabilir:
+
+\\[ \boxed{ (L)+(D)+\text{diğer }(H)\text{ hipotezleri} \stackrel{?}{\Longrightarrow} [\det h]=[1]. } \\]
+
+Bunu genel olarak ispatlayabilirsek, boyut taraması yerine Severn tipi transfer yönteminin bölünmemiş hücrelerde niçin başarısız olduğunu açıklayan çok daha güçlü bir sonuç elde ederiz.
+
+[OPEN] Şimdilik (L)'nin ters-eşleme simetrisini zorunlu kıldığını bilmiyoruz. Mevcut iki siklik örnek bunu kanıtlamıyor. Bu yüzden en kısa sonraki araştırma, (L)'yi sağlayıp yerel ters-simetriyi bozan bir veri bulmak veya böyle bir verinin neden bulunamayacağını ispatlamak olmalı.
+
+Bir notasyon hassasiyeti de kaydettim: tek tek \\(\Delta(g)\\) değerleri rasyonel olmayabilir. “Ters-sınıf dengesizliği” üzerinden norm sınıfı hesaplanırken önce bütün yerel faktörlerin rasyonel toplam çarpımı oluşturulmalı.
+
+## İnceleme dosyaları
+
+Bağımsız bilimsel inceleme — English Markdown
+
+Exact Lemma T′ optimizasyonu, \\(d=50/52\\) kontrolü ve kaynak paketi — ZIP
+
+Paket SHA-256: `0ff5ab80cbdfebb1c1ef0122c0b86544503620eac38a0edf25057b2de7fd41ec` · Manifest 5/5 PASS
+
+Nihai önerim: Lemma T′ ve \\(d\ge53\\) sonucunu belirtilen hipotezlerle `CHECKED` adayı olarak, \\(24\le b\le64\\) geniş taramasını ise tam bağımsız tekrar yapılmadığı için ayrı `PROPOSED` kayıt olarak tutalım. Yeni araştırma kolunun ilk hedefi boyuttan bağımsız diskriminant–(L) engeli olsun.
+
+HCG v0.2 ADOPTED değişmedi; Severn A/B/C `CLAIMED` statüsü korunuyor.

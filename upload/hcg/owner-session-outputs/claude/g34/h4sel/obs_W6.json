@@ -1,0 +1,191 @@
+{
+ "balanced": {
+  "rank": 15,
+  "obstruction_dim": 1,
+  "Y_signatures": [
+   {
+    "rank": 2,
+    "pos": 1,
+    "neg": 1
+   }
+  ],
+  "curves_needed_for_rank": [
+   [
+    1,
+    2
+   ],
+   [
+    3,
+    4
+   ],
+   [
+    13,
+    14
+   ],
+   [
+    15,
+    16
+   ],
+   [
+    17,
+    18
+   ],
+   [
+    19,
+    20
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    13,
+    16
+   ],
+   [
+    1,
+    8
+   ],
+   [
+    9,
+    16
+   ],
+   [
+    1,
+    16
+   ]
+  ],
+  "I_basis": [
+   [
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ]
+  ]
+ },
+ "comb": {
+  "rank": 16,
+  "obstruction_dim": 0,
+  "Y_signatures": [],
+  "curves_needed_for_rank": [
+   [
+    7,
+    8
+   ],
+   [
+    11,
+    12
+   ],
+   [
+    13,
+    14
+   ],
+   [
+    15,
+    16
+   ],
+   [
+    17,
+    18
+   ],
+   [
+    19,
+    20
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    1,
+    12
+   ],
+   [
+    1,
+    14
+   ],
+   [
+    1,
+    16
+   ]
+  ],
+  "I_basis": [
+   [
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ],
+   [
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(1, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))",
+    "(Fraction(0, 1), Fraction(0, 1))"
+   ]
+  ]
+ },
+ "same_I": true
+}

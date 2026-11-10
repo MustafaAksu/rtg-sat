@@ -1,0 +1,7 @@
+Artin word (left to right): [4, 3, 3, 4, -4, -5, -5, -4, 8, 7, 7, 8, 6, 5, 5, 6]
+pure: True ; final tuple paired: True
+final reflections match predicted lines: True
+inverse returns: True
+transported are cocycles: True
+cup preserved: True
+target curves: [[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12], [3, 10], [5, 10], [7, 10]]

@@ -1,0 +1,51 @@
+The review is substantially correct, and the updated literature supports the change of direction. I would make one additional correction to the session charter: distinguish the classical Eisenstein lattice we choose from a lattice physically derived by RTG.
+
+### What is now verified
+
+[OWNER: Dyadic v6.4.19, release history and §§6.1, 6.14] The project actually contains adopted Dyadic v6.4.19, dated October 20, 2026. Its new result concerns the L-PHASE remainder; the \\(A,B,J_Q,\mu,a\_{05}\\) mathematics is carried forward unchanged from v6.4.18. We can therefore use v6.4.18 as the exact scientific import and record v6.4.19 as the verified successor.
+
+[SESSION — ALG] The four curves \\(D_1,D_2,D_3,D_4\\) do indeed form an integral basis of the Néron–Severi lattice of \\(E^2\\), not merely a rational spanning set. With the adjusted graph classes \\(D_3-D_1-D_2\\) and \\(D_4-D_1-D_2\\), the intersection lattice is
+
+\\[ \operatorname{NS}(E^2)\cong U\oplus \begin{pmatrix}-2&-1\\\\-1&-2\end{pmatrix}, \\]
+
+of discriminant \\(-3\\). The equality with the four-curve Gram determinant proves index one.
+
+[STANDARD MATHEMATICS — external verification] Markman's 2025 paper and his published 2026 ICM lecture confirm algebraicity for Weil-type sixfolds of split type (discriminant class \\(-1\\)) and the reduction yielding all abelian fourfolds. Markman explicitly states that the Hodge Conjecture follows for all abelian varieties of dimension at most five.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://arxiv.org\&sz=32)
+
+arXiv
+
++1
+
+
+
+This eliminates any justification for treating ordinary abelian fourfolds as an unresolved research frontier.
+
+There is also an important caution about the proposed sixfold direction: simply taking six copies of the Eisenstein elliptic curve, with three conjugate CM actions, produces a very special product whose Hodge classes are already algebraic. An unresolved case would require an appropriately chosen family beyond this product, with its polarization discriminant and existing theorem coverage checked explicitly.
+
+## Standalone research charter prepared
+
+Download the Hodge–Complex Geometry Session Charter v0.1
+
+The charter is structured for an independent research session and includes the one-way RTG import ledger, the verified integral basis calculation, the corrected dynamical obstruction, primary literature references, and revised H1–H3 research gates.
+
+I made one additional technical correction to the proposed imports: the real-linear centralizer of \\(A\\) is \\(\mathbb C^\times\\), not \\(C_6\\). The restriction to sixth roots of unity concerns the linear parts of the proposed full nonlinear formal centralizer, currently at FMS SESSION grade.
+
+The core matrix and intersection-lattice identities were independently rechecked using exact SymPy arithmetic; all passed, including the unimodular change to the \\(U\oplus A_2(-1)\\) basis.
+
+### Opening the separate session
+
+Upload the charter to the new standalone project or conversation, and start with:
+
+Work as an independent algebraic geometer, not an RTG advocate.
+
+Read the attached standalone charter and audit its RTG imports, classical mathematical results, and newly derived claims.
+
+First, independently verify the integral Néron–Severi basis for the Eisenstein elliptic surface. Then compute the Hodge classes and divisor-product spans for (E^4).
+
+Before starting the higher-dimensional study, review the latest Weil-type literature, including Markman's 2025–2026 results. Identify a genuinely unresolved mathematical problem rather than reproducing known algebraicity results.
+
+Keep this work separate from RTG. Any result proposed for RTG must go through an explicit noncanonical handoff; do not modify RTG owner documents.
+
+The research priority is now clear: establish H1/H2 as certified calibration, then investigate whether the RTG-inspired Eisenstein structure can select something mathematically nontrivial in an uncovered Weil-type sixfold family or a non-abelian variety. The burden is on the new session to prove that its target is genuinely open before attempting new algebraicity results.

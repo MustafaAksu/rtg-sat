@@ -1,0 +1,48 @@
+## Dış denetçi Round 2 — ilk bilimsel değerlendirme
+
+[THIRD-FAMILY REPORT] Priority A3 ile Priority B4–B7'nin tamamı için rapor geldi. Denetçi, kapsamındaki beş yükümlülükte ölümcül bir matematiksel hata bulmadığını bildiriyor. Ancak hükümlerinin bir bölümü koşullu; bu ayrım korunmalı.
+
+| Yükümlülük                                   | Denetçi hükmü                       | HCG açısından sonuç                                             |
+| -------------------------------------------- | ----------------------------------- | --------------------------------------------------------------- |
+| A3 — 17→16 eşlemesi                          | VERIFIED, ifade düzeltmesiyle       | Priority A'nın son matematiksel kalemi kapatılabilir            |
+| B4 / PO-4 — Brauer, reality, (L)             | VERIFIED, teorem düzeyinde          | Üçüncü aile kontrolü olumlu                                     |
+| B5 / PO-2 — Schoen–Milne tedarikçi döngüleri | VERIFIED, klasik teoremlere koşullu | Cebirsel correspondence mekanizması kabul ediliyor              |
+| B6 / PO-3 — Yayma ve transfer                | VERIFIED, koşullu çıkarım           | OPEN 8'in “her üye” ispat yükümlülüğü olumlu denetlendi         |
+| B7 / PO-1 — Compensation                     | VERIFIED, B6'ya koşullu             | Her diskriminant ve iki rasyonel Weil sınıfı kapsamı denetlendi |
+
+A3'te gerçek bir metin hatası saptanmış:
+
+\\[ \mathcal N:\mathbb C^{17}\twoheadrightarrow\mathbb C^{16}, \qquad \ker\mathcal N=\mathbb C(e\_{17}-e_9-e\_{10}). \\]
+
+Bu eşleme izomorfizm değil, örtendir; çekirdeğe bölüm alındığında izomorfizm elde edilir. Denetçiye göre rank 16 ve dolayısıyla dominance çıkarımı korunuyor.
+
+[SESSION — kaynak çapraz kontrolü] Severn'in companion v0.15 Lemma 6.1–6.2'sini ve ana v0.5 Proposition 5.2'yi birincil PDF'lerden ayrıca kontrol ettim. Tam Weil altuzayı için kapalı cebirsel yerlerin sayılabilir birleşimi, Baire ile özel üyelere yayılma ve compensation'ın “every member” öncülü kaynakta gerçekten yer alıyor. Bu, denetçinin okuma kapsamıyla tutarlı; ancak bu oturumda genel ispatları baştan aksiyomatik biçimde yeniden kurduğum anlamına gelmiyor.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://hexagonmath.org\&sz=32)
+
+hexagonmath.org
+
++2
+
+
+
+Önemli karar sınırı: B4–B7 için üçüncü aile incelemesi artık gelmiştir. Fakat `VERIFIED conditional` hükümlerini, tüm dış hipotezlerin bağımsız ve koşulsuz ispatlandığı biçiminde yeniden etiketlememeliyiz. Severn Theorem 6.2 hâlâ CLAIMED.
+
+## Yayın ve kayıt açısından önerdiğim işlem
+
+[SESSION — inceleme kararı] Bu teslimle Priority A3 ve Priority B4–B7'nin bağımsız matematiksel rapor yükümlülükleri karşılandı. Artık aynı maddeler için yeni bir denetçi turu istemeyi önermiyorum.
+
+Ancak iki ayrı işi korumalıyız:
+
+1. Bilimsel kayıt güncellemesi: HCG v0.2 değiştirilmeden, bir sonraki aday kayıtta B4–B7'nin üçüncü aile incelemesi ve koşulları işlenmeli. OPEN 8, üçüncü aile ispat kontrolü bakımından kapatılmaya aday. A3'teki “isomorphism → surjection” düzeltmesi tarihli bir kaynak notu olmalı.
+2. Çalıştırılabilir arşivin QA'sı: Yüklenen dört dosyadan manifestteki 84 kaydın yalnızca 2'sinin baytlarına erişilebiliyor; ikisinin hash'i de doğru. Denetçinin bildirdiği 34/34 ve 19/19 sonuçları henüz benim tarafımdan yeniden çalıştırılmış değil. Bunun için asıl tam ZIP arşivi gerekli.
+
+Denetçinin ilk Round-1 arşivinde yaşadığını bildirdiği beş dosyalık hash uyuşmazlığı da raporlanmış ve düzeltilmiş bir çalışma-kopyası hatası olarak kalmalı; özgün arşivin bozuk olduğu şeklinde yorumlanmamalı.
+
+Üçüncü aile raporu, bizim daha önce doğruladığımız Severn–W5 braid bağlantısını kullanmamış. Bu, kör denetimin bağımsızlığı açısından uygun; HCG v0.2'deki bağlantı sertifikasıyla çelişmiyor.
+
+HCG Round 2 — bağımsız teslim alma ve bilimsel durum incelemesi (English)
+
+Raporda kaynak sürümleri, okunan bölümler, beş maddeye ait hüküm, açık koşullar ve yeniden üretim eksikliği ayrı kaydedildi.
+
+Sonuç: Priority B'nin matematiksel dış incelemesi olumlu tamamlanmış görünüyor. Artık en değerli adım, tam çalıştırılabilir arşivin teslim edilip yeniden oynatılması ve sonrasında iki iç raporla denetçinin raporu arasında tek bir adversarial karşılaştırma yapılmasıdır. Bu işlem Severn Theorem 6.2'yi kendiliğinden `ESTABLISHED` yapmaz; insan hakem incelemesi ve kaydedilmiş diğer kaynak sınırları devam eder.

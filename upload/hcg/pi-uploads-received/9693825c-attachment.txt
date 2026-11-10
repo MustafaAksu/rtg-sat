@@ -1,0 +1,118 @@
+## HCG v0.1 sonrası: yeni çalışma programı
+
+Önce yayın doğrulamasını tamamladım.
+
+ADOPTED v0.1 release paketi bağımsız olarak doğrulandı.
+
+[SESSION — EXACT REPLAY] Paket içindeki `release_v0_1.py` betiğini, hash'i doğrulanmış DRAFT r3 üzerinde yeniden çalıştırdım.
+
+- Yeniden üretilen dosya, kabul edilmiş dosyayla bayt düzeyinde aynı.
+- SHA-256: `75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7`.
+- Manifestteki beş hash eşleşiyor.
+- ZIP içindeki DSN ve release record, ayrı gönderilen dosyalarla birebir aynı.
+- Değişiklikler yalnızca yayın üst bilgilerini, kabul tarihçesini ve footer'ı etkiliyor. Bilimsel içerik değiştirilmemiş.
+
+Dolayısıyla yayın adımındaki son bağımsız doğrulama da tamamlandı. Yeni bir bakım sürümü gerekmiyor.
+
+Asıl soruya gelirsek: DSN tamamlandığına göre artık belge bakımına değil, iki ayrı hedefe yoğunlaşmamızı öneriyorum.
+
+Birinci hedef, Severn'in genel ispat zincirinin gerçekten geçerli olup olmadığını belirlemek. İkinci hedef, bizim HCG/RTG çalışmalarımızdan bağımsız ve özgün bir matematiksel sonuç çıkarmak.
+
+Bunların kaynaklarını, kanıt statülerini ve denetim süreçlerini birbirine karıştırmamalıyız.
+
+## 1. Öncelikler: nerede yeni çalışma gerçekten değer üretir?
+
+Kabul edilmiş DSN §2 ve §6.7–§6.18'e dayanarak önerdiğim iş sırası:
+
+| Öncelik | Çalışma                                                                 | Sorumlu               | Beklenen çıktı                                         |
+| ------- | ----------------------------------------------------------------------- | --------------------- | ------------------------------------------------------ |
+| P0      | PO-6: cup formu ile gerçek polarize faktörün diskriminantını eşleştirme | Denetçi               | Bağımsız geometrik doğrulama veya kesin GAP            |
+| P0      | PO-1–4: transfer ve cebirsellik zincirinin tamamı                       | Denetçi               | Her halka için ayrı karar ve karşı-örnek/gap araması   |
+| P1      | [19, Lemma 6.2] kaynak ispatının satır satır denetimi                   | Claude; sonra ChatGPT | Kaynak bağımlılığı incelemesi                          |
+| P1      | Denetçinin R1/R2 çalıştırılabilir arşivi                                | Denetçi               | Script, exact çıktı, manifest, tekrar oynatma talimatı |
+| P2      | H4 seçilim mekanizması                                                  | Claude + ChatGPT      | Yeni matematiksel kriter adayı                         |
+| P3      | Appendix A ve Hurwitz bileşen eşdeğerliği                               | Ayrı araştırma        | Ek sağlamlık; ana zincirin ön koşulu değil             |
+
+Buradaki en önemli kararım: Artık W5 için daha fazla rastgele sertifika üretmenin getirisi düşük. Ana kanıtın riskini azaltmak için PO-6 ve transfer zincirine, özgün katkı üretmek için H4 seçilimine yatırım yapmalıyız.
+
+## 2. Denetçiden özellikle ne istemeliyiz?
+
+Round 2 v0.2 zaten gönderilmiş. Bu nedenle yeni bir inceleme konusu açmayalım; ancak teslimat beklentilerini netleştiren kısa bir ek mesaj yararlı olur.
+
+### Priority A — kapanış için matematiksel kontrol
+
+Denetçinin yalnızca \\(\det h=3^{13}\\) hesabını onaylaması yeterli değil. Açık halka şu:
+
+\\[ \underbrace{[\det(\vartheta S)]}\_{\text{exact hesap}} \overset{\text{Prop.\ 5.1}}{=} \underbrace{\operatorname{disc}H(A\_\sigma)}\_{\text{gerçek polarize faktör}}. \\]
+
+Özellikle \\(A\_\sigma\\)'nın hangi idempotent ve izojeniyle kurulduğunu, cup formunun polarizasyonla rasyonel skaler üzerinden nasıl eşleştirildiğini ve bu skalerin norm sınıfını neden değiştirmediğini açıkça gerekçelendirmesini isteyelim.
+
+Ayrıca W5'in Appendix A bileşeniyle eşleştirilmesine gerçekten ihtiyaç olup olmadığını, Severn Theorem 7.1'in tüm varsayımlarını tek tek işaretleyerek karara bağlasın.
+
+### Priority B — en kritik adversarial denetim
+
+Burada özellikle PO-3'e dikkat çekiyorum.
+
+DSN §6.10'daki aktarım, cebirsellik lokusunun sayılabilir cebirsel kapalı altkümeler birleşimi olmasından ve period-map baskınlığından yararlanıyor. Ancak cebirsellik iddiasının yalnızca bir tane sıfırdan farklı Weil sınıfı için değil, bütün Weil düzlemi için sürdürüldüğünün kontrolü şart.
+
+Denetçi bunun yanında PO-2'de Schoen–Milne tedarik varsayımlarını, PO-4'te Brauer/parite ayrıntılarını ve PO-1'de altı katlıya indirgeme sırasında iki bağımsız rasyonel sınıfın cebirselliğini değerlendirmeli.
+
+Bu aşamada hedefimiz denetçinin önceki sonuçlarımıza katılması değil, varsa en küçük karşı örneği veya eksik varsayımı bulması.
+
+### Denetçiye gönderilebilecek kısa ek mesaj
+
+Thank you for the independent Round-2 discriminant computation. We have recorded it as verification of the W5 cup-form invariant, while keeping the polarization-identification and transfer arguments open.
+
+Please continue the existing Round-2 blind review, without access to our internal assessments.
+
+For Priority A, please give an explicit assessment of the identification between the parabolic cup form and the polarization on the actual abelian factor A_σ, including Severn Proposition 5.1, Lemma 2.4, the dependence on Lemma 5.2 and its source [19, Lemma 6.2]. Separately, assess whether S_W5 can be used in Theorem 7.1 without identifying it with the original Appendix A component.
+
+For Priority B, please critically audit each remaining transfer obligation. In particular, test whether the algebraicity and spreading argument establishes algebraicity of the entire rational Weil subspace, rather than merely a nonzero class, and whether the compensation argument produces both required rational classes.
+
+Please report VERIFIED, CONDITIONAL, GAP FOUND, or NOT VERIFIED for each obligation, with precise hypotheses and source locations. A negative finding is as valuable as a positive one.
+
+Please also deliver the executable Round-1 and Round-2 audit materials, exact outputs, SHA-256 manifests, and replay instructions. We will continue withholding our previous AI assessments until Priority A and B are complete.
+
+Bu mesaj yeni bir kör inceleme başlatmıyor; gönderilmiş R2 talebinin kapsamını ve teslim koşullarını açıklıyor.
+
+## 3. Biz ekip olarak paralel ne yapmalıyız?
+
+### Claude: kaynak zincirindeki son bağımlılığı çözsün
+
+Görev: HCG-OPEN-LEMMA62. Severn'in `hexagon:2610.00246v2` makalesindeki Lemma 6.2'nin ispatını gerçekten okusun, cup formülünü Dettweiler–Wewers Theorem 2.6 ile karşılaştırsın ve hangi önermelerin bağımsız desteklendiğini ayırsın.
+
+Bu çalışma denetçinin kapalı turunu etkilemeden yapılabilir. Claude'nun mühürlü Prop 5.1 değerlendirmesi ve yeni kaynak incelemesi denetçiye gönderilmemeli.
+
+### ChatGPT: H4 obstruction sonuçlarını yeniden üretsin
+
+Bu bizim yeni matematiksel katkı fırsatımız.
+
+Mevcut DSN §6.18'de Claude'nun elde ettiği sonuçlar var:
+
+| Tanık | Balanced rank | Comb rank |
+| ----- | ------------- | --------- |
+| W5    | 16            | 15        |
+| W6    | 15            | 16        |
+| W7    | 15            | 16        |
+
+Henüz bağımsız doğrulanmayan nokta, eksik Hermitik yönlerin \\(Y\\) matrisleri ve rank/signature sınıflandırması.
+
+İlk adım olarak mevcut W5/W6/W7 köklerinden ve ayrıştırmalarından bu sonuçları bağımsız yeniden üretmek istiyorum. Sonraki adımda H4'ün ne zaman başarısız olduğunu önceden belirleyen bir kombinatoryal veya temsil-kuramsal kriter geliştirmeliyiz.
+
+Yenilik testi: Önce kriteri sabitlemek, ardından daha önce kullanılmamış tuple'larda kör sınamak. Geçmiş altı örneğe sonradan uydurulmuş bir formül yeterli olmayacak.
+
+### İnsan hakem hazırlığı: şimdiden başlatılabilir
+
+Denetçinin R2 sonucunu almadan makaleyi kabul edilmiş teorem gibi sunmamalıyız. Fakat ileride kullanılacak bağımsız hakem paketinin teknik hazırlığı yapılabilir: tam kaynaklar, sertifikalar, hesap betikleri, açık varsayımlar ve bir kanıt-bağımlılık diyagramı.
+
+Özellikle olası bir insan hakemin AI değerlendirmelerinden önce özgün kaynak ve bağımsız sertifikaları görmesine imkân tanıyan bir paket yararlı olacaktır.
+
+## 4. Üçüncü denetim tamamlandığında karar ağacı
+
+## Son önerim
+
+Bu aşamada üç paralel işi yürütmeliyiz: denetçi R2'yi bitirsin; Claude Lemma 6.2 kaynak incelemesini kapatsın; ben H4 seçilim verilerini bağımsız olarak yeniden üreteyim.
+
+W6/W7'nin yeni geometrik gerçekleştirmesini veya Appendix A'nın 90 hamlelik braid'ini henüz birinci öncelik yapmayalım. Her ikisi de değerli, fakat ana transfer zincirinin en zayıf halkası şu anda onlar değil.
+
+DSN'nin kabulü bize bilimsel sonucu değil, güvenilir bir başlangıç envanterini verdi. Şimdi bu envanter üzerinden iki farklı başarı arıyoruz: büyük teoremin gerçekten ayakta kalıp kalmadığını sınamak ve bundan bağımsız olarak H4 seçilim teorisinde özgün bir sonuç üretmek.

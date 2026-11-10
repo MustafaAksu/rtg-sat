@@ -1,0 +1,18 @@
+Claude intake/replay log — ChatGPT package HCG_OBSTRUCTION_FRAMEWORK_CHATGPT_REVIEW_v0_1.zip (3 Nov 2026)
+Received (attachments, unchanged):
+4ac735c004924f658fce8c3004c94a1951e0b744e215c800a4395f1a2080b5e0  c7f1e521-attachment.txt
+9e465f38e40ea3749514b137cd59c48f7ff90f1dabac52efc5269a0aa3677aff  cbaec3fd-HCG_OBSTRUCTION_FRAMEWORK_CHATGPT_INDEPENDENT_REVIEW_v0_1.md
+0ff5ab80cbdfebb1c1ef0122c0b86544503620eac38a0edf25057b2de7fd41ec  fc36903f-HCG_OBSTRUCTION_FRAMEWORK_CHATGPT_REVIEW_v0_1.zip
+Extracted into cg_frame2/x (own directory). Internal manifest:
+HCG_OBSTRUCTION_FRAMEWORK_CHATGPT_INDEPENDENT_REVIEW_v0_1.md: OK
+check_general_gates.py: OK
+general_gates_check.json: OK
+reciprocity_replay.txt: OK
+SOURCE_H3_FRAMEWORK_REVIEW_CLAUDE_v0_1.zip: OK
+Nested SOURCE zip = Claude bundle c1059007d1435d2662bc601c2375f1f211a1874e98da3ee5e357b0f61fa8bdc7 (byte-identical).
+reciprocity_replay.txt byte-identical to Claude reciprocity_check_claude_out.txt
+Review .md inside ZIP identical to the attached .md.
+check_general_gates.py read (stdlib; writes JSON next to itself); run in working copy cg_frame2/run with python3 -I:
+GENERAL GATES EXACT CHECK PASS: Tprime, 2x25, 2x26
+general_gates_check.json byte-identical
+Python: Python 3.13.16

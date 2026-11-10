@@ -1,0 +1,32 @@
+{
+  "source": "construct_links.py",
+  "comparisons": 5,
+  "all_pass": true,
+  "items": [
+    {
+      "tag": "NEW01",
+      "local_ops": 29,
+      "word_len": 776
+    },
+    {
+      "tag": "NEW02",
+      "local_ops": 29,
+      "word_len": 450
+    },
+    {
+      "tag": "NEW03",
+      "local_ops": 37,
+      "word_len": 916
+    },
+    {
+      "tag": "NEW04",
+      "local_ops": 33,
+      "word_len": 850
+    },
+    {
+      "tag": "BLOCK",
+      "local_ops": 39,
+      "word_len": 880
+    }
+  ]
+}

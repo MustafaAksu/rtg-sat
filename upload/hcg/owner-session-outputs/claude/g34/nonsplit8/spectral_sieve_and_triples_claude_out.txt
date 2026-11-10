@@ -1,0 +1,10 @@
+allowed orders and pairs (exponents of zeta_120):
+  order 2: 1 pair(s) [(60, 60)]
+  order 3: 3 pair(s) [(40, 40), (40, 80), (80, 80)]
+  order 4: 1 pair(s) [(30, 90)]
+  order 6: 3 pair(s) [(20, 20), (20, 100), (100, 100)]
+  order 12: 2 pair(s) [(10, 70), (50, 110)]
+total types: 10
+triple lemma: 21600 unordered product-one triples of nonidentity roots of unity of order | 360: violations 0
+budget: t>=3 impossible for all d in 6..400 (analytic: 2A+2B >= (7d-17)/3, triple >= 2d-4)
+ALL PASS

@@ -1,0 +1,30 @@
+dim H^1_par = 6 ; |Z1|= 9 ; |B1|= 3
+9 curves, laminar: True , all proper (not whole sphere): True
+  pants outer=(1, 2) children=[(1, 1), (2, 2)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(3, 4) children=[(3, 3), (4, 4)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(5, 6) children=[(5, 5), (6, 6)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(7, 8) children=[(7, 7), (8, 8)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(9, 10) children=[(9, 9), (10, 10)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(11, 12) children=[(11, 11), (12, 12)] c=[1, 1, 0] dimFix=2 defect=0
+  pants outer=(1, 4) children=[(1, 2), (3, 4)] c=[0, 0, 0] dimFix=3 defect=0
+  pants outer=(5, 8) children=[(5, 6), (7, 8)] c=[0, 0, 0] dimFix=3 defect=0
+  pants outer=(5, 10) children=[(5, 8), (9, 10)] c=[0, 0, 0] dimFix=3 defect=0
+  pants outer=None children=[(1, 4), (5, 10), (11, 12)] c=[0, 0, 0] dimFix=3 defect=0
+number of pants = 10 ; (H0) all defects zero: True
+S Gram rank = 6
+curve [1,2] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [3,4] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [5,6] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [7,8] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [9,10] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [11,12] ord(C)=1 k=1 m=1 rank_K N=1 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [1,4] ord(C)=1 k=1 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [5,8] ord(C)=1 k=1 m=1 rank_K N=2 N^2=0:True Nhat=(ordC/(k m))N:True
+curve [5,10] ord(C)=1 k=1 m=1 rank_K N=3 N^2=0:True Nhat=(ordC/(k m))N:True
+(H1) all 81 products N_j N_k = 0: True
+(H2) dim_K I = 3; isotropic: True; all N_j kill I: True
+(H3) beta signatures (pos,neg,zero) on H: [(0, 1, 5), (0, 1, 5), (0, 1, 5), (0, 1, 5), (0, 1, 5), (0, 1, 5), (0, 2, 4), (0, 2, 4), (0, 3, 3)]
+(H3) common-sign semidefinite: True; sum signature (0, 3, 3) -> definite on H/I: True
+(H4) Q-span rank of the 9 N_j = 9
+Q-relation space dim = 0 ; relations: []
+tau N_j = 0 for all 9 curves: True

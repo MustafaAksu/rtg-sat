@@ -1,0 +1,19 @@
+Claude replay log — ChatGPT package HCG_D44_D45_INDEPENDENT_REVIEW_v0_1.zip (30 Oct 2026)
+Received (attachments, unchanged):
+16a01ac6e4e44262490778d31322797ad7a2b9e966fdf9158def486fe0350b35  1a6c3771-attachment.txt
+2d86c605e073c4efdaa2bf0a90545c54c96c11bc4c1f09b5c7efa4a6c3c644b5  22440a8d-HCG_D44_D45_CHATGPT_INDEPENDENT_CROSS_REVIEW_v0_1.md
+932e71ef2481b80b189dda55eccee3244f79e742bdae705b5bdd4283e67089e7  c272cad7-HCG_D44_D45_INDEPENDENT_REVIEW_v0_1.zip
+Extracted into cg_d44/x (own directory). Internal manifest:
+HCG_D44_D45_CHATGPT_INDEPENDENT_CROSS_REVIEW_v0_1.md: OK
+independent_qa.py: OK
+independent_qa_results.json: OK
+independent_qa_out.txt: OK
+replayed_budget.txt: OK
+H3_D43_WEIL_REVIEW_CLAUDE_v0_1.zip: OK
+Nested H3_D43_WEIL_REVIEW_CLAUDE_v0_1.zip = Claude bundle 103fac3c5dd8ba3d38af2809500c7815384ffbc92aac83dbebae62b319bee06e (byte-identical).
+replayed_budget.txt byte-identical to Claude d44_45_closure_claude_out.txt (10edc8f3...)
+Review .md inside ZIP identical to the attached .md (2d86c605...).
+independent_qa.py read (stdlib; reads the nested ZIP, writes JSON next to itself); run in working copy cg_d44/run with python3 -I:
+D44-D45 SOURCE/ARITHMETIC QA PASS; 68/68 output verdicts; r22 and r23 checks PASS
+stdout and independent_qa_results.json byte-identical to the shipped files
+Python: Python 3.13.16

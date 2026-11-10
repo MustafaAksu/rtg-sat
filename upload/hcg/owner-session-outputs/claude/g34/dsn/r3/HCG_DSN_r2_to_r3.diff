@@ -1,0 +1,59 @@
+--- ../r2/HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r2.md	2026-10-22 16:48:05.324200624 +0300
++++ HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r3.md	2026-10-22 17:49:02.289223270 +0300
+@@ -1,11 +1,11 @@
+-# HCG_HODGE_SESSION_DSN_v0.1 — DRAFT r2
++# HCG_HODGE_SESSION_DSN_v0.1 — DRAFT r3 (final acceptance candidate)
+ 
+ **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, and the G₃₄ boundary-witness programme)
+ **Date:** 22 October 2026
+ **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
+ **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.17 are an *external-claim audit module*. In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
+-**Document status:** DRAFT r2. Not PI-adopted. All PI-decision fields are blank.
+-**Revision base:** DRAFT v0.1 (`HCG_HODGE_SESSION_DSN_v0_1.md`, SHA-256 0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722; preserved unchanged). r2 implements the ChatGPT QA findings F01–F09 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`); see Appendix A.
++**Document status:** DRAFT r3 (final acceptance candidate). Not PI-adopted. All PI-decision fields are blank.
++**Revision base:** DRAFT r2 (`HCG_HODGE_SESSION_DSN_v0_1_DRAFT_r2.md`, SHA-256 959f6a036f8cacf530de427a3e26a9f7f2cb7fc6974e72071b183e961aa519dc; preserved unchanged), itself built from DRAFT v0.1 (`HCG_HODGE_SESSION_DSN_v0_1.md`, SHA-256 0818a709682bf537b27b51e5dd833a67dc5f376d43ee39f6fa89f693b3df3722; preserved unchanged). r2 implements the ChatGPT QA findings F01–F09 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`); see Appendix A.
+ **Supersedes:** none. This is the first consolidated DSN of the session. It consolidates, and does not replace, the immutable working records listed in §8 and Appendix A: charter v0.2, ledgers v0.1–v0.4 with addenda v0.4a–v0.4d, and all reports.
+ **Companion documents:** `HODGE_COMPLEX_GEOMETRY_STANDALONE_CHARTER_v0_2.md`; `VERIFICATION_LEDGER_v0_4.md` + addenda `v0_4a`–`v0_4d`; `SOURCE_MANIFEST.md`; the reports in §8.
+ **DSN Methodology:** DSN_METHODOLOGY_v1.3 (adopted 20 Sep 2026). The v1.4 amendment draft in the RTG project was not applied.
+@@ -664,7 +664,7 @@
+ 
+ ### §6.16 PO-6 — discriminant of the actual polarized factor `[EXT-CLAIM]` {#sec-po6}
+ 
+-`[EXT-CLAIM]` [import: hexagon:2610.00386v1 Prop 5.1, Lemma 2.4, §2.2 | RID unavailable] [assuming: Severn [386] Lemma 5.2 = [19, Lemma 6.2] (hexagon:2610.00246v2), not yet reviewed] [RID: HCG-EXT-PO6] (alias H3-PO-6; Replaces: HCG-THM-PO6 of v0.1, retyped) [provenance: PROPOSED — evidence: source inspected and sealed Claude review (`auditor_r2/H3_PROP51_POLARIZATION_BRIDGE_CLAUDE_SEALED_v0_1.md`); ChatGPT treats it as following conditionally from Prop 5.1 (no full review); third-family audit pending (R2 item 1, bridge part)]
++`[EXT-CLAIM]` [import: hexagon:2610.00386v1 Prop 5.1, Lemma 2.4, §2.2 | RID unavailable] [assuming: Severn [386] Lemma 5.2 (cocycle formula), whose proof [386] does not repeat but takes from [19, Lemma 6.2] (hexagon:2610.00246v2); that source proof not yet reviewed] [RID: HCG-EXT-PO6] (alias H3-PO-6; Replaces: HCG-THM-PO6 of v0.1, retyped) [provenance: PROPOSED — evidence: source inspected and sealed Claude review (`auditor_r2/H3_PROP51_POLARIZATION_BRIDGE_CLAUDE_SEALED_v0_1.md`); ChatGPT treats it as following conditionally from Prop 5.1 (no full review); third-family audit pending (R2 item 1, bridge part)]
+ 
+ disc H|_{A_σ(C)} = [det h] for C a point of S, and this class is constant on S (Lemma 2.4). The steps:
+ - H¹(C,K)_σ = V_σ ⊗ H¹_par(U_C, L′).
+@@ -675,7 +675,7 @@
+ 
+ Applied to W5, *if* this identification holds: d(S_W5) = [det(ϑS)] = [1]. The arithmetic part is HCG-ALG-W5-DISC; the identification is the open part.
+ 
+-Open dependency: Severn's Lemma 5.2 is his [19, Lemma 6.2] (hexagon:2610.00246v2), which is not yet reviewed (OPEN 5). The independent support is DW06 Thm 2.6 (§6.13).
++Open dependency: Severn [386] Lemma 5.2 relies, for its proof, on [19, Lemma 6.2] (hexagon:2610.00246v2): "This is [19, Lemma 6.2]; as a companion paper we rely on it and do not repeat its derivation" ([386] §5). That source proof is not yet reviewed (OPEN 5). The independent support is DW06 Thm 2.6 (§6.13).
+ 
+ ### §6.17 The component question and the transfer theorem `[THM]` {#sec-component}
+ 
+@@ -816,10 +816,16 @@
+ 
+ ## Appendix A — Version History
+ 
++### v0.1 DRAFT r3 — 22 October 2026 — DRAFT (final acceptance candidate)
++
++- **Basis [governance]:** ChatGPT QA of r2. It reproduced r2 byte-exactly from v0.1 with `make_r2.py` and found F01–F09 correctly addressed. It recommended one source-dependency wording change before acceptance. r2 is preserved unchanged (959f6a03…a519dc); r3 was built from the byte-verified r2 by `make_r3.py`.
++- **§6.16, §2 OPEN 5 context, Appendix A F01 bullet [evidence/provenance]:** Replaced the identity "Severn [386] Lemma 5.2 = [19, Lemma 6.2]" with the actual relation. [386] Lemma 5.2 is stated in [386], and its proof is taken from [19, Lemma 6.2] (quoted). No scientific content, grade or RID changed.
++- The r2 Appendix A entry below keeps its original wording for provenance.
++
+ ### v0.1 DRAFT r2 — 22 October 2026 — DRAFT
+ 
+ - **Basis [governance]:** ChatGPT independent QA of v0.1 (`HCG_DSN_v0_1_CHATGPT_INDEPENDENT_QA_v0_1.md`; disposition "accept with targeted corrections; not yet PI-adoption-ready"). v0.1 is preserved byte-unchanged (SHA-256 0818a709…b3df3722). r2 was built from that byte-verified input by `make_r2.py` (assertion-gated replacements), with an exact diff.
+-- **F01 [scientific scope]:** Separated the three-family-checked matrix invariant [det(ϑS)] = [1] from the identification d(S_W5) = [det(ϑS)] (Prop 5.1), which has only a sealed one-AI review. Updated: §0, §1, §5 (new row), §6.7, §6.14, §6.16, §6.17. HCG-THM-PO6 is retyped `[EXT-CLAIM]` as HCG-EXT-PO6 (Replaces recorded at the claim), with the unreviewed Lemma 5.2 / [19, Lemma 6.2] as an explicit `[assuming:]`.
++- **F01 [scientific scope]:** Separated the three-family-checked matrix invariant [det(ϑS)] = [1] from the identification d(S_W5) = [det(ϑS)] (Prop 5.1), which has only a sealed one-AI review. Updated: §0, §1, §5 (new row), §6.7, §6.14, §6.16, §6.17. HCG-THM-PO6 is retyped `[EXT-CLAIM]` as HCG-EXT-PO6 (Replaces recorded at the claim), with the unreviewed Lemma 5.2 (resting on [19, Lemma 6.2]) as an explicit `[assuming:]`.
+ - **F02 [scientific scope]:** Withdrew "det h … always norms" (§6.13), which was false as a general statement. Counterexample diag(1,1,1,1,−1,−1,−1,−2). Replaced by basis-independence of the norm class; the class is [1] only for the tuples computed. Recorded in Appendix B.
+ - **F03 [notation]:** ϑ = 1 + 2ω = √−3 restricted to L-G34 (ω = ζ₃). In L-DYN, ϑ = 2ζ₆ − 1.
+ - **F04 [scope/typing]:** Review states normalized to PROPOSED / CHECKED / THIRD-FAMILY CHECKED / ACCEPTED. CHECKED-CONDITIONAL → CHECKED with the condition in [assuming:]. THREE-FAMILY CHECKED → THIRD-FAMILY CHECKED (three families named). RECORDED → PROPOSED. REVIEWED (PO-6) → PROPOSED with an evidence note.
+@@ -897,4 +903,4 @@
+ 
+ ---
+ 
+-*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 DRAFT r2 · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted, not PI-adopted.*
++*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.1 DRAFT r3 (final acceptance candidate) · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted, not PI-adopted.*

@@ -1,0 +1,16 @@
+Claude replay log — ChatGPT package HCG_D43_TENSOR_AND_WEIL_PEER_REVIEW_v0_1.zip (30 Oct 2026)
+Received (attachments, unchanged):
+6826fe5bbe56620fbb2eb5926c4bba462c8bb04725f221969deb144ceafc6825  28bc9116-attachment.txt
+882fdec7dff02efedacd9d74dab3a99463c0dfb12fa97069652a7500cec149df  d13d871a-HCG_TENSOR_3XB_AND_D43_CHATGPT_PEER_REVIEW_v0_1.md
+f6d29124b27325f86d7005f775c2a26f943088a2f0faec57f99a81557d0401d5  14999a90-HCG_D43_TENSOR_AND_WEIL_PEER_REVIEW_v0_1.zip
+Extracted into cg_d43/x (own directory). Internal manifest:
+HCG_TENSOR_3XB_AND_D43_CHATGPT_PEER_REVIEW_v0_1.md: OK
+check_d43_analytic.py: OK
+d43_exact_results.json: OK
+SOURCE_H3_TENSOR_3x14_REVIEW_CLAUDE_v0_1.zip: OK
+Nested SOURCE zip = Claude bundle 3e2f3bd0db7bb93e1e76bb200177819f09e8a5d5989c49a430fc8fa572d2c4db (byte-identical).
+Review .md inside ZIP identical to the separately attached .md (882fdec7...).
+check_d43_analytic.py read (stdlib only, writes JSON next to itself) and run in working copy cg_d43/run with python3 -I:
+D43 ANALYTIC EXACT CHECK PASS
+d43_exact_results.json: regenerated output byte-identical to the shipped file
+Python: Python 3.13.16

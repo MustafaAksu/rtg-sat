@@ -1,0 +1,7 @@
+kept (abs. irreducible, field K, even parabolic dimension): 2374
+classes of prod a_j b_j by (n even?, odd primes, sign): rec(
+  ("nfalse_odd[ 2 ]_sign1") := 512,
+  ("nfalse_odd[ ]_sign1") := 614,
+  ("ntrue_odd[ 2 ]_sign1") := 594,
+  ("ntrue_odd[ ]_sign1") := 654 )
+exported examples: 12

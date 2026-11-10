@@ -1,0 +1,35 @@
+=== d = 44, Sum c = 96 ===
+  two-block r=22: E<=18, scalar-psi cost>=20 (Lemma B holds), reflection branch closes, finer [(4, 11, -22)] closed
+  imprimitive (k,r)=(4,11): E_k = -22 -> excluded
+  isotypic scalar kernel: r <= 4 < 6 -> excluded
+  factorwise tensor 2 x 22: 96 vs 98 -> excluded (budget)
+  factorwise tensor 4 x 11: 96 vs 97 -> excluded (budget)
+  tensor-induced: d < 256 -> excluded;  K-imprimitive: d < 50 -> excluded
+  Lemma S: 95 <= 96? True; self-dual Lemma C threshold 2*3 = 6; field-K threshold 2*5 = 10
+    A11      field Q: min c = 14 > 6 -> excluded by Lemma C
+    U5(2)    field Q: min c = 16 > 6 -> excluded by Lemma C
+    M11      field Q: min c = 20 > 6 -> excluded by Lemma C
+    L2(43)   field Q: min c = 22 > 6 -> excluded by Lemma C
+    SL2(43)  field Q: min c = 30 > 6 -> excluded by Lemma C
+  A_45 natural: Lemma F.  OPEN items: none
+=== d = 45, Sum c = 98 ===
+  imprimitive (k,r)=(3,15): E_k = -7 -> excluded
+  imprimitive (k,r)=(5,9): E_k = -29 -> excluded
+  isotypic scalar kernel: r <= 4 < 6 -> excluded
+  factorwise tensor 3 x 15: 98 vs 93 -> excluded (3 x b lemma)
+  factorwise tensor 5 x 9: 98 vs 107 -> excluded (budget)
+  tensor-induced: d < 256 -> excluded;  K-imprimitive: d < 50 -> excluded
+  Lemma S: 97 <= 98? True; self-dual Lemma C threshold 2*3 = 6; field-K threshold 2*5 = 10
+    A11      field Q: min c = 16 > 6 -> excluded by Lemma C
+    M11      field Q: min c = 24 > 6 -> excluded by Lemma C
+    M12      field Q: min c = 20 > 6 -> excluded by Lemma C
+    U4(2)    field K: min c = 24 > 10 -> excluded by Lemma C
+  A_46 natural: Lemma F.  OPEN items: none
+=== d = 46, Sum c = 100 ===
+  two-block r=23: E<=20, scalar-psi cost>=20 (Lemma B FAILS), reflection branch closes, finer [] closed
+  isotypic scalar kernel: r <= 4 < 6 -> excluded
+  factorwise tensor 2 x 23: 100 vs 101 -> excluded (budget)
+  tensor-induced: d < 256 -> excluded;  K-imprimitive: d < 50 -> excluded
+  Lemma S: 97 <= 100? True; self-dual Lemma C threshold 2*3 = 6; field-K threshold 2*5 = 10
+  A_47 natural: Lemma F.  OPEN items: ['two-block r=23 (Lemma B equality/failure)', 'almost-quasisimple candidates not screened']
+RESULT: every branch closes at d = 44 and d = 45; first open items at d = 46: ['two-block r=23 (Lemma B equality/failure)', 'almost-quasisimple candidates not screened']

@@ -1,0 +1,148 @@
+## RTG’den H3’e özgün bir katkı çıkarabilir miyiz?
+
+Evet. Ancak en güçlü fırsatın RTG’nin fiziksel iddialarını Hodge teorisine taşımakta değil, RTG’de geliştirdiğimiz matematiksel yöntemlerle H3’te henüz bulunmayan bir sonuç üretmekte olduğunu düşünüyorum.
+
+Mevcut belgelerde üç gerçek bağlantı var:
+
+1. Eisenstein geometrisi: RTG Dyadic'in altıncı kök simetrisi ve korunan kuadratik formu, H3'te \\(E=\mathbb C/\mathbb Z[\omega]\\) için kullandığımız başlangıç yapısını motive etti.
+2. Aritmetik rezonans ve iptal analizi: Dyadic/DZT çalışmalarında bir kanalın yapısal olarak bulunmamasını, farklı katkıların tam olarak birbirini götürmesinden ayırıyoruz.
+3. Exact temsil ve integral kafes yöntemleri: RTG'den hareketle geliştirdiğimiz H1/H2 çalışması, Eisenstein eğrilerinin çarpımları için açık divizör bazları ve tam sayı kohomoloji hesapları verdi.
+
+[RTG-OWNER: Dyadic v6.4.20 §6.11; DZT v0.8 §§1–2] İlk iki yapının RTG belgelerinde gerçekten matematiksel karşılığı var. Ancak bunların \\(G\_{34}\\) monodromisine uygulanması henüz kanıtlanmış bir aktarım değil.
+
+Benim birinci önceliğim, ikinci bağlantıyı yeni bir Hurwitz monodromisi rank-kriterine dönüştürmek olurdu. Çünkü W5, W6 ve W7 bize bunu sınayacak exact örnekleri zaten sağlıyor.
+
+## En güçlü aday: H4'ün arkasındaki yapısal mekanizma
+
+[SESSION-ALG — burada çıkarılan temel lineer-cebir gözlemi]
+
+W5'in başarısında dikkat çekici bir yapı var. \\(I=\sum_j\operatorname{im}N_j\\) dört boyutlu, maksimal izotropik olduğunda, \\(U=V/I\\) üzerinde
+
+\\[ \beta_j(x,y)=S(x,N_jy) \\]
+
+bir Hermitik form tanımlıyor. Böylece nilpotent operatörleri Hermitik formlara gönderen doğrusal ve birebir bir eşleme elde ediyoruz.
+
+\\[ N_j\longmapsto \beta_j\in\operatorname{Herm}\_4(K). \\]
+
+Burada \\(K=\mathbb Q(\omega)\\) olduğundan
+
+\\[ \dim\_{\mathbb Q}\operatorname{Herm}\_4(K) =4+2\binom42 =\boxed{16}. \\]
+
+Dolayısıyla H2/H3 koşulları altındaki her böyle tanık için \\(\mathbb Q\\)-rankının üst sınırı 16. Bu, W5'te bulunan 17 operatör arasındaki bağıntının neden kaçınılmaz olduğunu açıklıyor. W5 bu 16 boyutun tamamını dolduruyor.
+
+[SESSION-ALG] Önerilen yeni nesne: H4 obstruction space
+
+Her pants ayrıştırması \\(\mathcal T\\) için 17 Hermitik formun koordinatlarından bir matris oluşturalım:
+
+\\[ C\_{\mathcal T}\in\operatorname{Mat}\_{16\times17}(\mathbb Q). \\]
+
+Ardından
+
+\\[ \mathcal O\_{\mathcal T} =\operatorname{coker}(C\_{\mathcal T}) \\]
+
+tanımlayalım. Bu, tam olarak elde edilemeyen Hermitik yönleri ölçüyor.
+
+| Örnek       | H4 rank | \\(\dim\_{\mathbb Q}\mathcal O\_{\mathcal T}\\) |
+| ----------- | ------- | ----------------------------------------------- |
+| W5 balanced | 16      | 0                                               |
+| W6 balanced | 15      | 1                                               |
+| W6 comb     | 16      | 0                                               |
+| W7 balanced | 15      | 1                                               |
+| W7 comb     | 16      | 0                                               |
+
+Rank verileri önceki W5/W6/W7 hesaplarından; obstruction space tanımı bu değerlendirmede öneriliyor.
+
+Buradaki yeni araştırma sorusu şu:
+
+Eksik kalan bir Hermitik yönü, 8×8 monodromi matrislerini baştan hesaplamadan, kök konfigürasyonu ve pants ağacının birleşik aritmetiğinden önceden belirleyebilir miyiz?
+
+Bu tam olarak RTG'nin rezonans çalışmalarındaki yaklaşımı andırıyor: bir kanalın hiç oluşmamasıyla, oluşan katkıların aritmetik olarak birbirini götürmesini ayırmak.
+
+Somut test şu olur:
+
+- W6 ve W7'nin balanced ayrıştırmalarındaki rank-15 durumlarında eksik olan tek Hermitik yönü exact olarak bulmak.
+- Aynı tuple'ın comb ayrıştırmasında bu yönün hangi eğri veya eğri kombinasyonuyla tamamlandığını belirlemek.
+- W5 balanced'in rank-16 başarısıyla karşılaştırmak.
+- Sonrasında bir H4 rank seçilim kuralı önermek ve daha önce kullanılmamış tuple'lar üzerinde kör test etmek.
+
+Bu çalışma başarılı olursa yalnızca yeni bir sertifika daha üretmeyiz; neden bazı sınır dejenerasyonlarının baskınlık verdiğini açıklayan bir kriter geliştirmiş oluruz. Bunun genel Hurwitz teorisinde yeni olup olmadığını ise ayrıca literatürle karşılaştırmamız gerekir.
+
+## Diğer iki aday ve öncelik sıralamam
+
+| RTG kaynaklı yaklaşım                            | H3'te hedeflenen katkı                                                                                  | Potansiyel                             |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| 1. DZT / Dyadic rezonans seçilim yöntemleri      | \\(G\_{34}\\) için H4 rank kaybının yapısal açıklaması ve yeni tanıkları önceden tahmin eden kriter     | En yüksek araştırma önceliği           |
+| 2. Eisenstein integral kafesleri ve NS hesapları | \\(E^6\\) üzerinde integral Hodge sınıfları, divizör ürünlerinin doygunluğu ve olası aritmetik engeller | Güçlü, bağımsız matematiksel yan sonuç |
+| 3. Dyadic merkezleyici ve \\(\mu_6\\) simetrisi  | Hodge temsillerindeki merkezî skalerlerin yeni bir karşılaştırma yöntemi                                | Şimdilik düşük; açık köprü yok         |
+
+### İkinci aday neden ilginç?
+
+[SESSION-ALG — araştırma önerisi]
+
+H1/H2 çalışmalarında RTG'den alınan altıncı kök matrisiyle Eisenstein eliptik eğrisini kurduk. \\(E^4\\) için integral divizör bazlarının doygunluğunu doğruladık. \\(E^6\\) içinse rasyonel Hodge uzayının boyutu 400 ve üçlü divizör ürünlerinin rankı 400 olarak hesaplandı.
+
+Burada sınanabilecek farklı bir soru var:
+
+\\[ \frac{H^{3,3}(E^6)\cap H^6(E^6,\mathbb Z)} {\langle\text{üçlü divizör ürünleri}\rangle\_{\mathbb Z}} \\]
+
+grubunun torsiyon yapısı nedir?
+
+Rasyonel rank eşitliği, bu bölümün sıfır olduğunu garanti etmez. Eğer sıfır değilse, integral düzeyde ek bir ayrım elde ederiz. Bu, tek başına integral Hodge varsayımının ihlali anlamına gelmez; çünkü divizör ürünü olmayan başka cebirsel çevrimler bulunabilir.
+
+Özellikle 3-asalındaki davranış, Eisenstein kafesinin aritmetiği nedeniyle araştırmaya değer.
+
+Ancak elliptik eğri kuvvetlerinin rasyonel Hodge teorisi zaten klasik olarak iyi çalışılmış bir alan.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.gdasilvajr.com\&sz=32)
+
+gdasilvajr.com
+
+&#x20;Bu çalışmanın özgünlüğü, doğrudan yeni bir Hodge teoremi ilan etmekten çok tam integral sertifika veya yeni bir aritmetik ayrım üretmesinde olabilir.
+
+
+
+### Üçüncü adayda dikkatli olmalıyız
+
+[RTG-OWNER: Dyadic v6.4.20 §§6.14–6.17]
+
+RTG'de \\(T^6\\)'nın çekici yerel dinamiği ve merkezleyicinin mümkün lineer parçalarının \\(\mu_6\\) olması gerçekten kanıtlanmış yapılar.
+
+Fakat H3'teki \\(G\_{34}\\) merkezinin \\(\mu_6\\) olmasıyla bu sonuç arasında henüz bir matematiksel özdeşleştirme yok.
+
+Üstelik dyadik haritanın değişken Jacobian determinantı, onu Hodge monodromisinin polarizasyon koruyan doğrusal eylemiyle doğrudan aynı nesne olarak görmemize izin vermiyor.
+
+Bu nedenle R6b/R7'yi G34-D'nin ispatına eklemeyi önermiyorum. Bu, kanıtı güçlendirmek yerine ispatlanmamış bir köprü oluşturur.
+
+## Önerdiğim çalışma düzeni
+
+Ana H3 kanıtını değiştirmeyelim
+
+Denetçi Round 2 Priority A/B'yi tamamlasın. Claude'nun mühürlü polarizasyon notu açıklanmasın. W5'in gerçek polarize faktörüne ait diskriminant bağımsız teyit edilmeden o halka kapanmış sayılmasın.
+
+Ayrı bir H3–RTG araştırma kolu açalım
+
+Geçici başlık: Arithmetic Selection Rules for Hurwitz Monodromy Rank.
+
+İlk teslim, W6/W7 balanced ayrıştırmalarındaki eksik Hermitik yönlerin exact hesabı ve comb ayrıştırmasının bunları nasıl tamamladığının gösterilmesi olsun.
+
+İkinci teslim, yeni tuple'larda önceden sınanabilecek bir rank kriteri olsun. Sadece geçmiş örnekleri açıklayan bir uyarlama yeterli sayılmasın.
+
+Integral Eisenstein çalışmasını ikinci hedef yapalım
+
+\\(E^6\\)'nın tam sayı Hodge kafesinde Smith normal form ve doygunluk hesapları yapalım. Sonucu önceden varsaymadan sıfır bölüm ile sıfır olmayan bölüm olasılıklarını eşit ciddiyetle test edelim.
+
+Bir operasyonel not: W6 ve W7'nin ChatGPT çapraz denetimi zaten tamamlandı. `H3_G34_W6_W7_CHATGPT_INDEPENDENT_REVIEW_v0_1.md` raporunda her iki tanık için 17/17 braid eşleşmesi, H2/H3 ve \\(\mathbb Q\\)-rank 16 doğrulandı. Claude'ya bu raporu iletmek yeterli; aynı çalışmayı tekrarlamak gerekmiyor. Balanced rank-15 sonuçlarının bağımsız yeniden üretimi ise ayrı bir görev olarak kalıyor.
+
+## Bilimsel hedef
+
+Bence hedefi şu şekilde koymalıyız:
+
+> RTG'nin aritmetik rezonans ve seçilim yöntemlerinden hareketle, Hurwitz monodromisinde hangi sınır dejenerasyonlarının tam period-map rankı verdiğini açıklayan ve yeni örnekler üzerinde doğrulanabilir bir matematiksel kriter geliştirmek.
+
+Bu, RTG bağlantısını içerik bakımından gerçek kılar.
+
+Başarılı olursa elimizde Severn'in teoremini yalnızca teyit eden bir çalışma değil, onun kullandığı finite-certificate yaklaşımını açıklayan, geliştiren veya genelleştiren ayrı bir sonuç olabilir.
+
+Fakat yeni bir teorem bulunduğunu söylemek için üç koşulu aramalıyız: tam ispat, önceden kullanılmamış örneklerde başarılı öngörü ve önceki literatürden gerçekten farklı bir sonuç.
+
+Benim seçimim: H4 rank-seçilim mekanizması. Hem RTG'deki en olgun exact yöntemlerimizle uyumlu, hem W5/W6/W7 verileriyle hemen sınanabilir, hem de H3'ün aktif araştırma sınırına doğrudan temas ediyor. RTG bağlantısını bilimsel açıdan değerli yapan da bu olur; yalnızca aynı matematiksel sembollerin iki projede bulunması değil.

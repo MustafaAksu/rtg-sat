@@ -1,0 +1,67 @@
+## ChatGPT’nin bağımsız literatür incelemesi tamamlandı
+
+**[SESSION — 23 Ekim 2026]** EDGEFLUX teoreminin yeniliğini ve devam edilebilecek araştırma alanlarını inceleyen raporumu hazırlayıp SHA-256 ile sabitledim. **Claude’nun bağımsız literatür raporunu görmedim.**
+
+İki araştırmanın birbirini yönlendirmemesi için teslimi iki ayrı pakete böldüm: **Mustafa’ya özel bulgular paketi** ve **Claude’ya gönderilecek nötr görev paketi**.
+
+## 1. Mustafa için: bağımsız inceleme raporu
+
+**:chatgpt-content-reference{index="1"}[ChatGPT literatür raporu — Markdown](sandbox:/mnt/data/HCG_EDGEFLUX_LITERATURE_CHATGPT_20261023/HCG_EDGEFLUX_LITERATURE_REVIEW_CHATGPT_SEALED_v0_1.md)**
+
+**HCG_EDGEFLUX_CHATGPT_INDEPENDENT_LITERATURE_SEALED_v0_1.zip[Tam inceleme paketi — ZIP](sandbox:/mnt/data/HCG_EDGEFLUX_CHATGPT_INDEPENDENT_LITERATURE_SEALED_v0_1.zip)**
+
+Raporun SHA-256 değeri:
+
+```text
+47f6fc1eb651b3c5d1671bb7f7dd418cf94c526004d3ab784696e7e93c3b72dd
+```
+
+**[ALG — inceleme kapsamı]** On birincil çalışmanın ilgili tam-metin bölümlerini ve bir güncel çalışmanın yalnız özetini inceledim. Bunları, EDGEFLUX’un farklı iddialarıyla ayrı ayrı karşılaştırdım. On makalenin bütün ispatlarını okuduğumu iddia etmiyorum; **hangi bölümün gerçekten okunduğu kaynak manifestinde yazılı**.
+
+Raporda şu ayrımlar bulunuyor:
+
+| İnceleme ekseni | Değerlendirilen soru |
+|---|---|
+| Önceki matematik | Cup, braid ve Picard–Lefschetz altyapısında neler zaten mevcut? |
+| Tam teorem karşılaştırması | Önceki sonuçlardan bizim \(L,\tau,\Phi\) yapımız doğrudan çıkar mı? |
+| Olası özgün katkı | Açık kök-bağıntı indirgemesi ve ağaç seçimi, önceki kapsamdan nasıl ayrılıyor? |
+| Hesaplama katkısı | H4’ü monodromi üretmeden hesaplamanın doğruluk ve performans değeri nedir? |
+| Devam yönleri | Hangi genellemeler veya yapısal rank kriterleri somut bir yeni sonuç üretebilir? |
+
+**[OPEN — yenilik sınırı]** Dört yakın öncülün tam metni bu turda incelenemedi. Bunları gizlemek yerine, yenilik kararını etkileyebilecek açık kaynak yükümlülükleri olarak kaydettim. Dolayısıyla rapor, “eşdeğer ifade bulamadım” ile “bu sonuç yenidir” hükümlerini birbirine dönüştürmüyor.
+
+Pakette ayrıca literatürden hareketle geliştirdiğim **ayrı bir PROPOSED teknik not** var. Bunlar literatür kaynaklarına atfedilen sonuçlar veya yeni benimsenmiş HCG teoremleri değil; ikinci bağımsız inceleme bekleyen araştırma önerileri.
+
+**Bu paketi Claude’ya henüz göndermeyelim.**
+
+## 2. Claude’ya şimdi gönderilecek paket
+
+**HCG_EDGEFLUX_CLAUDE_INDEPENDENT_REVIEW_REQUEST_v0_1.zip[Claude — bağımsız literatür taraması görev paketi](sandbox:/mnt/data/HCG_EDGEFLUX_CLAUDE_INDEPENDENT_REVIEW_REQUEST_v0_1.zip)**
+
+Bu paket yalnızca ortak EDGEFLUX teorem notunu, nötr araştırma sözleşmesini ve hash manifestini içeriyor. **Benim bulduğum özel kaynakları, yenilik değerlendirmemi veya yeni türetmelerimi içermiyor.**
+
+Şu mesajla iletebilirsin:
+
+> **EDGEFLUX için bağımsız literatür incelemesine başlayalım.**
+>
+> Ekli paketteki görev metnini ve ortak teorem notunu kullan. ChatGPT kendi literatür raporunu tamamladı ve hash ile Mustafa’ya teslim etti; senin ilk raporun tamamlanana kadar içeriği paylaşılmayacak.
+>
+> Her iddia için önceki literatürle tam eşdeğerlik, açık özel-durum ilişkisi, kesin kapsam farkı veya erişim eksikliğini ayır. Yalnız aramada bulunmamasından yenilik sonucu çıkarma.
+>
+> Devam edilecek en değerli üç araştırma problemini; matematiksel hedef, yakın öncül, kapanış ölçütü ve karşıörnek testiyle öner.
+>
+> Raporunu, kaynak/okuma manifestini ve SHA-256 değerlerini önce Mustafa’ya teslim et. İki ilk rapor da sabitlendikten sonra karşılıklı karşılaştırmaya geçeceğiz.
+
+## 3. İki rapor tamamlanınca karar nasıl verilecek?
+
+**[ALG — değerlendirme yöntemi]** Önce kaynak sayısını değil, **aynı iddia için gösterilen teorem ve hipotez dönüşümlerini** karşılaştıracağız. Ardından her katkıyı şu üç gruptan birine yerleştireceğiz:
+
+- Önceden bilinen sonuç veya açık bir özel durum.
+- Yeni olduğu henüz gösterilmemiş, fakat yararlı açık indirgeme/algoritma.
+- Önceki sonuçlardan ayrıldığı gerekçelendirilmiş ve geliştirmeye değer aday.
+
+Bundan sonra ortak araştırma önceliğini belirlemek anlamlı olacak. **Matematiksel doğruluk, yayın önceliği ve hesaplama faydası ayrı kararlar olarak kalmalı.**
+
+Benimsenmiş HCG DSN v0.1, PO-6 ve Severn Theorem 6.2’nin statüleri bu taramayla değişmedi. Hodge denetçisinin Priority A/B çalışması da ayrı ve kör kalıyor.
+
+**Şimdiki somut işlem: Claude’ya yalnızca nötr görev paketini gönderelim; iki bağımsız rapor sabitlenmeden bulguları karşılıklı açmayalım.**

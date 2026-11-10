@@ -1,0 +1,5 @@
+(1) 40 random K-unitary g (r = 2..3, diagonal h0 with non-norm entries): b(g^-1) = conj b(g) in 40/40, [a(g)a(g^-1)] = [1] in 40/40; pair products all norms
+(2) g' = u g^-1 u^-1, u random K-isometry: pair product a norm in 40/40
+(3) control: s1, s2 order-2 reflections (C-conjugate, both self-inverse), root norms 1 and 2: a*b = 2, 4; product class [2] (not [1])
+(4) D = 1..3000: integral representability x^2 - xy + y^2 = D agrees with the inert-prime parity criterion: True
+ALL PASS

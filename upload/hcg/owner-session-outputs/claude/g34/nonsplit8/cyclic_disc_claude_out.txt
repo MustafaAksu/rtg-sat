@@ -1,0 +1,10 @@
+C6 example: m=6 exps=[2, 2, 2, 2, 2, 3, 4, 4, 4, 5] dim H^1_par=8 det_K h=1/2 signature=(4, 4, 0) class=[2]
+--- (L) census for C6 example
+  H' order 3, chi order 3: q=0 s=17 h=15 exps={1: 10, 2: 7} simple=False admissible=False
+  H' order 6, chi order 3: q=0 s=9 h=7 exps={1: 6, 2: 3} simple=False admissible=False
+  H' order 6, chi order 6: q=0 s=10 h=8 exps={2: 5, 3: 1, 4: 3, 5: 1} simple=False admissible=False
+  admissible suppliers: NONE -> L = 0, (L) fails
+C3 control: m=3 exps=[1, 1, 1, 1, 1, 2, 2, 2, 2, 2] dim H^1_par=8 det_K h=1 signature=(4, 4, 0) class=[1]
+--- (L) census for C3 control
+  H' order 3, chi order 3: q=0 s=10 h=8 exps={1: 5, 2: 5} simple=True admissible=True
+  admissible suppliers: [(3, 3)]

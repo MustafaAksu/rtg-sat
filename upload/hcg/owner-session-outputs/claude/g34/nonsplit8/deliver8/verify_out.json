@@ -1,0 +1,157 @@
+{
+  "gap_version": "4.12.1",
+  "ctbllib_version": "1.3.7",
+  "characters_checked": 20,
+  "records": [
+    {
+      "name": "3.O7(3)",
+      "d": 27,
+      "row_id": 59,
+      "min_moving_rank": 6,
+      "min_projective_moving_rank": 6,
+      "outer_character_not_fixed": true,
+      "fusion_witness": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "3.O7(3)",
+      "d": 27,
+      "row_id": 60,
+      "min_moving_rank": 6,
+      "min_projective_moving_rank": 6,
+      "outer_character_not_fixed": true,
+      "fusion_witness": [
+        1,
+        2
+      ]
+    },
+    {
+      "name": "3.G2(3)",
+      "d": 27,
+      "row_id": 24,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "3.G2(3)",
+      "d": 27,
+      "row_id": 25,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "3.G2(3)",
+      "d": 27,
+      "row_id": 26,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "3.G2(3)",
+      "d": 27,
+      "row_id": 27,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "U4(2)",
+      "d": 30,
+      "row_id": 12,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "U4(2)",
+      "d": 30,
+      "row_id": 13,
+      "min_moving_rank": 12,
+      "min_projective_moving_rank": 12
+    },
+    {
+      "name": "2.U4(2)",
+      "d": 36,
+      "row_id": 28,
+      "min_moving_rank": 18,
+      "min_projective_moving_rank": 18
+    },
+    {
+      "name": "2.U4(2)",
+      "d": 36,
+      "row_id": 29,
+      "min_moving_rank": 18,
+      "min_projective_moving_rank": 18
+    },
+    {
+      "name": "3_2.U4(3)",
+      "d": 36,
+      "row_id": 21,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "3_2.U4(3)",
+      "d": 36,
+      "row_id": 22,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "6.A7",
+      "d": 36,
+      "row_id": 39,
+      "min_moving_rank": 24,
+      "min_projective_moving_rank": 18
+    },
+    {
+      "name": "6.A7",
+      "d": 36,
+      "row_id": 40,
+      "min_moving_rank": 24,
+      "min_projective_moving_rank": 18
+    },
+    {
+      "name": "6.L3(4)",
+      "d": 36,
+      "row_id": 39,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "6.L3(4)",
+      "d": 36,
+      "row_id": 40,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "U4(2)",
+      "d": 40,
+      "row_id": 14,
+      "min_moving_rank": 20,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "U4(2)",
+      "d": 40,
+      "row_id": 15,
+      "min_moving_rank": 20,
+      "min_projective_moving_rank": 16
+    },
+    {
+      "name": "S8(3)",
+      "d": 41,
+      "row_id": 2,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 13
+    },
+    {
+      "name": "S8(3)",
+      "d": 41,
+      "row_id": 3,
+      "min_moving_rank": 16,
+      "min_projective_moving_rank": 13
+    }
+  ]
+}

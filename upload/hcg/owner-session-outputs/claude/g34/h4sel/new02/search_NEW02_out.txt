@@ -1,0 +1,7 @@
+NEW02 dim L = 4
+cuts: 170  pair-aligned: 45
+Q-rank unprojected pair-aligned cuts: 15
+Q-rank projected, all cuts: 16
+H0-valid triangles: 1138 of 1140
+H0-valid triangulations of the 20-gon: 474632697
+rank histogram over 3000 uniform H0-valid triangulations: {6: 11, 7: 58, 8: 191, 9: 487, 10: 751, 11: 755, 12: 515, 13: 193, 14: 38, 15: 1}

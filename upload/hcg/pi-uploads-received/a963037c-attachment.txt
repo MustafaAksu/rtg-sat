@@ -1,0 +1,185 @@
+## P2/P3 denetimi olumlu; NEW01 için karma ağaçta rank 16 bulundu
+
+**[ALG — yeni SESSION hesabı; bağımsız peer denetimi bekliyor]** NEW01’in köklerini ve sırasını değiştirmeden, çiftleri korumayan bir pants ağacı buldum. Operatörleri temel Artin hareketlerinden yeniden hesapladım: **H0–H4’ün tamamı geçti.**
+
+Bu tanığı `NEW01-MIXED-01` adıyla **PROPOSED** kaydettim. Önceki sonuçla çelişmiyor: rankın en fazla 15 olduğu 1.430 ağaç, **bütün çift eğrilerini içeren dar sınıftı**. Yeni ağaç o sınıfın dışında.
+
+Ayrıca raporun §6’sındaki mekanizma yorumunu daraltan bir sonuç var: **W5 ve NEW01’in karma aralıkları, aslında aynı \(\tau\) üzerinden çarpanlara ayrılmaya devam ediyor.**
+
+## 1. P2/P3 ve A2/A3: yeniden üretim ve ispat kontrolü
+
+**[ALG — kaynak betiklerinin yeniden çalıştırılması]** Paketteki dokuz dosyanın hash’ini doğruladım. Dört test betiğini yalnız dosya yollarını değiştirerek çalıştırdım. **Dört çıktı dosyasının tamamı, Claude’nun teslim ettiği çıktılarla bayt düzeyinde aynı.**
+
+| Test | Yeniden çalıştırma |
+|---|---|
+| P2/P3 ana testleri | Bildirilen bütün sonuçlar eşleşti; hata sayısı 0 |
+| Rastgele kosikllerle yanlış-ters kontrolü | Eşleşti |
+| P2 toplam görüntü hesabı | Eşleşti |
+| Kesit notunun A2/A3 sonuçları | W5 ve NEW01’de eşleşti |
+
+**[ALG — ispat incelemesi]** Genel ünitar durumda teleskop adımı doğru:
+
+\[
+(1-g_i^{-1})\alpha_i=-g_i^{-1}c_i,
+\qquad
+G_{i+1}=g_i^{-1}(G_i+c_i),
+\]
+
+\[
+h(G_i+\alpha_i,(1-g_i)w)=h(G_i-G_{i+1},w).
+\]
+
+Buradan P2’nin ters-çift formülü ve P3’ün
+
+\[
+\boxed{
+S(x,\widehat N_e y)
+=-d_e\,h(\Pi_{C_e}u_x(c_e),\Pi_{C_e}u_y(c_e)),
+\qquad d_e=\operatorname{ord}(C_e)
+}
+\]
+
+özdeşliği çıkıyor. Katsayı \(d_e\), \(d_e^2\) değil. İlgili parabolik eşleşmenin nondejenere olması ve belirtilen cup/twist konvansiyonları korunmalı.
+
+**İki küçük denetim notu:**
+
+- Betikte `order(...,cap=500)` sonucunun `None` olması tek başına sonsuz mertebe ispatı değildir. İki örneğin izlerini ayrıca hesapladım: \(1+\frac53w\) ve \(\frac53+\frac13w\). Bunlar Eisenstein tamsayısı olmadığından matrislerin sonsuz mertebeli olduğu gerçekten doğrulanıyor.
+- Bazı kaynak testleri başarısızlığı yazdırıyor, fakat işlem çıkış kodunu değiştirmiyor. Hazırladığım tekrar sürücüsü, **çıktıların tamamını dondurulmuş sonuçlarla karşılaştırarak** bu sınırlamayı gideriyor.
+
+P2/P3 ve kesit notunun A2/A3 sonuçları için **CHECKED, belirtilen cebirsel kapsamda** değerlendirmesine katılıyorum. Yenilik ve geometrik gerçekleşme ayrı kalıyor.
+
+## 2. §6 için önemli düzeltme: karma aralık, \(\tau\)’nun dışına çıkmak zorunda değil
+
+**[ALG — yeni türetim; Claude kontrolü bekliyor]**
+
+W5 ve NEW01’in sabit tuple’ları
+
+\[
+(s_1,s_1,\ldots,s_{10},s_{10})
+\]
+
+biçiminde ve kök doğruları birbirinden farklı. Bir ardışık aralık \(e\), tam çiftler \(J(e)\) ile en fazla iki kısmi uç çifti içerir.
+
+Uçlarda iki farklı yansıma varsa,
+
+\[
+s_i s_jx=x
+\Longrightarrow
+(1-s_i)x=(1-s_j)x.
+\]
+
+Sağ ve sol taraf farklı kök doğrularında bulunduğundan ikisi de sıfırdır. Dolayısıyla
+
+\[
+\operatorname{Fix}(s_i s_j)
+=\operatorname{Fix}(s_i)\cap\operatorname{Fix}(s_j).
+\]
+
+Bunun sonucu, uç projektörünün kısmi uç kosikllerini öldürmesidir:
+
+\[
+\boxed{
+\Pi_{C_e}u(c_e)=\Pi_{C_e}F_{J(e)}(\tau u).
+}
+\]
+
+P3 böylece
+
+\[
+\boxed{
+S(x,\widehat N_e y)
+=-d_e\,h\!\left(
+\Pi_{C_e}F_{J(e)}(\tau x),
+\Pi_{C_e}F_{J(e)}(\tau y)
+\right)
+}
+\]
+
+şeklini alır. **Aynı \(\tau\) korunur ve \(\tau\widehat N_e=0\).**
+
+Bunu Claude’nun motorundan ayrı olarak, önceki ChatGPT Artin motoruyla W5 ve NEW01’in yedişer karma aralığında kontrol ettim: **896/896 matris girdisi eşleşti; 14 aralığın tamamında \(\tau N_e=0\).**
+
+Bu nedenle:
+
+> Karma ağaçların sağladığı yeni olanak, burada ortak 16 boyutlu \(\operatorname{Herm}(L)\) uzayından çıkmak değil; **projektörlü formları ve farklı uyumlu eğri seçimlerini kullanabilmek**.
+
+Genel P3 verisinde ortak bir \(\tau\) bulunmayabileceği uyarısı hâlâ doğru. Ancak W5/NEW01’in farklı rank-bir köklere sahip eşli yapısında daha güçlü sonuç geçerli. Tekrarlanan kök doğruları veya kesişen yüksek-rank hareket uzayları için bu argümanı otomatik kullanmıyoruz.
+
+## 3. NEW01-MIXED-01: yeni exact tanık
+
+**[ALG cert — PROPOSED]** Kullandığım 17 aralık:
+
+```text
+[1,2], [3,4], [3,19], [5,16], [5,17], [5,18], [5,19],
+[6,14], [6,16], [7,8], [7,14], [9,10], [9,12], [9,14],
+[11,12], [13,14], [15,16].
+```
+
+Bunlar aynı 20 noktalı işaretlemede laminar bir pants ayrıştırması oluşturuyor. Başlangıçtaki on çift eğrisinin yalnız **yedisi** korunuyor.
+
+Adayı projektörlü kök formlarıyla sınırlı bir aramada buldum. Ardından tahmin formülünü \(N_e\)’nin tanımı olarak **kullanmadan**, bütün twist’leri temel Artin hareketlerinden yeniden kurdum.
+
+| Denetim | Exact sonuç |
+|---|---|
+| H0 | **18/18** pants katkısı sıfır |
+| H1 | **289/289** \(N_iN_j=0\) |
+| H2 | \(\dim_K I=4\); izotropik; bütün \(N_jI=0\) |
+| Ortak uzay | \(I=\ker\tau\) |
+| H3 | Bütün \(\beta_j\) negatif yarı-belirli; toplam negatif belirli |
+| H4 | **\(\mathbb Q\)-span rankı 16** |
+| En küçük tuple dönüş kuvvetleri | Beş eğride **2**, diğer on ikisinde **1** |
+| Semisimple mertebeler \(m_j\) | Hepsinde **1** |
+
+Toplam \(\beta\)’nın exact önde gelen asal minörleri:
+
+\[
+-93,\quad 9882,\quad -443205,\quad 30092715.
+\]
+
+Listelenen normalizasyondaki tek bağıntı:
+
+\[
+\boxed{N_{[3,19]}=2N_{[1,2]}.}
+\]
+
+**Bu, NEW01 için önerdiğiniz karma-ağaç sorusuna olumlu bir sonlu tanık veriyor.** Henüz Claude tarafından tekrar üretilmediği için statüsü PROPOSED. Genel bir varlık teoremi, yeni bir kör test veya bağımsız geometrik baskınlık denetimi olarak sunulmamalı.
+
+Seri-sınıf sınırı da yanlışlanmadı: onun ağaç sayımı, bütün çift eğrilerinin bulunduğu sınıfa aitti.
+
+## 4. Prop. 4.2, \(k_j>1\) sınırlarını kabul ediyor
+
+**[SOURCE CHECK]** Severn’in §4 tanımında en küçük tuple dönüş kuvveti \(k_j\), ardından semisimple mertebe \(m_j\) açıkça kullanılıyor. Metnin kendi tanığında da üç eğri için \(k_j=2\) bulunuyor. Dolayısıyla karma sınırların \(k_j>1\) olması, Prop. 4.2’nin kapsamı dışında kalmalarına neden olmuyor. [Hexagon Math](https://hexagonmath.org/pdf/2610.00387v1)
+
+Ama şu ayrımı korumak gerekiyor:
+
+\[
+d_j=\operatorname{ord}(C_j)
+\quad\text{ile}\quad
+k_j=\text{en küçük tuple dönüş kuvveti}
+\]
+
+genelde aynı sayı değildir. Uygun normalizasyonda P3 operatörü ile makaledeki logaritma arasında
+
+\[
+\widehat N_j=\frac{d_j}{k_jm_j}N_j
+\]
+
+bulunur. Pozitif çarpanlar rankı ve ortak işareti korur; **katsayıları sabit doğrusal bağıntı bazını ise yeniden ölçeklemeden korumaz**.
+
+Yeni NEW01 tanığında \(d_j=k_j\) ve \(m_j=1\); bu yüzden bu fark oluşmuyor.
+
+## 5. Dosyalar ve sonraki iş
+
+**:chatgpt-content-reference{index="2"}[Tam çapraz inceleme raporu](sandbox:/mnt/data/HCG_P2P3_CHATGPT_CROSS_REVIEW_v0_1.md)**
+
+**HCG_P2P3_CHATGPT_CROSSCHECK_v0_1.zip[Kaynaklar, betikler, girdiler, exact çıktılar ve tekrar sürücüsü — ZIP](sandbox:/mnt/data/HCG_P2P3_CHATGPT_CROSSCHECK_v0_1.zip)**
+
+**:chatgpt-content-reference{index="4"}[NEW01-MIXED-01 exact sertifikası — JSON](sandbox:/mnt/data/HCG_NEW01_MIXED_01_CERTIFICATE_v0_1.json)**
+
+**:chatgpt-content-reference{index="5"}[HCG v0.2 için önerilen ledger eki](sandbox:/mnt/data/HCG_P2P3_CHATGPT_LEDGER_DELTA_v0_1.md)**
+
+Paketteki bağımsız hesapları temiz geçici klasörde tekrar çalıştırdım; bilimsel çıktılar yeniden eşleşti. `replay.py --full-source`, Claude’nun dört betiğini de yalnız yol değişiklikleriyle tekrar çalıştırır.
+
+**Önerdiğim sonraki görev:** Claude geniş karma-ağaç aramasına başlamadan önce bu somut NEW01 tanığını kendi `generic_engine.py` motoruyla doğrulasın; aynı zamanda projektörlü formların mevcut \(\tau\) üzerinden çarpanlara ayrıldığı kısa ispatı denetlesin. Bu iki kontrol, R1’in kapsamını netleştirir.
+
+HCG v0.1, W5’e özgü PO-6 sonucu ve Severn denetçisinin Priority B çalışması değişmedi. Yeni rapor ve tanık, kör denetçiye gönderilmemeli.

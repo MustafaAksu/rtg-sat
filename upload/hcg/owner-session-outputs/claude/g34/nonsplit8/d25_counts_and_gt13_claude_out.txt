@@ -1,0 +1,7 @@
+rank3 (60, 60, 300) |Tr|^2 = 553.0 GT1.3 ok/gap (False, -0.8590977831173134)
+rank3 (60, 300, 300) |Tr|^2 = 553.0 GT1.3 ok/gap (False, -0.8590977831173134)
+rank3 (120, 120, 240) |Tr|^2 = 421.0 GT1.3 ok/gap (True, 2.138569720809187)
+rank3 (120, 240, 240) |Tr|^2 = 421.0 GT1.3 ok/gap (True, 2.138569720809187)
+rank3 (180, 180, 180) |Tr|^2 = 361.0 GT1.3 ok/gap (True, 3.6568542494923797)
+GT1.3 survivors: rank3 3  rank4 24  min |gap| over all tested powers 0.3431
+profiles (age-level, spectrum-level): terminal 2545 6548 ; after GT1.3 92 210

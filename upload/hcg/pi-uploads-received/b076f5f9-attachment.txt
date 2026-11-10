@@ -1,0 +1,159 @@
+## Sayımlar doğrulandı; derece-25 sınıflandırmasıyla yeni bir dışlama ispatı adayı elde ettim
+
+**[ALG — bağımsız tekrar]** Beş rank-3, 28 rank-4 spektrumu ve **2545 age-profili** sayımını doğruladım. Yerel aritmetiğin tek başına \(d=25\)’i kapatmadığı değerlendirmen doğru.
+
+**[THM — yeni SESSION önerisi]** Ancak grup sınıflandırması tarafında somut bir ilerleme var: Guralnick–Tiep’in normal-altgrup indirgemesini, Hiss–Malle’nin **25 boyutlu kompleks temsiller sınıflandırmasıyla** birleştirerek \(d=25\)’i dışlayan bir ispat hazırladım. Bu yeni sonuç henüz **PROPOSED**; bağımsız denetimden geçmeden mevcut CHECKED alt sınırı değiştirmiyorum.
+
+## 1. Sonlu hesapların bağımsız kontrolü
+
+Kaynak betiğini değiştirmeden çalıştırdım. Ardından farklı bir uygulamayla, birim köklerin \(K\)-Galois yörüngelerini ve bütün önemsiz olmayan kuvvetlerin age değerlerini exact aritmetikle hesapladım.
+
+| Kontrol | Sonuç |
+|---|---:|
+| Kaynak manifesti | **5/5 PASS** |
+| Kaynak betiğinin çıktısı | Bayt düzeyinde aynı |
+| Galois-kararlı rank-3 adayları / terminal kalanlar | **54 / 5** |
+| Galois-kararlı rank-4 adayları / terminal kalanlar | **150 / 28** |
+| İki uygulamadaki spektrum listeleri | **33/33 birebir aynı** |
+| Toplam age 29 olan profiller | **2545** |
+
+**[ALG — sayımın kapsamı]** 2545, rank-4 elemanın **age değerini** ayırıyor; aynı age’e sahip farklı rank-4 spektrumlarını birleştiriyor. Rank-4 spektrumu da ayrıca ayırt edilirse sayı **6548** oluyor. Bu bir hata düzeltmesi değil, sayılan nesnenin kesinleştirilmesidir.
+
+Ayrıca
+\[
+\sum_j\operatorname{age}(g_j)=29
+\Longrightarrow \prod_j\det(g_j)=1
+\]
+doğru; fakat bundan \(\prod_jg_j=1\) matris özdeşliği çıkmıyor.
+
+## 2. Guralnick–Tiep: Theorem 1.1 zayıf, Theorem 1.3 daha etkili
+
+**[ALG — kaynak formülünün uygulanması]** Kaynaktaki
+\[
+d_2(g)^2=2\bigl(25-|\operatorname{Tr}g|\bigr)
+\]
+tanımını beş tipe uyguladım. [arXiv](https://arxiv.org/pdf/1009.2535)
+
+| Hareket spektrumu | \(|\operatorname{Tr}g|^2\) | \(d_2(g)^2\) |
+|---|---:|---:|
+| \((\zeta_6,\zeta_6,\bar\zeta_6)\) ve tersi | 553 | \(50-2\sqrt{553}\) |
+| \((\omega,\omega,\bar\omega)\) ve tersi | 421 | \(50-2\sqrt{421}\) |
+| \((-1,-1,-1)\) | 361 | \(12\) |
+
+Theorem 1.1’de \(C=12\) seçimi \(f(C)=480\) veriyor; dolayısıyla senin öngördüğün gibi derece 25’i elemiyor.
+
+Buna karşılık **Theorem 1.3**, mevcut kompleks-primitif, tensor ayrışımı olmayan ve tensor-induced olmayan dalda, merkezî olmayan ve skaler çarpanı alınmış bir yansıma olmayan elemanlar için
+\[
+25-|\operatorname{Tr}g|\ge8-4\sqrt2
+\]
+veriyor. İki altıncı-kök tipi bu eşitsizliği ihlal ediyor. [arXiv](https://arxiv.org/pdf/1009.2535)
+
+**[ALG — yeni elek; peer denetimi bekliyor]** Aynı testi bütün kuvvetlere uygulayınca:
+
+\[
+\boxed{
+5\to3\text{ rank-3 tipi},\qquad
+28\to24\text{ rank-4 tipi}.
+}
+\]
+
+Age-profili sayısı **92**, rank-4 spektrumlarını ayıran profil sayısı **210** oluyor. Bunlar hâlâ yalnız gerekli koşullar; grup gerçekleşmesini sağlamıyor.
+
+## 3. Daha güçlü yol: derece-25 normal altgrup sınıflandırması
+
+**[THM adayı — PROPOSED]** Aşağıdaki grup-teorik önerme, kalan yerel profilleri birlikte dışlıyor:
+
+> \(\Gamma\subset GL_{25}(K)\) sonlu; kompleks temsili indirgenemez, primitif, tensor-indecomposable ve tensor-induced olmayan; karakter alanı tam olarak \(K\) olsun. \(\Gamma\), her biri \(25/2\)’den fazla boyutu sabitleyen elemanlarla üretilemez.
+
+Bizim dal elemanları 22 veya 21 boyutu sabitliyor. Dolayısıyla bu önerme kabul edilirse \(d=25\) kapanır.
+
+### A. Normal altgrup için iki seçenek
+
+Guralnick–Tiep’in **2008 tarihli ayrı çalışması**, hypothesis (S), Lemma 2.5 ve Proposition 2.8 altında sonlu grubu iki yapıya indirgiyor: hemen hemen basit projektif yapı veya extraspecial altgruptan gelen symplectic-type yapı. Burada bir simetrik kuvvetin indirgenemezliğini varsaymak gerekmiyor; doğrudan Proposition 2.8 kullanılıyor. [arXiv](https://arxiv.org/pdf/0810.0853)
+
+**[ALG — SESSION çıkarımı]** Extraspecial durumda derece \(25=5^2\), merkezî bir mertebe-5 komütatör gerektiriyor. Bu komütatör \(\Gamma\)’nın içinde bulunuyor; oysa mutlak indirgenemez \(K\)-modelde merkezî skalerler \(\mu_6\)’da. Çelişki.
+
+Skaler normalizasyonun bu adımı bozmadığını ayrıca yazdım: normalize edilmiş \(H\) için
+\[
+\mathbb C^\times H=\mathbb C^\times\Gamma
+\quad\Longrightarrow\quad H'=\Gamma'.
+\]
+Dolayısıyla normalizasyonun ekleyebileceği skalerleri yanlışlıkla \(K\)-tanımlı saymıyoruz.
+
+Diğer durumda \(\Gamma\) içinde, 25 boyutta indirgenemez etkili normal bir quasisimple \(L\) bulunuyor. \(L\) perfect olduğundan determinantı birim; merkezinin skaler mertebeleri hem 25’i hem 6’yı böler. Böylece \(Z(L)=1\).
+
+### B. 25 boyutlu olasılıklar
+
+Hiss–Malle’nin sınıflandırmasında **özgün generic tablo ile 2002 düzeltme tablosu birlikte** kullanılmalı. Karakteristik sıfırda derece 25 için kalan liste: [Cambridge University Press](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E38996E7B21A5CC48280AC441B6054AA/S1461157000000796a.pdf/lowdimensional_representations_of_quasisimple_groups.pdf)
+
+| \(L\) | İlgili temsil |
+|---|---|
+| \(A_{26}\) | Standart 25 boyutlu temsil; simetrik form koruyor |
+| \(\mathrm{PSL}_2(25)\) | Steinberg temsili; simetrik form koruyor |
+| \(\mathrm{PSL}_2(49)\) | 25 boyutlu Weil temsili; simetrik form koruyor |
+| \(\mathrm{PSp}_4(7)\) | Karakter alanı \(\mathbb Q(\sqrt{-7})\) |
+
+Son satır \(K=\mathbb Q(\sqrt{-3})\) üzerinde gerçekleşemez. ATLAS’ın birincil temsil kaydı da derece-25 temsilini \(\mathbb Z[b_7]\) üzerinde veriyor; \(b_7^2+b_7+2=0\). Tablodaki \({}^{3}D_4(2)\) derece-25 satırı ise **yalnız karakteristik 3** içindir, kompleks aday değildir. [brauer.maths.qmul.ac.uk](https://brauer.maths.qmul.ac.uk/Atlas/clas/S47/)
+
+### C. İlk üç olasılığı dışlayan kısa lemma
+
+**[ALG — yeni SESSION ispatı]** \(L\triangleleft\Gamma\), \(V|_L\) indirgenemez ve \(L\), nondejenere simetrik \(B\) formunu koruyor olsun. Normalite ve Schur lemması:
+\[
+B(gx,gy)=a_gB(x,y)
+\]
+verir.
+
+Eğer \(a_g\ne1\) ise, sabit \(x,y\) için \(B(x,y)=0\). Yani \(\operatorname{Fix}(g)\) tamamen izotropiktir. Fakat 25 boyutta böyle bir altuzayın boyutu en fazla 12 olabilir.
+
+Dolayısıyla
+\[
+\dim\operatorname{Fix}(g)>25/2
+\Longrightarrow a_g=1.
+\]
+
+Bütün dal üreteçleri bu koşulu sağladığından \(\Gamma\)’nın tamamı \(B\)’yi korur. Sonlu grubun karakteri gerçeldir; aynı zamanda \(K\)-değerlidir:
+\[
+\chi_\Gamma(g)\in K\cap\mathbb R=\mathbb Q.
+\]
+Bu, karakter alanının **tam olarak \(K\)** olmasıyla çelişir.
+
+**Sonuç adayı:**
+\[
+\boxed{
+d=25\text{ mümkün değil};
+\quad
+\text{önceki dışlamalarla birlikte nonsplit fizibilite için }d\ge26.
+}
+\]
+
+Bu argüman, senin yerel sayımlarını yanlışlamıyor. **Yerel olarak mümkün spektrumların, gerekli global grup içinde gerçekleşemediğini** gösteriyor.
+
+## 4. Kaynak ve karar sınırı
+
+**[SOURCE — hedefli okuma]** GT08’in ilgili indirgeme ispatını, Hiss–Malle Theorem 1’i, generic tabloyu ve düzeltilmiş derece-25 satırlarını birincil PDF metinlerinden inceledim. Tam sınıflandırma ispatlarını yeniden yapmadım.
+
+**PDF görüntüleme çağrıları `Cache miss` ile başarısız oldu.** Bu nedenle tablo satırlarını görsel olarak doğruladığımı veya PDF baytlarının hash’ini sabitlediğimi iddia etmiyorum. Bu erişim sınırı raporda açık; bağımsız incelemede özellikle ordinary/modular ayrımı ve generic satırlar görsel kontrol edilmeli.
+
+| Kayıt | Önerilen durum |
+|---|---|
+| 28 terminal rank-4 spektrumu | **CHECKED** — iki uygulama |
+| 2545 age-profili | **CHECKED**, doğru sayım kapsamıyla |
+| GT Theorem 1.3 ile ek eleme | **PROPOSED** |
+| Normal-ortogonal sabit-uzay lemması | **PROPOSED** |
+| Sınıflandırmayla \(d=25\) dışlaması | **PROPOSED** |
+| Mevcut \(d\ge25\) alt sınırı | **CHECKED**, değişmedi |
+| \(d\ge26\) güçlendirmesi | Bağımsız denetim bekliyor |
+
+## 5. Teslim
+
+**:chatgpt-content-reference{index="6"}[Sonlu sayımlar ve bağımsız çapraz inceleme](sandbox:/mnt/data/HCG_D25_SIEVE_CHATGPT_CROSS_REVIEW_v0_1.md)**
+
+**:chatgpt-content-reference{index="7"}[Derece-25 dışlamasının tam ispat adayı](sandbox:/mnt/data/HCG_D25_CLASSIFICATION_EXCLUSION_PROPOSED_v0_1.md)**
+
+**HCG_D25_SIEVE_AND_CLASSIFICATION_REVIEW_PACKAGE_v0_1.zip[Kaynak paket, bağımsız betikler, exact çıktılar ve tekrar sürücüsü — ZIP](sandbox:/mnt/data/HCG_D25_SIEVE_AND_CLASSIFICATION_REVIEW_PACKAGE_v0_1.zip)**
+
+**:chatgpt-content-reference{index="9"}[Önerilen ledger eki](sandbox:/mnt/data/HCG_D25_SIEVE_LEDGER_PROPOSAL_v0_1.md)**
+
+Temiz tekrar: **manifest 19/19, kaynak manifesti 5/5; kaynak çıktısı, iki bağımsız JSON ve bütün spektrum listeleri PASS**. Kod, aritmetiği ve tekrar üretimini doğruluyor; dış sınıflandırmanın eksiksizliğini bilgisayarla ispatlamıyor.
+
+**Sıradaki görev, yeni tuple taraması değil:** Claude’nun normal-altgrup indirgemesini, derece-25 listesinin eksiksizliğini ve büyük sabit-uzay lemmasını bağımsız denetlemesi. Olumlu sonuçta \(d=25\), yeni bir hesap kampanyası gerekmeksizin kapanabilir. HCG v0.2, PI karar alanları ve Severn A/B/C’nin `CLAIMED` statüsü değişmedi.

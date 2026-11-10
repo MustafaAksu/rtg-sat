@@ -1,0 +1,164 @@
+minimal vectors: 756
+reflection lines: 126
+all reflections preserve the 756 minimal vectors: True  order 2: True
+tuple 0 picks [70, 9, 44, 76, 108, 77, 36, 11, 65, 118]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441/4
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=16 -> H4=True
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+tuple 1 picks [44, 50, 53, 2, 124, 4, 13, 108, 56, 83]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=11 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=10 -> H4=False
+tuple 2 picks [28, 102, 44, 10, 63, 42, 117, 77, 69, 53]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 3 picks [107, 93, 25, 57, 125, 21, 28, 55, 100, 52]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 4 picks [86, 101, 87, 72, 67, 25, 69, 54, 38, 35]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 177147
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 5 picks [65, 96, 28, 104, 52, 122, 100, 60, 66, 18]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+tuple 6 picks [96, 39, 38, 75, 90, 82, 60, 50, 105, 79]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 7 picks [108, 99, 114, 12, 93, 120, 113, 47, 109, 17]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=12 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 8 picks [33, 19, 88, 43, 102, 8, 70, 50, 20, 53]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=12 -> H4=False
+tuple 9 picks [80, 83, 54, 59, 36, 119, 79, 84, 19, 41]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+tuple 10 picks [95, 111, 108, 89, 124, 123, 81, 93, 86, 26]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+tuple 11 picks [85, 35, 1, 124, 96, 2, 51, 118, 53, 116]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=12 -> H4=False
+tuple 12 picks [70, 17, 55, 19, 37, 117, 1, 122, 111, 6]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 177147
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+tuple 13 picks [92, 5, 97, 82, 39, 15, 0, 120, 80, 66]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=13 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+tuple 14 picks [112, 7, 121, 4, 65, 97, 1, 19, 22, 91]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+tuple 15 picks [57, 47, 29, 8, 3, 93, 24, 32, 63, 2]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+tuple 16 picks [16, 24, 14, 94, 21, 108, 4, 82, 100, 48]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 2125764
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+tuple 17 picks [110, 28, 25, 26, 81, 111, 112, 68, 31, 120]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=16 -> H4=True
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=15 -> H4=False
+tuple 18 picks [42, 29, 112, 105, 97, 0, 79, 14, 101, 90]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=10 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=10 -> H4=False
+tuple 19 picks [73, 32, 40, 29, 87, 53, 100, 124, 7, 114]
+    h = theta*S Hermitian: True  signature (pos,neg,zero) = (4, 4, 0)  det(h) = 531441
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+    H1=True  dimK(I)=4 isotropic=True N(I)=0:True -> H2=True
+    beta Hermitian=True descends=True sum-signature=(0, 4, 0) -> H3=True
+    dimQ span(N_j)=14 -> H4=False
+done

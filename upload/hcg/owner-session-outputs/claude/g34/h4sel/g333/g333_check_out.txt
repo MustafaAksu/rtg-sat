@@ -1,0 +1,4 @@
+order <s1,s2> = 6 ; all matrices rational: True
+order <s1..s4> = 54 ; full group order = 54
+omega*I in group: True ; trace = (Fraction(0, 1), Fraction(3, 1))
+A3 deletion ranks: [3, 3, 3, 3, 3, 3]

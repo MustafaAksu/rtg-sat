@@ -1,0 +1,2 @@
+
+**v0.2 note (premise source; no change to the claim block above).** The `[assuming:]` premise of HCG-THM-PO1 is exactly the conclusion of Thm 6.2(1) for the cell [1]: [387] Thm 2.9 states it "for every polarized abelian 2n-fold of Weil type for K with discriminant d(S)", and [387] Thm 6.2's proof reads "(2) is Proposition 5.2 with n = 4 and δ = 1". [387] states that nothing in it uses [17] (§2.3) and that Thm 6.2 uses none of the unrefereed manuscripts that [386] uses conditionally (Rem 6.3). The open part is the every-member scope (OPEN 8; §6.20).

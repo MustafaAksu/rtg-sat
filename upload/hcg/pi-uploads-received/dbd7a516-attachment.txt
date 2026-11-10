@@ -1,0 +1,93 @@
+## İlk bulgu: genel varlık varsayımına bir kapsam koşulu gerekiyor
+
+[SESSION — matematiksel gözlem] Oyuncak örnekteki yeni tanık doğrulansa bile, “her saf braid yörüngesinde tam ranklı, çift içeren bir işaretleme bulunur” ifadesi mevcut genişliğiyle doğru olamaz.
+
+\\(m\\) yansıma çiftinden oluşan bir tuple için üç-değerlikli pants ağacında yalnızca \\(2m-3\\) iç eğri bulunur. H4 hedefi \\(d^2\\), burada \\(d=m-n\\). Dolayısıyla zorunlu koşul
+
+\\[ \boxed{d^2\le 2m-3.} \\]
+
+Örneğin \\(n=1,m=4\\) için \\(d=3\\), hedef rank 9, fakat herhangi bir ağaçta yalnızca 5 operatör vardır. Hiçbir braid bu sayım engelini kaldıramaz.
+
+Bu, oyuncak tanığını olumsuz etkilemez: onda \\(n=3,m=6,d=3\\) ve \\(2m-3=d^2=9\\). Ancak gelecekteki varlık teoremi en azından bu boyut koşulunu içermeli.
+
+## TOY-BRAID-ESCAPE-01: bağımsız exact doğrulama başarılı
+
+[SESSION — bağımsız uygulama] Claude'nun `generic_engine.py` motorunu veya EDGEFLUX tahminini operatör üretiminde kullanmadan yeni bir aritmetik uygulama yazdım. Doğrudan \\(K=\mathbb Q(\omega)\\) üzerinde parabolik kosiklleri, Artin hareketlerini, cup formunu ve gerçek twist operatörlerini kurdum.
+
+| Kontrol                                           | Sonuç                                             |
+| ------------------------------------------------- | ------------------------------------------------- |
+| 16 harflik saf braid ve tersinin doğruluğu        | PASS                                              |
+| Son yansıma tuple'ının verilen köklerle eşleşmesi | PASS                                              |
+| \\(\dim_K Z^1/B^1\\)                              | \\(9-3=6\\)                                       |
+| Kosikl taşıması ve cup korunumu                   | 36/36 eşleşme                                     |
+| H0                                                | 10/10 pantolon                                    |
+| H1                                                | 81/81 sıfır çarpım                                |
+| H2                                                | \\(\dim_K I=3\\), izotropik, bütün \\(N_jI=0\\)   |
+| H3                                                | Dokuz negatif yarı-belirli form; toplamın rankı 3 |
+| H4                                                | Exact \\(\mathbb Q\\)-rank 9                      |
+| Operatör bağıntıları                              | Yok                                               |
+
+Karar: `HCG-ALG-TOY-BRAID-ESCAPE-01 → CHECKED` öneriyorum.
+
+Böylece oyuncak örneğin başlangıç işaretlemesindeki \\(\rho_T\le6\\) engelinin aynı saf braid yörüngesinde aşıldığı artık iki bağımsız hesapla destekleniyor.
+
+## Daha güçlü bulgu: yalnız boyut koşulu da yeterli değil
+
+[SESSION — yeni exact karşıörnek] \\(d^2\le2m-3\\) koşulunu sağlayan ve A3'ü de sağlayan bir örnekte, tam-rank varlığının yine imkânsız olduğunu gösterdim.
+
+\\(K=\mathbb Q(\omega)\\), \\(V=K^2\\) ve
+
+\\[ h(x,y)=x^t \begin{pmatrix}2&-1\\\\-1&2\end{pmatrix} \bar y \\]
+
+olsun. Dört kök seçelim:
+
+\\[ v_1=(1,0),\quad v_2=(0,1),\quad v_3=(1,1),\quad v_4=(1,0). \\]
+
+Bunların yansımaları \\(W(A_2)\cong S_3\\) grubunu üretir. Exact kontrolde grup mertebesi 6, temsil indirgenemez, dört silme-rankının tamamı 2 ve parabolik cup formunun rankı 4 çıktı.
+
+Burada \\(m=4,n=2,d=2\\):
+
+\\[ d^2=4\le 2m-3=5. \\]
+
+Fakat bütün yansımalar rasyonel gerçel matrislidir. Braid eşlemeleri de bu özelliği korur. Her eşli hedef tuple için kökler ve \\(L\\)'nin bazı \\(\mathbb Q\\) üzerinde seçilebilir. Dolayısıyla bütün kenar formları
+
+\\[ B_e\in\operatorname{Sym}\_2(\mathbb Q) \subsetneq \operatorname{Herm}\_2(K) \\]
+
+olur ve
+
+\\[ \boxed{\rho_T\le 3<4=d^2} \\]
+
+her saf braid dönüşümünden sonra da geçerlidir.
+
+Bu, genel biçimiyle saf-braid tam-rank varlık varsayımına karşıörnektir. Ancak \\(G\_{34}\\) veya oyuncak \\(G(3,3,3)\\) gibi özellikle kompleks yansıma gruplarıyla sınırlandırılmış bir varsayımı çürütmez. O daha dar soru açık kalır.
+
+## Bilimsel karar ve sonraki hedef
+
+[SESSION — önerilen kayıt statüleri]
+
+| Kayıt                                           | Öneri                                      |
+| ----------------------------------------------- | ------------------------------------------ |
+| `HCG-ALG-TOY-BRAID-ESCAPE-01`                   | CHECKED — iki bağımsız uygulama            |
+| Saf braid altında oyuncak blok engelinden kaçış | CHECKED                                    |
+| \\(d^2\le2m-3\\) zorunlu koşulu                 | PROVED — SESSION                           |
+| \\(W(A_2)\\) gerçel-yapı karşıörneği            | PROVED — SESSION, Claude denetimi bekliyor |
+| Sınırsız saf-braid tam-rank varlık varsayımı    | FALSE                                      |
+| Uygun kompleks yansıma grupları için varlık     | OPEN                                       |
+
+Bundan sonraki araştırmada iki farklı problemi ayırmayı öneriyorum:
+
+Birincisi, braid altında korunabilen engelleri sınıflandırmak: boyut, rasyonel gerçel yapı, Hermitik fazlar ve kök-bağıntı geometrisi. Yeni \\(W(A_2)\\) örneği bu doğrultuda ilk kesin negatif sonucu veriyor.
+
+İkincisi, \\(G\_{34}\\) ve \\(G(3,3,3)\\) gibi uygun kompleks gruplarda tam-rank işaretlemelerin hangi koşullarda var olduğunu araştırmak. Önceki başarılı braid kaçışları bu daha dar problem için somut kanıtlardır; genel ispat değildir.
+
+Önerdiğim sıradaki işlem: Claude önce \\(W(A_2)\\) karşıörneğini bağımsız olarak denetlesin. Ardından genel varlık teoremi aramak yerine, bileşen boyunca değişmeyen gerekli koşulları ortaya koyan bir çalışma başlatalım.
+
+## Dosyalar
+
+Bağımsız denetim ve yeni karşıörnek raporu
+
+Tam exact yeniden üretim paketi
+
+Paket iki bağımsız betiği, kök girdilerini, sonuçları, kaynak ZIP'lerin değiştirilmemiş kopyalarını ve SHA-256 manifestini içeriyor. Temiz yeniden çalıştırma ve manifest kontrolü geçti.
+
+HCG v0.1 değiştirilmedi. Yeni karşıörnek henüz benimsenmiş bilimsel sonuç değil; Hodge denetçisinin Priority B çalışmasıyla da paylaşılmamalı.

@@ -1,0 +1,11 @@
+dim H = 6  S rank = 6
+cuts: 54  ord(C) values: [1, 2, 3]
+Q-span of all 54 cut operators: 9
+dim_K of joint image of all 54: 6
+H0-valid triangles: 220 of 220
+H0-valid trees: 16796
+e_L = a4-a3 on all basis cocycles: True
+functionals e_a,e_b,e_c,f_a,f_b,f_c K-independent on H: True
+rank predicted 9 forms: 9 ; rank predicted + 54 cut forms: 9
+trees using both E_L and F_L for some block: 0
+trees with rank > #labels: 0 ; trees with rank == #labels: 15176 of 16796 ; max #labels: 6

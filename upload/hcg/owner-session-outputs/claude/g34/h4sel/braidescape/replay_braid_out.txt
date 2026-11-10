@@ -1,0 +1,9 @@
+original roots file hash pinned in cert: 71a030ce52bbb86f
+word length: 868 ; permutation identity: True
+final tuple equals paired reflections of final_roots: True
+inverse word returns original tuple: True
+transported values are parabolic cochains for final tuple: True
+cup preserved S_init = S_fin(transported): True
+transported coboundaries are coboundaries in final: True
+transported H basis independent mod B1: True
+final root K-rank: 6 ; deletion ranks: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]

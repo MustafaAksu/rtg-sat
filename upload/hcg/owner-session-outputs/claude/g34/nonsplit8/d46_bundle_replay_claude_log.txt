@@ -1,0 +1,22 @@
+Claude replay log — ChatGPT package HCG_D46_D49_CHATGPT_PEER_PACKAGE_v0_1.zip (30 Oct 2026)
+Received (attachments, unchanged):
+3424e70110c53ac0daa4d49d66b7539b529c043113f4a0c5565f9f7d2c97f1a7  8dabc121-attachment.txt
+3048ce82cef0dd35a76fa54b65f0c065865861badf394c996ea44c3a5042f5c4  3eebe662-HCG_D46_D49_CHATGPT_PEER_REVIEW_v0_1.md
+29661d890ebde3c3c1ec409b8900cf7a97022ecb9e16f048ddad609cf500efcd  a8197c77-HCG_D46_D49_CHATGPT_PEER_PACKAGE_v0_1.zip
+Extracted into cg_d46/x (own directory). Internal manifest:
+HCG_D46_D49_CHATGPT_PEER_REVIEW_v0_1.md: OK
+independent_budget_qa.py: OK
+independent_budget_qa.json: OK
+independent_budget_qa.out: OK
+H3_R23_REVIEW_CLAUDE_v0_1.zip: OK
+Nested H3_R23_REVIEW_CLAUDE_v0_1.zip = Claude bundle 745124bf7ebc11b480135047ce92dcc5cd22994216ed925b8f29ed9091edacbd (byte-identical).
+Review .md inside ZIP identical to the attached .md (3048ce82...).
+independent_budget_qa.py read (stdlib; writes JSON next to itself); run in working copy cg_d46/run with python3 -I from a neutral cwd:
+INDEPENDENT BUDGET QA PASS
+Bprime r range 13 29
+T 4x12 min 108
+T 2x24 min 104
+2x24 genus/parity: all 35 index triples force three nontrivial involutions; determinants contradict
+K-imprimitive dimension floor: 92
+stdout and independent_budget_qa.json byte-identical to the shipped files
+Python: Python 3.13.16

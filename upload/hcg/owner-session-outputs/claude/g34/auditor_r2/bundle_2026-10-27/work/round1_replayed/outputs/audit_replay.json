@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "python_version": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "input_hashes_checked": 4,
+  "exact_script_replays": [
+    {
+      "script": "verify_w5_bridge.py",
+      "exit_code": 0,
+      "log": "outputs/bridge_console.txt"
+    },
+    {
+      "script": "verify_finite_group.py",
+      "exit_code": 0,
+      "log": "outputs/group_console.txt"
+    },
+    {
+      "script": "verify_extra_interfaces.py",
+      "exit_code": 0,
+      "log": "outputs/extra_console.txt"
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "NC01_cup_entry",
+      "mutation": "One stored cup entry changed.",
+      "exit_code": 1,
+      "rejected": true,
+      "log": "outputs/negative_NC01_cup_entry.txt"
+    },
+    {
+      "id": "NC02_log_entry",
+      "mutation": "One stored logarithm entry changed.",
+      "exit_code": 1,
+      "rejected": true,
+      "log": "outputs/negative_NC02_log_entry.txt"
+    },
+    {
+      "id": "NC03_return_exponent",
+      "mutation": "The first exact return exponent changed from 1 to 2.",
+      "exit_code": 1,
+      "rejected": true,
+      "log": "outputs/negative_NC03_return_exponent.txt"
+    },
+    {
+      "id": "NC04_one_twist_inverted",
+      "mutation": "Only the first twist is replaced by its inverse.",
+      "exit_code": 1,
+      "rejected": true,
+      "log": "outputs/negative_NC04_one_twist_inverted.txt"
+    }
+  ],
+  "internal_mixed_sign_control": "Also executed by verify_w5_bridge.py; wrong sign gives inertia (1,0,3).",
+  "geometric_proof_machine_verified": false,
+  "elapsed_seconds": 22.138849020004272
+}

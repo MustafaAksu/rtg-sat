@@ -1,0 +1,279 @@
+## Yerellik için yazılı ispat elde ettim; P1/P2 taramasını genişletmeyelim
+
+**[THM — SESSION, bağımsız peer denetimi bekliyor]** Diskriminantın yerel monodromi sınıflarından hesaplanmasını sağlayan **açık bir determinant formülü ve cebirsel ispat** hazırladım. İspat, Severn’in yayımlanmamış “Theorem W” sonucunu varsaymıyor.
+
+Bu formülün \(G_{34}\)’e uygulanması, önerdiğiniz sonucu destekliyor:
+
+\[
+\boxed{
+\begin{array}{c}
+20\text{ yansıma}\\
+\text{veya}\\
+18\text{ yansıma}+1\text{ rank-2 eleman}
+\end{array}
+\quad\Longrightarrow\quad
+[\det h_{\mathrm{par}}]=[1].
+}
+\]
+
+**Kapsam, örneklenen tuple’larla sınırlı değil:** belirtilen yerel verileri taşıyan bütün bileşenler. Ancak bu yeni ispat ve rank-2 sınıflandırma adımı henüz Claude tarafından denetlenmediğinden, **\(d=6\)’nın olumsuz kapanışı şimdilik PROPOSED** kalmalı.
+
+Taramanın yeniden oynatılmasında ayrıca bir kanıt-kayıt hatası buldum: gönderilen betik, raporda yazan **120 + 480** testi değil, **160 + 160** testi yapıyor.
+
+## 1. Tarama tekrarı: sonuçlar doğru, örnek sayıları düzeltilmeli
+
+**[ALG — kaynak betiklerinin yeniden oynatılması]** Gönderilen betikleri ve önceki arşivden kurtarılabilen `generic_engine.py` sürümünü okudum. Kaynak hesaplarını yalnız dosya/import yollarını değiştirerek çalıştırdım.
+
+G₃₄ için erişilebilir **yedi eşli tuple’ın** ve **dokuz W5 birleştirmesinin** sonuçları, teslim edilen günlükle birebir eşleşti. W6/W7’nin kök dosyaları mevcut yüklemelerde bulunmadığından bu iki satırı yeniden çalıştırmadım; önceki sonuçlarını bu turda tekrar edilmiş gibi kaydetmiyorum.
+
+### Betiğin gerçekten yaptığı örnekleme
+
+`g333_disc_locality.py`, her \(N\) için `got < 80` koşuluyla çalışıyor. **Her yerel-sınıf çoklu kümesine 80 örnek ayırmıyor.**
+
+| Grup | \(N\) | Gerçek kabul edilen örnek sayısı |
+|---|---:|---:|
+| \(G(3,3,3)\) | 8 | 80 |
+| \(G(3,3,3)\) | 10 | 80 |
+| \(G(3,1,3)\) | 8 | 80 |
+| \(G(3,1,3)\) | 10 | 80 |
+| **Toplam** | | **320** |
+
+\(G(3,1,3)\)’te raporlanan altı çoklu kümeye düşen örnek sayıları sırasıyla
+
+\[
+49,\ 31,\ 28,\ 39,\ 12,\ 1.
+\]
+
+Özellikle \((0^4,2^6)\) sınıfı bu çalıştırmada **yalnız bir kez** görülüyor. Bildirilen diskriminant değerinde hata yok; fakat “80/80” veya “480 örnek” şeklindeki kanıt kapsamı bu betik sürümünden çıkmıyor.
+
+**[ALG — yeni bağımsız uygulama]** Örnekleme dizisini ayrıca monomiyal grup aritmetiğiyle yeniden kurdum. Ardından Claude’nun motorunu kullanmadan yazdığım yeni kohomoloji/determinant uygulamasıyla **320 kabul edilmiş tuple’ın tamamını** hesapladım:
+
+\[
+\boxed{320/320:\quad
+\text{doğrudan cup diskriminantı}
+=
+\text{aşağıdaki yerel formülün sınıfı}.}
+\]
+
+Bu, aynı girdilerin bağımsız algoritmayla kontrolüdür; bağımsız kaynak verisi veya kör test değildir. Ayrıntılar HCG_DISCRIMINANT_LOCALITY_CHATGPT_REVIEW_v0_1.md[çapraz inceleme raporunda](sandbox:/mnt/data/HCG_DISCRIMINANT_LOCALITY_CHATGPT_REVIEW_v0_1.md).
+
+## 2. Yerellik teoremi: hangi yerel veriler yeterli?
+
+**[THM — SESSION türetimi]**
+
+\(K\) sanal kuadratik alan, \((V,h_0)\) pozitif Hermitik \(K\)-uzayı olsun. Şu varsayımları alalım:
+
+\[
+g_1\cdots g_N=1,\qquad
+g_i\in U(V,h_0),\qquad
+\bigcap_i\ker(g_i-1)=0.
+\]
+
+Parabolik kohomolojinin boyutu \(2n\) olsun. Her yerel monodromi için
+
+\[
+E_i=\operatorname{im}(1-g_i),\qquad
+a_i=\det_K(h_0|_{E_i}),\qquad
+b_i=\det_K((1-g_i)|_{E_i})
+\]
+
+tanımlayalım. \(a_i\), seçilen \(E_i\) bazına bağlıdır; değişimi yalnız bir norm çarpanıdır.
+
+\(\bar\vartheta=-\vartheta\) ve \(h_{\mathrm{par}}=\vartheta S\) için:
+
+\[
+\boxed{
+[\det h_{\mathrm{par}}]
+=
+\left[(-1)^n\prod_i\frac{a_i}{b_i}\right]
+=
+\left[(-1)^n\prod_i a_i b_i\right]
+\quad\text{in }\mathbb Q^\times/N_{K/\mathbb Q}(K^\times).
+}
+\]
+
+**İki önemli hassasiyet:**
+
+- Tek tek \(b_i\) rasyonel olmayabilir; **çarpımlarının tamamı** rasyoneldir. Sınıf işareti bütün ifadeye uygulanıyor.
+- Yerel veri yalnız özdeğerlerden ibaret değil; **hareket uzayındaki katsayı Hermitik formu** da gerekiyor. Sabit ünitar temsil içindeki yerel eşleniklik sınıfları bu veriyi belirler.
+
+Dışarıdan kullanılan başlangıç, parabolik kohomolojinin kosikl/bölüm modeli ve cup eşlemesidir. Bunlar Dettweiler–Wewers’in yayımlanmış çalışmasında veriliyor; 2006 dergi sürümündeki cup sonucu Theorem 2.6, arXiv ilk sürümünde ise Theorem 2.5 olarak numaralanmış. [emis.de](https://www.emis.de/ft/47210)
+
+### İspatın belirleyici adımı
+
+**[ALG]** Cup formunu yalnız kapanış koşulunu sağlayan kosikllerde değil, daha büyük
+
+\[
+\mathcal E=\bigoplus_iE_i
+\]
+
+uzayında tanımlanan yardımcı bir seskuilineer forma genişletiyoruz.
+
+\[
+Q_i=g_1\cdots g_{i-1},\qquad
+C(x)=\sum_iQ_ix_i,\qquad
+D(v)=((g_i-1)v)_i.
+\]
+
+\(C\) örtendir, \(D\) birebirdir ve \(CD=0\). Dolayısıyla
+
+\[
+H^1_{\mathrm{par}}=\ker C/D(V).
+\]
+
+Şimdi
+
+\[
+F_i(x)=\sum_{j<i}Q_jx_j,\qquad
+A_i(x)=((1-g_i)|_{E_i})^{-1}x_i
+\]
+
+ile
+
+\[
+B(x,y)=\sum_i
+h_0\!\left(Q_i^{-1}F_i(x)+A_i(x),y_i\right)
+\]
+
+tanımlansın. **\(B\), bütün \(\mathcal E\) üzerinde skew-Hermitik değildir.** Fakat matrisi üçgenseldir ve
+
+\[
+\det B=\prod_i\frac{a_i}{b_i}.
+\]
+
+Ünitarlık ve teleskop toplam şu özdeşlikleri verir:
+
+\[
+B(x,y)+\overline{B(y,x)}=h_0(Cx,Cy),
+\]
+
+\[
+B(Dv,y)=-h_0(v,Cy),\qquad
+B(x,Dv)=h_0(Cx,v).
+\]
+
+Böylece \(B|_{\ker C}\)’nin radikali **tam olarak** \(D(V)\), bölümdeki form da \(S\)’dir.
+
+Coboundary’ler, kohomoloji temsilcileri ve \(C\)’nin bir kaldırmasına uyarlanmış bazda:
+
+\[
+B_{\mathrm{ad}}=
+\begin{pmatrix}
+0&0&-H_0\\
+0&S&*\\
+H_0&*&*
+\end{pmatrix},
+\qquad
+\det B_{\mathrm{ad}}=\det S\,(\det H_0)^2.
+\]
+
+Baz değişimi determinantı bir normla çarpar; \((\det H_0)^2\) de normdur. Dolayısıyla
+
+\[
+[\det S]=\left[\prod_i a_i/b_i\right].
+\]
+
+Son olarak
+
+\[
+\vartheta^{2n}=(-1)^nN(\vartheta)^n
+\]
+
+formüldeki işareti verir. **İspatın tamamı, norm çarpanları ve surjektiflik/radikal adımlarıyla birlikte ayrı notta yazılı.** Bu, sonlu örneklerden yapılan bir genelleme değil.
+
+## 3. G₃₄ için P1 ve P2 neden bölünmüş kalıyor?
+
+### P1: 20 yansıma
+
+**[ALG — yerellik teoreminin uygulaması]** Standart kök normalizasyonunda \(h_0(v,v)=6\). Bir yansıma \(s\) için
+
+\[
+a_s=6,\qquad b_s=2,\qquad a_s/b_s=3.
+\]
+
+\(n=4\) olduğundan
+
+\[
+[\det h_{\mathrm{par}}]=[3^{20}]=[1].
+\]
+
+Burada tuple’ın eşli olması veya W5 ile aynı braid yörüngesinde bulunması gerekmiyor.
+
+### P2: 18 yansıma ve bir rank-2 eleman
+
+Burada önce kapatılması gereken bir mantık boşluğu vardı:
+
+> İki yansımanın çarpımlarının mertebelerini bilmek, bütün rank-2 elemanları sınıflandırmak değildir.
+
+**[THM — klasik kaynak + SESSION uygulaması]** Steinberg’in teoremine göre \(\operatorname{Fix}(g)\)’nin noktasal sabitleyicisi, onu sabitleyen yansımalarla üretilir. Rank-2 bir \(g\) için bu, iki boyutlu hareket uzayındaki bir yansıma grubudur. [maths.usyd.edu.au](https://www.maths.usyd.edu.au/u/gusl/Steinimrn.pdf)
+
+**[ALG — yeni exact kontrol]** W5 köklerinden 126 doğruyu ve 756 vektörü yeniden kurdum; sadık permütasyon etkisinin grup mertebesi \(39\,191\,040\). Bu, kullanılan \(G_{34}\) gösteriminin klasik verisiyle uyumlu. [docs.magma-maths.org](https://docs.magma-maths.org/LieTheory/ReflectionGroups/create-group-refl-complex.html)
+
+Bütün 7.875 farklı kök-doğrusu çifti incelendi:
+
+\[
+|h_0(v,w)|^2\in\{0,9\}.
+\]
+
+İki boyutlu kök düzlemleri tam olarak:
+
+\[
+2835\text{ adet iki-doğrulu düzlem},\qquad
+1680\text{ adet üç-doğrulu düzlem}.
+\]
+
+Bunların tipleri \(A_1\times A_1\) ve \(A_2\). Ayrıca bir Gram-rank eşitsizliği, böyle bir iki-düzlemde üçten fazla kök doğrusu bulunamayacağını doğrudan gösteriyor; raporda bu kısa argümanı da verdim.
+
+Dolayısıyla bütün rank-2 elemanlar için gereken yerel değerler:
+
+| Tip | \(\operatorname{ord}(g)\) | \(a_g\) | \(b_g\) | \(a_g/b_g\) |
+|---|---:|---:|---:|---:|
+| \(A_1\times A_1\) | 2 | 36 | 4 | **9** |
+| \(A_2\) | 3 | 27 | 3 | **9** |
+
+Her iki durumda:
+
+\[
+\boxed{
+[\det h_{\mathrm{par}}]
+=[3^{18}\cdot9]=[1].
+}
+\]
+
+Bu sonuç yalnız dokuz W5 birleştirmesine değil, **rank bütçesini sağlayan bütün bu tip G₃₄ verilerine** uygulanıyor.
+
+## 4. Fizibilite sorusu açısından karar
+
+**[SESSION — PROPOSED koroler]** Önceden CHECKED olan \(d=6\) grup indirgemesinin hipotezleri altında, yeni yerellik ispatı ve rank-2 sınıflandırması kabul edilirse:
+
+\[
+\boxed{
+d=6\text{ ekranında bölünmemiş cup diskriminantı yoktur.}
+}
+\]
+
+Gerçek abelyen faktörün diskriminantına geçişte, ayrıca kayıtlı **cup–Jacobian polarizasyon karşılaştırması** kullanılır. Bu bağımlılık korunmalı.
+
+Bu nedenle önceki P1/P2 arama önerimi değiştiriyorum: **yeni tuple taramak yerine önce bu ispatı Claude’ya denetletelim.** Denetim olumluysa P1/P2 olumsuz kapanır ve araştırma \(d\ge7\)’ye geçer. \(d=7\)’de rank-fazlası bütçesi
+
+\[
+\sum_j\bigl(\operatorname{rank}(1-g_j)-1\bigr)\le3
+\]
+
+olur; artık yerel determinant formülü, kohomoloji ve \(F^1\) hesabından **önce** uygulanabilecek ucuz bir eleme sağlar.
+
+Bu sonuç nonsplit sekizlilerin, farklı geometrik yöntemlerin veya bütün transfer yaklaşımlarının imkânsızlığı değildir. Yalnız belirlenmiş genus-sıfır \(d=6\) ekranını kapatır.
+
+## 5. Dosyalar ve kayıt sınırı
+
+**:chatgpt-content-reference{index="5"}[Tam determinant ispatı ve G₃₄ uygulaması](sandbox:/mnt/data/HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_1.md)**
+
+**:chatgpt-content-reference{index="6"}[Tarama tekrarı, örnek-sayısı düzeltmesi ve bağımsız hesap raporu](sandbox:/mnt/data/HCG_DISCRIMINANT_LOCALITY_CHATGPT_REVIEW_v0_1.md)**
+
+**HCG_DISCRIMINANT_LOCALITY_REPRO_v0_1.zip[Tam yeniden üretim paketi](sandbox:/mnt/data/HCG_DISCRIMINANT_LOCALITY_REPRO_v0_1.zip)** — özgün betikler, ayrı aritmetik/kohomoloji motoru, kurtarılan girdiler, 320 örneğin sonuçları, rank-2 kök sayımı ve ledger önerisi.
+
+Temiz geçici klasörde bağımsız hesaplar yeniden çalıştı; dört bilimsel JSON dosyası **bayt düzeyinde aynı** üretildi. Son paket manifesti **40/40 PASS**.
+
+**Önerilen durum:** Yerellik teoremi ve \(d=6\) dışlaması, yazılı ispatları mevcut **SESSION / PROPOSED** sonuçlardır; bağımsız peer incelemesi bekler. Yenilik iddiası yok. HCG v0.2, Severn A/B/C ve mevcut benimseme kararları değişmedi.
+
+**Sıradaki belirleyici iş:** Claude, özellikle yardımcı \(B\) formunun radikalini, blok determinantındaki işareti ve bütün rank-2 elemanlara geçişi denetlesin. Bu üç adım geçerse, \(d=6\) sorusunu yeni bir taramayla değil, ispatla kapatmış oluruz.
