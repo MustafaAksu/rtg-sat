@@ -64,7 +64,7 @@ $$K^*_{\rm transverse}=\frac{\gamma}{dt\,|\sigma|_{\max}}=23.305$$
 
 This must be asked **before Def-B**, because perhaps no new threshold object has to be derived — **the existing threshold object was sought in the wrong coordinate space.** The numerical coincidence of §3 (23.305) supports this reading but does not prove it: whether the transverse branch is really the pre-spark attractor, and how it relates to the orbit phenomenon measured by Def-C (orbit QR-Lyapunov; `coil/KSPARK_DEF_DEGNORM.md`), **has not been tested**.
 
-Recorded as `OPEN-QUOTIENT-EQUILIBRIUM`; it did **not** hold Pair B/C hostage (that campaign ran and closed — RUN-MM1-PAIRBC v1.0.1). Status: **parked** (`coil/COIL_INDEX.md` §8 item 2k); S-1/S-2 wait on it.
+Recorded as `OPEN-QUOTIENT-EQUILIBRIUM`; it did **not** hold Pair B/C hostage (that campaign ran and closed — RUN-MM1-PAIRBC v1.0.1). **Update (10 Nov 2026):** the spectral sub-question is resolved conditionally — `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` derives the transverse spectrum of the synchronous relative equilibrium in closed form (σ_m = cos φ[½(cos 2πm/10 + cos 4πm/10) − 1]; first crossing at m = 3, 7, K*_⊥ = γ/(dt(1+√5/4)cos φ) = 23.304788 at φ = 1.26), so the §3 coincidence has a formula behind it and the critical space is 4D. The nonlinear bifurcation, basin selection, identification with the historical Def-C bracket and any bridge remain open (`coil/COIL_INDEX.md` §8 item 2k); S-1/S-2 still wait on those.
 
 ## 6. Narrowing of the RMT lesson
 

@@ -73,6 +73,10 @@ The original record concluded: *"with ω_i = 0 a synchronised fixed point does n
 
 So "Def-A is undefined on this substrate" was a statement about the **absolute** θ-space search (5 restarts of a gradient solver), not a non-existence result; the correct absence label would have been `[ABSENT-in-tested-search]`. **Def-A is definable on the relative equilibrium in the global-phase quotient**; whether its crossing (23.305) is the ringdiag spark onset, and how it relates to the Def-C bracket (12.54–12.55 / 13.48–13.50), is the open test `OPEN-QUOTIENT-EQUILIBRIUM`. Def-B (spectral NS bracket without a fixed point) is no longer the only route; it is tested **after** the quotient-equilibrium question.
 
+### A.2b Spectral sub-question (10 Nov 2026)
+
+`coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` `[DERIVED]`: on the recovered-engine model the Def-A object is now explicit — the transverse stiffness spectrum of the synchronous relative equilibrium is σ_m = cos φ[½(cos 2πm/10 + cos 4πm/10) − 1], first crossing at m = 3, 7, K*_⊥ = 23.304788 (φ = 1.26) / 24.857412 (φ = 1.28), i.e. the fallback numbers. Def-A vs Def-C now means: this closed-form crossing vs the historical bracket 12.54–12.55 / 13.48–13.50 (a factor ≈ 1.86 apart). The comparison is **still not executed**: it needs the nonlinear fate of the 4D-degenerate crossing, the branch actually attracting the historical ICs, and the Def-C estimator's own caveats.
+
 ### A.3 Current decision-tree outcome
 
 Of the handover's three branches (agree / disagree / Def-A not computable), the original record chose the third. Current state: the third branch was chosen on insufficient evidence; the comparison is **not yet executed, not inconclusive-by-construction**. Open: `OPEN-QUOTIENT-EQUILIBRIUM` (parked, `coil/COIL_INDEX.md` §8 item 2k). Agreement would lift the estimator blocker (**not** a named bridge); disagreement would close the onset bridge while the carrier match is preserved.

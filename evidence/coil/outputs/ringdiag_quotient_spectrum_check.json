@@ -1,0 +1,52 @@
+[
+  {
+    "phi": 1.26,
+    "relative_equilibrium_residual": 0.0,
+    "twisted_equilibrium_max_force": 2.220446049250313e-16,
+    "fourier_vs_matrix_maxdiff": 3.885780586188048e-16,
+    "sigma_min": -0.47677375732895944,
+    "sigma_min_multiplicity": 2,
+    "zero_modes": 1,
+    "sigma_37_formula_diff": 1.1102230246251565e-16,
+    "K_star_perp": 23.304787523036385,
+    "K_star_formula": 23.304787523036392,
+    "crossing_angle_per_update": 0.3011365455533722,
+    "full_map_multipliers": {
+      "below": {
+        "max_modulus_all": 1.0,
+        "n_modulus_eq_1": 1,
+        "n_modulus_eq_1_minus_a": 1
+      },
+      "above": {
+        "max_modulus_all": 1.0000449989875473,
+        "n_modulus_eq_1": 1,
+        "n_modulus_eq_1_minus_a": 1
+      }
+    }
+  },
+  {
+    "phi": 1.28,
+    "relative_equilibrium_residual": 0.0,
+    "twisted_equilibrium_max_force": 1.6653345369377348e-16,
+    "fourier_vs_matrix_maxdiff": 3.3306690738754696e-16,
+    "sigma_min": -0.4469938843619946,
+    "sigma_min_multiplicity": 2,
+    "zero_modes": 1,
+    "sigma_37_formula_diff": 3.3306690738754696e-16,
+    "K_star_perp": 24.857411924036217,
+    "K_star_formula": 24.85741192403624,
+    "crossing_angle_per_update": 0.3011365455533722,
+    "full_map_multipliers": {
+      "below": {
+        "max_modulus_all": 1.000000000000001,
+        "n_modulus_eq_1": 1,
+        "n_modulus_eq_1_minus_a": 1
+      },
+      "above": {
+        "max_modulus_all": 1.0000449989875464,
+        "n_modulus_eq_1": 1,
+        "n_modulus_eq_1_minus_a": 1
+      }
+    }
+  }
+]

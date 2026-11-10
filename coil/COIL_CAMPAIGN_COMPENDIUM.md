@@ -17,7 +17,7 @@
 | Independent coordinates | **only (a, κ)** — two-group theorem, `coil/IDEALOG_COIL_RCSJ.md` §C.2. dt has no independent role |
 | Normalisation | κ = K/K*₁, K*₁ = γ/(dt·\|σ\|_max), σ over the eigenvalues of the campaign's force Jacobian on the synchronous branch (`coil/COIL_CHARTER.md` §3) |
 | **Coupling (N ≥ 3)** | **degree-normalised** relational force f_i = (1/deg_i) Σ_j A_ij g(θ_j − θ_i − a_ij), with the campaign's waveform g and edge offsets a_ij (§3; a_ij = 0 except on the frustrated triF rungs, Φ ∈ {π, 3π/2}). The sine, offset-free form f_i = (1/deg_i) Σ_j A_ij sin(θ_j − θ_i) is the **instance** used in N2/N3/PAIRBC ⚠️ |
-| IC semantics | w₀ = dt·u₀ — **the dimensionless w₀ is held fixed across pairs** |
+| IC semantics | w₀ = dt·u₀ — **the dimensionless w₀ is held fixed across pairs**. The IC **set** is campaign-specific (N2/N3: `IC_P × IC_U` 5 × 5; PAIRBC: 1 × 25, §9) |
 | Classifier | per-update Benettin λ_max, ε_λ = 10⁻³, **four-quarter persistence** |
 | FRACTURE | CF ≥ 0.60 (≥ 15 of 25 IC) |
 | Ceiling | all results `[NUM]`; nothing carried cross-layer or to RTG |
@@ -148,7 +148,7 @@ All files in `evidence/coil/code/`.
 
 **RESOLVABILITY**: B = 70·2^m, L = 200·2^m (ratio **7:20**), m = 0..6; h grid primary j ≤ 20 + deterministic extension j ≤ 40; ε = 0.10. **Strata (all/regular/chaos) are frozen from the canonical classification of the anchor baseline** (λ **and** four quarters > 10⁻³); not recomputed for the perturbed waveform.
 
-**PAIRBC**: §5. IC = `phi0_ensemble()` 5 × `w0_ensemble()` 25 → first 25; w₀ base {0, ±0.05, ±0.20}². *(Named-function reference only — the certificate's C3 flags this as opaque; enumeration pending.)*
+**PAIRBC**: §5. IC = `[(p, u) for p in phi0_ensemble() for u in u0_for_pair(pair)][:25]` → **realised: 1 phase pair (0.1, 0.0), i.e. θ = (0, 0.1, 0.1), × 25 velocity pairs** w₀ ∈ {0, ±0.05, ±0.20}² (u₀ = w₀/dt). **Not the N3 Stage-B ensemble** (5 × 5). Five states (indices 0, 6, 12, 18, 24) have w₁ = w₂ and lie in tri0's cluster subspace. Benettin initial tangent e_{θ₀}. `[COR]` RM-02.h; the earlier text implied the N3 grid.
 
 **Determinism and environment:** no campaign **uses an RNG** — all IC grids are fixed lists, so the protocol is **fixed-input deterministic**. **[COR]** "Results are bit-deterministic" was too strong: bit reproducibility is **expected** inside a pinned environment, but bit identity across different NumPy/BLAS/CPU environments is **not certified**. Execution environment: Python 3 + numpy (Windows, conda env `RTG`). Where float arithmetic is critical (ULP floor, U-curve minima) double precision is assumed.
 
