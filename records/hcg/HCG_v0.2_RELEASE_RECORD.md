@@ -93,19 +93,19 @@ The ledger §7 cites RTG owner documents by version. The table gives the `rtg-co
 
 The release transform of 26 Oct 2026 (`release_v0_2.py`) and its reverse check are part of the chat-level record. They were not re-run here.
 
-## 7. Adoption manifest (candidate)
+## 7. Adoption manifest
 
-SHA-256 of the bytes at the commit that carries this draft. If any listed file changes before adoption, the hashes are recomputed and this table is updated before the tag.
+**Status: ADOPTED (2026-11-10).** SHA-256 of the bytes at the **content commit** `03556c8402d8b657e38cf747e0864fae4bf5f029` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
 
 | File | Role | SHA-256 |
 |---|---|---|
 | `hcg/HCG_STUDY_LEDGER.md` | the adopted scientific record | `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` |
-| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | filled at the publication step (§9) |
+| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | `079a9b3d0f419da85975f57875d9e547d94ecb41770cebccb7c79e659a15b3a3` |
 | `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` | source dictionary | `7d2736efc9f49db336ef6279f7a9bd65f7071bd584e149fa08e145989d8f4419` |
 | `records/hcg/HCG_SOURCE_MANIFEST.md` | source manifest | `13d9742db396d176f6be0704dda28ae18a5b95655ecee5f7d9e5526013f0073b` |
 | `evidence/hcg/SHA256SUMS` | index of the 754 frozen files | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
 | `upload/hcg/SHA256SUMS` | index of the 754 uploaded originals | `bb66145e754cb949246d9da578b4891f5ab18358212f414f79b7315ccaadb4fa` |
-| `REGISTRY.md` | governing-edition field of the `hcg` row | filled at the publication step (§9) |
+| `REGISTRY.md` | governing-edition field of the `hcg` row | `ebcfb6bb1133afc4552b13c0e03633a10762dd0fce0430bd1caa6e9ad48a7e66` |
 
 The frozen files are adopted as **evidence as it stands**, not as claims. A frozen file that belongs to pending material stays pending.
 
