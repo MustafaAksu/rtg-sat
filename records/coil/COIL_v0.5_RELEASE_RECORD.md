@@ -34,4 +34,21 @@ Unchanged. The analysis cites `legacy-v0.7` §3.1 brackets as `[NUM strong legac
 
 ## 6. Adoption manifest
 
-*(manifest-only commit after the content commit)*
+**Status: CANDIDATE — not adopted.** Files changed or added in this release, SHA-256 at the **content commit** `a2214c4c359934a5811b2a073eacb0b3d6bddb6b` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
+
+| file | SHA-256 at content commit |
+|---|---|
+| `coil/records/RM-02.md` | `25d3096998f9ca5e2144f25d3f5fcb5076f46699ba312a8e4a44a46be8dde582` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `9611e14df0d089087b21984a7b14ed08a00d87e9e37c07b41c13e2e17af94484` |
+| `coil/COIL_INDEX.md` | `27b9bfdd0d3752b3b09b61c6bbecb20814cf2f0797859e56612acc86cf153c4e` |
+| `coil/AUDIT_CARRIER_COMPLETENESS.md` | `5f1b90f6729d8d2d2106bc795a82cff1740a77ecd19d596f19c3429b178fc724` |
+| `coil/KSPARK_DEF_DEGNORM.md` | `56acea3c460003cb25f0d827e4789a7d546f486f67a4616783c4946800e03559` |
+| `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` | `0f0e63d0cec8099bd9824fd73d7b43d48fb76e0ffda937942e99c64c8261cce5` |
+| `evidence/coil/code/ringdiag_quotient_spectrum_check.py` | `a79a8d2d9c650f579d7e918616cea26c16874336af46af58e6a30575032d7230` |
+| `evidence/coil/outputs/ringdiag_quotient_spectrum_check.json` | `51c5e7c3b49b0dcb61c9731d50d6d271d07ea1e3ce276e16b05701116dba325f` |
+| `evidence/coil/prereg/PREREG-MM1-ICID-v0.1-DRAFT.md` | `087aece79ad15786d91f2bcaf169e8fce5d2fda2f21e9897d735699a6d9bf491` |
+| `evidence/coil/code/SHA256SUMS` | `315f5cebff50231f2264da9beefd176163c1a51df008f30ba4daec64da5237a8` |
+| `evidence/coil/outputs/SHA256SUMS` | `8a9549f637bafbaa7089f27b1bcef13dc19fce4ab3319ff9cd6c39a85987bfe4` |
+| `evidence/coil/prereg/SHA256SUMS` | `b8d4107c7f77003278757bf979d3a92bfe1c67a0d0ffc22f9cb9237339713b3b` |
+
+**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
