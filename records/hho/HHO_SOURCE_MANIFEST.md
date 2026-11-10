@@ -30,7 +30,7 @@ The tag is annotated; it points to commit `543d09387d6d5df79d38fcd549090350f994d
 | Used for | Path | SHA-256 | HCG state |
 |---|---|---|---|
 | Definitions of (L), (D), (H0)–(H4); W5 results; PO-6 | `hcg/HCG_STUDY_LEDGER.md` | `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` | adopted (`hcg-v0.2`); no claim row is ACCEPTED |
-| Where those labels are stated | `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` | not hashed here; read at the tag | record |
+| Where those labels are stated | `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` | `7d2736efc9f49db336ef6279f7a9bd65f7071bd584e149fa08e145989d8f4419` | HCG record; not a theorem and not an HHO result |
 | HHO opening note v0.1: (H), gates G1–G12, R1–R3, P1–P6, HHO-SG-1…6, initial register | `hho-track/HCG_HURWITZ_HODGE_OBSTRUCTION_OPENING_NOTE_v0_1.md` | `6a7a8053b5590ff2b6693a0cfe5f750af7fbe3036fc0961a10a29cabf65eadb7` | HHO-track source evidence; custody HHO; Δ28 pending |
 | HHO framework note (ChatGPT) | `received/10041afe-HCG_HURWITZ_HODGE_OBSTRUCTION_FRAMEWORK_SESSION_v0_1.md` | `aeb6f9e778f354af2c67b841dc6dda673eab0378aae9a75c5f1c2a34cf5eafd7` | pending (Δ27 add. 16) |
 | Δ27 with addenda 1–17; Δ28 | `ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` | `1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d` | pending |
@@ -51,7 +51,7 @@ The Claude HHO session read the opening note in full, and the Δ27 entry, the HC
 | Severn, Weil classes for ℚ(√−3) | `hexagon:2610.00386`, `hexagon:2610.00387` (v1, v2) | **not available** to the HHO sessions; CLAIMED |
 | Shephard–Todd classification | as given in the Magma Handbook, *Construction of Finite Complex Reflection Groups* | quoted through ChatGPT's reading |
 | A. M. Cohen, *Finite complex reflection groups*, Ann. Sci. ÉNS 9 (1976), §§2.12–2.13 | numdam `ASENS_1976_4_9_3_379_0` | quoted through ChatGPT's targeted reading; not opened by Claude |
-| GAP Character Table Library (CTblLib) | tables `6_1.U4(3).2_2`, `6.U6(2)M6`, `12_1.U4(3)` | data used; CTblLib 1.3.7 under GAP 4.12.1 on the PI's machine (reported by the PI on 10 Nov 2026). This is the same CTblLib version that HCG gate G10 records. |
+| GAP Character Table Library (CTblLib) | tables `6_1.U4(3).2_2`, `6.U6(2)M6`, `12_1.U4(3)` | data used; CTblLib 1.3.7 under GAP 4.12.1 on the PI's machine (reported by the PI on 10 Nov 2026, retrospectively; the runs were made on 4 Nov 2026). This is the same CTblLib version that HCG gate G10 records. |
 | Matsumoto–Sasaki–Takayama–Yoshida (1993), structure of G₃₄ | cited by ChatGPT | not opened by Claude |
 | D. Taylor, *Reflection subgroups of complex reflection groups* (2025) | cited by ChatGPT for the single reflection class of G₃₄ | not opened by Claude |
 | Classification inputs of gate G10 | Hiss–Malle 2001 with 2002 corrigenda; GT08; GT12; Katz–Tiep §16 | as recorded in HCG Δ27; not opened in the HHO conversation |

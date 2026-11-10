@@ -135,7 +135,7 @@ HCG has the adopted edition `hcg-v0.2`. Only its session ledger v0.2 is adopted 
 
 ### 5.2 RTG
 
-HHO uses no RTG result. Its registry row for RTG inputs is "none". If that changes, HHO cites an adopted `rtg-corpus` tag (`CONVENTIONS.md` §3). An HHO finding reaches RTG only as a pipe item in `rtg-corpus`.
+HHO uses no RTG result. In `REGISTRY.md` the HHO field "RTG inputs" reads `not set` today; it is to be set to `none` with the first adopted release. If that changes, HHO cites an adopted `rtg-corpus` tag (`CONVENTIONS.md` §3). An HHO finding reaches RTG only as a pipe item in `rtg-corpus`.
 
 ### 5.3 LIT and third-party sources
 
