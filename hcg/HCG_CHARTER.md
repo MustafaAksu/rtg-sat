@@ -10,7 +10,7 @@
 
 > HCG makes no claim that the Hodge conjecture or Severn's claim is proved or refuted.
 
-This sentence applies to every HCG document and to every text that cites HCG.
+This sentence applies to every HCG document and to every publication-facing text written by the HCG owners or the PI about HCG. HCG does not govern third-party texts.
 - B. Severn's results (`hexagon:2610.00386`, `hexagon:2610.00387`) are **CLAIMED**.
 - Checking one link of Severn's argument, or rebuilding one certificate, is not a verification of the whole claim.
 
@@ -42,7 +42,11 @@ The study's statements, grades and open items are in the study ledger, not in th
 
 **Layout:** session ledger (`REGISTRY.md`). The ledger is one file with a fixed name. Earlier editions and the pending-delta logs are frozen files; they are not live text.
 
-**The ledger carries the claim register.** Every claim has an `HCG-…` RID in §6 of the ledger, and retired or rejected claims are in its Appendix B. A separate claim-register file is not kept.
+**The ledger carries the claim register.** A separate claim-register file is not kept.
+- Load-bearing claims carry an `HCG-…` RID in §6 of the ledger.
+- Open items carry their `HCG-OPEN-…` RIDs in §2.
+- Retired and rejected claims are in Appendix B.
+- A few interpretive `[HEUR]` blocks in §6 have no RID. They are commentary, not registered claims.
 
 ## 3. Editions
 
@@ -105,7 +109,7 @@ A review state is not a proof grade and does not upgrade a claim tag. Agreement 
 **HHO.** The Hurwitz–Hodge Obstruction study was opened inside the HCG conversation on 3 Nov 2026 and is a separate study with its own owners.
 - HHO-track files made in the HCG conversation are kept here as dated source evidence. Their scientific custody is with HHO.
 - HHO uses HCG inputs as received, hash-pinned files until an `hcg-v*` tag exists, and re-pins by its own decision afterwards.
-- An HHO result enters HCG only with PI adoption and an HCG release. Shared storage transfers nothing.
+- An HHO result enters HCG only with all three of: an explicit disposition by the HCG owners, PI adoption, and an HCG release that records the import. Shared storage transfers nothing.
 
 **Symbol warning.** "(H)" in the HHO opening note and "(H0)–(H4)" in the HCG ledger are different objects. See `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md`.
 
