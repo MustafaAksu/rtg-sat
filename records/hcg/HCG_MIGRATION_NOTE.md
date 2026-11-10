@@ -32,6 +32,8 @@ The HCG original ledger, pending deltas, witnesses, GAP output and primary HCG p
 
 The HHO review plan also lists `HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_1.md` and an induced-period review as missing to that session. These are **acquisition targets**, not evidence of loss. File names and session-reported hashes must be verified on the bytes actually received. Any unseen item is `not available`.
 
+**Cross-line consistency guard.** HHO PR #15 reports the HCG-side `d >= 53` claim and an independent HHO-side `d <= 5`, `d = 6`, `d = 7` result family, with potentially different hypotheses: do not put them in one theorem inventory or infer a contradiction until exact source assumptions are recovered. The HHO migration note also identifies the withdrawn `HHO-CONJ-NPL` (C3 x F20 counterexample) and the reported Addendum 17 class-datum witness refuting `(L) => split`. Preserve the corresponding historical originals if received and route scientific custody to HHO; do not promote these into HCG theorems by co-location.
+
 ## 3. HCG ↔ HHO interface (no circular adoption)
 
 1. **Scientific ownership.** HCG owns its own study statements, witnesses and engines as reviewed/adopted by its owners and PI; HHO owns its obstruction claims and the decisions on their hypotheses. A HHO claim created in the HCG conversation remains an HHO-track historical input, not an HCG result just because of storage.
