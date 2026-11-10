@@ -1,6 +1,6 @@
-# HCG v0.2 — release record (DRAFT)
+# HCG v0.2 — release record
 
-**Status:** **DRAFT — not adopted.** This record becomes the release record of `hcg-v0.2` only when the PI's adoption is entered in §8. Until then there is no HCG edition in this repository.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 10 November 2026, 13:59 +03:00 (§8). Publication tag: `hcg-v0.2`, created by the PI on the merge commit of the pull request that carries this record.
 
 **Release:** first repository edition of the HCG study. It publishes the session ledger v0.2 that the PI adopted at chat level on 26 October 2026, **byte-exact** (PI decision 1 of 10 Nov 2026, "A", recorded verbatim in `upload/hcg/README.md`).
 
@@ -113,11 +113,12 @@ The frozen files are adopted as **evidence as it stands**, not as claims. A froz
 
 | Decision | By | Entry |
 |---|---|---|
-| Co-owner review of this record | ChatGPT HCG owner session | *(blank)* |
-| Adoption of `hcg-v0.2` with the scope of §§1–5 | PI | *(blank)* |
-| Publication: tag created by the PI, or by a single-use workflow under `CONVENTIONS.md` §2.1 | PI | *(blank)* |
+| Co-owner review of this record | ChatGPT HCG owner session | PR #24 review `5840618838`: ACCEPT WITH ONE CORRECTION (R1, the source of the Option A decision). R1 was applied in commit `0f143a5`. The review recommended adopting the charter with v0.2 and a tag created directly by the PI. |
+| Adoption of `hcg-v0.2` with the scope of §§1–5 | PI, 10 Nov 2026, 13:59 +03:00 | "1- Kabul özgün v0.2 aynen" — adopted: the original v0.2, unchanged. |
+| Adoption of the charter with this release | PI, same message | "2- Charter Kabul" — the charter is adopted as the governance document. |
+| Publication | PI, same message | "3- Tag i ben atarım ama CLI yı siz verirsiniz" — the PI creates the annotated tag; the owner session supplies the command. |
 
-## 9. Publication step (to be applied only after the PI's adoption)
+## 9. Publication step (applied after the PI's adoption)
 
 1. `hcg/HCG_CHARTER.md`: the status line and the `hcg-v0.2` row of §3 change from "DRAFT / not yet adopted" to the adoption entry. No other text changes.
 2. `REGISTRY.md`, `hcg` row:
@@ -125,5 +126,5 @@ The frozen files are adopted as **evidence as it stands**, not as claims. A froz
    - layout names `hcg/HCG_STUDY_LEDGER.md`;
    - RTG inputs stay `not set`;
    - the transfer rule records that HHO → HCG needs an HCG owner disposition, PI adoption and an HCG release.
-3. This record: status and §8 filled; §7 completed with the two hashes above; "DRAFT" removed from the title.
+3. This record: status and §8 filled; §7 completed; "DRAFT" removed from the title.
 4. Hashes of every changed file are recomputed after the step and before the tag. Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).

@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the HCG conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** DRAFT for the first repository release. It is not adopted until a release record says so.
+**Status of this file:** adopted by the PI on 10 Nov 2026 as the governance document of `hcg-v0.2` (`records/hcg/HCG_v0.2_RELEASE_RECORD.md`). It carries no scientific claim. **Governing edition:** `hcg-v0.2`.
 
 ## 0. Scope guard
 
@@ -54,7 +54,7 @@ The study's statements, grades and open items are in the study ledger, not in th
 |---|---|---|
 | Session ledger v0.1 | PI, chat level, 22 Oct 2026 | SHA-256 `75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7` |
 | Session ledger v0.2 | PI, chat level, 26 Oct 2026 (scoped) | SHA-256 `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` |
-| `hcg-v0.2` (first repository edition) | **not yet adopted in this repository** | `hcg/HCG_STUDY_LEDGER.md` is byte-identical to the chat-adopted v0.2 (PI decision 1 of 10 Nov 2026, recorded in `upload/hcg/README.md`) |
+| `hcg-v0.2` (first repository edition) | PI, 10 Nov 2026; release record `records/hcg/HCG_v0.2_RELEASE_RECORD.md`; published by the annotated tag | `hcg/HCG_STUDY_LEDGER.md` is byte-identical to the chat-adopted v0.2 (PI decision 1 of 10 Nov 2026, recorded in `upload/hcg/README.md`) |
 
 **What the v0.2 adoption covered.** It adopted the consolidated record as the governing session record. It did not make any claim `ACCEPTED`: every claim kept its own review state.
 
