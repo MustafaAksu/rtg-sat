@@ -5,8 +5,9 @@ date: 2026-11-10
 kind: question
 object: HHO results d ≤ 5, d = 6, d = 7 (records/hho/HHO_MIGRATION_PLAN.md finding F3, PR #15); HCG Δ27 addenda 2–3 (HCG-COR-D6-NONSPLIT-NOGO, the d = 7 screen)
 tags: [hcg-v0.2]
-state: open
+state: dispositioned
 blocks: HCG review of Δ27 for a later HCG edition
+disposition: 2026-11-10 · accept · hho/HHO_CLAIM_REGISTER.md
 ---
 HCG will review Δ27 for a later edition and needs to keep its dimension statements apart from HHO's.
 1. For each of HHO's results "d ≤ 5: (D) impossible", "d = 6: (D) ⇒ [1]", "d = 7: (D) impossible": which hypotheses are used? In particular, is it the (H) of the opening note, or (D) alone with fewer standing assumptions?
