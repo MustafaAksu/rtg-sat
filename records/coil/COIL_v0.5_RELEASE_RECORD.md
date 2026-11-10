@@ -45,21 +45,21 @@ Unchanged. The analysis cites `legacy-v0.7` §3.1 brackets as `[NUM strong legac
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** Files changed or added in this release, SHA-256 at the **content commit** `a2214c4c359934a5811b2a073eacb0b3d6bddb6b` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
+**Status: CANDIDATE — not adopted.** Files changed or added in this release, SHA-256 at the **content commit** `918bb8e333f42d566764340de24e7235f003bc67` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `coil/records/RM-02.md` | `25d3096998f9ca5e2144f25d3f5fcb5076f46699ba312a8e4a44a46be8dde582` |
+| `coil/records/RM-02.md` | `f3f7561225e13dbf38828e92547bd4804c7a8c7dc075da28419e033a3fafc05b` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `9611e14df0d089087b21984a7b14ed08a00d87e9e37c07b41c13e2e17af94484` |
-| `coil/COIL_INDEX.md` | `27b9bfdd0d3752b3b09b61c6bbecb20814cf2f0797859e56612acc86cf153c4e` |
-| `coil/AUDIT_CARRIER_COMPLETENESS.md` | `5f1b90f6729d8d2d2106bc795a82cff1740a77ecd19d596f19c3429b178fc724` |
-| `coil/KSPARK_DEF_DEGNORM.md` | `56acea3c460003cb25f0d827e4789a7d546f486f67a4616783c4946800e03559` |
-| `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` | `0f0e63d0cec8099bd9824fd73d7b43d48fb76e0ffda937942e99c64c8261cce5` |
-| `evidence/coil/code/ringdiag_quotient_spectrum_check.py` | `a79a8d2d9c650f579d7e918616cea26c16874336af46af58e6a30575032d7230` |
-| `evidence/coil/outputs/ringdiag_quotient_spectrum_check.json` | `51c5e7c3b49b0dcb61c9731d50d6d271d07ea1e3ce276e16b05701116dba325f` |
-| `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` | `087aece79ad15786d91f2bcaf169e8fce5d2fda2f21e9897d735699a6d9bf491` |
-| `evidence/coil/code/SHA256SUMS` | `315f5cebff50231f2264da9beefd176163c1a51df008f30ba4daec64da5237a8` |
-| `evidence/coil/outputs/SHA256SUMS` | `8a9549f637bafbaa7089f27b1bcef13dc19fce4ab3319ff9cd6c39a85987bfe4` |
-| `evidence/coil/prereg/SHA256SUMS` | `b8d4107c7f77003278757bf979d3a92bfe1c67a0d0ffc22f9cb9237339713b3b` |
+| `coil/COIL_INDEX.md` | `b2b7374db0edc460bf500adfc6dc9194c79d66c6b852cc61345f0df3327a9f4d` |
+| `coil/AUDIT_CARRIER_COMPLETENESS.md` | `b7cae11be9c361915dad204f0497d1ba7606c4d735dc53cc80fd7a38911d2e7f` |
+| `coil/KSPARK_DEF_DEGNORM.md` | `ba171a87a88926a0129a9847ab734e7cb3d880b8dcf2db20d4fd515bc126824f` |
+| `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` | `aa9f3e726923642e90cc8fde61425db396ea5cc09f8a5e5e0a1a11b1a34f1ac8` |
+| `evidence/coil/code/ringdiag_quotient_spectrum_check.py` | `bb4d9e564f7474fc12e5a426948eec8af8ab7acf20cee89f7a27447d548069d5` |
+| `evidence/coil/outputs/ringdiag_quotient_spectrum_check.json` | `2fc1c668d41f735c144512a2a6ca477c80e34401f40e22d2e7c6edeffdc93d65` |
+| `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` | `9f702d4537770e655d12b4f64514249871c4ed61b5cc258eddf7ab8580c55d9e` |
+| `evidence/coil/code/SHA256SUMS` | `baf46af92af835ae0e51a703ee30a10f0d29ae75359360b72d46dee3c1a5d21e` |
+| `evidence/coil/outputs/SHA256SUMS` | `f06cb5d326a58dd0cb2184af170aca45d47b50a0b33a4dca68bd78e014a67095` |
+| `evidence/coil/prereg/SHA256SUMS` | `36297343c444edc0b74c95f0ed85e9acf0094a90d76f8745d051ab1f5f4c9676` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
