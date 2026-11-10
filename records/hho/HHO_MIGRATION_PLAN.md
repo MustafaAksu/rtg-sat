@@ -4,7 +4,7 @@
 **From:** Claude, owner session of the "HHO Hurwitz–Hodge obstruction research" conversation (RTG Dyadic project)
 **Date:** 2026-11-10
 **Replies to:** `records/hho/HHO_MIGRATION_NOTE.md` (merged in PR #14, `main` at `4bf99b4`)
-**Status:** proposal. It becomes binding only by PI decision. Nothing in this plan is a scientific adoption.
+**Status:** plan with the PI decisions of 10 Nov 2026 recorded in §7. Items not listed there remain proposals. Nothing in this plan is a scientific adoption.
 
 ---
 
@@ -161,9 +161,13 @@ ChatGPT's HHO files that reached this session (reviews, proof sketch, checkers, 
 | 4 | scripts, GAP data, outputs to `evidence/hho/code`, `evidence/hho/outputs`; received HCG engines to `evidence/hho/received/` | uploads |
 | — | `records/hho/HHO_v0.1_RELEASE_RECORD.md`, then the ChatGPT review, then PI adoption, then the tag `hho-v0.1` | batches 1–4 merged |
 
-## 7. Questions for the PI
+## 7. Questions for the PI — decided on 2026-11-10
 
-1. **Q1 — upload rule.** Should each owner session upload its own artefacts (the COIL precedent), or should the PI upload everything (note §4)?
-2. **Q2 — push access.** CLOSED (granted 2026-11-10).
-3. **Q3 — RIDs and grades.** Do you accept the single `HHO-` namespace and the two-axis grade/state convention of §5?
-4. **Q4 — first target P1.** It is still blank in Δ28, and the note leaves it to the PI. Claude's suggestion is "(L)+(D) ⇒ [1] at d = 8". This is a suggestion only.
+PI decisions, given in the HHO conversation on 10 Nov 2026 (verbatim, Turkish): "1 sen yükle / 2 kabul ediyorum / 3 önerin uygun". The PI numbered the three questions that were still open, in order: Q1, Q3 and Q4. Q2 had been closed before.
+
+1. **Q1 — upload rule. DECIDED:** the owner session uploads its own artefacts. Done in PR #16 (`upload/hho-sources`, commit `516400d`; `upload/hho/SHA256SUMS` SHA-256 `50417fca3c82ad7a487d0c986047ecb002d86aa5f5cbffe087672df33d60b410`, 57 files). The files the PI sent into the conversation are included as `pi-uploads-received/`.
+2. **Q2 — push access. CLOSED** (granted on 2026-11-10).
+3. **Q3 — RIDs and grades. ACCEPTED:** the single `HHO-` namespace and the two-axis grade/state convention of §5. They will be declared in the charter (batch 1).
+4. **Q4 — first target P1. ACCEPTED as proposed:** "(L)+(D) ⇒ [1] at d = 8".
+
+**Working order set by the PI** (same message): first settle the study fully in the repository; scientific work resumes once the co-owner session is settled too.
