@@ -2,6 +2,8 @@
 For each imported statement it finds the defining entry at the historical tag and at the latest tag,
 reports the section heading it sits in and its leading grade tag, and says whether the entry text is
 identical at both tags (RID markup and backticks ignored).
+Scope: it compares the ONE selected defining line of each import. It does not check proofs, the entries
+that line depends on, or the rest of the block. The OFN reference of R8 names no statement and is not covered.
 Needs a local clone of MustafaAksu/rtg-corpus that holds the tags named below.
 Usage: python3 rtg_import_audit.py /path/to/rtg-corpus
 """
@@ -12,6 +14,7 @@ GEN = 'dsn/RTG_GENESIS_GEOMETRY_DSN.md'
 PROG = 'dsn/RTG_PROGRAMME_OVERVIEW.md'
 ITEMS = [  # label, file, historical tag, latest tag, regex that picks the defining entry line
     ('R1 A (DYAD-side: A = DT(P1) of order 6, in the Q-form entry)', DYAD, 'dyad-v6.4.19', 'dyad-v6.4.23', r'^`\[ALG\]` \[RID: DYAD-ALG-Q-INVARIANT-FORM\]'),
+    ('R1 A^3 = -I, A^6 = I (GEN-THM-LIN-ORDER6)', GEN, 'gen-v2.8.9', 'gen-v2.10', r'^`\[THM\]` `\[RID: GEN-THM-LIN-ORDER6\]`'),
     ('R1 A (Genesis linearization)', GEN, 'gen-v2.8.9', 'gen-v2.10', r'Linearization: \$DT\(0,0\) = A'),
     ('R2 B, Q-invariant form (DYAD-ALG-Q-INVARIANT-FORM)', DYAD, 'dyad-v6.4.19', 'dyad-v6.4.23', r'^`\[ALG\]` \[RID: DYAD-ALG-Q-INVARIANT-FORM\]'),
     ('R3 J_Q (Genesis 6.6 display)', GEN, 'gen-v2.8.9', 'gen-v2.10', r'^\$\$J_Q = \\tfrac\{1\}\{\\sqrt\{3\}\}'),

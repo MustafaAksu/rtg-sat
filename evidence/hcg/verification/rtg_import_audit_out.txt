@@ -2,6 +2,10 @@ R1 A (DYAD-side: A = DT(P1) of order 6, in the Q-form entry)
   dyad-v6.4.19 (file 40c9e63f14ba) line 471, in "§6.3 Canonical Constants `[ALG]`"
   dyad-v6.4.23 (file 9f874ccc1cd6) line 488, in "§6.3 Canonical Constants — entry grades: ALG"
   leading grade tag: `[ALG]`; entry text identical at both tags: True
+R1 A^3 = -I, A^6 = I (GEN-THM-LIN-ORDER6)
+  gen-v2.8.9 (file d143673e9596) line 32, in "§1. Current Canonical State"
+  gen-v2.10 (file 63c3b020d9c6) line 34, in "§1. Current Canonical State"
+  leading grade tag: `[THM]`; entry text identical at both tags: True
 R1 A (Genesis linearization)
   gen-v2.8.9 (file d143673e9596) line 645, in "§6.1 Primitive State and Generator `[THM / mixed]`"
   gen-v2.10 (file 63c3b020d9c6) line 653, in "§6.1 Primitive State and Generator `[THM / mixed]`"
