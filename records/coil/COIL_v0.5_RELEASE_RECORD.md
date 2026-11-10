@@ -1,6 +1,6 @@
 # COIL v0.5 — release record (DRAFT)
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.4`. Scope: **PAIRBC scope correction + conditional quotient/spectrum result** (not metadata-only). Becomes the adoption record of tag `coil-v0.5` when the PI adopts it.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-10 ("Benimsiyorum", COIL owner session, after co-owner review `5838153479` ACCEPT for the v0.5 scope); publication tag `coil-v0.5`. Successor of `coil-v0.4`. Scope: **PAIRBC scope correction + conditional quotient/spectrum result** (not metadata-only). Becomes the adoption record of tag `coil-v0.5` when the PI adopts it.
 
 ## 1. Files
 
@@ -35,6 +35,10 @@ P-κ, REPLICATION-CONCORDANT, their scopes; S3″; RANK INCONCLUSIVE; RESOLVABIL
 
 Unchanged. The analysis cites `legacy-v0.7` §3.1 brackets as `[NUM strong legacy-report]` and does not identify the recovered engine with the historical producer.
 
+## 4b. Publication step (applied)
+
+Governing-edition fields in `coil/COIL_CHARTER.md` (header) and `REGISTRY.md` moved to `coil-v0.5`; hashes of all listed files recomputed after this step (§6).
+
 ## 5. Checks
 
 - `ringdiag_quotient_spectrum_check.py` (fail-closed, C1–C7) executed (Python 3, numpy): status PASS, exit 0; residuals ≤ 4×10⁻¹⁶; multiplicity 2; one zero mode; zero / four multipliers outside the unit circle below / above K*_⊥; nonlinear quotient residual 5.6×10⁻¹⁷. The co-owner's separately written checks agree. Neither is an execution of the recovered `step_inertial` path nor a historical-run reproduction.
@@ -45,10 +49,12 @@ Unchanged. The analysis cites `legacy-v0.7` §3.1 brackets as `[NUM strong legac
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** Files changed or added in this release, SHA-256 at the **content commit** `918bb8e333f42d566764340de24e7235f003bc67` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
+**Status: ADOPTED (2026-11-10).** Files changed or added in this release, SHA-256 at the **content commit** `918bb8e333f42d566764340de24e7235f003bc67` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
+| `coil/COIL_CHARTER.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 | `coil/records/RM-02.md` | `f3f7561225e13dbf38828e92547bd4804c7a8c7dc075da28419e033a3fafc05b` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `9611e14df0d089087b21984a7b14ed08a00d87e9e37c07b41c13e2e17af94484` |
 | `coil/COIL_INDEX.md` | `b2b7374db0edc460bf500adfc6dc9194c79d66c6b852cc61345f0df3327a9f4d` |
@@ -62,4 +68,4 @@ Unchanged. The analysis cites `legacy-v0.7` §3.1 brackets as `[NUM strong legac
 | `evidence/coil/outputs/SHA256SUMS` | `f06cb5d326a58dd0cb2184af170aca45d47b50a0b33a4dca68bd78e014a67095` |
 | `evidence/coil/prereg/SHA256SUMS` | `36297343c444edc0b74c95f0ed85e9acf0094a90d76f8745d051ab1f5f4c9676` |
 
-**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-10):** all files listed above as they stand at the content commit, plus everything inherited unchanged from `coil-v0.4`; tag `coil-v0.5`. **Exclusion of effect:** `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` is adopted only as an unlocked draft; this adoption neither locks nor authorises the ICID experiment (the PI's separate decision of 10 Nov 2026 to lock it is carried out in its own pull request as `PREREG-MM1-ICID-v1.0.md`). What is adopted is the recorded current state — the PAIRBC realised-ensemble scope correction with P-κ unchanged, and the conditional `[DERIVED]` spectral result for the specified recovered-engine model with its open nonlinear / basin / Def-C / bridge questions; not a physical validation, a historical reproduction, a cross-layer equivalence or a transfer to RTG.
