@@ -18,7 +18,7 @@
 
 ## 2. Relative and absolute equilibria
 
-**Synchronous relative equilibrium.** θ_i(n) = θ₀ + n·dt·Ω, v_i = Ω with Ω = K sin φ/γ: substitution gives (1 − a)Ω + dt·K·sin φ = Ω exactly (check: residual 0.0). Phase differences are constant; the absolute state is not fixed (v ≠ 0).
+**Synchronous relative equilibrium.** θ_i(n) = θ₀ + n·dt·Ω, v_i = Ω with Ω = K sin φ/γ: substitution gives (1 − a)Ω + dt·K·sin φ = Ω exactly (check: residual 0.0). Phase differences are constant. For sin φ ≠ 0 the absolute state is not fixed (v = Ω ≠ 0); the hypotheses also admit sin φ = 0, in which case Ω = 0 and the synchronous branch is an absolute equilibrium.
 
 **Twisted absolute equilibrium.** θ_i = iπ, v = 0: the four force terms cancel pairwise (check: max|f| ≈ 2×10⁻¹⁶). It exists for every K; nothing here says it is the branch of interest.
 
@@ -28,7 +28,7 @@
 |---|---|---|
 | Full map | 20 | (θ, v); common-phase multiplier exactly 1 (neutral) |
 | Quotient by common phase | 19 | retains the **common velocity**, a physical state variable; at synchrony its multiplier is 1 − a. Common velocity is not a gauge coordinate |
-| Closed difference subsystem | 18 | with Rθ = (θ₁ − θ₀, …, θ₉ − θ₀), Eq = (0, q₁, …, q₉), w = dt·v: q⁺ = q + u, u⁺ = (1 − a)u + dt²K·R f(Eq). Closes exactly (intertwining π∘F = F̄∘π, verified with exact rational matrices in the co-owner's check and numerically here) |
+| Closed difference subsystem | 18 | with w = dt·v, Rx = (x₁ − x₀, …, x₉ − x₀), Eq = (0, q₁, …, q₉), the projection **π(θ, w) = (Rθ, Rw)** and (q, u) := π(θ, w) (phases taken in a lift / local chart): q⁺ = q + u, u⁺ = (1 − a)u + dt²K·R f(Eq). Closes exactly: π∘F = F̄∘π. Verified with exact rational matrices in the co-owner's check, and as a nonlinear one-step identity at a deterministic non-equilibrium state in the owner checker (C7, residual 5.6×10⁻¹⁷) |
 
 ## 4. Transverse spectrum at synchrony
 
@@ -39,18 +39,18 @@ $$\sigma_{3,7}=-\Big(1+\tfrac{\sqrt5}{4}\Big)\cos\varphi.$$
 Per mode, in (θ, w) coordinates, J_m = [[1, 1], [dt²Kσ_m, 1 − a]], det J_m = 1 − a − dt²Kσ_m, tr J_m = 2 − a; for 0 < a < 2 and σ_m < 0 the Jury conditions give stability exactly when 0 < dt²K(−σ_m) < a. Hence the **first transverse crossing** of the synchronous branch is
 $$\boxed{K^*_\perp=\frac{\gamma}{dt\,(1+\sqrt5/4)\cos\varphi}}\qquad\text{at a per-update angle }\ \omega=\arccos(1-a/2).$$
 
-| φ | |σ|_max | K*_⊥ | ω (γ = 1, dt = 0.09) |
+| φ | \|σ\|_max | K*_⊥ | ω (γ = 1, dt = 0.09) |
 |---|---|---|---|
 | 1.26 | 0.476774 | **23.304788** | 0.301137 |
 | 1.28 | 0.446994 | **24.857412** | 0.301137 |
 
-Checks (owner script): Fourier formula vs direct matrix spectrum, max difference 3.9×10⁻¹⁶; multiplicity 2 at the minimum; one zero mode; full 20-D map at K*_⊥(1 ∓ 10⁻³): max multiplier modulus 1.000000 (common phase) below and 1.000045 above, with exactly one multiplier at 1 and one at 1 − a in both cases. The co-owner's independent implementation agrees to ≈ 3.4×10⁻¹⁶.
+Checks (owner checker, **fail-closed**: assertions C1–C7, exit 1 on any failure; status PASS): Fourier formula vs direct matrix spectrum, max difference ≤ 4×10⁻¹⁶; multiplicity 2 at the minimum; one zero mode; full 20-D linearisation at K*_⊥(1 ∓ 10⁻³): below, no multiplier outside the unit circle and maximum transverse modulus 0.999955; above, **exactly four** transverse multipliers outside (maximum 1.000045); in both cases one multiplier at 1 (common phase) and one at 1 − a (common velocity). The co-owner's separately written SymPy/NumPy checks (review `5837952384`) give the same K*_⊥ values, the same four-multiplier count and a quotient residual 1.1×10⁻¹⁶.
 
 **Consequence for the carrier audit:** the numbers 23.305 / 24.857 that `find_k_spark`'s fallback produced and `coil/AUDIT_CARRIER_COMPLETENESS.md` §3 reinterpreted are **this closed-form crossing**. The coincidence has a formula behind it.
 
 ## 5. The degeneracy that changes the follow-up design
 
-Because m = 3 and m = 7 are complex-conjugate Fourier modes with the same σ, the critical **real** eigenspace of the full map is **four-dimensional** (two spatial modes × one complex multiplier pair). A generic simple-pair Neimark–Sacker conclusion (two-dimensional centre manifold, invariant circle) does **not** apply without treating the ℤ₁₀ × reflection symmetry and the resulting equivariant normal form. This record does not compute that normal form and establishes no invariant curve, stability direction or attraction.
+Because m = 3 and m = 7 are complex-conjugate Fourier modes with the same σ, the **oscillatory transverse crossing subspace** is **four-dimensional** over the reals (two spatial modes × one complex multiplier pair). "4D" throughout COIL means this transverse subspace: in the full co-moving linearisation the neutral common-phase direction adds a fifth unit-modulus direction, which the quotient removes. A generic simple-pair Neimark–Sacker conclusion (two-dimensional centre manifold, invariant circle) does **not** apply without treating the spatial symmetry — the dihedral group **D₁₀ = C₁₀ ⋊ C₂** of order 20 generated by the cyclic shift r and the vertex reflection s with s r s = r⁻¹ (a semidirect, not a direct, product; distinct from phase inversion / offset reversal) — and the resulting equivariant normal form. This record does not compute that normal form and establishes no invariant curve, stability direction or attraction.
 
 ## 6. What is and is not resolved
 

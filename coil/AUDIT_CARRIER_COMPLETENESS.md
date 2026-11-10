@@ -47,7 +47,7 @@ the Jacobian is **independent of the common drift velocity** (the force depends 
 
 $$K^*_{\rm transverse}=\frac{\gamma}{dt\,|\sigma|_{\max}}=23.305$$
 
-**This is the very number the fallback produces.** So 23.305 is probably not a meaningless artefact — it may be **the transverse stability threshold of the drifting synchronous branch**. v3.0's "discard" verdict was hasty. (Normalisation note: this K* is computed with the ringdiag force as recovered, deg_vec = 5 and amplitude factor 1.25 — `coil/RINGDIAG_UPDATE_RULE.md`; the σ convention follows charter §3.)
+**This is the very number the fallback produces.** So 23.305 is not a meaningless artefact: it **is the first transverse spectral crossing of the drifting synchronous branch** of the recovered-engine model (closed form in `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md`; at the time of v3.1 this was a numerical observation). v3.0's "discard" verdict was hasty. (Normalisation note: this K* is computed with the ringdiag force as recovered, deg_vec = 5 and amplitude factor 1.25 — `coil/RINGDIAG_UPDATE_RULE.md`; the σ convention follows charter §3.)
 
 ## 4. Corrected verdict
 
@@ -62,7 +62,7 @@ $$K^*_{\rm transverse}=\frac{\gamma}{dt\,|\sigma|_{\max}}=23.305$$
 
 > **Is the ringdiag counterpart of MM-1's spectral K* object the *transverse spectral crossing* of the synchronous relative equilibrium in the global-phase quotient?**
 
-This must be asked **before Def-B**, because perhaps no new threshold object has to be derived — **the existing threshold object was sought in the wrong coordinate space.** The numerical coincidence of §3 (23.305) supports this reading but does not prove it: whether the transverse branch is really the pre-spark attractor, and how it relates to the orbit phenomenon measured by Def-C (orbit QR-Lyapunov; `coil/KSPARK_DEF_DEGNORM.md`), **has not been tested**.
+This must be asked **before Def-B**, because perhaps no new threshold object has to be derived — **the existing threshold object was sought in the wrong coordinate space.** The spectral part of this question is now answered conditionally (update below); what the §3 number does **not** settle: whether the transverse branch is really the pre-spark attractor, and how it relates to the orbit phenomenon measured by Def-C (orbit QR-Lyapunov; `coil/KSPARK_DEF_DEGNORM.md`), **has not been tested**.
 
 Recorded as `OPEN-QUOTIENT-EQUILIBRIUM`; it did **not** hold Pair B/C hostage (that campaign ran and closed — RUN-MM1-PAIRBC v1.0.1). **Update (10 Nov 2026):** the spectral sub-question is resolved conditionally — `coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` derives the transverse spectrum of the synchronous relative equilibrium in closed form (σ_m = cos φ[½(cos 2πm/10 + cos 4πm/10) − 1]; first crossing at m = 3, 7, K*_⊥ = γ/(dt(1+√5/4)cos φ) = 23.304788 at φ = 1.26), so the §3 coincidence has a formula behind it and the critical space is 4D. The nonlinear bifurcation, basin selection, identification with the historical Def-C bracket and any bridge remain open (`coil/COIL_INDEX.md` §8 item 2k); S-1/S-2 still wait on those.
 

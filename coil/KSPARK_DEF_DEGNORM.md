@@ -84,6 +84,6 @@ Of the handover's three branches (agree / disagree / Def-A not computable), the 
 ## Return note (current)
 
 - Block B: **closed** — the `deg_norm` uncertainty is resolved (flag inert; deg_i = 5; amplitude cancels).
-- Block A: **reopened in corrected form** — Def-A vs Def-C comparison pending on the quotient relative equilibrium; the fallback numbers 23.305 / 24.857 are candidate transverse thresholds, not discarded artefacts and not confirmed onsets.
+- Block A: **reopened in corrected form** — Def-A vs Def-C comparison pending on the quotient relative equilibrium; the fallback numbers 23.305 / 24.857 are the closed-form first transverse spectral crossings of the synchronous relative equilibrium on the recovered-engine model (A.2b), not discarded artefacts and not confirmed onsets.
 - Legacy caveat carried as stated at `legacy-v0.7`: the recovered helper `lyap_qr`'s `lmax` is a volume-growth sum, not the largest exponent — a property of the recovered helper, which does not by itself identify it as the historical producer; the historical Def-C object must be read with both caveats.
 - RTG items (OPEN-L0L1-1, §3.3 `[FAIL]` finding on the fixed-point solver) remain RTG's; the §3.3 `[FAIL]` concerns the absolute fixed-point search and is consistent with A.1; COIL's A.2 does not re-grade it.
