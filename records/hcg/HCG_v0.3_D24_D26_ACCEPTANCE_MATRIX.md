@@ -2,7 +2,7 @@
 
 **Date:** 10 November 2026. **Prepared by:** the Claude HCG owner session. **Review:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-review package, PROPOSAL, **revision 2** (after the ChatGPT co-owner review of PR #27; §7). Nothing here is adopted. `hcg-v0.2` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed.
+**Status:** owner-review package, PROPOSAL, **revision 3** (after the ChatGPT co-owner review of PR #27 and two PI decisions of 10 Nov 2026; §7). Nothing here is adopted. `hcg-v0.2` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed.
 
 **What this is.** For every row of Δ24, Δ25 and Δ26 in the pending-delta log, the matrix gives the source, the proposed change, the hypotheses, the kind of evidence, how Severn v1 relates to v2, the negative findings, and a recommendation for a later edition `hcg-v0.3`.
 
@@ -66,7 +66,7 @@ The matrix proposes that the proof-obligation table of v0.3 carry **two separate
 | 24.4 | `HCG-THM-PO1` (§6.8) | `[THM]` → same | INTERNAL CHECKED → THIRD-FAMILY CHECKED, conditional reduction | B7 "VERIFIED as conditional reduction" | accept |
 | 24.5 | `HCG-ALG-E02` (§6.14, line 687) and the Prop 4.2 Step 4 wording | `[ALG]` → same | RID as a whole: CHECKED → **CHECKED (unchanged)**. New sub-line for **W5 only**: THIRD-FAMILY CHECKED | A3 "VERIFIED with wording correction", on W5 | **accept with change** (R1) |
 | 24.6 | `HCG-OPEN-AUDITOR-R2` (OPEN 1) | `[OPEN]` PARTIAL → CLOSED | — | all items 1–7 delivered | accept |
-| 24.7 | `HCG-OPEN-PO1-PREMISE` (OPEN 8) | `[OPEN]` ACTIVE → CLOSED (scoped), obligation transferred to OPEN 6; or PARTIAL | — | B6, B7 (theorem level) | **accept with change** (R2) |
+| 24.7 | `HCG-OPEN-PO1-PREMISE` (OPEN 8) | `[OPEN]` ACTIVE → **PARTIAL** (PI decision, 10 Nov 2026) | — | B6, B7 (theorem level) | **decided: PARTIAL** (R2) |
 | 24.8 | `HCG-EXT-SEVERN-62` (§6.6) | `[EXT-CLAIM]` → same | CLAIMED → CLAIMED | "Public global statement: NOT VERIFIED as independently established theorem" | accept |
 | 24.9 | `HCG-OPEN-LEMMA62` (OPEN 5), `HCG-OPEN-HUMAN-REF` (OPEN 6) | unchanged by Δ24 | — | — | accept (OPEN 5 is then treated in row 26.3) |
 | 24.10 | W5 ↔ Appendix A (§6.19) | `[ALG cert]` → same | INTERNAL CHECKED → same | "NOT VERIFIED and NOT REQUIRED" | accept |
@@ -83,7 +83,8 @@ The matrix proposes that the proof-obligation table of v0.3 carry **two separate
   - Rank 16 and the dominance argument are unaffected.
 - **24.7. Change required (R2).** The closure criterion of OPEN 8 in the adopted ledger is "a line-by-line review" of the every-member proof, including the special member A × S. **That criterion has not been met.** What exists is a theorem-level reading by three model families; the auditor's B6 and B7 are scoped critiques and are expressly not a formal proof certification. At theorem level, B6 does cover the whole rational Weil plane and every member.
   - Two dispositions are honest: (i) leave OPEN 8 PARTIAL; or (ii) close it as "CLOSED (scoped)" with a sentence in v0.3 saying that the original line-by-line obligation was **not fulfilled** and is **transferred to OPEN 6** (human referee), naming the every-member scope and the special member A × S.
-  - The matrix recommends (ii). It must not be described as the original criterion having been completed. The choice is the PI's.
+  - The matrix recommended (ii). **PI decision (10 Nov 2026, 18:04 +03:00): "Karar 1 Partial kalsın" — OPEN 8 stays PARTIAL.**
+  - Text for v0.3: "PARTIAL. Done: a theorem-level reading of the every-member scope by three model families (auditor B6, B7; Δ24). Not done: the line-by-line review required by the closure criterion, including the special member A × S." The closure proposed in the Δ24 row of the log is **not** taken.
 - **24.8.** The ledger sentence proposed by Δ24, "every chain link now third-family checked at theorem level on S_W5", must stand next to the auditor's own sentence that the public global statement is not verified as an independently established theorem, and next to "unrefereed; no human referee".
 
 **Negative findings and incidents to keep:**
@@ -166,7 +167,7 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 | 26.6 | (H0) derived in v2 | source note | — | accept |
 | 26.7 | `HCG-ALG-LAMINAR-H4-GATE` (new) | `[ALG]` CONDITIONAL | Claude proposal; ChatGPT agrees with the same scope | accept, as conditional |
 | 26.8 | E02 wording repaired in v2 | record | — | accept |
-| 26.9 | `HCG-OPEN-SEVERN-V2` → "CLOSED (candidate)" | `[OPEN]` → CLOSED, limited | — | **accept with change** |
+| 26.9 | `HCG-OPEN-SEVERN-V2` → "CLOSED (candidate)" | `[OPEN]` → **CLOSED in its verified scope** (PI decision, 10 Nov 2026) | — | **decided: closed, limited to the Theorem A/B chain**; new open item for §11–§12 still proposed |
 | 26.10 | Crosswalk v1/[386] → v2 (addenda 2–3) | record of identity of arguments | CHECKED (two AIs) | accept, under §1 |
 | 26.11 | Severn Theorems A/B/C | `[EXT-CLAIM]` | CLAIMED, unchanged | accept |
 | 26.12 | D-9 (Claude's concession) | dispute-log entry | conceded and corrected | accept |
@@ -189,7 +190,7 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 - **26.6.** In v2, Prop 8.5 needs (H1)–(H4) only; (H0) follows from Lemma 8.3 and Clemens–Schmid. The Hodge-type step was checked by Claude only. A consumer must say which version's hypothesis list it uses (`records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` §3).
 - **26.7.** Under the laminar premises of `HCG-ALG-LAMINAR-H0H4`, (H4) alone is the computational gate for v2 Prop 8.5. The supply of (H0) then comes from v2 Lemmas 8.2–8.3, which are geometric and unrefereed. It is not a statement about arbitrary nilpotents.
 - **26.9. Change proposed.** Two points:
-  - "candidate" is removed only by the PI's decision. The PI's relayed approval of 28 Oct says the item "may be closed in its verified scope".
+  - "candidate" is removed only by the PI's decision. **PI decision (10 Nov 2026, 18:04 +03:00): "Karar 2 kapatılabilir" — the item may be closed.** This agrees with the relayed approval of 28 Oct ("may be closed in its verified scope"). The closure is a two-AI successor-identity audit; it is not a third-family reading of v2 (§1).
   - The closure is limited to the Theorem A/B proof chain. v2 §11 (Theorem C) and §12 (type III) were **not audited**. The matrix proposes a new, narrower open item, for example `HCG-OPEN-SEVERN-V2-C`, so that the unaudited part stays visible. It connects to Δ29, which is pending and outside this matrix.
 - **26.10.** The crosswalk covers five links:
   - Thm 5.1 ≡ v1 Thm 3.1;
@@ -206,7 +207,7 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 | # | Point | Proposed by this matrix |
 |---|---|---|
 | Q1 | Two-column presentation of third-family verdicts (v1/[386]) and v2 locations (crosswalk) | adopt it (§1). Review: ACCEPT |
-| Q2 | OPEN 8: PARTIAL, or closed as scoped with the unmet line-by-line obligation transferred to OPEN 6 | scoped with transfer (24.7). Review: ACCEPT WITH CHANGE |
+| Q2 | OPEN 8: PARTIAL, or closed as scoped with the unmet line-by-line obligation transferred to OPEN 6 | **Decided by the PI: PARTIAL** (24.7) |
 | Q3 | `HCG-EXT-PO6` after OPEN 5 closes | explicit proof-path line, two-AI scope only (26.3 b). Review: ACCEPT WITH CHANGE |
 | Q4 | Unaudited v2 §11–§12 | new narrower open item (26.9). Review: ACCEPT |
 | Q5 | The Brosnan preprint cited in 25.1 | an unverified reported lead; LIT identity check before citing. Review: ACCEPT |
@@ -225,7 +226,8 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 | Revision | Commit | What changed |
 |---|---|---|
 | 1 | `74408559e94e2d9cd4eb7adf4d0b7db37aeaa91d` (SHA-256 `1f72179e11a17c2425ccdcde761a65866d39e4a3644047b9031cf7d7d0d9ab1c`) | first version |
-| 2 | this commit | The four corrections of the ChatGPT co-owner review `5842469549` (ACCEPT CORE WITH REQUIRED SCOPING CORRECTIONS). |
+| 2 | `a882126` | The four corrections of the ChatGPT co-owner review `5842469549` (ACCEPT CORE WITH REQUIRED SCOPING CORRECTIONS). |
+| 3 | this commit | Two PI decisions of 10 Nov 2026, 18:04 +03:00, entered in rows 24.7 and 26.9: "Karar 1 Partial kalsın Karar 2 kapatılabilir." |
 
 **The corrections of revision 2:**
 - **R1 (row 24.5).** The third-family check of `HCG-ALG-E02` is narrowed to W5. Revision 1 repeated the log's too-wide upgrade of the whole RID; that was an error of this matrix.
@@ -236,3 +238,5 @@ A reader cannot replay rows 26.4 and 26.5 from this repository alone.
 The review's dispositions of Q1–Q8 are entered in §5.
 
 The reviewer also re-derived the two bounds of Δ25 under their stated hypotheses (Boundary-Witt and the genus-0 budget): PASS, as necessary conditions only.
+
+**Revision 3.** The two decisions settle how v0.3 is to be drafted on these two rows. They are not an adoption of v0.3 or of any other row.
