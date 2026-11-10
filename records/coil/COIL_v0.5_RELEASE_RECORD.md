@@ -49,12 +49,12 @@ Governing-edition fields in `coil/COIL_CHARTER.md` (header) and `REGISTRY.md` mo
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-10).** Files changed or added in this release, SHA-256 at the **content commit** `918bb8e333f42d566764340de24e7235f003bc67` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
+**Status: ADOPTED (2026-11-10).** Files changed or added in this release, SHA-256 at the **content commit** `43046297c3c4c39370fa410d0ed0acb7df33c10d` (this manifest-only commit follows it). Files not listed are inherited unchanged from `coil-v0.4`. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `coil/COIL_CHARTER.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/COIL_CHARTER.md` | `9da61d7d0a739bea4134ba9406b80c9552c71ac6cb0d0d1996cbe0f0477e4bf7` |
+| `REGISTRY.md` | `0c33946c103d6ae3575d1871cde30e1d294263214c868f73a12949adbb42a1bc` |
 | `coil/records/RM-02.md` | `f3f7561225e13dbf38828e92547bd4804c7a8c7dc075da28419e033a3fafc05b` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `9611e14df0d089087b21984a7b14ed08a00d87e9e37c07b41c13e2e17af94484` |
 | `coil/COIL_INDEX.md` | `b2b7374db0edc460bf500adfc6dc9194c79d66c6b852cc61345f0df3327a9f4d` |
