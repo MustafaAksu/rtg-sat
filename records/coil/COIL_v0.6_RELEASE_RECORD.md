@@ -31,16 +31,17 @@
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `69fc56d39aba40984d4e6f11bea4457ee1d71d5c`. Files not listed are inherited unchanged from `coil-v0.5`. Re-hash after any later change and before the tag.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `0cc6de9266097c1d17f497297d92a124daeadd3a`. Files not listed are inherited unchanged from `coil-v0.5`. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md` | `df47a95584fe57e38c2871c51a72e6efc0f7434ea785c240b21e7ea7cbd82446` |
-| `evidence/coil/code/icid_experiment.py` | `a4d611fb62b9bae82ccb7066dfe0bf561b658b01db7c36d3c71ba881b7a6ad95` |
-| `evidence/coil/code/icid_certificate.py` | `343f34ec6e1e2087456ceff213c73c862775f078a4a02110f09ab026776a7b48` |
-| `evidence/coil/code/CLI-ICID.md` | `066f548f9093c62a8327588c9119010e0c3da63fdc0d5445cbc14bd039626faf` |
-| `evidence/coil/code/SHA256SUMS` | `c0789e2e2fa7850fcf5de73f78ea427675fa2c591ae8dbda467fa07052f9824c` |
-| `evidence/coil/prereg/SHA256SUMS` | `d9bbe7f3989a1578a43ffe4dd43cb04d472565b4716b675c1a50b7aed2c5dbcf` |
+| `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md` | `2449c08de6f0584392a2ce704fd96ec9e889c68a77bc30019adfc1538d229ea7` |
+| `evidence/coil/code/icid_experiment.py` | `19b27d0d7c81f18c3e258150c2726b9b7240274c039e03d2763246b31dce2676` |
+| `evidence/coil/code/icid_certificate.py` | `bdc39b10748149a56a26e169bd224f6e14d6f6105b536149589f55187265deb9` |
+| `evidence/coil/code/CLI-ICID.md` | `53abe6157454f703509a71531c170e8462489df825e97eef14879d505b170cf7` |
+| `evidence/coil/code/SHA256SUMS` | `0501a141ee66df88d9f93d8e40a58b5d6e367e04ba0fb6865e0fc9cac79d6456` |
+| `evidence/coil/prereg/SHA256SUMS` | `dc65ee026e2fd47af37256921760aed5969450a9f8937aa8ceb9fb9cbcdbe013` |
+| `.gitignore` | `f63404fcbed80f5edf84369905fbfa30c8bb56ab62eef4affb95338a689dd17b` |
 | `coil/records/RM-02.md` | `cd910f9c13d0f4bd18763fc4b796c4937efa29fd9f49f4ced523c0001fd5db6c` |
 | `coil/COIL_INDEX.md` | `9e6895ec7f05f69532aabece75ab8e73d4e6d397b19170e80e8df3e84452bca7` |
 
