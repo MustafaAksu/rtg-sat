@@ -1,0 +1,62 @@
+{
+  "reports": [
+    {
+      "phi": 1.26,
+      "C1_relative_equilibrium_residual": 0.0,
+      "C2_twisted_equilibrium_max_force": 2.220446049250313e-16,
+      "C3_fourier_vs_matrix_maxdiff": 3.885780586188048e-16,
+      "C4_sigma_min": -0.47677375732895944,
+      "C4_multiplicity": 2,
+      "C4_zero_modes": 1,
+      "C4_sigma_37_formula_diff": 1.1102230246251565e-16,
+      "C5_K_star_perp": 23.304787523036385,
+      "C5_K_star_formula": 23.304787523036392,
+      "C5_crossing_angle_per_update": 0.3011365455533722,
+      "C6_full_map_multipliers": {
+        "below": {
+          "n_modulus_eq_1": 1,
+          "n_modulus_eq_1_minus_a": 1,
+          "n_outside_unit_circle": 0,
+          "max_transverse_modulus": 0.9999549989874538
+        },
+        "above": {
+          "n_modulus_eq_1": 1,
+          "n_modulus_eq_1_minus_a": 1,
+          "n_outside_unit_circle": 4,
+          "max_transverse_modulus": 1.0000449989875453
+        }
+      },
+      "C7_nonlinear_quotient_one_step_residual": 5.551115123125783e-17
+    },
+    {
+      "phi": 1.28,
+      "C1_relative_equilibrium_residual": 0.0,
+      "C2_twisted_equilibrium_max_force": 1.6653345369377348e-16,
+      "C3_fourier_vs_matrix_maxdiff": 3.3306690738754696e-16,
+      "C4_sigma_min": -0.4469938843619946,
+      "C4_multiplicity": 2,
+      "C4_zero_modes": 1,
+      "C4_sigma_37_formula_diff": 3.3306690738754696e-16,
+      "C5_K_star_perp": 24.857411924036217,
+      "C5_K_star_formula": 24.85741192403624,
+      "C5_crossing_angle_per_update": 0.3011365455533722,
+      "C6_full_map_multipliers": {
+        "below": {
+          "n_modulus_eq_1": 1,
+          "n_modulus_eq_1_minus_a": 1,
+          "n_outside_unit_circle": 0,
+          "max_transverse_modulus": 0.9999549989874552
+        },
+        "above": {
+          "n_modulus_eq_1": 1,
+          "n_modulus_eq_1_minus_a": 1,
+          "n_outside_unit_circle": 4,
+          "max_transverse_modulus": 1.0000449989875468
+        }
+      },
+      "C7_nonlinear_quotient_one_step_residual": 5.551115123125783e-17
+    }
+  ],
+  "failed_checks": [],
+  "status": "PASS"
+}

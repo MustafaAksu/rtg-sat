@@ -73,6 +73,10 @@ The original record concluded: *"with ω_i = 0 a synchronised fixed point does n
 
 So "Def-A is undefined on this substrate" was a statement about the **absolute** θ-space search (5 restarts of a gradient solver), not a non-existence result; the correct absence label would have been `[ABSENT-in-tested-search]`. **Def-A is definable on the relative equilibrium in the global-phase quotient**; whether its crossing (23.305) is the ringdiag spark onset, and how it relates to the Def-C bracket (12.54–12.55 / 13.48–13.50), is the open test `OPEN-QUOTIENT-EQUILIBRIUM`. Def-B (spectral NS bracket without a fixed point) is no longer the only route; it is tested **after** the quotient-equilibrium question.
 
+### A.2b Spectral sub-question (10 Nov 2026)
+
+`coil/ANALYSIS_RINGDIAG_QUOTIENT_SPECTRUM.md` `[DERIVED]`: on the recovered-engine model the Def-A object is now explicit — the transverse stiffness spectrum of the synchronous relative equilibrium is σ_m = cos φ[½(cos 2πm/10 + cos 4πm/10) − 1], first crossing at m = 3, 7, K*_⊥ = 23.304788 (φ = 1.26) / 24.857412 (φ = 1.28), i.e. the fallback numbers. Def-A vs Def-C now means: this closed-form crossing vs the historical bracket 12.54–12.55 / 13.48–13.50 (a factor ≈ 1.86 apart). The comparison is **still not executed**: it needs the nonlinear fate of the 4D-degenerate crossing, the branch actually attracting the historical ICs, and the Def-C estimator's own caveats.
+
 ### A.3 Current decision-tree outcome
 
 Of the handover's three branches (agree / disagree / Def-A not computable), the original record chose the third. Current state: the third branch was chosen on insufficient evidence; the comparison is **not yet executed, not inconclusive-by-construction**. Open: `OPEN-QUOTIENT-EQUILIBRIUM` (parked, `coil/COIL_INDEX.md` §8 item 2k). Agreement would lift the estimator blocker (**not** a named bridge); disagreement would close the onset bridge while the carrier match is preserved.
@@ -80,6 +84,6 @@ Of the handover's three branches (agree / disagree / Def-A not computable), the 
 ## Return note (current)
 
 - Block B: **closed** — the `deg_norm` uncertainty is resolved (flag inert; deg_i = 5; amplitude cancels).
-- Block A: **reopened in corrected form** — Def-A vs Def-C comparison pending on the quotient relative equilibrium; the fallback numbers 23.305 / 24.857 are candidate transverse thresholds, not discarded artefacts and not confirmed onsets.
+- Block A: **reopened in corrected form** — Def-A vs Def-C comparison pending on the quotient relative equilibrium; the fallback numbers 23.305 / 24.857 are the closed-form first transverse spectral crossings of the synchronous relative equilibrium on the recovered-engine model (A.2b), not discarded artefacts and not confirmed onsets.
 - Legacy caveat carried as stated at `legacy-v0.7`: the recovered helper `lyap_qr`'s `lmax` is a volume-growth sum, not the largest exponent — a property of the recovered helper, which does not by itself identify it as the historical producer; the historical Def-C object must be read with both caveats.
 - RTG items (OPEN-L0L1-1, §3.3 `[FAIL]` finding on the fixed-point solver) remain RTG's; the §3.3 `[FAIL]` concerns the absolute fixed-point search and is consistent with A.1; COIL's A.2 does not re-grade it.
