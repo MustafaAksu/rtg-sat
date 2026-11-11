@@ -108,7 +108,7 @@ Not assumed: finiteness of the group, irreducibility, a character field, pairedn
 | Derivation and proof text | ChatGPT (LOC-v0.1, LOC-v0.2) | — |
 | Line-by-line proof review of §§2–5 of LOC-v0.1; three audited points: the radical (3.3), the sign in (4), the rank-2 step | Claude (LOC-REV §§1–2) | pass; six clarification requests M1–M6, none affecting the result |
 | LOC-v0.2 against LOC-v0.1: M1–M6 applied, equations (1)–(5) unchanged | Claude (LOG, addendum 3) | pass |
-| Exact check of (1), (2) as a matrix identity, (3) on every basis pair, the radical, the block shape, (4), (5), rationality of Πb_i, and the class, on 16 data | Claude, own engine (`disc_locality_proof_check_claude.py`) | all pass. Includes a class-[2] control (C₆), an odd-n control (class [−1]), and W5 with H₀ ≠ I (det H₀ = 68364) |
+| Exact check of (1), (2) as a matrix identity, (3) on every basis pair, the radical, the block shape, (4), (5), rationality of Πb_i, and the class, on 17 data | Claude, own engine (`disc_locality_proof_check_claude.py`) | all pass. Includes a class-[2] control (C₆), an odd-n control (class [−1]), and W5 with H₀ ≠ I (det H₀ = 68364) |
 | Independent implementation (standard library, triangular cochain form); 320 sampled tuples and 19 controls | ChatGPT (package `received/2e443e69-…REPRO_v0_1.zip`) | pass; replayed by Claude at the time (40/40 manifest, four JSONs byte-identical) |
 | Re-run for this matrix | Claude, 11 Nov 2026 | output byte-identical |
 | Third model family | — | **none** |
