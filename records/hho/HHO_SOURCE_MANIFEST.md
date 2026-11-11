@@ -1,6 +1,6 @@
 # HHO — source manifest
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as the source manifest of `hho-v0.1` (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. **Changed after `hho-v0.1`** (11 Nov 2026): §6 records the placement of 54 files in `evidence/hho/`; no hash and no source is changed. The governing text is the one at the tag until the next release.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as the source manifest of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. Since `hho-v0.1`: §6 records the placement of 54 files in `evidence/hho/`, and §4.1 records the provenance boundary of the ChatGPT files; no hash and no source is changed.
 
 A hash certifies byte identity. It does not certify correctness, publication rights or review state.
 
