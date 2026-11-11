@@ -39,7 +39,7 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `8543af5c30726e37e52c215710a731114e474316`. Files not listed are inherited unchanged from `coil-v0.7`.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `b7a70aa001957207bb494ac5b90ed7e54cc8fd92`. Files not listed are inherited unchanged from `coil-v0.7`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -52,6 +52,6 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 | `evidence/coil/outputs/SHA256SUMS` | `033e4d24239b2f31ed225895de5d9ed5ee817e7f0d67c9775912d0c75abb4459` |
 | `coil/COIL_INDEX.md` | `418a0a3862f3a440e4c23d38678d3c61a8ef0da507d6272aa4531df1839635ba` |
 | `coil/COIL_RMT.md` | `8d3de59c809e6aea1878d61159fa2567291c86066bd808c4040e8172161e6709` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `64525161c99ce82f10e73240f2b4d789d90c74703a9ed80fab649cdbd7f70073` |
 
 **Adoption scope (PI, 2026-11-11):** the files listed above as they stand at the content commit; the two PDFs as covered by `upload/coil-synthesis-sources/SHA256SUMS`; everything else inherited unchanged from `coil-v0.7`; tag `coil-v0.8`. **Limits of effect:** the adoption covers the source identity, the model contract and the catalogue wording; the numerical statements stay `[EXPLORE]` and cannot enter a decision; no statement of either publication becomes a COIL result or an RTG result; RM-03 and RM-04 are not opened; no experiment is authorised.
