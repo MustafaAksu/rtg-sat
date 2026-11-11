@@ -14,7 +14,7 @@ A historical source file is frozen and is never edited. It keeps its original wo
 
 ## Folders
 
-| Folder | Files | Content | Relation to the v0.2 ledger |
+| Folder | Files | Content | Relation to the adopted ledger (`hcg-v0.3`) |
 |---|---|---|---|
 | `ledger-history/` | 61 | Ledger v0.1 (drafts, ADOPTED, release record, packages); ledger v0.2 (drafts, build fragments, `make_v02.py`, `release_v0_2.py`, diffs, QA record, ADOPTED, release record and addendum); the pending-delta logs for v0.2 (Δ1–Δ23) and v0.3 (Δ24–Δ29, live state) | v0.2 and its chain. The v0.3 log is pending. |
 | `session-start/` | 11 | Charter v0.2, the H1/H2 problem contract and exact checks, the R7 proof note, the first verification ledgers, Claude's first H3 reviews | cited by v0.2 |
