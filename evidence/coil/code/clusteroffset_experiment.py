@@ -3,9 +3,11 @@
 clusteroffset_experiment.py -- PREREG-MM1-CLUSTEROFFSET v1.0 execution.
 
 Question (Q-A): tri0, a state on the cluster subspace C = {theta1 = theta2, w1 = w2} is given
-a controlled cluster-breaking offset of size eps. Where is the orbit in the last quarter of
-the window: back on C (RETURNS), off C without relative winding of nodes 1 and 2
-(BOUNDED-OFF-CLUSTER), or with nodes 1 and 2 still slipping against each other (SLIPS)?
+a controlled cluster-breaking offset of size eps. What does the last quarter (Q4) of the window
+show: the orbit on C (Q4-ON-CLUSTER), a net relative winding of nodes 1 and 2 over Q4
+(Q4-NET-WINDING), or the orbit off C with no net winding over Q4 (Q4-OFF-CLUSTER-NO-NET-WINDING)?
+The labels are operational statements about Q4; persistence and boundedness are not claimed by
+them and are described by separately recorded quantities (winding-index changes, excursions).
 
 The orbit arithmetic is the frozen PAIRBC update, statement for statement:
     tn = th + w;  w = (1-a)*w + dt*dt*K*_force(th, A);  th = tn
@@ -45,8 +47,9 @@ LOCKED_BURN, LOCKED_H, NQ = 70000, 200000, 4
 EPS_GRID = (1e-2, 1e-4, 1e-6, 1e-8)
 DIRS = ("D1", "D2")                      # D1: offset in delta (phases); D2: offset in s (w units)
 CLUSTER_IDX = (0, 6, 12, 18, 24)
-RET_FACTOR = 0.1                         # RETURNS: sup over Q4 of wrapped |delta| and of |s| <= eps/10
-OFF_FACTOR, OFF_FLOOR = 10.0, 1e-3       # BOUNDED-OFF: sup over Q4 of wrapped |delta| >= max(10 eps, 1e-3)
+RET_FACTOR = 0.1                         # Q4-ON-CLUSTER: sup over Q4 of wrapped |delta| and of |s| <= eps/10
+OFF_FACTOR, OFF_FLOOR = 10.0, 1e-3       # Q4-OFF-CLUSTER-...: sup over Q4 of wrapped |delta| >= max(10 eps, 1e-3)
+LABELS = ("Q4-ON-CLUSTER", "Q4-NET-WINDING", "Q4-OFF-CLUSTER-NO-NET-WINDING", "UNRESOLVED")
 LIN_LEVEL, LIN_TOL = 1e-4, 1e-2          # D-LIN: compared where the linear prediction first reaches 1e-4
 ETA_DEFECT = 1e-6                        # descriptive onset level of the closure defect
 SINQ_SMALL = 0.05                        # descriptive: |sin q| below this counts as "near sin q = 0"
@@ -76,21 +79,34 @@ def wrap(x):
     return math.remainder(x, TWO_PI)
 
 def classify(eps, sup_dwrap_q4, sup_s_q4, ddelta_q4, finite=True):
-    """Locked end-state rule (prereg section 5). Exactly one label."""
+    """Locked Q4 rule (prereg section 5). Exactly one operational label; ddelta_q4 is the NET change of
+    the lifted delta over Q4. Nothing here asserts persistence or boundedness."""
     if not finite: return "UNRESOLVED"
-    if abs(ddelta_q4) >= TWO_PI: return "SLIPS"
-    if sup_dwrap_q4 <= RET_FACTOR*eps and sup_s_q4 <= RET_FACTOR*eps: return "RETURNS"
-    if sup_dwrap_q4 >= max(OFF_FACTOR*eps, OFF_FLOOR): return "BOUNDED-OFF-CLUSTER"
+    if abs(ddelta_q4) >= TWO_PI: return "Q4-NET-WINDING"
+    if sup_dwrap_q4 <= RET_FACTOR*eps and sup_s_q4 <= RET_FACTOR*eps: return "Q4-ON-CLUSTER"
+    if sup_dwrap_q4 >= max(OFF_FACTOR*eps, OFF_FLOOR): return "Q4-OFF-CLUSTER-NO-NET-WINDING"
     return "UNRESOLVED"
 
+OUT_SUMS = os.path.join(HERE, "..", "outputs", "SHA256SUMS")
+def icid_reference(icid_cell, ic):
+    """(lam_perp_block of RUN-MM1-ICID v1.0 for (cell, ic), state). The reference file must exist AND
+    match its entry in evidence/coil/outputs/SHA256SUMS; state is OK / REFERENCE-MISSING /
+    REFERENCE-HASH-MISMATCH / NO-ICID-COUNTERPART."""
+    if icid_cell is None: return None, "NO-ICID-COUNTERPART"
+    if not os.path.isdir(ICID_DIR) or not os.path.exists(OUT_SUMS): return None, "REFERENCE-MISSING"
+    fns = [fn for fn in os.listdir(ICID_DIR) if fn.startswith(f"icid_cell{icid_cell:02d}_") and fn.endswith(".csv")]
+    if len(fns) != 1: return None, "REFERENCE-MISSING"
+    want = None
+    for line in open(OUT_SUMS):
+        parts = line.split(None, 1)
+        if len(parts) == 2 and parts[1].strip() == "./icid_results/"+fns[0]: want = parts[0]
+    if want is None: return None, "REFERENCE-MISSING"
+    if _sha(os.path.join(ICID_DIR, fns[0])) != want: return None, "REFERENCE-HASH-MISMATCH"
+    for row in csv.DictReader(open(os.path.join(ICID_DIR, fns[0]))):
+        if int(row["ic"]) == ic and row.get("lam_perp_block"): return float(row["lam_perp_block"]), "OK"
+    return None, "REFERENCE-MISSING"
 def icid_lambda_perp(icid_cell, ic):
-    """lam_perp_block of RUN-MM1-ICID v1.0 for (cell, ic), or None if not available."""
-    if icid_cell is None or not os.path.isdir(ICID_DIR): return None
-    for fn in os.listdir(ICID_DIR):
-        if fn.startswith(f"icid_cell{icid_cell:02d}_") and fn.endswith(".csv"):
-            for row in csv.DictReader(open(os.path.join(ICID_DIR, fn))):
-                if int(row["ic"]) == ic and row.get("lam_perp_block"): return float(row["lam_perp_block"])
-    return None
+    return icid_reference(icid_cell, ic)[0]
 
 class Branch:
     """One orbit: frozen update + running summaries of (q, r, delta, s)."""
@@ -103,6 +119,9 @@ class Branch:
         self.first_2pi = None; self.n_on = None
         self.absD_q4 = 0.0; self.maxD = 0.0; self.sinq_small_q4 = 0; self.sup_oc_q4 = [0.0, 0.0]
         self.sup_r_q4 = 0.0; self.trace = []
+        # winding index of the lifted delta: k = round((delta - reference)/2pi); changes are counted, not interpreted
+        self.k_run = 0; self.run_wind_changes = 0; self.run_last_wind_step = None
+        self.k_q4 = 0; self.q4_up = 0; self.q4_down = 0; self.q4_last_wind_step = None; self.sup_exc_q4 = 0.0
     def observe(self, n, ak):
         th, w = self.th, self.w
         q = float((th[1]+th[2])/2-th[0]); r = float((w[1]+w[2])/2-w[0])
@@ -114,6 +133,13 @@ class Branch:
         ad = abs(d); self.sup_dlift = max(self.sup_dlift, ad)
         dw = abs(wrap(d)); self.sup_dw[qi] = max(self.sup_dw[qi], dw); self.sup_s[qi] = max(self.sup_s[qi], abs(s))
         if self.first_2pi is None and abs(d-self.d0) >= TWO_PI: self.first_2pi = n
+        k = round((d-self.d0)/TWO_PI)
+        if k != self.k_run: self.run_wind_changes += 1; self.run_last_wind_step = n; self.k_run = k
+        if qi == NQ-1 and self.dq[NQ-1] is not None:
+            e4 = d-self.dq[NQ-1]; self.sup_exc_q4 = max(self.sup_exc_q4, abs(e4)); k4 = round(e4/TWO_PI)
+            if k4 > self.k_q4: self.q4_up += 1; self.q4_last_wind_step = n
+            elif k4 < self.k_q4: self.q4_down += 1; self.q4_last_wind_step = n
+            self.k_q4 = k4
         D = ak*math.sin(q)*(1.0-math.cos(d/2.0)); aD = abs(D); self.maxD = max(self.maxD, aD)
         if self.n_on is None and aD >= ETA_DEFECT: self.n_on = n
         if qi == NQ-1:
@@ -195,6 +221,9 @@ def run_base(pe, pair, kappa, ic_index, burn=None, H=None, deg=False):
                "sup_dwrap_q4": br.sup_dw[-1], "sup_s_q4": br.sup_s[-1], "ddelta_q4": ddq4, "dq_q4": dqq4,
                "delta_net_winding": (round((br.dq[NQ]-br.d0)/TWO_PI) if br.finite and br.dq[NQ] is not None else None),
                "first_2pi_step": br.first_2pi, "chart_ok": int(br.sup_dlift < TWO_PI),
+               "run_wind_changes": br.run_wind_changes, "run_last_wind_step": br.run_last_wind_step,
+               "q4_wind_up": br.q4_up, "q4_wind_down": br.q4_down, "q4_last_wind_step": br.q4_last_wind_step,
+               "sup_lift_excursion_q4": br.sup_exc_q4,
                "n_on_defect": br.n_on, "max_abs_defect": br.maxD, "mean_abs_defect_q4": br.absD_q4/(br.ql+1),
                "frac_sinq_small_q4": br.sinq_small_q4/(br.ql+1), "sup_r_q4": br.sup_r_q4,
                "other_cluster_q4": int(min(br.sup_oc_q4) <= OTHER_CLUSTER_TOL), "sup_oc01_q4": br.sup_oc_q4[0], "sup_oc02_q4": br.sup_oc_q4[1]}
@@ -213,7 +242,8 @@ def run_base(pe, pair, kappa, ic_index, burn=None, H=None, deg=False):
 
 FIELDS = ["cell", "pair", "kappa", "role", "icid_cell", "ic", "dir", "eps", "status", "class", "delta0", "s0",
           "sup_dlift", "sup_dwrap_Q", "sup_s_Q", "sup_dwrap_q4", "sup_s_q4", "ddelta_q4", "dq_q4", "delta_net_winding",
-          "first_2pi_step", "chart_ok", "n_on_defect", "max_abs_defect", "mean_abs_defect_q4", "frac_sinq_small_q4",
+          "first_2pi_step", "chart_ok", "run_wind_changes", "run_last_wind_step", "q4_wind_up", "q4_wind_down",
+          "q4_last_wind_step", "sup_lift_excursion_q4", "n_on_defect", "max_abs_defect", "mean_abs_defect_q4", "frac_sinq_small_q4",
           "sup_r_q4", "other_cluster_q4", "sup_oc01_q4", "sup_oc02_q4", "lam_perp_base", "icid_lam_perp", "g_base",
           "n1_exact", "base_motion", "lin_rel_err", "lin_step", "d_lin", "deg_max_abs_y", "deg_result",
           "burn", "H", "nq", "eps_grid", "instrument_sha256", "frozen_sha256", "numpy", "python"]
@@ -225,14 +255,18 @@ def fmt(x):
 def run_cell(pe, cid, outdir="cloff_results", burn=None, H=None, log=print):
     pair, kappa, role, icid_cell = CELLS[cid]
     os.makedirs(outdir, exist_ok=True)
+    fcsv = os.path.join(outdir, f"cloff_cell{cid:02d}_tri0_{pair}_{kappa:.3f}.csv")
+    ftr = os.path.join(outdir, f"cloff_cell{cid:02d}_trace.csv")
+    if os.path.exists(fcsv) or os.path.exists(ftr):
+        log(f"STOP: result files of cell {cid} already exist in {outdir}; they are never overwritten"); sys.exit(4)
     rows = []; traces = []
     for ic in CLUSTER_IDX:
         rr, tt = run_base(pe, pair, kappa, ic, burn=burn, H=H)
-        ref = icid_lambda_perp(icid_cell, ic)
+        ref, ref_state = icid_reference(icid_cell, ic)
         for r in rr:
             if r.get("class") == "BASE":
                 r["icid_lam_perp"] = ref
-                r["g_base"] = ("n/a" if ref is None or r.get("lam_perp_base") is None else
+                r["g_base"] = (ref_state if ref_state != "OK" else "BASE-NOT-FINITE" if r.get("lam_perp_base") is None else
                                "AGREE" if abs(r["lam_perp_base"]-ref) <= BASE_TOL else "BASE-MISMATCH")
         rows += rr; traces += tt
         cls = [r.get("class") for r in rr if r.get("class") not in (None, "BASE")]
@@ -242,10 +276,10 @@ def run_cell(pe, cid, outdir="cloff_results", burn=None, H=None, log=print):
     for r in rows:
         r.update({"cell": cid, "pair": pair, "kappa": kappa, "role": role, "icid_cell": icid_cell,
                   "numpy": np.__version__, "python": sys.version.split()[0]})
-    with open(os.path.join(outdir, f"cloff_cell{cid:02d}_tri0_{pair}_{kappa:.3f}.csv"), "w", newline="") as f:
+    with open(fcsv, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(FIELDS)
         for r in rows: wr.writerow([fmt(r.get(k)) for k in FIELDS])
-    with open(os.path.join(outdir, f"cloff_cell{cid:02d}_trace.csv"), "w", newline="") as f:
+    with open(ftr, "w", newline="") as f:
         wr = csv.writer(f); wr.writerow(["cell", "ic", "dir", "eps", "n", "q", "r", "delta", "s"])
         for ic, dname, e, tr in traces:
             for (n, q, r_, d, s) in tr: wr.writerow([cid, ic, dname, repr(e), n, repr(q), repr(r_), repr(d), repr(s)])
@@ -279,7 +313,8 @@ def validate(outdir):
         pair, kappa, role, icid_cell = CELLS[cid]
         if cid not in files: problems.append(f"cell {cid}: file missing"); continue
         if len(files[cid]) != 1: problems.append(f"cell {cid}: {len(files[cid])} files"); continue
-        if not os.path.exists(os.path.join(outdir, f"cloff_cell{cid:02d}_trace.csv")): problems.append(f"cell {cid}: trace file missing")
+        tpath = os.path.join(outdir, f"cloff_cell{cid:02d}_trace.csv")
+        if not os.path.exists(tpath): problems.append(f"cell {cid}: trace file missing"); continue
         rows = list(csv.DictReader(open(os.path.join(outdir, files[cid][0]))))
         keys = [(r["ic"], r["dir"], r["eps"]) for r in rows]
         if set(keys) != expected_keys() or len(keys) != len(expected_keys()):
@@ -288,8 +323,27 @@ def validate(outdir):
             problems.append(f"cell {cid}: row metadata does not match the locked CELLS table"); continue
         bad = sorted({k for r in rows for k in want if r.get(k) != want[k]})
         if bad: problems.append(f"cell {cid}: recorded execution contract does not match the locked one: {bad}"); continue
-        if any(r["status"] != "ok" for r in rows): problems.append(f"cell {cid}: rows with status != ok")
-        if any(r["class"] == "BASE" and r["n1_exact"] != "1" for r in rows): problems.append(f"cell {cid}: N1 violated (eps = 0 orbit left the cluster subspace)")
+        # status contract (prereg section 5): a non-finite PERTURBED run is the scientific outcome UNRESOLVED;
+        # a non-finite unperturbed or control run invalidates the cell
+        bad_status = False
+        for r in rows:
+            pert = r["dir"] in DIRS
+            if r["status"] == "ok": continue
+            if pert and r["status"] == "non-finite" and r["class"] == "UNRESOLVED": continue
+            bad_status = True
+        if bad_status: problems.append(f"cell {cid}: unperturbed/control run not ok, or a non-finite perturbed run not labelled UNRESOLVED"); continue
+        if any(r["dir"] in DIRS and r["class"] not in LABELS for r in rows): problems.append(f"cell {cid}: unknown label"); continue
+        if any(r["class"] == "BASE" and r["n1_exact"] != "1" for r in rows): problems.append(f"cell {cid}: N1 violated (eps = 0 orbit left the cluster subspace)"); continue
+        # trace identity: every run key present with exactly the decimated steps 0, TRACE_EVERY, ..., H
+        # (a non-finite run may stop early but must start at 0 and be a prefix)
+        want_steps = list(range(0, LOCKED_H+1, TRACE_EVERY)); tr = {}
+        for t in csv.DictReader(open(tpath)):
+            if int(t["cell"]) != cid: tr = None; break
+            tr.setdefault((t["ic"], t["dir"], t["eps"]), []).append(int(t["n"]))
+        if tr is None or set(tr) != set(keys): problems.append(f"cell {cid}: trace file run keys do not match the 46 runs"); continue
+        st = {(r["ic"], r["dir"], r["eps"]): r["status"] for r in rows}
+        if any((tr[k] != want_steps) if st[k] == "ok" else (tr[k] != want_steps[:len(tr[k])] or not tr[k]) for k in tr):
+            problems.append(f"cell {cid}: trace steps are not the locked decimation"); continue
         cells[cid] = rows
     for cid in files:
         if cid not in CELLS: problems.append(f"unexpected cell file {files[cid]}")
@@ -303,6 +357,12 @@ def summary(outdir="cloff_results", log=print):
         out.append("RESULT SET: INCOMPLETE-OR-INVALID -- no decision is issued")
         out += [f"  problem: {p}" for p in problems]
     tag = "" if ok else "[PARTIAL-DIAGNOSTIC] "
+    refs = {}
+    for cid in cells:
+        for r in cells[cid]:
+            if r["class"] == "BASE": refs[r["g_base"]] = refs.get(r["g_base"], 0)+1
+    out.append(f"{tag}G-BASE dispositions over all unperturbed runs: {dict(sorted(refs.items()))}"
+               + ("" if not any(k.startswith("REFERENCE") for k in refs) else "  <-- ICID reference missing or not matching its deposited hash"))
     for cid in sorted(cells):
         rows = cells[cid]; pair, kappa, role, icid_cell = CELLS[cid]
         pert = [r for r in rows if r["class"] not in ("BASE", "") and r["dir"] in DIRS]
@@ -310,15 +370,19 @@ def summary(outdir="cloff_results", log=print):
         for r in pert: cnt[r["class"]] = cnt.get(r["class"], 0)+1
         fate = next(iter(cnt)) if len(cnt) == 1 else "MIXED"
         base = [r for r in rows if r["class"] == "BASE"]
-        gb = sorted({r["g_base"] for r in base}); lam = [float(r["lam_perp_base"]) for r in base]
+        gb = {}
+        for r in base: gb[r["g_base"]] = gb.get(r["g_base"], 0)+1
+        gb = dict(sorted(gb.items())); lam = [float(r["lam_perp_base"]) for r in base]
         mot = sorted({r["base_motion"] for r in base})
         dl = {}
         for r in pert: dl[r["d_lin"]] = dl.get(r["d_lin"], 0)+1
         deg = [r for r in rows if r["dir"] == "DEG"][0]
         out.append(f"{tag}cell {cid:2d} tri0/{pair} kappa={kappa} [{role}]: D-FATE={fate} counts={dict(sorted(cnt.items()))} | "
                    f"lam_perp base [{min(lam):+.6f}, {max(lam):+.6f}] G-BASE={gb} base motion={mot} | D-LIN={dict(sorted(dl.items()))} | "
-                   f"N-DEG={deg['deg_result']} | slips(first 2pi) in {sum(1 for r in pert if r['first_2pi_step'])}/40, "
-                   f"other-cluster in {sum(1 for r in pert if r['other_cluster_q4'] == '1')}/40")
+                   f"N-DEG={deg['deg_result']} | runs with |delta - delta0| >= 2pi at some step: {sum(1 for r in pert if r['first_2pi_step'])}/40; "
+                   f"Q4 winding-index changes (up, down) summed: ({sum(int(r['q4_wind_up']) for r in pert if r['q4_wind_up'])}, "
+                   f"{sum(int(r['q4_wind_down']) for r in pert if r['q4_wind_down'])}); on another cluster subspace in Q4: "
+                   f"{sum(1 for r in pert if r['other_cluster_q4'] == '1')}/40; non-finite: {sum(1 for r in pert if r['status'] != 'ok')}/40")
         # Q-B, descriptive only (status disputed between the sessions; prereg section 2): onset steps of the
         # closure defect at eps = 1e-8 and 1e-4 give lambda_est = ln(1e4)/(n_on(1e-8) - n_on(1e-4)); ratio to lambda_perp
         ratios = []
@@ -327,7 +391,7 @@ def summary(outdir="cloff_results", log=print):
                 n = {float(r["eps"]): r["n_on_defect"] for r in pert if r["ic"] == r0["ic"] and r["dir"] == dname}
                 if n.get(1e-8) and n.get(1e-4) and int(n[1e-8]) > int(n[1e-4]) and float(r0["lam_perp_base"]) > 0:
                     ratios.append(math.log(1e4)/(int(n[1e-8])-int(n[1e-4]))/float(r0["lam_perp_base"]))
-        out.append(f"{tag}    Q-B [DESCRIPTIVE; status disputed, no claim]: lambda_est/lambda_perp over base states x directions: "
+        out.append(f"{tag}    Q-B [DESCRIPTIVE; no decision, no claim]: lambda_est/lambda_perp over base states x directions: "
                    + (f"n={len(ratios)} min={min(ratios):.3f} median={sorted(ratios)[len(ratios)//2]:.3f} max={max(ratios):.3f}" if ratios else "not evaluable"))
         if fate == "MIXED":
             for dname in DIRS:
