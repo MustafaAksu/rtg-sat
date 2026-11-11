@@ -24,7 +24,7 @@ From the paper, §3.1–3.3, eqs. (1)–(6):
 
 Differences from v7.3: v7.3 uses b_j = Γ(j+α)/(Γ(α) j!) (b₀ = 1; here w₀ = 1/Γ(1+α) ≈ 1.0084 at α = 0.98) and rejects clipping as a model change, whereas here the clipped dynamics *is* the model for P_Law. At the same (α, r, x₀) = (0.98, 3.05, 0.2) the two weight families give different clocks: 128 and 412 (v1.0 weights) against 204 and 804 (v7.3 weights) at M = 100 and 400 `[EXPLORE]`.
 
-**Not available from the paper:** the r and α of Figure 1; the window T, burn-in and initial condition of the floor sweep; the definition of the resonance flag beyond "mean inter-M spread > 0.4 in normalized units"; the Lyapunov estimator; the 42 selected r values; the code ("companion repository … shared with referees upon request", Appendix B). A reproduction of the *paper's* numbers therefore needs these from the PI; without them COIL can only run its own protocol on the stated operator.
+**Not available from the paper:** the r and α of Figure 1; the window T, burn-in and initial condition of the floor sweep; the definition of the resonance flag beyond "mean inter-M spread > 0.4 in normalized units"; the Lyapunov estimator; the 42 selected r values; the code ("companion repository … shared with referees upon request", Appendix B). **PI statement, 11 Nov 2026:** the original scripts exist somewhere but are hard to find now. Consequence: until they are found, a reproduction of the *paper's* runs is not possible; any COIL protocol on this source runs the stated operator with COIL's own explicitly written choices for the missing items, and its outcome is labelled as COIL's protocol on the paper's operator, not as a reproduction of the paper.
 
 ## 3. First look at the fracture clock `[EXPLORE]`
 
@@ -43,7 +43,7 @@ What this does and does not show. It shows that the stated operator has an exit 
 - **Positive control for an RM-04 instrument.** Known depth M; x_n alone is not a state. A test must (a) detect history dependence relative to x_n, (b) recover M from a time series when M is withheld, (c) return "none" at M = 1 for fixed x₀, (d) be stable under high precision. Success would calibrate the instrument; it would not be a finding about memory.
 - **Two memories.** Besides the window M, the anchor x₀ is remembered for all time. A depth estimate must not confuse the two.
 - **P_floor (input to RM-03).** A separate protocol; needs the unavailable items of §2 or COIL's own explicit choices for them, stated before any run. The intercept E₀ is an extrapolation from λ > 0.15 to λ = 0 (paper, Fig. 2); "poles of the memory kernel transfer function" (§8.5) cannot be literal for a finite window, whose frequency response is a trigonometric polynomial.
-- **Not COIL's:** the curvature-rank definition (Def. 2.1), the rank-3 SU(2) example (§10.1), the quantum protocol (§11) and the Born-rule proposal (§9). They are RTG-side; the co-owner's observations on Def. 2.1 and §10.1 are available for a pipe item if the PI wants one.
+- **Not COIL's:** the curvature-rank definition (Def. 2.1), the rank-3 SU(2) example (§10.1), the quantum protocol (§11) and the Born-rule proposal (§9). They are RTG-side. **PI decision, 11 Nov 2026:** no pipe item is filed for the co-owner's observations on Def. 2.1 and §10.1.
 
 ## 5. Files
 

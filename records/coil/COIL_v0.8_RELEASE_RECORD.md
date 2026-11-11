@@ -27,6 +27,7 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 ## 4. Related, outside this release
 
 - PI adoption of `coil-v0.7` and its tag (`fa78f52`), 11 Nov 2026.
+- PI statements of 11 Nov 2026 recorded in the source record: the paper's original scripts are not available for now (so COIL protocols on this source will be COIL's own, labelled as such); no second pipe item on Def. 2.1 / §10.1.
 - Pipe item `rtg-corpus/pipes/PREL/20261111-SAT-dynamical-genesis-v3-k3-degeneracy-and-lift.md` (rtg-corpus PR #217, merged by the PI at `5ffec34`): three mathematical points on *Dynamical Genesis* v3.0, filed on the PI's instruction; the receiver decides. Not a COIL result.
 
 ## 5. Checks
