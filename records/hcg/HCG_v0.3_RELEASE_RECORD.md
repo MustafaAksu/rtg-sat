@@ -114,4 +114,6 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 | `evidence/hcg/verification/severn_printed_relation.py` | relation check | `3b2aba82b323cefe8b22261fc161bdf1c63dc0505bc7f86048c2001f637f57db` |
 | `evidence/hcg/README.md` | evidence index text | `b65bc3eec9dd577e98d1ccbc20cabf5692283d76f78707b187390fe822aff05a` |
 | `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
-| `REGISTRY.md` | `hcg` row | `20ec35125b89e08d1195673ce7f25ee361151079f33c506a52ac365988336c8b` |
+| `REGISTRY.md` | `hcg` row | `c7897610fbf1aac88659b054fd40cc6b86147c12fc2e7414483e5323ae0af506` |
+
+**Note on `REGISTRY.md`.** Before the merge, `main` received the HHO v0.1 and COIL v0.6 releases, which changed the `hho` and `coil` rows of `REGISTRY.md`. The branch was merged with `main` at commit `690d838a37a6d0ade96666d11455ae2915adabb1`: those two rows are taken from `main` unchanged, and the `hcg` row is the one of this release. The hash above is the hash of that merged file (it was `20ec3512…` at the content commit). No other listed file changed.
