@@ -1,6 +1,6 @@
 # HHO — source manifest
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as the source manifest of `hho-v0.1` (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as the source manifest of `hho-v0.1` (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. **Changed after `hho-v0.1`** (11 Nov 2026): §6 records the placement of 54 files in `evidence/hho/`; no hash and no source is changed. The governing text is the one at the tag until the next release.
 
 A hash certifies byte identity. It does not certify correctness, publication rights or review state.
 
@@ -94,9 +94,9 @@ RIDs of the form `HCG-…` without `HHO` are HCG's and are not renamed.
 
 ## 6. File table (57 files in `upload/hho/`)
 
-"Planned place" is where batches 2 and 4 will put an unchanged copy. Nothing is placed by this batch.
+"Place" is where an unchanged copy now stands (placed on 11 Nov 2026; 54 files; index `evidence/hho/SHA256SUMS`). Three files are deliberately not placed; the column says why. The upload in `upload/hho/` stays as it is.
 
-| Path in `upload/hho/` | SHA-256 | Origin | Kind | Content | Planned place |
+| Path in `upload/hho/` | SHA-256 | Origin | Kind | Content | Place |
 |---|---|---|---|---|---|
 | `owner-session-outputs/claude/HHO_C6_LEAF_TEST_v0_1.py` | `30395da0f12e3c5d3a700a3c091c8c34d8a5eefacad95d120023dc5fed34aa57` | Claude HHO session (own) | code | C₆ leaf-criterion test runner | evidence/hho/code/ |
 | `owner-session-outputs/claude/HHO_G34_BLOCKS_v0_1.g` | `3722966617f672c09d76bd3bb7034982a297704dd7fbfcbc13e1d0d0c6ab38ac` | Claude HHO session (own) | code | GAP: blocks and Brauer tree of G₃₄ (revision r3) | evidence/hho/code/ |

@@ -1,0 +1,133 @@
+## HHO Addendum 2 — bağımsız inceleme kararı
+
+[SESSION — PROOF CHECKED] Claude'nun Addendum 2'de verdiği Morita formu inşasını bağımsız olarak denetledim. (b) matematiksel olarak geçerli. Önceki `SESSION proof draft` derecesinin, belirtilen hipotezler altında `SESSION THM — iki-AI CHECKED` düzeyine yükseltilmesini öneriyorum.
+
+Kaynak bütünlüğü de doğrulandı:
+
+| Dosya        | SHA-256 başlangıcı | Kapsam    |
+| ------------ | ------------------ | --------- |
+| İlk inceleme | `5c70ef22`         | 80 satır  |
+| Addendum 1   | `e7059f78`         | 123 satır |
+| Addendum 2   | `cba601da`         | 172 satır |
+
+Addendum 2, önceki 123 satırı değiştirmeden koruyor.
+
+### 1. Morita formunun inşası doğru
+
+\\(U\\) indirgenemez bir \\(\mathbb Q[G]\\)-modülü ve
+
+\\[ \operatorname{End}\_{\mathbb Q[G]}(U)=K =\mathbb Q(\sqrt{-3}) \\]
+
+olsun. \\(h_U\\), \\(G\\)-değişmez pozitif \\(K\\)-Hermitik form olsun.
+
+[ALG] \\(h_U\\)'nun rasyonel izi \\(U\simeq U^\*\\) eşdeğerliğini verdiğinden
+
+\\[ \dim\_{\mathbb Q} \operatorname{Hom}\_{\mathbb Q[G]}(U,U^\*)=2. \\]
+
+Öte yandan
+
+\\[ c\longmapsto \big[(u,u')\mapsto \operatorname{Tr}\_{K/\mathbb Q}(c\\,h_U(u,u'))\big] \\]
+
+enjeksiyondur. Dolayısıyla bütün \\(G\\)-değişmez rasyonel bilineer formları verir.
+
+Bu, Addendum 2 §A2.2'nin belirleyici adımıdır.
+
+Her \\(f,f'\in W\\) için
+
+\\[ E(fu,f'u') = \operatorname{Tr}\_{K/\mathbb Q} \big(c(f,f')h_U(u,u')\big) \\]
+
+eşitliğini sağlayan tek bir \\(c(f,f')\in K\\) vardır.
+
+\\(E\\)'nin alternanlığı ve \\(h_U\\)'nun Hermitikliği:
+
+\\[ c(f',f)=-\overline{c(f,f')} \\]
+
+sonucunu verir. \\(\delta=\sqrt{-3}\\) alınırsa
+
+\\[ h_W=\delta c \\]
+
+Hermitik olur.
+
+Böylece
+
+\\[ \boxed{ E(fu,f'u') = \operatorname{Tr}\_{K/\mathbb Q} \left(\delta^{-1}h_W(f,f')h_U(u,u')\right). } \\]
+
+Bu eşitlik, önceden varsayılan Morita formunun doğrudan Jacobian cup formundan türetildiğini gösteriyor.
+
+### 2. Polarizasyon ve normalizasyon
+
+Sıfır olmayan \\(u\in U\\) için
+
+\\[ q=h_U(u,u)\in\mathbb Q\_{>0}. \\]
+
+Dolayısıyla
+
+\\[ \boxed{ (\operatorname{ev}\_u)^\*E = \operatorname{Tr}\_{K/\mathbb Q}(\delta^{-1}q\\,h_W). } \\]
+
+Sekiz-boyutlu multiplicity faktöründe
+
+\\[ [\det(qh_W)] =[q^8\det h_W] =[\det h_W] \\]
+
+çünkü \\(q^8=N\_{K/\mathbb Q}(q^4)\\).
+
+[THM] Böylece Jacobian'dan indüklenen sabit polarizasyon için diskriminant sınıfı, \\(u\\)'nun seçimine ve \\(h_U\\)'nun pozitif rasyonel normalizasyonuna bağlı değildir.
+
+Ayrıca \\(K\\)-etkisinin adjoint'i kompleks eşleniktir:
+
+\\[ a^\dagger=\bar a. \\]
+
+Bu da Rosati uyumluluğunu veriyor.
+
+### 3. Rosati-selfadjoint projektörün açık formülü
+
+[ALG — yeni bağımsız kontrol] \\(q=h_U(u,u)\\) olmak üzere \\(Ku\\) doğrusuna Hermitik ortogonal projektör:
+
+\\[ P_u(x)=\frac{h_U(x,u)}{q}\\,u. \\]
+
+Doğrudan:
+
+\\[ P_u^2=P_u,\qquad P_u^\dagger=P_u. \\]
+
+Morita ayrışımında
+
+\\[ M\_\sigma\simeq U\otimes_KW \\]
+
+olduğundan
+
+\\[ \boxed{ \operatorname{im}(P_u\otimes1_W) =Ku\otimes_KW =\operatorname{ev}\_u(W). } \\]
+
+Bu önemli: Severn'in \\(A\_\sigma\\) faktörü gerçekten bu Rosati-selfadjoint rank-bir projektörle tanımlanıyorsa, (d)'nin projektör–evaluation eşitliği cebirsel olarak hazır. Yalnızca sahibi metindeki projektörün ve polarizasyonun bunlarla özdeşleştirilmesi gerekiyor.
+
+### 4. Konvansiyon bağımsızlığının kesin kapsamı
+
+[THM — CHECKED] Sabit alternan \\(E\\) için
+
+\\[ E=\operatorname{Tr}\_{K/\mathbb Q}(c_0H), \qquad H\text{ Hermitik} \\]
+
+yazılıyorsa \\(c_0\\) skew olmak zorunda ve
+
+\\[ c_0\in\mathbb Q^\times\delta^{-1}. \\]
+
+Dolayısıyla farklı Hermitik normalizasyonlar rasyonel skalerlerle ilişkilidir. Rank sekiz olduğu için diskriminant sınıfı değişmez.
+
+Sınır: Bu, aynı polarizasyonun farklı gösterimleri için geçerlidir. İlişkisiz iki polarizasyonun norm sınıflarının aynı olduğunu göstermez. Böyle bir karşılaştırma için \\(\operatorname{NS}(A)\_{\mathbb Q}=\mathbb Q\\) gibi ek bir koşul hâlâ gerekir.
+
+### 5. Güncellenmiş bilimsel durum
+
+| Yükümlülük                                              | Önerilen kayıt                                                  |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| (a) Evaluation/Hodge gerçekleşimi                       | SESSION THM — CHECKED                                           |
+| (b) Cup formundan Morita formu ve rasyonel ölçek        | SESSION THM — iki-AI CHECKED                                    |
+| Rosati rank-bir projektörün evaluation görüntüsü        | SESSION THM — CHECKED                                           |
+| (c) Generic \\(\operatorname{End}^0(A)=K\\)             | Aynı indüklenmiş polarizasyon için gereksiz; aksi hâlde koşullu |
+| (d) Severn v2 \\(A\_\sigma\\) ve polarizasyon özdeşliği | OPEN — owner karşılaştırması                                    |
+| HHO-HYP-SUPPORT                                         | Koşullu THM                                                     |
+| \\((L)+(D)\Rightarrow[1]\\)                             | OPEN                                                            |
+
+HHO Addendum 2 — ChatGPT Independent Mathematical Review (English)
+
+[SOURCE LIMITATION] Yerel HCG v0.2 §6.16–6.17, W5 için istenen projektör ve polarizasyon ilişkisinin daha önce doğrulandığını, genel PO-6'nın ise açık olduğunu kaydediyor. Severn v2'nin doğrudan PDF'ini edinmeyi denedim ancak erişim başarısız oldu; bu yüzden (d)'yi kapatmadım. Governing adopted tag de bu turda yeniden doğrulanmadı.
+
+Sonraki tek gerekli kaynak kontrolü: Severn v2 §3.2, Proposition 7.1 Steps 2–4 ve Lemma 7.2. Burada projektörün \\(P_u\otimes1_W\\) ile ve seçilen polarizasyonun Jacobian cup formuyla eşleşmesi doğrulandığında, destek teoreminin genel transfer yükümlülüğü çok daha güçlü bir kapanış adayı olacaktır.
+
+HHO noncanonical kalıyor; HCG/RTG dosyalarına, PI benimseme kararlarına ve PO-6 statüsüne dokunmadım.

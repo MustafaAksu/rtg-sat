@@ -1,0 +1,3 @@
+chi: dim 8 det 1 sig (4, 4, 0) class [1]
+omega(x)perm5: dim H1_par = 51  => m(psi) = 43
+c_psi per branch [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4] sum 51 sum over chi-effective 40

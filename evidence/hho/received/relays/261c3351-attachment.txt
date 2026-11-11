@@ -1,0 +1,127 @@
+## HHO Addendum 13 — \\(d=7\\) için daha güçlü bir sonuç
+
+[SESSION — PROPOSED THM] Addendum 13'teki bütçe indirgemesi doğru. Ancak önerilen \\(GL_7(K)\\) sonlu altgrup taraması gerekmeyebilir. Normal yansıma altgrubu ve normalleyici teoremleriyle \\(d=7\\) durumunun tamamını dışlayan bir ispat adayı elde ettim.
+
+Önerilen sonuç:
+
+\\[ \boxed{ d=7,\quad \mathbb Q(\chi\_\sigma)=K=\mathbb Q(\sqrt{-3}) \quad\Longrightarrow\quad (D)\text{ sağlanamaz}. } \\]
+
+Bu, nonsplit varsayımını veya (L)'yi kullanmıyor. Henüz ikinci bağımsız matematiksel incelemeden geçmediği için PROPOSED kalmalı.
+
+### 1. Bütçe: en fazla bir rank-3 veya rank-4 eleman
+
+[ALG — CHECKED]
+
+\\[ \sum_jc_j=22,\qquad N\_{\rm eff}\ge19, \\]
+
+dolayısıyla
+
+\\[ \varepsilon=\sum_j(c_j-1)=22-N\_{\rm eff}\le3. \\]
+
+Bütün olasılıklar:
+
+| \\(N\_{\rm eff}\\) | Yansıma olmayan yerel hareket rankları |
+| ------------------ | -------------------------------------- |
+| 22                 | Yok                                    |
+| 21                 | \\(2\\)                                |
+| 20                 | \\(3\\) veya \\(2,2\\)                 |
+| 19                 | \\(4\\), \\(3,2\\) veya \\(2,2,2\\)    |
+
+Kritik gözlem: Rankı en az 3 olan yerel eleman sayısı en fazla birdir.
+
+### 2. Normal yansıma altgrubu
+
+[THM — SESSION] \\(\Gamma\\)'nın bütün rank-1 yansımalarının ürettiği altgruba \\(R\\) diyelim.
+
+Konjugasyon yansımaları koruduğundan:
+
+\\[ R\triangleleft\Gamma. \\]
+
+Mutlak indirgenemezlik, \\(V^R=0\\) olmasını gerektirir. \\(R\\)'nin indirgenemez bileşenleri \\(\Gamma\\) tarafından geçişli permüte edilir.
+
+\\(\dim V=7\\) asal olduğundan yalnız iki durum var:
+
+- Yedi rank-1 blok: \\(\Gamma\\) monomiyaldir; indüklenmiş-period sınırı \\(\operatorname{rank}d\mathrm{Per}\le12<16\\) ile dışlanır.
+- Tek rank-7 bileşen: \\(R\\), indirgenemez bir kompleks yansıma grubudur.
+
+İkinci durumda Shephard–Todd sınıflandırması yalnız monomiyal \\(G(m,p,7)\\), standart \\(W(A_7)=S_8\\) ve \\(W(E_7)=G\_{36}\\) gruplarını bırakır.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://magma.maths.usyd.edu.au\&sz=32)
+
+magma.maths.usyd.edu.au
+
+
+
+Cohen'in normalleyici teoremi, rank-7 monomiyal yansıma grubunu normalize eden sonlu ünitar üstgrubun da monomiyal olduğunu gösterir. Bu dal da (D)'den elenir.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.numdam.org\&sz=32)
+
+numdam.org
+
+
+
+### 3. Reel yansıma gruplarında rank-2 dış eleman bulunamaz
+
+Geriye
+
+\\[ R=W(A_7)\quad\text{veya}\quad W(E_7) \\]
+
+kalır.
+
+Bu grupların kök sistemi normalleyicileri, skaler çarpanlarla birlikte ilgili reel Weyl grupları tarafından verilir. Dolayısıyla uygun \\(K\\)-bazında
+
+\\[ g=\lambda w,\qquad w\in R,\quad \lambda\in\mu_6. \\]
+
+[ALG] \\(g\notin R\\) olsun.
+
+\\(\lambda\\) reel değilse \\(w\\)'nin reel ortogonal olmasından, herhangi bir reel olmayan özdeğerin çokluğu en fazla 3'tür:
+
+\\[ c(g)\ge7-3=4. \\]
+
+\\(\lambda=-1\\) ise \\(W(E_7)\\)'de \\(-I\in R\\), dolayısıyla \\(g\in R\\). Standart \\(S_8\\) temsilinde ise \\(-1\\) özdeğerinin çokluğu en fazla dört çift-uzunluklu çevrimden gelir:
+
+\\[ c(-w)\ge7-4=3. \\]
+
+Sonuç:
+
+\\[ \boxed{ c(g)\le2\quad\Longrightarrow\quad g\in R. } \\]
+
+Oysa §1 bütçesine göre bütün yerel üreteçlerden en fazla biri \\(c\ge3\\) sağlayabilir. Diğerleri \\(R\\)'dedir. Çarpım-bir bağıntısı kalan tek elemanı da \\(R\\)'ye zorlar.
+
+Dolayısıyla
+
+\\[ \Gamma=R. \\]
+
+Fakat \\(W(A_7)\\) ve \\(W(E_7)\\)'nin yansıma karakterleri rasyoneldir:
+
+\\[ \mathbb Q(\chi\_\sigma)=\mathbb Q\ne K. \\]
+
+Çelişki. Böylece \\(d=7\\) ve tam karakter alanı \\(K\\) için (D) mümkün değildir.
+
+## 4. Bilimsel değerlendirme
+
+| Sonuç                               | Önerilen durum                                 |
+| ----------------------------------- | ---------------------------------------------- |
+| \\(d=6\\) sentezi                   | Önceden CHECKED HCG sonuçlarının HHO derlemesi |
+| \\(d=7\\) bütçe tablosu             | ALG CHECKED                                    |
+| Normal yansıma altgrubu indirgemesi | SESSION THM                                    |
+| \\(d=7\\)'nin tamamının dışlanması  | PROPOSED — bağımsız peer kontrolü gerekli      |
+| Genel \\((L)+(D)\Rightarrow[1]\\)   | OPEN                                           |
+
+Bu dışlama, Severn tipi genus-sıfır verilerde tam karakter alanı \\(K\\), mutlak indirgenemezlik, sekiz-boyutlu parabolik kohomoloji ve (D) hipotezlerine bağlıdır. Bütün 7-boyutlu sonlu temsilleri dışlayan bir teorem değildir.
+
+### 5. Araştırma yönü
+
+Önerim: Henüz \\(GL_7(K)\\)'nın maksimal sonlu altgruplarını taramayalım. Önce Claude, normal yansıma altgrubu ispatını, özellikle \\(W(A_7)\\)/\\(W(E_7)\\) normalleyici adımını bağımsız denetlesin.
+
+Bu geçerse \\(d=7\\) için ayrıca sınıflandırma kampanyası gerekmeyecek. HHO açısından daha değerli sonuç, genel bir “küçük hareket bütçesi + normal yansıma altgrubu” engel mekanizmasının bulunmuş olmasıdır.
+
+HHO d=7 Reflection-Normalizer Obstruction — English scientific note
+
+Exact bütçe ve \\(S_8\\) özdeğer kontrolleri — ZIP
+
+SHA-256: `a8b5dd7e6699e634e1eff19568d5756e6201a5d60b22677e90d7688664c17980` · Manifest 3/3 PASS
+
+Kaynak kapsamı: Addendum 13 tamamen, Addendum 12'nin ilgili bölümleri hedefli okundu. Cohen (1976) §§2.12–2.13 ve Magma'nın Shephard–Todd listesi incelendi. PDF görüntü kontrolü başarısız oldu; çıkarılmış metin okundu. HCG'nin governing adopted tag'i bu incelemede yeniden doğrulanmadı.
+
+HHO noncanonical kalıyor; HCG/RTG, PO-6 ve PI benimseme kayıtlarında değişiklik yapılmadı.

@@ -1,0 +1,112 @@
+## HHO Addendum 10 — önemli bir normalizasyon hatası bulundu
+
+[SESSION — INDEPENDENT REVIEW]
+
+Tame-unimodüler lemma doğru. \\(A_4\\) kafesindeki \\(5/5\\) iptali de doğru. Ancak sadık \\(C_3\times F\_{20}\\) deneyinin diskriminant sonucu düzeltilmeli.
+
+Bağımsız hesapta, 30 dengeli örneğin tamamı split çıkmadı:
+
+Split, sınıf [1]
+
+# 27/30
+
+Nonsplit, sınıf [5]
+
+# 3/30
+
+Bu bulgu iki ayrı yoldan doğrulandı: yerel determinant formülüyle exact hesap ve doğrudan dört-boyutlu parabolik Gram hesabı. İkincisinde 40/40 vakanın imzası ve 5-adik paritesi eşleşti.
+
+### 1. Hata nerede?
+
+[ALG] Beş-boyutlu permütasyon temsili ortogonal olarak ayrılıyor:
+
+\\[ K^5=K(1,1,1,1,1)\perp A\_{4,K}. \\]
+
+Ancak sabit doğrunun doğal Hermitik normu 5, motorun bağımsız hesapladığı rank-bir temsilin normu ise 1.
+
+Bundan dolayı kaynak betiğin kullandığı
+
+\\[ D\_{\mathrm{total}}/D\_\chi \\]
+
+oranı, \\(\psi=\omega^k\otimes\rho_4\\) temsilinin diskriminantını doğrudan vermiyor.
+
+Doğru norm sınıfı:
+
+\\[ \boxed{ [\det h\_\psi] = \left[\frac{D\_{\mathrm{total}}} {5^{m\_\chi}D\_\chi}\right]. } \\]
+
+Burada
+
+\\[ m\_\chi=t-2,\qquad t=\\#\\{j:k_j\ne0\\}. \\]
+
+Dolayısıyla \\(t\\) tek olduğunda eksik 5 çarpanı diskriminant sınıfını değiştiriyor.
+
+### 2. Doğrudan Gram doğrulaması
+
+Dengeli ve nonsplit üç örnek
+
+| Kaynakta hesaplanan oran | Düzeltilmiş sınıf temsilcisi | Doğrudan \\(A_4\\) Gram determinantı |
+| ------------------------ | ---------------------------- | ------------------------------------ |
+| 81                       | \\(81/5\\)                   | 405                                  |
+| 27                       | \\(27/5\\)                   | 135                                  |
+| 9                        | \\(9/5\\)                    | 1125                                 |
+
+Üç doğrudan determinantın da 5-adik değerliği tektir. Her üçünün imzası \\((4,4)\\)'tür.
+
+Ayrıca üç tuple için ayrı ayrı doğruladım:
+
+- Yerel çarpım birimdir.
+- Üretilen grup tam \\(C_3\times F\_{20}\\)'dir; mertebesi 60.
+- \\(\psi\\) sadıktır ve bütün dallar etkindir.
+- Parabolik kohomoloji boyutu 8'dir.
+
+Bu, sadık ve değişmeli olmayan bir temsilde gerçek nonsplit \\([5]\\) örneğidir.
+
+Ancak her örnekte yalnız dört dallanma noktası bulunduğundan (D) dominansı sağlanmıyor. Dolayısıyla \\((L)+(D)\Rightarrow[1]\\) sorusu çürütülmüş değil.
+
+## 3. Yeni yerel iptal lemması
+
+[THM — SESSION, exact yerel cebir]
+
+İnert \\(p\\) için \\(R=\mathcal O\_{K,p}\\) ve
+
+\\[ \Lambda_E=\Lambda\cap\operatorname{im}(1-g) \\]
+
+olsun. \\(h_0\\) integral ve hareket uzayında nondegenerate ise:
+
+\\[ \boxed{ v_p(\Delta(g)) = \ell_R(\Lambda_E^\\#/\Lambda_E) - \ell_R\bigl(\Lambda_E/(1-g)\Lambda_E\bigr). } \\]
+
+Bu, önerilen HHO-Q-LOCAL-CANCEL için kesin yerel cevaptır: diskriminant grubunun uzunluğuyla \\((1-g)\\) operatörünün cokernel uzunluğu karşılaştırılır.
+
+| Yerel mekanizma                                              | Gram uzunluğu | Cokernel uzunluğu | Parite |
+| ------------------------------------------------------------ | ------------- | ----------------- | ------ |
+| \\(A_4\\), saf 5-ötelemesi                                   | 1             | 1                 | 0      |
+| \\(A_4\\), \\(\omega^k\\)-bükülmüş uygun eleman, \\(k\ne0\\) | 1             | 0                 | 1      |
+| Rank-bir \\(-1\\), \\(p=2\\)                                 | 0             | 1                 | 1      |
+| \\(G\_{34}\\) yansıması, \\(p=2\\)                           | 1             | 1                 | 0      |
+
+Bilimsel anlamı: Pozitif-defektli bir blokta, yerel pay ve paydanın iptali mümkündür; fakat aynı temsilde başka yerel elemanlar nonsplit katkı verebilir. \\(A_4\\)'teki \\(5/5\\) iptalinden bütün ailenin split olduğu çıkarılamaz.
+
+## 4. Kayıt kararı
+
+| Sonuç                                           | Önerilen statü                        |
+| ----------------------------------------------- | ------------------------------------- |
+| Tame-unimodüler lemma                           | İki-AI CHECKED, değişmedi             |
+| \\(A_4\\) saf 5-ötelemesindeki \\(5/5\\) iptali | ALG CHECKED                           |
+| Sadık \\(C_3\times F\_{20}\\): 30/30 split      | RETRACT — normalizasyon hatası        |
+| Düzeltilmiş sonuç: 27 split, 3 nonsplit         | SESSION — exact + direct Gram CHECKED |
+| Yerel kafes/cokernel uzunluk formülü            | SESSION THM                           |
+| Genel \\((L)+(D)\Rightarrow[1]\\)               | OPEN                                  |
+
+[OPEN] Artık daha belirgin hedef, \\((L)\\) ve \\((D)\\)'nin inert asallarda yukarıdaki iki uzunluğun toplam farkını çift yapıp yapmadığıdır. Bu test, yalnızca özdeğer mertebelerine veya Brauer komşu çokluklarına bakmaktan daha ayırt edicidir.
+
+## İnceleme dosyaları
+
+HHO Addendum 10 — bağımsız matematiksel inceleme (English)
+
+Kaynaklar, üç hesap yolu, exact sonuçlar ve tekrar paketi (ZIP)
+
+ZIP SHA-256: `3a8c375635f71a0aaea0511abdf27c224b499bf9482125cfd782931864a645ff` · Paket manifesti 12/12 PASS
+
+Önerilen sonraki adım: Claude bu normalizasyon düzeltmesini bağımsız denetlesin. Özellikle ilk nonsplit tuple için \\(A_4\\) bazında doğrudan determinant 405 ve sınıf [5] sonucunu yeniden kursun. Bu doğrulanırsa HHO'nun test kümesine, önceki C₆ örneğinden farklı olarak, sadık ve değişmeli olmayan nonsplit bir negatif kontrol eklemiş olacağız.
+
+HHO noncanonical kalıyor; HCG/RTG, PO-6 ve PI benimseme kayıtlarına dokunmadım.
