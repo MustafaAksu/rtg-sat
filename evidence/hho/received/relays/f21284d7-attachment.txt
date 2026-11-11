@@ -1,0 +1,95 @@
+## HHO Destek Lemması — bağımsız inceleme kararı
+
+[SESSION] Claude'nun incelemesinin ana matematiksel sonucunu doğruluyorum. İntegral Morita yaklaşımı geçerli; sıfır-defektli karakterlere genişletme de doğru yönde. Ancak genel polarizasyon geçişini tamamen kapanmış saymak için bir bilimsel yükümlülük daha bulunuyor.
+
+### 1. Bulgular
+
+| İddia                                                 | Değerlendirme                 |
+| ----------------------------------------------------- | ----------------------------- |
+| \\(p\nmid3\|G\|\\) için izotipik kafes unimodülerliği | THM — CHECKED                 |
+| İntegral Hermitik Morita indirgemesi                  | THM — koşullarıyla CHECKED    |
+| Sıfır-defektli karakterlere genişletme                | THM — yeterlilik yönü CHECKED |
+| Küresel polarizasyonla özdeşleştirme                  | OPEN — daraltılmış yükümlülük |
+| Destek Lemması                                        | Koşullu THM                   |
+| \\((L)+(D)\Rightarrow[1]\\)                           | OPEN                          |
+
+### 2. Sıfır-defektli genişletme
+
+[THM — SESSION] \\(p\equiv2\pmod3\\) ve
+
+\\[ v_p(\chi(1))=v_p(|G|) \\]
+
+olsun. Brauer'in sıfır-defektli blok teoremi, uygun integral matris bloğunu sağlar.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.math.rwth-aachen.de\&sz=32)
+
+math.rwth-aachen.de+1
+
+
+
+Hermitik adjoint altında korunan bu blokta formu rasyonel bir \\(p\\)-kuvvetiyle normalize edebiliriz. İntegral Morita ayrışımı multiplicity kafesine mükemmel Hermitik eşleşme taşır.
+
+Böylece gerekli yerel sonuç:
+
+\\[ \boxed{(\det h,-3)\_p=+1.} \\]
+
+Bu, başlangıçtaki \\(p\nmid|G|\\) koşulundan gerçekten güçlüdür.
+
+Bir notasyon düzeltmesi: \\(K\\)-değerli karakter için \\(e\_\chi\in\mathbb Z_p[G]\\) değil,
+
+\\[ e\_\chi\in\mathcal O\_{K,p}[G] \\]
+
+yazılmalı. Destek teoremi için sıfır-defektin yeterli olması kâfi; idempotent integralliğiyle karşılıklı eşdeğerliği ayrıca kullanmamıza gerek yok.
+
+### 3. Polarizasyon geçişinde ne kaldı?
+
+Claude'nun önerdiği sadeleştirme önemli: integral parabolik-form karşılaştırması zorunlu olmayabilir.
+
+Küresel multiplicity Hodge yapısı
+
+\\[ W\_{\mathbb Q} =\operatorname{Hom}\_{\mathbb Q[G]} (U\_{\mathbb Q},H^1(C,\mathbb Q)) \\]
+
+üzerinde Jacobian cup formundan rasyonel bir polarizasyon elde edersek ve genel üyede
+
+\\[ \operatorname{End}^0(A)=K,\qquad \operatorname{NS}(A)\_{\mathbb Q}=\mathbb Q \\]
+
+olduğunu doğrularsak, \\(K\\)-uyumlu polarizasyonlar rasyonel skaler katlarla ilişkilidir.
+
+Sekiz-boyutlu determinantta
+
+\\[ \det(qh)=q^8\det h =N\_{K/\mathbb Q}(q^4)\det h. \\]
+
+Dolayısıyla norm sınıfı değişmez.
+
+[OPEN] Yine de küresel Morita formunun hedef abelian faktör üzerinde gerçekten bir polarizasyon oluşturduğu ve \\((D)\\)'nin gerekli genel \\(\operatorname{End}^0=K\\) koşulunu verdiği açıkça gösterilmeli.
+
+Yerel HCG v0.2 kopyasının §6.16'sını yeniden kontrol ettim. W5 için polarizasyon karşılaştırması doğrulanmış; genel PO-6 hâlâ öneri durumunda. Bu yeni yaklaşım, genel iddiayı daha dar hipotezlerle ispatlama fırsatı olabilir; mevcut kayıt otomatik olarak kapanmaz.
+
+### 4. Güçlendirilmiş destek kümesi
+
+[THM — yukarıdaki polarizasyon geçişine koşullu]
+
+\\[ \boxed{ \operatorname{Supp}(\det h) \subseteq \\{3\\}\cup \left\\{ p\equiv2\pmod3: p\mid\frac{|G|}{\chi(1)} \right\\}. } \\]
+
+Özellikle hiçbir inert asal \\(|G|/\chi(1)\\)'i bölmüyorsa:
+
+\\[ \boxed{[\det h]=[1].} \\]
+
+G₃₄ kontrolü: Yerel HCG v0.2 §6.12 kaydında \\(\dim_K\sigma=6\\) doğrulanıyor. Bu durumda
+
+\\[ \frac{|G\_{34}|}{\chi(1)} =2^8\\,3^6\\,5\\,7. \\]
+
+İnert destek yine \\(\\{2,5\\}\\). Dolayısıyla teorem G₃₄'ü dışlamıyor; beklenen sonuç bu.
+
+## 5. Önerdiğim sonraki çalışma
+
+Boyut taraması yerine iki somut yükümlülük üzerinde ilerleyelim:
+
+1. HHO-HYP-SUPPORT-TRANSFER: Küresel Schur–Morita polarizasyonunun hedef abelian faktörle ilişkisini ve \\((D)\Rightarrow\operatorname{End}^0=K\\) adımını, Severn'in governing metniyle karşılaştırmak.
+2. HHO-OPEN-DEFECT-LOCAL: Sıfırdan büyük defektli inert asallarda (L)'nin yerel diskriminantı kısıtlayıp kısıtlamadığını araştırmak. Öncelikli testler G₃₄ için \\(p=2,5\\).
+
+Bu, boyuttan bağımsız bir engel teoremi için artık oldukça belirgin bir matematiksel hedef oluşturuyor.
+
+HHO Support Lemma — ChatGPT Independent Cross-Review (English)
+
+Kayıt önerisi: Morita ve sıfır-defektli yerel lemmaları `SESSION THM`; genel polarizasyon geçişini `OPEN`; destek teoremini koşullu tutalım. HHO noncanonical statüsü, HCG v0.2 ve Severn A/B/C'nin `CLAIMED` durumu değişmedi.

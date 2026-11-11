@@ -1,0 +1,110 @@
+## HHO-HYP-SUPPORT — ilk kanıt incelemesi
+
+[SESSION] Destek Lemmasının kanıt taslağını hazırladım. Ana fikir matematiksel olarak güçlü; ancak tam \\(\chi\\)-izotipik kafes ile hedef sekiz-boyutlu multiplicity faktörünü ayırmak gerekiyor.
+
+### 1. Kanıtlanabilen yerel sonuç
+
+[THM — SESSION] \\(K=\mathbb Q(\sqrt{-3})\\), \\(p\nmid3|G|\\) inert bir asal olsun. \\(C\\) düzgün projektif bir eğri, \\(G\\) sonlu otomorfizma grubu ve
+
+\\[ M=H^1(C,\mathbb Z_p)\otimes\_{\mathbb Z_p}\mathcal O\_{K,p} \\]
+
+olsun.
+
+İntegral cup pairing \\(E\\) unimodülerdir. \\(\delta=\sqrt{-3}\\) bir \\(p\\)-birimi olduğundan
+
+\\[ H(x,y)=\delta^{-1}E(x,\bar y) \\]
+
+mükemmel bir Hermitik eşleşme verir.
+
+Karakter projektörü
+
+\\[ e\_\chi=\frac{\chi(1)}{|G|} \sum\_{g\in G}\chi(g^{-1})g \\]
+
+\\(p\nmid|G|\\) nedeniyle integral olup Hermitik adjoint altında sabittir. Böylece
+
+\\[ M=e\_\chi M\\;\perp\\;(1-e\_\chi)M. \\]
+
+Sonuç: Tam \\(\chi\\)-izotipik kafes \\(p\\)'de unimodülerdir. Merkezi karakter idempotentinin formülü standart temsil teorisinden gelir.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.math.ubbcluj.ro\&sz=32)
+
+math.ubbcluj.ro
+
+
+
+### 2. Kritik ayrım: hedef kafes tam izotipik kafes değil
+
+[OPEN — kanıt yükümlülüğü]
+
+Bizim ihtiyacımız olan
+
+\\[ W=H^1\_{\mathrm{par}}(U,\mathcal L\_\sigma), \qquad \dim_KW=8. \\]
+
+Oysa \\(e\_\chi M\\)'nin rankı \\(8d\\)'dir. Burada integral Schur–Morita ayrışımını kullanmak gerekiyor:
+
+\\[ e\_\chi M\simeq V\_\chi\otimes W. \\]
+
+\\(p\nmid|G|\\) iken grup cebirinin \\(\chi\\)-bloğunda integral matrix units kurulabiliyor. Bu, Morita düzeyinde \\(W\\)'nin de unimodüler olduğunu göstermek için güçlü bir yol veriyor.
+
+Ancak parabolik formun ve gerçek sekizli faktörün polarizasyonunun bu integral Morita formuyla karşılaştırılması ayrı bir adımdır.
+
+Yerel HCG v0.2 kopyasının §6.16'sını kontrol ettim: W5 için bu karşılaştırma doğrulanmış; genel PO-6 iddiası aynı düzeyde kapanmış değil. Adopted tag ve Severn v2'nin güncel metni bu turda bağımsız doğrulanmadı.
+
+Bu nedenle Destek Lemmasının tam HHO uygulaması henüz CHECKED değil.
+
+### 3. Genel no-go sonucu
+
+[THM — yukarıdaki transfer adımına koşullu]
+
+Eğer sekiz-boyutlu form için
+
+\\[ v_p(\det h)\equiv0\pmod2 \qquad (p\equiv2\pmod3,\ p\nmid|G|) \\]
+
+kanıtlanırsa, diskriminantın Hilbert desteği yalnız şu kümede bulunabilir:
+
+\\[ \boxed{ \\{3\\}\cup \\{p:p\mid|G|,\ p\equiv2\pmod3\\}. } \\]
+
+Dolayısıyla \\(|G|\\)'nin hiçbir inert asal böleni yoksa, sonsuz yerin işareti pozitif olduğundan Hilbert çarpım formülü:
+
+\\[ \boxed{[\det h]=[1]} \\]
+
+verir.
+
+Bu gerçekten boyuttan bağımsız bir engel olur.
+
+### 4. Aritmetik kontroller
+
+[NUM/ALG — exact]
+
+| Diskriminant sınıfı | Hilbert sembolü −1 olan yerler |
+| ------------------- | ------------------------------ |
+| \\([1]\\)           | Yok                            |
+| \\([2]\\), C₆       | \\(2,3\\)                      |
+| \\([5]\\)           | \\(5,3\\)                      |
+| \\([10]\\)          | \\(2,5\\)                      |
+
+Hepsi doğrulandı. Ayrıca hazırladığım negatif kontrol, keyfî bir rasyonel Rosati-selfadjoint projektörün inert asalda unimodülerliği bozabileceğini gösteriyor: \\((4,4)\\) imzalı rank-8 bir altuzayda determinant 2 ve projektör paydasında 2 elde edilebiliyor. Bu, integral projektör koşulunun gereksiz olmadığını gösterir.
+
+Küçük bir hesap düzeltmesi de var: \\(G\_{34}\\)'ün mertebesi
+
+\\[ 39\\,191\\,040=2^9 3^7 5\cdot7, \\]
+
+ön nottaki \\(2^7 3^7 5\cdot7\\) değil. İnert destek kümesi \\(\\{2,5\\}\\) değişmiyor.
+
+## Bilimsel karar
+
+| Kayıt                                                        | Durum                                    |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| Tam izotipik kafesin \\(p\nmid3\|G\|\\) yerel unimodülerliği | SESSION THM                              |
+| Integral Morita yoluyla multiplicity faktörüne geçiş         | Kanıt taslağı; bağımsız inceleme gerekli |
+| Genel parabolik form/polarizasyon karşılaştırması            | OPEN                                     |
+| HHO-HYP-SUPPORT                                              | PROPOSED                                 |
+| İnert asal böleni olmayan grup ⇒ split                       | Koşullu THM                              |
+
+Önerdiğim sonraki adım: Genel Severn polarizasyon karşılaştırmasını ve integral Morita projektörünü, özellikle \\(p=2\\)'de, birlikte incelemek. Burada eksik olan yeni bir boyut taraması değil; tek bir yapısal ispat.
+
+HHO Support Lemma — English proof sketch
+
+Yerel Hilbert sembolü exact kontrolü — Python
+
+HHO belgelerini şimdilik noncanonical araştırma taslakları olarak tutmayı öneriyorum. Depo yerleşimi ve bilimsel benimseme PI kararına bağlı; HCG/RTG dosyalarında değişiklik yapmadım.

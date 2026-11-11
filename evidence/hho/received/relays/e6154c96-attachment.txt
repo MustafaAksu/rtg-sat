@@ -1,0 +1,90 @@
+## HHO G₃₄ — GAP sonuçlarının değerlendirmesi
+
+[SESSION — ALG CHECKED] GAP çıktısı, Addendum 6'nın negatif teoremini doğruluyor. Ayrıca 5-adik gluing araştırması açısından önemli bir ayrımı netleştiriyor: diskriminantın norm sınıfı ile integral gluing yapısı aynı problem değil.
+
+### 1. Hesap sonuçları
+
+| Kontrol                       | Sonuç                                    |
+| ----------------------------- | ---------------------------------------- |
+| Kullanılan tablo              | `6_1.U4(3).2_2`                          |
+| Grup mertebesi                | \\(39\\,191\\,040\\)                     |
+| Yansıma sınıfı                | Her aday temsilde 126 elemanlı tek sınıf |
+| Altı-boyutlu karakterler      | \\(\chi\_{122},\ldots,\chi\_{125}\\)     |
+| Yansıma karakter değeri       | \\(\chi(g)=4\\)                          |
+| Brauer komşusu                | Dört blokta ilgili \\(\psi\_{84}\\)      |
+| Komşu karakter değeri         | \\(\psi\_{84}(g)=16\\)                   |
+| Komşu hareket rankı           | \\(34\\)                                 |
+| Gerçek Chevalley–Weil çokluğu | 512                                      |
+
+Bağımsız aritmetik kontrol:
+
+\\[ c\_\chi=\frac{6-4}{2}=1,\qquad m(\chi)=-12+20=8. \\]
+
+\\[ c\_{\psi\_{84}}=\frac{84-16}{2}=34, \\]
+
+\\[ \boxed{m(\psi\_{84})=-168+20(34)=512.} \\]
+
+Ayrıca \\(512\equiv12\pmod{20}\\). Önceki negatif teoremle tam uyumlu.
+
+Sonuç: Yaprak kriterinin \\(m(\psi\_{84})=0\\) hipotezi kesin olarak başarısız. Bu artık karakter değeri bilinmeden yapılan bir dışlama değil; gerçek çokluk hesaplanmış durumda.
+
+Çıktıda 91 ve 94 numaralı farklı soyut grup sınıfları kullanılıyor. Bu, dört temsilin aynı geometrik seçimi verdiğini kanıtlamaz. Ancak \\(\psi\_{84}(g)=16\\) ve \\(m=512\\) dört durumda da aynı olduğundan mevcut negatif sonuç seçimden bağımsız.
+
+### 2. Daha güçlü bir çıkarım: norm sınıfı zaten belirlenmiş
+
+[SESSION — THM, önceki yerellik teoremine koşullu]
+
+G₃₄'ün \\(K\\)-ünitar altı-boyutlu yansıma temsilinde 20 dalın tamamı aynı involüsyon-yansıma sınıfından gelsin.
+
+Yerel diskriminant faktörü
+
+\\[ \Delta(g)= \frac{\det(h_0|\_{\operatorname{im}(1-g)})} {\det((1-g)|\_{\operatorname{im}(1-g)})} \\]
+
+rank-bir involüsyonda rasyoneldir. Aynı \\(K\\)-ünitar eşleniklik sınıfındaki bütün yansımaların yerel norm sınıfları eşittir.
+
+Dolayısıyla
+
+\\[ \prod\_{j=1}^{20}\Delta(g_j) \equiv\Delta(g\_{\mathrm{ref}})^{20} \pmod{N(K^\times)}. \\]
+
+Fakat rasyonel bir \\(q\ne0\\) için
+
+\\[ q^{20}=N\_{K/\mathbb Q}(q^{10}). \\]
+
+Hedef kohomoloji boyutu 8 olduğundan yerellik formülündeki işaret de pozitiftir. Böylece:
+
+\\[ \boxed{[\det h\_{\mathrm{par}}]=[1].} \\]
+
+Bu, önceki G₃₄ split sonucumuzun Brauer-ağacından bağımsız bir ispatıdır. (L) veya (D) koşullarını gerektirmez. Abelian faktörün diskriminantına aktarım ise ilgili polarizasyon eşlemesi kapsamındadır; genel HHO transfer yükümlülüğünü otomatik kapatmaz.
+
+### 3. Bunun 5-adik gluing araştırmasına etkisi
+
+\\(m(\psi\_{84})=512\\) bilgisi, gluing için yeterli modüler bileşenlerin bulunduğunu gösteriyor. Fakat bu, gluing'in mutlaka sıfırdan farklı olduğunu söylemez.
+
+Ayrıca parabolik Hermitik formun norm sınıfı zaten split olduğundan, \\(p=5\\)'teki determinant değerliğinin paritesi çifttir:
+
+\\[ \boxed{v_5(\det h\_{\mathrm{par}})\equiv0\pmod2.} \\]
+
+Bu, 5-adik gluing grubunun sıfır olduğu anlamına gelmez. Pozitif, çift uzunluklu bir gluing hâlâ mümkündür.
+
+Dolayısıyla G₃₄ için araştırmanın amacı değişmeli:
+
+- Kapanmış: Parabolik diskriminantın norm sınıfı.
+- Açık: İntegral gluing grubunun yapısı, uzunluğu ve bu uzunluğun Brauer ağacından nasıl türetileceği.
+- Açık: Aynı yöntemin ters-eşleme simetrisi bulunmayan, gerçekten nonsplit bir veriye uygulanması.
+
+### 4. Bilimsel karar
+
+| Sonuç                                                               | Statü                                   |
+| ------------------------------------------------------------------- | --------------------------------------- |
+| GAP sınıf/karakter değerleri                                        | SOURCE-REPORTED                         |
+| \\(m(\psi\_{84})=512\\)                                             | ALG CHECKED                             |
+| Addendum 6 negatif teoremi                                          | CHECKED                                 |
+| G₃₄ rank-8 tek-sınıf yansıma verisinde split parabolik diskriminant | THM — önceki yerellik teoremine koşullu |
+| Pozitif çoklukta gluing uzunluğu                                    | OPEN                                    |
+| Genel \\((L)+(D)\Rightarrow[1]\\)                                   | OPEN                                    |
+
+GAP stdout dosyasının verdiğiniz SHA-256 değerini burada yeniden hash'lemedim; hesapları paylaştığınız çıktının üzerinde doğruladım.
+
+Önerim: G₃₄ için gluing uzunluğunu araştırmayı sürdürebiliriz, ancak bunu artık diskriminantı belirlemek için değil, pozitif-defektli bloklarda integral gluing mekanizmasını anlamak için yapmalıyız. Genel HHO engel teoremi açısından bir sonraki daha değerli test, ters-eşleme simetrisi olmayan ve diskriminantı \\([2]\\) gibi gerçekten nonsplit çıkabilen bir veride aynı blok mekanizmasının davranışıdır.
+
+HHO noncanonical kalıyor; HCG/RTG benimseme kayıtları değiştirilmedi.
