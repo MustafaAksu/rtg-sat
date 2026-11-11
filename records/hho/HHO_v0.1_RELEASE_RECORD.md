@@ -92,16 +92,23 @@ Open items are listed in the register, Part D.
 
 ## 7. Adoption manifest
 
-*To be completed at adoption.* It will list the SHA-256 of each file of §2 and of `REGISTRY.md` at the content commit, after the publication step of §9.
+**Status: ADOPTED (2026-11-11).** SHA-256 of the bytes at the **content commit** `7890a79a0a70250f45a88c7bcc0136da27adc796`. This manifest-only commit follows it and changes no other file. If any listed file changes after this, the hashes are recomputed before the tag.
 
-Hashes before the publication step, at commit `25fab8a37452813b5b35071417acd2ccffed2b94` (`main` after PR #26):
+| File | Role | SHA-256 |
+|---|---|---|
+| `hho/HHO_CHARTER.md` | charter (governance text; no scientific claim) | `dd647253b1a74cc8e4c45bbcace2e2ac8e3b33fea585ca7b525c6d0827ce6878` |
+| `hho/HHO_CLAIM_REGISTER.md` | claim register (adopted as a register; no row ACCEPTED) | `668124e0d55032f76d68cbf819533c063d5322f83557150104db0bc92e1037dd` |
+| `records/hho/HHO_SOURCE_MANIFEST.md` | source manifest | `80f88fe9c1c2bfffa9a1b3a1de154b5fb13ed277d17ef9bedb10e5835d600f49` |
+| `upload/hho/SHA256SUMS` | index of the 57 uploaded source files | `50417fca3c82ad7a487d0c986047ecb002d86aa5f5cbffe087672df33d60b410` |
+| `REGISTRY.md` | `hho` row: layout, governing edition, RTG inputs, transfer rule | `e7a18ad0c61304acbb8ca80f82d4544835f98348d8f80b7dfcade2bb725188e8` |
+| `pipes/HHO/20261110-HCG-v0.2-release-and-citation-map.md` | received item, dispositioned | `489036c423462457d634f84e9170bbf09ede7e1921035f5acaa9662a8f2f440c` |
+| `pipes/HHO/20261110-HCG-provenance-of-hho-track-claims.md` | received item, dispositioned | `497b60046cbd69ad40a0a6e167b27f2b24657214bda4feaf94f948d5eb6a9218` |
+| `pipes/HHO/20261110-HCG-question-hypothesis-lists.md` | received item, dispositioned | `857a8e2aca746b170fc88e2e9b9b9bca6f9f25024dd28244e2a7de04ae6842e1` |
+| `pipes/HCG/20261110-HHO-answer-hypothesis-lists.md` | answer filed to HCG (a communication, not a transfer) | `ca2626cff478b3f92a16918b67f26b23e86598026ca5497dc80fbce0f16d1cc6` |
 
-| File | SHA-256 |
-|---|---|
-| `hho/HHO_CHARTER.md` | `5f3072978488ece4938dcadaf0072b435012d215bccd7030cc89cadbbfc18bd5` |
-| `hho/HHO_CLAIM_REGISTER.md` | `f0e258dd05c2900b58a754723e18b720cc45e83d4a2a9373d69edb98b6db1f2e` |
-| `records/hho/HHO_SOURCE_MANIFEST.md` | `c780a32d6d13e81b379fb568cba34c26678f8c24907a6d4dc9dcfdac33f8905d` |
-| `upload/hho/SHA256SUMS` | `50417fca3c82ad7a487d0c986047ecb002d86aa5f5cbffe087672df33d60b410` |
+The uploaded source files are adopted as **evidence as it stands**, not as claims. HCG material that is pending in HCG stays pending.
+
+The SHA-256 of this record itself is stated in the tag message, not here.
 
 ## 8. Checks and decisions
 
