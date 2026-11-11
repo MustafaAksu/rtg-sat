@@ -1,6 +1,6 @@
 # HHO — support results: current statements
 
-**Status of this file:** draft for the next HHO edition. Not adopted. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim and changes none.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as a live summary of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), and one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
 
 **Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. The two are linked only by a cup–polarization identification (HHO-SG-4), which HHO has not established for a general Severn datum (§3.3).
 
@@ -106,7 +106,7 @@ This is an exact identity, independent of locality.
 
 **5.3 Withdrawn Neighbour Parity Law — typed refutation.** The historical proposal HHO-WD-CONJ-NPL (REVIEW A8.3; claim register Part C) was written as v_p(det h_W) ≡ m(ψ) (mod 2). For HHO-NEG-NPL-C3F20, the recorded computation instead concerns the **parabolic-cup** determinant: [det h_par] = [1] while m(ψ) = 43 is odd. It refutes the corresponding universal **parabolic-cup** neighbour-parity rule. By HHO-SG-4, that computation alone does not carry over to the Jacobian-induced h_W of §§1–3.
 
-The Jacobian reading is refuted separately, for the same datum and without any cup–polarization bridge (HHO-NEG-NPL-JAC-C3F20, PROPOSED). χ is trivial on F₂₀, so W lies in the pullback of H¹(C/F₂₀). The cup form of C restricts there to 20 times the cup form of C/F₂₀. The support theorem (§3.1) for (C/F₂₀, C₃) then gives [1], while m(ψ) = 43 is odd.
+The Jacobian reading is refuted separately, for the same datum and without any cup–polarization bridge (HHO-NEG-NPL-JAC-C3F20, CHECKED; the quotient-curve observation is ChatGPT's, `evidence/hho/received/chatgpt/84581b51-HHO_A8_PARITY_TESTS_AND_NPL_COUNTEREXAMPLE_v0_1.md` §4). χ is trivial on F₂₀, so W lies in the pullback of H¹(C/F₂₀). The cup form of C restricts there to 20 times the cup form of C/F₂₀. The support theorem (§3.1) for (C/F₂₀, C₃) then gives [1], while m(ψ) = 43 is odd.
 
 The unrestricted proposal stays **WITHDRAWN** in both readings. No replacement law is certified.
 
