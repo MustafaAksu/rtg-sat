@@ -30,10 +30,10 @@ def before(anchor, block):
 
 
 # ---------------------------------------------------------------- header
-rep('# HCG_HODGE_SESSION_DSN_v0.2\n', '# HCG study ledger v0.3 — DRAFT r1\n')
-rep('**Date:** 26 October 2026\n', '**Date:** 10 November 2026 (draft)\n')
+rep('# HCG_HODGE_SESSION_DSN_v0.2\n', '# HCG study ledger v0.3 — DRAFT r2\n')
+rep('**Date:** 26 October 2026\n', '**Date:** 11 November 2026 (draft)\n')
 rep('''**Document status:** ADOPTED (scoped) — PI decision, 26 October 2026, 22:44 +03:00 ("Evet v0.2 yi ben de benimsiyorum(PI:Mustafa)"), following ChatGPT's adoption assessment "ACCEPT SCOPED". Adopted as the scoped scientific-record consolidation of the HCG session. Adoption does **not** set any individual claim's review state to ACCEPTED, does not establish any external claim (Severn Thm 6.2 stays CLAIMED), and is not an RTG adoption. Release record: `HCG_HODGE_SESSION_DSN_v0_2_RELEASE_RECORD.md`.''',
-    '''**Document status:** **DRAFT r1 — not adopted.** The governing edition is `hcg-v0.2`. This draft proposes the changes of Δ24–Δ26 and the RTG import review. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's Theorem 6.2 stays CLAIMED).''')
+    '''**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.2`. This draft proposes the changes of Δ24–Δ26 and the RTG import review. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's Theorem 6.2 stays CLAIMED).''')
 rep('''**Release source:** DRAFT r2 (`HCG_HODGE_SESSION_DSN_v0_2_DRAFT_r2.md`, SHA-256 c8d595aefefc2fe488d24c6d9db258a702df1b51a4a151bcb29a6723c1752b2c; preserved unchanged), released by `release_v0_2.py` (labels and metadata only). r2 implements ChatGPT QA R01–R07; DRAFT r1 (SHA-256 c15815efeefcdaafa97f3f98688661c27ff43263543fe1198b2c4eec8a33ab61) is preserved unchanged.''',
     '''**Build:** made from the adopted v0.2 text by `evidence/hcg/verification/make_v03_draft.py` (assertion-gated replacements and insertions; every anchor must occur exactly once). Text that the script does not touch is the v0.2 text, byte for byte.''')
 rep('''**Revision base:** `HCG_HODGE_SESSION_DSN_v0_1_ADOPTED.md` (SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7; preserved unchanged), with the change log `HCG_DSN_v0_2_PENDING_DELTAS.md` Δ1–Δ23 (SHA-256 8fb25dadfb4416136625d7b8d6eea9f20ea0d8234bdd32495f0ac12d069efd98 at build time; preserved unchanged). Built by `make_v02.py` (assertion-gated section replacements); the exact diff is shipped with this draft.''',
@@ -66,6 +66,12 @@ rep('''What stays open is the every-member scope of that discharge, which is par
     '''The every-member scope of that discharge has a three-family theorem-level reading; its line-by-line review is not done (§2 OPEN 8, PARTIAL).''')
 rep('''| Severn's own 17-curve (H0)–(H4) table | **not recomputed** (OPEN 3) | — |''',
     '''| Severn's own 17-curve (H0)–(H4) table | not recomputed at v0.2; **recomputed in v0.3** (§6.22; OPEN 3 closed) | HCG-ALG-SEVERN-APPXA-REPRO |''')
+
+rep('§6.6–§6.21 are an *external-claim audit module*.', "§6.6–§6.22 are an *external-claim audit module* (§6.23 is this study's own work).")
+rep('general proof PARTIAL, OPEN 5]',
+    'v0.3: the general formula is read from v2 Lemma 7.2 (unrefereed; two-AI proof review; OPEN 5 closed in that scope). The printed proof in [19] stays not reconstructed]')
+rep('''The auditor's executable package (`G34D_W5_FIRST_ROUND_GEOMETRIC_AUDIT_v0_1.zip`) has **not been received**.''',
+    '''The auditor's executable package (`G34D_W5_FIRST_ROUND_GEOMETRIC_AUDIT_v0_1.zip`) had not been received at v0.2. v0.3: it was received as the nested archive `artifacts/G34D_W5_FIRST_ROUND_GEOMETRIC_AUDIT_v0_1.zip` of the round-2 bundle (SHA-256 6e5a6408884eca32e1d1bd454f21695659a4b100faaf03e0061e193989db705a; nested manifest 34/34). Receipt of the separate executable archive of the early round-2 polarization note is not established.''')
 
 # ---------------------------------------------------------------- section 1.3
 before('''`[ALG]` **Negative results.** §6.21 lists the refuted hypotheses and the stated limits.
@@ -117,7 +123,7 @@ Next required artifact or decision: the auditor's Priority B report. After it ar
 - Item 5 (B5): PO-2 :: "VERIFIED conditional on cited classical theorems" :: §6.9
 - Item 6 (B6): PO-3 :: "VERIFIED as a conditional implication" :: §6.10
 - Item 7 (B7): PO-1 :: "VERIFIED as conditional reduction" :: §6.8
-- The auditor's bundle was received and replayed by Claude (84/84, 12/12, 12/12, 6/6).
+- The auditor's bundle was received and replayed by Claude (`g34/auditor_r2/H3_AUDITOR_R2_BUNDLE_REPLAY_CLAUDE_v0_1.md`): outer manifest 84/84; nested round-1 manifest 34/34; round-2 exact tests 19/19; round-1 scripts 3/3 exit 0; negative controls 4/4 rejected.
 
 Recorded with the closure:
 - The auditor's summary: "Public global statement: NOT VERIFIED as independently established theorem."
@@ -285,7 +291,7 @@ before('''---
 
 > **[Guard SG-13 applies]** Everything in this section is two-AI work on an unrefereed draft. The third family never read v2.
 
-**Source.** B. Severn, hexagon:2610.00387v2 (24 Oct 2026; PDF SHA-256 ee285c82b0a0b864bd63696dc6d701e1fab2c44272afb8747f0beef5d8fcccb4; third-party, not stored here). v2 is self-contained: it cites neither [386] nor any OpenAI manuscript. Its Theorems A/B/C are v1 Thm 6.2 (1)(2)(3). Its bibliography is renumbered, so v1 reference numbers must not be reused for v2.
+**Source.** B. Severn, hexagon:2610.00387v2 (internal date 21 Oct 2026, version 1.5; PDF SHA-256 ee285c82b0a0b864bd63696dc6d701e1fab2c44272afb8747f0beef5d8fcccb4; third-party, not stored here). v2 is self-contained: it cites neither [386] nor any OpenAI manuscript. Its Theorems A/B/C are v1 Thm 6.2 (1)(2)(3). Its bibliography is renumbered, so v1 reference numbers must not be reused for v2.
 
 `[THM]` [import: hexagon:2610.00387v2 Lemma 4.4 | RID unavailable] [RID: HCG-THM-SEVERN-V2-L44] [provenance: CHECKED — two AI proof reviews (Δ26)]
 The lemma closes a real gap in Schoen's Sublemma 2.9 for α = m/2 with 4 | m. It is needed by exactly 3 of the 84 G₃₄ suppliers (m = 12). It is not a verification of v2 Cor 4.7 or of Theorem A.
@@ -296,7 +302,8 @@ A written proof of the genus-zero cup-product (cocycle) formula: Δ-complex redu
 `[ALG cert]` [RID: HCG-ALG-SEVERN-APPXA-REPRO] [provenance: CHECKED — two routes (Claude: Artin route; ChatGPT: projector route), both 64/64 and 272/272; they share one input, Severn's deposited tuple (Δ26)]
 - The roots printed in v2 equal the deposited tuple (20/20).
 - The printed basis, the form S, all 17 X_j and the table are reproduced.
-- (H0)–(H4) hold on Severn's own tree: 18/18 pants by two independent scripts; dim_ℚ span = 16; one relation, X₁₇ = X₉ + X₁₀ (Severn's indexing).
+- (H0)–(H4) hold on Severn's own tree: 18/18 pants by two independent scripts; dim_ℚ span{X₁,…,X₁₇} = 16.
+- The one ℚ-linear relation among Severn's printed blocks is 2X₅ − 4X₇ + X₈ = 0 (Severn's indexing; exact, from the transcription in `reconstruct_severn_printed.py`; found by ChatGPT in the review of the first draft and recomputed by `evidence/hcg/verification/severn_printed_relation.py`). It is **not** the W5-tree relation N₁₇ = N₉ + N₁₀ of §6.14, which belongs to a different tree and indexing.
 - It certifies the finite assertions only (SG-6). Severn's certificate lies on S_W5 by §6.19.
 
 **(H0) in v2.** v2 Prop 8.5 needs (H1)–(H4) only; (H0) follows from Lemma 8.3 and Clemens–Schmid. The Hodge-type step was checked by Claude only. A reader must say which version's hypothesis list is used (`records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` §3).
@@ -351,7 +358,7 @@ rep('''**RTG imports (one-way; charter §1).** All are hard-coded with provenanc
 - [RID: DYAD-THM-SMOOTH-EMBEDDING] :: R5 smooth flow embedding of T⁶; order-six generator G₆ :: DYAD v6.4.18 §6.17 :: context only :: local smooth germ, not holomorphic
 - [RID: DYAD-THM-PRIM-CTR] :: R6(a) the origin is a local attractor of T⁶ :: DYAD v6.4.19 §6.14 :: premise of HCG-THM-R6B :: fixed T on the dyadic carrier
 - [RID: RTG SG-PROG-1] :: R8 programme boundary :: RTG_PROGRAMME_OVERVIEW v1.2; OFN v0.10 :: governs SG-2 :: interpretation only''',
-    '''**RTG imports (one-way; `hcg/HCG_CHARTER.md` §5).** All are hard-coded with provenance in `h1_h2_exact_checks.py`; no script of this study reads an RTG file.
+    '''**RTG imports (one-way; `hcg/HCG_CHARTER.md` §5).** All are hard-coded with provenance in `h1_h2_exact_checks.py`; no scientific computation script of this study uses an RTG file as input. Only the provenance audit `evidence/hcg/verification/rtg_import_audit.py` reads the tagged owner files.
 
 Pins proposed for this edition (PI decision pending): `dyad-v6.4.23`, `gen-v2.10`, `programme-v1.4` in `rtg-corpus`. The citations of v0.2 (DYAD v6.4.18/19, GENESIS v2.8.9, Programme v1.2) are kept as provenance. A later RTG edition is consumed only by a new HCG decision. Basis: `records/hcg/HCG_RTG_IMPORT_AUDIT_20261110.md`, which compared one selected defining line per import between the historical and the proposed tags and found each identical; it did not re-read proofs or trace dependencies.
 
@@ -374,7 +381,7 @@ after('''- Cited by ChatGPT, not verified by Claude: Lewis–Wang Remark 4.4 (sh
 ''', '''
 **v0.3 additions to the import ledger.**
 
-- [RID unavailable] :: Severn Lemma 4.4, Lemma 7.2, Prop 7.1, Prop 8.5, Lemmas 8.2–8.3, Remark 9.2, Appendix A :: hexagon:2610.00387v2 (24 Oct 2026; PDF ee285c82…) :: §6.22 :: unrefereed; two-AI reading only
+- [RID unavailable] :: Severn Lemma 4.4, Lemma 7.2, Prop 7.1, Prop 8.5, Lemmas 8.2–8.3, Remark 9.2, Appendix A :: hexagon:2610.00387v2 (internal date 21 Oct 2026, version 1.5; PDF ee285c82…) :: §6.22 :: unrefereed; two-AI reading only
 - Reported, not verified and not used as a citation: a preprint named in Δ25 as a prior statement of the boundary-rank conclusion. No copy or hash is held; its identity is to be confirmed through LIT.
 - Third-party texts and data are not stored in `rtg-sat`. They are cited by identifier and by the hash of a held copy (`records/hcg/HCG_SOURCE_MANIFEST.md` §3) and are handled through LIT. No LIT-backed validation is claimed.
 ''')
@@ -408,7 +415,9 @@ Entries D-10 and later belong to pending Δ27 and are not part of this edition.'
 # ---------------------------------------------------------------- appendix A, B, footer
 after('''## Appendix A — Version History
 ''', '''
-### v0.3 DRAFT r1 — 10 November 2026 — DRAFT (not adopted)
+### v0.3 DRAFT r2 — 11 November 2026 — DRAFT (not adopted)
+
+- **r2 (11 Nov 2026).** Corrections from the co-owner review of r1 (PR #31, CHANGES REQUIRED): the relation among Severn's printed blocks (§6.22; r1 wrongly copied the W5-tree relation); the replay counts in OPEN 1; the `[assuming:]` of `HCG-EXT-PO6`; the RTG-file sentence in §7; the receipt of the auditor's round-1 archive in §8; the range of the external-claim audit module; the internal date and version of Severn's v2. r1 is preserved in the git history of the pull request.
 
 - **Basis.** The ledger of `hcg-v0.2`; Δ24–Δ26; the acceptance matrix (revision 3) and the RTG import audit (revision 2), both reviewed and accepted by the ChatGPT owner session; two PI decisions of 10 Nov 2026.
 - **Review-state changes (proposed).** PO-1–PO-4: THIRD-FAMILY CHECKED on the v1 and [386] texts, each under its conditions. `HCG-ALG-E02`: W5 sub-claim only. `HCG-EXT-PO6` general statement: PROPOSED → CHECKED as a two-AI proof-path review.
@@ -428,7 +437,7 @@ before('''`[SUPERSEDED]` [RID: HCG-HYP-EDGEFORM] Superseded by HCG-THM-EDGEFLUX 
 
 ''')
 rep('''*END OF DOCUMENT — HCG_HODGE_SESSION_DSN_v0.2 · ADOPTED (scoped) 26 Oct 2026 · INTERNAL (withhold from the third-family auditor until round 2 is complete) · not RTG-adopted; PI-adopted as a scoped session-record consolidation only.*''',
-    '''*END OF DOCUMENT — HCG study ledger v0.3 · DRAFT r1 · 10 Nov 2026 · not adopted; `hcg-v0.2` governs · not an RTG document.*''')
+    '''*END OF DOCUMENT — HCG study ledger v0.3 · DRAFT r2 · 11 Nov 2026 · not adopted; `hcg-v0.2` governs · not an RTG document.*''')
 
 
 def main():
