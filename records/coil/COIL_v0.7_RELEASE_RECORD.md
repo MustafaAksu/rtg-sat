@@ -42,7 +42,7 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 
 ## 5. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `a6531616aa5c07c2e35c257f5106773d42504335`. Files not listed are inherited unchanged from `coil-v0.6`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `aed55a61d68757e6b4ca369c92faed10419bb971`. Files not listed are inherited unchanged from `coil-v0.6`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -53,7 +53,7 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 | `evidence/coil/code/SHA256SUMS` | `a8ebbca21c446d92c66e85faefc43648e93dfab115508b646be97226a12245e8` |
 | `evidence/coil/outputs/SHA256SUMS` | `ad03510e0caff5043cc844eda77fbd3106ba3062a0539d5350fa3e277868f533` |
 | `evidence/coil/prereg/SHA256SUMS` | `ca135ba9330a4050f64cd4d7b599b6897d28a91fa850595572463facb58b4e7c` |
-| `coil/COIL_INDEX.md` | `95d07920b3037b357d5e210fc1f7cc051e8f9408ec32c07952631debdeba697d` |
-| `coil/COIL_RMT.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/COIL_INDEX.md` | `e7111477ebbda45ee01d69b9338ef3490f133bb0496cafb2e04a4360d5e0c1cd` |
+| `coil/COIL_RMT.md` | `4fa18a71459bf24446a943566a0b3f78b0fb4eab27bc17570cee6ade47d76c55` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
