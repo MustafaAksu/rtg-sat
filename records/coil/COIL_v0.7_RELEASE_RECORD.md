@@ -6,8 +6,8 @@
 
 **Live (new):** `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` `[DERIVED]`.
 **Evidence (new):** `evidence/coil/code/tri0_reduction_check.py`, `evidence/coil/outputs/tri0_reduction_check.json`; `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` — an **unlocked working draft**: adoption of v0.7 would adopt it only as a draft and would neither lock nor authorise an experiment, nor open RM-04. `SHA256SUMS` rows appended.
-**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer and one-sentence statement).
-**Unchanged:** every frozen prereg/RUN/script and result file of earlier releases; RM-04's catalogue status ("not opened") in `COIL_INDEX.md` and `COIL_RMT.md`.
+**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer, statement, and the name of the positive-control laboratory); `coil/COIL_RMT.md` RM-04 row (the same name).
+**Unchanged:** every frozen prereg/RUN/script and result file of earlier releases; RM-04's catalogue status ("not opened").
 
 ## 2. Content and origin
 
@@ -38,7 +38,7 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 
 1. Draft §6 design choices O1–O8; the co-owner's direction: design Q-A first, bind Q-B as a conditional prediction.
 2. RM-04 remains **not opened**; the co-owner does not recommend opening it yet. Opening is the PI's decision.
-3. `[UNVERIFIED]` (owner and co-owner): the index and the RMT name a "non-Markov positive-control laboratory identified" for RM-04; which laboratory that is, is not stated in the live documents read. Not assumed to be tri0. The original source has to be found.
+3. **Resolved (source found, 11 Nov 2026):** the "non-Markov positive-control laboratory" of the index and the RMT is the memory-kernel model of "RTG Synthesis v1.0", per the archived RM-02 record v0.1, item 12 (`upload/coil/owner-session-outputs/ARSIV/RM-02-kayit-v0.1.md`, SHA-256 `ce333328185f2a4d2effaab7b46d5eae4d931052c29a1bce49545b1659036c74`): an idea-log `[CAND]`. The qualifier was lost when the index and RMT rows were condensed; both rows now name it. It is not tri0. It is an RTG-side item not pinned to any `rtg-corpus` tag (the phrases "fracture clock" and "RTG Synthesis" do not occur in `dsn/` or `atlas/` of `rtg-corpus` `main` as read on 11 Nov 2026; "memory depth M" occurs in the Pre-Legacy DSN, `prelegacy-v0.8`, as `[ONTO pre-legacy philosophical]`). The model's definition is **not available** in this repository; without it the laboratory cannot be used.
 
 ## 5. Adoption manifest
 
@@ -54,5 +54,6 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 | `evidence/coil/outputs/SHA256SUMS` | `ad03510e0caff5043cc844eda77fbd3106ba3062a0539d5350fa3e277868f533` |
 | `evidence/coil/prereg/SHA256SUMS` | `ca135ba9330a4050f64cd4d7b599b6897d28a91fa850595572463facb58b4e7c` |
 | `coil/COIL_INDEX.md` | `95d07920b3037b357d5e210fc1f7cc051e8f9408ec32c07952631debdeba697d` |
+| `coil/COIL_RMT.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
