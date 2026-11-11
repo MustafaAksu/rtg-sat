@@ -24,7 +24,7 @@ A historical source file is frozen and is never edited. It keeps its original wo
 | `literature-reviews/` | 2 | Claude's edge-flux literature review and comparison | cited by v0.2 (Δ7) |
 | `severn-v2/` | 10 | Severn v2 successor audit | in `hcg-v0.3` (Δ25–Δ26) |
 | `research-next/` | 1 | Boundary-rank note review | in `hcg-v0.3` (Δ25) |
-| `nonsplit8/` | 173 | Nonsplit Weil eightfolds: `cyclic_disc_claude.py`, the locality checks, GAP screens, the reports of Δ27 addenda 1–17, and 17 states of the v0.3 log in `deliver*/` | **pending** (Δ27) |
+| `nonsplit8/` | 173 | Nonsplit Weil eightfolds: `cyclic_disc_claude.py`, the locality checks, GAP screens, the reports of Δ27 addenda 1–17, and 17 states of the v0.3 log in `deliver*/` | two results in `hcg-v0.4` (§6.24); the rest **pending** (Δ27) |
 | `positive/` | 6 | All-powers positive lane: CM rank scan | **pending** (Δ29) |
 | `hho-track/` | 3 | The HHO opening note v0.1 and its bundle folder | **HHO-track source evidence**; custody HHO (Δ28, pending) |
 | `scratch/` | 12 | Files kept only in the session's scratch area: the three v0.2 replay packages, the earliest held state of the v0.3 log, small probes | mixed |
@@ -56,7 +56,7 @@ Two bundles sit in `g34/` because that is where they were written: `HCG_HHO_OPEN
 | G34-BLOCK-01 roots; BRAID-ESCAPE-01 certificate (ChatGPT) | `received/4a8df43f-HCG_G34_BLOCK_01_ROOTS_v0_1.json`, `received/bfbf234e-HCG_G34_BLOCK_BRAID_ESCAPE_01_CERTIFICATE_v0_1.json` | `71a030ce52bb`, `44030b5f5577` |
 | Auditor reports | `received/7a7f0cc1-GEOMETRIC_REPORT.md` (R1), `received/dfeaa2ff-ROUND2_FINAL_REPORT.md` (R2) | `d72d3616a4be`, `1a3a1d444faf` |
 | Cyclic discriminant engine (pending, Δ27) | `nonsplit8/cyclic_disc_claude.py` | `da76a25f5781` |
-| Locality proof check (pending, Δ27) | `nonsplit8/disc_locality_proof_check_claude.py` | `f538ce4deac1` |
+| Locality proof check (`hcg-v0.4` §6.24; replay: `verification/replay_d27_core_checks.py`) | `nonsplit8/disc_locality_proof_check_claude.py` | `f538ce4deac1` |
 
 ## Running the scripts
 
