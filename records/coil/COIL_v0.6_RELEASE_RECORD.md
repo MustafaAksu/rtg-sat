@@ -59,7 +59,7 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `893d1e82f022df80a8a745f6bb483bbab91a193b`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `988a2f0cf36af465eade35e7289fc10348be8f35`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -72,13 +72,13 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 | `evidence/coil/run/RUN-MM1-ICID-v1.0.md` | `54626fe4e948f2e2f00034eae982e2af0f05856cb4e9cc7ccd4ec32d5a8d8b06` |
 | `evidence/coil/run/SHA256SUMS` | `52ff98babfbee9ee3dd9764dcb0957479fb937652622c5ace4b3580dc6158c37` |
 | `evidence/coil/outputs/SHA256SUMS` | `d4c801366d810db99725aec43e4313d1c3e551e449e77c0b5a6eefe1bd2b1227` |
-| `evidence/coil/outputs/README.md` | `0ed99d7f8924cd964aec981ed8437cadca1dde2bee0d1db2176f212a6ed70051` |
+| `evidence/coil/outputs/README.md` | `8bcef30a6bcb0b8e7d1e5c15971335767881d6ba9d05e5db6869b767c333922a` |
 | `upload/coil-icid-results/SHA256SUMS` | `f6d6a03ec066060ad6b1ccef86be05a694c1d2bed21493ec9c63cdc89cea135e` |
 | `upload/coil-icid-chat-attachments/SHA256SUMS` | `5cd2844ffb4f98ddd664b12c48e971e9a180921f21a82f4441dacd5da5f0d1ea` |
-| `upload/coil-icid-chat-attachments/README.md` | `0320e3b87e74c62d2a45f85442dc1ba65fc007b867bcbe0dfa24d3471d597495` |
+| `upload/coil-icid-chat-attachments/README.md` | `68f0e34f9e705d0745e09bb610d99eb3e4cfa1b52995097775bded74267d7569` |
 | `.gitignore` | `7efd758ab66a46571f0c5b4ac82e793369cfb4da548119765b9c2dece99d4a81` |
 | `coil/records/RM-02.md` | `aa60bb77926f8704d284c08bca9959b0a07ad1149b6693a6873c5e73652d7c83` |
-| `coil/COIL_INDEX.md` | `7c979d025fc8dcecf231be5a13b6e10513e298492b3d78d3e5340096ed4bc9cc` |
+| `coil/COIL_INDEX.md` | `0adab7f11edec5105dfc4ff23dfd3724d734b848a8b8ff36b034bde7bcef6c86` |
 | `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
 
