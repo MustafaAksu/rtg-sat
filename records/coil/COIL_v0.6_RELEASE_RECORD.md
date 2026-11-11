@@ -8,7 +8,7 @@
 **Frozen run record (new):** `evidence/coil/run/RUN-MM1-ICID-v1.0.md`.
 **Result data (new, unchanged from upload):** `evidence/coil/outputs/icid_results/` (33 files), `evidence/coil/outputs/raw_from_pi/pairbc_console_4f6056a1.txt`; `SHA256SUMS` rows appended; `evidence/coil/outputs/README.md` describes them.
 **Intake (unchanged):** `upload/coil-icid-results/` (pushed by the PI, commits `fce725a` incomplete, `e2ccc9b` complete); `upload/coil-icid-chat-attachments/` (two files the PI sent as chat attachments, placed by the owner session — they did **not** arrive on an `upload/` branch; PI disposition in §5).
-**Live (changed):** `coil/records/RM-02.md` (.h), `coil/COIL_INDEX.md` (RM-07 row, three table rows, §8 item 4), `coil/COIL_RMT.md` (RM-07 row), `coil/COIL_CAMPAIGN_COMPENDIUM.md` (ICID entry). `.gitignore`: the ignore rule for run outputs now names `/evidence/coil/code/icid_results/` only, so the deposited `evidence/coil/outputs/icid_results/` is tracked.
+**Live (changed):** `coil/records/RM-02.md` (.h), `coil/COIL_INDEX.md` (RM-07 row, three table rows, §8 item 4), `coil/COIL_RMT.md` (RM-07 row), `coil/COIL_CAMPAIGN_COMPENDIUM.md` (ICID entry); `REGISTRY.md` (COIL row: governing edition `coil-v0.6`). `.gitignore`: the ignore rule for run outputs now names `/evidence/coil/code/icid_results/` only, so the deposited `evidence/coil/outputs/icid_results/` is tracked.
 
 ## 2. Lock phase: changes relative to the v0.5 draft (co-owner lock items A–C, review `5838153479`, and one owner finding)
 
@@ -81,5 +81,6 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 | `coil/COIL_INDEX.md` | `0adab7f11edec5105dfc4ff23dfd3724d734b848a8b8ff36b034bde7bcef6c86` |
 | `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
+| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 
 **Adoption scope (PI, 2026-11-11):** all files listed above as they stand at the content commit; the result data under `evidence/coil/outputs/icid_results/` and the two intake folders as covered by the listed `SHA256SUMS` files; everything inherited unchanged from `coil-v0.5`; tag `coil-v0.6`. **Limits of effect:** the adoption covers the RUN record's decisions and measured statements within its stated scope; the RUN §6 owner reading is adopted only as labelled there (a conditional computation outside the decision rules, not a re-classification); no historical H label, no κ_frac and not P-κ is changed; RM-07 is not activated; nothing enters rtg-corpus by this adoption.
