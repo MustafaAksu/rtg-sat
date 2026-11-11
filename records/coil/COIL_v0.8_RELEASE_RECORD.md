@@ -38,18 +38,18 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `0000000000000000000000000000000000000000`. Files not listed are inherited unchanged from `coil-v0.7`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `632989d99c22cca5fc48de603b85773796334965`. Files not listed are inherited unchanged from `coil-v0.7`.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-synthesis-sources/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-synthesis-sources/README.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_fracture_clock_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_fracture_clock_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_INDEX.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_RMT.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` | `f9163e930bb1345a6b707705596f84bc24a81f2e3abb8efe2c3f24508bd2e195` |
+| `upload/coil-synthesis-sources/SHA256SUMS` | `b3a0030636f9a32c82f6bb347ebedd3295c1d403d4b48efe53af6b9890ecb5f1` |
+| `upload/coil-synthesis-sources/README.md` | `759f444c48b37ca28ffe22253d62a06976d6a33ee36258de49e58db62c9f07e3` |
+| `evidence/coil/code/synthesis_v1_fracture_clock_explore.py` | `3da0bd5cd6fcac041d2b6b04b98f1aef42a769e9c7aa710c0ec9a6463006d21d` |
+| `evidence/coil/outputs/synthesis_v1_fracture_clock_explore.json` | `fece0dcef420e2bcda7a430fcfa84d34780aeffac1e6be4bad22bb3eaee1a8f1` |
+| `evidence/coil/code/SHA256SUMS` | `f14b8efc66244f576ecb37b2df65fbae83c6cbc05b1fdddfdeb0df4817fdeb9e` |
+| `evidence/coil/outputs/SHA256SUMS` | `033e4d24239b2f31ed225895de5d9ed5ee817e7f0d67c9775912d0c75abb4459` |
+| `coil/COIL_INDEX.md` | `418a0a3862f3a440e4c23d38678d3c61a8ef0da507d6272aa4531df1839635ba` |
+| `coil/COIL_RMT.md` | `8d3de59c809e6aea1878d61159fa2567291c86066bd808c4040e8172161e6709` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
