@@ -1,12 +1,12 @@
-# COIL v0.7 — release record (DRAFT): tri0 relative-coordinate analysis; RM-04 design draft
+# COIL v0.7 — release record: tri0 relative-coordinate analysis; RM-04 design draft
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.6`. Scope: one `[DERIVED]` analytic record with its fail-closed checker, and one **unlocked** preregistration draft. No campaign, no measured result, no mechanism record opened.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-11 ("v0.7'yi benimsiyorum", COIL owner session, after co-owner final review `5855203213` ACCEPT on head `cfeb02ac2ae7318ebbc3060cf5857cd3b45c898a`); publication tag `coil-v0.7`. The PI merged PR #32 (`main` `d0a41f6`) before this adoption entry was written; the entry, the registry row and the re-bound manifest are added by a follow-up pull request and the tag is set on its merge commit. Successor of `coil-v0.6`. Scope: one `[DERIVED]` analytic record with its fail-closed checker, and one **unlocked** preregistration draft. No campaign, no measured result, no mechanism record opened.
 
 ## 1. Files
 
 **Live (new):** `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` `[DERIVED]`.
 **Evidence (new):** `evidence/coil/code/tri0_reduction_check.py`, `evidence/coil/outputs/tri0_reduction_check.json`; `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` — an **unlocked working draft**: adoption of v0.7 would adopt it only as a draft and would neither lock nor authorise an experiment, nor open RM-04. `SHA256SUMS` rows appended.
-**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer, statement, and the name of the positive-control laboratory); `coil/COIL_RMT.md` RM-04 row (the same name).
+**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer, statement, and the archived reference of the positive-control laboratory); `coil/COIL_RMT.md` RM-04 row (the same reference); `REGISTRY.md` (COIL row: governing edition `coil-v0.7`).
 **Unchanged:** every frozen prereg/RUN/script and result file of earlier releases; RM-04's catalogue status ("not opened").
 
 ## 2. Content and origin
@@ -44,7 +44,7 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 
 ## 5. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `9a18adb89ca49710aae79fb92ef99fab1cdc99f8`. Files not listed are inherited unchanged from `coil-v0.6`.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `2f273360a5ad4e9a7155a335a382c88755bdaef5`. Files not listed are inherited unchanged from `coil-v0.6`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -57,5 +57,6 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 | `evidence/coil/prereg/SHA256SUMS` | `35e04c3b0fdd298d876ce3bf99f2c5a84f943525f92fa5714010216ec91ce127` |
 | `coil/COIL_INDEX.md` | `a124348c68bd384352ff90d56f5cc8d71dc83d0c53e8ffe76fdeea91cc8d4487` |
 | `coil/COIL_RMT.md` | `bdad3c430d384408bfdc4b3253d6e9acb541fb1f4eb9f6529db9ef9b25fbd396` |
+| `REGISTRY.md` | `30259787f584245957da9476ff1cb849d8039fc50c8185d3b9ee1c716721f6bb` |
 
-**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-11):** the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.6`; tag `coil-v0.7`. **Limits of effect:** `PREREG-RM04-TRI0-CLOSURE-DRAFT.md` is adopted **as an unlocked draft only** — it is not a preregistration, authorises no run and fixes no threshold, cell or estimator; **RM-04 is not opened**; the analytic record establishes identities of the closed tri0 map, not an effective-memory mechanism, a forecasting improvement, a physical validation or any RTG result; the positive-control reference stays as quoted in the index (model not established); nothing enters rtg-corpus by this adoption.
