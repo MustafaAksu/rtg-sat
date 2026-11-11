@@ -14,9 +14,9 @@
 
 ## 1. What is fixed by the algebra, and what is not (analysis §7)
 
-Fixed (certificate checks only): F1 (S4 is Markov), F2 (y closed on 𝒞; q alone needs one step), F3 (one-step defect of order δ² **where sin q ≠ 0**), F5 (±δ equivalent).
+Fixed (certificate checks only): F1 (S4 is Markov), F2 (y closed on 𝒞; q alone needs one step), F3 (one-step defect non-zero exactly where **sin q ≠ 0 and cos(δ/2) ≠ 1**), F5 (±δ equivalent).
 
-**Not fixed:** whether the past of y improves a prediction of y. It does where the identifiability condition (9) holds on the window; it does not on the degenerate invariant sets (10) (q = r = 0 or q = π, r = 0: y constant while (δ, s) evolves); elsewhere unknown. Positive transverse growth does not imply loss of predictability of y. Whatever history effect is found is fully explained by the hidden state (F1) and is therefore never, by itself, evidence of a memory mechanism.
+**Not fixed:** whether the past of y improves a prediction of y. Where (9) holds, a past observation window locally reconstructs the hidden state; whether that improves a specified prediction over current y alone depends on the forecast horizon, target, loss and tested state ensemble and is not established. On the degenerate invariant sets (10) (q = r = 0 or q = π, r = 0: y constant while (δ, s) evolves) no window carries information and none is needed. Positive transverse growth does not imply loss of predictability of y. Whatever history effect is found is fully explained by the hidden state (F1) and is therefore never, by itself, evidence of a memory mechanism.
 
 ## 2. Questions, in order
 

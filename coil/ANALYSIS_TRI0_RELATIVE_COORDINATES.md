@@ -17,7 +17,7 @@ q = (θ₁ + θ₂)/2 − θ₀, δ = θ₁ − θ₂, r = (w₁ + w₂)/2 − w
 - δ⁺ = δ + s
 - s⁺ = (1 − a) s − (2aκ/3) [cos q · sin(δ/2) + sin δ]
 
-The remaining two coordinates are the common phase Θ and the common velocity W = (w₀ + w₁ + w₂)/3, with Θ⁺ = Θ + W, W⁺ = (1 − a)W (the forces sum to zero). A shift of the common phase is a symmetry of the map. **The common velocity is not a gauge: it is a physical degree of freedom that decouples from the four relative coordinates and decays.** Neither feeds back into (q, r, δ, s), which is therefore a sufficient relational state for the relative dynamics: the map is first-order Markov on it by construction.
+The remaining two coordinates are the common phase Θ and the common velocity W = (w₀ + w₁ + w₂)/3, with Θ⁺ = Θ + W, W⁺ = (1 − a)W (the forces sum to zero). A shift of the common phase is a symmetry of the map. **The common velocity is not a gauge: it is a physical degree of freedom that decouples from the four relative coordinates; it decays when |1 − a| < 1, i.e. 0 < a < 2 (true for Pairs A, B, C).** Neither feeds back into (q, r, δ, s), which is therefore a sufficient relational state for the relative dynamics: the map is first-order Markov on it by construction.
 
 ## 2. Symmetries
 
@@ -63,12 +63,12 @@ Fixed by the algebra (these would be code checks, not findings):
 
 - **F1.** No history dependence relative to (q, r, δ, s).
 - **F2.** On 𝒞: none relative to y; exactly one step of history relative to q alone ((5)).
-- **F3.** Relative to y, off 𝒞: a one-step defect (7) exists **where sin q ≠ 0**, of order δ²; where sin q = 0 it is absent.
+- **F3.** Relative to y: the one-step defect (7) is non-zero exactly where **sin q ≠ 0 and cos(δ/2) ≠ 1**, and is of order δ² for small δ. A state can be off 𝒞 with zero one-step defect (δ = 0, s ≠ 0: the defect appears from the next step on, if at all).
 - **F5.** Offsets +δ and −δ give identical y-histories ((2)(i)): one case, not two.
 
 **Not fixed in general — corrected from the first version of this record:**
 
-- **F4 (withdrawn as an unconditional statement).** "The past of y improves prediction of y over y alone" is **not** imposed by the algebra. It holds, as hidden-state reconstruction, on windows where the condition of (9) is met; it fails on the sets of (10); for windows that pass near sin q = 0 or sin(δ/2) = 0 nothing is established. What remains true and matters for design: wherever a history effect relative to y is found in this closed, noise-free system, the full state (q, r, δ, s) explains it completely (F1) — so the *existence* of such an effect cannot by itself count as a finding about memory; whether, where and how strongly it occurs along actual orbits is an empirical question.
+- **F4 (withdrawn as an unconditional statement).** "The past of y improves prediction of y over y alone" is **not** imposed by the algebra. Where (9) holds, a past observation window locally reconstructs the hidden state; whether that improves a specified prediction over current y alone depends on the forecast horizon, target, loss and tested state ensemble and is **not established here**. Identifiability is not forecast improvement: with a = 0.1, κ = 4, (q_m, r_m) = (1, −0.5), s_m = 0 and cos(δ_m/2) = 0.1485493882…, the determinant of (9) at m is non-zero (≈ 0.0158), yet q_{m+2} = 0, so from y_{m+2} alone the next y is exactly (r, (1 − a)r) whatever the hidden state is (co-owner's counterexample, review `5854759172`). On the sets of (10) no window carries information and none is needed. What remains true and matters for design: wherever a history effect relative to y is found in this closed, noise-free system, the full state (q, r, δ, s) explains it completely (F1) — so the *existence* of such an effect cannot by itself count as a finding about memory; whether, where and how strongly it occurs along actual orbits is an empirical question.
 - Positive transverse growth does **not** by itself imply loss of predictability of y ((10)).
 
 What a campaign could measure: whether an orbit started off 𝒞 returns to it, stays bounded away from it, or slips in δ (the nonlinear fate left open by ICID); where it goes in q (in particular whether it approaches the sets of (10)); how large the defect is along such orbits and for how long y remains predictable from y alone; how these depend on κ and a. These are questions about the *validity domain of the cluster description*.

@@ -56,7 +56,7 @@ th_n = [t0+w0, t1+w1, t2+w2]
 w_n = [(1-a)*w0+b*F[0], (1-a)*w1+b*F[1], (1-a)*w2+b*F[2]]
 def coords(th, w):
     return ((th[1]+th[2])/2-th[0], (w[1]+w[2])/2-w[0], th[1]-th[2], w[1]-w[2])
-sub = {t0: 0, t1: q+d/2, t2: q-d/2, w0: 0, w1: r+s/2, w2: r-s/2}     # gauge theta0 = w0 = 0
+sub = {t0: 0, t1: q+d/2, t2: q-d/2, w0: 0, w1: r+s/2, w2: r-s/2}     # representative theta0 = w0 = 0 for evaluating the relative coordinates (common velocity is physical, T11)
 full = [sp.simplify(e.subs(sub)) for e in coords(th_n, w_n)]
 red = [q+r, (1-a)*r-a*k*sp.sin(q)*sp.cos(d/2), d+s, (1-a)*s-sp.Rational(2, 3)*a*k*(sp.cos(q)*sp.sin(d/2)+sp.sin(d))]
 res = [sp.simplify(sp.expand_trig(x-y)) for x, y in zip(full, red)]
