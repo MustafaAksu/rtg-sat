@@ -1,0 +1,4 @@
+G-CODE cell 1 path3/A kappa=2.3: frozen=0 instrumented=0 PASS
+G-CODE cell 2 path3/A kappa=2.35: frozen=25 instrumented=25 PASS
+G-CODE cell 3 tri0/A kappa=2.6: frozen=5 instrumented=5 PASS
+G-CODE cell 4 tri0/A kappa=2.65: frozen=25 instrumented=25 PASS
