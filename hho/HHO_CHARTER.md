@@ -62,7 +62,7 @@ Choosing P1 is a research priority. It adopts no claim.
 
 - Live files have fixed names, with no version and no author in the name.
 - A frozen file is never edited. It keeps its wording, including statements that were later corrected or withdrawn. The live files state the current result.
-- Until batch 2 and batch 4 place the frozen files in `evidence/hho/`, evidence pointers name the path in `upload/hho/`.
+- The evidence placement is complete after `hho-v0.1` (PR #33, merge `b2a066aed0b13d62204048f9272916829ae54ab3`): the live claim register now points to `evidence/hho/`. Source byte identity and the remaining original-session provenance limit are recorded in `records/hho/HHO_SOURCE_MANIFEST.md` §4.1. This placement adopts no scientific claim; the governing `hho-v0.1` tag remains unchanged.
 
 ## 3. Editions
 
