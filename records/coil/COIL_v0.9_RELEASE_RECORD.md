@@ -17,9 +17,9 @@
 | D3 | two offset directions (δ, s), ε ∈ {1e-2, 1e-4, 1e-6, 1e-8}, only +ε | N2 makes −ε redundant; ε = 1e-2 as finite probe |
 | D4 | labels decided on the last quarter; distance to the cluster by wrapped δ; SLIPS = still winding in the last quarter | "returns" must be physical (mod 2π); a past slip is recorded, not a label |
 | D5 | D-FATE by unanimity of the 40 runs, else MIXED with the table | no aggregation rule to tune |
-| D6 | **the v0.7 draft's Q-B is not a decision here**: in the linear phase the onset law follows from the base orbit's J_⊥ products; kept as instrument check D-LIN | owner's correction of the `[HEUR]` status; flagged for the reviewer |
+| D6 | **status of the v0.7 draft's Q-B: left open.** Owner's position: a linear-phase consequence; co-owner's position on record: a conditional `[HEUR]` prediction; the co-owner has not ruled on the owner's position. Per the PI's ruling of 11 Nov 2026 ("başkası adına karar vermeyelim … uzlaşmadığımız konuları deneyebiliriz ama nihai sonuç olarak iddia edemeyiz") the prereg takes no side: the ratio λ_est/λ_⊥ is recorded and reported as *descriptive, status disputed, no claim* and enters no decision | a disputed point may be tested but not claimed |
 | D7 | N-DEG (q = r = 0) as a per-cell control with outcome EXACT / BROKEN | co-owner's request to keep the invariant subset as negative control |
-| D8 | executed on the PI's Ubuntu server (bash CLI) | ICID was run there; G-BASE compares like with like |
+| D8 | executed on the PI's Ubuntu server (bash CLI) — owner's recommendation; the PI offered the laptop as an alternative (11 Nov 2026) | ICID was run on the server; G-BASE compares λ_⊥ with ICID's values to 1e-6, which is cleanest in the same environment. The prereg fixes no platform; a laptop run would be a recorded deviation from the CLI only |
 
 ## 3. Checks
 

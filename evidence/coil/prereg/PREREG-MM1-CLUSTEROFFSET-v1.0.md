@@ -10,7 +10,7 @@
 1. RUN-MM1-ICID v1.0: on the five cluster ICs of PAIRBC's ensemble, 12 tri0 cells (Pairs A/B/C; κ ∈ {1.50, 2.00} and both bracket endpoints): orbit exactly on 𝒞; |λ_∥| ≤ 1.9 × 10⁻⁵; λ_⊥ > 0 in every quarter (0.0025 … 0.0361). The 20 non-cluster ICs (off 𝒞 through w₁ ≠ w₂) are not-chaos below each bracket and CHAOS above; where they end up was not recorded.
 2. Historical PAIRBC console: tri0 B and C have CF = 0.00 at κ ≤ 1.00.
 3. `tri0_reduction_check.py` T1–T11 (identities).
-4. The certificate of this prereg (K1–K8): fixtures, an off-campaign parameter point (Pair B, κ = 1.30: symmetry, degenerate set, linearisation around the synchronised fixed point) and toy horizons (burn 300/H 600 at ε = 0 on three cells; burn 40/H 80 on all cells for the fail-closed test). In the toy set the only labels seen were UNRESOLVED and — for the finite kick ε = 10⁻² in direction D2, which moves δ by 10⁻² per step by kinematics alone — BOUNDED-OFF-CLUSTER. These are not campaign data and are discarded.
+4. The certificate of this prereg (K1–K8): fixtures, an off-campaign parameter point (Pair B, κ = 1.30: symmetry, degenerate set, linearisation around the synchronised fixed point) and toy horizons (burn 300/H 600 at ε = 0 on three cells; burn 40/H 80 on all cells for the fail-closed test). In the toy set the only labels seen were UNRESOLVED and — for the finite kick ε = 10⁻² in direction D2, which moves δ by 10⁻² per step by kinematics alone — BOUNDED-OFF-CLUSTER. During a smoke test of the summary output one toy-horizon summary line (cell 1: all 40 runs UNRESOLVED, toy λ_⊥ negative) was read. These are not campaign data and are discarded.
 5. **No orbit with a controlled offset from a burned-in cluster state has been run at any horizon that lets a small offset grow to a classifiable size**, by either session.
 
 ## 1. Question and scope
@@ -22,7 +22,9 @@ A state on the cluster subspace 𝒞 = {θ₁ = θ₂, w₁ = w₂} of tri0 is g
 - **N1.** ε = 0: the orbit stays on 𝒞 exactly (bitwise symmetric update).
 - **N2.** Offsets +ε and −ε give identical (q, r) histories; only +ε is run.
 - **N-DEG.** From q = r = 0 the macro state stays (0, 0) whatever (δ, s) does.
-- **Linear phase.** While small, the offset obeys (δ, s)⁺ = J_⊥(q_n)(δ, s) along the unperturbed orbit. Hence the growth of a small offset, and with it the step at which any fixed small level is first reached as a function of ε, is determined by the base orbit's J_⊥ products: the "slope −1/λ_⊥ in ln ε" of the earlier draft's Q-B is a consequence of linearity, not an independent prediction. It is used here as an instrument check (D-LIN), not as a finding. *(Owner's correction of the `[HEUR]` status given to Q-B in the v0.7 draft; open to the reviewer's objection.)*
+- **Linear phase.** While small, the offset obeys (δ, s)⁺ = J_⊥(q_n)(δ, s) along the unperturbed orbit (certificate K6 on a fixture; D-LIN in the run).
+
+**Open between the sessions — the status of Q-B (PI ruling, 11 Nov 2026).** The v0.7 draft gave "the onset step of the closure defect falls linearly in ln ε with slope −1/λ_⊥" as a conditional `[HEUR]` prediction (co-owner's position on record). The owner's position is that, in the linear phase, this follows from the base orbit's J_⊥ products and is therefore not an independent prediction. **The co-owner has not ruled on this, and neither session decides for the other.** The PI's ruling: a point on which the sessions do not agree may be tested, but its outcome may not be claimed as a final result. Accordingly this prereg takes **no side**: the run records the onset steps and reports, per cell, the ratio λ_est/λ_⊥ with λ_est = ln(10⁴)/[n_on(10⁻⁸) − n_on(10⁻⁴)], labelled *descriptive, status disputed, no claim*. It enters no decision. If the sessions later agree on a status, that is recorded in a release record, not by editing this file.
 
 ## 3. Cells, base states, offsets, horizons (locked)
 
@@ -58,7 +60,8 @@ Distance to 𝒞 uses the wrapped δ: an orbit that slipped by a multiple of 2π
 - **Certificate:** `clusteroffset_certificate.py` exit 0 (K1–K8) writes the PASS file the summary requires. No run without it.
 - **Result-set validity (fail-closed):** `--summary` issues decisions only if all 15 cell files and trace files exist once, each holds exactly the 46 runs of §3, metadata and the execution record equal the locked ones (burn 70 000, H 200 000, 4 quarters, ε grid, executor and frozen-script hashes), every row status is ok, N1 holds in every unperturbed run, and the certificate PASS file names the same executor. Otherwise `INCOMPLETE-OR-INVALID`, no decision, non-zero exit.
 - **G-BASE (cells with an ICID counterpart):** |λ_⊥ − ICID value| ≤ 10⁻⁶ per base state → AGREE, else `BASE-MISMATCH — cause unresolved` (reported; does not stop).
-- **D-LIN (instrument check, ε ∈ {10⁻⁶, 10⁻⁸}):** at the first step where the linear prediction reaches norm 10⁻⁴, relative error of the measured (δ, s) ≤ 10⁻² → PASS; larger → FAIL (reported as an instrument finding); prediction never reaches 10⁻⁴ → NOT-REACHED. Near-forced; not a finding.
+- **D-LIN (instrument check, ε ∈ {10⁻⁶, 10⁻⁸}):** at the first step where the linear prediction reaches norm 10⁻⁴, relative error of the measured (δ, s) ≤ 10⁻² → PASS; larger → FAIL (reported as an instrument finding); prediction never reaches 10⁻⁴ → NOT-REACHED. Not a finding.
+- **Q-B ratio (descriptive, status disputed — §2):** reported per cell; no outcome label, no decision.
 - **D-FATE (per cell, the decision):** if all 40 perturbed runs carry the same label, that label; otherwise **MIXED**, reported with the full table by direction and ε. No aggregation rule beyond unanimity.
 - **N-DEG (per cell, control):** EXACT if |q|, |r| stay exactly 0 for the whole window; BROKEN otherwise (reported with the maximum; an instrument fact about floating-point symmetry, not a dynamical result).
 - No outcome activates RM-07, opens RM-04, changes P-κ or any historical classification.

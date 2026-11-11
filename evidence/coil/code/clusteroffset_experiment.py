@@ -319,6 +319,16 @@ def summary(outdir="cloff_results", log=print):
                    f"lam_perp base [{min(lam):+.6f}, {max(lam):+.6f}] G-BASE={gb} base motion={mot} | D-LIN={dict(sorted(dl.items()))} | "
                    f"N-DEG={deg['deg_result']} | slips(first 2pi) in {sum(1 for r in pert if r['first_2pi_step'])}/40, "
                    f"other-cluster in {sum(1 for r in pert if r['other_cluster_q4'] == '1')}/40")
+        # Q-B, descriptive only (status disputed between the sessions; prereg section 2): onset steps of the
+        # closure defect at eps = 1e-8 and 1e-4 give lambda_est = ln(1e4)/(n_on(1e-8) - n_on(1e-4)); ratio to lambda_perp
+        ratios = []
+        for r0 in base:
+            for dname in DIRS:
+                n = {float(r["eps"]): r["n_on_defect"] for r in pert if r["ic"] == r0["ic"] and r["dir"] == dname}
+                if n.get(1e-8) and n.get(1e-4) and int(n[1e-8]) > int(n[1e-4]) and float(r0["lam_perp_base"]) > 0:
+                    ratios.append(math.log(1e4)/(int(n[1e-8])-int(n[1e-4]))/float(r0["lam_perp_base"]))
+        out.append(f"{tag}    Q-B [DESCRIPTIVE; status disputed, no claim]: lambda_est/lambda_perp over base states x directions: "
+                   + (f"n={len(ratios)} min={min(ratios):.3f} median={sorted(ratios)[len(ratios)//2]:.3f} max={max(ratios):.3f}" if ratios else "not evaluable"))
         if fate == "MIXED":
             for dname in DIRS:
                 for e in EPS_GRID:
