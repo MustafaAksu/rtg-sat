@@ -2,7 +2,7 @@
 
 **Date:** 11 November 2026. **Prepared by:** the Claude HCG owner session. **Review:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-review package, PROPOSAL, revision 1. Nothing here is adopted. `hcg-v0.3` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed. This matrix does not define the scope of a later edition.
+**Status:** owner-review package, PROPOSAL, **revision 2** (after the ChatGPT co-owner review of PR #36, ACCEPT SCOPED, and one PI disposition; §4.1, §6). Nothing here is adopted. `hcg-v0.3` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed. This matrix does not define the scope of a later edition.
 
 **What this is.** Δ27 of the pending-delta log has a main entry and 17 addenda. Two of its results carry most of what follows, in HCG and in HHO:
 
@@ -141,7 +141,7 @@ Computation supports the proof; it is not the proof.
 
 ### 2.1 Statement
 
-Let C → P¹ vary in a family of connected Galois covers with a fixed finite group Γ and fixed topological type. Let σ be an absolutely irreducible representation of Γ with σ ≅ Ind_H^Γ τ, [Γ : H] = k, dim τ = r. Let M_σ be the σ-multiplicity part of H¹(C), with the Hodge structure induced from H¹(C), of dimension 2n. Put Y = C/H, of genus γ, and let D_τ ⊂ Y be the set of points where the τ-local system has nontrivial local monodromy, s = |D_τ|. Then, for r ≥ 2:
+Let C → P¹ vary in a family of connected Galois covers with a fixed finite group Γ and fixed topological type. Let σ be an absolutely irreducible representation of Γ with σ ≅ Ind_H^Γ τ, [Γ : H] = k, dim τ = r. **Coefficient field, two profiles:** (a) σ and τ are defined over K and the isomorphism is over K (the statement of addendum 4); (b) σ ⊗ ℂ ≅ Ind τ with τ a complex representation (the extension of §2.5). The bounds below hold in both profiles; profile (b) gives the period rank only. Let M_σ be the σ-multiplicity part of H¹(C), with the Hodge structure induced from H¹(C), of dimension 2n. Put Y = C/H, of genus γ, and let D_τ ⊂ Y be the set of points where the τ-local system has nontrivial local monodromy, s = |D_τ|. Then, for r ≥ 2:
 
 - **(P1)** rank Per_σ ≤ 3γ − 3 + s ≤ 2n + 2r − 3 + (3 − 2r)γ;
 - **(P2)** rank Per_σ ≤ 2n + 2r − 3;
@@ -238,13 +238,30 @@ An HCG decision on these two rows changes nothing in HHO by itself. HHO re-pins 
 | # | Point | Proposal |
 |---|---|---|
 | Q1 | Locality: one row for the algebraic identity (L1) with the cup identification (L2) as a stated import | as in §1.4 |
-| Q2 | Induced bound: is the stability remark of §2.2 correct and worth recording | reviewer to confirm |
+| Q2 | Induced bound: is the stability remark of §2.2 correct and worth recording | **confirmed** by the reviewer (§4.1) |
 | Q3 | Induced bound: the field-free form under the same RID or a separate one | same RID, two statements, with the "no discriminant" guard |
 | Q4 | Reference text for locality: the line-by-line review was of v0.1; v0.2 was checked as "clarifications only" | cite v0.2 as the text, v0.1 as the reviewed baseline |
 | Q5 | **Independence.** Each theorem has one deriving session and one reviewing session, and this matrix is written by the reviewer and checked by the deriver. No third family and no human has read either proof | state it in the rows. Whether to ask the third-family auditor for a blind reading of LOC-v0.2 §§2–3 and of P4–P6 is a PI decision; this matrix does not assume it |
 | Q6 | **Literature.** No search was made for an earlier proof of the locality formula (Wall-form determinants) or of the period bound | record "no novelty claimed; literature not searched"; a search would go through LIT |
 | Q7 | PI decision fields of addenda 2 and 4 are blank | any adoption needs an explicit PI decision in a release record |
 | E1 | The check scripts in `nonsplit8/` have two hard-coded session paths (`/home/claude/g34/h4sel/p2p3`, `/home/claude/g34/roots_alt_5.json`). From the repository they run after mapping these to `h4sel/p2p3/` and `h4sel/severnlink/W5_BASELINE_ROOTS.json` (`NAME_ALIASES.tsv`). The frozen files are not edited | if the rows are adopted, add a small replay wrapper under `evidence/hcg/verification/` |
+
+### 4.1 Dispositions after review (revision 2)
+
+| Point | Disposition | Source |
+|---|---|---|
+| Q1 | Agreed. L1 is the theorem; L2 travels as a separate import (Dettweiler–Wewers, with the action and orientation convention); L3 is a dependency of applications only. The row must not read as a statement about polarized abelian varieties or as a proof of Severn's "Theorem W" | ChatGPT review of PR #36 (review `5857656869`, on head `11c4c5d`) |
+| Q2 | The stability remark is correct: for n ≥ 1, γ = 0 gives s ≥ 3, γ = 1 gives s ≥ 1, and γ ≥ 2 is stable in any case. So 2γ − 2 + s > 0 always | same review; derived there independently |
+| Q3 | One RID with **two separately stated profiles**: (a) K-defined induction; (b) induction over ℂ, **period rank only**. Profile (b) carries no transfer of the K-discriminant and none of (L); Lemma E(iii) is not available for it. A ledger row must name the coefficient field in the statement (§2.1 of this matrix now does) | same review |
+| Q4 | Agreed: LOC-v0.2 is the reference text; LOC-v0.1 is the baseline that was reviewed line by line; equations (1)–(5) are unchanged between them (compared by both sessions) | same review |
+| Q5 | **No third-family reading is requested now. The ceiling for both rows is CHECKED (two AIs)**: not THIRD-FAMILY CHECKED, not ACCEPTED | PI disposition of 11 Nov 2026, as quoted in the same review: "ispat için üçüncü bir denetçiye şidilik ihtiyaç yok checked kalsın." The Claude session received it through that review and the PI's relay, not as a direct message |
+| Q6 | Unchanged: no literature search; no novelty claimed; a search would go through LIT | — |
+| Q7 | Unchanged: the PI decision fields of addenda 2 and 4 stay blank. This matrix does not fill them | — |
+| E1 | Agreed: a narrow replay wrapper in `evidence/hcg/verification/` if the rows go into a ledger; the frozen scripts are not rewritten. The reviewer did not run the scripts; the byte-identical re-runs are owner-run. The 60-case script concerns Lemma E and is not a certificate for P4–P6 | same review |
+
+**What the review was.** A proof-argument and provenance review by the session that derived both theorems. It is not a third independent proof, not a re-audit of the source PDFs, and not a re-execution of the earlier computations.
+
+**State after revision 2.** Both rows stand as proposals: `[THM]`, CHECKED (two AIs). There is no PI adoption, no change to `hcg-v0.3`, and no scope decision for a later edition.
 
 ---
 
@@ -262,3 +279,4 @@ An HCG decision on these two rows changes nothing in HHO by itself. HHO re-pins 
 | Revision | Date | Change |
 |---|---|---|
 | 1 | 11 Nov 2026 | first version |
+| 2 | 11 Nov 2026 | §4.1 added: dispositions after the ChatGPT review of PR #36 and the PI disposition on a third-family reading; Q2 marked confirmed; the coefficient field stated in §2.1 as two profiles. No statement, hypothesis or recommendation of revision 1 is changed |
