@@ -60,7 +60,7 @@ The study's statements, grades and open items are in the study ledger, not in th
 | `hcg-v0.3` | PI, 11 Nov 2026 (scoped); release record `records/hcg/HCG_v0.3_RELEASE_RECORD.md`; published by the annotated tag | the ledger at that tag, SHA-256 `fc03e8376eb56c14abeae77c7f20c2fa70723977572744af8a0c4a38dcec814d`: v0.2 with Δ24–Δ26 and the RTG import review |
 | `hcg-v0.4` | PI, 11 Nov 2026 (scoped); release record `records/hcg/HCG_v0.4_RELEASE_RECORD.md`; published by the annotated tag | `hcg/HCG_STUDY_LEDGER.md`, SHA-256 `51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949`: v0.3 with two results of Δ27 (§6.24) |
 
-**What an adoption covers.** The v0.2 and v0.3 adoptions each adopted the consolidated record as the governing record. Neither made any claim `ACCEPTED`: every claim keeps its own review state.
+**What an adoption covers.** Each adoption (v0.2, v0.3, v0.4) adopted the consolidated record as the governing record. None made any claim `ACCEPTED`: every claim keeps its own review state.
 
 **Pending, not part of `hcg-v0.4`:** Δ27 except its two results in ledger §6.24, Δ28 and Δ29, in `HCG_DSN_v0_3_PENDING_DELTAS.md` (frozen original in `upload/hcg/`). They enter a later edition only through review and a PI decision.
 
