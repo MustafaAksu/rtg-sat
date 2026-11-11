@@ -1,0 +1,4 @@
+rank over Q: 16
+dimension of the relation space: 1
+primitive relation (coefficients of X_1..X_17): [0, 0, 0, 0, 2, 0, -4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+X_17 - X_9 - X_10 == 0 ? False
