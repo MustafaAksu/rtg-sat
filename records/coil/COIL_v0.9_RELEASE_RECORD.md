@@ -42,18 +42,18 @@ The reviewer accepted the Q-B treatment (descriptive ratio, no decision) and rec
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted, not locked.** SHA-256 at the **content commit** `82dfff62a7dfbe903fc597dc5f1c33733d2c5c64`. Files not listed are inherited unchanged from `coil-v0.8`.
+**Status: CANDIDATE — not adopted, not locked.** SHA-256 at the **content commit** `c38ae81740f02a26f7a2125ef0c98050becd8075`. Files not listed are inherited unchanged from `coil-v0.8`.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `evidence/coil/prereg/PREREG-MM1-CLUSTEROFFSET-v1.0.md` | `7a57bf77adf367f41d5263cded082c8faec0ca78103949a1fdfcf92ee3099354` |
-| `evidence/coil/code/clusteroffset_experiment.py` | `3d3f7de2c353e6f2172d2b3cb52b22d54eb5871a5308cdbd0975601fb0eaada0` |
-| `evidence/coil/code/clusteroffset_certificate.py` | `bb1e9ba432ebd174821dddace388d60bae79355af236c4006d50c39c0b64b7bc` |
-| `evidence/coil/code/CLI-CLUSTEROFFSET.md` | `dd1a298d41748932e66b095c4b98593c51f78c0335072747eb2b9253ac4c41fc` |
-| `evidence/coil/code/clusteroffset_run.sh` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/SHA256SUMS` | `d396a6b891b0126307deedcca7600b122093e2dbbea07b24d4ef7eb65d13cf5b` |
-| `evidence/coil/prereg/SHA256SUMS` | `d0573a58535b8ad4fcbd1b27abdb12f899cd3f0bd19d5c8f742210fed0a3181a` |
-| `coil/COIL_INDEX.md` | `27b072269b8d5b768f9b45ef2ab01853c9e8648b945c05878af62b46f3c9bed8` |
+| `evidence/coil/prereg/PREREG-MM1-CLUSTEROFFSET-v1.0.md` | `31a72ee4aa290e730a449577de217d8321e635fbd98bdfa8054462283cab5057` |
+| `evidence/coil/code/clusteroffset_experiment.py` | `eae2138314a22b7a79fd4e5a35987fdde3c416f89e6dc5450c87f9bc5010aa12` |
+| `evidence/coil/code/clusteroffset_certificate.py` | `47646354f1965941c4e2350fbf62e188f9b591feac07e32bdfbe83fc17dd1b07` |
+| `evidence/coil/code/CLI-CLUSTEROFFSET.md` | `63de1ece8c7627cfb6b380da0e1b5093103146bd11cf5fb297372dd7c656a043` |
+| `evidence/coil/code/clusteroffset_run.sh` | `cc33140d155bd858bbe91794926d5a1c70be917b03b72eb4490ec897cb8eb083` |
+| `evidence/coil/code/SHA256SUMS` | `bce87ae61764b3f9b3e033ad5fba9c57275dedd734b5ed0131bf3b53b712838c` |
+| `evidence/coil/prereg/SHA256SUMS` | `704cc92c132ea2d69a097cd85b025650f5a84cad5bd2dc4e8c627963bf3a3904` |
+| `coil/COIL_INDEX.md` | `144ca4e73a6ba39ca651f0b42a70dd1a78e5f3d4e28b6e3f9e9cb4274eb34e1d` |
 | `.gitignore` | `416c7570e0bc89b87a0766a2352e9246ed144dc2654f0b6710a6ac5e11ac3399` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
