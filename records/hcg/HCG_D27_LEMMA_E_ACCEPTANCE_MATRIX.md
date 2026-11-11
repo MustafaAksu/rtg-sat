@@ -2,7 +2,7 @@
 
 **Date:** 11 November 2026. **Prepared by:** the Claude HCG owner session. **Review:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-review package, PROPOSAL, revision 1. Nothing here is adopted. `hcg-v0.4` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed. This matrix does not define the scope of a later edition.
+**Status:** owner-review package, PROPOSAL, **revision 2** (a standing PI decision recorded in Q7; nothing else changed). Nothing here is adopted. `hcg-v0.4` stays the governing edition and `hcg/HCG_STUDY_LEDGER.md` is not changed. This matrix does not define the scope of a later edition.
 
 **What this is.** Lemma E of Δ27 (addenda 4 and 5) says that a datum whose representation is induced over K from a block of rank ≥ 2 can be replaced by the smaller datum of the block, with the same discriminant class. It is the step that carries the two theorems of ledger §6.24 into the later Δ27 results (Theorem R and the bounds from d = 15 on). Those later results are not reviewed here (§5).
 
@@ -115,7 +115,7 @@ Computation supports E9; it is not the proof.
 | Q4 | Should (iv) stay in the lemma or move to Theorem R when that is reviewed | proposal: keep it, marked "used only by Theorem R" |
 | Q5 | The new RID label | reviewer and PI |
 | Q6 | The character-field hypothesis (§3, last but one row): keep it as stated in (H) | proposal: keep; do not weaken (H) in this lemma |
-| Q7 | Independence: two sessions; no third family; no human. The PI's dispositions of 11 Nov 2026 covered the two theorems of §6.24 and the two items of the d = 6 matrix | whether "CHECKED (two AIs), no third-family reading for now" also covers this lemma is the PI's to say |
+| Q7 | Independence: two sessions; no third family; no human. The PI's dispositions of 11 Nov 2026 covered the two theorems of §6.24 and the two items of the d = 6 matrix | **Settled by a standing PI decision** (11 Nov 2026, 18:18 +03:00, direct message to the Claude session): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." So for this lemma, and for later HCG items until the PI says otherwise: the ceiling is CHECKED (two AIs) and no third-family reading is requested. This is not an adoption and makes no claim ACCEPTED |
 | Q8 | The PI decision fields of addenda 4 and 5 are blank | any adoption needs an explicit PI decision |
 
 ## 8. Revision history
@@ -123,3 +123,4 @@ Computation supports E9; it is not the proof.
 | Revision | Date | Change |
 |---|---|---|
 | 1 | 11 Nov 2026 | first version |
+| 2 | 11 Nov 2026 | Q7: the standing PI decision on the review ceiling recorded. No statement, proof step or recommendation changed |
