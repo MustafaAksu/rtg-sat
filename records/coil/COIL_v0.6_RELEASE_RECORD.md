@@ -7,7 +7,7 @@
 **Frozen at lock (PR #22):** `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md`; `evidence/coil/code/icid_experiment.py`, `icid_certificate.py`, `CLI-ICID.md`. **Removed at lock:** `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` (its bytes remain at tag `coil-v0.5`).
 **Frozen run record (new):** `evidence/coil/run/RUN-MM1-ICID-v1.0.md`.
 **Result data (new, unchanged from upload):** `evidence/coil/outputs/icid_results/` (33 files), `evidence/coil/outputs/raw_from_pi/pairbc_console_4f6056a1.txt`; `SHA256SUMS` rows appended; `evidence/coil/outputs/README.md` describes them.
-**Intake (unchanged):** `upload/coil-icid-results/` (pushed by the PI, commits `fce725a` incomplete, `e2ccc9b` complete); `upload/coil-icid-chat-attachments/` (two files the PI sent as chat attachments, placed by the owner session — they did **not** arrive on an `upload/` branch; stated here so the reviewer can object).
+**Intake (unchanged):** `upload/coil-icid-results/` (pushed by the PI, commits `fce725a` incomplete, `e2ccc9b` complete); `upload/coil-icid-chat-attachments/` (two files the PI sent as chat attachments, placed by the owner session — they did **not** arrive on an `upload/` branch; PI disposition in §5).
 **Live (changed):** `coil/records/RM-02.md` (.h), `coil/COIL_INDEX.md` (RM-07 row, three table rows, §8 item 4), `coil/COIL_RMT.md` (RM-07 row), `coil/COIL_CAMPAIGN_COMPENDIUM.md` (ICID entry). `.gitignore`: the ignore rule for run outputs now names `/evidence/coil/code/icid_results/` only, so the deposited `evidence/coil/outputs/icid_results/` is tracked.
 
 ## 2. Lock phase: changes relative to the v0.5 draft (co-owner lock items A–C, review `5838153479`, and one owner finding)
@@ -51,7 +51,13 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 - The owner session did not run any full-horizon cell itself. No independent re-execution of the 14 cells exists.
 - No frozen file of earlier releases changed; no hash, approval or result invented.
 
-## 5. Adoption manifest
+## 5. Review and PI dispositions
+
+- **Co-owner review `5848522894` (PR #30, head `6178de0`): ACCEPT.** Independent recomputation from the deposited CSVs (not a re-execution of the cells): upload hashes 33/33, upload → evidence 33/33, G-REF 8/8, D-ID, D-MEMBERSHIP 9/9, D-CONTRACT 60/60, orbit distance 60/60 zero, generic seeds 1050/1050. Interpretation limits confirmed: quarter rates are measurements, no window-level mechanism is attributed by `SECTOR-CAPTURED`; the 5 → 25 statement holds at the tested bracket endpoints only; the RUN §6 owner reading stays outside the decision rules and the historical H labels are unchanged; the neutral-aware identity is not tested at full horizon. Editorial note applied: index §8 now reads "three bracket pairs (six endpoints)". Co-owner acceptance is not PI adoption.
+- **Disposition 1 — acquisition route of the two chat attachments: accepted by the PI (11 Nov 2026).** PI: how older files are obtained is a mechanical matter; there is no requirement that every file be placed under `upload/` by the PI's own hand; what matters is the scientific content. The two files stay as placed. Owner correction to the intake note: the console text is byte-identical to `upload/coil/pi-uploads-received/pairbc.txt`, in the repository since PR #3 — it was a second receipt of an already deposited file; the script copy is byte-identical to the deposited frozen script. Neither attachment added new bytes to the evidence base.
+- **Disposition 2 — local Windows user-directory string in public console evidence: PENDING PI statement.** Fact for that decision: the string `C:\Users\<user id>\Downloads` is not introduced by this release; it has been public on `main` since PR #3 in `upload/coil/pi-uploads-received/pairbc.txt` and `upload/coil/owner-session-outputs/ARSIV/CLI-N3-kalan-kosular.md` (both inside tags `coil-v0.1` … `coil-v0.5`). This release adds two further copies of the same console text and one mention in an intake README.
+
+## 6. Adoption manifest
 
 **Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `893d1e82f022df80a8a745f6bb483bbab91a193b`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
