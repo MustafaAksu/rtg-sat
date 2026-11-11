@@ -39,11 +39,11 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `632989d99c22cca5fc48de603b85773796334965`. Files not listed are inherited unchanged from `coil-v0.7`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `8543af5c30726e37e52c215710a731114e474316`. Files not listed are inherited unchanged from `coil-v0.7`.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` | `f9163e930bb1345a6b707705596f84bc24a81f2e3abb8efe2c3f24508bd2e195` |
+| `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` | `a3e50e0f5b045328f2733e3c98fa0e1a6f1cb8c60346d5c24d9fc77e5982fc7c` |
 | `upload/coil-synthesis-sources/SHA256SUMS` | `b3a0030636f9a32c82f6bb347ebedd3295c1d403d4b48efe53af6b9890ecb5f1` |
 | `upload/coil-synthesis-sources/README.md` | `759f444c48b37ca28ffe22253d62a06976d6a33ee36258de49e58db62c9f07e3` |
 | `evidence/coil/code/synthesis_v1_fracture_clock_explore.py` | `3da0bd5cd6fcac041d2b6b04b98f1aef42a769e9c7aa710c0ec9a6463006d21d` |
