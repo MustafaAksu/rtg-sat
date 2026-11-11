@@ -1,0 +1,68 @@
+(RTG) PS C:\Users\AKM7IB\Downloads> python pairbc_certificate.py
+    a = {'A': 0.03, 'B': 0.1, 'C': 0.156}   domain [0.5,15.0]   coarse 0.25 fine 0.025
+    N_IC=25  CF_MIN=15 (= 15/25 = 0.60)
+[PASS] C1 locked constants
+    KAPPA_A_REF = {'tri0': 2.65, 'path3': 2.35}
+[PASS] C2 frozen Pair-A reference constants
+    dt per pair = {'A': 0.1, 'B': 0.1, 'C': 0.12};  |w0 ensemble| = 25
+[PASS] C3 w0 ensemble identical across pairs; u0 = w0/dt
+    sentinels = {'path3': {'neg': 2.3, 'pos': 2.35}, 'tri0': {'neg': 2.6, 'pos': 2.65}}
+[PASS] C4 anchor sentinels match locked source brackets
+    tested 4949 synthetic (p,r,q) points -> labels ['P-ara', 'P-beta', 'P-kappa', 'P-other']; censored -> P-cens
+[PASS] C5 decision partition total & exclusive
+    decide() params = ['p_bc', 'r_beta_B', 'r_beta_C', 'q_B', 'q_C', 'censored']
+[PASS] C6 primary firewall: decide() cannot receive path3 data
+    after simulated anchor scan (2.625): KAPPA_A_REF = {'tri0': 2.65, 'path3': 2.35}
+[PASS] C7 runtime anchor scan cannot mutate frozen references
+    replication outputs = ['REPLICATION-CENSORED', 'REPLICATION-CONCORDANT', 'REPLICATION-DISCORDANT']
+[PASS] C8 replication yields only its three states; never a primary label
+    eps_lambda=0.001  quarters=4  burn=70000  lyap=200000 (identical across pairs)
+[PASS] C9 per-update lambda, four-quarter persistence, Pair-A horizons preserved
+
+CERTIFICATE: PASS
+(RTG) PS C:\Users\AKM7IB\Downloads> python pairbc_experiment.py --anchor --outdir out_pairbc
+  anchor path3: CF(2.3)=0.00 (<0.60?)  CF(2.35)=1.00 (>=0.60?)  -> PASS
+  anchor tri0: CF(2.6)=0.20 (<0.60?)  CF(2.65)=1.00 (>=0.60?)  -> PASS
+  -> out_pairbc\pairbc_anchor.csv
+
+ANCHOR GUARD: PASS
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads>
+(RTG) PS C:\Users\AKM7IB\Downloads> python pairbc_experiment.py --run tri0 B --outdir out_pairbc
+    coarse tri0/B kappa= 0.500 CF=0.00
+    coarse tri0/B kappa= 0.750 CF=0.00
+    coarse tri0/B kappa= 1.000 CF=0.00
+    coarse tri0/B kappa= 1.250 CF=0.20
+    coarse tri0/B kappa= 1.500 CF=0.20
+    coarse tri0/B kappa= 1.750 CF=0.20
+    coarse tri0/B kappa= 2.000 CF=0.20
+    coarse tri0/B kappa= 2.250 CF=0.20
+    coarse tri0/B kappa= 2.500 CF=0.20
+    coarse tri0/B kappa= 2.750 CF=0.20
+    coarse tri0/B kappa= 3.000 CF=1.00
+    fine   tri0/B kappa=2.7500 CF=0.20
+    fine   tri0/B kappa=2.7750 CF=1.00
+  -> out_pairbc\pairbc_tri0_B.csv
+[pairbc] tri0/B: measured  kappa_frac=2.775
+(RTG) PS C:\Users\AKM7IB\Downloads> python pairbc_experiment.py --run tri0 C --outdir out_pairbc
+    coarse tri0/C kappa= 0.500 CF=0.00
+    coarse tri0/C kappa= 0.750 CF=0.00
+    coarse tri0/C kappa= 1.000 CF=0.00
+    coarse tri0/C kappa= 1.250 CF=0.20
+    coarse tri0/C kappa= 1.500 CF=0.20
+    coarse tri0/C kappa= 1.750 CF=0.20
+    coarse tri0/C kappa= 2.000 CF=0.20
+    coarse tri0/C kappa= 2.250 CF=0.20
+    coarse tri0/C kappa= 2.500 CF=0.20
+    coarse tri0/C kappa= 2.750 CF=0.20
+    coarse tri0/C kappa= 3.000 CF=1.00
+    fine   tri0/C kappa=2.7500 CF=0.20
+    fine   tri0/C kappa=2.7750 CF=0.20
+    fine   tri0/C kappa=2.8000 CF=1.00
+  -> out_pairbc\pairbc_tri0_C.csv
+[pairbc] tri0/C: measured  kappa_frac=2.8
+(RTG) PS C:\Users

@@ -1,6 +1,6 @@
 # HHO — claim register
 
-**Status of this file:** draft for `hho-v0.1`. It is not adopted. No row is ACCEPTED.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as the claim register of `hho-v0.1`, **as a register only** (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here.
 
 **Reading rules.**
 - Grades and review states are defined in `hho/HHO_CHARTER.md` §4. They are separate axes.
