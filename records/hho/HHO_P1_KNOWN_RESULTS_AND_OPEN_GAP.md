@@ -1,7 +1,7 @@
 # P1 — Known Results and Genuine Open Gap
 
 **Level:** `[SESSION]` review note, Claude HHO owner session. **Date:** 11 Nov 2026.
-**Status:** PROPOSED reading by one AI. It adopts nothing, changes no register row and no review state, and states no new theorem. No computation was run for it.
+**Status:** PROPOSED reading by one AI, **revised 11 Nov 2026** after the co-owner's review (verdict: ACCEPT WITH SCOPED CORRECTIONS; change record in §6). The note is not CHECKED as a whole. It adopts nothing, changes no register row and no review state, and states no new theorem. No computation was run for it.
 **Scope guard:** HHO makes no statement that nonsplit Weil eightfolds exist or do not exist, and none about the Hodge conjecture. Severn's results stay CLAIMED.
 **Sources:** HCG files at tag `hcg-v0.2` (commit `543d09387d6d5df79d38fcd549090350f994d4e3`); all are *placed, pending in HCG, not adopted*, and are HCG inputs, not HHO results. HHO rows are cited at `hho-v0.2`.
 
@@ -34,16 +34,18 @@ Three findings of the audit.
 
 1. **(L) is used nowhere.** No result above has (L) among its hypotheses. Lemma E states that (L) is not transported.
 2. **(D) enters in two ways only:** as the count N_eff ≥ 19 with the budget Σ(c_j − 1) ≤ 2d − 11, and as the factorization of the period map through a smaller moduli space (induced-period bound, Lemma F). The differential of the period map is never used.
-3. **The discriminant is used at two places only:** for G₃₄ at d = 6 (local factors 12, 144, 81), and in Lemma E, which carries the class from a K-induced datum to its inducing datum. Every other step of Theorem R and of R1 shows that *no datum of that branch satisfies (H)*: it ends in a failure of the budget, of (D) or of the character field. ChatGPT's d = 26 note says so itself: "No nonsplit discriminant is transported across a non-K-defined block."
+3. **The discriminant is used at two places only:** for G₃₄ at d = 6 (local factors 12, 144, 81), and in Lemma E, which carries the class from a K-induced datum to its inducing datum. Every other step of Theorem R and of R1 that I read excludes its candidates without computing a class: it ends in a failure of the budget, of (D) or of the character field. ChatGPT's d = 26 note says so itself: "No nonsplit discriminant is transported across a non-K-defined block."
 
-**Consequence (my reading; not stated in the sources; unchecked).** The chain proves more than R1 says and something different from a parity law: for d ≤ 52, every datum satisfying (H) is a six-dimensional G₃₄ datum or is obtained from one by iterated K-defined induction, and is split for that reason. Whether such induced data exist is not addressed. So R1 is a statement about the scarcity of (H)-data. It contains no information about ε_p beyond G₃₄.
+**What this does and does not give.** R1 says: (H) and a nonsplit class ⇒ d ≥ 53. So for an (H)-datum with d ≤ 52 the class is [1], and every ε_p is even. R1 supplies no dimension-free local parity identity: outside G₃₄ and Lemma E the evenness is reached through the non-existence of nonsplit data in each branch, not through an identity among the (λ_j, κ_j).
+
+**A stronger statement, not established (`[OPEN]`).** My first version asserted that for d ≤ 52 every (H)-datum is a six-dimensional G₃₄ datum or a K-induction from one. That is an unproved strengthening. In the reflection-containing case the proof of Theorem R does reduce to G₃₄ and K-defined descent. For reflection-free data the chain is written for nonsplit candidates, and its K-imprimitive cutoff (d ≥ 2L) carries nonsplitness through Lemma E; whether each exclusion and the descent terminate for split data as well has not been checked step by step, and the 13 ChatGPT files of §1 were not read. The sentence "all (H)-data" in the HCG report on d = 46–52, §2, is a shorthand of the same kind.
 
 ## 3. Mechanism comparison through the local parity
 
 Two facts place every result in the (λ_j, κ_j) picture. Both are `[ALG]` remarks of this note, immediate from the definitions, and unchecked by a second AI.
 
 - **κ is spectral.** κ_j = v_p(b_j), and for g of finite order and p inert, v_p(b_j) is the number of K-irreducible blocks Φ_{p^k} (k ≥ 1) in the characteristic polynomial of g_j on E_j. This is the factor Φₙ(1)^{dim/φ(n)} of Lemma R′, and the "eigenvalue of pure p-power order" trigger of HHO-LEM-TAME. It holds for every g, real or not.
-- **λ is the lattice part.** It is the factor disc(E_{Φₙ}) of Lemma R′, summed over n. It depends on h₀ and on the lattice, not on the spectrum.
+- **λ is the lattice part.** It depends on h₀ and on the lattice, not on the spectrum. For an orthogonal K-rational decomposition E_j = ⊕ₙ E_{j,n} by cyclotomic factors, the determinant class is multiplicative, but Λ_{E_j} need not be the direct sum of its intersections with the E_{j,n}. With gluing length t one has λ_j = Σₙ λ_{j,n} − 2t, so only **λ_j ≡ Σₙ λ_{j,n} (mod 2)** is automatic. The cancellation of the factors with 3 ∣ n in Lemma R′ uses the K-isometric conjugacy of g with g⁻¹ and does not hold for an arbitrary g.
 
 | Result | What it says about ε_p | Type |
 |---|---|---|
@@ -52,12 +54,12 @@ Two facts place every result in the (λ_j, κ_j) picture. Both are `[ALG]` remar
 | HHO-LEM-TAME | self-dual g-stable lattice and no eigenvalue of p-power order ⇒ λ_j = κ_j = 0 | **term by term** |
 | Theorem R | only for G₃₄: in root bases (v₂(a), v₂(b)) = (1, 1) for a reflection and (2, 2) or (0, 0) in rank two, so λ − κ is even for each element; a and b are units at the other inert p | term by term, one group |
 | Lemma E | ε_p(σ) = ε_p(τ); locally [a(g)b(g)] = [a(P)b(P) det(h_τ)^{ℓ−1}] and Σ ind is even | transport |
-| R1 for 7 ≤ d ≤ 52 | nothing | — |
+| R1 for 7 ≤ d ≤ 52 | implies ε_p even for (H)-data, by non-existence of nonsplit data | no identity among the local terms |
 | HHO-THM-RANK-ONE | λ = 0; κ = 1 exactly when χ(g) = −1 and p = 2 | exact formula; ε₂ = t can be odd |
 | HHO-THM-F20 | at p = 5: untwisted (1, 1), twisted (1, 0); ε₅ = t can be odd | exact formula; lattice mechanism |
 | HHO-THM-SUPPORT | even at every inert p of defect zero | **global**, but for the Jacobian-induced form h_W, a different object (HHO-SG-4) |
 
-So the known sufficient conditions for ε_p = 0 are: pairing; term-by-term tameness; K-induction from a datum that has it; and three explicit families (G₃₄, rank one at p ≥ 5, C₃ × S₃). **None of them uses (D) or the budget.**
+So the known sufficient conditions for ε_p = 0 that are identities among local terms are: pairing; term-by-term tameness; K-induction from a datum that has it; and three explicit families (G₃₄, rank one at p ≥ 5, C₃ × S₃). **None of these uses (D) or the budget.** Theorem R and R1 do use (D) to reach splitness in their domains, but not through such an identity.
 
 ## 4. The three kinds of result
 
@@ -84,34 +86,52 @@ So the known sufficient conditions for ε_p = 0 are: pairing; term-by-term tamen
 | "No inert p ≥ 5 in the support for faithful nonabelian data" | false: C₃ × F₂₀, class [5] | HHO-NEG-F20-NONSPLIT; HHO-WD-F20-ALLSPLIT |
 | Local age arithmetic alone at d = 25 | does not close: 2545 type-count solutions | Δ27 add. 7 |
 | Lemma A as first stated; "may assume σ primitive" | not valid as stated; replaced by A′; K-primitive ≠ C-primitive | Δ27 add. 11–12; D-14 |
-| Extending R1 one dimension at a time | does not bear on P1 (§2, finding 3) | this note |
+| Extending R1 one dimension at a time | raises the bound; adds no identity among the local terms (§2, finding 3) | this note |
 
 ### 4.3 Gaps that need new research
 
-**Gap A — no test object.** No datum satisfying (H) is known other than the G₃₄ data, and by §2 none exists for d ≤ 52 outside the G₃₄-induced ones. P1 is at present a question about a class of objects with one known member.
+**Gap A — no test object.** Within the HHO and HCG campaigns, and the sources available to them, no datum satisfying (H) is recorded other than the G₃₄ data. P1 is at present a question about a class of objects with one known family.
 
-**Gap B — where ε_p = 0 cannot be proved.** For the parabolic-cup class, the recorded rows give evenness at an inert p when the multiset is inverse-paired, or when every g_j is tame at p for one Γ-stable self-dual lattice. The second condition should hold whenever p ∤ |Γ| (a standard lattice fact that I have not found written as a row; to be checked). What remains is exactly:
+**Gap B — where ε_p = 0 cannot be proved.** For the parabolic-cup class, the recorded rows give evenness at an inert p when the multiset is inverse-paired, or when every g_j is tame at p for one Γ-stable self-dual lattice (HHO-LEM-TAME).
 
-> an inert prime p dividing |Γ|, a local multiset that is not inverse-paired, and either an eigenvalue of p-power order (κ ≠ 0) or no self-dual Γ-stable lattice at p (λ ≠ 0).
+My first version added that such a lattice exists whenever p ∤ |Γ|. **That is false for a fixed h₀** (co-owner's counterexample, outside (H)): K = ℚ(ω), Γ = C₃, p = 5, h₀(x,y) = 5xȳ; every rank-one lattice tR has v₅(det) = 1 + 2v₅(t), which is odd. What can be used instead: a rational rescaling h₀ ↦ q·h₀ multiplies Π_j a_j by q^{Σc_j} = q^{2d+8} = N(q^{d+4}), so the class of a rank-eight datum does not change, while each λ_j shifts by c_j·v_p(q). A corrected criterion therefore needs an explicit p-local normalization of h₀ and a proof that a Γ-stable self-dual lattice then exists. The route is the defect-zero Morita lemma (HHO-LEM-MORITA); its hypotheses on the matrix order and the involution, p = 2 included, have to be checked. **This is `[OPEN]`, not a standard fact.**
 
-p = 2 belongs to this set for almost every Γ. All recorded nonsplit witnesses lie in it: [2] through κ (C₆, rank one, G₂₆-type, G(6,1,6)) and [5] through λ (C₃ × F₂₀). All of them fail (D).
+Until then the region where no recorded result gives ε_p = 0 is:
 
-**Gap C — (D) does not touch the arithmetic.** No statement in either track relates the period rank to λ_j or κ_j. The witnesses of Gap B are removed only by counting or by the induced-period bound, which says nothing about a primitive Γ.
+> an inert prime p, a local multiset that is not inverse-paired, and either an eigenvalue of p-power order (κ ≠ 0) or no Γ-stable lattice that is self-dual for a normalized h₀ (λ ≠ 0). The restriction to p ∣ |Γ| is expected and unproved.
+
+All recorded nonsplit witnesses lie in this region: [2] through κ (C₆, rank one, G₂₆-type, G(6,1,6)) and [5] through λ (C₃ × F₂₀). All of them fail (D).
+
+**Gap C — no identity between the period rank and the local parity was found.** In the proofs inspected, no statement relates the period rank to λ_j or κ_j. This is an observation about those files, not a theorem of independence. The witnesses of Gap B are removed only by counting or by the induced-period bound, which says nothing about a primitive Γ.
 
 **Gap D — two objects.** The only global parity statement, HHO-THM-SUPPORT, is proved for the Jacobian-induced form h_W. Its link to the parabolic-cup class is recorded for W5 only (G12; HHO-OPEN-SUPPORT-TRANSFER). I did not find a general comparison in the files read. Lemma E uses the multiplicity-form identity ⟨φv, ψw⟩ = S_σ(φ,ψ)h_σ(v,w) inside its proof, but its class equality is also proved locally, so R1 does not depend on that comparison.
 
 ## 5. Proposed directions (at most two; the PI decides)
 
-**Direction 1 — close Gap D for arbitrary finite-monodromy genus-0 data.** Prove that the parabolic-cup form on H¹_par(ℙ¹, σ) and the cup-derived form h_W on Hom_G(U, H¹(C)) agree up to ℚ^× and a K-antilinear re-identification. This is a statement about finite covers and does not need Severn's A_σ.
-- *Gain:* HHO-THM-SUPPORT then applies to the parabolic-cup class. The frontier of Gap B shrinks from p ∣ |Γ| to inert p with p ∣ |G|/χ(1), and P1 becomes the positive-defect question HHO-OPEN-POSDEFECT-GLUE. It would be the first dimension-independent necessary condition: *nonsplit ⇒ an inert prime of positive defect for σ*. It would also give a parity law that is not term by term: Σ_j (λ_j − κ_j) even at a defect-zero prime dividing |Γ|.
-- *Consistency with recorded data (arithmetic on recorded numbers, not evidence):* C₆, class [2], |G|/χ(1) = 6; C₃ × F₂₀, class [5], 60/4 = 15, and 2 has defect zero there, in line with [5^t]; the G₂₆-type witness, class [2], d = 3 and elements of order 4.
-- *Risk:* conventions (dual representation, δ, factors |G|); the result may already be in the literature on parabolic cohomology, in which case it is a source item, not a result.
+**Direction 1 — bridge B1: parabolic cup versus Jacobian multiplicity form, for arbitrary finite-monodromy genus-0 data.** Prove that the Hermitian determinant classes of H¹_par(ℙ¹ ∖ S, σ) and of the χ-multiplicity space Hom_{ℚ[G]}(U_ℚ, H¹(C, ℚ)) agree, i.e. that the ratio of the determinants is a norm, up to a rational scalar and a possible K-conjugation. Equality of Gram matrices is more than is needed. B1 is a statement about finite covers and does not need Severn's A_σ. **B1 does not discharge B2**, the identification with Severn's polarized factor (HHO-OPEN-SUPPORT-TRANSFER).
+- *Gain:* HHO-THM-SUPPORT then applies to the parabolic-cup class and gives a conditional, dimension-independent **necessary gate**: a nonsplit rank-eight parabolic-cup datum has an inert prime of positive χ-defect for the group acting on C. P1 then becomes the positive-defect question HHO-OPEN-POSDEFECT-GLUE. It would also give a parity law that is not term by term: Σ_j (λ_j − κ_j) even at a defect-zero inert prime. It is not a solution of P1 under (H).
+- *G and Γ.* HHO-THM-SUPPORT is stated with |G|/χ(1) for the group G acting on C. A statement with |Γ|/χ(1) needs the passage to C/ker σ and the invariance of the rank-eight class under that quotient (the mechanism of HHO-NEG-NPL-JAC-C3F20). The two are not interchanged here.
+- *Acceptance criteria:* those of the co-owner's review, §"B1 acceptance criteria" (functorial map with cup and Hodge compatibility; determinant-ratio norm identity with δ, trace convention, h_U, |G|, ker σ and p = 2 tracked; statement for G and for Γ; test on the existing C₆, C₃ × F₂₀, G₃₄ and G(6,1,6) cases; prior-art check).
+- *Consistency with recorded data (arithmetic on recorded numbers, not evidence; each group acts faithfully):* C₆, class [2], |G|/χ(1) = 6; C₃ × F₂₀, class [5], 60/4 = 15, and 2 has defect zero there, in line with [5^t]; the G₂₆-type witness, class [2], d = 3 and elements of order 4.
+- *Risk and prior art:* conventions (dual representation, δ, factors |G|). Dettweiler–Wewers, *Variation of parabolic cohomology and Poincaré duality* (Sém. Congr. 13, 2006) and HCG's Lemma E are to be read first; if B1 is there, it is a source item and not a result. Neither owner has read the Dettweiler–Wewers proof for this purpose.
 
 **Direction 2 — make (D) an algebraic condition on the local data (Gap C).** Write the differential of the period map in the cochain model of the locality proof (E = ⊕E_j, the triangular form B), so that the direction "move the j-th point" is an explicit operator supported on E_j.
 - *Gain:* an exact test of (D) for a given datum. At present (D) can only be refuted by upper bounds, and is recorded as holding for W5 alone. With it one can ask the P1 question directly: does rank 16 constrain the pairs (λ_j, κ_j)? Calibration objects exist on both sides: W5 (rank 16 on S_W5 as recorded in the HCG ledger) and G(6,1,6) P1–P3 (rank ≤ 10).
-- *Risk:* a link between the differential and the parity is a hope, not a conjecture. The verifier is a new capability in either case.
+- *Risk:* the differential needs the Hodge filtration and Gauss–Manin/Kodaira–Spencer data; the topological cochain model and the triangular form alone do not supply it (co-owner's remark). A link between the differential and the parity is a hope, not a conjecture. If B1 succeeds, it fixes the arithmetic target for this direction; the co-owner ranks it second.
 
 Not proposed: further dimensions of R1; searches for nonsplit witnesses that fail (D).
+
+## 6. Change record
+
+The first version of this note (SHA-256 `f88d7bef0319798719c02c5619b15cb7c8662ac2a1ffdc29b3543c70a61cc747`) is the first commit of this file. It was reviewed by the ChatGPT co-owner session: `HHO_P1_CHATGPT_REVIEW_20261111.md`, 77 lines, SHA-256 `a022505ffe0f4b961f96c6adc3baccb8415d5ec80bcf450eb2e9a75a65697482`, received through the PI. The review file is not stored by this commit. It records that it compared targeted parts of five source files and did not re-read all 25.
+
+| Item | Change |
+|---|---|
+| F1 | §2: the classification of all (H)-data with d ≤ 52 is withdrawn as a consequence and kept as an `[OPEN]` strengthening. "R1 contains no information about ε_p" is replaced by: R1 implies evenness for d ≤ 52 and gives no local identity. §3 table row and §4.3 Gap A follow. |
+| F2 | §4.3 Gap B: the claim "a Γ-stable self-dual lattice exists when p ∤ \|Γ\|" is withdrawn for a fixed h₀; counterexample and the rescaling invariance recorded; the corrected criterion is `[OPEN]`. |
+| F3 | §3: the decomposition of λ over cyclotomic factors holds mod 2 only; the 3 ∣ n cancellation is tied to the hypothesis of Lemma R′. |
+| Scope | Gap C reworded as an observation on the inspected proofs; Gap A restricted to the two campaigns; G and Γ kept apart in Direction 1; B1 and B2 separated; the co-owner's acceptance criteria and its remark on Direction 2 added. |
+
 
 ## Appendix A. Files read in full (SHA-256 computed from the blobs at `hcg-v0.2`)
 
