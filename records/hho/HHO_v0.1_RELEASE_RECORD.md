@@ -1,6 +1,6 @@
-# HHO v0.1 — release record (DRAFT)
+# HHO v0.1 — release record
 
-**Status:** **DRAFT. Not adopted.** Adoption is a PI decision, recorded in §8 after the co-owner review. Publication tag, once adopted: `hho-v0.1`, created on the merge commit of the pull request that carries this record.
+**Status:** **ADOPTED by the PI on 11 Nov 2026 as a register edition** (§8). Publication tag: `hho-v0.1`, created by the PI on the merge commit of the pull request that carries this record (PR #28).
 
 **Release:** first repository edition of the HHO study.
 
@@ -86,7 +86,7 @@ No statement was changed in meaning. The following were changed in form.
 - **Any new scientific result**, and any change of review state.
 - **A comparison of every Part B claim with every Δ27 report.** The overlap check was made by reading the opening note and by keyword search of the delta log.
 - **A re-check of the Part A proofs.** Part A restates the opening note at the states written there.
-- **Any transfer to HCG or RTG.**
+- **Any adopted scientific import or transfer to HCG or RTG.** The answer filed in `pipes/HCG/` (§10) is a communication. It transfers no result and is no adopted use.
 
 Open items are listed in the register, Part D.
 
@@ -120,20 +120,24 @@ Hashes before the publication step, at commit `25fab8a37452813b5b35071417acd2ccf
 | Safeguards HHO-SG-7, -8, -9 | PI, 10 Nov 2026 | accepted with a proviso (charter §6) |
 | Co-owner review of batch 1 | ChatGPT HHO owner session | PR #26, reviews `5842650405` (ACCEPT WITH SCOPED CHANGES) and `5843881129` (ACCEPT, at `e117f75`) |
 | To issue v0.1 now, before evidence placement | PI, 10 Nov 2026, 18:18 +03:00 | "şimdi v0.1 çıkarabiliriz. merge işlemleri tamam." — "we can issue v0.1 now; the merges are done." |
-| Co-owner review of this record | ChatGPT HHO owner session | *(pending)* |
-| Adoption of `hho-v0.1` with the scope of §§1–6 | PI | *(pending)* |
-| Publication | PI | *(pending)* |
+| Co-owner review of this record | ChatGPT HHO owner session | PR #28, review `5844451467` at `04a5ca1`: ACCEPT AS A DRAFT RELEASE RECORD, with two nonblocking clarifications. Both are applied: §6 (the pipe answer is no transfer) and the closing of the migration note (below). |
+| Adoption of `hho-v0.1` with the scope of §§1–6 | PI, 11 Nov 2026, 09:29 +03:00 | "PI olarak ben; hho-v0.1'i yalnızca kayıt sürümü kapsamında benimsiyorum. Charter, iddia kaydı ve kaynak manifesti bu kapsamda kabul edilmiştir. Hiçbir bilimsel iddia ACCEPTED statüsüne yükseltilmez; HCG sonuçları benimsenmiş sayılmaz ve Severn sonuçları CLAIMED kalır." — As PI, I adopt hho-v0.1 as a register edition only. The charter, the claim register and the source manifest are accepted within that scope. No scientific claim is raised to ACCEPTED; HCG results are not thereby adopted; Severn's results stay CLAIMED. |
+| Publication | PI, same message | "Yayın commit'i hazırlansın; merge ve tag işlemlerini ben yapacağım." — The owner session prepares the publication commit; the PI merges and creates the tag. |
+| Closing of the migration note | by its own §Status ("it changes by commit until the first HHO release, then it is closed") | `records/hho/HHO_MIGRATION_NOTE.md` is closed with this release. Its text is not changed. The migration plan stays a record of batch 0. |
 
-## 9. Publication step (applied after the PI's adoption)
+## 9. Publication step (applied on 11 Nov 2026, after the PI's adoption)
 
-1. `hho/HHO_CHARTER.md`, `hho/HHO_CLAIM_REGISTER.md`, `records/hho/HHO_SOURCE_MANIFEST.md`: the status line changes from "draft for `hho-v0.1`" to the adoption entry, and the charter's "Governing edition" becomes `hho-v0.1`. No other text changes.
+1. Status lines of `hho/HHO_CHARTER.md`, `hho/HHO_CLAIM_REGISTER.md` and `records/hho/HHO_SOURCE_MANIFEST.md`: "draft for `hho-v0.1`" becomes the adoption entry.
+   - In the charter, three further sentences that described the state before the release are brought up to date: the governing edition (§3, two bullets) and the registry field for RTG inputs (§5.2).
+   - No other text changes in the three files.
 2. `REGISTRY.md`, `hho` row:
    - layout names `hho/HHO_CHARTER.md` and `hho/HHO_CLAIM_REGISTER.md`;
    - governing edition becomes `hho-v0.1` with this record;
    - RTG inputs become `none`;
    - the transfer rule records that HHO → HCG needs an HCG owner disposition, PI adoption and an HCG release.
 3. This record: "DRAFT" removed, §7 and §8 completed.
-4. Hashes of every changed file are recomputed after the step and before the tag. Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
+4. Before the step, `main` at `0c21155` (COIL v0.6, PR #30) was merged into the release branch. That merge changed the `coil` row of `REGISTRY.md` and no HHO file.
+5. Hashes of every changed file were recomputed after the step (§7). Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 
 ## 10. Pipe items handled with this release
 

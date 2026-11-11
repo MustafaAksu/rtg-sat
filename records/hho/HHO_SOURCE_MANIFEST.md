@@ -1,6 +1,6 @@
 # HHO — source manifest
 
-**Status of this file:** draft for `hho-v0.1`. It is a record of sources and hashes. It adopts nothing.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as the source manifest of `hho-v0.1` (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim.
 
 A hash certifies byte identity. It does not certify correctness, publication rights or review state.
 
