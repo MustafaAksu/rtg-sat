@@ -104,7 +104,11 @@ This is an exact identity, independent of locality.
 
 **5.2 The criterion is empty for rank-8 G₃₄ reflection data** (HHO-NEG-LEAF-VACUOUS). There r = 20 and m(ψ₈₄) = 672 − 10·ψ₈₄(s) = 512 ≠ 0.
 
-**5.3 Withdrawn Neighbour Parity Law — typed refutation.** The historical proposal HHO-WD-CONJ-NPL (REVIEW A8.3; claim register Part C) was written as v_p(det h_W) ≡ m(ψ) (mod 2). For HHO-NEG-NPL-C3F20, the recorded computation instead concerns the **parabolic-cup** determinant: [det h_par] = [1] while m(ψ) = 43 is odd. It refutes the corresponding universal **parabolic-cup** neighbour-parity rule. By HHO-SG-4, that example does **not**, without an additional cup–polarization identification, establish a refutation for the Jacobian-induced h_W used in §§1–3. The unrestricted historical proposal remains **WITHDRAWN**; no Jacobian-only replacement law is certified. The owner disposition of the historical h_W notation remains open for the next register edition.
+**5.3 Withdrawn Neighbour Parity Law — typed refutation.** The historical proposal HHO-WD-CONJ-NPL (REVIEW A8.3; claim register Part C) was written as v_p(det h_W) ≡ m(ψ) (mod 2). For HHO-NEG-NPL-C3F20, the recorded computation instead concerns the **parabolic-cup** determinant: [det h_par] = [1] while m(ψ) = 43 is odd. It refutes the corresponding universal **parabolic-cup** neighbour-parity rule. By HHO-SG-4, that computation alone does not carry over to the Jacobian-induced h_W of §§1–3.
+
+The Jacobian reading is refuted separately, for the same datum and without any cup–polarization bridge (HHO-NEG-NPL-JAC-C3F20, PROPOSED). χ is trivial on F₂₀, so W lies in the pullback of H¹(C/F₂₀). The cup form of C restricts there to 20 times the cup form of C/F₂₀. The support theorem (§3.1) for (C/F₂₀, C₃) then gives [1], while m(ψ) = 43 is odd.
+
+The unrestricted proposal stays **WITHDRAWN** in both readings. No replacement law is certified.
 
 ## 6. Open
 
