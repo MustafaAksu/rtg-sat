@@ -8,6 +8,22 @@
    "info": "[0, 0, 0, 0]",
    "pass": true
   },
+  "T10 q = r = 0 and q = pi, r = 0 invariant for all (delta, s)": {
+   "info": "",
+   "pass": true
+  },
+  "T10 transverse multipliers at q = 0, a = 0.1, kappa = 2: complex, modulus sqrt(1.1)": {
+   "info": "|mu|=1.048808848170",
+   "pass": true
+  },
+  "T10 y stays exactly (0, 0) while (delta, s) evolves; defect zero": {
+   "info": "max|y|=0.0 max|delta change|=1.743",
+   "pass": true
+  },
+  "T11 common velocity: W+ = (1 - a) W": {
+   "info": "",
+   "pass": true
+  },
   "T2 frozen 6-D update = reduced 4-D map": {
    "info": "states=288 max|diff|=6.66e-16",
    "pass": true
@@ -48,12 +64,20 @@
    "info": "",
    "pass": true
   },
-  "T8 (q_n, r_n, r_{n+1}, r_{n+2}, r_{n+3}) determines (|delta_n|, s_n sign(delta_n)) on the grid": {
+  "T8 negative control: (r_n, r_{n+1}) identical for two hidden states, r_{n+2} differs": {
+   "info": "|dr_(n+2)|=2.675e-03",
+   "pass": true
+  },
+  "T8 past window y_{n-3..n} gives the present hidden state up to node exchange (grid)": {
+   "info": "max err at step n=5.20e-14",
+   "pass": true
+  },
+  "T8 window start: (q_m, r_m, r_{m+1}, r_{m+2}, r_{m+3}) determines (|delta_m|, s_m sign(delta_m)) on the grid": {
    "info": "states=96 max err=1.98e-14 min branch separation=9.28e-03",
    "pass": true
   },
-  "T8 negative control: (r_n, r_{n+1}) identical for two hidden states, r_{n+2} differs": {
-   "info": "|dr_(n+2)|=2.675e-03",
+  "T9 identifiability determinant": {
+   "info": "",
    "pass": true
   }
  },

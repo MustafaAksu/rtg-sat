@@ -19,23 +19,26 @@
 | A4 | closure defect aκ sin q [1 − cos(δ/2)], leading order δ²/8, no linear term | co-owner; re-derived | T4 (with negative control) |
 | A5 | phase-only second-order closure on the cluster | co-owner; re-derived | T6 |
 | A6 | mean field Z = e^{iq} cos(δ/2) as gauge-clean macro variable; q is a chart | owner | T7 |
-| A7 | finite-history identifiability of the hidden state from (q_n, r_n, …, r_{n+3}) — local/generic, grid-checked, not a theorem | owner | T8 (with negative control) |
-| A8 | forced outcomes F1–F5 for any history test in this laboratory | owner, from A1–A7 | — (argument) |
+| A7 | what a window of y determines: local identifiability under det ≠ 0 (`[THM — conditional]`), past-window recovery on a fixed grid (`[NUM]`) | determinant: co-owner (review `5854573953`); grid recovery: owner | T9; T8 (with negative control) |
+| A8 | fixed outcomes F1–F3, F5; **F4 withdrawn as unconditional** | owner, corrected | — (argument) |
+| A9 | degenerate invariant sets q = r = 0 and q = π, r = 0: y constant, defect zero, no information in any window; transverse growth without loss of predictability | co-owner (review `5854573953`) | T10 |
+| A10 | common velocity W⁺ = (1 − a)W: physical, decoupled, not a gauge | co-owner's terminology point; identity by owner | T11 |
 
-Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the pointer and the sentence that the bare history question is forced in this laboratory. Nothing else.
+Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the pointer and a statement of what the analysis fixes and does not fix. Nothing else.
+
+**Correction after co-owner review `5854573953` (ACCEPT WITH CHANGES), same pull request.** The first version of the analysis (commit `10b948e`) stated (i) that a history effect relative to y is forced whenever δ ≠ 0 and (ii) an identifiability result written with future observations r_{n+1..n+3}. Both overstated the evidence: (i) is false on the invariant sets of A9; (ii) did not by its wording concern a past-based predictor. Now: F4 is withdrawn as unconditional; the identifiability statement is the conditional theorem A7 plus a past-window grid check (the recovery re-indexed to y_{n−3}, …, y_n and propagated to step n); the draft's P1 is a candidate cell, not a forced failure; Q-A is primary and Q-B a conditional prediction; "gauge" is no longer used for the common velocity; Z is described as a different reduced description, not a chart of y.
 
 ## 3. Checks
 
-- `python3 -B tri0_reduction_check.py` (owner session; Python 3.13, numpy, sympy): **REDUCTION CHECK PASS** (T1–T8). The checker needs `sympy`. It imports the frozen `pairbc_experiment.py` by hash and computes no orbit longer than four updates.
+- `python3 -B tri0_reduction_check.py` (owner session; Python 3.13, numpy, sympy): **REDUCTION CHECK PASS** (T1–T11). The checker needs `sympy`. It imports the frozen `pairbc_experiment.py` by hash and computes no orbit longer than four updates.
 - Not independently re-run by the co-owner at the time of writing.
 - No frozen file changed; no hash, approval or result invented.
 
-## 4. Open points for review
+## 4. Open points
 
-1. A7's status wording (local/generic, grid-checked).
-2. Whether A8 (forced outcomes) is accepted as the frame for RM-04 in this laboratory — it narrows the co-owner's proposed "history test" to the two measurable questions Q-A and Q-B of the draft.
-3. Draft §6 design choices O1–O8.
-4. The index names a "non-Markov positive-control laboratory identified" for RM-04; which laboratory that is, is **not stated in the live documents read for this release** — not available here. This release does not assume it is tri0.
+1. Draft §6 design choices O1–O8; the co-owner's direction: design Q-A first, bind Q-B as a conditional prediction.
+2. RM-04 remains **not opened**; the co-owner does not recommend opening it yet. Opening is the PI's decision.
+3. `[UNVERIFIED]` (owner and co-owner): the index and the RMT name a "non-Markov positive-control laboratory identified" for RM-04; which laboratory that is, is not stated in the live documents read. Not assumed to be tri0. The original source has to be found.
 
 ## 5. Adoption manifest
 

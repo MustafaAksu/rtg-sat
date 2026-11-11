@@ -14,9 +14,19 @@ T5  symbolic: node-exchange equivariance (delta, s) -> (-delta, -s); chart ident
               (q, delta) -> (q + pi, delta + 2 pi); inversion (q, r, delta, s) -> -(q, r, delta, s)
 T6  symbolic: on the cluster, phase-only second-order closure q_{n+2} = (2-a) q_{n+1} - (1-a) q_n - a kappa sin q_n
 T7  symbolic: mean field Z = (e^{i(th1-th0)} + e^{i(th2-th0)})/2 = e^{iq} cos(delta/2); node-0 force = Im Z
-T8  numeric : finite-history identifiability on the grid: (r_n, r_{n+1}) alone does not determine the
-              hidden state (two hidden states, same data -- negative control); (q_n, r_n, ..., r_{n+3})
-              determines (|delta_n|, s_n * sign(delta_n)) on every grid state
+T8  numeric : PAST-window identifiability on the grid: (r_m, r_{m+1}) alone does not determine the
+              hidden state (two hidden states, same data -- negative control); the window
+              y_{n-3}, ..., y_n (i.e. q_{n-3}, r_{n-3}, ..., r_n) determines the hidden state at its
+              start up to node exchange, and forward propagation by the map then gives
+              (|delta_n|, s_n * sign(delta_n)) at the present step n
+T9  symbolic: det d(r_{n+1}, r_{n+2})/d(delta_n, s_n)
+              = (a kappa)^2/4 * sin q_n * sin(q_n + r_n) * sin(delta_n/2) * sin((delta_n + s_n)/2)
+T10 degenerate invariant sets (counterexample to any unconditional history statement):
+              q = r = 0 and q = pi, r = 0 are invariant for every (delta, s); there y is constant while
+              (delta, s) evolves, and the closure defect is zero; at q = 0, a = 0.1, kappa = 2 the
+              transverse block has complex multipliers of modulus sqrt(1.1) > 1
+T11 symbolic: the common velocity W = (w0 + w1 + w2)/3 obeys W+ = (1 - a) W (sum of forces zero):
+              a physical, decoupled, decaying degree of freedom -- not a gauge
 """
 import hashlib, itertools, json, math, os, sys
 import numpy as np
@@ -140,8 +150,47 @@ for Q, R, D_, S in itertools.product([-2.5, -0.9, 0.3, 1.7], [-0.2, 0.05], [0.2,
     x = (Q, R, D_, S); rs = rseq(x, aa, kap, 3); out = recover(Q, R, rs, aa, kap); n8 += 1
     if out is None: bad += 1; continue
     worst = max(worst, abs(out[0]-D_), abs(out[1]-S)); minsep = min(minsep, out[2])
-chk("T8 (q_n, r_n, r_{n+1}, r_{n+2}, r_{n+3}) determines (|delta_n|, s_n sign(delta_n)) on the grid",
+chk("T8 window start: (q_m, r_m, r_{m+1}, r_{m+2}, r_{m+3}) determines (|delta_m|, s_m sign(delta_m)) on the grid",
     bad == 0 and worst < 1e-9 and minsep > 1e-6, f"states={n8} max err={worst:.2e} min branch separation={minsep:.2e}")
+# past-window form: m = n-3; recover the hidden state at m from y_{n-3..n}, propagate to the present n
+badp = 0; worstp = 0.0
+for Q, R, D_, S in itertools.product([-2.5, -0.9, 0.3, 1.7], [-0.2, 0.05], [0.2, 0.9, 1.6], [-0.15, -0.04, 0.03, 0.12]):
+    x = (Q, R, D_, S); rs = rseq(x, aa, kap, 3); out = recover(Q, R, rs, aa, kap)
+    if out is None: badp += 1; continue
+    xt = x; xr = (Q, R, out[0], out[1])
+    for _ in range(3): xt = step(xt, aa, kap); xr = step(xr, aa, kap)
+    sg = 1.0 if xt[2] >= 0 else -1.0
+    worstp = max(worstp, abs(abs(xr[2])-abs(xt[2])), abs(xr[3]*(1.0 if xr[2] >= 0 else -1.0)-xt[3]*sg),
+                 abs(xr[0]-xt[0]), abs(xr[1]-xt[1]))
+chk("T8 past window y_{n-3..n} gives the present hidden state up to node exchange (grid)",
+    badp == 0 and worstp < 1e-9, f"max err at step n={worstp:.2e}")
+
+# ---------------- T9 ----------------
+r1 = red[1]; q1s = q+r; d1s = d+s
+r2 = (1-a)*r1-a*k*sp.sin(q1s)*sp.cos(d1s/2)
+det = sp.Matrix([[sp.diff(r1, d), sp.diff(r1, s)], [sp.diff(r2, d), sp.diff(r2, s)]]).det()
+chk("T9 identifiability determinant", sp.simplify(det-(a*k)**2/4*sp.sin(q)*sp.sin(q+r)*sp.sin(d/2)*sp.sin((d+s)/2)) == 0)
+
+# ---------------- T10 ----------------
+ok10 = True
+for q_fix in (0, sp.pi):
+    im = [sp.simplify(e.subs({q: q_fix, r: 0})) for e in red[:2]]
+    ok10 &= (im[0] == q_fix and im[1] == 0)
+chk("T10 q = r = 0 and q = pi, r = 0 invariant for all (delta, s)", ok10)
+ymax = 0.0; moved = 0.0
+for D_, S in itertools.product([0.2, 0.9, 1.6, 3.0], [-0.15, 0.03, 0.12]):
+    x = (0.0, 0.0, D_, S)
+    for _ in range(4): x = step(x, 0.1, 2.0)
+    ymax = max(ymax, abs(x[0]), abs(x[1])); moved = max(moved, abs(x[2]-D_))
+chk("T10 y stays exactly (0, 0) while (delta, s) evolves; defect zero", ymax == 0.0 and moved > 1e-3
+    and sp.simplify((a*k*sp.sin(q)*(1-sp.cos(d/2))).subs(q, 0)) == 0, f"max|y|={ymax} max|delta change|={moved:.3f}")
+ev = np.linalg.eigvals(np.array([[1.0, 1.0], [-(0.1*2.0/3.0)*3.0, 0.9]]))
+chk("T10 transverse multipliers at q = 0, a = 0.1, kappa = 2: complex, modulus sqrt(1.1)",
+    abs(ev[0].imag) > 0 and abs(abs(ev[0])-math.sqrt(1.1)) < 1e-12, f"|mu|={abs(ev[0]):.12f}")
+
+# ---------------- T11 ----------------
+Wn = sp.simplify(sum(w_n)/3-(1-a)*(w0+w1+w2)/3)
+chk("T11 common velocity: W+ = (1 - a) W", sp.simplify(sp.expand_trig(Wn)) == 0)
 
 print("\nREDUCTION CHECK", "PASS" if not FAILS else "FAIL", FAILS)
 out = {"result": "PASS" if not FAILS else "FAIL", "frozen_sha256": FROZEN_SHA256, "checks": REPORT,
