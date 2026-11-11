@@ -1,6 +1,6 @@
 # HHO — support results: current statements
 
-**Status of this file:** draft for the next HHO edition. Not adopted. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), and one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as a live summary of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), and one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
 
 **Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. The two are linked only by a cup–polarization identification (HHO-SG-4), which HHO has not established for a general Severn datum (§3.3).
 
