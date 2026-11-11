@@ -88,3 +88,19 @@ No frozen source file in `evidence/hcg/` or `upload/hcg/` is changed.
 The three adoption entries are quoted from the PI decision record on PR #40 (comment `6795173122`, posted from the PI's account on 11 Nov 2026, 14:57 +03:00). The Claude session received them through that record and the PI's relay.
 
 Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
+
+## 9. Adoption manifest
+
+**Status: ADOPTED (2026-11-11).** SHA-256 of the bytes at the **content commit** `349355e59026200ea834a7e6e1e51ac9a002a56c` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hcg/HCG_STUDY_LEDGER.md` | the adopted scientific record | `51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949` |
+| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | `595d90f0e6c37cf70f7d797097cbb373ad824dfab72d5c3e94cca4b27cb92d0a` |
+| `records/hcg/HCG_D27_CORE_THEOREMS_ACCEPTANCE_MATRIX.md` | review basis | `4ccb992a4b766e3e5a2a2d357d47db1f9a68ffadb24adbd70a60e042152402d6` |
+| `evidence/hcg/verification/make_v04_draft.py` | builder | `2de5b0292b35a7975c25b8669621e59d96967fbc7fd2197ff0aace56d2aeaffa` |
+| `evidence/hcg/verification/release_v04.py` | release transform | `f4f0c9f0246ad86185bdd0586de7ed6befda381a396c08f425a9a3f50382af4d` |
+| `evidence/hcg/verification/replay_d27_core_checks.py` | replay wrapper | `44bb0e415cde7c9abf289917790c9cf60b40baefbb00c48c03789ab1537fa542` |
+| `evidence/hcg/README.md` | evidence index text | `05a21abb75827f1e930e60364459c648ccd9dc103ca1ecce0276d747d99c7cc9` |
+| `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
+| `REGISTRY.md` | `hcg` row | `af8c4a929582bec9225eac8ba9249f62c8ce04fab3536e061512fee273872465` |
