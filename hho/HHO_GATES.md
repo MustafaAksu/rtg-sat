@@ -22,7 +22,7 @@ From NOTE §2. A datum 𝒟 = (K, Γ, σ, (g₁, …, g_N), h₀) satisfies (H) 
 
 ## 2. Gate catalogue
 
-Each gate is a necessary condition for a nonsplit datum under (H). The table restates NOTE §3.
+G1–G10 form the (H)-scoped screening catalogue: they include necessary equations, exclusion tests and auxiliary criteria, each with its stated assumptions and review state. G11 records a sufficient criterion for the separate supplier property (L), which is not part of (H). G12 is the cup-to-polarization identification requirement for a particular use of a parabolic-cup class, not an additional necessary condition for every (H)-datum. The table restates NOTE §3 without promoting pending HCG results.
 
 | Gate | Statement | Review state (NOTE) | HHO register row |
 |---|---|---|---|
@@ -87,6 +87,7 @@ All classes are parabolic-cup classes unless stated. "(D)" is the dominance cond
 | G(6,1,6), 20 reflections (Q0, Q2) | 6 | not checked | fails: ≤ 10 | [1] | controls for the count of diag(−1) reflections | HHO-NEG-G616 |
 
 **Remarks.**
+- **Review-state boundary:** `HHO-NEG-LSEP` (the G₂₆-type witness) is PROPOSED (Claude), not CHECKED or ACCEPTED. `HHO-NUM-C6-LEAF` remains PROPOSED (one PI-machine run; the original output file is not held in the repository). Other review states are in the claim register or the cited HCG record. No source grade is upgraded by inclusion in this calibration table.
 - P1–P3 contain complex reflections and are nonsplit. This does not contradict G6, because they fail (D). It agrees with the note in Δ27 add. 5 that dominance is essential there.
 - P1–P3 use diagonal reflections of order 6 besides order-2 reflections. So they do not contradict NOTE R3, which concerns monomial data built from order-2 reflections only.
 - None of the negative controls is a counterexample to a Severn theorem.

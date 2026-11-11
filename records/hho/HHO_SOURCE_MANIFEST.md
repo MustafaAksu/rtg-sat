@@ -65,6 +65,15 @@ No LIT-backed validation is claimed.
 - **ChatGPT files that were not attached** to the conversation: its GAP script `HHO_G34_REFLECTION_NEIGHBOR_CW_v0_2.g`, its Addendum 10 and Addendum 12 review packages, and its own originals in general.
 - **Severn's primary texts.**
 
+### 4.1 ChatGPT-attributed received copies — source-access boundary (11 Nov 2026)
+
+| Material | Verified custody and byte identity | Original-session status |
+|---|---|---|
+| 21 ChatGPT-attributed files in `evidence/hho/received/chatgpt/` | **RECEIVED COPY — SHA256 VERIFIED** against `upload/hho/pi-uploads-received/`; the corresponding 21 source and placed Git blobs match. Listed in `evidence/hho/SHA256SUMS`. | **ORIGINAL SESSION SOURCE — UNAVAILABLE**. The old ChatGPT HHO session's own originals were not fetched or independently authenticated. |
+| 12 relayed message files in `evidence/hho/received/relays/` | PI-relayed text received through `upload/hho/pi-uploads-received/`; the corresponding 12 source and placed Git blobs match and are indexed in `SHA256SUMS`. | Relays are not independently verified transcripts of the inaccessible source session. |
+
+This review could not access the old HHO ChatGPT conversation to extract source files directly. File hashes establish the identity of the **received bytes**, not that those bytes were obtained independently from the original ChatGPT session. No missing file has been reconstructed, no received file is relabelled as an authenticated original, and no earlier review status is upgraded. The absent originals remain an explicit bounded provenance limitation; they are **not** treated as an automatic blocker for preparing the next HHO register edition. Scientific adoption and any source-dependent acceptance remain separate decisions.
+
 ## 5. Identifier rename map
 
 | Session-local RID (opening note §7) | HHO RID |
