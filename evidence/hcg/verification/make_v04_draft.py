@@ -31,12 +31,12 @@ def before(anchor, block):
 
 
 # ---------------------------------------------------------------- header
-rep('# HCG study ledger v0.3\n', '# HCG study ledger v0.4 — DRAFT r1\n')
+rep('# HCG study ledger v0.3\n', '# HCG study ledger v0.4 — DRAFT r2\n')
 rep('**Date:** 11 November 2026\n', '**Date:** 11 November 2026 (draft)\n')
 rep('''§6.6–§6.22 are an *external-claim audit module* (§6.23 is this study's own work).''',
     '''§6.6–§6.22 are an *external-claim audit module* (§6.23 and §6.24 are this study's own work).''')
 rep('''**Document status:** ADOPTED (scoped) — PI decision, 11 November 2026, 08:54 +03:00 ("1 Kabul ettim"), following the ChatGPT co-owner review "ACCEPT SCOPED" of DRAFT r2 (PR #31). It carries the changes of Δ24–Δ26 and the RTG import review. Adoption does **not** set any individual claim's review state to ACCEPTED and does not establish any external claim (Severn's Theorem 6.2 stays CLAIMED). Release record: `records/hcg/HCG_v0.3_RELEASE_RECORD.md`. The edition is published by the annotated tag `hcg-v0.3`.''',
-    '''**Document status:** **DRAFT r1 — not adopted.** The governing edition is `hcg-v0.3`. This draft adds two results of Δ27 (§6.24) and changes nothing else of v0.3. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's Theorem 6.2 stays CLAIMED).''')
+    '''**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.3`. This draft adds two results of Δ27 (§6.24) and changes nothing else of v0.3. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's Theorem 6.2 stays CLAIMED).''')
 rep('''**Build:** made from the adopted v0.2 text by `evidence/hcg/verification/make_v03_draft.py` (assertion-gated replacements and insertions; every anchor must occur exactly once). Text that the script does not touch is the v0.2 text, byte for byte. Released from DRAFT r2 (SHA-256 23929cceec6e1e9aa5cb4082522cfc04b943824c578cee3a17d23be355aeef2e) by `evidence/hcg/verification/release_v03.py` (labels and metadata only).''',
     '''**Build:** made from the adopted v0.3 text by `evidence/hcg/verification/make_v04_draft.py` (assertion-gated replacements and insertions; every anchor must occur exactly once). Text that the script does not touch is the v0.3 text, byte for byte.''')
 rep('''**Revision base:** the ledger of `hcg-v0.2` (SHA-256 276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0; frozen in `evidence/hcg/ledger-history/adopted_v0_2/`). Change sources:
@@ -120,11 +120,13 @@ The class depends only on the multiset of classes of the g_i under h₀-isometri
 
 `[THM]` [RID: HCG-THM-INDUCED-PERIOD-BOUND] [provenance: CHECKED (two AIs), argument-level reviews — derived by ChatGPT (`received/20505e68-HCG_INDUCED_PERIOD_DIMENSION_BOUND_PROPOSED_v0_1.md`, 03199b80…); proof review by Claude, with the factorization written through Y_τ (`nonsplit8/H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` §2, 050c8504…); second review by ChatGPT (`received/233fab3b-HCG_REFLECTION_DICHOTOMY_CHATGPT_REVIEW_v0_1.md` §2.1). Profile (ii): proposed by Claude, checked by ChatGPT (`received/50a6524e-HCG_REFLECTIONFREE_CLAUDE_CROSS_REVIEW_v0_1.md` §4). Δ27 addenda 4–6]
 
-**Setting.** C → P¹ varies in a family of connected Galois covers with a fixed finite group Γ and fixed topological type. σ is an absolutely irreducible representation of Γ, induced from a representation τ of a subgroup H of index k, dim τ = r. M_σ is the σ-multiplicity part of H¹(C), **with the Hodge structure induced from H¹(C)**, of dimension 2n ≥ 2. Y = C/H has genus γ; D_τ ⊂ Y is the set of points where the τ-local system has nontrivial local monodromy; s = |D_τ|.
+**Setting.** C → P¹ varies in a family of connected Galois covers with a fixed finite group Γ and fixed topological type. σ = σ_K is an absolutely irreducible representation of Γ over K, induced (in one of the two profiles below) from a representation τ of a subgroup H of index k, dim τ = r. M_σ is the σ-multiplicity part of H¹(C), **with the Hodge structure induced from H¹(C)**; it has K-dimension 2n ≥ 2. Y = C/H has genus γ; D_τ ⊂ Y is the set of points where the τ-local system has nontrivial local monodromy; s = |D_τ|.
 
 **Two coefficient profiles.**
-- **(i) over K:** σ and τ are defined over K and σ ≅ Ind τ over K.
-- **(ii) over ℂ:** σ ⊗ ℂ ≅ Ind τ with τ a complex representation. This profile gives **the period rank only**. It transfers no K-discriminant and nothing about (L).
+- **(i) over K:** τ = τ_K is defined over K and σ_K ≅ Ind_H^Γ τ_K over K.
+- **(ii) over ℂ:** fix an embedding ι: K → ℂ. Then σ_K ⊗_{K,ι} ℂ ≅ Ind_H^Γ τ_ℂ for a complex representation τ_ℂ of H, and the statement is about the complex realization M_{σ,ι} = M_σ ⊗_{K,ι} ℂ, with dim_ℂ M_{σ,ι} = 2n. This profile gives **the period rank only**. It is not a descent of the blocks to K, and it transfers no K-discriminant and nothing about (L).
+
+In both profiles τ is irreducible and nontrivial. This follows from the absolute irreducibility of σ and dim σ > 1 (for r = 1: an induced trivial character would give a trivial summand).
 
 **Statement (both profiles).** For r ≥ 2:
 - rank Per_σ ≤ 3γ − 3 + s ≤ 2n + 2r − 3 + (3 − 2r)γ, hence rank Per_σ ≤ 2n + 2r − 3;
@@ -132,7 +134,7 @@ The class depends only on the multiset of classes of the g_i under h₀-isometri
 
 For r = 1 and a nontrivial character: s = 2n + 2 − 2γ and rank Per_σ ≤ 2n − 1 + γ ≤ 3n.
 
-For n = 4 (period domain of dimension 16): an induced datum can have period rank 16 only with γ = 0 and r ≥ 6, and a monomial datum (r = 1) never.
+For n = 4 **and a target of signature (4,4), whose period domain has dimension 16**: period rank 16 needs γ = 0 and r ≥ 6, and a rank-one induced (monomial) datum has rank ≤ 12. The signature is a hypothesis of this application, not of the theorem: the inequalities above assume only dim M_σ = 2n.
 
 **Proof chain.** (P4) Frobenius reciprocity: Hom_Γ(Ind τ, H¹(C)) ≅ Hom_H(τ, H¹(C)), compatibly with the Hodge decomposition and Gauss–Manin transport. (P5) The right side is H¹(Y, j_*L_τ). (P6) With Y_τ = C/ker τ: Hom_H(τ, H¹(C)) = Hom_{τ(H)}(τ, H¹(Y_τ)); the cover Y_τ → Y is Galois with group τ(H), is branched exactly over D_τ, and by Riemann existence is determined by (Y, D_τ) and a discrete monodromy datum. So the Hodge structure on M_σ is a function of a point of a finite cover of M_{γ,s}, and rank Per_σ ≤ 3γ − 3 + s. (P7) 2n = 2r(γ − 1) + Σ_{y ∈ D_τ} a_y with 1 ≤ a_y = rank(1 − h_y) ≤ r. (P8) Hence s ≤ 2n + 2r(1 − γ).
 
@@ -186,7 +188,9 @@ Entries D-13 and later belong to the pending part of Δ27 and are not part of th
 # ---------------------------------------------------------------- appendix A, footer
 after('''## Appendix A — Version History
 ''', '''
-### v0.4 DRAFT r1 — 11 November 2026 — DRAFT (not adopted)
+### v0.4 DRAFT r2 — 11 November 2026 — DRAFT (not adopted)
+
+- **r2 (11 Nov 2026).** Corrections from the co-owner review of r1 (PR #40): the signature (4,4) is stated as a hypothesis of the n = 4 application (S1); profile (ii) names the embedding ι, the complex realization and its dimension, and the irreducibility of τ is stated (S2). No inequality or proof step changes.
 
 - **Basis.** The ledger of `hcg-v0.3`; `records/hcg/HCG_D27_CORE_THEOREMS_ACCEPTANCE_MATRIX.md` (revision 2; ChatGPT co-owner review ACCEPT SCOPED); the PI disposition of 11 Nov 2026 (no third-family reading for now; ceiling CHECKED (two AIs)).
 - **New entries.** §6.24: `HCG-THM-PARABOLIC-DISC-LOCALITY` and `HCG-THM-INDUCED-PERIOD-BOUND` (two coefficient profiles). §1.4, two rows in §5, one limit in §6.21, import and artefact lines in §7 and §8, D-10 to D-12 in §9.
@@ -194,7 +198,7 @@ after('''## Appendix A — Version History
 - **Not included.** The rest of Δ27, Δ28 and Δ29.
 ''')
 rep('''*END OF DOCUMENT — HCG study ledger v0.3 · ADOPTED (scoped) 11 Nov 2026 · no claim row is ACCEPTED · not an RTG document.*''',
-    '''*END OF DOCUMENT — HCG study ledger v0.4 · DRAFT r1 · 11 Nov 2026 · not adopted; `hcg-v0.3` governs · not an RTG document.*''')
+    '''*END OF DOCUMENT — HCG study ledger v0.4 · DRAFT r2 · 11 Nov 2026 · not adopted; `hcg-v0.3` governs · not an RTG document.*''')
 
 
 def build(src):

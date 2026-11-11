@@ -20,8 +20,8 @@ ROOTS = E + 'h4sel/severnlink/W5_BASELINE_ROOTS.json'   # same bytes as the sess
 SHA = {
     SCRIPT: 'f538ce4deac12d32c16296b3d27f99a80450a8d94a0882fb51e73783d71d94dc',
     FROZEN_OUT: '985138c194851db60714c1700ede95978a2f4cf7539c394c8b3955d993f09dd4',
-    ENGINE_DIR + '/generic_engine.py': '66f2c253',
-    ROOTS: '480cd6dc',
+    ENGINE_DIR + '/generic_engine.py': '66f2c253d7b8390858e9ca8cdf81b7b5579777721d7763e0d3b631be58fca505',
+    ROOTS: '480cd6dc95f1a802943a621df632693eeb9aa7e8a9057ff5099e444950c9e35a',
 }
 MAP = [("'/home/claude/g34/h4sel/p2p3'", repr(os.path.abspath(ENGINE_DIR))),
        ("'/home/claude/g34/roots_alt_5.json'", repr(os.path.abspath(ROOTS)))]
@@ -32,7 +32,7 @@ def sha(p):
 
 
 for p, h in SHA.items():
-    assert sha(p).startswith(h), ('hash mismatch', p)
+    assert len(h) == 64 and sha(p) == h, ('hash mismatch', p)
 src = open(SCRIPT, encoding='utf-8').read()
 for old, new in MAP:
     assert src.count(old) == 1, ('path anchor', old)
