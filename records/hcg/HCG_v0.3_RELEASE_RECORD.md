@@ -98,3 +98,20 @@ No frozen source file in `evidence/hcg/` or `upload/hcg/` is changed.
 | Publication | PI, same message | "3 Tagi atarım sorun yok" — the PI creates the annotated tag `hcg-v0.3`; the owner session supplies the command. |
 
 Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
+
+## 9. Adoption manifest
+
+**Status: ADOPTED (2026-11-11).** SHA-256 of the bytes at the **content commit** `ba7ba055e384bc500fedc183609b2a706effcb49` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hcg/HCG_STUDY_LEDGER.md` | the adopted scientific record | `fc03e8376eb56c14abeae77c7f20c2fa70723977572744af8a0c4a38dcec814d` |
+| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | `66ce2e45ce2390edf58334dd16892bcd6dde778523ca9d8d04af1950f5f8be74` |
+| `records/hcg/HCG_v0.3_D24_D26_ACCEPTANCE_MATRIX.md` | review basis, Δ24–Δ26 | `30a8066099b5e460550e1feed4950f30c62089a04d454c2e33771ea2efc21d37` |
+| `records/hcg/HCG_RTG_IMPORT_AUDIT_20261110.md` | review basis, RTG imports | `f99d54390747bb8e9fec5e226b7423d1210cbf6428c3f05f3dd12e8a4865c0cc` |
+| `evidence/hcg/verification/make_v03_draft.py` | builder | `c619194a1706cd35c71c42035c7e29ded807c05e2d6ad17cc9e4344d66c221af` |
+| `evidence/hcg/verification/release_v03.py` | release transform | `0bf82da69ca36430b6ee83eb69b4adcb03b4026149d082c5d0d23c2d94aed081` |
+| `evidence/hcg/verification/severn_printed_relation.py` | relation check | `3b2aba82b323cefe8b22261fc161bdf1c63dc0505bc7f86048c2001f637f57db` |
+| `evidence/hcg/README.md` | evidence index text | `b65bc3eec9dd577e98d1ccbc20cabf5692283d76f78707b187390fe822aff05a` |
+| `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
+| `REGISTRY.md` | `hcg` row | `20ec35125b89e08d1195673ce7f25ee361151079f33c506a52ac365988336c8b` |
