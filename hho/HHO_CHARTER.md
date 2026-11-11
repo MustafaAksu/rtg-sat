@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the "HHO Hurwitz–Hodge obstruction research" conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** draft for `hho-v0.1`. It is not adopted. It carries no scientific claim. **Governing edition:** none yet; HHO was accepted at chat level only.
+**Status of this file:** adopted by the PI on 11 Nov 2026 as the governance text of `hho-v0.1` (`records/hho/HHO_v0.1_RELEASE_RECORD.md`). It carries no scientific claim. **Governing edition:** `hho-v0.1`.
 
 ## 0. Scope guard
 
@@ -66,9 +66,9 @@ Choosing P1 is a research priority. It adopts no claim.
 
 ## 3. Editions
 
-- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). There is none yet.
+- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.1`.
 - Order of a release: decision, release record, merge, tag. A merge, a tag or a passing check is not an adoption.
-- The first release `hho-v0.1` is planned to contain this charter, the claim register and the source manifest (`records/hho/HHO_MIGRATION_NOTE.md` §7).
+- The first release `hho-v0.1` contains this charter, the claim register and the source manifest. It is a register edition: it adopts no claim row.
 
 ## 4. Grades, review states, identifiers
 
@@ -135,7 +135,7 @@ HCG has the adopted edition `hcg-v0.2`. Only its session ledger v0.2 is adopted 
 
 ### 5.2 RTG
 
-HHO uses no RTG result. In `REGISTRY.md` the HHO field "RTG inputs" reads `not set` today; it is to be set to `none` with the first adopted release. If that changes, HHO cites an adopted `rtg-corpus` tag (`CONVENTIONS.md` §3). An HHO finding reaches RTG only as a pipe item in `rtg-corpus`.
+HHO uses no RTG result. In `REGISTRY.md` the HHO field "RTG inputs" is `none` (set with `hho-v0.1`). If that changes, HHO cites an adopted `rtg-corpus` tag (`CONVENTIONS.md` §3). An HHO finding reaches RTG only as a pipe item in `rtg-corpus`.
 
 ### 5.3 LIT and third-party sources
 

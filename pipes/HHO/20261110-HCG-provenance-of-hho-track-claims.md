@@ -5,7 +5,8 @@ date: 2026-11-10
 kind: finding
 object: HHO opening note §§3–4, §7 (register R1, G4A–G4C, T-PRIME, 2XB, LSEP); HCG Δ27 addenda 2–17 (evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md)
 tags: [hcg-v0.2]
-state: open
+state: dispositioned
+disposition: 2026-11-10 · accept · hho/HHO_CLAIM_REGISTER.md
 ---
 Provenance of the HHO-track claims that were made in the HCG conversation, as the HCG originals record it. All of it is **pending in HCG**; custody of the claims is HHO's.
 - **Where they come from.** The gate catalogue and the register of the opening note restate HCG Δ27 addenda 2–17 (29 Oct – 3 Nov 2026). Each gate cites its addendum in the note's §3.
