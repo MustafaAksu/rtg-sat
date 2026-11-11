@@ -1,14 +1,16 @@
-# COIL v0.6 — release record (DRAFT): ICID preregistration lock
+# COIL v0.6 — release record: ICID preregistration lock, run and result
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.5`. Scope: **lock of PREREG-MM1-ICID v1.0** with its executables, and one instrument note in RM-02.h. No result. The PI's decision to lock was given on 10 Nov 2026 ("Kilitleyelim"); the lock takes effect when the PI merges this pull request after co-owner review of the final text, because the text gained a section (§4.3, sector capture) after that decision.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-11 ("v0.6'yı benimsiyorum", COIL owner session, after co-owner review `5848522894` ACCEPT); publication tag `coil-v0.6`. Successor of `coil-v0.5`. Scope: (a) **lock of PREREG-MM1-ICID v1.0** with its executables — the PI merged PR #22 on 10 Nov 2026 (`main` `574097f4cffc0b6436ba422ff361ec7f7032f47a`) after co-owner ACCEPT (review `5840792518`); (b) **RUN-MM1-ICID v1.0** — executed by the PI on 10 Nov 2026, outputs deposited unchanged; (c) the live-document statements that follow from the run.
 
 ## 1. Files
 
-**Frozen at lock (new):** `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md`; `evidence/coil/code/icid_experiment.py`, `icid_certificate.py`, `CLI-ICID.md`. `SHA256SUMS` rows appended.
-**Removed:** `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` (unlocked draft of v0.5; superseded by the locked file; its bytes remain at tag `coil-v0.5`).
-**Live (changed):** `coil/records/RM-02.md` (.h instrument note), `coil/COIL_INDEX.md` (§8 item 4 pointer).
+**Frozen at lock (PR #22):** `evidence/coil/prereg/PREREG-MM1-ICID-v1.0.md`; `evidence/coil/code/icid_experiment.py`, `icid_certificate.py`, `CLI-ICID.md`. **Removed at lock:** `evidence/coil/prereg/PREREG-MM1-ICID-DRAFT.md` (its bytes remain at tag `coil-v0.5`).
+**Frozen run record (new):** `evidence/coil/run/RUN-MM1-ICID-v1.0.md`.
+**Result data (new, unchanged from upload):** `evidence/coil/outputs/icid_results/` (33 files), `evidence/coil/outputs/raw_from_pi/pairbc_console_4f6056a1.txt`; `SHA256SUMS` rows appended; `evidence/coil/outputs/README.md` describes them.
+**Intake (unchanged):** `upload/coil-icid-results/` (pushed by the PI, commits `fce725a` incomplete, `e2ccc9b` complete); `upload/coil-icid-chat-attachments/` (two files the PI sent as chat attachments, placed by the owner session — they did **not** arrive on an `upload/` branch; PI disposition in §5).
+**Live (changed):** `coil/records/RM-02.md` (.h), `coil/COIL_INDEX.md` (RM-07 row, three table rows, §8 item 4), `coil/COIL_RMT.md` (RM-07 row), `coil/COIL_CAMPAIGN_COMPENDIUM.md` (ICID entry); `REGISTRY.md` (COIL row: governing edition `coil-v0.6`). `.gitignore`: the ignore rule for run outputs now names `/evidence/coil/code/icid_results/` only, so the deposited `evidence/coil/outputs/icid_results/` is tracked.
 
-## 2. Changes relative to the v0.5 draft (co-owner lock items A–C, review `5838153479`, and one owner finding)
+## 2. Lock phase: changes relative to the v0.5 draft (co-owner lock items A–C, review `5838153479`, and one owner finding)
 
 | # | Item | Locked text |
 |---|---|---|
@@ -25,15 +27,39 @@
 | X12 | R7 — provenance wording | prereg §8(2): the cluster-orbit symmetry is short-horizon tested and algorithmically symmetric, not yet measured at full horizon; all status branches listed |
 | X5 | pre-observation register | §0 lists everything seen before lock, including the short-horizon certificate runs; they are declared non-results |
 
-## 3. Checks
+## 3. Run phase: result and changes of meaning in live documents
 
-- `icid_certificate.py` executed by the owner session (Python 3.13, numpy): **CERTIFICATE PASS** — I1 frozen hash; I2 ensemble; I3 block structure (off-block 3×10⁻¹⁷); I4 fixture identity, negative control, long-window log-space; I5 five short-horizon count equalities (16/16, 10/10, 19/19, 22/22, 23/23); I6 contract on 10 in-sector runs, 5 runs with status/threshold consistency, orbit distance exactly 0.0 (short horizon: burn 1500, Lyapunov 3000); I7 summary refuses an incomplete set; I8 a complete toy-horizon set (burn 40, Lyapunov 80; 14 cells, toy G-CODE PASS; discarded) is refused with the recorded horizons as sole cause, and a different executor hash is refused. Not independently re-run by the co-owner at the time of writing. An earlier toy-horizon smoke test (before X10) in which such a set was accepted is the defect R5 describes and is superseded by I8.
-- No full-horizon cell has been run by the owner session.
+Result (`RUN-MM1-ICID-v1.0.md`; scope `[NUM | MM-1 sine, explicit Euler, tri0/path3, PAIRBC's realised ensemble, 14 locked cells, one environment]`): G-CODE PASS; **G-REF 8/8 AGREE**; **D-ID fixed-membership** in pairs A, B, C; **D-MEMBERSHIP cluster-aligned** in 9/9 five-member cells; **D-CONTRACT: 60/60 SECTOR-CAPTURED**, orbit distance from the cluster subspace exactly 0 in 60/60; cross-tabulation CHAOS × transverse-only 60/60. Q4 = identical (PI statement + hash of the file he holds).
+
+| # | Document | Before | Now |
+|---|---|---|---|
+| Y1 | RM-02.h | "whether these five are the five chaotic ICs of the plateau is not measured"; a pre-lock instrument note on short-horizon capture | measured: plateau members = cluster-subspace ICs in every tested cell; their label is tangent growth transverse to an invariant orbit; bracket steps are the 20 non-cluster ICs; P-κ unchanged; open items listed. The short-horizon note is replaced by the full-horizon statement |
+| Y2 | RM-02.h | identity of the historical runtime file with the deposited script: open | PI statement of identity recorded, with the hash match of the file he holds; stated as a PI statement, not as proof |
+| Y3 | COIL_INDEX RM-07 row and §8 item 4; COIL_RMT RM-07 row | RM-07 "activation candidate" with the IC-identity test as precondition | test done; the plateau is **not** metastability evidence; RM-07 stays parked; regular-winding regime and reversion islands remain the only activation material |
+| Y4 | COIL_INDEX tables | no ICID rows | prereg, run and code rows added |
+| Y5 | COIL_CAMPAIGN_COMPENDIUM | no ICID entry | protocol entry, with the execution environment (Ubuntu) |
+
+Not changed: P-κ, every κ_frac, the PAIRBC prereg/RUN/script, the N3 results, SG-COIL-1, any RTG reference. The owner's conditional reading (classifier applied to the neutral-aware prediction gives not-chaos for the 60 cluster-IC runs) is in RUN §6 labelled as outside the decision rules and is **not** carried into any live document as a re-classification.
+
+Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead of Windows/PowerShell; `--all` interrupted after cell 1, cells 2–14 run per cell; first upload incomplete; certificate console reported in chat only.
+
+## 4. Checks
+
+- Lock phase: `icid_certificate.py` executed by the owner session (Python 3.13): CERTIFICATE PASS (I1–I8). Not re-run by the co-owner.
+- Run phase, owner session: `upload/coil-icid-results/SHA256SUMS` verifies (33/33); every file under `evidence/coil/outputs/icid_results/` and the console text equal their upload entries (34/34); `icid_experiment.py --summary` re-executed on the uploaded set with the locked executor: exit 0, output **byte-identical** to the PI's `icid_summary.txt`; all tables and ranges in the RUN record were generated by script from the deposited CSVs; `evidence/coil/outputs/SHA256SUMS` verifies in full.
+- Run phase, PI's environment: CERTIFICATE PASS (I1–I8) and G-CODE PASS as reported/uploaded; I5 short-horizon count for tri0/A κ = 2.65 is 18/18 there vs 16/16 in the owner environment (equality holds in each; not campaign data).
+- The owner session did not run any full-horizon cell itself. No independent re-execution of the 14 cells exists.
 - No frozen file of earlier releases changed; no hash, approval or result invented.
 
-## 4. Adoption manifest
+## 5. Review and PI dispositions
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `c581842689ad80a621cba5696066d1dcf3366d14`. Files not listed are inherited unchanged from `coil-v0.5`. Re-hash after any later change and before the tag.
+- **Co-owner review `5848522894` (PR #30, head `6178de0`): ACCEPT.** Independent recomputation from the deposited CSVs (not a re-execution of the cells): upload hashes 33/33, upload → evidence 33/33, G-REF 8/8, D-ID, D-MEMBERSHIP 9/9, D-CONTRACT 60/60, orbit distance 60/60 zero, generic seeds 1050/1050. Interpretation limits confirmed: quarter rates are measurements, no window-level mechanism is attributed by `SECTOR-CAPTURED`; the 5 → 25 statement holds at the tested bracket endpoints only; the RUN §6 owner reading stays outside the decision rules and the historical H labels are unchanged; the neutral-aware identity is not tested at full horizon. Editorial note applied: index §8 now reads "three bracket pairs (six endpoints)". Co-owner acceptance is not PI adoption.
+- **Disposition 1 — acquisition route of the two chat attachments: accepted by the PI (11 Nov 2026).** PI: how older files are obtained is a mechanical matter; there is no requirement that every file be placed under `upload/` by the PI's own hand; what matters is the scientific content. The two files stay as placed. Owner correction to the intake note: the console text is byte-identical to `upload/coil/pi-uploads-received/pairbc.txt`, in the repository since PR #3 — it was a second receipt of an already deposited file; the script copy is byte-identical to the deposited frozen script. Neither attachment added new bytes to the evidence base.
+- **Disposition 2 — local Windows user-directory string in public console evidence: accepted by the PI (11 Nov 2026)** — "dizin yolu kritik privacy değil, kalabilir". The string stays. Fact recorded for that decision: it is not introduced by this release; it has been public on `main` since PR #3 in `upload/coil/pi-uploads-received/pairbc.txt` and `upload/coil/owner-session-outputs/ARSIV/CLI-N3-kalan-kosular.md` (both inside tags `coil-v0.1` … `coil-v0.5`); this release adds two further copies of the same console text and one mention in an intake README.
+
+## 6. Adoption manifest
+
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `dc6e4a60b90962bec8aeab2bae757ab74a11af0a`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -43,8 +69,18 @@
 | `evidence/coil/code/CLI-ICID.md` | `69fa1ce75861a7fd66ca605e59edf3e998521f159c177e7a31320e2766035f87` |
 | `evidence/coil/code/SHA256SUMS` | `c20a822851b8a3e9eae6f95b49e5d5b68e27a680c9549f128c1c66eadfd15473` |
 | `evidence/coil/prereg/SHA256SUMS` | `d59e21a58e4ee02a4f67dd9d79b04577858177ac0f6394e60caf04208247d285` |
-| `.gitignore` | `f63404fcbed80f5edf84369905fbfa30c8bb56ab62eef4affb95338a689dd17b` |
-| `coil/records/RM-02.md` | `cd910f9c13d0f4bd18763fc4b796c4937efa29fd9f49f4ced523c0001fd5db6c` |
-| `coil/COIL_INDEX.md` | `9e6895ec7f05f69532aabece75ab8e73d4e6d397b19170e80e8df3e84452bca7` |
+| `evidence/coil/run/RUN-MM1-ICID-v1.0.md` | `54626fe4e948f2e2f00034eae982e2af0f05856cb4e9cc7ccd4ec32d5a8d8b06` |
+| `evidence/coil/run/SHA256SUMS` | `52ff98babfbee9ee3dd9764dcb0957479fb937652622c5ace4b3580dc6158c37` |
+| `evidence/coil/outputs/SHA256SUMS` | `d4c801366d810db99725aec43e4313d1c3e551e449e77c0b5a6eefe1bd2b1227` |
+| `evidence/coil/outputs/README.md` | `8bcef30a6bcb0b8e7d1e5c15971335767881d6ba9d05e5db6869b767c333922a` |
+| `upload/coil-icid-results/SHA256SUMS` | `f6d6a03ec066060ad6b1ccef86be05a694c1d2bed21493ec9c63cdc89cea135e` |
+| `upload/coil-icid-chat-attachments/SHA256SUMS` | `5cd2844ffb4f98ddd664b12c48e971e9a180921f21a82f4441dacd5da5f0d1ea` |
+| `upload/coil-icid-chat-attachments/README.md` | `68f0e34f9e705d0745e09bb610d99eb3e4cfa1b52995097775bded74267d7569` |
+| `.gitignore` | `7efd758ab66a46571f0c5b4ac82e793369cfb4da548119765b9c2dece99d4a81` |
+| `coil/records/RM-02.md` | `aa60bb77926f8704d284c08bca9959b0a07ad1149b6693a6873c5e73652d7c83` |
+| `coil/COIL_INDEX.md` | `0adab7f11edec5105dfc4ff23dfd3724d734b848a8b8ff36b034bde7bcef6c86` |
+| `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
+| `REGISTRY.md` | `2cf1b006c18f177e9387a38ca807fa8e222845dd82e06ba3e17407dac19ba99b` |
 
-**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-11):** all files listed above as they stand at the content commit; the result data under `evidence/coil/outputs/icid_results/` and the two intake folders as covered by the listed `SHA256SUMS` files; everything inherited unchanged from `coil-v0.5`; tag `coil-v0.6`. **Limits of effect:** the adoption covers the RUN record's decisions and measured statements within its stated scope; the RUN §6 owner reading is adopted only as labelled there (a conditional computation outside the decision rules, not a re-classification); no historical H label, no κ_frac and not P-κ is changed; RM-07 is not activated; nothing enters rtg-corpus by this adoption.

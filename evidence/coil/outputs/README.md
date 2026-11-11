@@ -2,4 +2,6 @@
 
 - `*_results/`, `*_merged/`, top-level CSVs: result tables as produced by the campaigns (owner-session copies), unchanged.
 - `raw_from_pi/`: run outputs **exactly as received from the PI's machine** during the study (`out_*.zip`, `n3_*.csv`, `pairbc_*.csv`, `stageA_A_euler.csv`, …) plus the two notes returned by the RTG session. ZIP members are identified as `zip path + member path + member SHA-256` (member list and hashes: `records/coil/COIL_PR3_INTAKE_REVIEW_20261106.md`).
-- `SHA256SUMS` covers every file in this folder tree; all equal to the file's entry in `upload/coil/SHA256SUMS`.
+- `icid_results/`: outputs of RUN-MM1-ICID v1.0 **exactly as uploaded by the PI** from his Ubuntu machine (14 cell tables, `icid_gcode.txt`, `icid_summary.txt`, `logs/`, `environment.txt`, two console texts); equal to `upload/coil-icid-results/SHA256SUMS` (commit `e2ccc9b`).
+- `raw_from_pi/pairbc_console_4f6056a1.txt`: PAIRBC console text received as a chat attachment on 10 Nov 2026; equal to `upload/coil-icid-chat-attachments/4f6056a1-pairbc.txt` and to `upload/coil/pi-uploads-received/pairbc.txt` (in the repository since PR #3; not placed under `evidence/` before).
+- `SHA256SUMS` covers every file in this folder tree; each equals the file's entry in `upload/coil/SHA256SUMS`, or, for the two items above, in the upload folder named there.
