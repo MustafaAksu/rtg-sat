@@ -1,6 +1,6 @@
-# COIL v0.6 — release record (DRAFT): ICID preregistration lock, run and result
+# COIL v0.6 — release record: ICID preregistration lock, run and result
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.5`. Scope: (a) **lock of PREREG-MM1-ICID v1.0** with its executables — done: the PI merged PR #22 on 10 Nov 2026 (`main` `574097f4cffc0b6436ba422ff361ec7f7032f47a`) after co-owner ACCEPT (review `5840792518`); (b) **RUN-MM1-ICID v1.0** — executed by the PI on 10 Nov 2026, outputs deposited unchanged; (c) the live-document statements that follow from the run. No tag exists for v0.6; adoption and tag are the PI's.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-11 ("v0.6'yı benimsiyorum", COIL owner session, after co-owner review `5848522894` ACCEPT); publication tag `coil-v0.6`. Successor of `coil-v0.5`. Scope: (a) **lock of PREREG-MM1-ICID v1.0** with its executables — the PI merged PR #22 on 10 Nov 2026 (`main` `574097f4cffc0b6436ba422ff361ec7f7032f47a`) after co-owner ACCEPT (review `5840792518`); (b) **RUN-MM1-ICID v1.0** — executed by the PI on 10 Nov 2026, outputs deposited unchanged; (c) the live-document statements that follow from the run.
 
 ## 1. Files
 
@@ -55,11 +55,11 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 
 - **Co-owner review `5848522894` (PR #30, head `6178de0`): ACCEPT.** Independent recomputation from the deposited CSVs (not a re-execution of the cells): upload hashes 33/33, upload → evidence 33/33, G-REF 8/8, D-ID, D-MEMBERSHIP 9/9, D-CONTRACT 60/60, orbit distance 60/60 zero, generic seeds 1050/1050. Interpretation limits confirmed: quarter rates are measurements, no window-level mechanism is attributed by `SECTOR-CAPTURED`; the 5 → 25 statement holds at the tested bracket endpoints only; the RUN §6 owner reading stays outside the decision rules and the historical H labels are unchanged; the neutral-aware identity is not tested at full horizon. Editorial note applied: index §8 now reads "three bracket pairs (six endpoints)". Co-owner acceptance is not PI adoption.
 - **Disposition 1 — acquisition route of the two chat attachments: accepted by the PI (11 Nov 2026).** PI: how older files are obtained is a mechanical matter; there is no requirement that every file be placed under `upload/` by the PI's own hand; what matters is the scientific content. The two files stay as placed. Owner correction to the intake note: the console text is byte-identical to `upload/coil/pi-uploads-received/pairbc.txt`, in the repository since PR #3 — it was a second receipt of an already deposited file; the script copy is byte-identical to the deposited frozen script. Neither attachment added new bytes to the evidence base.
-- **Disposition 2 — local Windows user-directory string in public console evidence: PENDING PI statement.** Fact for that decision: the string `C:\Users\<user id>\Downloads` is not introduced by this release; it has been public on `main` since PR #3 in `upload/coil/pi-uploads-received/pairbc.txt` and `upload/coil/owner-session-outputs/ARSIV/CLI-N3-kalan-kosular.md` (both inside tags `coil-v0.1` … `coil-v0.5`). This release adds two further copies of the same console text and one mention in an intake README.
+- **Disposition 2 — local Windows user-directory string in public console evidence: accepted by the PI (11 Nov 2026)** — "dizin yolu kritik privacy değil, kalabilir". The string stays. Fact recorded for that decision: it is not introduced by this release; it has been public on `main` since PR #3 in `upload/coil/pi-uploads-received/pairbc.txt` and `upload/coil/owner-session-outputs/ARSIV/CLI-N3-kalan-kosular.md` (both inside tags `coil-v0.1` … `coil-v0.5`); this release adds two further copies of the same console text and one mention in an intake README.
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `988a2f0cf36af465eade35e7289fc10348be8f35`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `988a2f0cf36af465eade35e7289fc10348be8f35`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -82,4 +82,4 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 | `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
 
-**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-11):** all files listed above as they stand at the content commit; the result data under `evidence/coil/outputs/icid_results/` and the two intake folders as covered by the listed `SHA256SUMS` files; everything inherited unchanged from `coil-v0.5`; tag `coil-v0.6`. **Limits of effect:** the adoption covers the RUN record's decisions and measured statements within its stated scope; the RUN §6 owner reading is adopted only as labelled there (a conditional computation outside the decision rules, not a re-classification); no historical H label, no κ_frac and not P-κ is changed; RM-07 is not activated; nothing enters rtg-corpus by this adoption.
