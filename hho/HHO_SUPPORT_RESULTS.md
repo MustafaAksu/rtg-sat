@@ -98,13 +98,13 @@ This is an exact identity, independent of locality.
 
 ## 5. Brauer blocks
 
-**5.1 Leaf criterion** (HHO-LEM-LEAF). Let p be inert, and let χ be a leaf of a cyclic-defect p-block whose reduction S occurs, among the other characters of the block pair (χ, χ̄), only in ψ. If ψ does not occur in H¹(C), the χ-part of the cup lattice is unimodular at p.
+**5.1 Leaf criterion** (HHO-LEM-LEAF). Assume a self-dual cup lattice, paired χ/χ̄ blocks, a K_p-realisation of χ and the integral Morita model specified in the claim register (including its Hermitian normalisation). Let p be inert, and let χ be a leaf of a cyclic-defect p-block whose reduction S occurs, among the other characters of the block pair (χ, χ̄), only in ψ. If ψ does not occur in H¹(C), the χ-part of the cup lattice is unimodular at p and v_p(det h_W) is even under the stated rank-8 multiplicity-form identification. This is conditional on the listed integral hypotheses.
 
 *Why.* For L = M ∩ V_Ω and L′ = M ∩ V_Ω^⊥ the discriminant groups L^#/L and L′^#/L′ are G-isomorphic. From L its composition factors are S and S̄ (Brauer–Nesbitt). From L′ they can only come from ψ and ψ̄.
 
 **5.2 The criterion is empty for rank-8 G₃₄ reflection data** (HHO-NEG-LEAF-VACUOUS). There r = 20 and m(ψ₈₄) = 672 − 10·ψ₈₄(s) = 512 ≠ 0.
 
-**5.3 A neighbour's multiplicity is not a discriminant invariant.** The Neighbour Parity Law, v_p(det h_W) ≡ m(ψ) (mod 2), is **refuted** (HHO-WD-CONJ-NPL, by HHO-NEG-NPL-C3F20). The multiplicity of ψ sees ramification in the kernel of χ; the discriminant of the χ-part does not.
+**5.3 Withdrawn Neighbour Parity Law — typed refutation.** The historical proposal HHO-WD-CONJ-NPL (REVIEW A8.3; claim register Part C) was written as v_p(det h_W) ≡ m(ψ) (mod 2). For HHO-NEG-NPL-C3F20, the recorded computation instead concerns the **parabolic-cup** determinant: [det h_par] = [1] while m(ψ) = 43 is odd. It refutes the corresponding universal **parabolic-cup** neighbour-parity rule. By HHO-SG-4, that example does **not**, without an additional cup–polarization identification, establish a refutation for the Jacobian-induced h_W used in §§1–3. The unrestricted historical proposal remains **WITHDRAWN**; no Jacobian-only replacement law is certified. The owner disposition of the historical h_W notation remains open for the next register edition.
 
 ## 6. Open
 
