@@ -22,8 +22,8 @@ A historical source file is frozen and is never edited. It keeps its original wo
 | `h4sel/` | 175 | H4 selection: edge-form and edge-flux, holdout test, P2/P3 with `generic_engine.py`, NEW01/NEW02, toy and block lemmas, braid escapes, G(3,3,3) scans, W5 links, Severn tuple and 90-move replays | cited by v0.2 |
 | `received/` | 174 | Files received from the PI: ChatGPT's reviews, ledger deltas, certificates and packages; the third-family auditor's reports and packages; the PI's relays; `session-start/` holds the 21 Oct uploads | both v0.2-era and later |
 | `literature-reviews/` | 2 | Claude's edge-flux literature review and comparison | cited by v0.2 (Δ7) |
-| `severn-v2/` | 10 | Severn v2 successor audit | **pending** (Δ25–Δ26) |
-| `research-next/` | 1 | Boundary-rank note review | **pending** (Δ25) |
+| `severn-v2/` | 10 | Severn v2 successor audit | in `hcg-v0.3` (Δ25–Δ26) |
+| `research-next/` | 1 | Boundary-rank note review | in `hcg-v0.3` (Δ25) |
 | `nonsplit8/` | 173 | Nonsplit Weil eightfolds: `cyclic_disc_claude.py`, the locality checks, GAP screens, the reports of Δ27 addenda 1–17, and 17 states of the v0.3 log in `deliver*/` | **pending** (Δ27) |
 | `positive/` | 6 | All-powers positive lane: CM rank scan | **pending** (Δ29) |
 | `hho-track/` | 3 | The HHO opening note v0.1 and its bundle folder | **HHO-track source evidence**; custody HHO (Δ28, pending) |
