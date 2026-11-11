@@ -59,7 +59,7 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `7089f57426f2e2555e364f7437a92ee760ca10a9`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `dc6e4a60b90962bec8aeab2bae757ab74a11af0a`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -81,6 +81,6 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 | `coil/COIL_INDEX.md` | `0adab7f11edec5105dfc4ff23dfd3724d734b848a8b8ff36b034bde7bcef6c86` |
 | `coil/COIL_RMT.md` | `07da7a3cec09f957be09099a5e213339036b7fdda67ac77122db865304b4c944` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `fe0461e12c63dc0bdb71aec06605d4e5257a5857bbda5a9385a0864c1ee86795` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `2cf1b006c18f177e9387a38ca807fa8e222845dd82e06ba3e17407dac19ba99b` |
 
 **Adoption scope (PI, 2026-11-11):** all files listed above as they stand at the content commit; the result data under `evidence/coil/outputs/icid_results/` and the two intake folders as covered by the listed `SHA256SUMS` files; everything inherited unchanged from `coil-v0.5`; tag `coil-v0.6`. **Limits of effect:** the adoption covers the RUN record's decisions and measured statements within its stated scope; the RUN §6 owner reading is adopted only as labelled there (a conditional computation outside the decision rules, not a re-classification); no historical H label, no κ_frac and not P-κ is changed; RM-07 is not activated; nothing enters rtg-corpus by this adoption.
