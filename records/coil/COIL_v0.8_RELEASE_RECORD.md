@@ -1,13 +1,13 @@
-# COIL v0.8 — release record (DRAFT): Synthesis v1.0 source package
+# COIL v0.8 — release record: Synthesis v1.0 source package
 
-**Status:** DRAFT — not adopted. Successor of `coil-v0.7`. Scope: intake of two publications received from the PI; a `[SESSION]` source record with a fixed model contract and an `[EXPLORE]` first look; two catalogue rows updated. No preregistration, no campaign, no mechanism record opened, no measured result.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-11 ("v0.8 Benimsiyorum", COIL owner session, after co-owner review `5858029808` ACCEPT on head `03770e6a35b1ce510e74c5064736dcecc7763204`); publication tag `coil-v0.8`. Successor of `coil-v0.7`. Scope: intake of two publications received from the PI; a `[SESSION]` source record with a fixed model contract and an `[EXPLORE]` first look; two catalogue rows updated. No preregistration, no campaign, no mechanism record opened, no measured result.
 
 ## 1. Files
 
 **Intake (unchanged):** `upload/coil-synthesis-sources/` — `72bb4ef7-rtg_synthesis_v1_0_1.pdf` (Synthesis v1.0, doi:10.5281/zenodo.18078442), `430c38e1-dynamical_genesis_v3_1.pdf` (referent of the hash in the PREL pipe item; no COIL work), `README.md`, `SHA256SUMS`.
 **Record (new):** `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` `[SESSION]`.
 **Evidence (new, `[EXPLORE]`):** `evidence/coil/code/synthesis_v1_fracture_clock_explore.py`, `evidence/coil/outputs/synthesis_v1_fracture_clock_explore.json`; `SHA256SUMS` rows appended.
-**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 and `coil/COIL_RMT.md` rows RM-03, RM-04.
+**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 and `coil/COIL_RMT.md` rows RM-03, RM-04; `REGISTRY.md` (COIL row: governing edition `coil-v0.8`).
 
 ## 2. Changes of meaning in live documents
 
@@ -34,12 +34,12 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 
 - Both PDFs read in full by the owner session (17 and 7 pages); SHA-256 values equal those reported by the co-owner session.
 - `python3 -B synthesis_v1_fracture_clock_explore.py` (owner session; Python 3.13, numpy, mpmath): completes, writes the JSON; every number in the source record §3 was read from that JSON or its console output.
-- Not re-run by the co-owner at the time of writing.
+- Co-owner review `5858029808`: both PDF hashes and Git blob identities match; manifest 9/9; independent 50-digit computation reproduces three first-exit values of the `[EXPLORE]` look — (α, r, x₀, M) = (0.98, 3.05, 0.2, 100) → 128, (0.98, 3.05, 0.2, 400) → 412, (0.80, 3.05, 0.2, 400) → 821. This verifies COIL's exploratory computation; it is not a reproduction of the paper's runs. The script itself was not re-run by the co-owner.
 - No frozen file changed; no hash, approval or result invented.
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `8543af5c30726e37e52c215710a731114e474316`. Files not listed are inherited unchanged from `coil-v0.7`.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `8543af5c30726e37e52c215710a731114e474316`. Files not listed are inherited unchanged from `coil-v0.7`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -52,5 +52,6 @@ Limits: exploratory, no locked criterion, cannot enter a decision (Charter §0.1
 | `evidence/coil/outputs/SHA256SUMS` | `033e4d24239b2f31ed225895de5d9ed5ee817e7f0d67c9775912d0c75abb4459` |
 | `coil/COIL_INDEX.md` | `418a0a3862f3a440e4c23d38678d3c61a8ef0da507d6272aa4531df1839635ba` |
 | `coil/COIL_RMT.md` | `8d3de59c809e6aea1878d61159fa2567291c86066bd808c4040e8172161e6709` |
+| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 
-**Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
+**Adoption scope (PI, 2026-11-11):** the files listed above as they stand at the content commit; the two PDFs as covered by `upload/coil-synthesis-sources/SHA256SUMS`; everything else inherited unchanged from `coil-v0.7`; tag `coil-v0.8`. **Limits of effect:** the adoption covers the source identity, the model contract and the catalogue wording; the numerical statements stay `[EXPLORE]` and cannot enter a decision; no statement of either publication becomes a COIL result or an RTG result; RM-03 and RM-04 are not opened; no experiment is authorised.
