@@ -44,18 +44,18 @@ Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the point
 
 ## 5. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `241f728498eb85d70a7b3ddabc79aa89dd45e253`. Files not listed are inherited unchanged from `coil-v0.6`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `9a18adb89ca49710aae79fb92ef99fab1cdc99f8`. Files not listed are inherited unchanged from `coil-v0.6`.
 
 | file | SHA-256 at content commit |
 |---|---|
-| `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` | `59721dc1c2cb6ecd9d18baa1e5b7e85ddfbe9e57c356d3d8208998691250f892` |
-| `evidence/coil/code/tri0_reduction_check.py` | `042277768c3aad790991cbfdae53e4ecc9161ee72fade3c7b32444d4acf4a756` |
+| `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` | `0b08b160d03bf218ef0acff5becb6161cbc14a6214d84859eba19bd431e2666c` |
+| `evidence/coil/code/tri0_reduction_check.py` | `b8f393ba51779aeb575f6b21a09744524226dbbbbf946df8bab04db8a49413b3` |
 | `evidence/coil/outputs/tri0_reduction_check.json` | `8f0cd3e522470760c3e82475c56acb4f3e8190a57b713d03a497437e371a1a79` |
-| `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` | `10c515d08523c74693da753b765495c731a99a3e4657de84d291e8f4da972273` |
-| `evidence/coil/code/SHA256SUMS` | `a8ebbca21c446d92c66e85faefc43648e93dfab115508b646be97226a12245e8` |
+| `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` | `95a6cace3bc451c1196e4817c591d733d3d1bda33c4e4f9fb9a7a6e32a14898c` |
+| `evidence/coil/code/SHA256SUMS` | `0d80bacf172ffa408368da06b3a3d9d21e71a117c8d419e56a12e66774e23388` |
 | `evidence/coil/outputs/SHA256SUMS` | `ad03510e0caff5043cc844eda77fbd3106ba3062a0539d5350fa3e277868f533` |
-| `evidence/coil/prereg/SHA256SUMS` | `ca135ba9330a4050f64cd4d7b599b6897d28a91fa850595572463facb58b4e7c` |
-| `coil/COIL_INDEX.md` | `09dcd457e0e42932435c90678b915c9870e1bc49e9b2394f86f0399fcc656f77` |
+| `evidence/coil/prereg/SHA256SUMS` | `35e04c3b0fdd298d876ce3bf99f2c5a84f943525f92fa5714010216ec91ce127` |
+| `coil/COIL_INDEX.md` | `a124348c68bd384352ff90d56f5cc8d71dc83d0c53e8ffe76fdeea91cc8d4487` |
 | `coil/COIL_RMT.md` | `bdad3c430d384408bfdc4b3253d6e9acb541fb1f4eb9f6529db9ef9b25fbd396` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
