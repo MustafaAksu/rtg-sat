@@ -59,7 +59,7 @@ Deviations of the run from the locked CLI (RUN §1): executed on Ubuntu instead 
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `988a2f0cf36af465eade35e7289fc10348be8f35`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `7089f57426f2e2555e364f7437a92ee760ca10a9`. Files not listed are inherited unchanged from `coil-v0.5`, except the result data and intake folders, which are covered by their own `SHA256SUMS` files listed here. Re-hash after any later change and before the tag.
 
 | file | SHA-256 at content commit |
 |---|---|
