@@ -1,0 +1,62 @@
+# COIL v0.7 — release record: tri0 relative-coordinate analysis; RM-04 design draft
+
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-11 ("v0.7'yi benimsiyorum", COIL owner session, after co-owner final review `5855203213` ACCEPT on head `cfeb02ac2ae7318ebbc3060cf5857cd3b45c898a`); publication tag `coil-v0.7`. The PI merged PR #32 (`main` `d0a41f6`) before this adoption entry was written; the entry, the registry row and the re-bound manifest are added by a follow-up pull request and the tag is set on its merge commit. Successor of `coil-v0.6`. Scope: one `[DERIVED]` analytic record with its fail-closed checker, and one **unlocked** preregistration draft. No campaign, no measured result, no mechanism record opened.
+
+## 1. Files
+
+**Live (new):** `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` `[DERIVED]`.
+**Evidence (new):** `evidence/coil/code/tri0_reduction_check.py`, `evidence/coil/outputs/tri0_reduction_check.json`; `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` — an **unlocked working draft**: adoption of v0.7 would adopt it only as a draft and would neither lock nor authorise an experiment, nor open RM-04. `SHA256SUMS` rows appended.
+**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer, statement, and the archived reference of the positive-control laboratory); `coil/COIL_RMT.md` RM-04 row (the same reference); `REGISTRY.md` (COIL row: governing edition `coil-v0.7`).
+**Unchanged:** every frozen prereg/RUN/script and result file of earlier releases; RM-04's catalogue status ("not opened").
+
+## 2. Content and origin
+
+| # | Statement | Origin | Check |
+|---|---|---|---|
+| A1 | exact reduced map of tri0 in (q, r, δ, s) | co-owner proposal of 11 Nov 2026; re-derived by the owner | T1 symbolic; T2 against the frozen PAIRBC arithmetic (288 states) |
+| A2 | symmetries; chart identification (q, δ) ~ (q + π, δ + 2π) | owner | T5 (with negative control) |
+| A3 | cluster Jacobian = diag(J_∥, J_⊥) of ICID | owner (consistency with PREREG-MM1-ICID §4) | T3 |
+| A4 | closure defect aκ sin q [1 − cos(δ/2)], leading order δ²/8, no linear term | co-owner; re-derived | T4 (with negative control) |
+| A5 | phase-only second-order closure on the cluster | co-owner; re-derived | T6 |
+| A6 | mean field Z = e^{iq} cos(δ/2) as gauge-clean macro variable; q is a chart | owner | T7 |
+| A7 | what a window of y determines: local identifiability under det ≠ 0 (`[THM — conditional]`), past-window recovery on a fixed grid (`[NUM]`) | determinant: co-owner (review `5854573953`); grid recovery: owner | T9; T8 (with negative control) |
+| A8 | fixed outcomes F1–F3, F5; **F4 withdrawn as unconditional** | owner, corrected | — (argument) |
+| A9 | degenerate invariant sets q = r = 0 and q = π, r = 0: y constant, defect zero, no information in any window; transverse growth without loss of predictability | co-owner (review `5854573953`) | T10 |
+| A10 | common velocity W⁺ = (1 − a)W: physical, decoupled, not a gauge | co-owner's terminology point; identity by owner | T11 |
+
+Changes of meaning in live documents: `COIL_INDEX.md` §8 item 3 gains the pointer and a statement of what the analysis fixes and does not fix. Nothing else.
+
+**Correction after co-owner review `5854573953` (ACCEPT WITH CHANGES), same pull request.** The first version of the analysis (commit `10b948e`) stated (i) that a history effect relative to y is forced whenever δ ≠ 0 and (ii) an identifiability result written with future observations r_{n+1..n+3}. Both overstated the evidence: (i) is false on the invariant sets of A9; (ii) did not by its wording concern a past-based predictor. Now: F4 is withdrawn as unconditional; the identifiability statement is the conditional theorem A7 plus a past-window grid check (the recovery re-indexed to y_{n−3}, …, y_n and propagated to step n); the draft's P1 is a candidate cell, not a forced failure; Q-A is primary and Q-B a conditional prediction; "gauge" is no longer used for the common velocity; Z is described as a different reduced description, not a chart of y.
+
+**Second correction, co-owner final review `5854759172` (mathematical core accepted; one scope correction R1 and two qualifiers R2).** R1: the sentence that a history effect "holds where (9) is met" is replaced in the analysis §7 and the draft §1 by the reviewer's wording — a past window locally reconstructs the hidden state; whether that improves a specified prediction over current y alone depends on horizon, target, loss and ensemble and is not established — with the reviewer's counterexample (non-zero determinant at m, q_{m+2} = 0). R2: F3 and the index state the defect condition as sin q ≠ 0 **and** cos(δ/2) ≠ 1; decay of the common velocity is conditioned on 0 < a < 2; the checker's comment no longer says "gauge".
+
+## 3. Checks
+
+- `python3 -B tri0_reduction_check.py` (owner session; Python 3.13, numpy, sympy): **REDUCTION CHECK PASS** (T1–T11). The checker needs `sympy`. It imports the frozen `pairbc_experiment.py` by hash and computes no orbit longer than four updates.
+- Not independently re-run by the co-owner at the time of writing.
+- No frozen file changed; no hash, approval or result invented.
+
+## 4. Open points
+
+1. Draft §6 design choices O1–O8; the co-owner's direction: design Q-A first, bind Q-B as a conditional prediction.
+2. RM-04 remains **not opened**; the co-owner does not recommend opening it yet. Opening is the PI's decision.
+3. **Positive-control laboratory — reference located, model not established (11 Nov 2026).** The phrase "non-Markov positive-control laboratory identified" goes back to the archived RM-02 record v0.1, item 12 (`upload/coil/owner-session-outputs/ARSIV/RM-02-kayit-v0.1.md`, SHA-256 `ce333328185f2a4d2effaab7b46d5eae4d931052c29a1bce49545b1659036c74`): "the memory-kernel model of Synthesis … fracture clocks τ_exit ≈ kM + c", an idea-log `[CAND]`; item 11 cites "RTG Synthesis v1.0" and attributes to it a cost law P_floor(λ) ≈ γλ + E₀. The index and RMT rows now quote this reference. **What is not established:** the document "RTG Synthesis v1.0" is not held; the web page "The Power Rule as Chaos's Silent Architect — Synthesis v7.3" (rtgtheory.org, 15 Dec 2025), read by both sessions on 11 Nov 2026, contains a finite-memory logistic map with the law τ_exit = kM + c but **no** P_floor law and no "spectral impedance", so it is a different document, and identity of its model with the one meant in item 12 is not shown. Following the co-owner's note, the v7.3 model is **not** written into the index as the historical laboratory; it is a *new candidate* positive control, to be handled in a separate work package (source identity, fixed model contract, independent reproduction, M = 1 control, precision test), not in this release. It is not tri0. Not pinned to any `rtg-corpus` tag ("fracture clock" and "RTG Synthesis" do not occur in `dsn/` or `atlas/` of `rtg-corpus` `main` as read on 11 Nov 2026).
+
+## 5. Adoption manifest
+
+**Status: ADOPTED (2026-11-11).** SHA-256 at the **content commit** `2f273360a5ad4e9a7155a335a382c88755bdaef5`. Files not listed are inherited unchanged from `coil-v0.6`.
+
+| file | SHA-256 at content commit |
+|---|---|
+| `coil/ANALYSIS_TRI0_RELATIVE_COORDINATES.md` | `0b08b160d03bf218ef0acff5becb6161cbc14a6214d84859eba19bd431e2666c` |
+| `evidence/coil/code/tri0_reduction_check.py` | `b8f393ba51779aeb575f6b21a09744524226dbbbbf946df8bab04db8a49413b3` |
+| `evidence/coil/outputs/tri0_reduction_check.json` | `8f0cd3e522470760c3e82475c56acb4f3e8190a57b713d03a497437e371a1a79` |
+| `evidence/coil/prereg/PREREG-RM04-TRI0-CLOSURE-DRAFT.md` | `95a6cace3bc451c1196e4817c591d733d3d1bda33c4e4f9fb9a7a6e32a14898c` |
+| `evidence/coil/code/SHA256SUMS` | `0d80bacf172ffa408368da06b3a3d9d21e71a117c8d419e56a12e66774e23388` |
+| `evidence/coil/outputs/SHA256SUMS` | `ad03510e0caff5043cc844eda77fbd3106ba3062a0539d5350fa3e277868f533` |
+| `evidence/coil/prereg/SHA256SUMS` | `35e04c3b0fdd298d876ce3bf99f2c5a84f943525f92fa5714010216ec91ce127` |
+| `coil/COIL_INDEX.md` | `a124348c68bd384352ff90d56f5cc8d71dc83d0c53e8ffe76fdeea91cc8d4487` |
+| `coil/COIL_RMT.md` | `bdad3c430d384408bfdc4b3253d6e9acb541fb1f4eb9f6529db9ef9b25fbd396` |
+| `REGISTRY.md` | `30259787f584245957da9476ff1cb849d8039fc50c8185d3b9ee1c716721f6bb` |
+
+**Adoption scope (PI, 2026-11-11):** the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.6`; tag `coil-v0.7`. **Limits of effect:** `PREREG-RM04-TRI0-CLOSURE-DRAFT.md` is adopted **as an unlocked draft only** — it is not a preregistration, authorises no run and fixes no threshold, cell or estimator; **RM-04 is not opened**; the analytic record establishes identities of the closed tri0 map, not an effective-memory mechanism, a forecasting improvement, a physical validation or any RTG result; the positive-control reference stays as quoted in the index (model not established); nothing enters rtg-corpus by this adoption.
