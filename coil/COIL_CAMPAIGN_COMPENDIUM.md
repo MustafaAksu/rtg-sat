@@ -152,6 +152,8 @@ All files in `evidence/coil/code/`.
 
 **ICID** (`PREREG-MM1-ICID-v1.0`, `RUN-MM1-ICID-v1.0`): 14 cells — the eight PAIRBC bracket/sentinel cells (path3 A 2.30/2.35; tri0 A 2.60/2.65, B 2.750/2.775, C 2.775/2.800) and tri0 A/B/C at κ = 1.50, 2.00; PAIRBC's ensemble and horizons (burn 70 000, 200 000 updates, 4 quarters, ε_λ = 10⁻³); layer H = the frozen PAIRBC arithmetic per IC, layer D = 2×2 cluster block products, sector fractions, three explicit generic seeds; no RNG. Executed on Ubuntu (Python 3.12.3, numpy 2.5.4), not on the Windows environment of the other campaigns.
 
+**CLUSTEROFFSET** (`PREREG-MM1-CLUSTEROFFSET-v1.0`, `RUN-MM1-CLUSTEROFFSET-v1.0`): 15 tri0 cells (Pairs A/B/C × κ = 0.75, 1.50, 2.00, bracket-low, bracket-high); base states = ensemble indices 0, 6, 12, 18, 24 after 70 000 burn-in updates; one unperturbed and eight offset runs each (directions δ and s; ε = 10⁻², 10⁻⁴, 10⁻⁶, 10⁻⁸) plus one q = r = 0 control per cell; window 200 000 updates, operational labels on the last quarter; no tangent vector in 6-D, exact 2×2 J_⊥ products along the unperturbed orbit; no RNG; fail-stop runner. Executed on the same Ubuntu environment as ICID.
+
 **Determinism and environment:** no campaign **uses an RNG** — all IC grids are fixed lists, so the protocol is **fixed-input deterministic**. **[COR]** "Results are bit-deterministic" was too strong: bit reproducibility is **expected** inside a pinned environment, but bit identity across different NumPy/BLAS/CPU environments is **not certified**. Execution environment: Python 3 + numpy (Windows, conda env `RTG`). Where float arithmetic is critical (ULP floor, U-curve minima) double precision is assumed.
 
 ## 10. Compendium completeness certificate — **WRITTEN, first run FAIL** `[expected]`
