@@ -67,7 +67,7 @@ Deviations of the run (RUN §1): the runner log contains `nohup: ignoring input`
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `c38ae81740f02a26f7a2125ef0c98050becd8075`. Files not listed are inherited unchanged from `coil-v0.8`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `6fce65f8b7e69db08c3676997f4310b5ded8bb45`. Files not listed are inherited unchanged from `coil-v0.8`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -78,14 +78,14 @@ Deviations of the run (RUN §1): the runner log contains `nohup: ignoring input`
 | `evidence/coil/code/clusteroffset_run.sh` | `cc33140d155bd858bbe91794926d5a1c70be917b03b72eb4490ec897cb8eb083` |
 | `evidence/coil/code/SHA256SUMS` | `bce87ae61764b3f9b3e033ad5fba9c57275dedd734b5ed0131bf3b53b712838c` |
 | `evidence/coil/prereg/SHA256SUMS` | `704cc92c132ea2d69a097cd85b025650f5a84cad5bd2dc4e8c627963bf3a3904` |
-| `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/run/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/README.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `upload/coil-clusteroffset-results/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/records/RM-02.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_INDEX.md` | `144ca4e73a6ba39ca651f0b42a70dd1a78e5f3d4e28b6e3f9e9cb4274eb34e1d` |
+| `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md` | `8e43d25f413d3af4a9af2e1bdf3eb8ba1958c1747303c4faf94b215524a74a74` |
+| `evidence/coil/run/SHA256SUMS` | `c41aa44c4eaf1ad06f823d2ccb9380658bf7d3b2d62092b68a82c25846dcba46` |
+| `evidence/coil/outputs/SHA256SUMS` | `57df03a1075b3228a2a3b4aa2dedc696720042f43bfdbbf3da8bf03453bc69ef` |
+| `evidence/coil/outputs/README.md` | `6a748dabfaa1d4b258691a80f17c5f135ea0f124fa380b964513dba80f83c58b` |
+| `upload/coil-clusteroffset-results/SHA256SUMS` | `a6ff01d4937c6ff88cd78499daa5abe780829d030f1e58259ec49d17c9a7705f` |
+| `coil/records/RM-02.md` | `5590ea7018df66d02d8af9338fe6a77768809ba2b3627a40b8a75d4b6f3cc12a` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `b9c732db628e0de75ab9e8571def9c399762f9d473350026b8ac3a80e45ce762` |
+| `coil/COIL_INDEX.md` | `f3ba4b0d9bd8110472fb2f1bdec3a5fbe85f55d4e692747ceadbbdd0818b2874` |
 | `.gitignore` | `416c7570e0bc89b87a0766a2352e9246ed144dc2654f0b6710a6ac5e11ac3399` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
