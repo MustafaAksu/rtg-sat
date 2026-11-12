@@ -72,8 +72,32 @@ Script `evidence/coil/code/synthesis_v1_window_width_explore.py` (output `eviden
 
 - **O7 — onset at the computed crossing.** In all 28 groups with α ≤ 0.96 the cell at r_s − 0.01 is stationary (range ≤ 1.1·10⁻¹³ over the last 5000 steps) and the cell at r_s is not (range ≥ 1.4·10⁻³). The onset of non-stationary motion sits at the closed-form r_s to within one grid step.
 - **O8 — the band narrows monotonically as α → 1** in all four (M, x₀) series, from 0.46–0.60 at α = 0.70 to at most one grid step from α = 0.96 on; at α = 1 the first exit is at or below r_s in all four groups. Exits are contiguous above the first exit in 39 of 40 groups (exception: α = 1, M = 10, x₀ = 0.4, one non-exiting cell at k = 46).
-- **O9 — how the band ends changes with α.** At α ≤ 0.80 the last non-exiting cell oscillates over most of the interval (range 0.47–0.90): the motion grows until it meets the wall. At α = 0.96–0.99, in the 14 groups that have a non-exiting cell at r_s, that cell has a range of 4·10⁻⁴–8·10⁻³ and the next cell exits: no bounded oscillation of intermediate size is seen. `[HEUR]` This is what a change in the character of the crossing would look like, and §3.6 gives a reason to expect one at α = 1 — but nothing here establishes it.
+- **O9 — how the band ends changes with α.** At α ≤ 0.80 the last non-exiting cell oscillates over most of the interval (range 0.47–0.90). `[COR]` The earlier reading "the motion grows until it meets the wall" is too simple: §4b shows that the bounded motion stays well inside the interval over most of the band, widens sharply within the last few thousandths of r, and the exits are isolated events at erratic times. At α = 0.96–0.99, in the 14 groups that have a non-exiting cell at r_s, that cell has a range of 4·10⁻⁴–8·10⁻³ and the next cell exits: no bounded oscillation of intermediate size is seen. `[HEUR]` This is what a change in the character of the crossing would look like, and §3.6 gives a reason to expect one at α = 1 — but nothing here establishes it.
 - **Horizon caveat.** W is horizon-dependent: 6 exits in this scan occur after step 20 000 (the latest at 26 139), so cells counted as non-exiting next to the boundary may exit later, and W is an upper estimate at N = 40 000. Several cells at k = 0 were still growing at the end.
+
+### 4b. Third look: interventions that keep the local structure (candidate D1) `[EXPLORE]`
+
+Co-owner review `5874140706` (ACCEPT of §4a, with two limits taken over here: a negative W is a signed boundary separation, not a band width; non-stationary motion in the last 5000 steps does not show that the motion is stable or regular) proposed f_{r,η}(x) = r x(1 − x) + η b(x) with b vanishing identically near the stationary branch, both signs of η, and a null control.
+
+Script `evidence/coil/code/synthesis_v1_d1_intervention_explore.py` (output `evidence/coil/outputs/synthesis_v1_d1_intervention_explore.json`; run twice, identical). α = 0.80; groups (M, x₀) = (10, 0.4) and (30, 0.1); C^∞ bumps with supports **hi** (0.84, 1.00), **lo** (0.00, 0.20), **in** (0.66, 0.76), **ctl** (1.02, 1.10); x̄ = 0.527 / 0.535 at r_s lies outside all of them. η ∈ {±0.02, ±0.05, ±0.1}; r step 0.004 around the unperturbed first exit; 100 000 steps.
+
+First exit r (unperturbed: **2.4086** and **2.5340**):
+
+| bump | group | η = −0.10 | −0.05 | −0.02 | +0.02 | +0.05 | +0.10 |
+|---|---|---|---|---|---|---|---|
+| in | M = 10 | 2.3326 | 2.3526 | 2.3846 | 2.4566 | 2.5046 | none ≤ 2.5286 |
+| in | M = 30 | 2.4660 | 2.4980 | 2.5140 | 2.5540 | 2.5620 | none ≤ 2.6580 |
+| hi | M = 10 | 2.4046 | 2.4046 | 2.4086 | 2.4086 | 2.4126 | 2.4166 |
+| hi | M = 30 | 2.5220 | 2.5260 | 2.5300 | 2.5340 | 2.5340 | 2.6060 |
+| lo | M = 10 | 2.4086 | 2.4086 | 2.4086 | 2.4086 | 2.4086 | 2.4086 |
+| lo | M = 30 | 2.5340 | 2.5340 | 2.5300 | 2.5340 | 2.5300 | 2.5300 |
+
+- **O10 — the onset does not move.** For hi, in and ctl the three onset cells are identical to the unperturbed ones in both groups (stationary at r_s − 0.01, non-stationary at r_s), as the construction requires. For lo in the group x₀ = 0.1 the cell at r_s − 0.01 stays stationary, but the two other onset cells differ: x₀ lies inside the support of lo, so the initial phase is altered — a design fault of that bump for that group, not a shift of r_s.
+- **O11 — the null control is exact.** ctl (η = ±0.1) reproduces every unperturbed cell value for value.
+- **O12 — the exit boundary moves, and by how much depends on where f is changed.** The bump inside the range of the bounded motion (in) shifts the first exit monotonically in η, by −0.076 … more than +0.12 (M = 10) and −0.068 … more than +0.124 (M = 30): raising f on (0.66, 0.76) delays the exit, lowering it advances it. The bumps outside that range move it little: lo by at most one grid step; hi by −0.012 … +0.008, except one cell series (M = 30, η = +0.1: +0.072).
+- **O13 — the exit is not a single transversal event.** Over all configurations the 1259 exiting cells exit at steps between 72 and 93 316; next to the boundary the exit step varies erratically from cell to cell; 1212 exits are through the lower wall (x < 0), usually one step after a visit near the upper wall. In 5 of 42 configurations a non-exiting cell lies above the first exit. The bounded motion in the band was not periodic where checked (session check, not deposited: no period ≤ 4000 at nine r values of the group M = 10). Unperturbed, its range three grid steps below the first exit is [0.28, 0.75] (M = 10) and [0.15, 0.85] (M = 30), and in the last non-exiting cell [0.13, 0.86] and [0.05, 0.91]; across all configurations the last non-exiting cell has minima 0.01–0.26 and maxima 0.76–0.94.
+
+**Reading.** (i) The separation the plan asked about is seen at `[EXPLORE]` level: an intervention can move the exit boundary by many grid steps while the onset stays where the linearisation puts it. By §5 this is allowed by the null and confirms nothing by itself. (ii) The first-order rule proposed in the review, dr_exit/dη = −∂_η x_N/∂_r x_N, presupposes one transversal wall-crossing event that persists under the intervention; by O13 that premise does not hold in these cells, so the rule is `INAPPLICABLE` here as it stands. (iii) A simple substitute fails in sign: treating the bump as an effective change of r (projection of η b on ∂f/∂r = x(1 − x), positive on the support of in) predicts an earlier exit for η > 0, and the exit is later. (iv) "Exit when the range of the bounded motion reaches a fixed value" is not supported on this grid: the last non-exiting cell has maxima between 0.76 and 0.94 across configurations. **No quantitative rule has been found yet.**
 
 ## 5. Null rival (RMT, null/rival field)
 
