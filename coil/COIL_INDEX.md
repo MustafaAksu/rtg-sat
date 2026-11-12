@@ -77,7 +77,7 @@ Frozen originals in `evidence/coil/run/`.
 | RUN-MM1-RANK v1.0 | **INCONCLUSIVE** — the derivative estimate did not converge in the tested h range; the theorem could not be applied numerically (mathematical non-differentiability **not shown**) |
 | RUN-MM1-RESOLVABILITY v1.0 | T = 270 measured (h_res 3.64e-14 regular, 2.33e-12 chaos); T ≥ 540 LEFT-CENSORED; S(T) exponential `[EXPLORE]`; h_sep = 1/S `[HEUR]` ≠ h_res; direction-aware floor h_coeff(d) |
 | RUN-MM1-PAIRBC v1.0.1 | **CLOSED**: P-κ + REPLICATION-CONCORDANT; β_c not a-invariant |
-| RUN-MM1-CLUSTEROFFSET v1.0 | **CLOSED**: a cluster-breaking offset ends on the cluster below the first linear threshold and off it, without net relative winding in the last quarter, where λ_⊥ > 0 — unanimous in all 15 cells; end-state amplitude statistics independent of offset size and direction |
+| RUN-MM1-CLUSTEROFFSET v1.0 | **CLOSED**: a cluster-breaking offset ends on the cluster below the first linear threshold and off it, without net relative winding in the last quarter, where λ_⊥ > 0 — unanimous in all 15 cells; lifted relative phase within one turn of its initial value throughout the window (sweeps of more than a turn between instants occur in the bracket cells); Q4 sup statistics of the 40 runs of a cell close to each other (10⁻⁸ in plateau cells, up to ~2 % in bracket cells), no common attracting set established |
 | RUN-MM1-ICID v1.0 | **CLOSED**: the CF = 0.20 plateau members are the five cluster-subspace ICs; their CHAOS label is tangent growth transverse to an invariant orbit; historical reference counts reproduced; P-κ unchanged |
 | EXEC-PATCH-RM02-N2-001 | the event in which the criterion stopped the code |
 

@@ -45,11 +45,11 @@ The reviewer accepted the Q-B treatment (descriptive ratio, no decision) and rec
 
 ## 3a. Run phase: result and changes of meaning in live documents
 
-Result (`RUN-MM1-CLUSTEROFFSET-v1.0.md`; scope `[NUM | MM-1, tri0, frozen PAIRBC arithmetic, Pairs A/B/C, the 15 locked cells, five burned-in cluster states, two offset directions, four offset sizes, finite window, one environment]`): result set COMPLETE AND VALID, runner marker ALL-DONE; **D-FATE = Q4-ON-CLUSTER in the three κ = 0.75 cells and Q4-OFF-CLUSTER-NO-NET-WINDING in the twelve cells with λ_⊥ > 0, 40/40 in every cell**; no MIXED, UNRESOLVED or non-finite run; G-BASE 60 AGREE (difference exactly 0.0) + 15 NO-ICID-COUNTERPART; D-LIN 240/240 PASS; N-DEG 15/15 EXACT. Expectations E1 and E2 met; the question E2 left open is answered within scope. The Q-B ratio (0.930 … 1.044) is reported as descriptive, no decision, no claim.
+Result (`RUN-MM1-CLUSTEROFFSET-v1.0.md`; scope `[NUM | MM-1, tri0, frozen PAIRBC arithmetic, Pairs A/B/C, the 15 locked cells, five burned-in cluster states, two offset directions, four offset sizes, finite window, one environment]`): result set COMPLETE AND VALID, runner marker ALL-DONE; **D-FATE = Q4-ON-CLUSTER in the three κ = 0.75 cells and Q4-OFF-CLUSTER-NO-NET-WINDING in the twelve cells with λ_⊥ > 0, 40/40 in every cell**; no MIXED, UNRESOLVED or non-finite run; G-BASE 60 AGREE (difference exactly 0.0) + 15 NO-ICID-COUNTERPART; D-LIN 240/240 PASS; N-DEG 15/15 EXACT. Expectations E1 and E2 met; the question E2 left open is answered within scope at the level of the operational labels. The Q-B ratio (0.930 … 1.044) is reported as descriptive, no decision, no claim.
 
 | # | Document | Before | Now |
 |---|---|---|---|
-| W1 | RM-02.h | "not established: the fate of orbits perturbed off the cluster subspace, the nature of the within-cluster motion" | measured in the stated scope: operational Q4 labels per cell; no relative turn of nodes 1 and 2 during the window; end-state amplitude statistics independent of the offset; base motion LIBRATING; list of what remains not established (attractor, stability, long-time behaviour, regularity, relation to the non-cluster ICs, memory) |
+| W1 | RM-02.h | "not established: the fate of orbits perturbed off the cluster subspace, the nature of the within-cluster motion" | measured in the stated scope: operational Q4 labels per cell; lifted δ within one turn of its initial reference and no net Q4 displacement of a turn, with sweeps of more than a turn between instants in the bracket cells; Q4 sup statistics of a cell's 40 runs close to each other (10⁻⁸ plateau, up to ~2 % bracket), no common attracting set established; base motion LIBRATING; list of what remains not established (attractor, stability, long-time behaviour, regularity, relation to the non-cluster ICs, memory) |
 | W2 | COIL_INDEX §8 item 3 | prereg "locked … not yet run" | locked and run, with the D-FATE result and its operational character |
 | W3 | COIL_INDEX §8 item 4 (RM-07) | open: fate of perturbed orbits; within-cluster motion; plateau cells not run | the fate is measured and is stated not to be an activation ground; open: stability, long-time behaviour and regularity of the off-cluster motion; plateau cells not run. RM-07 stays parked |
 | W4 | COIL_INDEX tables; compendium | no CLUSTEROFFSET rows | prereg, run, code rows; protocol entry |
@@ -57,6 +57,15 @@ Result (`RUN-MM1-CLUSTEROFFSET-v1.0.md`; scope `[NUM | MM-1, tri0, frozen PAIRBC
 Not changed: P-κ, every κ_frac, every historical classification, the ICID results, SG-COIL-1, any RTG reference; RM-04 not opened. The owner's `[HEUR]` reading (pair-independence of the libration amplitude at equal κ) is in RUN §6, labelled as outside the decision rules, and is **not** carried into any live document.
 
 Deviations of the run (RUN §1): the runner log contains `nohup: ignoring input` although the CLI said it must be empty; two columns of the cell tables are written as `np.float64(<value>)`. Neither touches a decision.
+
+## 3a′. Interpretation corrections after co-owner review `5869623213` (D-FATE and evidence chain accepted; two text corrections required)
+
+| Item | What the first RUN text said | Corrected statement |
+|---|---|---|
+| R1 | "No relative turn of nodes 1 and 2 occurs at any step of any run"; "without ever completing a turn during the window" | true only relative to the initial reference (|δ_n − δ₀| < 2π at every update; net Q4 displacement < 2π). Between instants inside the window lifted sweeps of more than 2π occur in the bracket cells: every-update Q4 record ≥ 2π in 31/240 runs; decimated Q4 traces ≥ 2π apart in at least 128/240 (reviewer's count, reproduced by the owner); example cell 4, IC 0, D1, ε = 10⁻⁶: 6.474. Plateau cells: bounded below 2π by |δ| ≤ 2.722. Absence of every local turn is not claimed; no label is changed |
+| R2 | "the Q4 amplitude statistics do not depend on the offset" | "close within stated ranges": ≤ 1.1 × 10⁻⁸ in the plateau cells; up to about 2 % in the bracket cells; sup |wrap δ| capped at π there; dependence on offset, base state or window length not separately determined; no common attracting set, basin or asymptotic independence |
+
+Changed: RUN §4 items 1–3 and §6; RM-02.h (iii); index RUN row; W1 above. Unchanged: the locked prereg, the executor, the runner, every result file, every label, D-FATE. The owner's `[HEUR]` reading stays in RUN §6, restricted to the plateau cells and marked speculative, as the reviewer allowed. The mistake in R1 was the owner's: a bound on |δ| about one reference was read as a bound on the difference between any two instants.
 
 ## 3b. Checks, run phase
 
