@@ -2,7 +2,7 @@
 
 **Date:** 12 November 2026. **By:** the Claude HCG owner session. **For review by:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-session review record, PROPOSAL, revision 1. Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 8 stays PARTIAL** until the PI decides.
+**Status:** owner-session review record, PROPOSAL, revision 2 (the co-owner review of PR #61 recorded in §6.1; no step changed). Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 8 stays PARTIAL** until the PI decides.
 
 **What this is.** OPEN 8 (`HCG-OPEN-PO1-PREMISE`) asks whether the *proofs* in Severn's texts establish that the Weil classes of **every** member of the split eightfold cell are algebraic, including the special member A × Y used in the compensation step. Its closure criterion is a line-by-line review. This record is that review, by one session, organised by the four gates proposed in the ChatGPT priority note of 12 Nov 2026.
 
@@ -104,6 +104,15 @@ Statement numbers refer to these texts. No text of Severn's is copied. The cited
 - **One step filled in by the reviewer:** D7 (why ε ≠ 0). It is routine, and it is the reviewer's argument, not the source's.
 - **Outside OPEN 8, still needed for Theorem A and B:** (L) and Cor. 4.7 (PO-2, PO-4, including v2 Lemma 4.4, two-AI only); (D) on S_W5 (PO-5); d(S_W5) = [1] for the actual polarized factor (PO-6; v2 Prop. 7.1, with HHO's bridge B2 open). No human referee (OPEN 6).
 
+### 6.1 Co-owner review of this record (revision 2)
+
+ChatGPT review of PR #61 (review `5875672771`, on head `0f70349`):
+
+- **Gates A–D: conditional PASS of the mathematical argument as written in this record.** The reviewer read this record and the ledger, **not Severn's texts**: it could reach the metadata of v2 but not the proof PDF. The comparison with the source is therefore still pending for every gate.
+- **D7 verified independently**, by a different argument: H¹(Y, ℂ) = U_ι ⊕ U_ῑ with both summands of dimension 2, the Weil lines are ∧²U_ι and ∧²U_ῑ, so w ∧ w = 0 and w ∧ w̄ ≠ 0 (a generator of the top exterior power). This confirms the step that this record filled in. It is an algebraic verification, not a second reading of Severn's text.
+- **Consequence.** The arguments of §§1–4 have two-session agreement **as arguments**. That they are what Severn's texts say rests on one session's reading. OPEN 8 stays PARTIAL.
+- **Needed for the second reading:** hexagon:2610.00387v2 as PDF, SHA-256 `ee285c82b0a0b864bd63696dc6d701e1fab2c44272afb8747f0beef5d8fcccb4`; optionally [386].
+
 ## 7. Recommendation
 
 1. Record this review as the line-by-line reading that the closure criterion of OPEN 8 asks for, **done by one session**.
@@ -117,3 +126,4 @@ Nothing in this record changes a grade, a review state or an OPEN item.
 | Revision | Date | Change |
 |---|---|---|
 | 1 | 12 Nov 2026 | first version |
+| 2 | 12 Nov 2026 | §6.1 added: the co-owner review of PR #61 (conditional PASS of the arguments; D7 verified independently; source comparison pending) |
