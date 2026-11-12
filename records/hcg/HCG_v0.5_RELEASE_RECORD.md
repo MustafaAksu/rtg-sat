@@ -96,3 +96,21 @@ No frozen source file in `evidence/hcg/` or `upload/hcg/` is changed.
 | Publication | PI, same message | "3- Tagı ben atacağım" — the PI creates the annotated tag `hcg-v0.5`; the owner session supplies the command |
 
 Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
+
+## 9. Adoption manifest
+
+**Status: ADOPTED (2026-11-12).** SHA-256 of the bytes at the **content commit** `02d0929d26cf9c15f85046208e964936e538114b` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hcg/HCG_STUDY_LEDGER.md` | the adopted scientific record | `650c301f8465536705c852113fa7c2e2288d8c3e3cae99fa92a9c466e47bf383` |
+| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | `f0636e833d14062506a5de552a9babc486466c4a68973df64128885f380d2620` |
+| `records/hcg/HCG_D27_D6_CHAIN_ACCEPTANCE_MATRIX.md` | review basis | `529c1b401827295c794854a73e804be627438f837f280fdff6b632edb59e97fe` |
+| `records/hcg/HCG_D27_LEMMA_E_ACCEPTANCE_MATRIX.md` | review basis | `56355f09ec622c1a61a5e9c59bc906eeb89d86976e0f00d392f39107de113265` |
+| `records/hcg/HCG_D27_REFLECTION_DICHOTOMY_ACCEPTANCE_MATRIX.md` | review basis | `af4b482a746d1d5a9cfa6618185395572fc9395eb7911024ea21e564e3558293` |
+| `evidence/hcg/verification/make_v05_draft.py` | builder | `1b283edde9a77fb2a869feefdfae28ca90eb9ac566eb6e2e51a5cb68c744bdf8` |
+| `evidence/hcg/verification/release_v05.py` | release transform | `fb81bb1e7043f3435209527cc8c4b577e689a29fc915bbb3e5f2ded086a890ec` |
+| `evidence/hcg/verification/replay_d27_reflection_checks.py` | replay wrapper | `871a6e13d4affd7253ccb381701bb207fbfe9a6683e7626cc20a83de41725c6f` |
+| `evidence/hcg/README.md` | evidence index text | `da62b2cb345f601d5e817f700e458e3a367395276cf58a30fcc8ac8a463582d6` |
+| `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
+| `REGISTRY.md` | `hcg` row | `e1477de4b985a49ed4433bef29b4af4f564db03911d7719e8e1d2d7ce364064a` |
