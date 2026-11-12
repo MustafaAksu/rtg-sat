@@ -4,7 +4,7 @@ A satellite study is inspired by RTG or related to it but is not part of the RTG
 
 **Base rules.** Unless this page says otherwise, a satellite study follows `rtg-corpus/CONVENTIONS.md` and the DSN Methodology it points to, read at the tag `methodology-v1.4`. That covers the live file, release making, evidence and who writes where. A study may adopt a lighter layout than a DSN (for example a session ledger), stated in its `REGISTRY.md` row. Where this page and those rules differ, this page governs inside `rtg-sat`.
 
-*Status: adopted by the PI on 9 Nov 2026 (text as merged in PR #1, 6 Nov 2026, with the §4/§7 corrections of PR #2), amended by the pull request that records this status. In force from its merge.*
+*Status: adopted by the PI on 9 Nov 2026 (text as merged in PR #1, 6 Nov 2026, with the §4/§7 corrections of PR #2, amended by PR #12). The tag-message rule in §2, the `tools/` and `records/sat/` rows in §1, and the LIT admission in §6 were added by a later maintenance pull request and are in force from its merge.*
 
 ## 1. Where things are
 
@@ -14,7 +14,9 @@ A satellite study is inspired by RTG or related to it but is not part of the RTG
 | Release records, reviews, session records | `records/<study>/` | release records are frozen at adoption |
 | Scripts, outputs, evidence packages | `evidence/<study>/` | stored once; external packages kept as received |
 | Files arriving from outside | `upload/<topic>` branch | unchanged, hash-checked, placed by a follow-up commit |
+| Repository-level records (maintenance, inventories) | `records/sat/` | `SAT` is the repository key of §5, not a study |
 | Inboxes | `pipes/<KEY>/` | see §5 |
+| Checks | `tools/` | `sat_check.py` (read-only) with `test_sat_check.py`; a passing check authorizes nothing |
 | Studies, owners, states, governing editions | `REGISTRY.md` | |
 
 Study keys (tags and records): see `REGISTRY.md`. Keys are lowercase and do not reuse an `rtg-corpus` study key.
@@ -23,6 +25,18 @@ Study keys (tags and records): see `REGISTRY.md`. Keys are lowercase and do not 
 
 The governing edition of a satellite study is its latest **adopted, tagged** release `<study>-v<version>` in this repository, with its release record. Order: decision → release record → merge → tag. A merge, a tag or a passing check is not an adoption. Branches: AI sessions push only to branches with their own prefix (`claude/*`, `chatgpt/*`); the PI merges into `main` with a merge commit. Annotated tags are created by the PI, or by automated publication under §2.1. Nobody force-pushes, moves a tag or rewrites published history.
 
+**Tag message.** Every release tag, whether created by hand or under §2.1, carries these five lines in its message. A free title line may come before them.
+
+```
+Release record: <path of the release record>
+Release record SHA-256: <hash of that file at the tagged commit>
+Approved payload commit: <commit the PI adopted>
+Publication merge commit: <merge commit on main that published it>
+PI adoption: <date and where the decision is recorded>
+```
+
+The tagger name identifies the PI, or states that the publication was PI-authorized and automated; it is not a system account name. The 16 tags published before this rule (`coil-v0.1`–`coil-v0.9`, `hcg-v0.2`–`hcg-v0.5`, `hho-v0.1`–`hho-v0.3`) stay as they are and are not violations.
+
 ### 2.1 Automated publication and workflows
 
 **Automated tag publication (PI decision, 9 Nov 2026).** A release tag may be created by a repository workflow instead of by the PI in person, when all of the following hold:
@@ -30,7 +44,7 @@ The governing edition of a satellite study is its latest **adopted, tagged** rel
 1. The PI's adoption of that release is recorded in its release record before publication, and the PI has authorized automated publication of that release. The authorization is stated in the pull request that carries the workflow.
 2. The workflow runs only after the pull request carrying the adoption records has been merged into `main`. It reads the merge commit, not a branch head.
 3. Before tagging, the workflow recomputes the SHA-256 of each release record and of every payload file listed in it, and stops without tagging on any mismatch.
-4. The tag is annotated. Its message names the release record, the record's SHA-256 and the approved payload commit. The tagger identity states that the publication was PI-authorized.
+4. The tag is annotated. Its message carries the five lines of §2. The tagger identity states that the publication was PI-authorized.
 5. The workflow never moves or deletes an existing tag. If the tag already exists with different content, it stops.
 
 The tag carries the PI's adoption; the workflow only publishes it. A workflow run, a passing check or a created tag is not an adoption.
@@ -53,11 +67,13 @@ A study whose current state is only adopted at chat level, with no file in this 
 
 ## 5. Pipes inside `rtg-sat`
 
-Items between satellite studies, and from LIT to a satellite study, go to `pipes/<KEY>/` with the item schema, states and rules of `rtg-corpus/pipes/README.md`. Keys are the uppercase study keys in `REGISTRY.md`, plus the service key `LIT` and the repository key `SAT`. `SAT` is used for items from the `rtg-sat` co-owners about the repository itself: conventions, registry, publication and maintenance. It is not a study and carries no scientific authority. An item carries no scientific authority; the receiver decides. Until `rtg-sat` has its own index and validation tool, `pipes/<KEY>/INDEX.md` is not required, and items are checked in the review of the pull request that files them.
+Items between satellite studies, and from LIT to a satellite study, go to `pipes/<KEY>/` with the item schema, states and rules of `rtg-corpus/pipes/README.md`. Keys are the uppercase study keys in `REGISTRY.md`, plus the service key `LIT` and the repository key `SAT`. `SAT` is used for items from the `rtg-sat` co-owners about the repository itself: conventions, registry, publication and maintenance. It is not a study and carries no scientific authority. An item carries no scientific authority; the receiver decides. Items are validated by `python3 tools/sat_check.py`, run in the pull request that files or changes an item. `pipes/<KEY>/INDEX.md` is not required.
 
 ## 6. Literature (LIT)
 
 LIT (`MustafaAksu/rtg-lit`) serves the programme's own studies only: the RTG streams in `rtg-corpus` and the satellite studies registered in `REGISTRY.md`. It is not a public or community service. A study uses LIT only once it is listed in `REGISTRY.md` and LIT's own rules admit `rtg-sat` consumers.
+
+**Admission.** LIT admits the studies registered in `REGISTRY.md` as consumers: `rtg-lit/CONVENTIONS.md` §8.2 (PI decision, 9 Nov 2026; LIT's reply is `pipes/SAT/20261110-LIT-satellite-consumer-admission.md`). Admission is not access. It gives no access to `rtg-lit` or to private sources, and it validates nothing: a study claims LIT-backed validation only for the source and scope that a LIT item names. Requests and reports of use go to `rtg-corpus` `pipes/LIT/` with `from: SAT` and the study key in `object`. LIT's findings come to `pipes/<KEY>/` here.
 
 - A source is taken into LIT once and shared. A validation or adoption by one consumer does not pass to another.
 - A report of use records: consumer · source `LIT-ID@version:label` · rtg-lit commit · verification scope · owner decision.

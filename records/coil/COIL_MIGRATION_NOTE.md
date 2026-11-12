@@ -3,7 +3,7 @@
 **To:** the owner session(s) of the COIL study (the "Coil Like" conversation in the RTG Dyadic project, last active 22 Sep 2026)
 **From:** PI (Mustafa), drafted by Claude in the `rtg-sat` bootstrap session
 **Date:** 2026-11-04
-**Status:** working note; it changes by commit until the first COIL release, then it is closed.
+**Status:** closed (historical). The first COIL release, `coil-v0.1`, was adopted by the PI on 9 Nov 2026, which closes this note by its own rule. It no longer governs: `CONVENTIONS.md` and `coil/COIL_CHARTER.md` do. The text below is kept as written.
 
 ## 1. Why you are receiving this
 
