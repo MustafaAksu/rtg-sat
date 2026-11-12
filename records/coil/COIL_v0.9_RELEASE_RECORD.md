@@ -82,7 +82,7 @@ Co-owner review `5870563581` (head `7cb66d4`): **ACCEPT**. R1 and R2 closed; D-F
 
 ## 4. Adoption manifest
 
-**Status: ADOPTED (2026-11-12).** SHA-256 at the **content commit** `9254bb341061e02a8aed40f3a1c74ca5c7f601e0`. Files not listed are inherited unchanged from `coil-v0.8`.
+**Status: ADOPTED (2026-11-12).** SHA-256 at the **content commit** `c78987693f4d27a010828180b6118e2288c7d099`. Files not listed are inherited unchanged from `coil-v0.8`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -102,6 +102,6 @@ Co-owner review `5870563581` (head `7cb66d4`): **ACCEPT**. R1 and R2 closed; D-F
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `b9c732db628e0de75ab9e8571def9c399762f9d473350026b8ac3a80e45ce762` |
 | `coil/COIL_INDEX.md` | `7c37ac71a34671c9a6d4337fdb56d1235038ff789f793d5f1f8c48fcace34a58` |
 | `.gitignore` | `416c7570e0bc89b87a0766a2352e9246ed144dc2654f0b6710a6ac5e11ac3399` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `260a0c7d8dd02c59b71d744b9b0fd6daa1865e1722d432493525e16160993604` |
 
 **Adoption scope (PI, 2026-11-12):** the files listed above as they stand at the content commit; the result data under `evidence/coil/outputs/cloff_results/` and the intake folder as covered by the listed `SHA256SUMS` files; everything else inherited unchanged from `coil-v0.8`; tag `coil-v0.9`. **Limits of effect:** the adoption covers the locked decisions (D-FATE per cell, gates and instrument checks) and the RUN record's descriptive statements **as narrowed in §3a′ and read as in §3a″**; the labels are operational finite-window statements about the last quarter and assert neither persistence, boundedness beyond the window, a permanent return, nor the absence of every local turn; no attractor, basin, stability, regularity or asymptotic statement is adopted; the Q-B ratio is descriptive and no scientific result is adopted on it; the owner's `[HEUR]` reading in RUN §6 is adopted only as labelled there; RM-04 is not opened, RM-07 stays parked, P-κ and every historical threshold and classification are unchanged; nothing enters rtg-corpus by this adoption.
