@@ -1,0 +1,6 @@
+C6 algebraic symplectic model, p=2: PASS
+rank(M)=18, perfect cup det=1, C6-action and cup invariance: PASS
+rank(chi)=16 over Z_2, multiplicity over K_2=8, det cup|L=4
+index [M:(L + Lprime)]=4; A=(Z/2)^2=R/2R; 2A=0
+v2(det h_W)=1; length_S(chi-sector)=1; full paired length=2
+NOT a geometric C6 cover H^1 computation; no (H), (D), signature claim
