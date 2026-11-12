@@ -1,11 +1,14 @@
-# COIL v0.9 — release record (DRAFT): CLUSTEROFFSET preregistration (lock candidate)
+# COIL v0.9 — release record (DRAFT): CLUSTEROFFSET preregistration lock, run and result
 
-**Status:** DRAFT — not adopted; **the preregistration is not locked** until the PI merges the pull request after co-owner review. Scope at this stage: lock of `PREREG-MM1-CLUSTEROFFSET-v1.0.md` with its executables. The run and its result will be added to this record afterwards, as for v0.6. **Successor of `coil-v0.8`** (`6bdc2fb5108f316ed2e976a9159dcfca18568b60`); the branch contains `main` as of the merge recorded in §2a.
+**Status:** DRAFT — not adopted. **Successor of `coil-v0.8`** (`6bdc2fb5108f316ed2e976a9159dcfca18568b60`). Scope: (a) **lock of PREREG-MM1-CLUSTEROFFSET v1.0** with its executables — done: the PI merged PR #42 on 11 Nov 2026 (`main` `d5a02a9`) after co-owner review `5859200713` ACCEPT; (b) **RUN-MM1-CLUSTEROFFSET v1.0** — executed by the PI on 11 Nov 2026 with the fail-stop runner, outputs deposited unchanged; (c) the live-document statements that follow from the run. No tag exists for v0.9; adoption and tag are the PI's.
 
 ## 1. Files
 
-**To be frozen at lock:** `evidence/coil/prereg/PREREG-MM1-CLUSTEROFFSET-v1.0.md`; `evidence/coil/code/clusteroffset_experiment.py`, `clusteroffset_certificate.py`, `clusteroffset_run.sh`, `CLI-CLUSTEROFFSET.md`; `SHA256SUMS` rows.
-**Live (changed):** `coil/COIL_INDEX.md` §8 item 3 (pointer). `.gitignore` (run-output folder of the new executor).
+**Frozen at lock (PR #42):** `evidence/coil/prereg/PREREG-MM1-CLUSTEROFFSET-v1.0.md`; `evidence/coil/code/clusteroffset_experiment.py`, `clusteroffset_certificate.py`, `clusteroffset_run.sh`, `CLI-CLUSTEROFFSET.md`.
+**Frozen run record (new):** `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md`.
+**Result data (new, unchanged from upload):** `evidence/coil/outputs/cloff_results/` (53 files incl. `logs/`); `SHA256SUMS` rows appended; `evidence/coil/outputs/README.md` describes them.
+**Intake (unchanged):** `upload/coil-clusteroffset-results/` (pushed by the PI, commit `b3fa72c`).
+**Live (changed):** `coil/records/RM-02.md` (.h), `coil/COIL_INDEX.md` (three table rows, §8 items 3 and 4), `coil/COIL_CAMPAIGN_COMPENDIUM.md` (CLUSTEROFFSET entry). `.gitignore` (run-output folder of the executor; changed at lock).
 **Unchanged:** `PREREG-RM04-TRI0-CLOSURE-DRAFT.md` (stays an unlocked draft; its Q-A is now carried by the new prereg, its Q-B/Q-C are not); every frozen file of earlier releases.
 
 ## 2. Design decisions taken in this candidate (all open to review)
@@ -40,9 +43,31 @@ The reviewer accepted the Q-B treatment (descriptive ratio, no decision) and rec
 - No campaign-cell offset was run at a horizon that lets a small offset reach a classifiable size (prereg §0 item 5).
 - Not re-run by the co-owner at the time of writing. No frozen file of earlier releases changed; no hash, approval or result invented.
 
+## 3a. Run phase: result and changes of meaning in live documents
+
+Result (`RUN-MM1-CLUSTEROFFSET-v1.0.md`; scope `[NUM | MM-1, tri0, frozen PAIRBC arithmetic, Pairs A/B/C, the 15 locked cells, five burned-in cluster states, two offset directions, four offset sizes, finite window, one environment]`): result set COMPLETE AND VALID, runner marker ALL-DONE; **D-FATE = Q4-ON-CLUSTER in the three κ = 0.75 cells and Q4-OFF-CLUSTER-NO-NET-WINDING in the twelve cells with λ_⊥ > 0, 40/40 in every cell**; no MIXED, UNRESOLVED or non-finite run; G-BASE 60 AGREE (difference exactly 0.0) + 15 NO-ICID-COUNTERPART; D-LIN 240/240 PASS; N-DEG 15/15 EXACT. Expectations E1 and E2 met; the question E2 left open is answered within scope. The Q-B ratio (0.930 … 1.044) is reported as descriptive, no decision, no claim.
+
+| # | Document | Before | Now |
+|---|---|---|---|
+| W1 | RM-02.h | "not established: the fate of orbits perturbed off the cluster subspace, the nature of the within-cluster motion" | measured in the stated scope: operational Q4 labels per cell; no relative turn of nodes 1 and 2 during the window; end-state amplitude statistics independent of the offset; base motion LIBRATING; list of what remains not established (attractor, stability, long-time behaviour, regularity, relation to the non-cluster ICs, memory) |
+| W2 | COIL_INDEX §8 item 3 | prereg "locked … not yet run" | locked and run, with the D-FATE result and its operational character |
+| W3 | COIL_INDEX §8 item 4 (RM-07) | open: fate of perturbed orbits; within-cluster motion; plateau cells not run | the fate is measured and is stated not to be an activation ground; open: stability, long-time behaviour and regularity of the off-cluster motion; plateau cells not run. RM-07 stays parked |
+| W4 | COIL_INDEX tables; compendium | no CLUSTEROFFSET rows | prereg, run, code rows; protocol entry |
+
+Not changed: P-κ, every κ_frac, every historical classification, the ICID results, SG-COIL-1, any RTG reference; RM-04 not opened. The owner's `[HEUR]` reading (pair-independence of the libration amplitude at equal κ) is in RUN §6, labelled as outside the decision rules, and is **not** carried into any live document.
+
+Deviations of the run (RUN §1): the runner log contains `nohup: ignoring input` although the CLI said it must be empty; two columns of the cell tables are written as `np.float64(<value>)`. Neither touches a decision.
+
+## 3b. Checks, run phase
+
+- Owner session: `upload/coil-clusteroffset-results/SHA256SUMS` verifies (53/53); every file under `evidence/coil/outputs/cloff_results/` equals its upload entry (53/53); `clusteroffset_experiment.py --summary` re-executed on the uploaded set with the locked executor: exit 0, output **byte-identical** to the runner's `summary.log`; all tables and ranges of the RUN record generated by script from the deposited CSVs; `evidence/coil/outputs/SHA256SUMS` verifies in full.
+- PI's environment: certificate PASS (deposited `logs/certificate.log`), executables' hashes equal to the lock manifest (`logs/executables.sha256`).
+- The owner session ran no full-horizon cell. No independent re-execution of the 15 cells exists.
+- No frozen file changed after lock; no hash, approval or result invented.
+
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted, not locked.** SHA-256 at the **content commit** `c38ae81740f02a26f7a2125ef0c98050becd8075`. Files not listed are inherited unchanged from `coil-v0.8`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `c38ae81740f02a26f7a2125ef0c98050becd8075`. Files not listed are inherited unchanged from `coil-v0.8`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -53,6 +78,13 @@ The reviewer accepted the Q-B treatment (descriptive ratio, no decision) and rec
 | `evidence/coil/code/clusteroffset_run.sh` | `cc33140d155bd858bbe91794926d5a1c70be917b03b72eb4490ec897cb8eb083` |
 | `evidence/coil/code/SHA256SUMS` | `bce87ae61764b3f9b3e033ad5fba9c57275dedd734b5ed0131bf3b53b712838c` |
 | `evidence/coil/prereg/SHA256SUMS` | `704cc92c132ea2d69a097cd85b025650f5a84cad5bd2dc4e8c627963bf3a3904` |
+| `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `evidence/coil/run/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `evidence/coil/outputs/README.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `upload/coil-clusteroffset-results/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/records/RM-02.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 | `coil/COIL_INDEX.md` | `144ca4e73a6ba39ca651f0b42a70dd1a78e5f3d4e28b6e3f9e9cb4274eb34e1d` |
 | `.gitignore` | `416c7570e0bc89b87a0766a2352e9246ed144dc2654f0b6710a6ac5e11ac3399` |
 

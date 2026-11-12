@@ -1,0 +1,21 @@
+PASS  K1 frozen hash; ICID cell cross-reference  1e35ee664a6e6cea...
+PASS  K2 classifier unit tests (summaries)  12/12
+PASS  K2 series (i): single early-Q4 2 pi step -> Q4-NET-WINDING; record shows no later winding change  label=Q4-NET-WINDING up/down=(1,0) last change step=310 of 400
+PASS  K2 series (ii): opposing 2 pi steps in Q4 -> Q4-OFF-CLUSTER-NO-NET-WINDING with (up, down) = (1, 1) recorded  label=Q4-OFF-CLUSTER-NO-NET-WINDING up/down=(1,1)
+PASS  K2 series (iii): non-finite -> UNRESOLVED, finite flag False  
+PASS  K3 N1: eps = 0 orbit exactly on the cluster (toy horizon, cells 2, 9, 15)  
+PASS  K4 N2: +eps and -eps give bitwise identical (q, r) and opposite (delta, s)  
+PASS  K5 N-DEG: y stays exactly (0, 0) while (delta, s) evolves  max|y|=0.0
+PASS  K6 linear fixture: frozen orbit follows J_perp^n; |eig| = sqrt(1 - a + a kappa)  max rel err=7.45e-09 |eig|=1.014889157 growth=3474.3x
+PASS  K7 empty directory refused  
+PASS  K7 complete toy-horizon set refused, sole cause = recorded horizons  problems=15
+PASS  K7 control: same set valid iff the locked horizons equal the recorded ones  
+PASS  K7 executor-identity mismatch refused  
+PASS  K7 status contract: non-finite perturbed row labelled UNRESOLVED is a valid outcome; other non-finite rows invalidate  0/1/1 problems
+PASS  K7 trace identity: a removed trace row invalidates the set  
+PASS  K7 existing cell files are never overwritten  
+NOTE  toy-horizon (burn 40, H 80) labels seen: ['Q4-OFF-CLUSTER-NO-NET-WINDING', 'UNRESOLVED'] -- discarded, not campaign data
+PASS  K8 ICID reference: value only with matching deposited hash; explicit dispositions otherwise  ICID cell 9 IC 0 lam_perp=0.00246159631408746 state=OK
+PASS  K8 all 60 ICID references of the 12 counterpart cells present and hash-verified  
+
+CERTIFICATE PASS []
