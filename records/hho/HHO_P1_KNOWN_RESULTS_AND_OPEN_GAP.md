@@ -98,7 +98,7 @@ My first version added that such a lattice exists whenever p ∤ |Γ|. **That is
 
 Until then the region where no recorded result gives ε_p = 0 is:
 
-> an inert prime p, a local multiset that is not inverse-paired, and either an eigenvalue of p-power order (κ ≠ 0) or no Γ-stable lattice that is self-dual for a normalized h₀ (λ ≠ 0). The restriction to p ∣ |Γ| is expected and unproved.
+> an inert prime p, a local multiset that is not inverse-paired, and either an eigenvalue of p-power order (κ ≠ 0) or no Γ-stable lattice that is self-dual for a normalized h₀ (the local terms λ_j are then not controlled). The restriction to p ∣ |Γ| is expected and unproved.
 
 All recorded nonsplit witnesses lie in this region: [2] through κ (C₆, rank one, G₂₆-type, G(6,1,6)) and [5] through λ (C₃ × F₂₀). All of them fail (D).
 
@@ -131,6 +131,7 @@ The first version of this note (SHA-256 `f88d7bef0319798719c02c5619b15cb7c8662ac
 | F2 | §4.3 Gap B: the claim "a Γ-stable self-dual lattice exists when p ∤ \|Γ\|" is withdrawn for a fixed h₀; counterexample and the rescaling invariance recorded; the corrected criterion is `[OPEN]`. |
 | F3 | §3: the decomposition of λ over cyclotomic factors holds mod 2 only; the 3 ∣ n cancellation is tied to the hypothesis of Lemma R′. |
 | Scope | Gap C reworded as an observation on the inspected proofs; Gap A restricted to the two campaigns; G and Γ kept apart in Direction 1; B1 and B2 separated; the co-owner's acceptance criteria and its remark on Direction 2 added. |
+| 12 Nov 2026 | Gap B: "(λ ≠ 0)" replaced by "the local terms λ_j are then not controlled" — the absence of a self-dual lattice does not prove that a given λ_j is nonzero (co-owner's non-blocking note on PR #45). Since then bridge B1 has been recorded (register B.5); this note is not otherwise updated. |
 
 
 ## Appendix A. Files read in full (SHA-256 computed from the blobs at `hcg-v0.2`)

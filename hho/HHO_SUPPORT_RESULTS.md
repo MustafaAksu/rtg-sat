@@ -2,7 +2,7 @@
 
 **Status of this file:** adopted by the PI on 11 Nov 2026 as a live summary of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), and one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
 
-**Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. The two are linked only by a cup–polarization identification (HHO-SG-4), which HHO has not established for a general Severn datum (§3.3).
+**Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. For a finite-monodromy genus-0 datum the two have the same rank-eight class by bridge **B1** (§3.4; conditional, CHECKED by two AIs). The link to **Severn's polarized factor** is a different bridge, B2, and is open (§3.3; HHO-SG-4).
 
 **Notation.** K = ℚ(ω) with ω² + ω + 1 = 0, and δ = √−3. A prime p is *inert* when p ≡ 2 (mod 3); then R = O_K ⊗ ℤ_p is an unramified quadratic extension of ℤ_p with uniformiser p. [D] is the class of D in ℚ^×/N(K^×).
 
@@ -63,6 +63,13 @@ If no inert prime divides |G|/χ(1), then [D] = [1].
 
 **3.3 Open: transfer to a Severn datum** (HHO-OPEN-SUPPORT-TRANSFER). To apply §3.1 to Severn's polarized factor A_σ one must show that A_σ is ev_u(W), or its K-antilinear variant, and that its polarization is the restricted Jacobian polarization up to ℚ^×. Severn's primary text was not available to the HHO sessions. HCG records the identification for W5 only (G12).
 
+**3.4 Bridge B1** (HHO-LEM-B1-O2, HHO-LEM-B1-O1, HHO-COR-B1-GATE; all conditional on Dettweiler–Wewers 2006 Thm 2.5, O1 and the gate also on the cup product under a finite direct image).
+- *O2.* On Z = ker C the triangular form B of the locality proof is the Dettweiler–Wewers cup pairing. So the form S used in §4 is the cup form on H¹_p.
+- *O1.* For a finite G-Galois cover and σ absolutely irreducible over K with character field exactly K, the multiplicity space W of §1 is H¹_p of the multiplicity local system, and h_W = c·δ·S with c ∈ ℚ^×. In rank 8, [det h_W] = [det δS]; the same with Γ = G/ker σ.
+- *Gate.* For such σ with dim_K H¹_par = 8 and signature (4,4): a nonsplit parabolic-cup class needs a prime p ≡ 2 (mod 3) dividing |Γ|/χ(1).
+
+*What it does not say.* It is a necessary condition. It uses neither (D) nor (L) nor d, and it does not decide P1. It says nothing about Severn's polarized factor (§3.3). The statement is Steps 3–4 of Severn's Prop. 5.1/7.1 as HCG reads it; the proofs recorded here do not use his text, and no novelty is claimed.
+
 ## 4. Local factors of the parabolic-cup class
 
 Everything in this section depends on HCG's locality theorem, which is **pending in HCG**: [det h_par] = [(−1)ⁿ Π_j a_j b_j], with a_j = det(h₀|E_j), b_j = det((1−g_j)|E_j), E_j = im(1−g_j). With Δ(g) = a/b and G4a, the parity at an inert prime p is
@@ -115,5 +122,5 @@ The unrestricted proposal stays **WITHDRAWN** in both readings. No replacement l
 | Item | Register row |
 |---|---|
 | Transfer of §3 to Severn's polarized factor | HHO-OPEN-SUPPORT-TRANSFER |
-| What forces ε_p to be even under (H) | HHO-OPEN-LOCAL-EVEN; first target P1 |
-| Length and structure of the gluing group at an inert prime of positive defect | HHO-OPEN-POSDEFECT-GLUE |
+| What forces ε_p to be even under (H); after §3.4, at inert primes dividing \|Γ\|/χ(1) only | HHO-OPEN-LOCAL-EVEN; first target P1 |
+| Length and structure of the gluing group at an inert prime of positive defect (next study target) | HHO-OPEN-POSDEFECT-GLUE |

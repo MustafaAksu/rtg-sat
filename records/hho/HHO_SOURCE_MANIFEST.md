@@ -55,6 +55,10 @@ The Claude HHO session read the opening note in full, and the Δ27 entry, the HC
 | Matsumoto–Sasaki–Takayama–Yoshida (1993), structure of G₃₄ | cited by ChatGPT | not opened by Claude |
 | D. Taylor, *Reflection subgroups of complex reflection groups* (2025) | cited by ChatGPT for the single reflection class of G₃₄ | not opened by Claude |
 | Classification inputs of gate G10 | Hiss–Malle 2001 with 2002 corrigenda; GT08; GT12; Katz–Tiep §16 | as recorded in HCG Δ27; not opened in the HHO conversation |
+| M. Dettweiler, S. Wewers, *Variation of parabolic cohomology and Poincaré duality*, Sém. Congr. 13 (2006) | arXiv:math/0411119; Thm 2.5 in the arXiv numbering | PI's copy (print of the ar5iv page, 27 pp.), SHA-256 `3a70bd23136771e8aa3e0fb2708d9c51c6ad57f2e7086c7d8cb89c4309744627`; §§1.1–1.3 and §§2.2–2.4 read by both owners on 12 Nov 2026; not stored |
+| M. Dettweiler, S. Wewers, *Variation of local systems and parabolic cohomology* | arXiv:math/0310139v2 | PI's copy (28 pp.), SHA-256 `108c89a25c62f98eb5aa3f2d81084b7f7f711da15a090168783d9a582921938f`; §4 opening and §6.1 read; not stored |
+| A. Hatcher, *Algebraic Topology* (2002), §§3.2–3.3 | cited by ChatGPT for cup-product naturality and Poincaré duality | not opened by Claude |
+| A sheaf-theory text for cup products under a finite direct image | none fixed | **not read by either owner**; a named condition of HHO-LEM-B1-O1 |
 
 No LIT-backed validation is claimed.
 

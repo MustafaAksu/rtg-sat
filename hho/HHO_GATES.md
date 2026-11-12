@@ -52,6 +52,7 @@ G1–G10 form the (H)-scoped screening catalogue: they include necessary equatio
 | Rank-one law | [det h_par] = [2^t] for rank-one K-valued χ | HHO-THM-RANK-ONE |
 | Support bound (Jacobian-induced polarization) | negative Hilbert symbols only at 3 and at inert p dividing \|G\|/χ(1) | HHO-THM-SUPPORT |
 | Leaf criterion | a Brauer-tree leaf whose neighbour does not occur in H¹(C) gives no support at p | HHO-LEM-LEAF |
+| Bridge B1 gate (parabolic-cup class) | a nonsplit rank-eight class needs an inert p dividing \|Γ\|/χ(1); σ absolutely irreducible over K with character field K; conditional on Dettweiler–Wewers Thm 2.5 and the cup product under a finite direct image; necessary only | HHO-COR-B1-GATE |
 
 ## 3. Dimension statements
 
@@ -100,4 +101,4 @@ In the local form used by the HHO conversation (HHO-OPEN-LOCAL-EVEN): what, unde
 
   Σ_j ( ℓ(Λ_{E_j}^#/Λ_{E_j}) − ℓ(Λ_{E_j}/(1−g_j)Λ_{E_j}) )
 
-to be even at every inert prime? Known partial answers are G4b (K-isometric pairing with inverses), G6 (a reflection in Γ) and the tame-unimodular lemma (no p-power eigenvalues and a self-dual lattice).
+to be even at every inert prime? Known partial answers are G4b (K-isometric pairing with inverses), G6 (a reflection in Γ), the tame-unimodular lemma (no p-power eigenvalues and a self-dual lattice) and, conditionally, the bridge B1 gate: the sum is even at every inert prime of defect zero for σ. The question that remains is at inert primes dividing |Γ|/χ(1) (HHO-OPEN-POSDEFECT-GLUE).
