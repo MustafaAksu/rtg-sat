@@ -1,6 +1,6 @@
 # evidence/hho — frozen evidence of the HHO study
 
-Every file here is a byte-identical copy of a file in `upload/hho/` (PR #16). `SHA256SUMS` lists the 54 placed files. The mapping from upload path to place, with origin and content, is `records/hho/HHO_SOURCE_MANIFEST.md` §6.
+The **54 originally placed files** in `frozen/`, `code/`, `outputs/` and `received/` are byte-identical copies from `upload/hho/` (PR #16); the root `SHA256SUMS` indexes **only those 54 files**. Their mapping is in `records/hho/HHO_SOURCE_MANIFEST.md` §6. New B1 session-native files live in `b1/`, outside the frozen upload and with a separate index supplied by the B1 receiving-review package.
 
 Frozen files are never edited. They keep their wording, including statements that were later corrected or withdrawn. The current state of every claim is in `hho/HHO_CLAIM_REGISTER.md`.
 
@@ -12,6 +12,7 @@ Frozen files are never edited. They keep their wording, including statements tha
 | `outputs/pi/` | GAP output from the PI's machine, as relayed in the conversation | 1 |
 | `received/chatgpt/` | ChatGPT's reviews, proof sketch, checkers and packages, as received through the PI. The attachment-ID prefix of each name is kept. | 21 |
 | `received/relays/` | the PI's relays of ChatGPT's chat messages (Turkish) | 12 |
+| `b1/` | session-native B1 O1/O2 source code, independent outputs and own SHA-256 index (not 54 original frozen files) | separate |
 
 ## Not placed here
 
