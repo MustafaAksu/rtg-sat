@@ -1,6 +1,6 @@
 # HHO — claim register
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as the claim register of `hho-v0.2`, **as a register only** (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.1`: the evidence abbreviations name `evidence/hho/` paths; the withdrawn NPL is typed by object; one row is added (HHO-NEG-NPL-JAC-C3F20, CHECKED). No row that existed in `hho-v0.1` was regraded or promoted.
+**Status of this file:** adopted by the PI on 12 Nov 2026 as the claim register of `hho-v0.3`, **as a register only** (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.2`: section B.5 is added with three rows (HHO-LEM-B1-O2, HHO-LEM-B1-O1, HHO-COR-B1-GATE; conditional, CHECKED by two AIs); three evidence abbreviations are added; the notes of three open items in Part D are brought up to date. No row that existed in `hho-v0.2` was regraded or promoted.
 
 **Reading rules.**
 - Grades and review states are defined in `hho/HHO_CHARTER.md` §4. They are separate axes.

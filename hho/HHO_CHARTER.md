@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the "HHO Hurwitz–Hodge obstruction research" conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as the governance text of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.2`.
+**Status of this file:** adopted by the PI on 12 Nov 2026 as the governance text of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.3`.
 
 ## 0. Scope guard
 
@@ -66,10 +66,11 @@ Choosing P1 is a research priority. It adopts no claim.
 
 ## 3. Editions
 
-- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.2`.
+- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.3`.
 - Order of a release: decision, release record, merge, tag. A merge, a tag or a passing check is not an adoption.
 - The first release `hho-v0.1` contains this charter, the claim register and the source manifest. It is a register edition: it adopts no claim row.
 - `hho-v0.2` adds the placed evidence in `evidence/hho/` and two live summaries, `hho/HHO_GATES.md` and `hho/HHO_SUPPORT_RESULTS.md`. It is a register edition too.
+- `hho-v0.3` adds three conditional rows for the bridge B1 between the parabolic-cup form and the Jacobian-induced multiplicity form (register B.5). It is a register edition too.
 
 ## 4. Grades, review states, identifiers
 

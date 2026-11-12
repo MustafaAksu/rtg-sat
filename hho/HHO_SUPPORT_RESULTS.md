@@ -1,6 +1,6 @@
 # HHO — support results: current statements
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as a live summary of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), and one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
+**Status of this file:** adopted by the PI on 12 Nov 2026 as a live summary of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20), and the bridge B1 of 12 Nov 2026 (§3.4). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
 
 **Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. For a finite-monodromy genus-0 datum the two have the same rank-eight class by bridge **B1** (§3.4; conditional, CHECKED by two AIs). The link to **Severn's polarized factor** is a different bridge, B2, and is open (§3.3; HHO-SG-4).
 
@@ -72,7 +72,7 @@ If no inert prime divides |G|/χ(1), then [D] = [1].
 
 ## 4. Local factors of the parabolic-cup class
 
-Everything in this section depends on HCG's locality theorem, which is **pending in HCG**: [det h_par] = [(−1)ⁿ Π_j a_j b_j], with a_j = det(h₀|E_j), b_j = det((1−g_j)|E_j), E_j = im(1−g_j). With Δ(g) = a/b and G4a, the parity at an inert prime p is
+Everything in this section depends on HCG's locality theorem, which is **pending at the HHO pin `hcg-v0.2`** (the algebraic statement is recorded as CHECKED by two AIs in HCG's later ledger of `hcg-v0.4`, with its cup identification as a named import; HHO has not re-pinned): [det h_par] = [(−1)ⁿ Π_j a_j b_j], with a_j = det(h₀|E_j), b_j = det((1−g_j)|E_j), E_j = im(1−g_j). With Δ(g) = a/b and G4a, the parity at an inert prime p is
 
   ε_p ≡ Σ_j ( v_p(a_j) − v_p(b_j) )  (mod 2).
 

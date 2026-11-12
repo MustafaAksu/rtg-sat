@@ -1,6 +1,6 @@
 # HHO — gates, bounds and calibration objects
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as a live summary of `hho-v0.2` (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
+**Status of this file:** adopted by the PI on 12 Nov 2026 as a live summary of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
 
 **Scope guard.** A failed gate excludes that datum or class of data only (HHO-SG-1). Witnesses that fail (D) say nothing about data that satisfy (H) (HHO-SG-6). HHO makes no statement that nonsplit Weil eightfolds exist or do not exist.
 
