@@ -1,6 +1,6 @@
 # HHO — claim register
 
-**Status of this file:** adopted by the PI on 11 Nov 2026 as the claim register of `hho-v0.2`, **as a register only** (`records/hho/HHO_v0.2_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.1`: the evidence abbreviations name `evidence/hho/` paths; the withdrawn NPL is typed by object; one row is added (HHO-NEG-NPL-JAC-C3F20, CHECKED). No row that existed in `hho-v0.1` was regraded or promoted.
+**Status of this file:** adopted by the PI on 12 Nov 2026 as the claim register of `hho-v0.3`, **as a register only** (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.2`: section B.5 is added with three rows (HHO-LEM-B1-O2, HHO-LEM-B1-O1, HHO-COR-B1-GATE; conditional, CHECKED by two AIs); three evidence abbreviations are added; the notes of three open items in Part D are brought up to date. No row that existed in `hho-v0.2` was regraded or promoted.
 
 **Reading rules.**
 - Grades and review states are defined in `hho/HHO_CHARTER.md` §4. They are separate axes.
@@ -20,8 +20,11 @@
 | CG/ | `evidence/hho/received/chatgpt/` — ChatGPT's reviews, checkers and packages, as received |
 | NOTE | `evidence/hcg/hho-track/HCG_HURWITZ_HODGE_OBSTRUCTION_OPENING_NOTE_v0_1.md` at `hcg-v0.2` |
 | Δ27 | `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` at `hcg-v0.2`, entry Δ27 with addenda 1–17 |
+| B1P | `records/hho/HHO_B1_O1_O2_CHATGPT_PROOF.md` |
+| B1R1, B1R2 | `records/hho/HHO_B1_O1_O2_CLAUDE_REVIEW.md`, `records/hho/HHO_B1_O1_O2_CLAUDE_REVIEW_ROUND2.md` |
+| B1/ | `evidence/hho/b1/` — session-native B1 scripts and output, with their own `SHA256SUMS` |
 
-All `evidence/hho/` files are byte-identical copies of the upload (`evidence/hho/SHA256SUMS`).
+The 54 files in `evidence/hho/` outside `b1/` are byte-identical copies of the upload (`evidence/hho/SHA256SUMS`). The files in `evidence/hho/b1/` were written in the repository and are indexed by `evidence/hho/b1/SHA256SUMS`.
 
 ---
 
@@ -106,6 +109,22 @@ The HHO conversation did not hold the HCG files when these were written. They ar
 
 ---
 
+### B.5 Bridge B1: parabolic cup and Jacobian multiplicity form (12 Nov 2026)
+
+These rows compare the two objects of B.1 and B.3. They do **not** use locality, (D), (L), the budget or the dimension d. They say nothing about Severn's polarized factor (bridge B2, HHO-OPEN-SUPPORT-TRANSFER). Proof by the ChatGPT session; two receiving reviews and an independent exact check by the Claude session. The statement itself is Steps 3–4 of Severn's Prop. 5.1 ([386]) = Prop. 7.1 (v2) as HCG reads it (`HCG-EXT-PO6`); no novelty is claimed. The proofs here do not use Severn's text.
+
+| RID | Claim | Hypotheses and inputs | Grade | Review state | Evidence |
+|---|---|---|---|---|---|
+| HHO-LEM-B1-O2 | On Z = ker C the triangular form B of the locality proof is the Dettweiler–Wewers cup pairing: P_DW(y, x) = B(x, y), with v_i = g_i⁻¹x_i, v_i* = h₀(·, g_i⁻¹y_i), v_i′ = (1−g_i)⁻¹x_i. Hence S on Z/D(V) is the cup form on H¹_p. | g_j unitary for h₀, product one, x_i ∈ E_i; **input: Dettweiler–Wewers 2006, Thm 2.5** (arXiv numbering), whose proof rests on the Poincaré isomorphism for local coefficients | `[THM-cond: DW06 Thm 2.5]` | CHECKED | B1P §1; B1R1 §2; `B1/b1_o2_noncommutative_check_claude.py` (1264 entries, noncommutative tuples, h₀ ≠ I; two negative controls) and its output; `B1/hho_b1_o2_exact_check.py` (9 entries, rank one) |
+| HHO-LEM-B1-O1 | For a finite G-Galois cover Y → ℙ¹ and σ as in the hypotheses: W ≅ Hom_{K[G]}(V_σ, H¹(Y,K)) ≅ H¹(ℙ¹, j_*ℒ_σ), and under it h_W = c·δ·S with c ∈ ℚ^×, where S is the cup form of the multiplicity local system (monodromy σ^∨ ≅ σ̄). For dim_K W = 8: [det h_W] = [det δS]. The same holds with Γ = G/ker σ and Y/ker σ. | σ absolutely irreducible over K, defined over K, **character field exactly K**; HHO-LEM-CUP-MORITA; HHO-LEM-B1-O2; **inputs:** DW06 Thm 2.5; multiplicativity of H*(Y,K) ≅ H*(X, f_*K) for a finite map, and agreement of the local-coefficient cup product with the sheaf cup product (standard; **no statement of either was read by an owner**) | `[THM-cond: DW06 Thm 2.5; cup product under a finite direct image]` | CHECKED | B1P §2; B1R1 §3 (corrections C1–C4); B1R2 §§1–3 (independent derivation of the defining identity; remarks R1–R3) |
+| HHO-COR-B1-GATE | Let Γ be finite, σ absolutely irreducible over K with character field exactly K, dim_K H¹_par = 8, signature (4,4). If the **parabolic-cup class** [det ϑS] is not [1], there is a prime p ≡ 2 (mod 3) with p ∣ \|Γ\|/χ(1). | HHO-LEM-B1-O2, HHO-LEM-B1-O1, HHO-THM-SUPPORT, with their inputs. **A necessary condition only.** | `[THM-cond: DW06 Thm 2.5; cup product under a finite direct image]` | CHECKED | B1P §3; B1R2 §5 |
+
+- No third-family check exists for these rows.
+- Consistency with recorded data, not a test: every recorded nonsplit parabolic-cup class has such a prime (HHO-THM-RANK-ONE, HHO-NEG-F20-NONSPLIT, HHO-NEG-G616, HHO-NEG-LSEP). For C₃ × F₂₀ with σ = ω ⊗ ρ₄ the prime 2 has defect zero and 5 has not, and HHO-THM-F20 gives [5^t].
+- The dual and conjugate conventions, the orientation sign and the passage from G to Γ change S at most by conjugation, sign or a rational factor; none changes a rank-eight class.
+
+---
+
 ## Part C — Withdrawn and corrected items
 
 RIDs in this part are reserved and never reused.
@@ -129,9 +148,9 @@ RIDs in this part are reserved and never reused.
 | RID | Item | Notes |
 |---|---|---|
 | HHO-OPEN-T2 | P1: a dimension-independent obstruction to a nonsplit class under (H) | listed in Part A |
-| HHO-OPEN-SUPPORT-TRANSFER | Severn's A_σ and polarization versus ev_u(W) | listed in B.1 |
-| HHO-OPEN-LOCAL-EVEN | What, under (H), forces Σ_j (ℓ(Λ_E^#/Λ_E) − ℓ(Λ_E/(1−g_j)Λ_E)) to be even at every inert prime? | the local form of P1 (REVIEW A11.3); related to HHO-COR-G4B and HHO-LEM-G4C |
-| HHO-OPEN-POSDEFECT-GLUE | Length and structure of the gluing group L^#/L at an inert prime of positive defect (for example G₃₄ at p = 5, m(ψ₈₄) = 512) | a question about the integral mechanism; the norm class for G₃₄ is already settled by the HCG record (REVIEW A5.4 `[CONJ]` bound, A7.2) |
+| HHO-OPEN-SUPPORT-TRANSFER | Severn's A_σ and polarization versus ev_u(W) (bridge **B2**) | listed in B.1. Bridge B1 (B.5) does not discharge it. A question on Severn's definitions was sent to HCG on 12 Nov 2026 (`pipes/HCG/20261112-HHO-question-severn-polarized-factor.md`). |
+| HHO-OPEN-LOCAL-EVEN | What, under (H), forces Σ_j (ℓ(Λ_E^#/Λ_E) − ℓ(Λ_E/(1−g_j)Λ_E)) to be even at every inert prime? | the local form of P1 (REVIEW A11.3); related to HHO-COR-G4B and HHO-LEM-G4C. With HHO-COR-B1-GATE (conditional), the sum is even at every inert prime of defect zero; the question remains at inert primes dividing \|Γ\|/χ(1). |
+| HHO-OPEN-POSDEFECT-GLUE | Length and structure of the gluing group L^#/L at an inert prime of positive defect (for example G₃₄ at p = 5, m(ψ₈₄) = 512) | a question about the integral mechanism; the norm class for G₃₄ is already settled by the HCG record (REVIEW A5.4 `[CONJ]` bound, A7.2). After B.5 this is where P1 now sits; next study target by PI decision of 12 Nov 2026. |
 | HHO-OPEN-RECONCILE | Compare, item by item, the hypothesis lists of Part A and Part B, and the two d = 7 proofs | asked by HCG (pipe item `20261110-HCG-question-hypothesis-lists`, PR #25). A first answer is in §E. |
 | HHO-OPEN-CTBLLIB-VERSION | Record the GAP and CTblLib versions of the PI's runs | **CLOSED** on 10 Nov 2026: GAP 4.12.1, CTblLib 1.3.7 (see HHO-NUM-G34-BLOCKS). The RID is not reused. |
 
