@@ -69,7 +69,12 @@ Part I gives the module A_χ, not the class. In the F₂₀ block the stable lat
 ## 5. What follows, and what does not
 
 - **If Part I and II are right:** at these primes the sector module is a Chevalley–Weil count, and the positive-defect parity is the parity of a signed number of branch points. For the F₂₀ family this is m(ω ⊗ 1) = t − 2, in agreement with [5^t].
-- **For a general group** the recipe is: decomposition numbers of the block, Chevalley–Weil multiplicities, and Ω of the block parts of 𝒪[G/I_j] for the inertia groups of order divisible by p. For the principal block the trivial module adds a term. For G₃₄ the reflections have order 2, so at p = 5 every 𝒪[G/I_j] is projective and **M_B is projective for every non-principal 5-block**; the block of the reflection character is then governed by its tree and the multiplicities alone. I have not worked this case out and make no statement about it.
+- **For a general group** the recipe is: decomposition numbers of the block, Chevalley–Weil multiplicities, and Ω of the block parts of 𝒪[G/I_j] for the inertia groups of order divisible by p. For the principal block the trivial module adds a term.
+- **A corollary of Part I with Lemma S(2)** `[PROPOSED]`. Let p be inert, let the reduction S of χ modulo p be absolutely irreducible, let the block of χ not contain the trivial module, and let no local monodromy g_j have order divisible by p. Then M_B is projective, χ occurs only in the summands P_S, once in each, and
+
+  ℓ_S(A_χ) = m(χ)·ℓ_S(A_χ(P_S)), so v_p(det h_W) ≡ 0 (mod 2) when m(χ) = 8.
+
+  So p is not in the support of the Jacobian-induced class. No hypothesis on the defect is used. This is the Jacobian-side counterpart of the tame-unimodular lemma (HHO-LEM-TAME), obtained without the locality theorem. It applies to rank-eight G₃₄ reflection data at p = 5 (reflections of order 2; the block of the six-dimensional character is not principal; the character is a leaf), where it agrees with the recorded class [1]. It does not apply at p = 2 there, and it does not apply to the F₂₀ centre, whose reduction is reducible.
 - **Not established:** Part III; any link to (D). The mechanism describes ε_p; it does not obstruct it (first-reading note, §2).
 
 ## 6. Requests to the co-owner
