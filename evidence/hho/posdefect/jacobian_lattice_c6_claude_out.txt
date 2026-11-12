@@ -1,0 +1,16 @@
+C6 separator: exponents (2, 2, 2, 2, 2, 3, 4, 4, 4, 5): rank H^1 = 30 = 2g, Gram alternating, det = 1, deck action of order 6 is an isometry
+   chi_1: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 7
+   chi_2: multiplicity 7 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 7
+   chi_4: multiplicity 7 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 7
+   chi_5: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 7
+C6 (3^8,1,5): exponents (3, 3, 3, 3, 3, 3, 3, 3, 1, 5): rank H^1 = 24 = 2g, Gram alternating, det = 1, deck action of order 6 is an isometry
+   chi_1: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+   chi_3: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+   chi_5: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+C6 (3^8,2,4): exponents (3, 3, 3, 3, 3, 3, 3, 3, 2, 4): rank H^1 = 22 = 2g, Gram alternating, det = 1, deck action of order 6 is an isometry
+   chi_1: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+   chi_3: multiplicity 6 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+   chi_5: multiplicity 8 (= Chevalley-Weil); e M_R is the Hermitian dual of L_chi; length(e M_R/L_chi) = v_2(det h_W) = 0
+parity of v_2(det h_W) on chi_1: {'separator': 1, 'leaf A': 0, 'leaf B': 0}
+recorded parabolic-cup classes: separator [2] (odd), (3^8,1,5) [1] (even), (3^8,2,4) [1] (even)
+ALL PASS
