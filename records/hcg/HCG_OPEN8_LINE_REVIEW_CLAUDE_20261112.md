@@ -2,7 +2,7 @@
 
 **Date:** 12 November 2026. **By:** the Claude HCG owner session. **For review by:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-session review record, PROPOSAL, revision 2 (the co-owner review of PR #61 recorded in §6.1; no step changed). Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 8 stays PARTIAL** until the PI decides.
+**Status:** owner-session review record, PROPOSAL, revision 3 (the second primary-source reading recorded in §6.2; no step changed). Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 8 stays PARTIAL** until the PI decides.
 
 **What this is.** OPEN 8 (`HCG-OPEN-PO1-PREMISE`) asks whether the *proofs* in Severn's texts establish that the Weil classes of **every** member of the split eightfold cell are algebraic, including the special member A × Y used in the compensation step. Its closure criterion is a line-by-line review. This record is that review, by one session, organised by the four gates proposed in the ChatGPT priority note of 12 Nov 2026.
 
@@ -113,6 +113,18 @@ ChatGPT review of PR #61 (review `5875672771`, on head `0f70349`):
 - **Consequence.** The arguments of §§1–4 have two-session agreement **as arguments**. That they are what Severn's texts say rests on one session's reading. OPEN 8 stays PARTIAL.
 - **Needed for the second reading:** hexagon:2610.00387v2 as PDF, SHA-256 `ee285c82b0a0b864bd63696dc6d701e1fab2c44272afb8747f0beef5d8fcccb4`; optionally [386].
 
+### 6.2 Second primary-source reading (revision 3)
+
+ChatGPT review of PR #61 (review `5875984974`, on head `3fd8976`), after the PI supplied the v2 PDF to that session:
+
+- **File identity:** SHA-256 `ee285c82b0a0b864bd63696dc6d701e1fab2c44272afb8747f0beef5d8fcccb4`, the same copy as in §0 (31 pages; internal date 21 Oct 2026, version 1.5).
+- **Read against the source, targeted (not the whole PDF):** Lemma 2.2 (p. 5), Corollary 4.7 (p. 12), §6 (pp. 13–15), §10 (pp. 23–24), text and formulas.
+- **Result:** gates A, B, C and D each **PASS** against the source. The quantifier of Cor. 4.7 ("for every C in Hur", used in step B6) was checked there as well.
+- **D7:** confirmed by two arguments: the source's appeal to Poincaré duality (as filled in here) and the reviewer's exterior-algebra computation.
+- **State.** §§1–4 are now a line-by-line review of the every-member and compensation steps against Severn v2 by **two sessions**: CHECKED (two AIs), the ceiling under the PI's standing decision.
+- **Unchanged limits.** Not re-read by either session: Voisin's book, van Geemen's survey, Landherr. [386] and v1 were compared with the source by one session only, as text extractions; v2 is self-contained, so the result does not depend on them. Everything outside OPEN 8 (§6, last bullet) is untouched. Severn's Theorems A, B, C stay CLAIMED; OPEN 6 and OPEN 10 are unaffected.
+- **The reviewer's recommendation to the PI:** OPEN 8 → CLOSED (scoped). **Not applied:** the status of OPEN 8 changes only by a PI decision, in a ledger edition.
+
 ## 7. Recommendation
 
 1. Record this review as the line-by-line reading that the closure criterion of OPEN 8 asks for, **done by one session**.
@@ -126,4 +138,5 @@ Nothing in this record changes a grade, a review state or an OPEN item.
 | Revision | Date | Change |
 |---|---|---|
 | 1 | 12 Nov 2026 | first version |
+| 3 | 12 Nov 2026 | §6.2 added: the second primary-source reading by the ChatGPT session (gates A–D PASS against the v2 PDF); state CHECKED (two AIs) |
 | 2 | 12 Nov 2026 | §6.1 added: the co-owner review of PR #61 (conditional PASS of the arguments; D7 verified independently; source comparison pending) |
