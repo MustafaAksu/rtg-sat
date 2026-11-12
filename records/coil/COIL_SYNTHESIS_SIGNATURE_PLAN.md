@@ -1,6 +1,6 @@
-# COIL — Signature test on the Synthesis v1.0 map: exploration plan (unlocked)
+# COIL — Signature test on the Synthesis v1.0 map: exploration plan and outcome (unlocked; line closed)
 
-**Status:** `[SESSION]` working plan of the COIL owner session, 12 Nov 2026 (co-owner reviews `5872432608`, `5874140706`, `5874678971`, `5875363123` — their points are taken into §3, §4a–4c, §5, §5a and §7). **Outcome: §5a**, written on the PI's direction of the same day ("Synthesis haritasında imza testiyle ilerlemeyi uygun görüyorum"). **Not a preregistration, not locked, nothing decided.** Every number below is `[EXPLORE]` (Charter §0.1) and cannot enter a decision. Submitted for co-owner review; positions on which the two sessions do not agree are tried as alternatives and are not claimed as a result.
+**Status:** `[SESSION]` working plan of the COIL owner session, 12 Nov 2026 (co-owner reviews `5872432608`, `5874140706`, `5874678971`, `5875363123` — their points are taken into §3, §4a–4c, §5, §5a and §7). **Outcome: §5a — line closed `NONDISCRIMINATING` by PI decision of 12 Nov 2026**, written on the PI's direction of the same day ("Synthesis haritasında imza testiyle ilerlemeyi uygun görüyorum"). **Not a preregistration, not locked, nothing decided.** Every number below is `[EXPLORE]` (Charter §0.1) and cannot enter a decision. Submitted for co-owner review; positions on which the two sessions do not agree are tried as alternatives and are not claimed as a result.
 
 ## 1. Purpose test
 
@@ -135,7 +135,7 @@ Co-owner review `5874678971`: D1 observations accepted at `[EXPLORE]`; the separ
 
 **What would count against the signature here:** no parameter region with a window (O3 says this is the case at the paper's α = 0.98); or the onset of non-stationary motion not at the computed crossing; or the two boundaries moving together under every intervention.
 
-## 5a. Outcome of the exploration (12 Nov 2026) — proposed closure, PI decision pending
+## 5a. Outcome of the exploration (12 Nov 2026) — line closed by PI decision
 
 | item | state |
 |---|---|
@@ -148,7 +148,9 @@ Co-owner review `5874678971`: D1 observations accepted at `[EXPLORE]`; the separ
 | HYP-2 outside the MM-1 family | **not obtained** |
 | HYP-1 | untested |
 
-**Proposed by both sessions:** close the Synthesis signature line as `NONDISCRIMINATING`; open no preregistration on this family now; keep the observations at `[EXPLORE]`. The negative result is the finding: that a local linear boundary and a global boundary can be separated in a second family does not distinguish a common architecture from generic bifurcation behaviour. Co-owner's proposed next priority: the two open preconditions of Phase 2.5 (RCSJ) — control-knob mapping and the discrete/continuous mismatch; a move to Phase 3 would be a separate PI decision.
+**PI decision, 12 Nov 2026 (COIL owner session):** (1) the line is closed ("kapatıyoruz"); (2) PR #52 is merged and kept as a working record, without release or tag; (3) work continues with the open preconditions of Phase 2.5 (RCSJ). This decision is not an adoption of any statement in this record: nothing here changes a live document, and the entry of the negative result into `coil/COIL_INDEX.md` and the Charter is left to the next release.
+
+**As proposed by both sessions:** close the Synthesis signature line as `NONDISCRIMINATING`; open no preregistration on this family now; keep the observations at `[EXPLORE]`. The negative result is the finding: that a local linear boundary and a global boundary can be separated in a second family does not distinguish a common architecture from generic bifurcation behaviour. Co-owner's proposed next priority: the two open preconditions of Phase 2.5 (RCSJ) — control-knob mapping and the discrete/continuous mismatch; a move to Phase 3 would be a separate PI decision.
 
 ## 6. Proposed order of work
 
