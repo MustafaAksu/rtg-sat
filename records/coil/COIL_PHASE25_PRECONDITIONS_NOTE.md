@@ -1,6 +1,6 @@
 # COIL — Phase 2.5 (calibration plane): the two open preconditions — working note (unlocked)
 
-**Status:** `[SESSION]` working note of the COIL owner session, 12 Nov 2026 (co-owner review `5875774123`: ACCEPT WITH QUALIFICATIONS — algebra verified; the physical-delay reading and the control-knob equivalence corrected in §3; gates in §4a), on the PI's direction of the same day to continue with the open preconditions of Phase 2.5 after closing the Synthesis signature line. **Not a preregistration, not a design, nothing run, nothing decided.** For co-owner review. Sources: `coil/IDEALOG_COIL_RCSJ.md` (B1, B2, C.2, D2), `coil/COIL_CHARTER.md` §9.1, `coil/MM-1.md`, all at `coil-v0.9`.
+**Status:** `[SESSION]` working note of the COIL owner session, 12 Nov 2026 (co-owner review `5875774123`: ACCEPT WITH QUALIFICATIONS — algebra verified; the physical-delay reading and the control-knob equivalence corrected in §3; gates in §4a; reading of the two priority sources and proposal in §4b), on the PI's direction of the same day to continue with the open preconditions of Phase 2.5 after closing the Synthesis signature line. **Not a preregistration, not a design, nothing run, nothing decided.** For co-owner review. Sources: `coil/IDEALOG_COIL_RCSJ.md` (B1, B2, C.2, D2), `coil/COIL_CHARTER.md` §9.1, `coil/MM-1.md`, all at `coil-v0.9`.
 
 ## 1. Purpose test
 
@@ -60,7 +60,37 @@ Co-owner's first pass (targeted sections of three papers, not full readings; his
 
 **None of the three passes G1.** Two further sources were named as priority: Bernstein, Lieberman, Lichtenberg, *Nonlinear Dynamics of a Digital Phase Locked Loop* (IEEE Trans. Commun. 1989, doi:10.1109/26.41161; also UC Berkeley memorandum UCB/ERL M87/59, 1987) and NASA-CR-162854 (1980, hardware experiments on first- and second-order digital PLLs). **Not available to this session:** the publisher page, the NASA record and the Berkeley PDF could not be fetched (12 Nov 2026); only the existence of the Berkeley memorandum's catalogue entry was confirmed. Nothing is asserted about their content.
 
-**Standing of the route.** R-B stays open only as a bounded reading against G1–G3. The calibration plane is **not** renamed. If no source passes G1 and G3, R-B is closed and the choice between R-A (minimal calibration) and Phase 3 goes to the PI.
+**Standing of the route (before the reading of §4b).** R-B stays open only as a bounded reading against G1–G3. The calibration plane is **not** renamed. If no source passes G1 and G3, R-B is closed and the choice between R-A (minimal calibration) and Phase 3 goes to the PI.
+
+## 4b. Reading of the two priority sources (12 Nov 2026)
+
+Both PDFs were supplied by the PI as chat attachments on 12 Nov 2026. They are identified here by hash and public location and are **not placed in the repository**: the Berkeley memorandum carries a notice that posting on servers requires prior permission; the PI decides whether either file is deposited.
+
+| source | SHA-256 of the file received | public location |
+|---|---|---|
+| G. M. Bernstein, M. A. Lieberman, A. J. Lichtenberg, *Nonlinear Dynamics of a Digital Phase Locked Loop*, Memorandum UCB/ERL M87/59, 25 Aug 1987, 34 pp. | `ab830b0c8294ee42db4e2a9395b475f11121d71278f48b50ee6f6247c22133f8` (received twice, identical) | `https://www2.eecs.berkeley.edu/Pubs/TechRpts/1987/925.html` |
+| P. R. Blasche, *Analysis of First and Second Order Binary Quantized Digital Phase-Locked Loops for Ideal and White Gaussian Noise Inputs*, NASA-CR-162854 (Ohio University dissertation), March 1980, 127 pp. | `26b930fb47f33934a618604c4aac075322706bc9d26e46312133d1e303d7b028` | `https://ntrs.nasa.gov/citations/19800010779` |
+
+**Extent of the reading.** Memorandum: text read in full (11 pages of text, two tables, figure captions); the equation pages checked against the page images; the figures themselves not examined in detail. NASA report: front matter, Chapter III up to the first-order response (derivation of the loop equations), Chapter VI (hardware) and Chapter VII (conclusions) read in full; the rest of Chapter III scanned for stability statements; Chapters II, IV, V and the appendices not read. OCR text of a microfiche copy; equations taken only where legible.
+
+**Bernstein–Lieberman–Lichtenberg (non-uniformly sampling DPLL, sinusoidal detector, proportional-plus-accumulator filter).**
+
+- *Equation* (their eq. 4, 7): φ_{n+1} − 2φ_n + φ_{n−1} = −ω₁A(G₁ + G₂) sin φ_n + ω₁G₁A sin φ_{n−1}; with I_n = φ_n − φ_{n−1}, k′ = ω₁G₁A, r = 1 + G₂/G₁ (A, G₁, G₂ > 0): I_{n+1} = I_n − r k′ sin φ_n + k′ sin(φ_n − I_n), φ_{n+1} = φ_n + I_{n+1}, on the torus.
+- In the indexing of §3: **φ_{n+2} − 2φ_{n+1} + φ_n = −r k′ sin φ_{n+1} + k′ sin φ_n.** There is no linear velocity damping; the restoring term acts at the new phase (the Euler–Cromer place), and the term at the old phase has the **opposite sign** to a restoring force.
+- *Linearisation at the locked state* (their eq. 9): characteristic polynomial z² − (2 − r k′) z + (1 − k′); root product 1 − k′ < 1 for every k′ > 0. The paper states that the locked state loses stability **by period doubling** at k′ > 4/(1 + r) (their eq. 10), i.e. a root through −1. Checked here from their Jacobian. A complex pair on the unit circle would need k′ = 0.
+- *Beyond linear theory:* a stable period-4 orbit coexisting with the locked state at the linearly optimal parameters (k′ = 1, r = 2), fractal basin boundary, Hopf bifurcation **of the period-4 orbit** with an almost-periodic orbit, transient chaos, a Hamiltonian (standard-map) approximation with stochasticity parameter K = k′(r − 1).
+- *Evidence type:* analysis and numerical iteration of the map. No hardware.
+- **Gates.** G1: explicit state map and timing — yes; parameter transformation to MM-1 — **none**: MM-1's recurrence would need the coefficient of sin φ_{n+1} to vanish and that of sin φ_n to be negative, i.e. G₁ < 0 and G₂ = −G₁, outside the loop's defining assumptions, and it would still lack the linear damping term. **Fails G1.** G2: threshold published, crossing type period doubling, not a complex pair. **Fails G2 as a counterpart of S1/S2.** G3: independent computation, not hardware; moot.
+
+**Blasche (binary-quantised DPLL for an Omega receiver).**
+
+- *Equation* (his eq. 3-17, 3-26, 3-27): the phase detector output is sgn[sin φ(k)]; the reference phase takes N discrete states; φ(k+1) − φ(k) = … − (ω/ω₀){Δ₁ sgn[sin φ(k)] + Δ₂ Σ_{i≤k} sgn[sin φ(i)]}. The nonlinearity is a sign function on a quantised phase: there is no differentiable fixed point and no linearisation whose eigenvalues could cross the unit circle; "lock" is defined as a bounded oscillation of the quantised error.
+- *Hardware:* a loop was built and tested (Chapter VI). What was measured is the phase-detector output probability, the steady-state phase-error distribution and the mean number of samples to lock **under additive Gaussian noise**, compared with a Markov-chain model; "close agreement" is reported. No stability boundary in a gain parameter was measured.
+- **Gates.** G1 **fails** (different nonlinearity and state space; no transformation). G2 **fails** (no eigenvalue crossing exists in the model). G3: hardware exists, for quantities that have no counterpart in MM-1.
+
+**Result of the reading.** Five sources have now been examined by one session or the other (three by the co-owner in targeted sections, two here); **none passes G1**. In the one case where the loop is a smooth second-order sine map (Bernstein et al.), the old-phase term enters with the stabilising sign and the locked state is lost by period doubling. `[HEUR]` This is not an accident of that paper: a loop filter is designed so that the term at the latest sample restores and the lagged term damps; MM-1's recurrence — the only nonlinear term lagged, with the restoring sign — is what such a design avoids. This is a remark on five sources, not a survey of the field.
+
+**Proposal.** Close R-B against the gates. With R-C already the counterpart of the control arm, what remains is R-A (sub-threshold calibration against the continuous RCSJ: low risk, low information, silent on the spark and on fracture) and R-D: record that the continuous Josephson plane cannot calibrate MM-1's signature, because both S1/S2 and the fracture lie above the spark and exist only in the discrete update (B2; C.2). The decision between R-A, R-D and Phase 3 is the PI's.
 
 ## 5. Null rival
 
