@@ -14,7 +14,7 @@ A historical source file is frozen and is never edited. It keeps its original wo
 
 ## Folders
 
-| Folder | Files | Content | Relation to the adopted ledger (`hcg-v0.4`) |
+| Folder | Files | Content | Relation to the adopted ledger (`hcg-v0.5`) |
 |---|---|---|---|
 | `ledger-history/` | 61 | Ledger v0.1 (drafts, ADOPTED, release record, packages); ledger v0.2 (drafts, build fragments, `make_v02.py`, `release_v0_2.py`, diffs, QA record, ADOPTED, release record and addendum); the pending-delta logs for v0.2 (Δ1–Δ23) and v0.3 (Δ24–Δ29, live state) | v0.2 and its chain. The v0.3 log is pending. |
 | `session-start/` | 11 | Charter v0.2, the H1/H2 problem contract and exact checks, the R7 proof note, the first verification ledgers, Claude's first H3 reviews | cited by v0.2 |
@@ -24,7 +24,7 @@ A historical source file is frozen and is never edited. It keeps its original wo
 | `literature-reviews/` | 2 | Claude's edge-flux literature review and comparison | cited by v0.2 (Δ7) |
 | `severn-v2/` | 10 | Severn v2 successor audit | in `hcg-v0.3` (Δ25–Δ26) |
 | `research-next/` | 1 | Boundary-rank note review | in `hcg-v0.3` (Δ25) |
-| `nonsplit8/` | 173 | Nonsplit Weil eightfolds: `cyclic_disc_claude.py`, the locality checks, GAP screens, the reports of Δ27 addenda 1–17, and 17 states of the v0.3 log in `deliver*/` | two results in `hcg-v0.4` (§6.24); the rest **pending** (Δ27) |
+| `nonsplit8/` | 173 | Nonsplit Weil eightfolds: `cyclic_disc_claude.py`, the locality checks, GAP screens, the reports of Δ27 addenda 1–17, and 17 states of the v0.3 log in `deliver*/` | nine results in the adopted ledger (§6.24, §6.25); the rest **pending** (Δ27) |
 | `positive/` | 6 | All-powers positive lane: CM rank scan | **pending** (Δ29) |
 | `hho-track/` | 3 | The HHO opening note v0.1 and its bundle folder | **HHO-track source evidence**; custody HHO (Δ28, pending) |
 | `scratch/` | 12 | Files kept only in the session's scratch area: the three v0.2 replay packages, the earliest held state of the v0.3 log, small probes | mixed |

@@ -1,17 +1,17 @@
-# HCG study ledger v0.4
+# HCG study ledger v0.5
 
 **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, the G₃₄ boundary-witness programme, and the H4-selection theory)
-**Date:** 11 November 2026
+**Date:** 12 November 2026
 **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
-**Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.22 are an *external-claim audit module* (§6.23 and §6.24 are this study's own work). In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
-**Document status:** ADOPTED (scoped) — PI decision, 11 November 2026 ("1- İncelenen DRAFT r2'nin `hcg-v0.4` olarak scoped kabulü uygun"; recorded on PR #40), following the ChatGPT co-owner review "ACCEPT SCOPED" of DRAFT r2. It adds two results of Δ27 (§6.24) and changes nothing else of v0.3. Adoption does **not** set any individual claim's review state to ACCEPTED and does not establish any external claim (Severn's Theorem 6.2 stays CLAIMED). Release record: `records/hcg/HCG_v0.4_RELEASE_RECORD.md`. The edition is published by the annotated tag `hcg-v0.4`.
-**Build:** made from the adopted v0.3 text by `evidence/hcg/verification/make_v04_draft.py` (assertion-gated replacements and insertions; every anchor must occur exactly once). Text that the script does not touch is the v0.3 text, byte for byte. Released from DRAFT r2 (SHA-256 a23aef682216df98b578d5ca4744465fa8ec9538b8edde68f8dd0ec9070a39ad) by `evidence/hcg/verification/release_v04.py` (labels and metadata only).
-**Revision base:** the ledger of `hcg-v0.3` (SHA-256 fc03e8376eb56c14abeae77c7f20c2fa70723977572744af8a0c4a38dcec814d; the file at the tag `hcg-v0.3`). Change sources:
-- Δ27 addendum 2, item (i), and addendum 4, item (ii), of `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` (SHA-256 1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d), with the field-free form of addenda 5–6, as reviewed in `records/hcg/HCG_D27_CORE_THEOREMS_ACCEPTANCE_MATRIX.md` (revision 2; ChatGPT co-owner review ACCEPT SCOPED);
-- the PI disposition of 11 Nov 2026 that no third-family reading is requested and that the ceiling of both results is CHECKED (two AIs).
+**Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.22 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work). In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
+**Document status:** ADOPTED (scoped) — PI decision, 12 November 2026, 14:58 +03:00 ("1- Belirtildiği şekilde kabul ediyorum."), of DRAFT r2. It adds seven results of Δ27 (§6.25: the d = 6 chain, the reduction to the inducing datum, and the reflection dichotomy with its corollary for d ≤ 14) and one OPEN item, and changes nothing else of v0.4. Adoption does **not** set any individual claim's review state to ACCEPTED and does not establish any external claim (Severn's Theorem 6.2 stays CLAIMED). Release record: `records/hcg/HCG_v0.5_RELEASE_RECORD.md`. The edition is published by the annotated tag `hcg-v0.5`.
+**Build:** made from the adopted v0.4 text by `evidence/hcg/verification/make_v05_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.4 text, byte for byte. Released from DRAFT r2 (SHA-256 d85e7fac6a9bac1af881595d7c48cc3e76216a17c958d8c70a649a9c8d93beb4) by `evidence/hcg/verification/release_v05.py` (labels and metadata only).
+**Revision base:** the ledger of `hcg-v0.4` (SHA-256 51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949; the file at the tag `hcg-v0.4`). Change sources:
+- Δ27 addenda 1–5 of `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` (SHA-256 1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d), in the parts reviewed in three acceptance matrices in `records/hcg/`: `HCG_D27_D6_CHAIN_ACCEPTANCE_MATRIX.md` (revision 2), `HCG_D27_LEMMA_E_ACCEPTANCE_MATRIX.md` (revision 3), `HCG_D27_REFLECTION_DICHOTOMY_ACCEPTANCE_MATRIX.md` (revision 1). Each has a ChatGPT co-owner review ACCEPT SCOPED;
+- the PI's standing decision of 11 Nov 2026 (18:18 +03:00): until the PI says otherwise, no third-family reading is requested and the ceiling of a reviewed item is CHECKED (two AIs).
 
-**Not included:** everything else of Δ27 (the open item on nonsplit eightfolds, the d = 6 corollary and its G₃₄ census, the normal-reflection lemma, Lemmas E and F, Theorem R, and every bound from d ≥ 15 to d ≥ 53), Δ28 (HHO opening) and Δ29 (positive lane). They stay pending. HHO claims are not HCG results.
-**Supersedes:** `hcg-v0.3`. Earlier: `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
+**Not included:** the rest of Δ27 (the cyclic separators and search gates of its main entry, and everything from addendum 5 (ii) on: the exclusion of 15 ≤ d ≤ 24 and every bound from d ≥ 25 to d ≥ 53, with their classification imports), Δ28 (HHO opening) and Δ29 (positive lane). They stay pending. HHO claims are not HCG results.
+**Supersedes:** `hcg-v0.4`. Earlier: `hcg-v0.3`, `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
 **Companion documents:** `hcg/HCG_CHARTER.md`; `records/hcg/HCG_SOURCE_MANIFEST.md`; `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md`; the frozen files in `evidence/hcg/` (file names used in this ledger resolve through `PLACEMENT_MAP.tsv` and `NAME_ALIASES.tsv`). The session's own charter v0.2 and verification ledgers are historical companions in `evidence/hcg/`.
 **DSN Methodology:** the ledger text was written under DSN_METHODOLOGY_v1.3. `rtg-sat` reads its base rules at `methodology-v1.4`. The claim tags are not re-graded in this edition.
 **Status summary:**
@@ -24,6 +24,7 @@
   - PO-6 on W5: the cup-form class and its identification with the actual polarized factor are both THIRD-FAMILY CHECKED. The general statement is CHECKED by two AIs as a proof-path review only (v2 Prop 7.1 with Lemma 7.2; §6.16, §6.22).
 - **New in this edition (Δ25, Δ26).** A boundary-rank corollary and a dimension budget (§6.23); the Severn v2 successor audit (§6.22). Severn's Appendix A is reproduced, and OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stays PARTIAL.
 - **New in this edition (Δ27, two results only).** A determinant-class identity for genus-zero parabolic cup forms and a period-rank bound for induced finite-monodromy variations (§6.24). Both are `[THM]`, CHECKED by two AIs. Neither has a third-family or a human check. Their applications are not in this edition.
+- **New in this edition (Δ27, seven results).** Under the standing hypotheses (H) of §6.25, a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15 (§6.25). All seven are CHECKED by two AIs and conditional on classical classification imports. This is not a non-existence statement for nonsplit Weil eightfolds.
 - **New since v0.1: the component connection (§6.19).** Explicit, doubly replayed braid certificates place Severn's own Appendix-A tuple (gate and paired forms), W5, NEW01–04, BLOCK-01 and ESCAPE in one component of H/Σ. This is an algebraic tuple chain; its consequences for the polarized family are stated separately, with their premises.
 - **New since v0.1: the H4-selection theory (§6.18).** Includes the edge-flux theorem, the laminar reduction, rank obstructions and their braid escapes, and finite classifications. All of it lies outside the main chain.
 
@@ -141,6 +142,20 @@ All of this is known-case verification, INTERNAL CHECKED (§6.2–§6.5).
 | `HCG-THM-PARABOLIC-DISC-LOCALITY` | — (pending, Δ27 addendum 2) | new, `[THM]`, CHECKED (two AIs) | §6.24; core matrix §1 |
 | `HCG-THM-INDUCED-PERIOD-BOUND` | — (pending, Δ27 addendum 4) | new, `[THM]`, CHECKED (two AIs); two coefficient profiles | §6.24; core matrix §2 |
 | Every other statement, grade, guard and OPEN item | as in v0.3 | unchanged | — |
+
+### §1.5 New in v0.5
+
+| Item | v0.4 state | v0.5 state | Record |
+|---|---|---|---|
+| `HCG-ALG-G34-RANK2-LOCAL` | — (pending, Δ27 addendum 2) | new, `[ALG]` with `[ALG cert]` census, CHECKED (two AIs) | §6.25 (a) |
+| `HCG-COR-D6-NONSPLIT-NOGO` | — (pending, Δ27 addendum 2) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (b) |
+| `HCG-LEM-INDUCING-DATUM` (Lemma E of the log) | — (pending, Δ27 addenda 4–5) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (c) |
+| `HCG-LEM-NONSPLIT8-NORMAL-REFL` | — (pending, Δ27 addenda 3–4) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (d) |
+| `HCG-LEM-SYMMETRIC-TYPE-PERIOD-BOUND` (Lemma F) | — (pending, Δ27 addenda 4–5) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (e) |
+| `HCG-THM-REFLECTION-DICHOTOMY` (Theorem R) | — (pending, Δ27 addenda 4–5) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (f) |
+| `HCG-COR-NONSPLIT8-D14` | — (pending, Δ27 addenda 4–5) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (g) |
+| OPEN 11, `HCG-OPEN-NONSPLIT8` | — (pending, Δ27 main entry) | new OPEN, ACTIVE: nonsplit data under (H) for d ≥ 15 | §2 |
+| Every other statement, grade, guard and OPEN item | as in v0.4 | unchanged | — |
 
 ---
 
@@ -266,6 +281,15 @@ Question: v2 §11 (Theorem C, all powers) and §12 (type III) were not audited b
 Closure criterion: a recorded proof review of those sections, with the review state it reaches.
 Note: the all-powers question is also the subject of pending Δ29, which is outside this edition.
 
+**OPEN 11 — Nonsplit data in the Hurwitz-transfer setting** [RID: HCG-OPEN-NONSPLIT8] (new in v0.5; opened in the pending Δ27)
+Status: ACTIVE
+Scheduling: READY
+Question: does a datum exist that satisfies the standing hypotheses (H) of §6.25 and has a nonsplit cup class?
+Known in this edition: none for d ≤ 14; a nonsplit datum has a reflection-free image, all c_j ≥ 2, and d ≥ 15 (§6.25 (g)).
+Not in this edition: the later bounds of the pending Δ27 (d ≥ 25 and beyond). They rest on further classification imports and are not reviewed here.
+Closure criterion: a datum with a nonsplit class and a recorded check of (H), or a reviewed proof that none exists for all d.
+Scope: the question is about this construction only. It is not the question whether nonsplit Weil eightfolds exist or whether their Weil classes are algebraic.
+
 **Closed modules (references only):**
 - H1 calibration :: CLOSED :: `[ALG]` :: §6.2
 - H2 calibration :: CLOSED :: `[ALG]` :: §6.3
@@ -362,6 +386,9 @@ Conventions:
 | Boundary rank and budget | A bound for simultaneous laminar boundary degenerations, and counting bounds for genus-0 data. Necessary conditions only. | "nonsplit dominant families do not exist"; "Severn's method is capped at split eightfolds" (a withdrawn proposal, Appendix B) | HCG-COR-BOUNDARY-WITT, HCG-ALG-DIM-BUDGET / §6.23 |
 | Local determinant formula | A class identity in ℚ^×/N(K^×) for the algebraically defined form S on genus-zero parabolic cohomology, K imaginary quadratic, h₀ positive definite. Two AIs. | "a theorem about polarized abelian varieties"; "proves Severn's Theorem W"; "no nonsplit eightfold exists"; use for higher genus, indefinite h₀ or other fields | HCG-THM-PARABOLIC-DISC-LOCALITY / §6.24 |
 | Induced period bound | An upper bound for the period rank of an induced finite-monodromy variation coming from the cohomology of the covers. An obstruction to (D). Two AIs. | "no dominant family exists"; use for other Hodge filtrations or continuous families of representations; a discriminant or (L) statement from the profile over ℂ | HCG-THM-INDUCED-PERIOD-BOUND / §6.24 |
+| Reflection dichotomy; d ≤ 14 | Under (H): a reflection in the image forces class [1] of the parabolic cup form, so a nonsplit datum needs d ≥ 15. Conditional on classical classification imports. Two AIs. | "no nonsplit Weil eightfold exists"; "the Hodge conjecture holds for them"; any use without (D); any statement for d ≥ 15; reading the cup class as a polarization without Severn v2 Prop 7.1 | HCG-THM-REFLECTION-DICHOTOMY, HCG-COR-NONSPLIT8-D14 / §6.25 |
+| Reduction to the inducing datum | Replaces a K-induced dominant datum by its inducing datum with the same class. | "one may assume σ primitive" (only: minimal for induction over K); any transfer of (L); use for inductions over ℂ only | HCG-LEM-INDUCING-DATUM / §6.25 |
+| G₃₄ rank-2 elements | Two types, through Steinberg's theorem and a census of root planes. | "the group was enumerated" | HCG-ALG-G34-RANK2-LOCAL / §6.25 |
 | (D) for G₃₄ | Period-map rank 16 on the Hurwitz component S_W5, by the auditor's written argument. Since Severn's Appendix-A tuple lies on S_W5 (§6.19), this is also (D) on that component. | "(D) on every component"; "(D) verified from Severn's own boundary tree" | HCG-THM-G34D-SW5 / §6.15, §6.19 |
 | W5/W6/W7 | Exact finite (H0)–(H4) certificates | "geometric dominance from the matrices alone" | HCG-ALG-W5/W6/W7 / §6.14 |
 | Component connection | Severn gate and paired tuples, W5, NEW01–04, BLOCK-01, ESCAPE: one H/Σ component under the K-linear intertwiner P. INTERNAL CHECKED. | "all G₃₄ tuples are connected"; "W6/W7 lie on S_W5"; "Severn's polarization and discriminant claims are verified" | HCG-ALG-SEVERN-APPXA-W5-LINK / §6.19 |
@@ -1015,6 +1042,7 @@ This section lists the premises of Thm 6.2 that no reviewer in this session has 
 - **Third-family scope.** The auditor's round-2 verdicts are theorem-level readings of the v1 and [386] texts. They do not extend to v2, to the new Lemmas 4.4 and 7.2, or to Theorem C (SG-13).
 - **Boundary-rank corollary.** It bounds simultaneous laminar boundary degenerations. It is not an existence or non-existence statement about dominant families (§6.23).
 - **The two results of §6.24.** Each was derived by ChatGPT and proof-reviewed by Claude; the acceptance matrix was written by Claude and reviewed by ChatGPT. No third family and no human has read either proof (PI disposition, 11 Nov 2026: no third-family reading for now). No literature search was made; no novelty is claimed.
+- **The results of §6.25.** Each was derived by one AI session and checked by the other (roles are given per entry). No third family and no human has read the proofs (PI standing decision, 11 Nov 2026). The classification imports (Shephard–Todd, Steinberg, automorphism groups of root systems) are classical and were not re-read for this edition. No literature search was made; no novelty is claimed.
 - **Evidence outside this repository.** The Appendix A reproduction uses Severn's deposited tuple (third-party data). One ChatGPT bundle is held back because it contains deposit data, and two ChatGPT packages were never received by Claude. §6.22 cannot be replayed from this repository alone.
 
 ### §6.22 Severn v2 successor audit `[EXT-CLAIM]` — mixed content {#sec-severn-v2}
@@ -1136,7 +1164,114 @@ For n = 4 **and a target of signature (4,4), whose period domain has dimension 1
 
 **Scope.** The bound is an obstruction to (D). It constructs nothing and it says nothing about (L) or the discriminant. It does not cover a Hodge filtration that does not come from the cohomology of the covers, and it does not cover continuous families of representations. With the case r = 1 the study no longer needs Severn v1 §8 for the exclusion of monomial data; that comparison with Severn's text is source-limited.
 
-**Not in this edition.** Every use of the two results: the d = 6 corollary with the rank-2 census in G₃₄, the exclusions for d = 7 to 11, Lemma E (transport of the discriminant to the inducing datum, profile (i) only), Lemma F, Theorem R and the bounds up to d ≥ 53. They stay pending in the Δ27 log.
+**Uses of the two results.** In this edition: §6.25 (the d = 6 chain, the reduction to the inducing datum, the reflection dichotomy and the corollary for d ≤ 14). Still pending in the Δ27 log: the bounds from d ≥ 25 to d ≥ 53.
+
+### §6.25 The reflection dichotomy and the obstruction for d ≤ 14 `[THM]` {#sec-d27-reflection}
+
+Seven results from the pending Δ27 (addenda 1–5). Together: **under (H), a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15.**
+
+**Conventions.** K = ℚ(√−3), ω a primitive cube root of unity, N the norm; a class is an element of ℚ^×/N(K^×). A **datum** (Γ, σ; g₁, …, g_N) is a finite group Γ ⊂ GL_d(K) with its absolutely irreducible action σ on V = K^d and a product-one generating tuple of effective elements; it gives a family of Γ-covers of P¹. c_j = rank(1 − g_j) ≥ 1 and ε = Σ(c_j − 1). A **reflection** is an element with c = 1, of any finite order. h is the Γ-invariant positive definite K-Hermitian form, unique up to a positive rational factor.
+
+**Standing hypotheses (H).** Base of genus 0; character field of σ exactly K; no fixed vector; dim_K M_σ = 8 (n = 4) with signature (4,4), whose period domain has dimension 16; **(D)**: period rank 16. Under (H): Σc_j = 2d + 8 (§6.23); only effective points count, by step (P6) of §6.24 (b) with H = Γ; so N ≥ 19 and ε ≤ 2d − 11.
+
+**"Split"** means class [1] of the form S of §6.24 (a), read as the parabolic cup form (layer L2). **The reading for polarized abelian varieties is never part of an entry below.** It is one separate conditional sentence at the end of this section.
+
+**Review.** Every entry is CHECKED (two AIs): one session derived it, the other checked it, and an acceptance matrix was written by one and reviewed by the other. Nobody else has read the proofs. Classification theorems are imports and were not re-read.
+
+#### (a) Rank-2 elements of G₃₄
+
+`[ALG]` [assuming: Steinberg's fixed-point theorem; the reflection count 126 of G₃₄] [RID: HCG-ALG-G34-RANK2-LOCAL] [provenance: CHECKED (two AIs) — derived by ChatGPT (`received/b69978bf-HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_2.md` §5); two independent censuses of root planes, `[ALG cert]` (ChatGPT, in `received/2e443e69-…REPRO_v0_1.zip`; Claude, `nonsplit8/g34_rank2_plane_census_claude.py`). Δ27 addendum 2 (ii); d = 6 matrix §2]
+
+In the realization of G₃₄ of §6.12, with every reflecting root of norm 6: an element g with rank(1 − g) = 2 is of exactly one of two types.
+
+| Type | Pointwise stabilizer of Fix(g) | Order of g | a = det(h\|E), **in a basis of two roots** | b = det((1 − g)\|E) | a·b |
+|---|---|---|---|---|---|
+| A₁ × A₁ | two commuting reflections | 2 | 36 | 4 | 144 = N(12) |
+| A₂ | S₃, three reflections | 3 | 27 | 3 | 81 = N(9) |
+
+The numbers a = 36 and a = 27 are Gram determinants in the chosen basis of E, made of two roots of norm 6 (orthogonal for A₁ × A₁; with |h(v, w)|² = 9 for A₂). Another K-basis of E multiplies a by a norm and leaves b unchanged. So the invariant is the class of a·b in ℚ^×/N(K^×), here [1] in both cases, not the number.
+
+Proof chain. By Steinberg, the pointwise stabilizer of Fix(g) is generated by the reflections with roots in E = im(1 − g). For two distinct root lines |h(v, w)|² ∈ {0, 9} (exhaustive over 7875 pairs). A plane with q unit roots has q²/2 ≤ tr(Gram²) ≤ q + q(q − 1)/4, so q ≤ 3, and a plane with an orthogonal pair has exactly two root lines. Census: 2835 planes with two lines, 1680 with three.
+
+Limit: the statement goes through Steinberg's theorem and a census of root pairs and planes. The 39,191,040 elements of the group were not enumerated.
+
+#### (b) The case d = 6
+
+`[THM]` [assuming: the Shephard–Todd classification in rank 6; Steinberg's theorem and the reflection count 126 of G₃₄] [import: Dettweiler–Wewers for the cup reading (§6.24 (a), L2)] [RID: HCG-COR-D6-NONSPLIT-NOGO] [provenance: CHECKED (two AIs) — reduction and class computation derived by ChatGPT (`received/50c01323-HCG_NONSPLIT8_MINIMAL_RANK_GROUP_SCREEN_v0_1.md`; locality proof v0.2 §§4–6), reviewed by Claude (`nonsplit8/H3_NONSPLIT8_D6_SCREEN_AND_DISC_LOCALITY_CLAUDE_v0_1.md`); steps R2, R6, R7 and C2 in the form below were written by Claude in the d = 6 matrix and passed by ChatGPT. Δ27 addenda 1 (i) and 2 (iii)]
+
+**Statement.** A datum with d = 6, dim_K M_σ = 8 of signature (4,4) and period rank 16 has [det(ϑS)] = [1]. No condition on the character field is needed.
+
+**Proof chain.**
+- (R1–R4) Σc_j = 20 and N ≥ 19 give ε ≤ 1: twenty reflections, or eighteen reflections and one element of rank 2 that is the inverse of a product of reflections. So the image is generated by reflections.
+- (R5) An irreducible reflection group of rank 6 is G(m, p, 6) with m ≥ 2, S₇, W(E₆) or G₃₄ (Shephard–Todd).
+- (R6) G(m, p, 6) is monomial: period rank ≤ 12 by §6.24 (b), r = 1.
+- (R7) S₇ and W(E₆): σ is defined over ℚ with a symmetric invariant form, so M_σ = M₀ ⊗ K with M₀ a symplectically polarized rational Hodge structure of dimension 8, and the period map factors through the Siegel space of genus 4: rank ≤ 10 < 16. (Scope: representations defined over ℚ. Nothing is claimed for representations defined only over a larger real field.)
+- (C2) So the image is G₃₄. Two K-forms of an absolutely irreducible representation with the same character are isomorphic over K, h is unique up to q ∈ ℚ_{>0}, and the class does not change under q or under a change of basis in the E_j. So the class may be computed in the realization of §6.12.
+- (C3–C5) A reflection of G₃₄ has a·b = 6·2 = 12. With §6.24 (a): [12²⁰] = [1], and by (a) [12¹⁸·144] = [12¹⁸·81] = [1].
+
+#### (c) Reduction to the inducing datum (Lemma E of the log)
+
+`[THM]` [assuming: (H); σ induced over K from a block of rank r ≥ 2] [RID: HCG-LEM-INDUCING-DATUM] [provenance: CHECKED (two AIs) — proposed by Claude (`nonsplit8/H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` §3), checked by ChatGPT with an independent proof of the local identity (`received/233fab3b-HCG_REFLECTION_DICHOTOMY_CHATGPT_REVIEW_v0_1.md` §2); Lemma E matrix, revision 3. Δ27 addenda 4–5]
+
+**Statement.** Let a datum satisfy (H) with σ ≅ Ind_H^Γ τ over K (profile (i) of §6.24 (b)), r = dim τ ≥ 2, Y = C/H of genus γ, and D_τ ⊂ Y the points with nontrivial τ-monodromy h_y. Then:
+- (i) γ = 0;
+- (ii) the τ-datum (τ(H), τ; (h_y)) is a genus-zero datum in dimension r that satisfies (H); in particular r ≥ 6;
+- (iii) the two cup classes are equal;
+- (iv) (auxiliary, used only in (f)) if the reflections of Γ generate a nontrivial normal subgroup W_R, the blocks of the induction are its K-defined irreducible blocks V_i, and H is the stabilizer of V₁, then τ(H) contains a reflection group that is irreducible on V₁.
+
+**Proof chain.** (i): for γ ≥ 1 the period rank is ≤ 8 (§6.24 (b)). (ii): the monodromies h_y generate τ(H) with product one; M_σ ≅ M_τ as Hodge structures, so dimension, signature and (with the period domain of dimension 16) period rank exactly 16 are kept; τ is absolutely irreducible without fixed vector; its character field lies in K and is not ℚ, because an induced rational-valued character is rational-valued; then the budget gives r ≥ 6. (iii), global proof: ⟨φv, ψw⟩ = S_σ(φ, ψ)·h(v, w) by Schur's lemma; restriction to the first block is the Frobenius isomorphism and gives the same form for τ on H¹(C); passing to H¹(C/ker τ) multiplies the cup form by a positive rational q, and q⁸ = N(q⁴).
+
+**The local identity (an independent route to (iii)).** For g acting on a cycle of ℓ blocks with return map P, the ratio a(g)b(g) / (a(P)b(P)·det(h_τ)^{ℓ−1}) lies in N(K^×). The single products need **not** be rational, so this is an equality in K^×/N(K^×); classes in ℚ^×/N(K^×) are taken only for the total products over all branch points. Example: P = diag(ω, 1), ℓ = 2 gives a(g)b(g) = 4(1 − ω), a(P)b(P) = 1 − ω, ratio 4 = N(2). Over all points the extra factor is [det h_τ]^{Σ(ℓ−1)}, and Σ(ℓ − 1) = 2(k − 1) + 2γ is even. Exact check of the ratio form: 60 cases, with det h_τ of non-norm classes (`nonsplit8/block_cycle_local_factor_claude.py`).
+
+**Not claimed.** Any transfer of (L). Anything for an induction defined only over ℂ: a representation can be primitive over K and monomial over ℂ (AGL(1,7) × μ₃ in degree 6). "One may assume σ primitive" is false as a reading of this lemma; it gives a representative that is minimal for induction over K (correction D-14).
+
+#### (d) The normal reflection subgroup
+
+`[THM]` [assuming: (H); Γ contains a reflection] [import: the automorphism groups of the root systems A_d, E₆, E₇, E₈] [RID: HCG-LEM-NONSPLIT8-NORMAL-REFL] [provenance: CHECKED (two AIs) — proposed by Claude (`nonsplit8/H3_D7_SCREEN_REVIEW_AND_D7_9_EXCLUSION_CLAUDE_v0_1.md` §3.1), rederived by ChatGPT with the exact block identity and the genus-refined bound (`received/883d8c7d-HCG_NORMAL_REFLECTION_SCREEN_CHATGPT_REVIEW_v0_1.md`); reflection-dichotomy matrix §1. Δ27 addenda 3–4]
+
+Let W_R be the subgroup generated by all reflections of Γ.
+- **(S)** W_R is normal and nontrivial; V = V₁ ⊕ … ⊕ V_k orthogonally with the V_i defined over K; W_R = ΠW_i with W_i an irreducible reflection group on V_i; Γ permutes the V_i transitively, so d = rk.
+- **(C)** If k = 1 and W_R is conjugate to G(m, p, d) with m ≥ 2, d ≥ 5, then Γ permutes the d coordinate lines: σ is monomial over ℂ. (The coordinate lines are exactly the lines on the largest number of reflecting hyperplanes: a line with z zero coordinates lies on at most m·C(z,2) + C(d−z,2) + ηz of them, η = 1 if p < m and 0 otherwise.)
+- **(B)** If k = 1 and W_R is a Weyl group of type A_d (d ≥ 2), E₆, E₇ or E₈, then Γ ⊂ W_R·μ₆ and the tuple has at least two elements λw with λ non-real. Hence ε ≥ 2(⌈d/2⌉ − 1) for E₆, E₇, E₈ and ε ≥ 2(d − ⌊(d+1)/3⌋ − 1) for A_d. The hypothesis "character field exactly K" is essential here.
+- **(D)** If k ≥ 2: rank(1 − g) = r·ind(π) + Σ_a rank(1 − P_a) for g inducing the block permutation π with return maps P_a; hence ε ≥ 2(r − 1)(k − 1 + γ). (Recorded as a budget bound; (f) uses (c) instead.)
+
+**Exclusions that follow from (B), (C), (D) with the Shephard–Todd list and §6.24 (b), under (H):** no datum at all for d = 7, 8, 9, 11, and none for d = 10. This is stronger than what (f) says for those d (which excludes only nonsplit data), and it rests on these budget and classification steps, not on (f).
+
+#### (e) The symmetric-group type (Lemma F of the log)
+
+`[THM]` [assuming: (H); k = 1 and W_R = S_{d+1} in its standard reflection representation, d ≥ 2] [RID: HCG-LEM-SYMMETRIC-TYPE-PERIOD-BOUND] [provenance: CHECKED (two AIs) — proposed by Claude, checked by ChatGPT "in its stated standard/scalar representation scope" (same files as (c), §3); reflection-dichotomy matrix §2. Δ27 addenda 4–5]
+
+Then Γ = S_{d+1} × μ_m with m ∈ {3, 6}, σ = std ⊗ χ, and rank Per_σ ≤ 15. So the case does not occur under (H).
+
+Proof chain. σ ⊕ χ is induced from the rank-one character 1 ⊠ χ of S_d × μ_m. With t the number of entries with nontrivial scalar, M_σ ⊕ M_χ has dimension 6 + t = 2γ − 2 + s′ on the (d+1)-sheeted cover, so by §6.24 (b) rank Per_σ ≤ 3γ − 3 + s′ = γ + 5 + t ≤ 9 + 3t/2 (from s′ ≥ 0). By (d)(B), t ≥ 5 would need ε ≥ (17d − 43)/6 > 2d − 11. So t ≤ 4.
+
+Scope: only this representation. Wider cases named in the source note (alternating groups, a sign twist) are not part of this entry.
+
+#### (f) The reflection dichotomy (Theorem R of the log)
+
+`[THM]` [assuming: (H); the Shephard–Todd classification; the assumptions of (a) and (b)] [RID: HCG-THM-REFLECTION-DICHOTOMY] [provenance: CHECKED (two AIs) — proposed by Claude, checked by ChatGPT (same files as (c), §4); the treatment of rank 6 through (b) was written by Claude in the reflection-dichotomy matrix §3.3 and passed by ChatGPT. Δ27 addenda 4–5]
+
+**Statement.** Let a datum satisfy (H). If Γ contains a complex reflection, then its cup class is [1].
+
+**Proof chain.** By (d)(S), V has k blocks of rank r.
+- r = 1: monomial, period rank ≤ 12 (§6.24 (b)); excluded by (D).
+- k ≥ 2, r ≥ 2: by (c), replace the datum by the τ-datum: dimension r ≥ 6, same class, (H), and k = 1.
+- k = 1, dimension 6: split by (b).
+- k = 1, dimension d′ ≥ 7: W_R is G(m, p, d′) with m ≥ 2 (monomial by (d)(C); profile (ii) of §6.24 (b) applies although the coordinate lines need not be K-defined), or of type A_{d′} (excluded by (e)), or E₇, E₈ (ε ≥ 6 by (d)(B), against the budgets 3 and 5).
+
+**Scope.** Dominance is essential. A datum without (D) can be nonsplit and contain reflections (the cyclic C₆ separator of the pending Δ27).
+
+#### (g) The corollary for d ≤ 14
+
+`[THM]` [assuming: as in (f)] [RID: HCG-COR-NONSPLIT8-D14] [provenance: CHECKED (two AIs) — as (f); reflection-dichotomy matrix §4]
+
+Under (H), a datum with d ≤ 14 has class [1]. A nonsplit datum under (H) has a reflection-free image, all c_j ≥ 2, d ≥ 15 and N ≤ d + 4.
+
+Proof. If all c_j ≥ 2 then 2N ≤ 2d + 8, and N ≥ 19 gives d ≥ 15. So for d ≤ 14 the tuple contains a reflection, and (f) applies.
+
+**The polarized reading (one conditional sentence for the whole section).** [assuming: Severn v2 Prop 7.1 (unrefereed; §6.22) and Weil's criterion] If the class of the cup form is the discriminant of the induced polarized factor, then no datum under (H) with d ≤ 14 gives a nonsplit Weil eightfold.
+
+**What this section does not say.** Nothing for d ≥ 15 (OPEN 11). Nothing outside (H): other fields, higher-genus bases, infinite monodromy, or families that are not Hurwitz families of this kind. It is not a statement that nonsplit Weil eightfolds do not exist, and it is not a statement about the Hodge conjecture.
 
 ---
 
@@ -1203,6 +1338,14 @@ Pins of this edition (approved by the PI on 11 Nov 2026: "2 Onaylıyorum"): `dya
 - Reported, not used as a premise: Severn's announcement of the determinant formula (hexagon:2610.00387v1 Remark 2.8; hexagon:2610.00386v1 Remark 5.3), stated there without proof.
 - Classical facts used in §6.24 (b) are named there and carry no RID.
 
+**v0.5 additions to the import ledger** (all classical and published; none re-read for this edition; a source check would go through LIT).
+
+- [RID unavailable] :: Shephard–Todd classification of finite irreducible complex reflection groups, ranks ≥ 6 :: §6.25 (b), (f)
+- [RID unavailable] :: Steinberg, Differential equations invariant under finite reflection groups (1964), Thm 1.5; Lehrer (2004), Thm 1.1: the pointwise stabilizer of a subspace is generated by reflections :: §6.25 (a). The source note records a limited reading
+- [RID unavailable] :: the number of reflections of G₃₄ (126), cited in the source note from a table in Bessis :: §6.25 (a)
+- [RID unavailable] :: automorphism groups of the root systems A_d, E₆, E₇, E₈ :: §6.25 (d)(B)
+- Named in the source notes and **not** used in this edition: Marin–Michel (arXiv:math/0701266) on normalizers of reflection groups. The rank-6 case is handled by §6.25 (b) instead.
+
 ---
 
 <a id="hcg-8"></a>
@@ -1261,7 +1404,7 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 - [RID: HCG-ART-AUDITOR-R2] :: `received/dfeaa2ff-ROUND2_FINAL_REPORT.md` (1a3a1d444fafc3de), `received/9fbfaf05-REPLAY.md`, `received/bda0e1ee-G34D_W5_ROUND2_BLIND_AUDIT_20261026.zip` (aa43b59f…) :: auditor round 2 :: RECEIVED; bundle replayed by Claude (`g34/auditor_r2/H3_AUDITOR_R2_BUNDLE_REPLAY_CLAUDE_v0_1.md`, 635429b9…)
 - [RID: HCG-ART-SEVERN-V2] :: `severn-v2/` (three Claude audit parts, `reconstruct_severn_printed.py`, `h0_pants_severn.py` ce06275b…, `h0_pants_severn_v0_2.py` 41aa6e93…) :: v2 successor audit :: EXECUTED. Inputs outside the repository: v2 and Severn's deposited tuple
 - [RID: HCG-ART-BOUNDARY] :: `received/2c585a95-HCG_NEXT_RESEARCH_BOUNDARY_RANK_NOTE_v0_1.md` (b9511bab…), `research-next/H3_BOUNDARY_RANK_NOTE_REVIEW_AND_SCOPE_CLAUDE_v0_1.md`, `received/070cf48e-HCG_TENFOLD_BUDGET_AND_SEVERN_V2_SCOPE_REVIEW_v0_1.md` (4124921c…) :: Δ25
-- [RID: HCG-ART-DELTAS-V03] :: `ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` (1f00a1eb5dbedc66) :: change log Δ24–Δ29; Δ24–Δ26 were the inputs of v0.3; two items of Δ27 (addenda 2(i) and 4(ii), with the field-free form of addenda 5–6) are the inputs of v0.4
+- [RID: HCG-ART-DELTAS-V03] :: `ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` (1f00a1eb5dbedc66) :: change log Δ24–Δ29; Δ24–Δ26 were the inputs of v0.3; two items of Δ27 (addenda 2(i) and 4(ii), with the field-free form of addenda 5–6) are the inputs of v0.4; the parts of addenda 1–5 named in §6.25 are the inputs of v0.5
 - [RID: HCG-ART-V03-REVIEW] :: `records/hcg/HCG_v0.3_D24_D26_ACCEPTANCE_MATRIX.md`, `records/hcg/HCG_RTG_IMPORT_AUDIT_20261110.md`, `evidence/hcg/verification/rtg_import_audit.py` :: review basis of this edition
 
 **v0.4 additions.**
@@ -1271,6 +1414,13 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 - [RID: HCG-ART-V04-REVIEW] :: `records/hcg/HCG_D27_CORE_THEOREMS_ACCEPTANCE_MATRIX.md` :: review basis of §6.24
 - [RID: HCG-ART-D27-REPLAY] :: `evidence/hcg/verification/replay_d27_core_checks.py` :: runs the frozen check script of §6.24 (a) from repository files (two session paths remapped; the frozen script is not edited) and compares the output byte for byte
 
+**v0.5 additions.**
+
+- [RID: HCG-ART-D6-CHAIN] :: `received/50c01323-HCG_NONSPLIT8_MINIMAL_RANK_GROUP_SCREEN_v0_1.md` (42d3d63e…), `nonsplit8/H3_NONSPLIT8_D6_SCREEN_AND_DISC_LOCALITY_CLAUDE_v0_1.md` (de619ee4…), `nonsplit8/g34_rank2_plane_census_claude.py` and its output :: §6.25 (a), (b)
+- [RID: HCG-ART-REFLECTION-DICHOTOMY] :: `nonsplit8/H3_D7_SCREEN_REVIEW_AND_D7_9_EXCLUSION_CLAUDE_v0_1.md` (6095beaf…), `received/883d8c7d-HCG_NORMAL_REFLECTION_SCREEN_CHATGPT_REVIEW_v0_1.md` (88870886…), `nonsplit8/H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` (050c8504…), `received/233fab3b-HCG_REFLECTION_DICHOTOMY_CHATGPT_REVIEW_v0_1.md` (b7253a0c…), `nonsplit8/block_cycle_local_factor_claude.py` (78845d73…), `nonsplit8/nonsplit8_budget_screen_claude.py` (da9cebe3…) :: §6.25 (c)–(g). These files also contain later Δ27 material that is not part of this edition. Two of them write the local identity of (c) with per-cycle class brackets; the corrected statement is in §6.25 (c)
+- [RID: HCG-ART-V05-REVIEW] :: `records/hcg/HCG_D27_D6_CHAIN_ACCEPTANCE_MATRIX.md`, `records/hcg/HCG_D27_LEMMA_E_ACCEPTANCE_MATRIX.md`, `records/hcg/HCG_D27_REFLECTION_DICHOTOMY_ACCEPTANCE_MATRIX.md` :: review basis of §6.25
+- [RID: HCG-ART-D27-REPLAY-2] :: `evidence/hcg/verification/replay_d27_reflection_checks.py` :: runs the three frozen scripts of §6.25 (census, block-cycle identity, budget table) from repository files and compares each output byte for byte
+
 ---
 
 <a id="hcg-9"></a>
@@ -1279,7 +1429,7 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 
 | Contributor | Actual role in this session |
 |---|---|
-| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). No claim row is ACCEPTED. |
+| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). Standing decision of 11 Nov 2026 (18:18 +03:00): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." Adopted v0.5 (scoped), with the RTG pins unchanged (12 Nov 2026). No claim row is ACCEPTED. |
 | Claude (Anthropic) | Primary deriver for H1/H2/NF/R7 and the G₃₄ gates, W5–W7 and H4 data. Edge-flux theorem; laminar reduction (proposal); series bound; NEW02 mixed tree; toy block lemma; braid replays; G(3,3,3) scan; independent W5 links; Severn tuple-to-W5 link; independent 90-move replay. Independent H3 literature review (found ADFIO). Consolidation editor of this DSN. |
 | ChatGPT (OpenAI) | Independent verifier of H1/H2/NF/R7. Found the Severn preprints (H3-D1). Second proof of PO-1. Cross-checks of G34-A/B, W5, W6/W7, cup validation, PO-2/3/4, the W5 discriminant. Proof review of EDGEFLUX and its Corollary 5; holdout monodromy; P2/P3, paired-endpoint factorization and NEW01 mixed tree; independent proof of the laminar reduction; toy mixed obstruction; G34-BLOCK-01 and its braid escape; reality obstruction; G(3,3,3) examples and independent scan review; lifting no-go and stabilization source audit; W5 link construction; final source-bridge audit and independent 90-move replay. Intake of the auditor's PO-6 note. |
 | Third-family auditor (model family outside Claude/OpenAI; identity held by the PI) | Blind geometric audit of G34-D on W5 (round 1). Independent discriminant on W5 (round 2, partial). Item 2 (component requirement). Priority A polarization identification for W5. Detected the arXiv/Hexagon ID error (SRC-1). Round 2 complete (27 Oct 2026): A3 and Priority B items 4–7, on the v1 and [386] texts. The auditor did not read v2. |
@@ -1310,14 +1460,31 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 | D-10 | Claude's count of the locality samples ("120 + 480") | Closed. Claude conceded: 160 + 160 = 320. Dated addendum; the original report is preserved. Found by ChatGPT. The samples carry no weight after the proof (§6.24). |
 | D-11 | Claude cited Severn's announcement of the determinant formula as "v2 Rem 2.8" | Closed. It is hexagon:2610.00387v1 Remark 2.8; v2 has no such remark. Dated addendum. |
 | D-12 | Wording in Claude's locality review: the transport matrix is in GL₆(K); "ε ≤ 3" holds only at d = 7; the scope of a ZIP manifest | Closed by the same addendum. No verdict affected. |
+| D-13 | Claude's incidence bound for G(m, p, d) wrote "+z" where "+ηz" is meant | Closed. Wording only; repaired by ChatGPT, adopted by Claude (§6.25 (d)(C)). |
+| D-14 | Claude's sentence "by Lemma E one may assume σ primitive" | Closed. Claude conceded: Lemma E descends only through K-defined block systems. Found by ChatGPT (example AGL(1,7) × μ₃). Recorded in §6.25 (c). |
+| D-25 | The local identity of §6.25 (c) was written with class brackets for single block cycles, in Claude's source note, in ChatGPT's review of it, and in revisions 1–2 of the Lemma E matrix | Closed. The single products need not be rational; the statement is a norm-ratio identity. Found by ChatGPT in the review of PR #47; corrected in revision 3 of the matrix and in §6.25 (c). The frozen notes are not edited. The lemma is unaffected. |
+| D-26 | Revision 1 of the d = 6 matrix extended the Siegel-space bound to "every σ defined over a real field" without proof | Closed. Claude conceded; the bound is stated for representations over ℚ only (§6.25 (b), R7). Found by ChatGPT in the review of PR #44. |
 
-Entries D-13 and later belong to the pending part of Δ27 and are not part of this edition.
+Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this edition. D-25 and D-26 are numbered after them to keep the numbers of the pending log unchanged.
 
 ---
 
 <a id="hcg-appendix-a"></a>
 
 ## Appendix A — Version History
+
+### v0.5 — 12 November 2026 — ADOPTED (scoped)
+
+- **Owner decision [governance]:** PI adoption, 12 Nov 2026, 14:58 +03:00, of DRAFT r2 (d85e7fac…8d93beb4): "1- Belirtildiği şekilde kabul ediyorum."; RTG pins kept, no OFN pin ("2- RTG pinleri belirtildiği gibi OFN yok"). Basis: ChatGPT co-owner reviews of the three acceptance matrices and of PR #53. Release record: `records/hcg/HCG_v0.5_RELEASE_RECORD.md`.
+- **Release transform [governance]:** `release_v05.py`, labels and metadata only. The entries below are the DRAFT r2 record.
+
+- **r2 (12 Nov 2026).** One clarification from the co-owner review of r1 (PR #53): in §6.25 (a) the values a = 36, 27 are Gram determinants in a basis of two roots; the invariant is the norm class of a·b. No result changes.
+
+- **Basis.** The ledger of `hcg-v0.4`; three acceptance matrices in `records/hcg/` (d = 6 chain, revision 2; Lemma E, revision 3; reflection dichotomy, revision 1), each reviewed ACCEPT SCOPED by the ChatGPT owner session; the PI's standing decision of 11 Nov 2026 on the review ceiling.
+- **New entries.** §6.25 with seven RIDs: `HCG-ALG-G34-RANK2-LOCAL`, `HCG-COR-D6-NONSPLIT-NOGO`, `HCG-LEM-INDUCING-DATUM`, `HCG-LEM-NONSPLIT8-NORMAL-REFL`, `HCG-LEM-SYMMETRIC-TYPE-PERIOD-BOUND`, `HCG-THM-REFLECTION-DICHOTOMY`, `HCG-COR-NONSPLIT8-D14`. OPEN 11 (`HCG-OPEN-NONSPLIT8`). §1.5, three rows in §5, one limit in §6.21, import and artefact lines in §7 and §8, D-13, D-14, D-25, D-26 in §9.
+- **Changed.** One paragraph at the end of §6.24 (the uses of its two results now point to §6.25).
+- **Unchanged.** Every statement, grade, review state and scope guard of v0.4, and OPEN 1–10. The RTG pins. Severn's theorems stay CLAIMED.
+- **Not included.** The rest of Δ27 (from addendum 5 (ii) on), Δ28 and Δ29.
 
 ### v0.4 — 11 November 2026 — ADOPTED (scoped)
 
@@ -1493,4 +1660,4 @@ Entries D-13 and later belong to the pending part of Δ27 and are not part of th
 
 ---
 
-*END OF DOCUMENT — HCG study ledger v0.4 · ADOPTED (scoped) 11 Nov 2026 · no claim row is ACCEPTED · not an RTG document.*
+*END OF DOCUMENT — HCG study ledger v0.5 · ADOPTED (scoped) 12 Nov 2026 · no claim row is ACCEPTED · not an RTG document.*

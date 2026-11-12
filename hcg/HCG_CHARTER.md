@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the HCG conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** adopted by the PI on 10 Nov 2026 as the governance document of `hcg-v0.2` (`records/hcg/HCG_v0.2_RELEASE_RECORD.md`); updated for `hcg-v0.3` and `hcg-v0.4` in the edition table, the content table, the pending list and the RTG pins only (`records/hcg/HCG_v0.3_RELEASE_RECORD.md` §6, `records/hcg/HCG_v0.4_RELEASE_RECORD.md` §6). It carries no scientific claim. **Governing edition:** `hcg-v0.4`.
+**Status of this file:** adopted by the PI on 10 Nov 2026 as the governance document of `hcg-v0.2` (`records/hcg/HCG_v0.2_RELEASE_RECORD.md`); updated for `hcg-v0.3`, `hcg-v0.4` and `hcg-v0.5` in the edition table, the content table, the pending list and the RTG pins only (`records/hcg/HCG_v0.3_RELEASE_RECORD.md` §6, `records/hcg/HCG_v0.4_RELEASE_RECORD.md` §6, `records/hcg/HCG_v0.5_RELEASE_RECORD.md` §6). It carries no scientific claim. **Governing edition:** `hcg-v0.5`.
 
 ## 0. Scope guard
 
@@ -28,7 +28,8 @@ HCG asks whether a mathematically precise choice of complex structure, lattice, 
 | H4 | The selection theory for the boundary condition (H4): edge forms, rank obstructions, braid escapes. |
 | H3, since `hcg-v0.3` | The third-family round 2, the Severn v2 successor audit (Theorem A/B chain), and the boundary-rank and dimension-budget bounds (Δ24–Δ26). |
 | H3, since `hcg-v0.4` | Two results of Δ27: the local determinant formula for genus-zero parabolic cup forms and the induced period bound (ledger §6.24). |
-| Pending | The rest of Δ27 (nonsplit Weil eightfolds), the HHO opening, and the all-powers question (Δ28, Δ29). |
+| H3, since `hcg-v0.5` | Seven further results of Δ27: the d = 6 chain, the reduction to the inducing datum, and the reflection dichotomy with its corollary for d ≤ 14 (ledger §6.25); the open item on nonsplit data (OPEN 11). |
+| Pending | The rest of Δ27 (from its addendum 5 (ii) on: the bounds beyond d = 14), the HHO opening, and the all-powers question (Δ28, Δ29). |
 
 The study's statements, grades and open items are in the study ledger, not in this charter.
 
@@ -58,11 +59,12 @@ The study's statements, grades and open items are in the study ledger, not in th
 | Session ledger v0.2 | PI, chat level, 26 Oct 2026 (scoped) | SHA-256 `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` |
 | `hcg-v0.2` (first repository edition) | PI, 10 Nov 2026; release record `records/hcg/HCG_v0.2_RELEASE_RECORD.md`; published by the annotated tag | the ledger at that tag is byte-identical to the chat-adopted v0.2 (PI decision 1 of 10 Nov 2026, recorded in `upload/hcg/README.md`); frozen copy in `evidence/hcg/ledger-history/adopted_v0_2/` |
 | `hcg-v0.3` | PI, 11 Nov 2026 (scoped); release record `records/hcg/HCG_v0.3_RELEASE_RECORD.md`; published by the annotated tag | the ledger at that tag, SHA-256 `fc03e8376eb56c14abeae77c7f20c2fa70723977572744af8a0c4a38dcec814d`: v0.2 with Δ24–Δ26 and the RTG import review |
-| `hcg-v0.4` | PI, 11 Nov 2026 (scoped); release record `records/hcg/HCG_v0.4_RELEASE_RECORD.md`; published by the annotated tag | `hcg/HCG_STUDY_LEDGER.md`, SHA-256 `51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949`: v0.3 with two results of Δ27 (§6.24) |
+| `hcg-v0.4` | PI, 11 Nov 2026 (scoped); release record `records/hcg/HCG_v0.4_RELEASE_RECORD.md`; published by the annotated tag | the ledger at that tag, SHA-256 `51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949`: v0.3 with two results of Δ27 (§6.24) |
+| `hcg-v0.5` | PI, 12 Nov 2026 (scoped); release record `records/hcg/HCG_v0.5_RELEASE_RECORD.md`; published by the annotated tag | `hcg/HCG_STUDY_LEDGER.md`, SHA-256 `650c301f8465536705c852113fa7c2e2288d8c3e3cae99fa92a9c466e47bf383`: v0.4 with seven results of Δ27 (§6.25) and OPEN 11 |
 
-**What an adoption covers.** Each adoption (v0.2, v0.3, v0.4) adopted the consolidated record as the governing record. None made any claim `ACCEPTED`: every claim keeps its own review state.
+**What an adoption covers.** Each adoption (v0.2 to v0.5) adopted the consolidated record as the governing record. None made any claim `ACCEPTED`: every claim keeps its own review state.
 
-**Pending, not part of `hcg-v0.4`:** Δ27 except its two results in ledger §6.24, Δ28 and Δ29, in `HCG_DSN_v0_3_PENDING_DELTAS.md` (frozen original in `upload/hcg/`). They enter a later edition only through review and a PI decision.
+**Pending, not part of `hcg-v0.5`:** Δ27 except its results in ledger §6.24 and §6.25, Δ28 and Δ29, in `HCG_DSN_v0_3_PENDING_DELTAS.md` (frozen original in `upload/hcg/`). They enter a later edition only through review and a PI decision.
 
 **Reading the v0.2 ledger (tag `hcg-v0.2`).** That ledger is kept byte-exact, so some of its lines are historical; v0.3 updated them:
 - its "INTERNAL" distribution line and safeguard SG-10 (the blindness rule) describe the state of 26 Oct 2026; the PI lifted that guard for publication on 10 Nov 2026;
@@ -107,7 +109,7 @@ A review state is not a proof grade and does not upgrade a claim tag. Agreement 
 - The corresponding `rtg-corpus` tags are `dyad-v6.4.19`, `gen-v2.8.9`, `programme-v1.2` and `ofn-v0.10`. There is no tag for DYAD v6.4.18.
 - A targeted check on 10 Nov 2026 found the cited RIDs and the J_Q statement at those tags, and the DSN file at `dyad-v6.4.19` has the SHA-256 recorded in the HCG charter of 21 Oct 2026 (`40c9e63f…`).
 - The grades at each RID have not been re-read, and `rtg-corpus` has moved on since. For `hcg-v0.2` the pins were therefore not set (PI decision 6 of 10 Nov 2026).
-- **Since `hcg-v0.3` the pins are `dyad-v6.4.23`, `gen-v2.10` and `programme-v1.4`** (approved by the PI on 11 Nov 2026), after the review in `records/hcg/HCG_RTG_IMPORT_AUDIT_20261110.md`. There is no OFN pin. `hcg-v0.4` keeps these pins unchanged (PI, 11 Nov 2026). A later RTG edition is consumed only by a new HCG decision.
+- **Since `hcg-v0.3` the pins are `dyad-v6.4.23`, `gen-v2.10` and `programme-v1.4`** (approved by the PI on 11 Nov 2026), after the review in `records/hcg/HCG_RTG_IMPORT_AUDIT_20261110.md`. There is no OFN pin. `hcg-v0.4` and `hcg-v0.5` keep these pins unchanged (PI, 11 and 12 Nov 2026). A later RTG edition is consumed only by a new HCG decision.
 
 **RTG (back).** Nothing in HCG is an RTG result. A finding goes to RTG only as a pipe item in `rtg-corpus`, with the PI's disclosure check (`CONVENTIONS.md` §4).
 
