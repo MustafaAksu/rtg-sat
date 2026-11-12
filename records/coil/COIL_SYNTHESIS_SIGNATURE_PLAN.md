@@ -113,7 +113,7 @@ Co-owner review `5874678971`: D1 observations accepted at `[EXPLORE]`; the separ
 
 **Observation made on the way — a third threshold.** Script `evidence/coil/code/synthesis_v1_lyapunov_explore.py` (output `evidence/coil/outputs/synthesis_v1_lyapunov_explore.json`), unperturbed map, α = 0.80, 200 000 steps, largest Lyapunov exponent from the tangent of the windowed rule, two half-windows reported separately.
 
-| group | exponent indistinguishable from 0 (\|λ\| ≤ 5·10⁻⁶ in both halves) | positive in both halves | first exit (100 000 steps) |
+| group | exponent indistinguishable from 0 (\|λ\| ≤ 6·10⁻⁶ in both halves) | positive in both halves | first exit (100 000 steps) |
 |---|---|---|---|
 | M = 10, x₀ = 0.4 | r ≤ 2.3966 (12 cells from 2.2386) | 2.4006: 4·10⁻³; 2.4046: 1·10⁻² | 2.4086 |
 | M = 30, x₀ = 0.1 | r ≤ 2.4860 (3 cells from 2.3080) | 2.4900: 3·10⁻⁴ … 2.5260: 7·10⁻³ (10 cells) | 2.5340 (2.5300 exits at step 130 769) |
