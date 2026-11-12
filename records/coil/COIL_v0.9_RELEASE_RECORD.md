@@ -76,7 +76,7 @@ Changed: RUN §4 items 1–3 and §6; RM-02.h (iii); index RUN row; W1 above. Un
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `6fce65f8b7e69db08c3676997f4310b5ded8bb45`. Files not listed are inherited unchanged from `coil-v0.8`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `9254bb341061e02a8aed40f3a1c74ca5c7f601e0`. Files not listed are inherited unchanged from `coil-v0.8`.
 
 | file | SHA-256 at content commit |
 |---|---|
@@ -87,14 +87,14 @@ Changed: RUN §4 items 1–3 and §6; RM-02.h (iii); index RUN row; W1 above. Un
 | `evidence/coil/code/clusteroffset_run.sh` | `cc33140d155bd858bbe91794926d5a1c70be917b03b72eb4490ec897cb8eb083` |
 | `evidence/coil/code/SHA256SUMS` | `bce87ae61764b3f9b3e033ad5fba9c57275dedd734b5ed0131bf3b53b712838c` |
 | `evidence/coil/prereg/SHA256SUMS` | `704cc92c132ea2d69a097cd85b025650f5a84cad5bd2dc4e8c627963bf3a3904` |
-| `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md` | `8e43d25f413d3af4a9af2e1bdf3eb8ba1958c1747303c4faf94b215524a74a74` |
-| `evidence/coil/run/SHA256SUMS` | `c41aa44c4eaf1ad06f823d2ccb9380658bf7d3b2d62092b68a82c25846dcba46` |
+| `evidence/coil/run/RUN-MM1-CLUSTEROFFSET-v1.0.md` | `1857955684a7c992e419668b27fef44f928b0d06fd0e77355325c04067ada1e6` |
+| `evidence/coil/run/SHA256SUMS` | `c6b484ba3ae20caf9c4b5fc413cb0820b43d16358b1fc46a801a1bd755887c67` |
 | `evidence/coil/outputs/SHA256SUMS` | `57df03a1075b3228a2a3b4aa2dedc696720042f43bfdbbf3da8bf03453bc69ef` |
 | `evidence/coil/outputs/README.md` | `6a748dabfaa1d4b258691a80f17c5f135ea0f124fa380b964513dba80f83c58b` |
 | `upload/coil-clusteroffset-results/SHA256SUMS` | `a6ff01d4937c6ff88cd78499daa5abe780829d030f1e58259ec49d17c9a7705f` |
-| `coil/records/RM-02.md` | `5590ea7018df66d02d8af9338fe6a77768809ba2b3627a40b8a75d4b6f3cc12a` |
+| `coil/records/RM-02.md` | `47995ef17c0fdd006ccd8b3bb4c8623199b4d855b8f4f47a163a14105b2ba86d` |
 | `coil/COIL_CAMPAIGN_COMPENDIUM.md` | `b9c732db628e0de75ab9e8571def9c399762f9d473350026b8ac3a80e45ce762` |
-| `coil/COIL_INDEX.md` | `f3ba4b0d9bd8110472fb2f1bdec3a5fbe85f55d4e692747ceadbbdd0818b2874` |
+| `coil/COIL_INDEX.md` | `7c37ac71a34671c9a6d4337fdb56d1235038ff789f793d5f1f8c48fcace34a58` |
 | `.gitignore` | `416c7570e0bc89b87a0766a2352e9246ed144dc2654f0b6710a6ac5e11ac3399` |
 
 **Adoption scope (to be filled by the PI at adoption):** files; tag; date; exclusions. Until filled: *pending PI adoption*.
