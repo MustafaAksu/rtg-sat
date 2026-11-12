@@ -1,0 +1,4 @@
+separator: 2g=30, m(chi1)=8, m(chi4)=7; rank_F2((1-s)e_C3)=14, length_R(A_chi1)=7 PASS
+leaf_A: 2g=24, m(chi1)=8, m(chi4)=0; rank_F2((1-s)e_C3)=0, length_R(A_chi1)=0 PASS
+leaf_B: 2g=22, m(chi1)=8, m(chi4)=0; rank_F2((1-s)e_C3)=0, length_R(A_chi1)=0 PASS
+ALL PASS: 7, 0, 0; independent F2 cochain/representation test

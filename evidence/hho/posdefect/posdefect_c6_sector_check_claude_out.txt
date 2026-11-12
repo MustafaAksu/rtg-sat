@@ -1,0 +1,6 @@
+M0 rebuilt from its description: Gram and action equal the printed G0, T0
+M0, character zeta6      : sector rank 1; e M_R = Hermitian dual of L_chi: yes; length(e M_R / L_chi) = 1; v_2(det H|L_chi) = 1; 2 e M_R in L_chi: yes
+M0, character zeta6^4=w^2: sector rank 1; e M_R = Hermitian dual of L_chi: yes; length(e M_R / L_chi) = 1; v_2(det H|L_chi) = 1; 2 e M_R in L_chi: yes
+M0, paired over Z: Gram of L = [[0,-2],[2,0]]; A = L^#/L = (Z/2)^2, 2A = 0, order 4
+M (rank 18), character zeta6: sector rank 8; e M_R = Hermitian dual of L_chi: yes; length(e M_R / L_chi) = 1; v_2(det H|L_chi) = 1; 2 e M_R in L_chi: yes
+ALL PASS
