@@ -64,7 +64,7 @@ Co-owner's first pass (targeted sections of three papers, not full readings; his
 
 ## 4b. Reading of the two priority sources (12 Nov 2026)
 
-Both PDFs were supplied by the PI as chat attachments on 12 Nov 2026. They are identified here by hash and public location and are **not placed in the repository**: the Berkeley memorandum carries a notice that posting on servers requires prior permission; the PI decides whether either file is deposited.
+Both PDFs were supplied by the PI as chat attachments on 12 Nov 2026. They are identified here by hash and public location and are **not placed in the repository**. **PI ruling, 12 Nov 2026:** external works are not deposited in `rtg-sat`; where a copy needs to be held, that is done on the LIT side (`rtg-lit`). (The Berkeley memorandum also carries a notice that posting on servers requires prior permission.)
 
 | source | SHA-256 of the file received | public location |
 |---|---|---|
