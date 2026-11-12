@@ -1,19 +1,19 @@
-# HCG study ledger v0.5 — DRAFT r2
+# HCG study ledger v0.5
 
 **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, the G₃₄ boundary-witness programme, and the H4-selection theory)
-**Date:** 12 November 2026 (draft)
+**Date:** 12 November 2026
 **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
 **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.22 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work). In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
-**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.4`. This draft adds seven results of Δ27 (§6.25: the d = 6 chain, the reduction to the inducing datum, and the reflection dichotomy with its corollary for d ≤ 14) and one OPEN item, and changes nothing else of v0.4. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's Theorem 6.2 stays CLAIMED).
-**Build:** made from the adopted v0.4 text by `evidence/hcg/verification/make_v05_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.4 text, byte for byte.
+**Document status:** ADOPTED (scoped) — PI decision, 12 November 2026, 14:58 +03:00 ("1- Belirtildiği şekilde kabul ediyorum."), of DRAFT r2. It adds seven results of Δ27 (§6.25: the d = 6 chain, the reduction to the inducing datum, and the reflection dichotomy with its corollary for d ≤ 14) and one OPEN item, and changes nothing else of v0.4. Adoption does **not** set any individual claim's review state to ACCEPTED and does not establish any external claim (Severn's Theorem 6.2 stays CLAIMED). Release record: `records/hcg/HCG_v0.5_RELEASE_RECORD.md`. The edition is published by the annotated tag `hcg-v0.5`.
+**Build:** made from the adopted v0.4 text by `evidence/hcg/verification/make_v05_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.4 text, byte for byte. Released from DRAFT r2 (SHA-256 d85e7fac6a9bac1af881595d7c48cc3e76216a17c958d8c70a649a9c8d93beb4) by `evidence/hcg/verification/release_v05.py` (labels and metadata only).
 **Revision base:** the ledger of `hcg-v0.4` (SHA-256 51487f925e34f01e0d233d1ff909e29357d3eadbf1b839f79f73e8fe84022949; the file at the tag `hcg-v0.4`). Change sources:
 - Δ27 addenda 1–5 of `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` (SHA-256 1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d), in the parts reviewed in three acceptance matrices in `records/hcg/`: `HCG_D27_D6_CHAIN_ACCEPTANCE_MATRIX.md` (revision 2), `HCG_D27_LEMMA_E_ACCEPTANCE_MATRIX.md` (revision 3), `HCG_D27_REFLECTION_DICHOTOMY_ACCEPTANCE_MATRIX.md` (revision 1). Each has a ChatGPT co-owner review ACCEPT SCOPED;
 - the PI's standing decision of 11 Nov 2026 (18:18 +03:00): until the PI says otherwise, no third-family reading is requested and the ceiling of a reviewed item is CHECKED (two AIs).
 
 **Not included:** the rest of Δ27 (the cyclic separators and search gates of its main entry, and everything from addendum 5 (ii) on: the exclusion of 15 ≤ d ≤ 24 and every bound from d ≥ 25 to d ≥ 53, with their classification imports), Δ28 (HHO opening) and Δ29 (positive lane). They stay pending. HHO claims are not HCG results.
-**Supersedes (on adoption only):** `hcg-v0.4`. Earlier: `hcg-v0.3`, `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
+**Supersedes:** `hcg-v0.4`. Earlier: `hcg-v0.3`, `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
 **Companion documents:** `hcg/HCG_CHARTER.md`; `records/hcg/HCG_SOURCE_MANIFEST.md`; `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md`; the frozen files in `evidence/hcg/` (file names used in this ledger resolve through `PLACEMENT_MAP.tsv` and `NAME_ALIASES.tsv`). The session's own charter v0.2 and verification ledgers are historical companions in `evidence/hcg/`.
-**DSN Methodology:** the ledger text was written under DSN_METHODOLOGY_v1.3. `rtg-sat` reads its base rules at `methodology-v1.4`. The claim tags are not re-graded in this draft.
+**DSN Methodology:** the ledger text was written under DSN_METHODOLOGY_v1.3. `rtg-sat` reads its base rules at `methodology-v1.4`. The claim tags are not re-graded in this edition.
 **Status summary:**
 - **H1/H2 calibration and the RTG-dynamics results are unchanged** at two-AI CHECKED grade (§6.2–§6.5).
 - **Severn's Theorem 6.2 remains CLAIMED, not ESTABLISHED.** The review levels per proof obligation are kept separate (§6.7 matrix):
@@ -24,7 +24,7 @@
   - PO-6 on W5: the cup-form class and its identification with the actual polarized factor are both THIRD-FAMILY CHECKED. The general statement is CHECKED by two AIs as a proof-path review only (v2 Prop 7.1 with Lemma 7.2; §6.16, §6.22).
 - **New in this edition (Δ25, Δ26).** A boundary-rank corollary and a dimension budget (§6.23); the Severn v2 successor audit (§6.22). Severn's Appendix A is reproduced, and OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stays PARTIAL.
 - **New in this edition (Δ27, two results only).** A determinant-class identity for genus-zero parabolic cup forms and a period-rank bound for induced finite-monodromy variations (§6.24). Both are `[THM]`, CHECKED by two AIs. Neither has a third-family or a human check. Their applications are not in this edition.
-- **New in this draft (Δ27, seven results).** Under the standing hypotheses (H) of §6.25, a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15 (§6.25). All seven are CHECKED by two AIs and conditional on classical classification imports. This is not a non-existence statement for nonsplit Weil eightfolds.
+- **New in this edition (Δ27, seven results).** Under the standing hypotheses (H) of §6.25, a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15 (§6.25). All seven are CHECKED by two AIs and conditional on classical classification imports. This is not a non-existence statement for nonsplit Weil eightfolds.
 - **New since v0.1: the component connection (§6.19).** Explicit, doubly replayed braid certificates place Severn's own Appendix-A tuple (gate and paired forms), W5, NEW01–04, BLOCK-01 and ESCAPE in one component of H/Σ. This is an algebraic tuple chain; its consequences for the polarized family are stated separately, with their premises.
 - **New since v0.1: the H4-selection theory (§6.18).** Includes the edge-flux theorem, the laminar reduction, rank obstructions and their braid escapes, and finite classifications. All of it lies outside the main chain.
 
@@ -143,9 +143,9 @@ All of this is known-case verification, INTERNAL CHECKED (§6.2–§6.5).
 | `HCG-THM-INDUCED-PERIOD-BOUND` | — (pending, Δ27 addendum 4) | new, `[THM]`, CHECKED (two AIs); two coefficient profiles | §6.24; core matrix §2 |
 | Every other statement, grade, guard and OPEN item | as in v0.3 | unchanged | — |
 
-### §1.5 New in v0.5 (proposed)
+### §1.5 New in v0.5
 
-| Item | v0.4 state | v0.5 state (proposed) | Record |
+| Item | v0.4 state | v0.5 state | Record |
 |---|---|---|---|
 | `HCG-ALG-G34-RANK2-LOCAL` | — (pending, Δ27 addendum 2) | new, `[ALG]` with `[ALG cert]` census, CHECKED (two AIs) | §6.25 (a) |
 | `HCG-COR-D6-NONSPLIT-NOGO` | — (pending, Δ27 addendum 2) | new, `[THM]` with `[assuming:]`, CHECKED (two AIs) | §6.25 (b) |
@@ -1429,7 +1429,7 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 
 | Contributor | Actual role in this session |
 |---|---|
-| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). Standing decision of 11 Nov 2026 (18:18 +03:00): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." No claim row is ACCEPTED. |
+| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). Standing decision of 11 Nov 2026 (18:18 +03:00): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." Adopted v0.5 (scoped), with the RTG pins unchanged (12 Nov 2026). No claim row is ACCEPTED. |
 | Claude (Anthropic) | Primary deriver for H1/H2/NF/R7 and the G₃₄ gates, W5–W7 and H4 data. Edge-flux theorem; laminar reduction (proposal); series bound; NEW02 mixed tree; toy block lemma; braid replays; G(3,3,3) scan; independent W5 links; Severn tuple-to-W5 link; independent 90-move replay. Independent H3 literature review (found ADFIO). Consolidation editor of this DSN. |
 | ChatGPT (OpenAI) | Independent verifier of H1/H2/NF/R7. Found the Severn preprints (H3-D1). Second proof of PO-1. Cross-checks of G34-A/B, W5, W6/W7, cup validation, PO-2/3/4, the W5 discriminant. Proof review of EDGEFLUX and its Corollary 5; holdout monodromy; P2/P3, paired-endpoint factorization and NEW01 mixed tree; independent proof of the laminar reduction; toy mixed obstruction; G34-BLOCK-01 and its braid escape; reality obstruction; G(3,3,3) examples and independent scan review; lifting no-go and stabilization source audit; W5 link construction; final source-bridge audit and independent 90-move replay. Intake of the auditor's PO-6 note. |
 | Third-family auditor (model family outside Claude/OpenAI; identity held by the PI) | Blind geometric audit of G34-D on W5 (round 1). Independent discriminant on W5 (round 2, partial). Item 2 (component requirement). Priority A polarization identification for W5. Detected the arXiv/Hexagon ID error (SRC-1). Round 2 complete (27 Oct 2026): A3 and Priority B items 4–7, on the v1 and [386] texts. The auditor did not read v2. |
@@ -1473,7 +1473,10 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ## Appendix A — Version History
 
-### v0.5 DRAFT r2 — 12 November 2026 — DRAFT (not adopted)
+### v0.5 — 12 November 2026 — ADOPTED (scoped)
+
+- **Owner decision [governance]:** PI adoption, 12 Nov 2026, 14:58 +03:00, of DRAFT r2 (d85e7fac…8d93beb4): "1- Belirtildiği şekilde kabul ediyorum."; RTG pins kept, no OFN pin ("2- RTG pinleri belirtildiği gibi OFN yok"). Basis: ChatGPT co-owner reviews of the three acceptance matrices and of PR #53. Release record: `records/hcg/HCG_v0.5_RELEASE_RECORD.md`.
+- **Release transform [governance]:** `release_v05.py`, labels and metadata only. The entries below are the DRAFT r2 record.
 
 - **r2 (12 Nov 2026).** One clarification from the co-owner review of r1 (PR #53): in §6.25 (a) the values a = 36, 27 are Gram determinants in a basis of two roots; the invariant is the norm class of a·b. No result changes.
 
@@ -1657,4 +1660,4 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ---
 
-*END OF DOCUMENT — HCG study ledger v0.5 · DRAFT r2 · 12 Nov 2026 · not adopted; `hcg-v0.4` governs · not an RTG document.*
+*END OF DOCUMENT — HCG study ledger v0.5 · ADOPTED (scoped) 12 Nov 2026 · no claim row is ACCEPTED · not an RTG document.*
