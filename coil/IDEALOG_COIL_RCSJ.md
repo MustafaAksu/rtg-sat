@@ -54,9 +54,13 @@ These β_c values are Pair-A numbers; their a-dependence is measured in §C (Pai
 In RCSJ the transition to the voltage state is driven by the **bias current** I/I_c. Our control is K, i.e. ω_p² — and we are at zero bias. Moreover, in the continuous limit increasing K makes the system **more stable** (a stiffer oscillator); our instability runs the other way.
 
 Alternative readings:
-- **(i) The wrong quantity is being compared.** The true group is not K: the NS condition is ω_p²·dt = γ, i.e. the dimensionless group Π := ω_p² dt/γ, and the spark is at Π = 1. Π can be raised with K or with dt. So **our "coupling scan" is in fact a resolution scan** — the JJ counterpart is not the bias but the sampling step.
+- **(i) The wrong quantity is being compared.** The true group is not K: the NS condition is ω_p²·dt = γ, i.e. the dimensionless group Π := ω_p² dt/γ, and the spark is at Π = 1. Π can be raised with K or with dt. Either move can cross Π = 1, but they are **not the same move**: the reduced dynamics has two independent groups, a = γdt and k s = K s dt² (§C.2); raising K at fixed dt changes k s only, raising dt at fixed K changes both, and the crossing angle depends on a (cos ω = 1 − a/2). The reading "our coupling scan is a resolution scan" holds only in the weak sense that both reach the crossing.
 - **(ii) The right JJ counterpart is the biased RCSJ** and we scanned the unbiased arm; then the fracture ↔ switching-current match cannot be set up as is and must be rebuilt.
 - **(iii) The comparison should not be made in the continuous plane at all** (B2).
+
+**State of B1 and B2 as preconditions of Phase 2.5 (PI rulings of 12 Nov 2026; `records/coil/COIL_PHASE25_PRECONDITIONS_NOTE.md`).** Neither was resolved in a way that yields a comparison. Reading (iii) was followed: the autonomous zero-bias continuous model is **not** a suitable calibration plane for the spark and fracture signature — its energy E = ½φ̇² + 2K(1 − cos φ) obeys Ė = −γφ̇² ≤ 0 `[THM]` — a statement of limited scope (not ac-driven junctions, circuits with further variables, or sampled systems). A sampled-data counterpart was looked for among digital phase-locked loops and not found in five sources (route closed on its acceptance gates; not a statement about all such loops). Reading (ii), the biased junction, is deferred: it would calibrate sub-threshold behaviour only.
+
+One algebraic remark from that note: eliminating the velocity from the dyad map gives φ_{n+2} − (2 − a) φ_{n+1} + (1 − a) φ_n = k F(φ_n); the force enters with the phase of the previous step, root product 1 − a + k s, against 1 − a in Euler–Cromer (P4). This is explicit Euler's update order; it does not show that any physical system contains a one-sample delay.
 
 ### B2. **The spark has NO continuous-time counterpart** `[DERIVED, then OPEN]`
 The continuous system's eigenvalues at φ = 0 are −γ/2 ± √(γ² − 8K)/2; for every γ > 0, K > 0 the real part is negative. **In continuous RCSJ at zero bias there is no oscillatory instability.** Our NS arises entirely from explicit Euler's energy pumping — which is also the algebraic explanation of P4 (no transition at all in Euler–Cromer).
@@ -112,6 +116,6 @@ Proof status: algebraic, from the defining update equations by the change of var
 ## D. Action items returned to the programme
 
 1. **Pair B/C — DONE.** The γdt-independence of β_c(frac), the only genuine invariant candidate, was tested under a locked design and **falsified** (P-κ, REPLICATION-CONCORDANT; RM-02.h, charter §3.6).
-2. **[CAND] Calibration plane:** RCSJ/JJ is a strong candidate for the "well-defined plane in classical physics" proposed by the PI — it has an independent experimental literature. But no comparison can be set up before B1/B2 are resolved. Not designed (charter §9.1, Phase 2.5).
+2. **[CAND] Calibration plane:** RCSJ/JJ is a strong candidate for the "well-defined plane in classical physics" proposed by the PI — it has an independent experimental literature. **Ruled on, 12 Nov 2026:** no plane was found for the signature (state of B1/B2 above; charter §3.7, §9.1). No comparison was run.
 3. **[OPEN] dt-independence test** is inherited from the LEGACY DSN and is now central: the status of the spark depends on it. It is RTG's open item (OPEN-L0L1-O5); COIL does not work on it directly.
 4. This log carries no cross-layer claim; the JJ plane is in the physical layer and there is **no named bridge** between it and MM-1.
