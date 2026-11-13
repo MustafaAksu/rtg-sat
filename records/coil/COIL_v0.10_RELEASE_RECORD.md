@@ -1,17 +1,17 @@
-# COIL v0.10 — release record (DRAFT): three lines closed without a discriminating result; state of the roadmap under the stopping rule
+# COIL v0.10 — release record: three lines closed without a discriminating result; state of the roadmap under the stopping rule
 
-**Status:** DRAFT — not adopted. Candidate successor of `coil-v0.9` (`54de915c8ab3519b88d08b142317a0d4b25aa0a7`). Scope: (a) the working records of 12–13 Nov 2026 on three lines — the signature test outside the MM-1 family, the preconditions of Phase 2.5, and the entry to Phase 3 — with the `[EXPLORE]` scripts and outputs behind the first; (b) the live-document statements that follow from them; (c) **the state of the roadmap under Charter §12** (new §9.4), which is the decision this release puts to the PI. No preregistration was locked, no campaign was run, no frozen file of an earlier release is touched.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-13 ("sürümü olduğu gibi benimsiyorum", COIL owner session), as the candidate stood at head `80a8facf2897e6e6f26816a63b023d7ed9cebd8b` of PR #68; publication tag `coil-v0.10`. **Successor of `coil-v0.9`** (`54de915c8ab3519b88d08b142317a0d4b25aa0a7`). **Review state at adoption:** the scope of this release was proposed by the co-owner in review `5888399424` (PR #65); **no co-owner review of the candidate PR #68 was on record when the PI adopted it** (GitHub, 13 Nov 2026). The PI's decision governs; a finding of a later review goes into a later release, this record being frozen at adoption. Scope: (a) the working records of 12–13 Nov 2026 on three lines — the signature test outside the MM-1 family, the preconditions of Phase 2.5, and the entry to Phase 3 — with the `[EXPLORE]` scripts and outputs behind the first; (b) the live-document statements that follow from them; (c) **the state of the roadmap under Charter §12** (new §9.4), which is the decision this release puts to the PI. No preregistration was locked, no campaign was run, no frozen file of an earlier release is touched.
 
 ## 1. Files
 
 **Working records (new; `[SESSION]`, unlocked):**
 - `records/coil/COIL_SYNTHESIS_SIGNATURE_PLAN.md` — on `main` by PR #52 (merge `d715563`), working record without release.
 - `records/coil/COIL_PHASE25_PRECONDITIONS_NOTE.md` — on `main` by PR #62 (merge `e976815`), working record without release.
-- `records/coil/COIL_PHASE3_OPTIONS_NOTE.md` — PR #65 (co-owner review `5888399424` ACCEPT as a working record; SHA-256 `f162a6610d3181c1938e972f5e73fc50a14de041e3c8c50195da5c10028fcb74`); carried on this branch unchanged.
+- `records/coil/COIL_PHASE3_OPTIONS_NOTE.md` — on `main` by PR #65 (merge `7278577`; co-owner review `5888399424` ACCEPT as a working record; SHA-256 `f162a6610d3181c1938e972f5e73fc50a14de041e3c8c50195da5c10028fcb74`), working record without release.
 
 **`[EXPLORE]` code and outputs (new since `coil-v0.9`; on `main` by PR #52):** `evidence/coil/code/synthesis_v1_regime_first_look_explore.py`, `synthesis_v1_window_width_explore.py`, `synthesis_v1_d1_intervention_explore.py`, `synthesis_v1_lyapunov_explore.py`, `synthesis_v1_gain_check_explore.py`; the five `evidence/coil/outputs/synthesis_v1_*_explore.json` of the same names; rows appended to the two `SHA256SUMS` files. Deterministic; each output reproduced by a second run of the deposited script.
 
-**Live (changed):** `coil/COIL_CHARTER.md`, `coil/COIL_INDEX.md`, `coil/IDEALOG_COIL_RCSJ.md`. `REGISTRY.md` (COIL row) changes at adoption only.
+**Live (changed):** `coil/COIL_CHARTER.md`, `coil/COIL_INDEX.md`, `coil/IDEALOG_COIL_RCSJ.md`, `REGISTRY.md` (COIL row: governing edition `coil-v0.10`).
 
 **Not in the repository:** the two external sources read for Phase 2.5 (UCB/ERL M87/59; NASA-CR-162854) — identified by SHA-256 and public location in the Phase 2.5 note. PI ruling of 12 Nov 2026: external works are not deposited in `rtg-sat`; where a copy must be held, that is done on the LIT side.
 
@@ -28,14 +28,14 @@
 | 12 Nov 2026 | external works are not deposited in `rtg-sat` | Phase 2.5 note §4b |
 | 12 Nov 2026 | the co-owner's recommendation of review `5876346408` is applied: R-B closed, R-A deferred, R-D accepted with limited scope, next step a Phase 3 options note only | Phase 2.5 note §4b |
 
-**Put to the PI by this release (not yet decided):**
+**Put to the PI by this release — both adopted as proposed on 13 Nov 2026:**
 
 | # | Decision | Proposed by |
 |---|---|---|
 | P1 | Phase 3 is recorded as **NOT ENTERED — `NO-PHASE3-READY-TEMPLATE`**; no experiment is opened for O1–O3 | both sessions (co-owner review `5888399424`) |
 | P2 | **Charter §9.4**: the first step of the stopping rule (§12) applies — the protective belt (models, mapping rules, choice of minimal model) is reopened; no new COIL experimental campaign is opened until a quantitative cross-family or cross-layer prediction, written before any run, survives the strong null; the hard core is not opened | both sessions |
 
-P2 is the substantive decision of this release. Adopting the release adopts §9.4 as the state of the programme; the PI may instead adopt the records and statuses (P1, the three closures) and strike or reword §9.4, in which case this record is revised before adoption.
+P2 is the substantive decision of this release. The alternative of adopting the records and statuses without §9.4 was put to the PI; he adopted the release as it stood. **Charter §9.4 is therefore the state of the programme from `coil-v0.10`.**
 
 ## 3. Changes of meaning in live documents
 
@@ -78,7 +78,7 @@ Corrections made by the owner session after review are marked `[COR]` in the rec
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `a27e4097a49e4421c6e0d95f484a011272cbda4e`. Files not listed are inherited unchanged from `coil-v0.9`.
+**Status: ADOPTED (2026-11-13).** SHA-256 at the **content commit** `a27e4097a49e4421c6e0d95f484a011272cbda4e`. Files not listed are inherited unchanged from `coil-v0.9`.
 
 | File | SHA-256 |
 |---|---|
@@ -100,7 +100,8 @@ Corrections made by the owner session after review are marked `[COR]` in the rec
 | `evidence/coil/outputs/synthesis_v1_lyapunov_explore.json` | `c863a1a32779ba9a6ff14ea9bdde1264c53dd4be0f4885589049152affed31f2` |
 | `evidence/coil/outputs/synthesis_v1_gain_check_explore.json` | `d69e9a20fe2fe2bf5cf4ad8d0725ffac4141f5f0d4eb195f23acace5ef8bc702` |
 | `evidence/coil/outputs/SHA256SUMS` | `88149a599be2178ab9432fa9ab6b30cebb6162954c82b88dce45d5a67fda8eaf` |
+| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 
-**Adoption scope (to be filled by the PI at adoption):** proposed — the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.9`; tag `coil-v0.10`. **Proposed limits of effect:** the working records stay `[SESSION]` working records and every number in them stays `[EXPLORE]`; adoption covers the live-document statements of §3 and the decisions P1 and P2, not the exploration as a result; `NONDISCRIMINATING` and `NO-PHASE3-READY-TEMPLATE` are statements about what was tried and are not falsifications of HYP-1 or HYP-2; R-D holds in its limited scope only; the closure of R-B is a closure on recorded gates after five sources; no preregistration is opened or changed; RM-03 to RM-06 are not opened, RM-07 and RM-08 stay parked; nothing enters `rtg-corpus` by this adoption.
+**Adoption scope (PI, 2026-11-13):** the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.9`; tag `coil-v0.10`. **Limits of effect:** the working records stay `[SESSION]` working records and every number in them stays `[EXPLORE]`; adoption covers the live-document statements of §3 and the decisions P1 and P2, not the exploration as a result; `NONDISCRIMINATING` and `NO-PHASE3-READY-TEMPLATE` are statements about what was tried and are not falsifications of HYP-1 or HYP-2; R-D holds in its limited scope only; the closure of R-B is a closure on recorded gates after five sources; the pause on new campaigns of §9.4 is a state of the protective belt and is lifted by the condition named there or by a later PI decision; the hard core is not opened; no preregistration is opened or changed; RM-03 to RM-06 are not opened, RM-07 and RM-08 stay parked; nothing enters `rtg-corpus` by this adoption.
 
 **Tag message.** `coil-v0.10` is the first COIL tag under the tag-message rule of `CONVENTIONS.md` §2 (five lines: release record, its SHA-256, approved payload commit, publication merge commit, PI adoption).
