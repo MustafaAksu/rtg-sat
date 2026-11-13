@@ -78,7 +78,7 @@ Corrections made by the owner session after review are marked `[COR]` in the rec
 
 ## 4. Adoption manifest
 
-**Status: ADOPTED (2026-11-13).** SHA-256 at the **content commit** `a27e4097a49e4421c6e0d95f484a011272cbda4e`. Files not listed are inherited unchanged from `coil-v0.9`.
+**Status: ADOPTED (2026-11-13).** SHA-256 at the **content commit** `9c0443755a260b8cc26d60fdf55449ad71cdc25a`. Files not listed are inherited unchanged from `coil-v0.9`.
 
 | File | SHA-256 |
 |---|---|
@@ -100,7 +100,7 @@ Corrections made by the owner session after review are marked `[COR]` in the rec
 | `evidence/coil/outputs/synthesis_v1_lyapunov_explore.json` | `c863a1a32779ba9a6ff14ea9bdde1264c53dd4be0f4885589049152affed31f2` |
 | `evidence/coil/outputs/synthesis_v1_gain_check_explore.json` | `d69e9a20fe2fe2bf5cf4ad8d0725ffac4141f5f0d4eb195f23acace5ef8bc702` |
 | `evidence/coil/outputs/SHA256SUMS` | `88149a599be2178ab9432fa9ab6b30cebb6162954c82b88dce45d5a67fda8eaf` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `bd52d7a1faa09bd5b5e72520b794f986183741054c3651218df708d469fb17e8` |
 
 **Adoption scope (PI, 2026-11-13):** the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.9`; tag `coil-v0.10`. **Limits of effect:** the working records stay `[SESSION]` working records and every number in them stays `[EXPLORE]`; adoption covers the live-document statements of §3 and the decisions P1 and P2, not the exploration as a result; `NONDISCRIMINATING` and `NO-PHASE3-READY-TEMPLATE` are statements about what was tried and are not falsifications of HYP-1 or HYP-2; R-D holds in its limited scope only; the closure of R-B is a closure on recorded gates after five sources; the pause on new campaigns of §9.4 is a state of the protective belt and is lifted by the condition named there or by a later PI decision; the hard core is not opened; no preregistration is opened or changed; RM-03 to RM-06 are not opened, RM-07 and RM-08 stay parked; nothing enters `rtg-corpus` by this adoption.
 
