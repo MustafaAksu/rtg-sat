@@ -78,28 +78,28 @@ Corrections made by the owner session after review are marked `[COR]` in the rec
 
 ## 4. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `0000000000000000000000000000000000000000`. Files not listed are inherited unchanged from `coil-v0.9`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `a27e4097a49e4421c6e0d95f484a011272cbda4e`. Files not listed are inherited unchanged from `coil-v0.9`.
 
 | File | SHA-256 |
 |---|---|
-| `coil/COIL_CHARTER.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_INDEX.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/IDEALOG_COIL_RCSJ.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `records/coil/COIL_SYNTHESIS_SIGNATURE_PLAN.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `records/coil/COIL_PHASE25_PRECONDITIONS_NOTE.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `records/coil/COIL_PHASE3_OPTIONS_NOTE.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_regime_first_look_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_window_width_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_d1_intervention_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_lyapunov_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/synthesis_v1_gain_check_explore.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_regime_first_look_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_window_width_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_d1_intervention_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_lyapunov_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/synthesis_v1_gain_check_explore.json` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/COIL_CHARTER.md` | `0eb03c9c4c65162833fe2283bb4fd7d66e1cf9cfad78fed36294f56dfb4359d6` |
+| `coil/COIL_INDEX.md` | `367c9586ded4545410cc779d827946714c4b4181cd49e4c3c01120a5e6e87dee` |
+| `coil/IDEALOG_COIL_RCSJ.md` | `d194586dbfa47d4866ee4086c4570f463e9816b7c9b272029f92ef1f567de5d6` |
+| `records/coil/COIL_SYNTHESIS_SIGNATURE_PLAN.md` | `9e2f3e5222ebb5c64e274ec9f25e3bd81e14cdc65b571d82b1fbb2962324fc6e` |
+| `records/coil/COIL_PHASE25_PRECONDITIONS_NOTE.md` | `eeaddb1d38d8daf75fd675ff360ec8501e649bc00d757afd94779fc0490ac196` |
+| `records/coil/COIL_PHASE3_OPTIONS_NOTE.md` | `f162a6610d3181c1938e972f5e73fc50a14de041e3c8c50195da5c10028fcb74` |
+| `evidence/coil/code/synthesis_v1_regime_first_look_explore.py` | `9242a063293c92aac0c6114b3016623eb0b88b0259da1db61a2f84c2927eea9d` |
+| `evidence/coil/code/synthesis_v1_window_width_explore.py` | `1d4feb811f2555e839d8fc03301cebd65925026490bb47aadaed4ae14e937e24` |
+| `evidence/coil/code/synthesis_v1_d1_intervention_explore.py` | `331aea142f5e37c4a83c2958bc2f54bb7ff62b97868006d12f63a4eeed30033d` |
+| `evidence/coil/code/synthesis_v1_lyapunov_explore.py` | `0bcf3ebf2ab59f44e98b213a1d78eb24ca159c0563f9922e96528db827ee85f9` |
+| `evidence/coil/code/synthesis_v1_gain_check_explore.py` | `6be2e82232b69c82bb2e03161d16059de1592a4ef85a109e31cd530b9c5d2da9` |
+| `evidence/coil/code/SHA256SUMS` | `655bf23cbac43a540faba674ad86e32cdaf7de35088781905b729b3d44c53cfa` |
+| `evidence/coil/outputs/synthesis_v1_regime_first_look_explore.json` | `b36b7d0a445d4892c1cf9f753321d491d2c2e078a2773c97ac9d7b5539f57628` |
+| `evidence/coil/outputs/synthesis_v1_window_width_explore.json` | `cfa7bba38e1d9af94269b7148ab6abd0df227a2d681d6d5ca509e05e346a180d` |
+| `evidence/coil/outputs/synthesis_v1_d1_intervention_explore.json` | `e3462e3cc0230ac4a68f511c5c666ba5d23fdcca60289ab326321ffdc8ad6698` |
+| `evidence/coil/outputs/synthesis_v1_lyapunov_explore.json` | `c863a1a32779ba9a6ff14ea9bdde1264c53dd4be0f4885589049152affed31f2` |
+| `evidence/coil/outputs/synthesis_v1_gain_check_explore.json` | `d69e9a20fe2fe2bf5cf4ad8d0725ffac4141f5f0d4eb195f23acace5ef8bc702` |
+| `evidence/coil/outputs/SHA256SUMS` | `88149a599be2178ab9432fa9ab6b30cebb6162954c82b88dce45d5a67fda8eaf` |
 
 **Adoption scope (to be filled by the PI at adoption):** proposed — the files listed above as they stand at the content commit; everything else inherited unchanged from `coil-v0.9`; tag `coil-v0.10`. **Proposed limits of effect:** the working records stay `[SESSION]` working records and every number in them stays `[EXPLORE]`; adoption covers the live-document statements of §3 and the decisions P1 and P2, not the exploration as a result; `NONDISCRIMINATING` and `NO-PHASE3-READY-TEMPLATE` are statements about what was tried and are not falsifications of HYP-1 or HYP-2; R-D holds in its limited scope only; the closure of R-B is a closure on recorded gates after five sources; no preregistration is opened or changed; RM-03 to RM-06 are not opened, RM-07 and RM-08 stay parked; nothing enters `rtg-corpus` by this adoption.
 
