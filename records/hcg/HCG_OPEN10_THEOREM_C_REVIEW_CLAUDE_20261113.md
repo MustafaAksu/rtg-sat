@@ -2,7 +2,7 @@
 
 **Date:** 13 November 2026. **By:** the Claude HCG owner session. **For review by:** the ChatGPT HCG owner session. **Decision:** PI.
 
-**Status:** owner-session review record, PROPOSAL, revision 1. Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 10 stays ACTIVE** until the PI decides.
+**Status:** owner-session review record, PROPOSAL, revision 2 (after the second reading by the ChatGPT session, PR #67; two wording corrections; §6.1). Nothing here is adopted. `hcg-v0.5` governs and `hcg/HCG_STUDY_LEDGER.md` is not changed. **OPEN 10 stays ACTIVE** until the PI decides.
 
 **What this is.** OPEN 10 (`HCG-OPEN-SEVERN-V2-C`) says that §11 (Theorem C, all powers) and §12 (type III) of Severn's v2 were audited by nobody in this study, and asks for a recorded proof review with the state it reaches. This record is a first review, by one session: §11 line by line, §12 at the level its imports allow.
 
@@ -50,7 +50,7 @@ No text of Severn's is copied; statements are cited by number and paraphrased. *
 | T2 | The Hodge group of A^m is SU_H acting diagonally | Hg(A^m) = Hg(A): standard. ✓ |
 | T3 | So the Hodge classes on A^m, tensored with ℂ, are Λ^{SL(W)} with U = U′ = ℂ^m | H¹(A^m) = H¹(A) ⊗ ℚ^m, so the cohomology algebra is ∧(W ⊗ U) ⊗ ∧(W^* ⊗ U). Hodge classes are the invariants of the Hodge group, and invariants commute with extension of scalars. ✓ |
 | T4 | The θ(u, u′) lie in degree two, so they are complex combinations of rational Hodge classes of degree two, hence of divisor classes | Lefschetz (1,1) theorem. ✓ |
-| T5 | With 𝒪 the order of a ∈ K with ι(a) ∈ End(A): for a ∈ 𝒪^m the homomorphism A^m → A, (x_i) ↦ Σ ι(a_i)x_i pulls the two Weil lines of A back to det(W ⊗ ã) and det(W^* ⊗ conj(ã)), ã the image of a under the fixed embedding | The pull-back on H¹ is w ↦ w ⊗ ã on W and w′ ↦ w′ ⊗ conj(ã) on W′, and W_K(A) ⊗ ℂ = ∧^N W ⊕ ∧^N W′. These classes are pull-backs of algebraic classes. ✓ |
+| T5 | With 𝒪 the order of a ∈ K with ι(a) ∈ End(A): for a ∈ 𝒪^m the homomorphism A^m → A, (x_i) ↦ Σ ι(a_i)x_i pulls the two Weil lines of A back to det(W ⊗ ã) and det(W^* ⊗ conj(ã)), ã the image of a under the fixed embedding | The pull-back on H¹ is w ↦ w ⊗ ã on W and w′ ↦ w′ ⊗ conj(ã) on W′, and W_K(A) ⊗ ℂ = ∧^N W ⊕ ∧^N W′. The two complex lines are **not** themselves classes of algebraic cycles: they are complex eigenlines. What is algebraic is the rational plane W_K(A), so its pull-back is spanned by algebraic classes, and det(W ⊗ ã), det(W^* ⊗ conj(ã)) lie in the **complex linear span** of algebraic classes on A^m. That is all the proof needs (T7). ✓ |
 | T6 | The ã, a ∈ 𝒪^m, are Zariski dense in U, so the classes det(W ⊗ ã) span all det(W ⊗ a); likewise for W^* | The image of 𝒪 is an infinite subset of ℂ, hence Zariski dense, and so is its m-th power. A linear form vanishing on the values of the polynomial map a ↦ det(W ⊗ a) on a dense set vanishes on all values. The conjugates conj(ã) are dense too. ✓ |
 | T7 | By Lemma 11.1 the products of these classes span all Hodge classes over ℂ; a rational subspace contained in the complex span of algebraic classes lies in their rational span | The descent is the last sentence of the proof of v2 Cor. 4.7 (elementary linear algebra). ✓ |
 
@@ -73,7 +73,7 @@ No text of Severn's is copied; statements are cited by number and paraphrased. *
 | C2 | Theorem 11.2 with n = 3 | §2 above. ✓ |
 | C3 | Hg(A) = SU_H for the very general member | **import** (van Geemen's survey, Thm 6.11). Not re-read |
 
-**Result: the deduction is correct.** Theorem C is exactly as strong as Theorem B.
+**Result: the deduction is correct.** Theorem C follows from Theorem B through Theorem 11.2, under the hypothesis Hg(A) = SU_H. It adds that hypothesis and concludes more, so the two are not of equal strength; what is true is that Theorem C has no premise in doubt other than Theorem B.
 
 ---
 
@@ -112,6 +112,26 @@ No text of Severn's is copied; statements are cited by number and paraphrased. *
 - **Nothing here bears on Theorem B.** A correct §11 turns a claimed theorem into a claimed corollary; it adds no evidence for the premise.
 - The relation to the pending Δ29 (the positive lane on all powers, with its own sources) is not examined.
 
+### 6.1 Second reading (revision 2)
+
+ChatGPT review of PR #67 (review `5888710305`, on head `4d571de`), read against the same PDF (SHA-256 `ee285c82…fcccb4`, pages 24–27): **ACCEPT WITH CHANGE**.
+
+| Item | Second reading |
+|---|---|
+| Lemma 11.1 | PASS. L8 (the determinant block as a full polarization) was also verified by an independent exterior-algebra computation for N = 2, 3, 4 |
+| Theorem 11.2 | PASS, under Hg(A) = SU_H and algebraic Weil classes |
+| Theorem C | conditional PASS; Theorem B stays CLAIMED |
+| Corollary 12.1 | OPEN: Abdulali's theorem and the transfer of its scope must be read |
+| Example 12.2 | numerical PASS (45, 396, classes [−5], [−11]); the existence of the polarizations not checked |
+
+Two wording corrections, both applied in this revision and neither changing a proof step:
+1. **T5.** Revision 1 called the pulled-back classes "pull-backs of algebraic classes". The complex Weil eigenlines are not rational algebraic classes; they lie in the complex span of algebraic classes. **Conceded.**
+2. **§3.** Revision 1 said "Theorem C is exactly as strong as Theorem B". That is wrong as stated: Theorem C needs the extra hypothesis Hg(A) = SU_H and has a different conclusion. **Conceded.**
+
+**State.** §§1–3 are now a line-by-line review of v2 §11 against the source by two sessions: CHECKED (two AIs), the ceiling under the PI's standing decision. §4 (the type III corollary) is unchanged: not reviewed beyond its first three steps.
+
+**The reviewer's recommendation to the PI:** split OPEN 10 — §11 CLOSED (scoped); §12 OPEN until Abdulali's paper is read through LIT. **Not applied:** the status of OPEN 10 changes only by a PI decision, in a ledger edition.
+
 ## 7. Recommendation
 
 1. A second reading by the ChatGPT session of v2 §11 (pp. 24–25) against §§1–3 above; that session already holds the PDF.
@@ -125,3 +145,4 @@ Nothing in this record changes a grade, a review state or an OPEN item.
 | Revision | Date | Change |
 |---|---|---|
 | 1 | 13 Nov 2026 | first version |
+| 2 | 14 Nov 2026 | §6.1 added (second reading by the ChatGPT session); T5 corrected (complex span of algebraic classes); §3 corrected (Theorem C follows from Theorem B under Hg(A) = SU_H; not "exactly as strong") |
