@@ -1,10 +1,10 @@
 # HHO v0.4 — release record
 
-**Status:** **DRAFT.** Not adopted. It becomes the record of `hho-v0.4` only after the co-owner's review, the PI's adoption decision and the publication commit (§9).
+**Status:** **ADOPTED by the PI on 14 Nov 2026 as a register edition** (§8). Publication tag: `hho-v0.4`, created by the PI on the merge commit of the pull request that carries this record (PR #69).
 
-**Release:** fourth repository edition of the HHO study. If adopted, it supersedes `hho-v0.3` as the governing edition.
+**Release:** fourth repository edition of the HHO study. It supersedes `hho-v0.3` as the governing edition.
 
-**Prepared by:** the Claude HHO owner session, on the recommendation of both owner sessions (Claude, 13 Nov 2026; ChatGPT, relayed by the PI on 14 Nov 2026) that the session results on `main` be fixed in a register edition before the work on (D) starts. **Review:** the ChatGPT HHO owner session. **Adoption:** PI Mustafa Aksu. *No PI decision to prepare or to adopt this edition is recorded yet; this draft commits the PI to nothing.*
+**Prepared by:** the Claude HHO owner session, on the recommendation of both owner sessions (Claude, 13 Nov 2026; ChatGPT, relayed by the PI on 14 Nov 2026) that the session results on `main` be fixed in a register edition before the work on (D) starts. **Review:** the ChatGPT HHO owner session. **Adoption:** PI Mustafa Aksu. The draft was prepared without a PI instruction; the PI's adoption decision is recorded in §8.
 
 ## 1. What this release is
 
@@ -25,7 +25,7 @@
 | `hho/HHO_GATES.md` | live summary | three rows in the table of local tools |
 | `hho/HHO_SUPPORT_RESULTS.md` | live summary | §3.3 rewritten for bridge B2; new §6 on positive-defect primes; the list of open items is now §7 |
 | `records/hho/HHO_SOURCE_MANIFEST.md` | source manifest | new §3.3: the HCG pipe answer used as an input |
-| `evidence/hho/posdefect/` | eleven session-native files and `SHA256SUMS` | **new since `hho-v0.3`** (merged with PR #56, #58, #59, #60) |
+| `evidence/hho/posdefect/` | ten session-native files and `SHA256SUMS` | **new since `hho-v0.3`** (merged with PR #56, #58, #59, #60) |
 | `records/hho/HHO_POSDEFECT_FIRST_READING.md` | session record of 12 Nov 2026 | **placed unchanged** by this release (SHA-256 `18aa8f7a24c9866674d7db6ea0064499885ac282ed5ebdf860bd0befd48bf3a6`); it was sent to the PI and is cited by hash in `HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md`. §3 of that note is superseded by HHO-LEM-SECTOR. It adds no row. **Custody:** it is a record written by the Claude owner session and placed by its author on a `claude/*` branch, as the P1 note was (PR #45, first commit); it is not a file arriving from outside, so the `upload/<topic>` intake of `CONVENTIONS.md` is not used. Its byte identity with the copy the PI received was verified by the co-owner (review `5906870449`). |
 | `records/hho/HHO_NEG_GLUE_FORMAL_CHATGPT.md` | session record of 14 Nov 2026 (ChatGPT) | **new**, received through PR #70 and merged into the release branch (SHA-256 `64179e01b21c23ed9ec35a2f2050808b7e277a8ddb661af045d902ff72c22dfc`); source of part (b) of `HHO-NEG-GLUE-FORMAL`. It adds no row. |
 
@@ -87,7 +87,7 @@ None.
 
 None added.
 
-## 5. Review corrections applied before this draft
+## 5. Review corrections applied
 
 | Correction | Where | Source |
 |---|---|---|
@@ -111,19 +111,51 @@ None added.
 
 ## 7. Adoption manifest
 
-**Status: DRAFT.** The SHA-256 values are filled in by the publication commit (§9) for: the four live files of `hho/`; `records/hho/HHO_SOURCE_MANIFEST.md`; the three evidence indexes (`evidence/hho/SHA256SUMS`, unchanged; `evidence/hho/b1/SHA256SUMS`, unchanged; `evidence/hho/posdefect/SHA256SUMS`); `upload/hho/SHA256SUMS` (unchanged); the eight session records cited by the new rows; the `hho` row of `REGISTRY.md`; the dispositioned notice.
+**Status: ADOPTED (2026-11-14).** SHA-256 of the bytes in the publication commit (§9).
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hho/HHO_CHARTER.md` | charter (governance text; no scientific claim) | `be77ab1536775212c59d17f42741dfb04180c5321361f41e95442533c6177bc1` |
+| `hho/HHO_CLAIM_REGISTER.md` | claim register (adopted as a register; no row ACCEPTED) | `ee3a6d280fbcea0b184c8c8c625880f5515a4f88d59de5b2eac2050887495c19` |
+| `hho/HHO_GATES.md` | live summary: gates, bounds, calibration objects | `2131c9c180fee1c01a5adf85458eb160dda54b6096acf8fb8cb922e2888ec52c` |
+| `hho/HHO_SUPPORT_RESULTS.md` | live summary: support results, bridges, positive-defect primes | `59ffec8f095dfa0c79ed1a48c74623f0211c30cfaca7059cc71db7d1d5d6cf85` |
+| `records/hho/HHO_SOURCE_MANIFEST.md` | source manifest | `955f3910d85c06ec57085d1eccce9b30ccf301c750808778d2e445c92fc29c78` |
+| `evidence/hho/SHA256SUMS` | index of the 54 placed evidence files (unchanged since `hho-v0.2`) | `e042d035534ca134ffed143eba41d97895dbe3de83ec5e6fec91db9ca77a5ae6` |
+| `evidence/hho/b1/SHA256SUMS` | index of the three B1 files (unchanged since `hho-v0.3`) | `340c812af34e3b47ed37f47b6eeb6e4024e2f90dbde7d1876fe9d777a87d8fac` |
+| `evidence/hho/posdefect/SHA256SUMS` | index of the ten positive-defect scripts and outputs | `705de5115a7157ed55ab9276ce03dbace93eec1f3010edfaa29a41ea239bb3af` |
+| `evidence/hho/README.md` | guide to the evidence folder | `9fed0f76ef2d75b8cfda28fe2ac5e96169ad71ad40b04b346b698dbf761139fa` |
+| `upload/hho/SHA256SUMS` | index of the 57 uploaded source files (unchanged since `hho-v0.1`) | `50417fca3c82ad7a487d0c986047ecb002d86aa5f5cbffe087672df33d60b410` |
+| `records/hho/HHO_B2_COMPARISON_CLAUDE.md` | session record: bridge B2 | `0423165f76216b3b1ca88661151f19a2a61c7146e95265975b60d75277475d26` |
+| `records/hho/HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md` | session record: projector lemma | `a16c553103d74df21fe88810a0492ba1a72c063d936bb29ee632942b84117ec9` |
+| `records/hho/HHO_C6_P2_INTEGRAL_MODEL_CHATGPT.md` | session record: formal C₆ model | `628947ebdc6dd1db41e93b775866717d8416716f72d8c6a58a152d1ea996f721` |
+| `records/hho/HHO_POSDEFECT_CLAUDE_REVIEW.md` | session record: review, sector lemma, three C₆ lattices | `12857b21ac9129be41f143fcd0ba597e396e42e3cc34402b1d9fe1d63a88b0c6` |
+| `records/hho/HHO_POSDEFECT_F20_PILOT_CLAUDE.md` | session record: C₃ × F₂₀ pilot | `7d96d8300c2e59382485ca5cb187dad6597eebbb9a6800be47800db370ebf3bb` |
+| `records/hho/HHO_POSDEFECT_FULL_GLUING_MECHANISM_CLAUDE.md` | session record: structure of the cover lattice | `a6a3253ef1a2b6c62060c754430ea5dc5cc34be7a869ec8b30af96f07e10bb42` |
+| `records/hho/HHO_NEG_GLUE_FORMAL_CHATGPT.md` | session record: formal negative control | `64179e01b21c23ed9ec35a2f2050808b7e277a8ddb661af045d902ff72c22dfc` |
+| `records/hho/HHO_POSDEFECT_FIRST_READING.md` | session record: first reading (placed unchanged) | `18aa8f7a24c9866674d7db6ea0064499885ac282ed5ebdf860bd0befd48bf3a6` |
+| `pipes/HHO/20261112-HCG-v0.5-release.md` | received notice, dispositioned | `d5afdda29af360d85f86b69afc3c16709914cd4ffd8ce64d61c248b3bea31ebb` |
+
+`REGISTRY.md`: only the single line of the `hho` study is hashed, with its line feed, because other studies change the same file: `53804a5a9bcaf12795d02086c006fb7fe3476a741822c42359fd314fd83611c0`.
+
+- The evidence files are adopted as **evidence as it stands**, not as claims. `evidence/hho/posdefect/` holds ten scripts and outputs and their index.
+- The eight session records are listed because the new rows cite them. They are not adopted as claims; the register rows carry the grade and the state.
+- HCG material that is pending at the pin stays pending for HHO.
+- The SHA-256 of this record is stated in the tag message, not here.
 
 ## 8. Checks and decisions
 
-**Checks run for this draft.**
+**Checks run for this edition.**
 
 | Check | Result | By |
 |---|---|---|
-| Every claim row of `hho-v0.3` outside Part D is present unchanged (37 rows) | pass | Claude (script) |
-| New RIDs: exactly twelve (ten claim rows, two open items) | pass | Claude (script) |
-| Every RID used in the two live summaries exists in the register | pass | Claude (script) |
+| Every claim row of `hho-v0.3` outside Part D is present unchanged (37 rows) | pass | Claude (script); ChatGPT (review `5906870449`) |
+| New RIDs: exactly twelve (ten claim rows, two open items); none deleted | pass | Claude (script); ChatGPT |
+| Every RID used in the two live summaries and in this record exists in the register | pass | Claude (script) |
 | `sha256sum -c` for the three evidence indexes | pass | Claude |
+| Byte identity of the first-reading note and of the HCG pipe answer as received | pass | ChatGPT (review `5906870449`) |
 | Computations | none for this edition | — |
+
+**Proof review, kept apart from the checks.** The new rows rest on session records reviewed in PR #56, #58, #59, #60, #64, #66 and #70. For this edition the co-owner checked the changed claims against those records in a targeted way and re-ran no code. **The 54 frozen files were not replayed.**
 
 **Decisions.**
 
@@ -131,12 +163,23 @@ None added.
 |---|---|---|
 | Pilot on C₃ × F₂₀ | PI, 12 Nov 2026 | "pilot için onay veriyorum" |
 | Merge of PR #64 and PR #66 as session records | PI | merge commits `ebe32ef`, `31f5913` |
-| Co-owner review of this record | ChatGPT HHO owner session | PR #69, review `5906870449` at `3c9f92a`: ACCEPT WITH TWO SCOPED, PRE-ADOPTION CHANGES (R1, R2), both applied (§5). Its answers: the four conditional grades stay; the second formulation of the sector lemma stays in the same row; the pin stays at `hcg-v0.2`. |
-| Adoption of `hho-v0.4` | PI | pending |
+| Co-owner review of this record | ChatGPT HHO owner session | PR #69, review `5906870449` at `3c9f92a`: ACCEPT WITH TWO SCOPED, PRE-ADOPTION CHANGES (R1, R2), both applied at `c57d757` (§5). Its answers: the four conditional grades stay; the second formulation of the sector lemma stays in the same row; the pin stays at `hcg-v0.2`. |
+| Adoption of `hho-v0.4` with the scope of §§1–6, including the pin at `hcg-v0.2` | PI, 14 Nov 2026, 23:27 +03:00 | "hh0-v0.4 ü benimsiyorum" — I adopt hho-v0.4 (the PI's message has "hh0"; it answers the request for a decision on `hho-v0.4`). The scope put to the PI before the decision: register edition only; no row ACCEPTED; pin at `hcg-v0.2`. |
+| Publication | PI | the PI merges PR #69 with a merge commit and creates the annotated tag |
 
-## 9. Publication step (not yet applied)
+## 9. Publication step (applied on 14 Nov 2026)
 
-After the PI's adoption decision, one publication commit: status lines of the five live files and charter §3; the `hho` row of `REGISTRY.md`; this record with "DRAFT" removed and §7–§8 completed. Then the PI merges with a merge commit and creates the annotated tag `hho-v0.4`, whose message states the SHA-256 of this record.
+The sequence is: PI adoption decision → **one** publication commit → PI merge → annotated tag.
+
+The publication commit contains all of the following and nothing else:
+
+1. Status lines of the five live files: `hho/HHO_CHARTER.md`, `hho/HHO_CLAIM_REGISTER.md`, `hho/HHO_GATES.md`, `hho/HHO_SUPPORT_RESULTS.md` and `records/hho/HHO_SOURCE_MANIFEST.md`. In the charter, §3 is brought up to date: the governing edition is `hho-v0.4`, and one bullet describes this edition. No other text changes in these files.
+2. `REGISTRY.md`, `hho` row: the governing edition is `hho-v0.4` with this record.
+3. This record: "DRAFT" removed; §7–§9 completed.
+
+Before the commit, `main` at `e45574b` was merged into the release branch. That merge touched no file of §7.
+
+The hashes of §7 are those of the files in the publication commit itself. This record cannot contain its own hash; the tag message states it.
 
 ## 10. Pipe items handled with this release
 
