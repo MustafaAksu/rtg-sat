@@ -134,7 +134,7 @@ By §3.4 a nonsplit class needs an inert prime of positive defect. This section 
 **6.5 Limits.**
 - A formal self-dual G-lattice with the same character need not have the same gluing (HHO-NEG-GLUE-FORMAL). The geometric input is §6.2.
 - For a reducible reduction and even χ(1) the total length of A_χ carries no parity. Which constituent carries it is open (HHO-OPEN-PARITY-CONSTITUENT).
-- At the primes worked out, ε_p is a Chevalley–Weil count of branch points. Whether (D) constrains that count is P1 and is open.
+- In the two worked blocks, and under their conditional Gysin input, ε_p is the parity of a Chevalley–Weil count of branch points. This does not settle the open item on the parity constituent for other blocks. Whether (D) constrains that count is P1 and is open.
 
 ## 7. Open
 

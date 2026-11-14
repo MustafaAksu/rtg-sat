@@ -26,7 +26,8 @@
 | `hho/HHO_SUPPORT_RESULTS.md` | live summary | §3.3 rewritten for bridge B2; new §6 on positive-defect primes; the list of open items is now §7 |
 | `records/hho/HHO_SOURCE_MANIFEST.md` | source manifest | new §3.3: the HCG pipe answer used as an input |
 | `evidence/hho/posdefect/` | eleven session-native files and `SHA256SUMS` | **new since `hho-v0.3`** (merged with PR #56, #58, #59, #60) |
-| `records/hho/HHO_POSDEFECT_FIRST_READING.md` | session record of 12 Nov 2026 | **placed unchanged** by this release (SHA-256 `18aa8f7a24c9866674d7db6ea0064499885ac282ed5ebdf860bd0befd48bf3a6`); it was sent to the PI and is cited by hash in `HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md`. §3 of that note is superseded by HHO-LEM-SECTOR. It adds no row. |
+| `records/hho/HHO_POSDEFECT_FIRST_READING.md` | session record of 12 Nov 2026 | **placed unchanged** by this release (SHA-256 `18aa8f7a24c9866674d7db6ea0064499885ac282ed5ebdf860bd0befd48bf3a6`); it was sent to the PI and is cited by hash in `HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md`. §3 of that note is superseded by HHO-LEM-SECTOR. It adds no row. **Custody:** it is a record written by the Claude owner session and placed by its author on a `claude/*` branch, as the P1 note was (PR #45, first commit); it is not a file arriving from outside, so the `upload/<topic>` intake of `CONVENTIONS.md` is not used. Its byte identity with the copy the PI received was verified by the co-owner (review `5906870449`). |
+| `records/hho/HHO_NEG_GLUE_FORMAL_CHATGPT.md` | session record of 14 Nov 2026 (ChatGPT) | **new**, received through PR #70 and merged into the release branch (SHA-256 `64179e01b21c23ed9ec35a2f2050808b7e277a8ddb661af045d902ff72c22dfc`); source of part (b) of `HHO-NEG-GLUE-FORMAL`. It adds no row. |
 
 Session records on `main` that the new rows cite (not adopted as claims): `HHO_B2_COMPARISON_CLAUDE.md`; `HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md`; `HHO_C6_P2_INTEGRAL_MODEL_CHATGPT.md`; `HHO_POSDEFECT_CLAUDE_REVIEW.md`; `HHO_POSDEFECT_F20_PILOT_CLAUDE.md`; `HHO_POSDEFECT_FULL_GLUING_MECHANISM_CLAUDE.md`.
 
@@ -50,7 +51,7 @@ Session records on `main` that the new rows cite (not adopted as claims): `HHO_B
 | `HHO-COR-PROJ-EVEN` | irreducible reduction, block without the trivial module, no local monodromy of order divisible by p ⇒ v_p(det h_W) even in rank 8 | same, for the Jacobian-induced class | CHECKED |
 | `HHO-NUM-C6-JAC` | integral cup lattices of three C₆ covers: sector length 7, 0, 0 | `[NUM]` | CHECKED (two implementations) |
 | `HHO-NUM-F20-SECTOR` | 42 C₃ × F₂₀ tuples: n_μ equal to the Chevalley–Weil multiplicities; n₁ = t − 2 | `[NUM]` | CHECKED (two implementations; the second is not in the repository) |
-| `HHO-NEG-GLUE-FORMAL` | character and Brauer tree do not determine the gluing of a formal self-dual lattice | `[NEG]` | (a) CHECKED; (b) argument checked, no file |
+| `HHO-NEG-GLUE-FORMAL` | character and Brauer tree do not determine the gluing of a formal self-dual lattice | `[NEG]` | CHECKED |
 
 **New open items.** `HHO-OPEN-PARITY-CONSTITUENT` (which constituent of A_χ carries the parity when the reduction is reducible) and `HHO-OPEN-INTCW-REF` (a literature reference for the structure statement).
 
@@ -93,6 +94,9 @@ None added.
 | Typing of the S-length statement (which module, which constituent) | `HHO_POSDEFECT_CLAUDE_REVIEW.md` §3 | ChatGPT, `HHO_POSDEFECT_PROJECTOR_AND_S_LENGTH_CHATGPT.md` §5 |
 | B2-1 Tate twist; B2-2 the factor ±2(ϑ/δ)q; B2-3 the open source obligation | `HHO_B2_COMPARISON_CLAUDE.md` | ChatGPT review `5875862532` |
 | FG-1 two lemmas with proofs; FG-2 explicit models in F₂₀ and C₆ | `HHO_POSDEFECT_FULL_GLUING_MECHANISM_CLAUDE.md` | ChatGPT review `5888334794` |
+| R1: the parity is a congruence, ε_p ≡ ℓ_S(A_χ) (mod 2) | `hho/HHO_GATES.md`, table of local tools | ChatGPT review `5906870449` of this record |
+| R2: the negative control (b) cites a file; custody of the first-reading note stated | register B.7; §2 of this record | same review; PR #70 |
+| Editorial: χ ≠ χ̄ in the projector row; the second formulation of the sector lemma scoped; "branch count" limited to the two worked blocks | register B.7; `hho/HHO_SUPPORT_RESULTS.md` §6.5 | same review |
 
 ## 6. Not part of this release
 
@@ -107,7 +111,7 @@ None added.
 
 ## 7. Adoption manifest
 
-**Status: DRAFT.** The SHA-256 values are filled in by the publication commit (§9) for: the four live files of `hho/`; `records/hho/HHO_SOURCE_MANIFEST.md`; the three evidence indexes (`evidence/hho/SHA256SUMS`, unchanged; `evidence/hho/b1/SHA256SUMS`, unchanged; `evidence/hho/posdefect/SHA256SUMS`); `upload/hho/SHA256SUMS` (unchanged); the seven session records cited by the new rows; the `hho` row of `REGISTRY.md`; the dispositioned notice.
+**Status: DRAFT.** The SHA-256 values are filled in by the publication commit (§9) for: the four live files of `hho/`; `records/hho/HHO_SOURCE_MANIFEST.md`; the three evidence indexes (`evidence/hho/SHA256SUMS`, unchanged; `evidence/hho/b1/SHA256SUMS`, unchanged; `evidence/hho/posdefect/SHA256SUMS`); `upload/hho/SHA256SUMS` (unchanged); the eight session records cited by the new rows; the `hho` row of `REGISTRY.md`; the dispositioned notice.
 
 ## 8. Checks and decisions
 
@@ -127,7 +131,7 @@ None added.
 |---|---|---|
 | Pilot on C₃ × F₂₀ | PI, 12 Nov 2026 | "pilot için onay veriyorum" |
 | Merge of PR #64 and PR #66 as session records | PI | merge commits `ebe32ef`, `31f5913` |
-| Co-owner review of this record | ChatGPT HHO owner session | pending |
+| Co-owner review of this record | ChatGPT HHO owner session | PR #69, review `5906870449` at `3c9f92a`: ACCEPT WITH TWO SCOPED, PRE-ADOPTION CHANGES (R1, R2), both applied (§5). Its answers: the four conditional grades stay; the second formulation of the sector lemma stays in the same row; the pin stays at `hcg-v0.2`. |
 | Adoption of `hho-v0.4` | PI | pending |
 
 ## 9. Publication step (not yet applied)
