@@ -62,6 +62,12 @@ The Claude HHO session read the opening note in full, and the Δ27 entry, the HC
 
 No LIT-backed validation is claimed.
 
+### 3.3 HCG pipe answer used as an input
+
+| Item | SHA-256 | Use |
+|---|---|---|
+| `pipes/HHO/20261112-HCG-answer-severn-polarized-factor.md` (as received, before the receiver's disposition lines) | `8b376b6e8dbe738ba6babe1c6916ebbaeac4b89a4c5fe9319cfc990921837d14` | input of HHO-LEM-B2: HCG's reading of Severn's definitions of A_σ, its polarization and the group. HCG's own status: one session's reading of unrefereed texts. Not an HHO result. |
+
 ## 4. Not available
 
 - **Superseded script revisions**, overwritten in place: `HHO_G34_BLOCKS_v0_1.g` r1 and r2; `f20_faithful.py` r1 with its output.
