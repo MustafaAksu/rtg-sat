@@ -1,0 +1,44 @@
+pkappa_scaling_check  python 3.13.18 numpy 2.5.3 scipy 1.18.1
+
+C1  amplitude: predicted A(kappa) | map, a = 0.1, 0.03, 0.01, 0.003 (N = 400/a)
+  kappa 1.20  A_pred 1.199268 | 1.199582  1.199355  1.199296  1.199276
+  kappa 1.50  A_pred 1.776952 | 1.778425  1.777336  1.777074  1.776988
+  kappa 2.00  A_pred 2.318806 | 2.323804  2.320012  2.319183  2.318916
+  kappa 2.50  A_pred 2.693350 | 2.702554  2.695429  2.693986  2.693535
+  kappa 2.90  A_pred 2.989786 | 2.990822  2.989166  2.989492  2.989689
+  largest relative deviation: 3.42e-03
+
+C2  balance integral at the separatrix, A = pi: zero at kappa = 3 (closed form 8 sqrt(kappa) (1 - kappa/3))
+  kappa 2.9  integral 0.454117  closed form 0.454117
+  kappa 3.0  integral 0.000000  closed form 0.000000
+  kappa 3.1  integral -0.469515  closed form -0.469515
+  first kappa on a 0.01 grid at which the map orbit from q = 1e-3 leaves |q| <= pi (N = 600/a):
+  a 0.156  kappa 3.05
+  a 0.100  kappa 3.04
+  a 0.030  kappa 3.01
+  a 0.010  kappa 3.01
+  a 0.003  kappa 3.01
+
+C3a transverse exponent, map against formula: kappa | Lam(kappa) | lam_perp/a at a = 0.156, 0.1, 0.03, 0.01 (N = 3000/a)
+  kappa 1.20  <cos q> +0.6663  Lam 0.0333 | 0.0334  0.0342  0.0345  0.0332
+  kappa 1.50  <cos q> +0.3290  Lam 0.0822 | 0.0821  0.0824  0.0817  0.0814
+  kappa 2.00  <cos q> -0.0247  Lam 0.1584 | 0.1577  0.1582  0.1584  0.1583
+  kappa 2.50  <cos q> -0.2726  Lam 0.2197 | 0.2161  0.2172  0.2181  0.2196
+  kappa 2.80  <cos q> -0.4226  Lam 0.2361 | 0.2316  0.2341  0.2353  0.2347
+
+C3b transverse exponent, LOCKED ICID data against formula (cluster ICs; lam_perp_block per step)
+  cell  3  A  kappa 2.600  n=5  measured 6.818072e-03 .. 6.821326e-03 | a*Lam 6.847364e-03 | max rel dev 4.28e-03
+  cell  4  A  kappa 2.650  n=5  measured 6.915274e-03 .. 6.921524e-03 | a*Lam 6.948836e-03 | max rel dev 4.83e-03
+  cell  5  B  kappa 2.750  n=5  measured 2.328831e-02 .. 2.328980e-02 | a*Lam 2.358594e-02 | max rel dev 1.26e-02
+  cell  6  B  kappa 2.775  n=5  measured 2.332466e-02 .. 2.332799e-02 | a*Lam 2.361886e-02 | max rel dev 1.25e-02
+  cell  7  C  kappa 2.775  n=5  measured 3.613662e-02 .. 3.614008e-02 | a*Lam 3.684542e-02 | max rel dev 1.92e-02
+  cell  8  C  kappa 2.800  n=5  measured 3.614240e-02 .. 3.614777e-02 | a*Lam 3.683403e-02 | max rel dev 1.88e-02
+  cell  9  A  kappa 1.500  n=5  measured 2.461596e-03 .. 2.469098e-03 | a*Lam 2.467289e-03 | max rel dev 2.31e-03
+  cell 10  A  kappa 2.000  n=5  measured 4.741109e-03 .. 4.745898e-03 | a*Lam 4.752737e-03 | max rel dev 2.45e-03
+  cell 11  B  kappa 1.500  n=5  measured 8.222495e-03 .. 8.228905e-03 | a*Lam 8.224296e-03 | max rel dev 5.60e-04
+  cell 12  B  kappa 2.000  n=5  measured 1.579119e-02 .. 1.579497e-02 | a*Lam 1.584246e-02 | max rel dev 3.24e-03
+  cell 13  C  kappa 1.500  n=5  measured 1.284463e-02 .. 1.285388e-02 | a*Lam 1.282990e-02 | max rel dev 1.87e-03
+  cell 14  C  kappa 2.000  n=5  measured 2.461824e-02 .. 2.462153e-02 | a*Lam 2.471423e-02 | max rel dev 3.88e-03
+  values compared: 60; largest relative deviation: 1.92e-02
+
+RESULT: PASS (C1 within 0.5%, C3b within 3% on 60 locked values)
