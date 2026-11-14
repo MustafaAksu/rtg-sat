@@ -37,12 +37,12 @@ def line(prefix, new):
 
 
 # ---------------------------------------------------------------- header
-rep('# HCG study ledger v0.5\n', '# HCG study ledger v0.6 — DRAFT r1\n')
+rep('# HCG study ledger v0.5\n', '# HCG study ledger v0.6 — DRAFT r2\n')
 rep('**Date:** 12 November 2026\n', '**Date:** 14 November 2026 (draft)\n')
 rep("§6.6–§6.22 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work)",
     "§6.6–§6.22 and §6.26 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work)")
 line('**Document status:** ADOPTED (scoped)',
-     "**Document status:** **DRAFT r1 — not adopted.** The governing edition is `hcg-v0.5`. This draft records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, a proposed split of OPEN 10, and one scope guard (SG-14). It changes nothing else of v0.5. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's theorems stay CLAIMED).")
+     "**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.5`. This draft records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, a proposed split of OPEN 10, and one scope guard (SG-14). It changes nothing else of v0.5. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's theorems stay CLAIMED).")
 line('**Build:** made from the adopted v0.4 text',
      '**Build:** made from the adopted v0.5 text by `evidence/hcg/verification/make_v06_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.5 text, byte for byte.')
 line('**Revision base:** the ledger of `hcg-v0.4`',
@@ -96,7 +96,7 @@ Note: the all-powers question is also the subject of pending Δ29, which is outs
 - What the closure means: **if** the Weil classes of A are algebraic and Hg(A) = SU_H, every Hodge class on every power of A is algebraic. Theorem C follows from Theorem B through this, under Hg(A) = SU_H. Theorem C stays CLAIMED, because Theorem B is.
 - Not covered: v2 §12 (type III), which is now OPEN 12.
 Question (as opened in v0.3): v2 §11 (Theorem C, all powers) and §12 (type III) were not audited by anyone in this study.
-Closure criterion: a recorded proof review of those sections, with the review state it reaches.
+Closure criterion (as opened in v0.3; met for §11 only, and carried by OPEN 12 for §12): a recorded proof review of those sections, with the review state it reaches.
 Note: the all-powers question is also the subject of pending Δ29, which is outside this edition.''')
 after('''Scope: the question is about this construction only. It is not the question whether nonsplit Weil eightfolds exist or whether their Weil classes are algebraic.
 ''', '''
@@ -236,17 +236,28 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 # ---------------------------------------------------------------- appendix A, footer
 after('## Appendix A — Version History\n', '''
-### v0.6 DRAFT r1 — 14 November 2026 — DRAFT (not adopted)
+### v0.6 DRAFT r2 — 14 November 2026 — DRAFT (not adopted)
 
 - **Basis.** The ledger of `hcg-v0.5`; three review records in `records/hcg/` (OPEN 8 line review, revision 3; Hodge scope note, revision 2; OPEN 10 review, revision 2), each with a second reading by the ChatGPT owner session against the v2 PDF; the PI decision of 13 Nov 2026 on OPEN 8; the PI's standing decision on the review ceiling.
 - **OPEN changes.** OPEN 8 closed in its scope (PI, 13 Nov 2026). OPEN 10 closed in its scope for v2 §11 (proposed; decided with the adoption of this edition). OPEN 12 new (v2 §12, type III).
 - **New entries.** §6.26: the four gates of the every-member and compensation steps; `HCG-THM-SEVERN-V2-L111` and `HCG-THM-SEVERN-V2-T112` (imports, CHECKED (two AIs)); the scope table. SG-14. §1.6, three rows in §5, one limit in §6.21, import and artefact lines in §7 and §8, D-27 and D-28 in §9.
 - **Changed.** OPEN 8 and OPEN 10 in §2; the PO-1 row of §5 and of the §6.7 matrix; one sentence each in §6.8, §6.20 and §6.22; a note in §6.10.
+- **r2 (co-owner review of PR #72).** Four current-state sentences brought in line with the closure of OPEN 8 (status summary, two places; §6.8 v0.2 note) and with the §11 review (the Severn v2 row of §5: the forbidden reading is now "Theorem C is verified or established"); the old closure criterion of OPEN 10 marked as met for §11 only.
 - **Unchanged.** Every other statement, grade, review state and scope guard of v0.5; OPEN 1–7, 9, 11. The RTG pins. Severn's Theorems A, B, C stay CLAIMED.
 - **Not included.** v2 §12; the rest of Δ27, Δ28 and Δ29.
 ''')
 line('*END OF DOCUMENT — HCG study ledger v0.5',
-     '*END OF DOCUMENT — HCG study ledger v0.6 · DRAFT r1 · 14 Nov 2026 · not adopted; `hcg-v0.5` governs · not an RTG document.*')
+     '*END OF DOCUMENT — HCG study ledger v0.6 · DRAFT r2 · 14 Nov 2026 · not adopted; `hcg-v0.5` governs · not an RTG document.*')
+
+# ---------------------------------------------------------------- r2: current-state statements (review of PR #72)
+rep("The every-member scope of that discharge has a three-family theorem-level reading; its line-by-line review is not done (§2 OPEN 8, PARTIAL).",
+    "The every-member scope of that discharge has a three-family theorem-level reading on v1/[386] and, since v0.6, a two-AI line-by-line review on v2 (§6.26 (a); §2 OPEN 8, closed in that scope).")
+rep("OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stays PARTIAL.",
+    "OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stayed PARTIAL in that edition; it is closed in its scope in v0.6.")
+rep('"v2 is third-family checked"; "Theorem C audited"; reusing v1 reference numbers for v2 | HCG-OPEN-SEVERN-V2, HCG-OPEN-SEVERN-V2-C / §6.22 |',
+    '"v2 is third-family checked"; "Theorem C is verified or established" (only the conditional proof of v2 §11 was reviewed, by two AIs; Theorem C stays CLAIMED because Theorem B is; §6.26 (b)); "v2 §12 was audited"; reusing v1 reference numbers for v2 | HCG-OPEN-SEVERN-V2, HCG-OPEN-SEVERN-V2-C, HCG-OPEN-SEVERN-V2-TYPE3 / §6.22, §6.26 |')
+rep("The open part is the every-member scope (OPEN 8; §6.20).",
+    "The open part is the every-member scope (OPEN 8; §6.20). (v0.6: closed in its scope, §6.26 (a).)")
 
 
 def build(src):

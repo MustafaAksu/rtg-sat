@@ -1,10 +1,10 @@
-# HCG study ledger v0.6 — DRAFT r1
+# HCG study ledger v0.6 — DRAFT r2
 
 **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, the G₃₄ boundary-witness programme, and the H4-selection theory)
 **Date:** 14 November 2026 (draft)
 **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
 **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.22 and §6.26 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work). In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
-**Document status:** **DRAFT r1 — not adopted.** The governing edition is `hcg-v0.5`. This draft records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, a proposed split of OPEN 10, and one scope guard (SG-14). It changes nothing else of v0.5. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's theorems stay CLAIMED).
+**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.5`. This draft records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, a proposed split of OPEN 10, and one scope guard (SG-14). It changes nothing else of v0.5. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's theorems stay CLAIMED).
 **Build:** made from the adopted v0.5 text by `evidence/hcg/verification/make_v06_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.5 text, byte for byte.
 **Revision base:** the ledger of `hcg-v0.5` (SHA-256 650c301f8465536705c852113fa7c2e2288d8c3e3cae99fa92a9c466e47bf383; the file at the tag `hcg-v0.5`). Change sources:
 - three review records in `records/hcg/`: `HCG_OPEN8_LINE_REVIEW_CLAUDE_20261112.md` (revision 3), `HCG_HODGE_SCOPE_NOTE_CLAUDE_20261112.md` (revision 2), `HCG_OPEN10_THEOREM_C_REVIEW_CLAUDE_20261113.md` (revision 2). Each was read against the v2 PDF by both owner sessions and reviewed ACCEPT SCOPED by the ChatGPT session (PRs #61, #67);
@@ -19,10 +19,10 @@
 - **Severn's Theorem 6.2 remains CLAIMED, not ESTABLISHED.** The review levels per proof obligation are kept separate (§6.7 matrix):
   - PO-1–PO-4: THIRD-FAMILY CHECKED at theorem level, each under its stated conditions, **on the v1 and [386] texts** (auditor round 2, Priority B; Δ24). The auditor's own summary stands beside it: "Public global statement: NOT VERIFIED as independently established theorem."
   - The auditor never read Severn's v2. A v2 location is cited only as "same argument by the two-AI crosswalk" (§6.22).
-  - PO-1's eightfold hypothesis is discharged **inside** the chain by Thm 6.2(1), not by an outside manuscript (§6.20; this corrects Claude's 26 Oct attribution to Severn's [17]). The every-member scope of that discharge has a three-family theorem-level reading; its line-by-line review is not done (§2 OPEN 8, PARTIAL).
+  - PO-1's eightfold hypothesis is discharged **inside** the chain by Thm 6.2(1), not by an outside manuscript (§6.20; this corrects Claude's 26 Oct attribution to Severn's [17]). The every-member scope of that discharge has a three-family theorem-level reading on v1/[386] and, since v0.6, a two-AI line-by-line review on v2 (§6.26 (a); §2 OPEN 8, closed in that scope).
   - PO-5, (D) on S_W5: THIRD-FAMILY CHECKED.
   - PO-6 on W5: the cup-form class and its identification with the actual polarized factor are both THIRD-FAMILY CHECKED. The general statement is CHECKED by two AIs as a proof-path review only (v2 Prop 7.1 with Lemma 7.2; §6.16, §6.22).
-- **New in this edition (Δ25, Δ26).** A boundary-rank corollary and a dimension budget (§6.23); the Severn v2 successor audit (§6.22). Severn's Appendix A is reproduced, and OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stays PARTIAL.
+- **New in this edition (Δ25, Δ26).** A boundary-rank corollary and a dimension budget (§6.23); the Severn v2 successor audit (§6.22). Severn's Appendix A is reproduced, and OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stayed PARTIAL in that edition; it is closed in its scope in v0.6.
 - **New in this edition (Δ27, two results only).** A determinant-class identity for genus-zero parabolic cup forms and a period-rank bound for induced finite-monodromy variations (§6.24). Both are `[THM]`, CHECKED by two AIs. Neither has a third-family or a human check. Their applications are not in this edition.
 - **New in this draft (v2 source reviews).** The every-member scope of Severn's Theorem 6.2 and the compensation step, and the step from algebraic Weil classes to all Hodge classes on powers (v2 §11), were each read line by line against the v2 PDF by two AI sessions (§6.26). OPEN 8 is closed in its scope. "Weil classes are algebraic" is not "the Hodge conjecture holds": the passage needs Hg(A) = SU_H (SG-14). Severn's Theorems A, B, C stay CLAIMED.
 - **New in this edition (Δ27, seven results).** Under the standing hypotheses (H) of §6.25, a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15 (§6.25). All seven are CHECKED by two AIs and conditional on classical classification imports. This is not a non-existence statement for nonsplit Weil eightfolds.
@@ -295,7 +295,7 @@ Status: **CLOSED in its scope: v2 §11 only** (changed in v0.6; proposed in the 
 - What the closure means: **if** the Weil classes of A are algebraic and Hg(A) = SU_H, every Hodge class on every power of A is algebraic. Theorem C follows from Theorem B through this, under Hg(A) = SU_H. Theorem C stays CLAIMED, because Theorem B is.
 - Not covered: v2 §12 (type III), which is now OPEN 12.
 Question (as opened in v0.3): v2 §11 (Theorem C, all powers) and §12 (type III) were not audited by anyone in this study.
-Closure criterion: a recorded proof review of those sections, with the review state it reaches.
+Closure criterion (as opened in v0.3; met for §11 only, and carried by OPEN 12 for §12): a recorded proof review of those sections, with the review state it reaches.
 Note: the all-powers question is also the subject of pending Δ29, which is outside this edition.
 
 **OPEN 11 — Nonsplit data in the Hurwitz-transfer setting** [RID: HCG-OPEN-NONSPLIT8] (new in v0.5; opened in the pending Δ27)
@@ -411,7 +411,7 @@ Conventions:
 | Claim | Valid form and scope | Forbidden overclaim | Owner RID / section |
 |---|---|---|---|
 | Severn Thm 6.2(2) | CLAIMED in an unrefereed draft. Per-obligation states in the §6.7 matrix: PO-1–PO-4, (D) and PO-6 on S_W5 are THIRD-FAMILY CHECKED at theorem level, on the v1 and [386] texts, each under its conditions. The auditor: "Public global statement: NOT VERIFIED as independently established theorem." | "proved", "verified", "ESTABLISHED", "the Hodge conjecture for sixfolds is solved", "every link verified, hence the theorem" | HCG-EXT-SEVERN-62 / §6.6, §6.7 |
-| Severn v2 | Theorem A/B chain: same arguments as v1/[386] by a two-AI crosswalk, plus the new Lemmas 4.4 and 7.2 (two-AI). Theorems A/B/C stay CLAIMED. | "v2 is third-family checked"; "Theorem C audited"; reusing v1 reference numbers for v2 | HCG-OPEN-SEVERN-V2, HCG-OPEN-SEVERN-V2-C / §6.22 |
+| Severn v2 | Theorem A/B chain: same arguments as v1/[386] by a two-AI crosswalk, plus the new Lemmas 4.4 and 7.2 (two-AI). Theorems A/B/C stay CLAIMED. | "v2 is third-family checked"; "Theorem C is verified or established" (only the conditional proof of v2 §11 was reviewed, by two AIs; Theorem C stays CLAIMED because Theorem B is; §6.26 (b)); "v2 §12 was audited"; reusing v1 reference numbers for v2 | HCG-OPEN-SEVERN-V2, HCG-OPEN-SEVERN-V2-C, HCG-OPEN-SEVERN-V2-TYPE3 / §6.22, §6.26 |
 | Boundary rank and budget | A bound for simultaneous laminar boundary degenerations, and counting bounds for genus-0 data. Necessary conditions only. | "nonsplit dominant families do not exist"; "Severn's method is capped at split eightfolds" (a withdrawn proposal, Appendix B) | HCG-COR-BOUNDARY-WITT, HCG-ALG-DIM-BUDGET / §6.23 |
 | Local determinant formula | A class identity in ℚ^×/N(K^×) for the algebraically defined form S on genus-zero parabolic cohomology, K imaginary quadratic, h₀ positive definite. Two AIs. | "a theorem about polarized abelian varieties"; "proves Severn's Theorem W"; "no nonsplit eightfold exists"; use for higher genus, indefinite h₀ or other fields | HCG-THM-PARABOLIC-DISC-LOCALITY / §6.24 |
 | Induced period bound | An upper bound for the period rank of an induced finite-monodromy variation coming from the cohomology of the covers. An obstruction to (D). Two AIs. | "no dominant family exists"; use for other Hodge filtrations or continuous families of representations; a discriminant or (L) statement from the profile over ℂ | HCG-THM-INDUCED-PERIOD-BOUND / §6.24 |
@@ -680,7 +680,7 @@ For n = 4 and δ = 1 this yields all sixfold discriminants.
 
 `[HEUR]` [scope: remark without mathematical weight] With Claude's route, the α giving the second generator can be ζ₆, the RTG linearization. ChatGPT's proof shows this is not essential (SG-9).
 
-**v0.2 note (premise source; no change to the claim block above).** The `[assuming:]` premise of HCG-THM-PO1 is exactly the conclusion of Thm 6.2(1) for the cell [1]: [387] Thm 2.9 states it "for every polarized abelian 2n-fold of Weil type for K with discriminant d(S)", and [387] Thm 6.2's proof reads "(2) is Proposition 5.2 with n = 4 and δ = 1". [387] states that nothing in it uses [17] (§2.3) and that Thm 6.2 uses none of the unrefereed manuscripts that [386] uses conditionally (Rem 6.3). The open part is the every-member scope (OPEN 8; §6.20).
+**v0.2 note (premise source; no change to the claim block above).** The `[assuming:]` premise of HCG-THM-PO1 is exactly the conclusion of Thm 6.2(1) for the cell [1]: [387] Thm 2.9 states it "for every polarized abelian 2n-fold of Weil type for K with discriminant d(S)", and [387] Thm 6.2's proof reads "(2) is Proposition 5.2 with n = 4 and δ = 1". [387] states that nothing in it uses [17] (§2.3) and that Thm 6.2 uses none of the unrefereed manuscripts that [386] uses conditionally (Rem 6.3). The open part is the every-member scope (OPEN 8; §6.20). (v0.6: closed in its scope, §6.26 (a).)
 
 **v0.3 note (auditor B7).** The reduction is conditional on PO-3. It covers all sixfold discriminants and both rational Weil classes. **Powers are not covered:** they need Hg(A) = SU_H separately (§6.26 (b)). The every-member scope: PARTIAL from v0.3 to v0.5; closed in its scope in v0.6 after a two-AI line-by-line review on v2 (§6.26 (a)).
 
@@ -1576,12 +1576,13 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ## Appendix A — Version History
 
-### v0.6 DRAFT r1 — 14 November 2026 — DRAFT (not adopted)
+### v0.6 DRAFT r2 — 14 November 2026 — DRAFT (not adopted)
 
 - **Basis.** The ledger of `hcg-v0.5`; three review records in `records/hcg/` (OPEN 8 line review, revision 3; Hodge scope note, revision 2; OPEN 10 review, revision 2), each with a second reading by the ChatGPT owner session against the v2 PDF; the PI decision of 13 Nov 2026 on OPEN 8; the PI's standing decision on the review ceiling.
 - **OPEN changes.** OPEN 8 closed in its scope (PI, 13 Nov 2026). OPEN 10 closed in its scope for v2 §11 (proposed; decided with the adoption of this edition). OPEN 12 new (v2 §12, type III).
 - **New entries.** §6.26: the four gates of the every-member and compensation steps; `HCG-THM-SEVERN-V2-L111` and `HCG-THM-SEVERN-V2-T112` (imports, CHECKED (two AIs)); the scope table. SG-14. §1.6, three rows in §5, one limit in §6.21, import and artefact lines in §7 and §8, D-27 and D-28 in §9.
 - **Changed.** OPEN 8 and OPEN 10 in §2; the PO-1 row of §5 and of the §6.7 matrix; one sentence each in §6.8, §6.20 and §6.22; a note in §6.10.
+- **r2 (co-owner review of PR #72).** Four current-state sentences brought in line with the closure of OPEN 8 (status summary, two places; §6.8 v0.2 note) and with the §11 review (the Severn v2 row of §5: the forbidden reading is now "Theorem C is verified or established"); the old closure criterion of OPEN 10 marked as met for §11 only.
 - **Unchanged.** Every other statement, grade, review state and scope guard of v0.5; OPEN 1–7, 9, 11. The RTG pins. Severn's Theorems A, B, C stay CLAIMED.
 - **Not included.** v2 §12; the rest of Δ27, Δ28 and Δ29.
 
@@ -1772,4 +1773,4 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ---
 
-*END OF DOCUMENT — HCG study ledger v0.6 · DRAFT r1 · 14 Nov 2026 · not adopted; `hcg-v0.5` governs · not an RTG document.*
+*END OF DOCUMENT — HCG study ledger v0.6 · DRAFT r2 · 14 Nov 2026 · not adopted; `hcg-v0.5` governs · not an RTG document.*
