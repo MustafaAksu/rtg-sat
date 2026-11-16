@@ -1,6 +1,6 @@
 # HHO — support results: current statements
 
-**Status of this file:** adopted by the PI on 12 Nov 2026 as a live summary of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20), and the bridge B1 of 12 Nov 2026 (§3.4). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
+**Status of this file:** adopted by the PI on 14 Nov 2026 as a live summary of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). Where this file and the register differ, the register governs. It restates, in one place and in their current form, the results of the HHO conversation (3–9 Nov 2026), one result added on 11 Nov 2026 during the review of this file (§5.3, HHO-NEG-NPL-JAC-C3F20), the bridge B1 of 12 Nov 2026 (§3.4), and the results of 12–14 Nov 2026 on bridge B2 (§3.3) and on positive-defect primes (§6). Grades, review states and evidence are in `hho/HHO_CLAIM_REGISTER.md`, Part B; this file adds no claim of its own and changes none.
 
 **Two different objects.** §§1–3 concern the **polarization that the Jacobian induces** on a multiplicity space. §4 concerns the **parabolic-cup class**. For a finite-monodromy genus-0 datum the two have the same rank-eight class by bridge **B1** (§3.4; conditional, CHECKED by two AIs). The link to **Severn's polarized factor** is a different bridge, B2, and is open (§3.3; HHO-SG-4).
 
@@ -61,7 +61,7 @@ If no inert prime divides |G|/χ(1), then [D] = [1].
 - For G₃₄ with its 6-dimensional reflection character, |G|/χ(1) = 2⁸·3⁶·5·7, so 2 and 5 are not excluded.
 - It uses neither (L) nor (D).
 
-**3.3 Open: transfer to a Severn datum** (HHO-OPEN-SUPPORT-TRANSFER). To apply §3.1 to Severn's polarized factor A_σ one must show that A_σ is ev_u(W), or its K-antilinear variant, and that its polarization is the restricted Jacobian polarization up to ℚ^×. Severn's primary text was not available to the HHO sessions. HCG records the identification for W5 only (G12).
+**3.3 Severn's polarized factor: bridge B2** (HHO-LEM-B2, conditional; HHO-OPEN-SUPPORT-TRANSFER, open). If Severn's A_σ and its polarization are defined as HCG reads them (a pipe answer; one session's reading of unrefereed texts, not read by HHO), then H₁(A_σ, ℚ) = ev_u(W) up to isogeny and the Hermitian form of A_σ is a rational multiple of h_W. In rank 8 the classes agree, and §3.1 applies to A_σ with G the full Galois group of the cover. This uses definitions and the lemmas of §1 only, not Severn's theorems. **Open:** the check of those definitions, of the K-action and the normalization of ϑ, and of the discriminant class used in Theorems A and B, against Severn's own texts.
 
 **3.4 Bridge B1** (HHO-LEM-B1-O2, HHO-LEM-B1-O1, HHO-COR-B1-GATE; all conditional on Dettweiler–Wewers 2006 Thm 2.5, O1 and the gate also on the cup product under a finite direct image).
 - *O2.* On Z = ker C the triangular form B of the locality proof is the Dettweiler–Wewers cup pairing. So the form S used in §4 is the cup form on H¹_p.
@@ -117,10 +117,29 @@ The Jacobian reading is refuted separately, for the same datum and without any c
 
 The unrestricted proposal stays **WITHDRAWN** in both readings. No replacement law is certified.
 
-## 6. Open
+## 6. Positive-defect primes: the sector module
+
+By §3.4 a nonsplit class needs an inert prime of positive defect. This section describes the parity there. **It describes and does not obstruct**; nothing here uses (D).
+
+**6.1 The sector module** (HHO-LEM-GLUE-PROJECTOR, HHO-LEM-SECTOR). Let M = H¹(C, ℤ_p), R = O_K ⊗ ℤ_p, e = e_χ and L_χ = M_R ∩ eV. The Hermitian dual of L_χ is eM_R. The sector module A_χ = eM_R/L_χ is killed by p^t, t = v_p(|G|/χ(1)). If the reduction S of χ modulo p is absolutely irreducible, then ℓ_S(A_χ) = v_p(det h_W), which is the parity ε_p in rank 8.
+
+**6.2 Structure of the cover lattice** (HHO-THM-COVER-BLOCK; conditional on the Gysin sequence as a sequence of 𝒪[G]-modules). For a G-Galois cover of ℙ¹ and a p-block B without the trivial module, M_B ≅ Ω(Q_B) ⊕ projective, with Q = ⊕_j 𝒪[G/I_j]. Only branch points whose inertia order is divisible by p make M_B non-projective. This is an integral Chevalley–Weil statement; no novelty is claimed.
+
+**6.3 Two blocks worked out.**
+- C₃ × F₂₀, p = 5, χ = ω ⊗ ρ₄ (HHO-THM-FG-F20): A_χ ≅ ⊕_μ S_μ^{m(ω ⊗ λ_μ)} for every cover. Each leaf of the Brauer star is glued to the centre with its full Chevalley–Weil multiplicity. Computed for 42 tuples by two implementations (HHO-NUM-F20-SECTOR); n₁ = t − 2, in agreement with the class [5^t] of §4.5.
+- C₆, p = 2, χ₁ (HHO-THM-FG-C6): ℓ(A_{χ₁}) = m(χ₄). Computed on the integral cup lattices of three covers (HHO-NUM-C6-JAC): 7, 0, 0 against the recorded classes [2], [1], [1]. This is also the first test of bridge B1 on a lattice not built from the parabolic form.
+
+**6.4 The projective case** (HHO-COR-PROJ-EVEN). If the reduction of χ is absolutely irreducible, its block does not contain the trivial module and no local monodromy has order divisible by p, then v_p(det h_W) is even in rank 8. This is the counterpart, for the Jacobian-induced class and without locality, of the tame-unimodular lemma of §4.2.
+
+**6.5 Limits.**
+- A formal self-dual G-lattice with the same character need not have the same gluing (HHO-NEG-GLUE-FORMAL). The geometric input is §6.2.
+- For a reducible reduction and even χ(1) the total length of A_χ carries no parity. Which constituent carries it is open (HHO-OPEN-PARITY-CONSTITUENT).
+- In the two worked blocks, and under their conditional Gysin input, ε_p is the parity of a Chevalley–Weil count of branch points. This does not settle the open item on the parity constituent for other blocks. Whether (D) constrains that count is P1 and is open.
+
+## 7. Open
 
 | Item | Register row |
 |---|---|
-| Transfer of §3 to Severn's polarized factor | HHO-OPEN-SUPPORT-TRANSFER |
+| Source check of Severn's definitions for bridge B2 (§3.3) | HHO-OPEN-SUPPORT-TRANSFER |
 | What forces ε_p to be even under (H); after §3.4, at inert primes dividing \|Γ\|/χ(1) only | HHO-OPEN-LOCAL-EVEN; first target P1 |
-| Length and structure of the gluing group at an inert prime of positive defect (next study target) | HHO-OPEN-POSDEFECT-GLUE |
+| Sector module at positive defect beyond the two worked blocks; which constituent carries the parity (§6) | HHO-OPEN-POSDEFECT-GLUE; HHO-OPEN-PARITY-CONSTITUENT |

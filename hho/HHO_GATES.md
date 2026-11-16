@@ -1,6 +1,6 @@
 # HHO — gates, bounds and calibration objects
 
-**Status of this file:** adopted by the PI on 12 Nov 2026 as a live summary of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
+**Status of this file:** adopted by the PI on 14 Nov 2026 as a live summary of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
 
 **Scope guard.** A failed gate excludes that datum or class of data only (HHO-SG-1). Witnesses that fail (D) say nothing about data that satisfy (H) (HHO-SG-6). HHO makes no statement that nonsplit Weil eightfolds exist or do not exist.
 
@@ -53,6 +53,9 @@ G1–G10 form the (H)-scoped screening catalogue: they include necessary equatio
 | Support bound (Jacobian-induced polarization) | negative Hilbert symbols only at 3 and at inert p dividing \|G\|/χ(1) | HHO-THM-SUPPORT |
 | Leaf criterion | a Brauer-tree leaf whose neighbour does not occur in H¹(C) gives no support at p | HHO-LEM-LEAF |
 | Bridge B1 gate (parabolic-cup class) | a nonsplit rank-eight class needs an inert p dividing \|Γ\|/χ(1); σ absolutely irreducible over K with character field K; conditional on Dettweiler–Wewers Thm 2.5 and the cup product under a finite direct image; necessary only | HHO-COR-B1-GATE |
+| Sector module (Jacobian-induced class) | at an inert p, ε_p ≡ ℓ_S(A_χ) (mod 2) in rank 8, with A_χ = e_χM_R/L_χ, when the reduction of χ is absolutely irreducible (the length itself is v_p(det h_W)); for a G-cover the block component of H¹(C, ℤ_p) is Ω(Q_B) ⊕ projective | HHO-LEM-SECTOR; HHO-THM-COVER-BLOCK |
+| Projective case | irreducible reduction, block without the trivial module, no local monodromy of order divisible by p ⇒ v_p(det h_W) even in rank 8; no locality | HHO-COR-PROJ-EVEN |
+| Severn's factor | the support bound applies to A_σ if Severn's definitions are as HCG reads them | HHO-LEM-B2 (conditional); HHO-OPEN-SUPPORT-TRANSFER |
 
 ## 3. Dimension statements
 

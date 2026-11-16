@@ -1,6 +1,6 @@
 # HHO — source manifest
 
-**Status of this file:** adopted by the PI on 12 Nov 2026 as the source manifest of `hho-v0.3` (`records/hho/HHO_v0.3_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. Since `hho-v0.2`: four rows are added in §3.2 for the third-party sources of bridge B1; no hash and no source is changed.
+**Status of this file:** adopted by the PI on 14 Nov 2026 as the source manifest of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. Since `hho-v0.3`: §3.3 is added for the HCG pipe answer used as an input of HHO-LEM-B2; no hash and no source is changed.
 
 A hash certifies byte identity. It does not certify correctness, publication rights or review state.
 
@@ -61,6 +61,12 @@ The Claude HHO session read the opening note in full, and the Δ27 entry, the HC
 | A sheaf-theory text for cup products under a finite direct image | none fixed | **not read by either owner**; a named condition of HHO-LEM-B1-O1 |
 
 No LIT-backed validation is claimed.
+
+### 3.3 HCG pipe answer used as an input
+
+| Item | SHA-256 | Use |
+|---|---|---|
+| `pipes/HHO/20261112-HCG-answer-severn-polarized-factor.md` (as received, before the receiver's disposition lines) | `8b376b6e8dbe738ba6babe1c6916ebbaeac4b89a4c5fe9319cfc990921837d14` | input of HHO-LEM-B2: HCG's reading of Severn's definitions of A_σ, its polarization and the group. HCG's own status: one session's reading of unrefereed texts. Not an HHO result. |
 
 ## 4. Not available
 
