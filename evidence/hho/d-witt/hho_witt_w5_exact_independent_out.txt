@@ -1,0 +1,5 @@
+W5 EXACT Q(omega) PASS: product-one, roots norm 6, 20 reflections
+certificate graph sums: edges=102, vertices=98, w=4
+Catalan(18)=477638700 planar rooted trees: DP minimum/maximum=(4, 4)
+exact invariant dimensions computed: intervals=170, vertices=1140
+This is graph W0 only; NOT period rank (D)
