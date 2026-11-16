@@ -1,6 +1,6 @@
 # HHO v0.5 — release record
 
-**Status:** **DRAFT r1**, prepared on 16 Nov 2026 for review and PI decision. Not adopted. The governing edition is `hho-v0.4`.
+**Status:** **DRAFT r2** (review corrections R1, R2 applied, §5), prepared on 16 Nov 2026 for PI decision. Not adopted. The governing edition is `hho-v0.4`.
 
 **Release:** fifth repository edition of the HHO study. If adopted, it supersedes `hho-v0.4` as the governing edition.
 
@@ -64,7 +64,7 @@ The full table is in `records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md` §3. In sh
 
 | RID | Statement, in short | Grade | State |
 |---|---|---|---|
-| `HHO-COR-WITT-GATE` | nonsplit parabolic-cup class ⇒ w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} ≤ 3 for every marking in the braid orbit and every trivalent tree; split ⇒ ≤ 4 | `[THM-cond: (a) isotropy of W₀ at every boundary point; (b) admissible-cover dual-graph description of W₀]` | CHECKED (as conditional) |
+| `HHO-COR-WITT-GATE` | nonsplit parabolic-cup class ⇒ w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} ≤ 3 for every marking–tree pair realized as a boundary point of the specified Hurwitz component; split ⇒ ≤ 4 | `[THM-cond: (a) K-rational S-isotropy of W₀ at every realized boundary point; (b) admissible semistable-cover dual-graph description of W₀]` | CHECKED (the implication only) |
 | `HHO-NUM-WITT-C6` | three C₆ data, all 2,027,025 trees: max 3 for class [2], 4 for class [1] | `[NUM]` | CHECKED (two implementations) |
 | `HHO-NUM-WITT-PLANAR` | planar family, N = 20: W5 4/4 (certificate tree 102 − 98 = 4); G(6,1,6) P1–P3 3/3, Q0/Q2 4/4 | `[NUM]` | CHECKED (two implementations) |
 | `HHO-NUM-WITT-PLANAR-SINGLE` | W6, W7 4/4; three C₃ × F₂₀ tuples of class [5]: max 0; 27 split C₃ × F₂₀ tuples: max 0 to 4 | `[NUM]` | PROPOSED (one implementation) |
@@ -109,7 +109,14 @@ None added. The sources named for inputs (a) and (b) were not read (`HHO-OPEN-WI
 
 ## 5. Review corrections applied
 
-None yet (draft r1).
+Co-owner review: PR #81, review `5922469673` at `329556b`, "ACCEPT AS A DRAFT REGISTER EDITION, WITH TWO SCOPED WORDING/PROVENANCE FIXES BEFORE PI ADOPTION". Both fixes are applied in r2. Neither changes a computed value, a grade class or a review state of an `hho-v0.4` row.
+
+| Id | Review point | Applied |
+|---|---|---|
+| R1 | The quantifier of the Witt gate must run over marking–tree pairs **realized as boundary points of the specified Hurwitz component**. The C₆ row must distinguish full braids from pure braids. | `HHO-COR-WITT-GATE`: the claim quantifies over realized pairs, and the realizability is part of (b); grade wording and state as proposed by the review ("CHECKED (the implication only)"). `HHO-NUM-WITT-C6`: the braid convention is stated, and the realized trees are referred to (b). `HHO-NUM-WITT-PLANAR`: the same reference to (b). The gate row of `hho/HHO_GATES.md` and §3.2 here follow. |
+| R2 | The status header of the source manifest must distinguish the draft and be updated at publication, with its hash in the manifest of §7 | The header now says that §3.1 is the draft for `hho-v0.5`. At the publication commit it is replaced and its hash enters §7. |
+
+**Kept unchanged on purpose:** `HHO_D_SOURCE_READING_CLAUDE.md`. Its "new at v0.5" for d = 10 and its "every ordering lies in one braid orbit" (§4.5) are corrected here and in the register, not rewritten in the note.
 
 ## 6. Not part of this release
 
@@ -146,7 +153,8 @@ To be completed at the publication commit, with the SHA-256 of every file of §2
 | Run of Steps 1 and 2 of the (D) reading | PI, 16 Nov 2026 | "birleştirmeyi yaptım 1 ve 2 yi koşalım" |
 | Merge of PR #78 (with PR #80) as a session record | PI | merge commit `3cbf063` |
 | Preparation of the `hho-v0.5` draft: comparison note, register draft, PR for review, then PI decision | PI, 16 Nov 2026, 17:10 +03:00 | "önerin uygun onaylıyorum" |
-| Co-owner review of this record | ChatGPT HHO owner session | pending |
+| Co-owner review of this record | ChatGPT HHO owner session | PR #81, review `5922469673` at `329556b`: accept as a draft register edition with R1, R2 (§5); supports the pin `hcg-v0.6`; recommends option (i) for the `hho-v0.4` tag |
+| `hho-v0.4` tag defect (§9) | PI, 16 Nov 2026, 18:45 +03:00 | "tag değişmeden kalsın" — the tag stays unchanged: option (i) |
 | Adoption of `hho-v0.5`, including the pin `hcg-v0.6` | PI | pending |
 | Publication | PI | the PI merges with a merge commit and creates the annotated tag |
 
@@ -165,4 +173,4 @@ To be completed at the publication commit, with the SHA-256 of every file of §2
   - PI adoption: 14 Nov 2026, 23:27 +03:00, recorded in `HHO_v0.4_RELEASE_RECORD.md` §8.
 - **(ii)** Re-create the annotated tag `hho-v0.4` on the same commit with a corrected message. This replaces a published tag object, and anyone who fetched the old one keeps it.
 
-The draft recommends (i). The `hho-v0.5` tag message will follow the template of `CONVENTIONS.md` §2.
+**Decision: option (i)** (PI, 16 Nov 2026, 18:45 +03:00; §8). The tag object `0783844fdb5a75d83725453204bf518fbf153b0b` stays on `26e8ccae…`. The values above are the written source for the three missing fields. This is a documented historical deviation: the `sat_check` error on `hho-v0.4` stays visible and is not counted as a passing check. No checker exception is introduced. The `hho-v0.5` tag message will carry all lines of the template of `CONVENTIONS.md` §2.

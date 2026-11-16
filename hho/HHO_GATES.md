@@ -56,7 +56,7 @@ G1–G10 form the (H)-scoped screening catalogue: they include necessary equatio
 | Sector module (Jacobian-induced class) | at an inert p, ε_p ≡ ℓ_S(A_χ) (mod 2) in rank 8, with A_χ = e_χM_R/L_χ, when the reduction of χ is absolutely irreducible (the length itself is v_p(det h_W)); for a G-cover the block component of H¹(C, ℤ_p) is Ω(Q_B) ⊕ projective | HHO-LEM-SECTOR; HHO-THM-COVER-BLOCK |
 | Projective case | irreducible reduction, block without the trivial module, no local monodromy of order divisible by p ⇒ v_p(det h_W) even in rank 8; no locality | HHO-COR-PROJ-EVEN |
 | Severn's factor | the support bound applies to A_σ if Severn's definitions are as HCG reads them | HHO-LEM-B2 (conditional); HHO-OPEN-SUPPORT-TRANSFER |
-| Witt boundary gate (parabolic-cup class) | a nonsplit class gives w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} ≤ 3 for every marking in the braid orbit and every trivalent tree; split: ≤ 4. Conditional on the isotropy of W₀ at every boundary point and the admissible-cover dual-graph description; a consistency gate, not a test of (D); all recorded data agree | HHO-COR-WITT-GATE; HHO-NUM-WITT-C6, HHO-NUM-WITT-PLANAR, HHO-NUM-WITT-PLANAR-SINGLE |
+| Witt boundary gate (parabolic-cup class) | a nonsplit class gives w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} ≤ 3 for every marking–tree pair realized as a boundary point of the Hurwitz component; split: ≤ 4. Conditional on the K-rational S-isotropy of W₀ at every realized boundary point and the admissible semistable-cover dual-graph description; a consistency gate, not a test of (D); all recorded data agree | HHO-COR-WITT-GATE; HHO-NUM-WITT-C6, HHO-NUM-WITT-PLANAR, HHO-NUM-WITT-PLANAR-SINGLE |
 
 ## 3. Dimension statements
 
