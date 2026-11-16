@@ -98,4 +98,19 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 
 ## 9. Adoption manifest
 
-(Added in the manifest-only commit that follows the content commit.)
+**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes at the **content commit** `2dda1a466d8aa79f065711e97a21ef822bf697e8` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hcg/HCG_STUDY_LEDGER.md` | the adopted scientific record | `b1e928f5ae555d688a18bb1046be7626796f2a07935b6ff81a0fc934036b14cb` |
+| `hcg/HCG_CHARTER.md` | charter (governance text; no scientific claim) | `7bd32689e2a8c902f8175c341920e0bbb09fbf77900ce50f50a5ffa608771888` |
+| `records/hcg/HCG_OPEN8_LINE_REVIEW_CLAUDE_20261112.md` | review basis | `56d9053f7ac7ab1b8cde446290b09f31e25e52e8cefd1e567382b42f60cada57` |
+| `records/hcg/HCG_HODGE_SCOPE_NOTE_CLAUDE_20261112.md` | review basis | `088abefdcc98eb0754d29d8a2fdec6280da49067679ee3705b5c2a91a7baf715` |
+| `records/hcg/HCG_OPEN10_THEOREM_C_REVIEW_CLAUDE_20261113.md` | review basis | `8b23528da0b3e63f4452a75ffdcb9ba62cdfde53f390ed8226da1267db6a3e38` |
+| `evidence/hcg/verification/make_v06_draft.py` | builder | `f3d13e4500234a13f5104e4f671bcd74e9cf746deec3fb15e833a13969ec3882` |
+| `evidence/hcg/verification/release_v06.py` | release transform | `377e726cc2ba1d7d341d74044dab6404038c0e12e7d40fb48c0dbe50f8307e33` |
+| `evidence/hcg/verification/severn_v2_example_12_2_check.py` | check script (§6.26 (b)) | `d999ecb9c2c755dbece5ab33370612f4068834808f2100429e69b07958f37848` |
+| `evidence/hcg/verification/severn_v2_example_12_2_check_out.txt` | its output | `d34be019c9b8126c1b27a328726198680745a409a3e0d37156ab80bca8d21943` |
+| `evidence/hcg/README.md` | evidence index text | `ddb7dc9f92b191108d58d6703589f444fb47ce50176a694a27cbb02a369f4495` |
+| `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
+| `REGISTRY.md` | `hcg` row | `6059276c3ece2d825beb4efdf06248396fb58793c3ad112901e7ab891e7ad568` |
