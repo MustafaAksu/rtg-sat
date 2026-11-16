@@ -47,21 +47,21 @@ Under S1 (b) a further row would be added to §5 and the Index rows would read "
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `0000000000000000000000000000000000000000`. Files not listed are inherited unchanged from `coil-v0.10`.
+**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `6413a70ff72e2233ca8d943c6f5ed943ef66e5a5`. Files not listed are inherited unchanged from `coil-v0.10`.
 
 | File | SHA-256 |
 |---|---|
-| `coil/COIL_CHARTER.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `coil/COIL_INDEX.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `records/coil/COIL_PKAPPA_SCALING_NOTE.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `records/coil/COIL_OFFCLUSTER_OBJECT_NOTE.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/pkappa_scaling_check.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/offcluster_object_check.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/monodromy_hardened_check.py` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/code/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/pkappa_scaling_check.txt` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/offcluster_object_check.txt` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/monodromy_hardened_check.txt` | `0000000000000000000000000000000000000000000000000000000000000000` |
-| `evidence/coil/outputs/SHA256SUMS` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `coil/COIL_CHARTER.md` | `5b0f5be48d0974a788cd6eb921a3d56c8b5c4214ea059b05a0e83e7d0fe726cb` |
+| `coil/COIL_INDEX.md` | `456535de7dee5337ac2c42086de2327c75a90816ab49496d45898da038dca758` |
+| `records/coil/COIL_PKAPPA_SCALING_NOTE.md` | `f0e5090a1ee8a672f4d5cee6b5fc25cd8892848e293805e86af7bb8baf45cac6` |
+| `records/coil/COIL_OFFCLUSTER_OBJECT_NOTE.md` | `6602ef6a89a53e8f151b642617d5a4f7678da4a8d8f57c8a361142faed423bde` |
+| `evidence/coil/code/pkappa_scaling_check.py` | `cb704847fca1a13b9c4f22d9d54230a8bdf6ad21a719e75ed828589567b1ad10` |
+| `evidence/coil/code/offcluster_object_check.py` | `404aa31ed9ce95e33585e074dd9758675f1bd8f24c45c9e2cfe3faeb45c7416d` |
+| `evidence/coil/code/monodromy_hardened_check.py` | `830210be7a68cdae255ba2c8422a8da3c12f099b30db9624be4114a526ec6ea8` |
+| `evidence/coil/code/SHA256SUMS` | `45ef3e93f1f53fd3fc694264738ad60d6b9bc7ab640498c76e39bf1e2f928447` |
+| `evidence/coil/outputs/pkappa_scaling_check.txt` | `24648f3d37b91aea0dabca95dd843ad30d2f9d77e7d4bb7dc7d01f08d2bba6b8` |
+| `evidence/coil/outputs/offcluster_object_check.txt` | `055427a4645a28e94c1f01c54b35bb962d23104c9a060eea2cb72928901e1fab` |
+| `evidence/coil/outputs/monodromy_hardened_check.txt` | `12c6385fb2d0cc798a1b2c22fceaaf04370f1a6dcbc97e8c2225540144f7cc3f` |
+| `evidence/coil/outputs/SHA256SUMS` | `657b8fb939815b7ee3b03ddbbfc1c190eb566e898cfdf31a974590235b381c40` |
 
 **Adoption scope (to be filled by the PI at adoption):** proposed — the files above as they stand at the content commit; everything else inherited from `coil-v0.10`; tag `coil-v0.11`. **Proposed limits of effect:** M1 adopts maintenance only; under S1 (a) the two notes remain reviewed `[SESSION]` working records and no statement in them is an adopted COIL result; Charter §9.4 and §10.4 (S-5) unchanged; no preregistration opened or changed; nothing enters `rtg-corpus` by this adoption.
