@@ -1,6 +1,6 @@
-# COIL v0.11 — release record (DRAFT): maintenance; reviewed analytic working records linked; checker hardening; errata
+# COIL v0.11 — release record: maintenance; reviewed analytic working records linked; checker hardening; errata
 
-**Status:** DRAFT — not adopted. Candidate successor of `coil-v0.10` (`c9f96150f4250d5dc456ae7596ce210621f12029`). A **maintenance** release: no new computation of dynamics, no preregistration, no campaign, no frozen file of an earlier release touched. Scope agreed with the co-owner (16 Nov 2026), who asked that maintenance and any change of scientific status be kept apart: §2 lists them as separate decisions.
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-16 (COIL owner session: M1 "evet, hepsi"; S1 "a — incelenmiş çalışma kaydı olarak kalsınlar"), as the candidate stood at head `cb0bb6ffdf1878ba37345640d835f08626b1bb2d` of PR #82; publication tag `coil-v0.11`. **Successor of `coil-v0.10`** (`c9f96150f4250d5dc456ae7596ce210621f12029`). **Review state at adoption:** the scope of this release was proposed by the co-owner (16 Nov 2026, after review `5921512620` of PR #79); **no co-owner review of PR #82 was on record when the PI adopted it.** The record is frozen at adoption; a later review finding goes into a later release. A **maintenance** release: no new computation of dynamics, no preregistration, no campaign, no frozen file of an earlier release touched. Scope agreed with the co-owner (16 Nov 2026), who asked that maintenance and any change of scientific status be kept apart: §2 lists them as separate decisions.
 
 ## 1. Files
 
@@ -10,18 +10,18 @@
 
 **New maintenance tool:** `evidence/coil/code/monodromy_hardened_check.py` with output `evidence/coil/outputs/monodromy_hardened_check.txt`; rows appended to the two `SHA256SUMS` files.
 
-**Live (changed):** `coil/COIL_CHARTER.md` (§0.3 interfaces; §10.4 pointer), `coil/COIL_INDEX.md` (§3a rows, §6 rows), `REGISTRY.md` (COIL row) at adoption only.
+**Live (changed):** `coil/COIL_CHARTER.md` (§0.3 interfaces; §10.4 pointer), `coil/COIL_INDEX.md` (§3a rows, §6 rows), `REGISTRY.md` (COIL row: governing edition `coil-v0.11`).
 
 **Unchanged:** every frozen file; the two analytic notes, their check scripts and their outputs exactly as reviewed (the hardening is a separate tool, so the reviewed bytes stand).
 
-## 2. Decisions put to the PI
+## 2. Decisions put to the PI — both decided on 16 Nov 2026: **M1 adopted; S1 (a) chosen**
 
 | # | Decision | Proposed by |
 |---|---|---|
 | **M1** | **Maintenance** as in §3: the LIT statement of Charter §0.3 corrected; the two notes linked from the Index and Charter §10.4 **as reviewed `[SESSION]` working records**; the hardened check added; the errata of §4 recorded | both sessions |
 | **S1** | **Scientific status of the two notes — a separate choice.** (a) *keep them as reviewed working records* (no adopted result; the default of M1); or (b) *adopt their stated, scoped results* — the conditional statements at the scope fixed by the reviews (for the P-κ note: §§2–3 under the conditions of its §5; for the off-cluster note: the sampled-energy agreement, the RW amplitude law, and κ_T as the first detected transverse-rate crossing on the sampled branch), with every open item left open | owner session recommends **(a)** until the LIT reply has fixed the strong null; the co-owner asked only that the choice be explicit |
 
-Under S1 (b) a further row would be added to §5 and the Index rows would read "adopted at `coil-v0.11`, scope: …". Under either choice Charter §9.4 is unchanged: no campaign is opened and S-5 stays open.
+**S1 (a) chosen:** the two notes remain reviewed `[SESSION]` working records; no statement in them is an adopted COIL result. Charter §9.4 is unchanged: no campaign is opened and S-5 stays open.
 
 ## 3. Changes of meaning in live documents
 
@@ -47,7 +47,7 @@ Under S1 (b) a further row would be added to §5 and the Index rows would read "
 
 ## 6. Adoption manifest
 
-**Status: CANDIDATE — not adopted.** SHA-256 at the **content commit** `6413a70ff72e2233ca8d943c6f5ed943ef66e5a5`. Files not listed are inherited unchanged from `coil-v0.10`.
+**Status: ADOPTED (2026-11-16).** SHA-256 at the **content commit** `6413a70ff72e2233ca8d943c6f5ed943ef66e5a5`. Files not listed are inherited unchanged from `coil-v0.10`.
 
 | File | SHA-256 |
 |---|---|
@@ -63,5 +63,6 @@ Under S1 (b) a further row would be added to §5 and the Index rows would read "
 | `evidence/coil/outputs/offcluster_object_check.txt` | `055427a4645a28e94c1f01c54b35bb962d23104c9a060eea2cb72928901e1fab` |
 | `evidence/coil/outputs/monodromy_hardened_check.txt` | `12c6385fb2d0cc798a1b2c22fceaaf04370f1a6dcbc97e8c2225540144f7cc3f` |
 | `evidence/coil/outputs/SHA256SUMS` | `657b8fb939815b7ee3b03ddbbfc1c190eb566e898cfdf31a974590235b381c40` |
+| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
 
-**Adoption scope (to be filled by the PI at adoption):** proposed — the files above as they stand at the content commit; everything else inherited from `coil-v0.10`; tag `coil-v0.11`. **Proposed limits of effect:** M1 adopts maintenance only; under S1 (a) the two notes remain reviewed `[SESSION]` working records and no statement in them is an adopted COIL result; Charter §9.4 and §10.4 (S-5) unchanged; no preregistration opened or changed; nothing enters `rtg-corpus` by this adoption.
+**Adoption scope (PI, 2026-11-16):** the files above as they stand at the content commit; everything else inherited from `coil-v0.10`; tag `coil-v0.11`. **Limits of effect:** M1 adopts maintenance only; by S1 (a) the two notes remain reviewed `[SESSION]` working records and no statement in them is an adopted COIL result; the hardened check is a maintenance tool, not a certificate; Charter §9.4 and §10.4 (S-5) unchanged; no preregistration opened or changed; nothing enters `rtg-corpus` by this adoption.
