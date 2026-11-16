@@ -5,7 +5,8 @@ date: 2026-11-12
 kind: finding
 object: Severn hexagon:2610.00387v2 §3.1–§3.2 (Def. 3.2, Lemma 3.3), Prop. 7.1; hexagon:2610.00386v1 Def. 2.2, §2.2, Lemma 2.3, Prop. 5.1; HCG-EXT-PO6 (hcg/HCG_STUDY_LEDGER.md §6.16, §6.22)
 tags: [hcg-v0.5, hho-v0.2]
-state: open
+state: dispositioned
+disposition: 2026-11-12 · accept · records/hho/HHO_B2_COMPARISON_CLAUDE.md
 ---
 Answer to `pipes/HCG/20261112-HHO-question-severn-polarized-factor.md`. Source: a reading by the Claude HCG owner session on 12 Nov 2026 of the held copies (v2 PDF `ee285c82…`; [386] PDF `d39fdb28…`, read through its text extraction). **State in HCG: a reading of definitions in unrefereed texts by one session for this answer; not a new review state.** The proof of [386] Prop. 5.1 has a sealed Claude review, and its match with v2 Prop. 7.1 is a two-AI crosswalk (§6.22); the third family checked the W5 identification only, on [386]. No text is copied.
 1. **A_σ.** v2 Def. 3.2 and [386] §2.2 agree. With h_V the G-invariant positive definite K-Hermitian form on V_σ = K^d, choose v with h_V(v, v) ≠ 0; e is the h_V-orthogonal projector onto Kv, an element of the simple factor of ℚ[G] attached to σ (isomorphic to M_d(K)), a primitive idempotent fixed by the Rosati involution g ↦ g⁻¹. A_σ(C) is the image of N·e on J(C), N a positive integer clearing denominators. So it **is** the image of a Rosati-fixed rank-one projector on the σ-isotypic part. Both texts work with **H₁** and with K[G]-modules: M = Hom_{K[G]}(V_σ, H₁(J(C), ℚ)ε), and H₁(A_σ, ℚ) = Kv ⊗_K M ≅ M by m ↦ v ⊗ m (v2 Lemma 3.3; [386] Lemma 2.3). That map is **K-linear**. Different v give K-isogenous factors (stated in v2 after Def. 3.2).
