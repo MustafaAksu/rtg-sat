@@ -38,13 +38,15 @@
 | Gauge memo review | `coil/MEMO_GAUGE_CYCLE_FLUX.md` | β₁ rule adopted (integrated into the RMT); the N = 3 parameterisation confirmed retrospectively; feasibility audit adopted; §5b direction-aware floor h_coeff(d) |
 | Casebook F2 | `coil/CASEBOOK_F2_H_NOISE.md` | worked example h_noise, direction-indexed; T = {54, 108} validation task `[OPEN]` |
 
-### 3a. Working records (unlocked, `[SESSION]`; numbers in them are `[EXPLORE]`)
+### 3a. Working records (unlocked, `[SESSION]`; numbers in the exploration records are `[EXPLORE]`; the analytic notes carry their own labels at their stated scope; none is an adopted result)
 
 | Record | Path | Outcome |
 |---|---|---|
 | Signature test on the Synthesis v1.0 map | `records/coil/COIL_SYNTHESIS_SIGNATURE_PLAN.md` | line closed **`NONDISCRIMINATING`** (PI, 12 Nov 2026); closed-form linear crossing `[DERIVED]`; three events r_s → r_c → r_exit at α = 0.80 `[EXPLORE]` |
 | Phase 2.5 preconditions (B1, B2) | `records/coil/COIL_PHASE25_PRECONDITIONS_NOTE.md` | R-B (digital PLL) closed on gates G1–G3; R-A deferred; R-D accepted with limited scope (PI, 12 Nov 2026) |
 | Phase 3 options and ablation design | `records/coil/COIL_PHASE3_OPTIONS_NOTE.md` | **`NO-PHASE3-READY-TEMPLATE`**; Phase 3 not entered; no experiment opened for O1–O3 |
+| Small-a reduction of MM-1 — conditional mechanism for κ-like cluster thresholds | `records/coil/COIL_PKAPPA_SCALING_NOTE.md` (PR #71, head `ffcf32c`; merge `beb40a8`) | reviewed working record (co-owner `5906961563`, `5917828658` ACCEPT SCOPED). Distinguished limit at fixed κ; on the tri0 cluster: amplitude law, κ = 3 as the leading-order separatrix energy-balance zero, λ_⊥ = a·Λ(κ) inside stable Lamé bands (first detected hyperbolic band κ ≈ 2.951–2.982), postdiction of 60 locked ICID exponents (12 cells) to 0.06–1.9 %. κ_frac OPEN; strong null not passed. Checks `pkappa_scaling_check.py` (C1–C4) |
+| Off-cluster object of tri0 — first detected transverse-rate crossing of its RW branch | `records/coil/COIL_OFFCLUSTER_OBJECT_NOTE.md` (PR #79, head `10db926`) | reviewed working record (co-owner `5920662270`, `5921182988`, `5921512620` ACCEPT SCOPED). Sampled off-cluster motion RW-compatible; sampled energy agrees with the RW balance to 10⁻⁴ (κ ≤ 2.28); first detected sign change of the leading-order transverse real rate at κ_T ≈ 2.32596 — torus candidate only; κ_frac, torus question, S-5 OPEN. Check `offcluster_object_check.py` (K1–K5; the K5b label "one RW period" should read "about 10 u-units" — erratum in `records/coil/COIL_v0.11_RELEASE_RECORD.md`) |
 | Synthesis v1.0 source package | `records/coil/COIL_SYNTHESIS_V1_SOURCE_PACKAGE.md` | identity, model contract, `[EXPLORE]` first look (`coil-v0.8`) |
 
 ## 4. Preregistrations (LOCKED — never changed)
@@ -110,6 +112,8 @@ All in `evidence/coil/code/`; outputs in `evidence/coil/outputs/`.
 | `resolv_certificate.py` · `resolv_experiment.py` · `CLI-RESOLVABILITY.md` | stratified derivative resolvability |
 | `wf_verify.py` | waveform independent audit (AUDIT) |
 | `synthesis_v1_fracture_clock_explore.py` · `synthesis_v1_regime_first_look_explore.py` · `synthesis_v1_window_width_explore.py` · `synthesis_v1_d1_intervention_explore.py` · `synthesis_v1_lyapunov_explore.py` · `synthesis_v1_gain_check_explore.py` | **`[EXPLORE]` only** — deterministic scripts behind the Synthesis records (§3a); no certificate, no prereg, no decision; outputs `synthesis_v1_*_explore.json` |
+| `pkappa_scaling_check.py` · `offcluster_object_check.py` | deterministic checks of the two analytic working records (§3a); PASS conditions written after the numbers were seen; no certificate, no decision |
+| `monodromy_hardened_check.py` | maintenance re-check (`coil-v0.11`) of the monodromy computations C4 and K4 with enforced solver, endpoint, finiteness, determinant and pair-selection guards and negative tests; does not replace the two checks above |
 
 Data: `stageA_*.csv`, `stageB_*_MERGED.csv`, `n3_merged/`, `mm1_merged/`, `*_results/`; raw run outputs as received from the PI's machine (`out_*.zip`, members hashed in the intake review `records/coil/COIL_PR3_INTAKE_REVIEW_20261106.md`).
 

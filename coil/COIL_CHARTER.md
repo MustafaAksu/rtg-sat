@@ -63,7 +63,7 @@ COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic g
 
 COIL does not restate RTG grades in a stronger form. OPEN-P0 (primitive ontology) is an RTG open item that conditions the RTG line; COIL does not work on it.
 
-**Interfaces.** COIL is not an admitted consumer of the RTG literature stream (LIT; `REGISTRY.md`: "not yet") and claims no LIT-backed validation of any statement. No COIL result passes to RTG except as an item in `rtg-corpus/pipes/<STREAM>/` carrying owner scope, evidence pointer and source tag; filing such an item is not an adopted use by the receiver. Items addressed to COIL arrive in `rtg-sat/pipes/COIL/` and are read at each owner pass and before each release.
+**Interfaces.** COIL is an admitted consumer of the RTG literature stream (LIT; `rtg-lit/CONVENTIONS.md` §8.2, PI decision 9 Nov 2026; `REGISTRY.md`). Admission is not validation: COIL claims no LIT-backed validation of any statement. A COIL request to LIT is open (`rtg-corpus` `pipes/LIT/20261114-SAT-coil-strong-null-map-class-search.md`, filed 14 Nov 2026, sender addendum 16 Nov 2026); filing it is not a LIT answer. No COIL result passes to RTG except as an item in `rtg-corpus/pipes/<STREAM>/` carrying owner scope, evidence pointer and source tag; filing such an item is not an adopted use by the receiver. Items addressed to COIL arrive in `rtg-sat/pipes/COIL/` and are read at each owner pass and before each release.
 
 ---
 
@@ -255,6 +255,8 @@ What this means in practice:
 **10.3 The only invariant candidate — closed negatively (S-3).** β_c(frac) is not a-invariant (P-κ, §3.6). The 35–88 values of Pair A hold at a = 0.03 only as a table; a direct comparison across pairs is given in RUN-MM1-PAIRBC v1.0.1.
 
 **10.4 Is there a statement that survives the strong null? (S-5)** The programme's established statements are either expressed in MM-1's own groups (a, κ) or generic under bifurcation theory (§3.7). What is missing is a dimensionless mapping rule that carries a locked MM-1 result to another family, together with a prediction there that generic nonlinear dynamics does not already make. Whether the MM-1 family can yield one, or whether a different minimal model is needed, is the content of the reopened protective belt (§9.4).
+
+*Analysis under way — reviewed `[SESSION]` working records, **not adopted results** (`coil/COIL_INDEX.md` §3a):* the small-a reduction of MM-1 and the conditional mechanism for κ-like cluster thresholds (`records/coil/COIL_PKAPPA_SCALING_NOTE.md`); the off-cluster object of tri0 and the first detected transverse-rate crossing of its rotating-wave branch (`records/coil/COIL_OFFCLUSTER_OBJECT_NOTE.md`). Both leave κ_frac, S-5 and the campaign condition of §9.4 open; neither gives a prediction that survives the strong null.
 
 ## 11. What the programme does not currently claim
 
