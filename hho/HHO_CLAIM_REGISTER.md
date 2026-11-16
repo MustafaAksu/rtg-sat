@@ -1,11 +1,12 @@
 # HHO — claim register
 
-**Status of this file:** adopted by the PI on 14 Nov 2026 as the claim register of `hho-v0.4`, **as a register only** (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.3`: sections B.6 (one row, HHO-LEM-B2) and B.7 (nine rows on positive-defect primes) are added; four evidence abbreviations are added; two open items are added in Part D and the notes of two others are brought up to date. No row that existed in `hho-v0.3` was regraded or promoted.
+**Status of this file:** adopted by the PI on 16 Nov 2026 as the claim register of `hho-v0.5`, **as a register only** (`records/hho/HHO_v0.5_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.4`: the HCG pin moves from `hcg-v0.2` to `hcg-v0.6` (reading rules, evidence abbreviations, calibration line, B.4); section B.8 (four rows on the Witt boundary gate) is added; two open items are added in Part D and the notes of two others are brought up to date. No row that existed in `hho-v0.4` was regraded or promoted.
 
 **Reading rules.**
 - Grades and review states are defined in `hho/HHO_CHARTER.md` §4. They are separate axes.
-- "Locality" means HCG's `HCG-THM-PARABOLIC-DISC-LOCALITY`: [det ϑS] = [(−1)ⁿ Π_j a_j b_j]. It is **placed at `hcg-v0.2`, pending in HCG, not adopted** (source: `records/hho/HHO_SOURCE_MANIFEST.md` §3). Every row graded `[THM-cond: locality]` depends on it.
-- "Induced bound" means HCG's `HCG-THM-INDUCED-PERIOD-BOUND`, with the same HCG state.
+- **HCG pin: `hcg-v0.6`** (`records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md`). HCG material is an HCG input, not an HHO result. It gives no HHO grade by citation (charter §5.1).
+- "Locality" means HCG's `HCG-THM-PARABOLIC-DISC-LOCALITY`: [det ϑS] = [(−1)ⁿ Π_j a_j b_j]. At the pin it is an adopted HCG result: ledger §6.24 (a), `[THM]`, CHECKED (two AIs). Its reading as the parabolic cup pairing (layer L2) is an import there, covered on the HHO side by HHO-LEM-B1-O2. Every row graded `[THM-cond: locality]` depends on it; **the grades are unchanged by the re-pin**.
+- "Induced bound" means HCG's `HCG-THM-INDUCED-PERIOD-BOUND`: ledger §6.24 (b), `[THM]`, CHECKED (two AIs), adopted at the pin. Rows that use it keep their grades.
 - A parabolic-cup class is not a polarization discriminant without the cup–polarization identification (HHO-SG-4). Rows say which of the two they concern.
 - Witnesses that fail (D) say nothing about data that satisfy (H) (HHO-SG-6).
 
@@ -18,8 +19,11 @@
 | OUT/ | `evidence/hho/outputs/` — their outputs |
 | PI/ | `evidence/hho/outputs/pi/` — output from the PI's machine, as relayed |
 | CG/ | `evidence/hho/received/chatgpt/` — ChatGPT's reviews, checkers and packages, as received |
-| NOTE | `evidence/hcg/hho-track/HCG_HURWITZ_HODGE_OBSTRUCTION_OPENING_NOTE_v0_1.md` at `hcg-v0.2` |
-| Δ27 | `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` at `hcg-v0.2`, entry Δ27 with addenda 1–17 |
+| NOTE | `evidence/hcg/hho-track/HCG_HURWITZ_HODGE_OBSTRUCTION_OPENING_NOTE_v0_1.md` at `hcg-v0.6` (byte-identical to `hcg-v0.2`); pending in HCG |
+| Δ27 | `evidence/hcg/ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` at `hcg-v0.6` (byte-identical to `hcg-v0.2`), entry Δ27 with addenda 1–17. Addenda 1–5 (i) are adopted in HCG ledger §§6.24–6.25; the rest is pending |
+| DSR | `records/hho/HHO_D_SOURCE_READING_CLAUDE.md` (the (D) source reading, revised after review) and its review `records/hho/HHO_D_WITT_GRAPH_REVIEW_CHATGPT.md` |
+| WG-P, WG-R, WG-C | `records/hho/HHO_WITT_GATE_PREREGISTRATION_CLAUDE.md`, `records/hho/HHO_WITT_GATE_RESULTS_CLAUDE.md`, `records/hho/HHO_WITT_GATE_PR78_CHATGPT_REVIEW.md` |
+| DW/ | `evidence/hho/d-witt/` — session-native Witt-graph scripts and outputs, with their own `SHA256SUMS` |
 | B1P | `records/hho/HHO_B1_O1_O2_CHATGPT_PROOF.md` |
 | B1R1, B1R2 | `records/hho/HHO_B1_O1_O2_CLAUDE_REVIEW.md`, `records/hho/HHO_B1_O1_O2_CLAUDE_REVIEW_ROUND2.md` |
 | B1/ | `evidence/hho/b1/` — session-native B1 scripts and output, with their own `SHA256SUMS` |
@@ -28,7 +32,7 @@
 | PD-R, PD-F20, PD-M | `records/hho/HHO_POSDEFECT_CLAUDE_REVIEW.md`, `records/hho/HHO_POSDEFECT_F20_PILOT_CLAUDE.md`, `records/hho/HHO_POSDEFECT_FULL_GLUING_MECHANISM_CLAUDE.md` |
 | PD/ | `evidence/hho/posdefect/` — session-native scripts and outputs, with their own `SHA256SUMS` |
 
-The 54 files in `evidence/hho/` outside `b1/` are byte-identical copies of the upload (`evidence/hho/SHA256SUMS`). The files in `evidence/hho/b1/` were written in the repository and are indexed by `evidence/hho/b1/SHA256SUMS`.
+The 54 files in `evidence/hho/` outside `b1/`, `posdefect/` and `d-witt/` are byte-identical copies of the upload (`evidence/hho/SHA256SUMS`). The files in `evidence/hho/b1/`, `evidence/hho/posdefect/` and `evidence/hho/d-witt/` were written in the repository and are indexed by their own `SHA256SUMS`.
 
 ---
 
@@ -50,7 +54,7 @@ All rows are restated from NOTE §3, §4 and §7. Their evidence is in Δ27. The
 
 **Gates G1–G12.** The gate catalogue of NOTE §3 is carried as a whole. Gates G1–G3 and G5–G12 keep the RIDs and records they have in Δ27; HHO gives them no new RID in this edition. A live gate file is planned for batch 3.
 
-**Calibration objects (NOTE §4, R2).** G₃₄/W5: (L) ✓, (D) ✓ on S_W5, class [1]. C₆ separator (2⁵,3,4³,5): (L) ✗, (D) impossible, class [2]. C₃ control (1⁵,2⁵): (L) ✓, (D) impossible, class [1]. These are HCG records (`HCG-ALG-NONSPLIT8-C6-SEPARATOR`, `HCG-ALG-NONSPLIT8-C3-CONTROL`, and the adopted ledger for W5).
+**Calibration objects (NOTE §4, R2).** G₃₄/W5: (L) ✓, (D) ✓ on S_W5, class [1]. C₆ separator (2⁵,3,4³,5): (L) ✗, (D) impossible, class [2]. C₃ control (1⁵,2⁵): (L) ✓, (D) impossible, class [1]. These are HCG records: `HCG-ALG-NONSPLIT8-C6-SEPARATOR` and `HCG-ALG-NONSPLIT8-C3-CONTROL` (Δ27 main entry, **still pending in HCG** at the pin), and for W5 the adopted ledger §§6.12–6.15 (at `hcg-v0.6` the W5 sub-claim of `HCG-ALG-E02` is THIRD-FAMILY CHECKED; (D) on S_W5 is `HCG-THM-G34D-SW5`).
 
 ---
 
@@ -105,10 +109,10 @@ The HHO conversation did not hold the HCG files when these were written. They ar
 
 | Statement in REVIEW | Earlier record | Relation |
 |---|---|---|
-| (D) budget: Σ(c_j − 1) ≤ 2d − 11, hence d ≥ 6 (A12.2) | NOTE §2, item 4 of (H); gates G1, G2 | identical |
-| d = 6: (D) forces G₃₄ or a monomial group; monomial fails (D); G₃₄ is split (A13.2) | Δ27 add. 1–2: `HCG-COR-D6-NONSPLIT-NOGO` | re-assembly of the same argument |
-| d = 7: no datum satisfies (D) (A14; proof by ChatGPT, checked by Claude) | Δ27 add. 3–4: d = 7, 8, 9, 11 excluded via `HCG-LEM-NONSPLIT8-NORMAL-REFL` | special case. Whether the two proofs are the same has not been compared. |
-| "d = 8 needs a rank-r induced bound" (A14.3) | Δ27 add. 4: `HCG-THM-INDUCED-PERIOD-BOUND` covers σ = Ind τ of any rank; d = 8 is excluded there | the A14.3 open item is void |
+| (D) budget: Σ(c_j − 1) ≤ 2d − 11, hence d ≥ 6 (A12.2) | NOTE §2, item 4 of (H); gates G1, G2; adopted in HCG as `HCG-ALG-DIM-BUDGET` (ledger §6.23) and in the standing hypotheses of ledger §6.25 | identical |
+| d = 6: (D) forces G₃₄ or a monomial group; monomial fails (D); G₃₄ is split (A13.2) | Δ27 add. 1–2: `HCG-COR-D6-NONSPLIT-NOGO`, adopted (ledger §6.25 (b)) | re-assembly of the same argument |
+| d = 7: no datum satisfies (D) (A14; proof by ChatGPT, checked by Claude) | Δ27 add. 3–4: `HCG-LEM-NONSPLIT8-NORMAL-REFL`, adopted (ledger §6.25 (d)): no datum at all for d = 7, 8, 9, 11, **and none for d = 10** | special case. Whether the two proofs are the same has not been compared. |
+| "d = 8 needs a rank-r induced bound" (A14.3) | Δ27 add. 4: `HCG-THM-INDUCED-PERIOD-BOUND` (adopted, ledger §6.24 (b)) covers σ = Ind τ of any rank; d = 8 is excluded by §6.25 (d) | the A14.3 open item is void |
 | G₃₄ single-class data are split because Δ²⁰ is a norm (A9.3.4) | Δ27 add. 2 | prior art; A9.3.4 was withdrawn in A10.2 |
 
 ---
@@ -159,6 +163,29 @@ These rows describe the parity at an inert prime in terms of the integral cup la
 
 ---
 
+### B.8 The Witt boundary gate (16 Nov 2026)
+
+These rows relate the parabolic-cup class to the combinatorics of boundary points of the Hurwitz family. **They are a consistency gate between the class and the boundary, not an obstruction to (D).** None uses (D), (L) or the budget. The computations take the recorded classes from the register and do not recompute them.
+
+Notation: for a marking (g₁, …, g_N) and a stable trivalent tree T with leaves 1, …, N, each internal edge e carries the boundary product g_e of the leaves on one side, and each vertex v the group H_v generated by its three incident products.
+
+  w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} + dim V^G.
+
+| RID | Claim | Hypotheses and inputs | Grade | Review state | Evidence |
+|---|---|---|---|---|---|
+| HHO-COR-WITT-GATE | Let Γ be finite and σ absolutely irreducible over K = ℚ(ω), on a genus-0 base, with dim_K H¹_par = 8 and parabolic cup form S of signature (4,4). If the **parabolic-cup class** of S is not [1], then w(T) ≤ 3 for every marking–tree pair (g, T) that is **realized as a boundary point of the specified Hurwitz component** (with its G- and K-actions and the semistable admissible model of (b)). For class [1] the corresponding bound is 4. Which marking–tree pairs are realized is part of (b); the claim says nothing about pairs that are not. | **(a)** at every realized boundary point of the compactified component, the weight-zero part W₀ of the limiting mixed Hodge structure on the σ-multiplicity part is defined over K and S-isotropic. **(b)** The boundary point of type T is an admissible nodal cover over the tree, semistable after finite base change, with compatible G- and K-actions; then dim_K W₀ = w(T) (DSR §4.2, exact sequence of the equivariant cochains of the dual graph). Landherr: a nonsplit (4,4) form has K-Witt index ≤ 3. HCG's `HCG-COR-BOUNDARY-WITT` (ledger §6.23) proves the isotropy and this bound **for laminar degenerations only**; it is cited for the Landherr step, not as covering (a). No primary source for (a) or (b) was read by either owner. | `[THM-cond: (a) K-rational S-isotropy of W₀ at every realized boundary point; (b) admissible semistable-cover dual-graph description of W₀]` | CHECKED (the implication only): the exact sequence derived by ChatGPT, re-derived by Claude; the bound by Claude, checked by ChatGPT (PR #74; PR #81 review `5922469673`) | DSR §4.1–4.2; ChatGPT review in DSR §B |
+| HHO-NUM-WITT-C6 | For the three C₆ data with χ₁ and all 2,027,025 labelled trivalent trees on ten points: min/max w = 0/3 for the separator (2⁵,3,4³,5) (recorded class [2]); 0/4 for (3⁸,1,5) and (3⁸,2,4) (recorded class [1]). | the computation covers every labelled trivalent tree on the ten labelled branch points with their fixed local monodromies. **Braid convention:** for the abelian group C₆ the full braid group permutes the entries of a tuple without changing them, so all orderings lie in one component of the unordered Hurwitz space; the pure braid group of the ordered space fixes the labels. Which labelled trees are realized boundary types of a given component is part of (b) of HHO-COR-WITT-GATE; the numbers themselves do not depend on the convention | `[NUM]` | CHECKED (two implementations: a subset dynamic programme by ChatGPT; explicit enumeration by Claude) | DSR §4.5; `DW/hho_d_witt_c6_tree_dp_chatgpt.py`, `DW/witt_graph_c6_bruteforce_claude.py` and outputs |
+| HHO-NUM-WITT-PLANAR | Over the planar trees of the recorded marking (all C₁₈ = 477,638,700 for N = 20, rooted at the last leaf): W5, min = max = 4, and w = 4 on its certificate tree (edge sum 102, vertex sum 98); G(6,1,6) P1, P2, P3 (recorded class [2]), min = max = 3; Q0, Q2 (recorded class [1]), min = max = 4. | the family fixed in WG-P before the run (Git order checked by the co-owner); no tree outside it. A planar tree of a fixed marking is the combinatorial type of a collision of adjacent branch points; its realization as a boundary point is part of (b) | `[NUM]` | CHECKED (two implementations: Claude, exact ℚ(ω) interval dynamic programme; ChatGPT, exact ℚ(ω) for W5 and a monomial phase-graph method for G(6,1,6)) | WG-P; WG-R; WG-C; `DW/witt_gate_planar_claude.py`, `DW/hho_witt_w5_exact_independent.py`, `DW/hho_witt_g616_monomial_independent.py` and outputs |
+| HHO-NUM-WITT-PLANAR-SINGLE | Same family: W6, W7, min = max = 4 and 4 on the certificate trees; the three C₃ × F₂₀ tuples of class [5] (σ = ω ⊗ ρ₄, N = 4), max w = 0 over the three tree topologies (four evaluations). The 27 split C₃ × F₂₀ tuples of signature (4,4) have max w between 0 and 4. | as above; for N = 4 one braid move adds the third topology | `[NUM]` | PROPOSED (one implementation, Claude) | WG-R §§1–3; `DW/witt_gate_planar_claude.py` and output |
+
+- Every recorded value agrees with HHO-COR-WITT-GATE. A value of 4 on a nonsplit datum would have shown that (a), (b), locality or bridge B1 fails somewhere. These rows test that consistency, not (D).
+- **Not claimed:** that the maximum of w over trees equals the Witt index. The split C₃ × F₂₀ data refute this as a general rule; it holds for the C₆, W5–W7 and G(6,1,6) data above.
+- For the reflection data, w is the same on every planar tree. This is observed, not explained (HHO-OPEN-WITT-CONSTANCY).
+- A consequence recorded in DSR §3, not a new row: the recorded proof of (D) (Severn's Hodge–Tate laminar criterion with the auditor's bridge, HCG ledger §6.15) needs a span of dimension 16, which `HCG-COR-BOUNDARY-WITT` bounds by 9 for a nonsplit form. So that method cannot certify (D) for nonsplit data in any d. This does not show that (D) implies split.
+- No third-family check exists for any row of B.8.
+
+---
+
 ## Part C — Withdrawn and corrected items
 
 RIDs in this part are reserved and never reused.
@@ -181,13 +208,15 @@ RIDs in this part are reserved and never reused.
 
 | RID | Item | Notes |
 |---|---|---|
-| HHO-OPEN-T2 | P1: a dimension-independent obstruction to a nonsplit class under (H) | listed in Part A |
+| HHO-OPEN-T2 | P1: a dimension-independent obstruction to a nonsplit class under (H) | listed in Part A. HCG's OPEN 11 (`HCG-OPEN-NONSPLIT8`, nonsplit data under (H) for d ≥ 15) asks about the same objects, dimension by dimension (HHO-SG-9). The recorded (D) method cannot apply to nonsplit data (B.8, last remarks); a nonsplit (D) would need another method. |
 | HHO-OPEN-SUPPORT-TRANSFER | Severn's A_σ and polarization versus ev_u(W) (bridge **B2**) | listed in B.1. The algebraic comparison is recorded conditionally as HHO-LEM-B2 (B.6), on HCG's reading of the definitions. **What stays open is the source check**, to be made in one pass against Severn's own texts: (i) the definitions of A_σ and of its polarization; (ii) the K-action on H₁(J(C),ℚ)ε and the normalization of ϑ; (iii) that the discriminant class of Theorems A and B is the class of this Hermitian form. Bridge B1 (B.5) does not discharge it either. |
 | HHO-OPEN-LOCAL-EVEN | What, under (H), forces Σ_j (ℓ(Λ_E^#/Λ_E) − ℓ(Λ_E/(1−g_j)Λ_E)) to be even at every inert prime? | the local form of P1 (REVIEW A11.3); related to HHO-COR-G4B and HHO-LEM-G4C. With HHO-COR-B1-GATE (conditional), the sum is even at every inert prime of defect zero; the question remains at inert primes dividing \|Γ\|/χ(1). |
 | HHO-OPEN-POSDEFECT-GLUE | Length and structure of the gluing group L^#/L at an inert prime of positive defect (for example G₃₄ at p = 5, m(ψ₈₄) = 512) | a question about the integral mechanism; the norm class for G₃₄ is already settled by the HCG record (REVIEW A5.4 `[CONJ]` bound, A7.2). After B.5 this is where P1 now sits; study target by PI decision of 12 Nov 2026. **State after B.7:** the module A_χ is determined for every cover in the two worked blocks (HHO-THM-FG-F20, HHO-THM-FG-C6), and the projective case is settled for an irreducible reduction (HHO-COR-PROJ-EVEN). Open: other groups and blocks, G₃₄ at p = 2, the principal block, and HHO-OPEN-PARITY-CONSTITUENT. A description of ε_p is not an obstruction: the link to (D) is HHO-OPEN-T2. |
-| HHO-OPEN-RECONCILE | Compare, item by item, the hypothesis lists of Part A and Part B, and the two d = 7 proofs | asked by HCG (pipe item `20261110-HCG-question-hypothesis-lists`, PR #25). A first answer is in §E. |
+| HHO-OPEN-RECONCILE | Compare, item by item, the hypothesis lists of Part A and Part B, and the two d = 7 proofs | asked by HCG (pipe item `20261110-HCG-question-hypothesis-lists`, PR #25). A first answer is in §E. At `hcg-v0.6` the (H) of NOTE §2 is restated in the adopted ledger §6.25; as read in DSR §5 the two lists agree. The comparison of the two d = 7 proofs is still not made. |
 | HHO-OPEN-PARITY-CONSTITUENT | For a character whose reduction modulo p is reducible: which constituents of the sector module A_χ carry the parity ε_p? | new in `hho-v0.4`. A heuristic through the lattice chain of the block and the duality of flags is in PD-M Part III; it is not proved, and the recorded data do not test it beyond n₁. For an absolutely irreducible reduction the answer is HHO-LEM-SECTOR (2). |
 | HHO-OPEN-INTCW-REF | A literature reference for HHO-THM-COVER-BLOCK (integral Chevalley–Weil; Galois-module structure of the cohomology of curves) and for the Gysin sequence as a sequence of 𝒪[G]-modules | new in `hho-v0.4`; neither owner has read one |
+| HHO-OPEN-WITT-SOURCE | A primary source for inputs (a) and (b) of HHO-COR-WITT-GATE: isotropy and K-rationality of W₀ at every boundary point of the compactified Hurwitz family, and the admissible-cover dual-graph description of W₀ with compatible G- and K-actions | new in `hho-v0.5`. Candidates named in DSR §1 (Schmid; Cattani–Kaplan; Abramovich–Corti–Vistoli; Romagny–Wewers) were **not read**. Through LIT if the PI wishes. |
+| HHO-OPEN-WITT-CONSTANCY | Why w(T) is the same on every planar tree of the recorded marking for the reflection data of B.8 (W5–W7, G(6,1,6)), and under which hypotheses this holds | new in `hho-v0.5`; observed on finite data only (WG-R §1, WG-C §3). For the C₆ data w varies over all labelled trees (min 0, HHO-NUM-WITT-C6); their planar family was not computed separately. Not on the path to P1. |
 | HHO-OPEN-CTBLLIB-VERSION | Record the GAP and CTblLib versions of the PI's runs | **CLOSED** on 10 Nov 2026: GAP 4.12.1, CTblLib 1.3.7 (see HHO-NUM-G34-BLOCKS). The RID is not reused. |
 
 ## Part E — First answer to HCG's hypothesis question
