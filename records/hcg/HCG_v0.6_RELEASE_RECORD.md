@@ -98,9 +98,11 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 
 ## 9. Adoption manifest
 
-**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes at the **content commit** `c214df62a64c9366d62a7e1bffd6688e7af9e8cf` (the reconciliation of PR #72 with `main` at `26e8ccae0d3c117fe66c925a0d14b26b83538266`; this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes at the **content commit** `8214605b177bef6ea696d14b0c997600fe871fc3` (the reconciliation of PR #72 with `main` at `c9f96150f4250d5dc456ae7596ce210621f12029`; this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
 
 **Registry reconciliation (16 Nov 2026).** The candidate HCG v0.6 row is retained; the HHO row is preserved from current `main` at `hho-v0.4`. COIL and all consumer pins are unchanged. Compared with the original candidate `0035787524ae03d15422dfcd375d1f297d4bfb8f`, only the `REGISTRY.md` payload hash changes in this manifest; all eleven non-registry payload files, including the scientific ledger, retain the same Git blobs and SHA-256 entries. The earlier content commit `2dda1a466d8aa79f065711e97a21ef822bf697e8` remains in history.
+
+**Follow-up reconciliation after COIL v0.10 (16 Nov 2026).** Main advanced to `c9f96150f4250d5dc456ae7596ce210621f12029` after PR #73. The current candidate retains the HCG v0.6 row and imports main's HHO v0.4 and COIL v0.10 rows without changing their consumer pins. Main's COIL files are carried byte-for-byte. Only the registry payload hash is refreshed; the eleven other HCG manifest payloads and all scientific/adoption text in §§1–8 remain unchanged. The earlier registry reconciliation `c214df62a64c9366d62a7e1bffd6688e7af9e8cf` remains in history.
 
 | File | Role | SHA-256 |
 |---|---|---|
@@ -115,4 +117,4 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 | `evidence/hcg/verification/severn_v2_example_12_2_check_out.txt` | its output | `d34be019c9b8126c1b27a328726198680745a409a3e0d37156ab80bca8d21943` |
 | `evidence/hcg/README.md` | evidence index text | `ddb7dc9f92b191108d58d6703589f444fb47ce50176a694a27cbb02a369f4495` |
 | `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
-| `REGISTRY.md` | `hcg` row | `73db6d7232e3c4a4285c5aa6e232c0c4429b952dcd9d15b875f84d8a48f316bd` |
+| `REGISTRY.md` | `hcg` row | `f9c04751d386370ac0601698bdd2f1000cd243a0d48787ed73690c519038c4fa` |
