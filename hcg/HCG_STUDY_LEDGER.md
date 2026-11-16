@@ -1,19 +1,19 @@
-# HCG study ledger v0.6 — DRAFT r2
+# HCG study ledger v0.6
 
 **Title:** Complex Geometry and Hodge Realization — Consolidated Session Ledger (H1 Eisenstein calibration, H2 integral Hodge rings, RTG-dynamics imports, H3 audit of Severn's ℚ(√−3) Weil-class claim, the G₃₄ boundary-witness programme, and the H4-selection theory)
-**Date:** 14 November 2026 (draft)
+**Date:** 16 November 2026
 **Scope:** Exact calibration of an RTG-motivated Eisenstein geometry, and a multi-reviewer audit of the unrefereed claim that the Weil classes of every abelian sixfold of Weil type for ℚ(√−3) are algebraic.
 **Document class:** Technical scientific ledger. Declared hybrid (§0.5 of the Methodology): §6.6–§6.22 and §6.26 are an *external-claim audit module* (§6.23, §6.24 and §6.25 are this study's own work). In that module this session does not own the audited theorems; it owns only its own computations, proofs, review verdicts and witnesses.
-**Document status:** **DRAFT r2 — not adopted.** The governing edition is `hcg-v0.5`. This draft records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, a proposed split of OPEN 10, and one scope guard (SG-14). It changes nothing else of v0.5. It becomes an edition only through co-owner review, a release record and a PI decision. Adoption would **not** set any individual claim's review state to ACCEPTED and would not establish any external claim (Severn's theorems stay CLAIMED).
-**Build:** made from the adopted v0.5 text by `evidence/hcg/verification/make_v06_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.5 text, byte for byte.
+**Document status:** ADOPTED (scoped) — PI decision, 16 November 2026, 09:36 +03:00 ("benimsiyorum."), of DRAFT r2. It records two line-by-line reviews of Severn's v2 against its source (§6.26: the every-member and compensation steps; the passage from Weil classes to all Hodge classes on powers), the PI's closure of OPEN 8 in its scope, the split of OPEN 10 (v2 §11 closed in its scope; v2 §12 now OPEN 12), and one scope guard (SG-14). It changes nothing else of v0.5. Adoption does **not** set any individual claim's review state to ACCEPTED and does not establish any external claim (Severn's theorems stay CLAIMED). Release record: `records/hcg/HCG_v0.6_RELEASE_RECORD.md`. The edition is published by the annotated tag `hcg-v0.6`.
+**Build:** made from the adopted v0.5 text by `evidence/hcg/verification/make_v06_draft.py` (assertion-gated replacements and insertions). Text that the script does not touch is the v0.5 text, byte for byte. Released from DRAFT r2 (SHA-256 05e2de260d535a10424a536f341f0517aa4d04bc1dca547b83c3506c12b7e513) by `evidence/hcg/verification/release_v06.py` (labels and metadata only).
 **Revision base:** the ledger of `hcg-v0.5` (SHA-256 650c301f8465536705c852113fa7c2e2288d8c3e3cae99fa92a9c466e47bf383; the file at the tag `hcg-v0.5`). Change sources:
 - three review records in `records/hcg/`: `HCG_OPEN8_LINE_REVIEW_CLAUDE_20261112.md` (revision 3), `HCG_HODGE_SCOPE_NOTE_CLAUDE_20261112.md` (revision 2), `HCG_OPEN10_THEOREM_C_REVIEW_CLAUDE_20261113.md` (revision 2). Each was read against the v2 PDF by both owner sessions and reviewed ACCEPT SCOPED by the ChatGPT session (PRs #61, #67);
 - the PI decision of 13 Nov 2026 that closes OPEN 8 in its scope (recorded on PR #61), and the PI's standing decision of 11 Nov 2026 on the review ceiling (CHECKED (two AIs); no third-family reading for now).
 
 **Not included:** v2 §12 (abelian sixfolds of type III; OPEN 12); the rest of Δ27 (from its addendum 5 (ii) on), Δ28 (HHO opening) and Δ29 (positive lane), which stay pending. HHO claims are not HCG results.
-**Supersedes (on adoption only):** `hcg-v0.5`. Earlier: `hcg-v0.4`, `hcg-v0.3`, `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
+**Supersedes:** `hcg-v0.5`. Earlier: `hcg-v0.4`, `hcg-v0.3`, `hcg-v0.2`. Earlier editions: v0.1 (chat-adopted 22 Oct 2026, SHA-256 75b5f58c30d6d1cd3ce0a8ff0fd93f1a5c14731795d7fca487fbf5e80f6c86b7), frozen in `evidence/hcg/ledger-history/`.
 **Companion documents:** `hcg/HCG_CHARTER.md`; `records/hcg/HCG_SOURCE_MANIFEST.md`; `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md`; the frozen files in `evidence/hcg/` (file names used in this ledger resolve through `PLACEMENT_MAP.tsv` and `NAME_ALIASES.tsv`). The session's own charter v0.2 and verification ledgers are historical companions in `evidence/hcg/`.
-**DSN Methodology:** the ledger text was written under DSN_METHODOLOGY_v1.3. `rtg-sat` reads its base rules at `methodology-v1.4`. The claim tags are not re-graded in this draft.
+**DSN Methodology:** the ledger text was written under DSN_METHODOLOGY_v1.3. `rtg-sat` reads its base rules at `methodology-v1.4`. The claim tags are not re-graded in this edition.
 **Status summary:**
 - **H1/H2 calibration and the RTG-dynamics results are unchanged** at two-AI CHECKED grade (§6.2–§6.5).
 - **Severn's Theorem 6.2 remains CLAIMED, not ESTABLISHED.** The review levels per proof obligation are kept separate (§6.7 matrix):
@@ -24,7 +24,7 @@
   - PO-6 on W5: the cup-form class and its identification with the actual polarized factor are both THIRD-FAMILY CHECKED. The general statement is CHECKED by two AIs as a proof-path review only (v2 Prop 7.1 with Lemma 7.2; §6.16, §6.22).
 - **New in this edition (Δ25, Δ26).** A boundary-rank corollary and a dimension budget (§6.23); the Severn v2 successor audit (§6.22). Severn's Appendix A is reproduced, and OPEN 3 and OPEN 5 are closed in their stated scopes. OPEN 8 stayed PARTIAL in that edition; it is closed in its scope in v0.6.
 - **New in this edition (Δ27, two results only).** A determinant-class identity for genus-zero parabolic cup forms and a period-rank bound for induced finite-monodromy variations (§6.24). Both are `[THM]`, CHECKED by two AIs. Neither has a third-family or a human check. Their applications are not in this edition.
-- **New in this draft (v2 source reviews).** The every-member scope of Severn's Theorem 6.2 and the compensation step, and the step from algebraic Weil classes to all Hodge classes on powers (v2 §11), were each read line by line against the v2 PDF by two AI sessions (§6.26). OPEN 8 is closed in its scope. "Weil classes are algebraic" is not "the Hodge conjecture holds": the passage needs Hg(A) = SU_H (SG-14). Severn's Theorems A, B, C stay CLAIMED.
+- **New in this edition (v2 source reviews).** The every-member scope of Severn's Theorem 6.2 and the compensation step, and the step from algebraic Weil classes to all Hodge classes on powers (v2 §11), were each read line by line against the v2 PDF by two AI sessions (§6.26). OPEN 8 is closed in its scope. "Weil classes are algebraic" is not "the Hodge conjecture holds": the passage needs Hg(A) = SU_H (SG-14). Severn's Theorems A, B, C stay CLAIMED.
 - **New in this edition (Δ27, seven results).** Under the standing hypotheses (H) of §6.25, a datum whose image contains a complex reflection has split cup class; hence a nonsplit datum needs d ≥ 15 (§6.25). All seven are CHECKED by two AIs and conditional on classical classification imports. This is not a non-existence statement for nonsplit Weil eightfolds.
 - **New since v0.1: the component connection (§6.19).** Explicit, doubly replayed braid certificates place Severn's own Appendix-A tuple (gate and paired forms), W5, NEW01–04, BLOCK-01 and ESCAPE in one component of H/Σ. This is an algebraic tuple chain; its consequences for the polarized family are stated separately, with their premises.
 - **New since v0.1: the H4-selection theory (§6.18).** Includes the edge-flux theorem, the laminar reduction, rank obstructions and their braid escapes, and finite classifications. All of it lies outside the main chain.
@@ -158,14 +158,14 @@ All of this is known-case verification, INTERNAL CHECKED (§6.2–§6.5).
 | OPEN 11, `HCG-OPEN-NONSPLIT8` | — (pending, Δ27 main entry) | new OPEN, ACTIVE: nonsplit data under (H) for d ≥ 15 | §2 |
 | Every other statement, grade, guard and OPEN item | as in v0.4 | unchanged | — |
 
-### §1.6 New in v0.6 (proposed)
+### §1.6 New in v0.6
 
-| Item | v0.5 state | v0.6 state (proposed) | Record |
+| Item | v0.5 state | v0.6 state | Record |
 |---|---|---|---|
 | OPEN 8, `HCG-OPEN-PO1-PREMISE` | PARTIAL | **CLOSED in its scope** (PI decision, 13 Nov 2026) | §2; §6.26 (a) |
 | PO-1 and PO-3, every-member and compensation steps | theorem-level third-family reading on v1/[386]; line-by-line not done | also CHECKED (two AIs) **line by line against v2** | §6.7, §6.8, §6.10, §6.26 (a) |
 | `HCG-THM-SEVERN-V2-L111`, `HCG-THM-SEVERN-V2-T112` | — (v2 §11 not audited) | new imports from v2, CHECKED (two AIs), line by line | §6.26 (b) |
-| OPEN 10, `HCG-OPEN-SEVERN-V2-C` | ACTIVE (v2 §11 and §12) | **CLOSED in its scope: v2 §11 only** (proposed; takes effect with the adoption of this edition) | §2; §6.26 (b) |
+| OPEN 10, `HCG-OPEN-SEVERN-V2-C` | ACTIVE (v2 §11 and §12) | **CLOSED in its scope: v2 §11 only** (PI, with the adoption of this edition, 16 Nov 2026) | §2; §6.26 (b) |
 | OPEN 12, `HCG-OPEN-SEVERN-V2-TYPE3` | — (part of OPEN 10) | new OPEN, ACTIVE: v2 §12 | §2 |
 | SG-14 | — | new guard: Weil classes algebraic is not the Hodge conjecture | §3; §6.26 (c) |
 | Severn's Theorems A, B, C | CLAIMED | CLAIMED, unchanged | — |
@@ -290,7 +290,7 @@ Status: CLOSED in its verified scope (PI decision of 10 Nov 2026: "Karar 2 kapat
 Scope of the closure: the Theorem A/B proof chain of hexagon:2610.00387v2 only. It is a two-AI successor-identity audit, "not a new first-principles verification" (ChatGPT). It is not a third-family reading of v2 (§6.22).
 
 **OPEN 10 — Severn v2, Theorem C and type III** [RID: HCG-OPEN-SEVERN-V2-C] (new in v0.3)
-Status: **CLOSED in its scope: v2 §11 only** (changed in v0.6; proposed in the draft and decided by the PI with the adoption of this edition). It was ACTIVE from v0.3 to v0.5.
+Status: **CLOSED in its scope: v2 §11 only** (changed in v0.6; decided by the PI with the adoption of this edition, 16 Nov 2026). It was ACTIVE from v0.3 to v0.5.
 - Done: a line-by-line review of v2 §11 against the v2 PDF by two AI sessions (§6.26 (b)): Lemma 11.1, Theorem 11.2, and the deduction of Theorem C. State: CHECKED (two AIs), conditional on the first fundamental theorem of invariant theory for SL_n (import, not re-read).
 - What the closure means: **if** the Weil classes of A are algebraic and Hg(A) = SU_H, every Hodge class on every power of A is algebraic. Theorem C follows from Theorem B through this, under Hg(A) = SU_H. Theorem C stays CLAIMED, because Theorem B is.
 - Not covered: v2 §12 (type III), which is now OPEN 12.
@@ -1529,7 +1529,7 @@ Package root: the session workspace, directories `hodge_session/` and `g34/` (wi
 
 | Contributor | Actual role in this session |
 |---|---|
-| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). Standing decision of 11 Nov 2026 (18:18 +03:00): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." Adopted v0.5 (scoped), with the RTG pins unchanged (12 Nov 2026). Closed OPEN 8 in its scope (13 Nov 2026: "PR61 i birleştirelim OPEN8 i artık kapayalım."). No claim row is ACCEPTED. |
+| Mustafa (PI) | Session owner. Decides ACCEPTED. Relays all inter-AI and auditor traffic. Approved and sent the round-2 auditor request v0.2. Adopted v0.1 (scoped). Supplied the Zenodo pointer for Severn's deposit. Adopted v0.2 (scoped) and published `hcg-v0.2` (10 Nov 2026). Approved Δ24–Δ26 as pending deltas. Decided on 10 Nov 2026 that OPEN 8 stays PARTIAL and that `HCG-OPEN-SEVERN-V2` is closed in its verified scope. Adopted v0.3 (scoped) and approved its RTG pins (11 Nov 2026). Decided on 11 Nov 2026 that no third-family reading of the two results of §6.24 is requested for now and that they stay CHECKED (two AIs). Adopted v0.4 (scoped), with the RTG pins unchanged (11 Nov 2026). Standing decision of 11 Nov 2026 (18:18 +03:00): "“CHECKED kalsın, üçüncü denetçi şimdilik yok” aksi PI tarafından bildirilene kadar geçerli." Adopted v0.5 (scoped), with the RTG pins unchanged (12 Nov 2026). Closed OPEN 8 in its scope (13 Nov 2026: "PR61 i birleştirelim OPEN8 i artık kapayalım."). Adopted v0.6 (scoped), with the RTG pins unchanged, and with it closed OPEN 10 in its scope for v2 §11 (16 Nov 2026). No claim row is ACCEPTED. |
 | Claude (Anthropic) | Primary deriver for H1/H2/NF/R7 and the G₃₄ gates, W5–W7 and H4 data. Edge-flux theorem; laminar reduction (proposal); series bound; NEW02 mixed tree; toy block lemma; braid replays; G(3,3,3) scan; independent W5 links; Severn tuple-to-W5 link; independent 90-move replay. Independent H3 literature review (found ADFIO). Consolidation editor of this DSN. |
 | ChatGPT (OpenAI) | Independent verifier of H1/H2/NF/R7. Found the Severn preprints (H3-D1). Second proof of PO-1. Cross-checks of G34-A/B, W5, W6/W7, cup validation, PO-2/3/4, the W5 discriminant. Proof review of EDGEFLUX and its Corollary 5; holdout monodromy; P2/P3, paired-endpoint factorization and NEW01 mixed tree; independent proof of the laminar reduction; toy mixed obstruction; G34-BLOCK-01 and its braid escape; reality obstruction; G(3,3,3) examples and independent scan review; lifting no-go and stabilization source audit; W5 link construction; final source-bridge audit and independent 90-move replay. Intake of the auditor's PO-6 note. |
 | Third-family auditor (model family outside Claude/OpenAI; identity held by the PI) | Blind geometric audit of G34-D on W5 (round 1). Independent discriminant on W5 (round 2, partial). Item 2 (component requirement). Priority A polarization identification for W5. Detected the arXiv/Hexagon ID error (SRC-1). Round 2 complete (27 Oct 2026): A3 and Priority B items 4–7, on the v1 and [386] texts. The auditor did not read v2. |
@@ -1576,10 +1576,13 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ## Appendix A — Version History
 
-### v0.6 DRAFT r2 — 14 November 2026 — DRAFT (not adopted)
+### v0.6 — 16 November 2026 — ADOPTED (scoped)
+
+- **Owner decision [governance]:** PI adoption, 16 Nov 2026, 09:36 +03:00, of DRAFT r2 (05e2de26…12b7e513): "benimsiyorum."; RTG pins kept, no OFN pin, as in v0.3–v0.5. Basis: ChatGPT co-owner reviews of the three review records (PRs #61, #67) and of PR #72 (r1: ACCEPT WITH CHANGE; r2: ACCEPT SCOPED). Release record: `records/hcg/HCG_v0.6_RELEASE_RECORD.md`.
+- **Release transform [governance]:** `release_v06.py`, labels and metadata only. The entries below are the DRAFT r2 record.
 
 - **Basis.** The ledger of `hcg-v0.5`; three review records in `records/hcg/` (OPEN 8 line review, revision 3; Hodge scope note, revision 2; OPEN 10 review, revision 2), each with a second reading by the ChatGPT owner session against the v2 PDF; the PI decision of 13 Nov 2026 on OPEN 8; the PI's standing decision on the review ceiling.
-- **OPEN changes.** OPEN 8 closed in its scope (PI, 13 Nov 2026). OPEN 10 closed in its scope for v2 §11 (proposed; decided with the adoption of this edition). OPEN 12 new (v2 §12, type III).
+- **OPEN changes.** OPEN 8 closed in its scope (PI, 13 Nov 2026). OPEN 10 closed in its scope for v2 §11 (PI, with the adoption of this edition, 16 Nov 2026). OPEN 12 new (v2 §12, type III).
 - **New entries.** §6.26: the four gates of the every-member and compensation steps; `HCG-THM-SEVERN-V2-L111` and `HCG-THM-SEVERN-V2-T112` (imports, CHECKED (two AIs)); the scope table. SG-14. §1.6, three rows in §5, one limit in §6.21, import and artefact lines in §7 and §8, D-27 and D-28 in §9.
 - **Changed.** OPEN 8 and OPEN 10 in §2; the PO-1 row of §5 and of the §6.7 matrix; one sentence each in §6.8, §6.20 and §6.22; a note in §6.10.
 - **r2 (co-owner review of PR #72).** Four current-state sentences brought in line with the closure of OPEN 8 (status summary, two places; §6.8 v0.2 note) and with the §11 review (the Severn v2 row of §5: the forbidden reading is now "Theorem C is verified or established"); the old closure criterion of OPEN 10 marked as met for §11 only.
@@ -1773,4 +1776,4 @@ Entries D-15 to D-24 belong to the pending part of Δ27 and are not part of this
 
 ---
 
-*END OF DOCUMENT — HCG study ledger v0.6 · DRAFT r2 · 14 Nov 2026 · not adopted; `hcg-v0.5` governs · not an RTG document.*
+*END OF DOCUMENT — HCG study ledger v0.6 · ADOPTED (scoped) 16 Nov 2026 · no claim row is ACCEPTED · not an RTG document.*
