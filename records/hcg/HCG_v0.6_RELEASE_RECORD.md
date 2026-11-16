@@ -98,7 +98,9 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 
 ## 9. Adoption manifest
 
-**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes at the **content commit** `2dda1a466d8aa79f065711e97a21ef822bf697e8` (this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes at the **content commit** `c214df62a64c9366d62a7e1bffd6688e7af9e8cf` (the reconciliation of PR #72 with `main` at `26e8ccae0d3c117fe66c925a0d14b26b83538266`; this manifest-only commit follows it). If any listed file changes after this, the hashes are recomputed before the tag.
+
+**Registry reconciliation (16 Nov 2026).** The candidate HCG v0.6 row is retained; the HHO row is preserved from current `main` at `hho-v0.4`. COIL and all consumer pins are unchanged. Compared with the original candidate `0035787524ae03d15422dfcd375d1f297d4bfb8f`, only the `REGISTRY.md` payload hash changes in this manifest; the scientific ledger and the other eleven listed files retain the same Git blobs and SHA-256 entries. The earlier content commit `2dda1a466d8aa79f065711e97a21ef822bf697e8` remains in history.
 
 | File | Role | SHA-256 |
 |---|---|---|
@@ -113,4 +115,4 @@ Order: decision → release record → merge → tag (`CONVENTIONS.md` §2).
 | `evidence/hcg/verification/severn_v2_example_12_2_check_out.txt` | its output | `d34be019c9b8126c1b27a328726198680745a409a3e0d37156ab80bca8d21943` |
 | `evidence/hcg/README.md` | evidence index text | `ddb7dc9f92b191108d58d6703589f444fb47ce50176a694a27cbb02a369f4495` |
 | `evidence/hcg/SHA256SUMS` | index of the 754 frozen files (unchanged) | `5950c6c8d1c8ebc22ee904211aecbeb8456f17ac87cb0b96532276d84d260fe3` |
-| `REGISTRY.md` | `hcg` row | `6059276c3ece2d825beb4efdf06248396fb58793c3ad112901e7ab891e7ad568` |
+| `REGISTRY.md` | `hcg` row | `73db6d7232e3c4a4285c5aa6e232c0c4429b952dcd9d15b875f84d8a48f316bd` |
