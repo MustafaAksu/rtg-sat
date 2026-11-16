@@ -23,24 +23,25 @@ No other intake exists yet. ChatGPT's own originals have not been uploaded.
 
 ## 3. Cited, not stored in `evidence/hho/`
 
-### 3.1 HCG, at tag `hcg-v0.2`
+### 3.1 HCG, at tag `hcg-v0.6`
 
-The tag is annotated; it points to commit `543d09387d6d5df79d38fcd549090350f994d4e3`. Paths are under `evidence/hcg/` unless stated. Only the ledger is adopted in HCG. Every other row is **placed, pending in HCG, not adopted**.
+**Draft for `hho-v0.5`.** The tag is annotated (`42a203ee6189d35f97b6097476b79a6d8b50c72e`); it points to commit `34251e9b2ee110db34426b79fa0e26929d961563`. The previous pin was `hcg-v0.2` (commit `543d09387d6d5df79d38fcd549090350f994d4e3`). Every file below except the ledger is byte-identical at the two tags (`records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md` §2). Paths are under `evidence/hcg/` unless stated. Only the ledger is adopted in HCG. The other rows are placed files; where the adopted ledger records a result drawn from one of them, the HCG state says so.
 
 | Used for | Path | SHA-256 | HCG state |
 |---|---|---|---|
-| Definitions of (L), (D), (H0)–(H4); W5 results; PO-6 | `hcg/HCG_STUDY_LEDGER.md` | `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` | adopted (`hcg-v0.2`); no claim row is ACCEPTED |
+| Definitions of (L), (D), (H0)–(H4); W5 results; PO-4, PO-6; §6.23 (boundary Witt bound, budget); §6.24 (locality, induced bound); §6.25 ((H), d ≤ 14) | `hcg/HCG_STUDY_LEDGER.md` | `b1e928f5ae555d688a18bb1046be7626796f2a07935b6ff81a0fc934036b14cb` | adopted (`hcg-v0.6`); no claim row is ACCEPTED. At `hcg-v0.2`: `276c93a3393d396a1b2e1ecfe12a667816c3442d31584ae52eaadae63b478fe0` |
 | Where those labels are stated | `records/hcg/HCG_LDH_SOURCE_DICTIONARY.md` | `7d2736efc9f49db336ef6279f7a9bd65f7071bd584e149fa08e145989d8f4419` | HCG record; not a theorem and not an HHO result |
 | HHO opening note v0.1: (H), gates G1–G12, R1–R3, P1–P6, HHO-SG-1…6, initial register | `hho-track/HCG_HURWITZ_HODGE_OBSTRUCTION_OPENING_NOTE_v0_1.md` | `6a7a8053b5590ff2b6693a0cfe5f750af7fbe3036fc0961a10a29cabf65eadb7` | HHO-track source evidence; custody HHO; Δ28 pending |
 | HHO framework note (ChatGPT) | `received/10041afe-HCG_HURWITZ_HODGE_OBSTRUCTION_FRAMEWORK_SESSION_v0_1.md` | `aeb6f9e778f354af2c67b841dc6dda673eab0378aae9a75c5f1c2a34cf5eafd7` | pending (Δ27 add. 16) |
-| Δ27 with addenda 1–17; Δ28 | `ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` | `1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d` | pending |
-| Locality theorem: proof note (ChatGPT) | `received/68e831c3-HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_1.md` | `0ec385584bbaba4b6408572b3f4423dc38c3884e60fbf304f5a49c61392114cb` | pending (Δ27 add. 2) |
-| Locality theorem: review (Claude) | `nonsplit8/H3_DISC_LOCALITY_PROOF_REVIEW_CLAUDE_v0_1.md` | `41bc9997328cbc74a592ba9a899fd6cc30eb6e71656cc284c591ff05ac1878ee` | pending (Δ27 add. 2) |
-| Induced-period bound: proposal (ChatGPT) | `received/20505e68-HCG_INDUCED_PERIOD_DIMENSION_BOUND_PROPOSED_v0_1.md` | `03199b80ad92692db91cc3ce7d3014c425d263191bc44ac844fd7706ae2b306e` | pending (Δ27 add. 4) |
-| Induced-period bound: review; reflection dichotomy (Claude) | `nonsplit8/H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` | `050c8504edfc73af13d935c8d27925d71fd0ed846395a4bb51cb94976768ec7f` | pending (Δ27 add. 4–5) |
-| d = 6 screen | `nonsplit8/H3_NONSPLIT8_D6_SCREEN_AND_DISC_LOCALITY_CLAUDE_v0_1.md` | `de619ee49b8c9d90819e3ae977d889b3ac9783e84aedcda121e07516f55578b1` | pending (Δ27 add. 1–2) |
+| Δ27 with addenda 1–17; Δ28 | `ledger-history/HCG_DSN_v0_3_PENDING_DELTAS.md` | `1f00a1eb5dbedc6608a430b66197758d2a1cb6118774918342a6de62f834642d` | Δ27 add. 1–5 (i) adopted as ledger §§6.24–6.25; the rest of Δ27 and Δ28 pending |
+| Locality theorem: proof note (ChatGPT) | `received/68e831c3-HCG_PARABOLIC_DISCRIMINANT_LOCALITY_PROOF_v0_1.md` | `0ec385584bbaba4b6408572b3f4423dc38c3884e60fbf304f5a49c61392114cb` | baseline v0.1 of the proof behind ledger §6.24 (a) (adopted) |
+| Locality theorem: review (Claude) | `nonsplit8/H3_DISC_LOCALITY_PROOF_REVIEW_CLAUDE_v0_1.md` | `41bc9997328cbc74a592ba9a899fd6cc30eb6e71656cc284c591ff05ac1878ee` | review cited by ledger §6.24 (a) (adopted) |
+| Induced-period bound: proposal (ChatGPT) | `received/20505e68-HCG_INDUCED_PERIOD_DIMENSION_BOUND_PROPOSED_v0_1.md` | `03199b80ad92692db91cc3ce7d3014c425d263191bc44ac844fd7706ae2b306e` | source cited by ledger §6.24 (b) (adopted) |
+| Induced-period bound: review; reflection dichotomy (Claude) | `nonsplit8/H3_INDUCED_PERIOD_BOUND_REVIEW_AND_REFLECTION_DICHOTOMY_CLAUDE_v0_1.md` | `050c8504edfc73af13d935c8d27925d71fd0ed846395a4bb51cb94976768ec7f` | review cited by ledger §6.24 (b), §6.25 (c), (e), (f) (adopted) |
+| d = 6 screen | `nonsplit8/H3_NONSPLIT8_D6_SCREEN_AND_DISC_LOCALITY_CLAUDE_v0_1.md` | `de619ee49b8c9d90819e3ae977d889b3ac9783e84aedcda121e07516f55578b1` | review cited by ledger §6.25 (b) (adopted) |
 | Engine | `h4sel/p2p3/generic_engine.py` | `66f2c253d7b8390858e9ca8cdf81b7b5579777721d7763e0d3b631be58fca505` | cited by the adopted ledger |
 | Engine | `nonsplit8/cyclic_disc_claude.py` | `da76a25f57817fbeaf2b6deb749cda76cdefb5c8d59ec2d4b871a2778cf2afa9` | pending (Δ27) |
+| W5 certificate (root vectors and certificate tree); input of the Witt gate | `g34/g34_cert_tuple5_balanced.json` | `172766a91017aeac62e5c299a72b2c7582b0bb186c4feaa8b1906144eafb952e` | cited by the adopted ledger (§6.14) |
 
 The Claude HHO session read the opening note in full, and the Δ27 entry, the HCG charter §5, the release record and the dictionary in outline. It did not re-check the proofs behind these files.
 

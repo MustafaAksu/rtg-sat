@@ -127,10 +127,11 @@ HHO keeps two separate axes.
 
 ### 5.1 HCG
 
-HCG has the adopted edition `hcg-v0.2`. Only its session ledger v0.2 is adopted (`records/hcg/HCG_v0.2_RELEASE_RECORD.md`).
+HHO's pin of HCG is `hcg-v0.6` (from `hho-v0.5`; before that `hcg-v0.2`). In each HCG edition only the session ledger is adopted (`records/hcg/HCG_v0.6_RELEASE_RECORD.md`), scoped, with no claim ACCEPTED. The consumer comparison is `records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md`.
 
 - **How HHO cites HCG.** By tag, path and SHA-256, with the state the file has in HCG.
-- **Pending material.** Everything in HCG's Δ24–Δ29 is "placed at `hcg-v0.2`, pending in HCG, not adopted". This includes the locality theorem, the induced-period bound, the dimension screens of Δ27 and the HHO opening note.
+- **Adopted at the pin.** The parts of Δ24–Δ27 that the ledger records: among them the boundary Witt bound (§6.23), the locality theorem and the induced-period bound (§6.24) and the d ≤ 14 results of Δ27 addenda 1–5 (i) (§6.25).
+- **Pending material.** The rest of Δ27 (from addendum 5 (ii) on, including the bounds from d ≥ 25 to d ≥ 53), Δ28 (the HHO opening note) and Δ29 are "placed, pending in HCG, not adopted".
 - **No upgrade by citation.** An HCG theorem, definition, engine or certificate does not gain HHO grade because HHO uses it. A result that depends on it is graded `[THM-cond: …]`.
 - **The HHO track made in the HCG conversation.** The opening note and its founding documents are stored in `evidence/hcg/` as dated source evidence. Their scientific custody is with HHO (`hcg/HCG_CHARTER.md` §5). HHO cites them there and does not copy them.
 - **HHO → HCG.** An HHO result enters HCG only with all three of: an explicit disposition by the HCG owners, PI adoption, and an HCG release that records the import.

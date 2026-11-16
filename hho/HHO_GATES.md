@@ -1,10 +1,10 @@
 # HHO — gates, bounds and calibration objects
 
-**Status of this file:** adopted by the PI on 14 Nov 2026 as a live summary of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
+**Status of this file:** **DRAFT for `hho-v0.5`** (live summary; the adopted version is that of `hho-v0.4`, `records/hho/HHO_v0.4_RELEASE_RECORD.md`). It states no claim of its own: every row points to a row of `hho/HHO_CLAIM_REGISTER.md` or to an HCG record. Where this file and the register differ, the register governs.
 
 **Scope guard.** A failed gate excludes that datum or class of data only (HHO-SG-1). Witnesses that fail (D) say nothing about data that satisfy (H) (HHO-SG-6). HHO makes no statement that nonsplit Weil eightfolds exist or do not exist.
 
-**Sources.** NOTE is the HHO opening note, and Δ27 is the entry of HCG's pending-delta log. Both are cited at `hcg-v0.2` (`records/hho/HHO_SOURCE_MANIFEST.md` §3.1) and are **pending in HCG, not adopted**. Review states of the gates are those written in NOTE on 3 Nov 2026. The Claude HHO session has not re-checked their proofs.
+**Sources.** NOTE is the HHO opening note, and Δ27 is the entry of HCG's pending-delta log. Both are cited at the HCG pin `hcg-v0.6` (`records/hho/HHO_SOURCE_MANIFEST.md` §3.1; byte-identical to `hcg-v0.2`). NOTE is **pending in HCG, not adopted**. Of Δ27, addenda 1–5 (i) are adopted in HCG ledger §§6.24–6.25, the rest is pending; each row below names the HCG state. Review states of the gates are those written in NOTE on 3 Nov 2026 unless an HCG RID is named. The Claude HHO session has not re-checked their proofs.
 
 ## 1. Standing hypotheses (H)
 
@@ -29,18 +29,18 @@ G1–G10 form the (H)-scoped screening catalogue: they include necessary equatio
 | G1 Budget | Σc_j = 2d + 8 | identity under (H) | — |
 | G2 Base dimension | N_eff ≥ 19 for (D) | identity under (H) | — |
 | G3 Ages / signature | Σ age(g_j) = Σ age(g_j⁻¹) = d + 4 | CHECKED | — |
-| G4 Local discriminant | locality: [det ϑS] = [(−1)ⁿ Π_j a_j b_j] | CHECKED | HCG's `HCG-THM-PARABOLIC-DISC-LOCALITY` |
+| G4 Local discriminant | locality: [det ϑS] = [(−1)ⁿ Π_j a_j b_j] | CHECKED; adopted in HCG (ledger §6.24 (a)) | HCG's `HCG-THM-PARABOLIC-DISC-LOCALITY` |
 | G4a Inert-prime criterion | for D > 0: [D] = [1] ⇔ v_p(D) even for every inert p | CHECKED | HHO-LEM-G4A |
 | G4b Reciprocal pairing | local classes pairable with their inverses by K-isometric conjugacy ⇒ [(−1)ⁿ] | CHECKED | HHO-COR-G4B |
 | G4c Real local monodromies | Lemma R′ | PROPOSED | HHO-LEM-G4C |
-| G5 Period factorization | induced-period bound rank Per ≤ 3γ − 3 + s; Lemma E; K-imprimitive data need d ≥ 2L for the current bound L | CHECKED; cutoff checked at L = 46 | HCG's `HCG-THM-INDUCED-PERIOD-BOUND` |
-| G6 Reflection dichotomy | Theorem R: under (H), a complex reflection in Γ ⇒ split. Dominance and dim 8 are essential. | CHECKED | — |
+| G5 Period factorization | induced-period bound rank Per ≤ 3γ − 3 + s; Lemma E; K-imprimitive data need d ≥ 2L for the current bound L | CHECKED; cutoff checked at L = 46. Bound and Lemma E adopted in HCG (ledger §6.24 (b), §6.25 (c)); the cutoff is pending | HCG's `HCG-THM-INDUCED-PERIOD-BOUND`, `HCG-LEM-INDUCING-DATUM` |
+| G6 Reflection dichotomy | Theorem R: under (H), a complex reflection in Γ ⇒ split. Dominance and dim 8 are essential. | CHECKED; adopted in HCG (ledger §6.25 (f)) | HCG's `HCG-THM-REFLECTION-DICHOTOMY` |
 | G7 Primitive movement | Lemma C, Lemma S, Lemma F; symplectic type impossible | CHECKED | — |
 | G8 Imprimitive | Lemma A′; two-block lemma with Lemmas B, B′ | CHECKED | — |
 | G9 Tensor | tensor-induced needs d ≥ 256; Lemma T′ for A ⊗ B | CHECKED | HHO-LEM-T-PRIME |
 | G9a 2 ⊗ b, S_{b+1} branch | three-active reduction (CHECKED); scans close 24 ≤ b ≤ 64 (PROPOSED) | as stated | HHO-LEM-2XB-REDUCTION; HHO-NUM-2XB-SCAN |
 | G10 Classification inputs | Hiss–Malle 2001 with 2002 corrigenda; GT08; GT12 Cor. 1.6; CTblLib 1.3.7 data; Katz–Tiep §16 | external inputs, not re-proved | — |
-| G11 Supplier (L) | PO-4: every local monodromy conjugate to its inverse ⇒ (L) | as in HCG v0.2 §6.11 | — |
+| G11 Supplier (L) | PO-4: every local monodromy conjugate to its inverse ⇒ (L) | as in HCG ledger §6.11 (`HCG-THM-PO4`; THIRD-FAMILY CHECKED on the v1 text since `hcg-v0.3`) | — |
 | G12 Cup to polarization | moving the parabolic-cup class to the polarized abelian factor needs the cup–polarization identification; established for W5 only | requirement | HHO-SG-4; HHO-OPEN-SUPPORT-TRANSFER |
 
 **Local tools added by the HHO conversation.** They refine G4 and are not gates of their own.
@@ -56,15 +56,16 @@ G1–G10 form the (H)-scoped screening catalogue: they include necessary equatio
 | Sector module (Jacobian-induced class) | at an inert p, ε_p ≡ ℓ_S(A_χ) (mod 2) in rank 8, with A_χ = e_χM_R/L_χ, when the reduction of χ is absolutely irreducible (the length itself is v_p(det h_W)); for a G-cover the block component of H¹(C, ℤ_p) is Ω(Q_B) ⊕ projective | HHO-LEM-SECTOR; HHO-THM-COVER-BLOCK |
 | Projective case | irreducible reduction, block without the trivial module, no local monodromy of order divisible by p ⇒ v_p(det h_W) even in rank 8; no locality | HHO-COR-PROJ-EVEN |
 | Severn's factor | the support bound applies to A_σ if Severn's definitions are as HCG reads them | HHO-LEM-B2 (conditional); HHO-OPEN-SUPPORT-TRANSFER |
+| Witt boundary gate (parabolic-cup class) | a nonsplit class gives w(T) = Σ_e dim V^{⟨g_e⟩} − Σ_v dim V^{H_v} ≤ 3 for every marking in the braid orbit and every trivalent tree; split: ≤ 4. Conditional on the isotropy of W₀ at every boundary point and the admissible-cover dual-graph description; a consistency gate, not a test of (D); all recorded data agree | HHO-COR-WITT-GATE; HHO-NUM-WITT-C6, HHO-NUM-WITT-PLANAR, HHO-NUM-WITT-PLANAR-SINGLE |
 
 ## 3. Dimension statements
 
 | Statement | Hypotheses | State | Record |
 |---|---|---|---|
-| A nonsplit dominant datum needs **d ≥ 53**. | (H); gates G3–G10 with the inputs of G10; G12 where the class is read as a polarization discriminant | CHECKED, source-conditional | HHO-THM-R1; Δ27 add. 17 |
-| No nonsplit datum for d ≤ 14. | (H); Theorem R | CHECKED | Δ27 add. 5 |
-| d = 7, 8, 9, 11 are excluded. | the Δ27 hypotheses | CHECKED | Δ27 add. 4 |
-| d = 6: `HCG-COR-D6-NONSPLIT-NOGO` | (H) | CHECKED | Δ27 add. 1–2 |
+| A nonsplit dominant datum needs **d ≥ 53**. | (H); gates G3–G10 with the inputs of G10; G12 where the class is read as a polarization discriminant | CHECKED, source-conditional; **pending in HCG** (HCG's OPEN 11 covers d ≥ 15) | HHO-THM-R1; Δ27 add. 17 |
+| No nonsplit datum for d ≤ 14. | (H); Theorem R | CHECKED; adopted in HCG | `HCG-COR-NONSPLIT8-D14` (ledger §6.25 (g)); Δ27 add. 5 |
+| No datum at all for d = 7, 8, 9, 10, 11. | (H) | CHECKED; adopted in HCG | `HCG-LEM-NONSPLIT8-NORMAL-REFL` (ledger §6.25 (d)); Δ27 add. 3–4. d = 10 was already excluded in Δ27 add. 4 (ii), through the induced bound; the `hho-v0.4` table omitted it |
+| d = 6: every datum has class [1] | (H) | CHECKED; adopted in HCG | `HCG-COR-D6-NONSPLIT-NOGO` (ledger §6.25 (b)); Δ27 add. 1–2 |
 
 **Re-derivations in the HHO conversation.** They are weaker than the rows above and are cross-checks only (register B.4):
 
@@ -80,9 +81,9 @@ All classes are parabolic-cup classes unless stated. "(D)" is the dominance cond
 
 | Datum | d | (L) | (D) | Class | What it shows | Record |
 |---|---|---|---|---|---|---|
-| G₃₄ / W5, 20 reflections | 6 | ✓ | ✓ on S_W5 | [1] | passes every gate and is split | HCG ledger v0.2 (adopted) |
-| C₆ separator (2⁵,3,4³,5) | 1 | ✗ | impossible | [2] | nonsplit is possible without (L) | `HCG-ALG-NONSPLIT8-C6-SEPARATOR` |
-| C₃ control (1⁵,2⁵) | 1 | ✓ | impossible | [1] | — | `HCG-ALG-NONSPLIT8-C3-CONTROL` |
+| G₃₄ / W5, 20 reflections | 6 | ✓ | ✓ on S_W5 | [1] | passes every gate and is split; w = 4 on its certificate tree | HCG ledger §§6.12–6.15 (adopted; `HCG-THM-G34D-SW5`); HHO-NUM-WITT-PLANAR |
+| C₆ separator (2⁵,3,4³,5) | 1 | ✗ | impossible | [2] | nonsplit is possible without (L) | `HCG-ALG-NONSPLIT8-C6-SEPARATOR` (pending in HCG); max w = 3 over all trees (HHO-NUM-WITT-C6) |
+| C₃ control (1⁵,2⁵) | 1 | ✓ | impossible | [1] | — | `HCG-ALG-NONSPLIT8-C3-CONTROL` (pending in HCG) |
 | G₂₆-type real witness, N = 6 | — | ✓ by PO-4 | impossible | [2] | (L) does not force split | HHO-NEG-LSEP |
 | C₆ (3⁸,1,5) and (3⁸,2,4) | 1 | not checked | impossible | [1] | the leaf criterion's prediction at p = 2 holds | HHO-NUM-C6-LEAF |
 | C₃ × F₂₀, χ = ω ⊗ 1, N = 13 | 1 | not checked | fails | [1], with m(ψ) = 43 odd | refutes the Neighbour Parity Law; a Brauer neighbour's multiplicity is not a discriminant invariant | HHO-NEG-NPL-C3F20 |
