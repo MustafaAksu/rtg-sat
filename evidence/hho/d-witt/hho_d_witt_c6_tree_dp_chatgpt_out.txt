@@ -1,0 +1,5 @@
+C6 separator [2]: all 2027025 labelled trivalent trees; W0 min/max = 0/3; maximal witness edges=3, vertices=0; all 10 roots PASS
+C6 leaf A [1]: all 2027025 labelled trivalent trees; W0 min/max = 0/4; maximal witness edges=4, vertices=0; all 10 roots PASS
+C6 leaf B [1]: all 2027025 labelled trivalent trees; W0 min/max = 0/4; maximal witness edges=4, vertices=0; all 10 roots PASS
+negative control: product-one violation rejected
+ALL PASS — graph Euler/W0 calculation; not a (D) dominance test
