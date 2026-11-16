@@ -47,7 +47,7 @@
 
 ## 6. Adoption manifest
 
-**Status: ADOPTED (2026-11-16).** SHA-256 at the **content commit** `6413a70ff72e2233ca8d943c6f5ed943ef66e5a5`. Files not listed are inherited unchanged from `coil-v0.10`.
+**Status: ADOPTED (2026-11-16).** SHA-256 at the **content commit** `0e7a931b0e116c707bf0a2308d957cae622dd0da`. Files not listed are inherited unchanged from `coil-v0.10`.
 
 | File | SHA-256 |
 |---|---|
@@ -63,6 +63,6 @@
 | `evidence/coil/outputs/offcluster_object_check.txt` | `055427a4645a28e94c1f01c54b35bb962d23104c9a060eea2cb72928901e1fab` |
 | `evidence/coil/outputs/monodromy_hardened_check.txt` | `12c6385fb2d0cc798a1b2c22fceaaf04370f1a6dcbc97e8c2225540144f7cc3f` |
 | `evidence/coil/outputs/SHA256SUMS` | `657b8fb939815b7ee3b03ddbbfc1c190eb566e898cfdf31a974590235b381c40` |
-| `REGISTRY.md` | `0000000000000000000000000000000000000000000000000000000000000000` |
+| `REGISTRY.md` | `ae62af52a160254a56b525ec07d6bc52e72335ff39d1eccbe441ea82619e1624` |
 
 **Adoption scope (PI, 2026-11-16):** the files above as they stand at the content commit; everything else inherited from `coil-v0.10`; tag `coil-v0.11`. **Limits of effect:** M1 adopts maintenance only; by S1 (a) the two notes remain reviewed `[SESSION]` working records and no statement in them is an adopted COIL result; the hardened check is a maintenance tool, not a certificate; Charter §9.4 and §10.4 (S-5) unchanged; no preregistration opened or changed; nothing enters `rtg-corpus` by this adoption.
