@@ -1,0 +1,19 @@
+# Witt boundary gate, planar family of the recorded marking (preregistered)
+W5: N=20, dim V=6; certificate tree w = 4; planar max/min = 4/4  (prediction: 4 and 4)
+W6: N=20, dim V=6; certificate tree w = 4; planar max/min = 4/4  (prediction: 4 and 4)
+W7: N=20, dim V=6; certificate tree w = 4; planar max/min = 4/4  (prediction: 4 and 4)
+G(6,1,6) P1: N=20; planar max/min = 3/3  (prediction: max <= 3)
+G(6,1,6) P2: N=20; planar max/min = 3/3  (prediction: max <= 3)
+G(6,1,6) P3: N=20; planar max/min = 3/3  (prediction: max <= 3)
+G(6,1,6) Q0: N=20; planar max/min = 4/4  (observation only)
+G(6,1,6) Q2: N=20; planar max/min = 4/4  (observation only)
+C3xF20 [(2, (2, 1)), (0, (1, 2)), (2, (1, 2)), (2, (3, 3))]: class [5]; values over the three trees [0, 0, 0, 0]; max 0  (prediction: max <= 3)  [convention 0, order as recorded]
+C3xF20 [(1, (2, 2)), (0, (1, 2)), (1, (4, 2)), (1, (2, 0))]: class [5]; values over the three trees [0, 0, 0, 0]; max 0  (prediction: max <= 3)  [convention 0, order as recorded]
+C3xF20 [(2, (2, 0)), (2, (2, 0)), (2, (4, 1)), (0, (1, 1))]: class [5]; values over the three trees [0, 0, 0, 0]; max 0  (prediction: max <= 3)  [convention 0, order as recorded]
+C3xF20, the 27 tuples of class [1] and signature (4,4): counts by (N, max w) = {(4, 0): 4, (4, 1): 6, (4, 2): 5, (4, 4): 1, (5, 1): 3, (5, 2): 3, (5, 3): 3, (5, 4): 2}  (observation only; N = 4: all three trees; N = 5: the five planar trees)
+program check [W5]: 300 random planar trees evaluated directly, values [4]
+program check [G(6,1,6) P1]: 300 random planar trees evaluated directly, values [3]
+program check [G34 reflections]: dynamic programme = explicit enumeration on 40 random product-one markings, N in 4..9: PASS
+program check [G(6,1,6) generators]: dynamic programme = explicit enumeration on 40 random product-one markings, N in 4..9: PASS
+program check [C3 x F20]: dynamic programme = explicit enumeration on 40 random product-one markings, N in 4..9: PASS
+DONE

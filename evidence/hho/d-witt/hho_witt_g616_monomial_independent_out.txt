@@ -1,0 +1,6 @@
+P1: N=20, all Catalan(18)=477638700 planar trees; w min/max=3/3; maximal witness edges=75, vertices=72 PASS
+P2: N=20, all Catalan(18)=477638700 planar trees; w min/max=3/3; maximal witness edges=75, vertices=72 PASS
+P3: N=20, all Catalan(18)=477638700 planar trees; w min/max=3/3; maximal witness edges=73, vertices=70 PASS
+Q0: N=20, all Catalan(18)=477638700 planar trees; w min/max=4/4; maximal witness edges=76, vertices=72 PASS
+Q2: N=20, all Catalan(18)=477638700 planar trees; w min/max=4/4; maximal witness edges=76, vertices=72 PASS
+ALL PASS: independent weighted-monomial invariant-graph method; not (D)
