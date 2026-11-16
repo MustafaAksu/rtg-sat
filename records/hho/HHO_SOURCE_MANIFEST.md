@@ -1,6 +1,6 @@
 # HHO — source manifest
 
-**Status of this file:** adopted by the PI on 14 Nov 2026 as the source manifest of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`). **§3.1 is the DRAFT for `hho-v0.5`** (pin `hcg-v0.6`); this status line is replaced at the publication commit of `hho-v0.5`. It is a record of sources and hashes. It adopts no source and no claim. Since `hho-v0.3`: §3.3 is added for the HCG pipe answer used as an input of HHO-LEM-B2; no hash and no source is changed.
+**Status of this file:** adopted by the PI on 16 Nov 2026 as the source manifest of `hho-v0.5` (`records/hho/HHO_v0.5_RELEASE_RECORD.md`). It is a record of sources and hashes. It adopts no source and no claim. Since `hho-v0.4`: §3.1 is re-pinned to `hcg-v0.6` (ledger hash and HCG states; the W5 certificate added); no other hash and no other source is changed.
 
 A hash certifies byte identity. It does not certify correctness, publication rights or review state.
 
@@ -25,7 +25,7 @@ No other intake exists yet. ChatGPT's own originals have not been uploaded.
 
 ### 3.1 HCG, at tag `hcg-v0.6`
 
-**Draft for `hho-v0.5`.** The tag is annotated (`42a203ee6189d35f97b6097476b79a6d8b50c72e`); it points to commit `34251e9b2ee110db34426b79fa0e26929d961563`. The previous pin was `hcg-v0.2` (commit `543d09387d6d5df79d38fcd549090350f994d4e3`). Every file below except the ledger is byte-identical at the two tags (`records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md` §2). Paths are under `evidence/hcg/` unless stated. Only the ledger is adopted in HCG. The other rows are placed files; where the adopted ledger records a result drawn from one of them, the HCG state says so.
+Pinned with `hho-v0.5`. The tag is annotated (`42a203ee6189d35f97b6097476b79a6d8b50c72e`); it points to commit `34251e9b2ee110db34426b79fa0e26929d961563`. The previous pin was `hcg-v0.2` (commit `543d09387d6d5df79d38fcd549090350f994d4e3`). Every file below except the ledger is byte-identical at the two tags (`records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md` §2). Paths are under `evidence/hcg/` unless stated. Only the ledger is adopted in HCG. The other rows are placed files; where the adopted ledger records a result drawn from one of them, the HCG state says so.
 
 | Used for | Path | SHA-256 | HCG state |
 |---|---|---|---|

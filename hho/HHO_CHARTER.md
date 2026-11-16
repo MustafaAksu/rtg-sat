@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the "HHO Hurwitz–Hodge obstruction research" conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** adopted by the PI on 14 Nov 2026 as the governance text of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.4`.
+**Status of this file:** adopted by the PI on 16 Nov 2026 as the governance text of `hho-v0.5` (`records/hho/HHO_v0.5_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.5`.
 
 ## 0. Scope guard
 
@@ -66,12 +66,13 @@ Choosing P1 is a research priority. It adopts no claim.
 
 ## 3. Editions
 
-- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.4`.
+- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.5`.
 - Order of a release: decision, release record, merge, tag. A merge, a tag or a passing check is not an adoption.
 - The first release `hho-v0.1` contains this charter, the claim register and the source manifest. It is a register edition: it adopts no claim row.
 - `hho-v0.2` adds the placed evidence in `evidence/hho/` and two live summaries, `hho/HHO_GATES.md` and `hho/HHO_SUPPORT_RESULTS.md`. It is a register edition too.
 - `hho-v0.3` adds three conditional rows for the bridge B1 between the parabolic-cup form and the Jacobian-induced multiplicity form (register B.5). It is a register edition too.
 - `hho-v0.4` adds the conditional bridge B2 to Severn's polarized factor and nine rows that describe the parity at inert primes of positive defect by the sector module of the integral cup lattice (register B.6, B.7). It is a register edition too.
+- `hho-v0.5` re-pins HCG from `hcg-v0.2` to `hcg-v0.6` (§5.1) and adds the conditional Witt boundary gate with three numerical rows (register B.8). It is a register edition too.
 
 ## 4. Grades, review states, identifiers
 

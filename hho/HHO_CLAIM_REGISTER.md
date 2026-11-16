@@ -1,6 +1,6 @@
 # HHO — claim register
 
-**Status of this file:** **DRAFT for `hho-v0.5`** (`records/hho/HHO_v0.5_RELEASE_RECORD.md`, draft), prepared on the PI instruction of 16 Nov 2026; not adopted. The governing edition is `hho-v0.4`. No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.4`: the HCG pin moves from `hcg-v0.2` to `hcg-v0.6` (reading rules, evidence abbreviations, calibration line, B.4); section B.8 (four rows on the Witt boundary gate) is added; two open items are added in Part D and the notes of two others are brought up to date. No row that existed in `hho-v0.4` was regraded or promoted.
+**Status of this file:** adopted by the PI on 16 Nov 2026 as the claim register of `hho-v0.5`, **as a register only** (`records/hho/HHO_v0.5_RELEASE_RECORD.md`). No row is ACCEPTED. Every row keeps the review state written here. Since `hho-v0.4`: the HCG pin moves from `hcg-v0.2` to `hcg-v0.6` (reading rules, evidence abbreviations, calibration line, B.4); section B.8 (four rows on the Witt boundary gate) is added; two open items are added in Part D and the notes of two others are brought up to date. No row that existed in `hho-v0.4` was regraded or promoted.
 
 **Reading rules.**
 - Grades and review states are defined in `hho/HHO_CHARTER.md` §4. They are separate axes.

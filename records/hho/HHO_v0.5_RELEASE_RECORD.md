@@ -1,6 +1,6 @@
 # HHO v0.5 — release record
 
-**Status:** **DRAFT r2** (review corrections R1, R2 applied, §5), prepared on 16 Nov 2026 for PI decision. Not adopted. The governing edition is `hho-v0.4`.
+**Status:** **ADOPTED** by the PI on 16 Nov 2026, 19:14 +03:00 (§8), as a register edition, in the text of draft r2 (approved payload commit `8b4151f`). Published by the publication commit of §10. **Governing edition from its tag:** `hho-v0.5`.
 
 **Release:** fifth repository edition of the HHO study. If adopted, it supersedes `hho-v0.4` as the governing edition.
 
@@ -114,7 +114,7 @@ Co-owner review: PR #81, review `5922469673` at `329556b`, "ACCEPT AS A DRAFT RE
 | Id | Review point | Applied |
 |---|---|---|
 | R1 | The quantifier of the Witt gate must run over marking–tree pairs **realized as boundary points of the specified Hurwitz component**. The C₆ row must distinguish full braids from pure braids. | `HHO-COR-WITT-GATE`: the claim quantifies over realized pairs, and the realizability is part of (b); grade wording and state as proposed by the review ("CHECKED (the implication only)"). `HHO-NUM-WITT-C6`: the braid convention is stated, and the realized trees are referred to (b). `HHO-NUM-WITT-PLANAR`: the same reference to (b). The gate row of `hho/HHO_GATES.md` and §3.2 here follow. |
-| R2 | The status header of the source manifest must distinguish the draft and be updated at publication, with its hash in the manifest of §7 | The header now says that §3.1 is the draft for `hho-v0.5`. At the publication commit it is replaced and its hash enters §7. |
+| R2 | The status header of the source manifest must distinguish the draft and be updated at publication, with its hash in the manifest of §7 | In r2 the header said that §3.1 is the draft for `hho-v0.5`. At the publication commit (§10) it is replaced, the draft sentence of §3.1 is removed, and the hash is in §7. |
 
 **Kept unchanged on purpose:** `HHO_D_SOURCE_READING_CLAUDE.md`. Its "new at v0.5" for d = 10 and its "every ordering lies in one braid orbit" (§4.5) are corrected here and in the register, not rewritten in the note.
 
@@ -129,7 +129,35 @@ Co-owner review: PR #81, review `5922469673` at `329556b`, "ACCEPT AS A DRAFT RE
 
 ## 7. Adoption manifest
 
-To be completed at the publication commit, with the SHA-256 of every file of §2, as in `hho-v0.4`.
+**Status: ADOPTED (2026-11-16).** SHA-256 of the bytes in the publication commit (§10).
+
+| File | Role | SHA-256 |
+|---|---|---|
+| `hho/HHO_CHARTER.md` | charter (governance text; no scientific claim) | `7429d5c1b6d09a0088b7966b1f8c1f1105620efb253cbe25f0d99c58cb2560ce` |
+| `hho/HHO_CLAIM_REGISTER.md` | claim register (adopted as a register; no row ACCEPTED) | `55b85bb0b95f8b0e8121ef28728913e860408f79edcbd082e72167df976f8e04` |
+| `hho/HHO_GATES.md` | live summary: gates, bounds, calibration objects | `4abf34c845c41e7c4c14178f7ebd203a70ddfd8560acd5f42ea40113ce16fd00` |
+| `hho/HHO_SUPPORT_RESULTS.md` | live summary: support results, bridges, positive-defect primes | `468152b1a4c92516062b358d16537d1a4d028598bd2c93f66cc6d9c4e9c71906` |
+| `records/hho/HHO_SOURCE_MANIFEST.md` | source manifest (§3.1 at `hcg-v0.6`) | `e42a26f584761bf6fc6e66ab347158a52d5de7bbb3a8ccfd1be21e15d60d48cb` |
+| `evidence/hho/SHA256SUMS` | index of the 54 placed evidence files (unchanged since `hho-v0.2`) | `e042d035534ca134ffed143eba41d97895dbe3de83ec5e6fec91db9ca77a5ae6` |
+| `evidence/hho/b1/SHA256SUMS` | index of the three B1 files (unchanged since `hho-v0.3`) | `340c812af34e3b47ed37f47b6eeb6e4024e2f90dbde7d1876fe9d777a87d8fac` |
+| `evidence/hho/posdefect/SHA256SUMS` | index of the ten positive-defect files (unchanged since `hho-v0.4`) | `705de5115a7157ed55ab9276ce03dbace93eec1f3010edfaa29a41ea239bb3af` |
+| `evidence/hho/d-witt/SHA256SUMS` | index of the ten Witt-graph scripts and outputs (new in this edition) | `1cec53e7bb5bd0a6b5ee1eff17c3f8cc4e7aab65568b086a03907b17911ef68f` |
+| `evidence/hho/README.md` | guide to the evidence folder | `9fed0f76ef2d75b8cfda28fe2ac5e96169ad71ad40b04b346b698dbf761139fa` |
+| `upload/hho/SHA256SUMS` | index of the 57 uploaded source files (unchanged since `hho-v0.1`) | `50417fca3c82ad7a487d0c986047ecb002d86aa5f5cbffe087672df33d60b410` |
+| `records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md` | session record: HCG consumer comparison | `e656342e0856223d8665672f39d0b40056446c784ba4d05f219abb91555d3516` |
+| `records/hho/HHO_D_SOURCE_READING_CLAUDE.md` | session record: (D) source reading, Witt bound, dual-graph formula | `bf318beb4d1e5c2607364ea75dc37d5a58383a4cee18da1866074f2fe01c4c18` |
+| `records/hho/HHO_D_WITT_GRAPH_REVIEW_CHATGPT.md` | session record: review of the dual-graph formula | `6b978fb0be1f4c543cd71245a10f1f8de0bb99178b28ef4c55c4b861a2d77b59` |
+| `records/hho/HHO_WITT_GATE_PREREGISTRATION_CLAUDE.md` | session record: preregistration of the planar run | `ddb91f9c7904618202d26bd39f7b883b1eed276a0573e5bd77c77003a320902d` |
+| `records/hho/HHO_WITT_GATE_RESULTS_CLAUDE.md` | session record: results of the planar run | `ee0707f232a2d96af5e9d96a8e5d19fe943c3900223f86ffb0d79212ccf3b32b` |
+| `records/hho/HHO_WITT_GATE_PR78_CHATGPT_REVIEW.md` | session record: independent W5 and G(6,1,6) checks | `a919772f22bd792409291cafe78fe16166ab7793022c8649092ec49481b58a90` |
+| `pipes/HHO/20261116-HCG-v0.6-release.md` | received notice, dispositioned | `9d6643cb2c85f7dc85ef415d3c0f7f1c71f30b4ccf70b338a79a890ccda3dd10` |
+
+`REGISTRY.md`: only the single line of the `hho` study is hashed, with its line feed, because other studies change the same file: `2b0d608367d2df7f529efd4d72b4ffa5b4c7a0e15a160a8927a60c4f06a163a2`.
+
+- The evidence files are adopted as **evidence as it stands**, not as claims.
+- The six session records are listed because the new rows cite them. They are not adopted as claims; the register rows carry the grade and the state.
+- HCG material that is pending at the pin stays pending for HHO.
+- The SHA-256 of this record is stated in the tag message, not here.
 
 ## 8. Checks and decisions
 
@@ -155,8 +183,8 @@ To be completed at the publication commit, with the SHA-256 of every file of §2
 | Preparation of the `hho-v0.5` draft: comparison note, register draft, PR for review, then PI decision | PI, 16 Nov 2026, 17:10 +03:00 | "önerin uygun onaylıyorum" |
 | Co-owner review of this record | ChatGPT HHO owner session | PR #81, review `5922469673` at `329556b`: accept as a draft register edition with R1, R2 (§5); supports the pin `hcg-v0.6`; recommends option (i) for the `hho-v0.4` tag |
 | `hho-v0.4` tag defect (§9) | PI, 16 Nov 2026, 18:45 +03:00 | "tag değişmeden kalsın" — the tag stays unchanged: option (i) |
-| Adoption of `hho-v0.5`, including the pin `hcg-v0.6` | PI | pending |
-| Publication | PI | the PI merges with a merge commit and creates the annotated tag |
+| Adoption of `hho-v0.5`, including the pin `hcg-v0.6`, with the scope of §§1–6 | PI, 16 Nov 2026, 19:14 +03:00 | "evet benimsiyorum" — yes, I adopt it; the answer to the question whether the PI adopts `hho-v0.5` with the pin `hcg-v0.6`. The text adopted is draft r2, commit `8b4151f9…` |
+| Publication | PI | the PI merges PR #81 with a merge commit and creates the annotated tag with the five lines of `CONVENTIONS.md` §2 |
 
 ## 9. A defect of the `hho-v0.4` tag, found while checking this draft
 
@@ -174,3 +202,25 @@ To be completed at the publication commit, with the SHA-256 of every file of §2
 - **(ii)** Re-create the annotated tag `hho-v0.4` on the same commit with a corrected message. This replaces a published tag object, and anyone who fetched the old one keeps it.
 
 **Decision: option (i)** (PI, 16 Nov 2026, 18:45 +03:00; §8). The tag object `0783844fdb5a75d83725453204bf518fbf153b0b` stays on `26e8ccae…`. The values above are the written source for the three missing fields. This is a documented historical deviation: the `sat_check` error on `hho-v0.4` stays visible and is not counted as a passing check. No checker exception is introduced. The `hho-v0.5` tag message will carry all lines of the template of `CONVENTIONS.md` §2.
+
+## 10. Publication step (applied on 16 Nov 2026)
+
+The sequence is: PI adoption decision → **one** publication commit → PI merge → annotated tag.
+
+The publication commit contains all of the following and nothing else:
+
+1. **Status lines of the five live files:** `hho/HHO_CHARTER.md`, `hho/HHO_CLAIM_REGISTER.md`, `hho/HHO_GATES.md`, `hho/HHO_SUPPORT_RESULTS.md` and `records/hho/HHO_SOURCE_MANIFEST.md`.
+   - In the charter, §3 is brought up to date: the governing edition is `hho-v0.5`, and one bullet describes this edition.
+   - In the manifest, the draft sentence at the head of §3.1 is replaced by "Pinned with `hho-v0.5`."
+   - No other text changes in these files.
+2. **`REGISTRY.md`, `hho` row:** the governing edition is `hho-v0.5`, with this record and the pin `hcg-v0.6`.
+3. **`pipes/HHO/20261116-HCG-v0.6-release.md`:** dispositioned (§11).
+4. **This record:** "DRAFT" removed; §7, §8, §10 and §11 completed.
+
+`main` was at `3cbf063` when the draft branch was made, and it has not moved since. The hashes of §7 are those of the files in the publication commit itself. This record cannot contain its own hash; the tag message states it.
+
+## 11. Pipe items handled with this release
+
+| Item | Action |
+|---|---|
+| `pipes/HHO/20261116-HCG-v0.6-release.md` | dispositioned: accept. The notice is taken into §4.1; the pin moves to `hcg-v0.6`. |
