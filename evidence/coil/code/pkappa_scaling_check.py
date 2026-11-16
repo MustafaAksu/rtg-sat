@@ -14,11 +14,15 @@ transverse linearisation d+ = d + s, s+ = (1-a) s - (a kappa/3)(2 + cos q) d):
 C3 is compared with the LOCKED transverse block exponents of RUN-MM1-ICID v1.0
 (evidence/coil/outputs/icid_results/icid_cell*_tri0_*.csv, column lam_perp_block, cluster ICs), which this
 script only reads. C1-C2 are compared with direct iteration of the in-cluster map.
+  C4  stability of the h = 0 transverse Hill (Lame) equation y_uu + [1 - (2m/3) sn^2(u|m)] y = 0, m = sin^2(A/2),
+      over its coefficient period 2K(m): |trace| < 2 is the condition under which C3 applies. Added after co-owner
+      reviews 5906961563 and of 16 Nov 2026, which found hyperbolic bands near kappa = 3.
 Writes ../outputs/pkappa_scaling_check.txt. Requires numpy, scipy.
 """
 import csv, glob, math, os, sys
 import numpy, scipy
-from scipy import integrate, optimize
+import numpy as np
+from scipy import integrate, optimize, special
 
 def bal(A, k):
     return integrate.quad(lambda x: (1 - k*math.cos(x))*math.sqrt(max(0.0, 2*k*(math.cos(x) - math.cos(A)))), -A, A, limit=200)[0]
@@ -80,7 +84,31 @@ for f in sorted(glob.glob(os.path.join(here, "..", "outputs", "icid_results", "i
     p = a*Lam(k)[0]; dev = max(abs(x - p)/p for x in v); worst3 = max(worst3, dev); n3 += len(v)
     P("  cell %2s  %s  kappa %.3f  n=%d  measured %.6e .. %.6e | a*Lam %.6e | max rel dev %.2e" % (R[0]['cell'], pair, k, len(v), min(v), max(v), p, dev))
 P("  values compared: %d; largest relative deviation: %.2e" % (n3, worst3))
-ok = worst1 < 5e-3 and worst3 < 3e-2 and n3 == 60
-P("\nRESULT:", "PASS" if ok else "FAIL", "(C1 within 0.5%, C3b within 3% on 60 locked values)")
+def kap_m(m):
+    K, E = special.ellipk(m), special.ellipe(m); return 3*(E - (1 - m)*K)/((2*m - 1)*E + (1 - m)*K)
+def hill_trace(m):
+    K = special.ellipk(m)
+    def f(u, y):
+        c = 1 - (2*m/3)*special.ellipj(u, m)[0]**2; return [y[1], -c*y[0], y[3], -c*y[2]]
+    y = integrate.solve_ivp(f, (0, 2*K), [1, 0, 0, 1], method='DOP853', rtol=1e-12, atol=1e-14).y[:, -1]
+    return y[0] + y[3]
+P("\nC4  Hill (Lame) monodromy trace over 2K(m); |trace| < 2 = stable band")
+c3k = sorted({1.5, 2.0, 2.6, 2.65, 2.75, 2.775, 2.8}); stable_c3 = True
+for k in c3k:
+    m = optimize.brentq(lambda m: kap_m(m) - k, 1e-6, 1 - 1e-9); t = hill_trace(m); stable_c3 &= abs(t) < 2
+    P("  C3b kappa %.3f  m %.6f  trace %+.6f  %s" % (k, m, t, "stable" if abs(t) < 2 else "HYPERBOLIC"))
+m = optimize.brentq(lambda m: kap_m(m) - 2.97, 0.99, 1 - 1e-9); t297 = hill_trace(m)
+P("  kappa 2.970  m %.10f  trace %+.10f  %s" % (m, t297, "stable" if abs(t297) < 2 else "HYPERBOLIC"))
+grid = 1 - np.logspace(-0.3, -9, 400); prev = None; edges = []
+for mm in np.concatenate((np.linspace(1e-4, 0.5, 60), grid)):
+    h = abs(hill_trace(mm)) > 2
+    if prev is not None and h != prev[1]: edges.append((prev[0], kap_m(mm), "enters" if h else "leaves"))
+    prev = (kap_m(mm), h)
+P("  scan of 460 m values: band edges (kappa bracket, hyperbolic band):")
+for e in edges: P("    %.8f .. %.8f  %s" % e)
+P("  first hyperbolic band starts above kappa = %.6f" % edges[0][0] if edges else "  no hyperbolic band found")
+ok4 = stable_c3 and abs(t297) > 2 and bool(edges) and edges[0][0] > 2.9
+ok = ok4 and worst1 < 5e-3 and worst3 < 3e-2 and n3 == 60
+P("\nRESULT:", "PASS" if ok else "FAIL", "(C1 within 0.5%; C3b within 3% on 60 locked values; C4 all C3b points in stable bands, kappa = 2.97 hyperbolic, first band above 2.9)")
 open(os.path.join(here, "..", "outputs", "pkappa_scaling_check.txt"), "w").write("\n".join(out) + "\n")
 print("\n".join(out)); sys.exit(0 if ok else 1)

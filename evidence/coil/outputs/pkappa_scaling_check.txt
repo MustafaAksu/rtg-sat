@@ -41,4 +41,22 @@ C3b transverse exponent, LOCKED ICID data against formula (cluster ICs; lam_perp
   cell 14  C  kappa 2.000  n=5  measured 2.461824e-02 .. 2.462153e-02 | a*Lam 2.471423e-02 | max rel dev 3.88e-03
   values compared: 60; largest relative deviation: 1.92e-02
 
-RESULT: PASS (C1 within 0.5%, C3b within 3% on 60 locked values)
+C4  Hill (Lame) monodromy trace over 2K(m); |trace| < 2 = stable band
+  C3b kappa 1.500  m 0.602349  trace -1.961966  stable
+  C3b kappa 2.000  m 0.840090  trace -1.705841  stable
+  C3b kappa 2.600  m 0.964466  trace -0.523101  stable
+  C3b kappa 2.650  m 0.970618  trace -0.318529  stable
+  C3b kappa 2.750  m 0.981471  trace +0.198851  stable
+  C3b kappa 2.775  m 0.983892  trace +0.357816  stable
+  C3b kappa 2.800  m 0.986198  trace +0.531970  stable
+  kappa 2.970  m 0.9986333269  trace +2.1068414918  HYPERBOLIC
+  scan of 460 m values: band edges (kappa bracket, hyperbolic band):
+    2.95074107 .. 2.95278447  enters
+    2.98170563 .. 2.98248828  leaves
+    2.99962197 .. 2.99963901  enters
+    2.99986344 .. 2.99986964  leaves
+    2.99999759 .. 2.99999770  enters
+    2.99999915 .. 2.99999919  leaves
+  first hyperbolic band starts above kappa = 2.950741
+
+RESULT: PASS (C1 within 0.5%; C3b within 3% on 60 locked values; C4 all C3b points in stable bands, kappa = 2.97 hyperbolic, first band above 2.9)
