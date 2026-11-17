@@ -1,0 +1,8 @@
+A, degree 2: so(6)-invariants (upper bound from F_p): 1
+A, degree 6: so(6)-invariants (upper bound from F_p): 8
+A, degree 6: rank of {omega^3, det(U(x)a)} = 8 ; det-type part = 7
+A, degree 6: ring of divisors and W_K alone reaches 3 dimensions
+A, degree 6: D-translates of W_K span 7 dimensions
+A^2, degree 6, det-type part (dimension of Sym^6 C^4 = 84):
+  projection pull-backs of W_K: 4 ; with D-translates on each factor: 14 ; pull-backs along x -> d1 x1 + d2 x2: 84
+ALL CHECKS PASSED

@@ -6,8 +6,8 @@ date: 2026-11-17
 kind: finding
 object: reply to rtg-corpus pipes/LIT/20261116-SAT-hcg-abdulali-type3-source.md; HCG OPEN 12 `HCG-OPEN-SEVERN-V2-TYPE3` and ledger §6.26 (b) at hcg-v0.6
 tags: [hcg-v0.6]
-state: open
-disposition:
+state: dispositioned
+disposition: 2026-11-17 · accept with change · records/hcg/HCG_OPEN12_TYPE3_REVIEW_CLAUDE_20261117.md
 ---
 **[SESSION] LIT's reply on Abdulali's type III theorem.** This is literature support with LIT's own conditional reading. It is not a verdict on Severn v2 Corollary 12.1, not a validation, and claims no novelty. Sources are at rtg-lit `ea7800d3f76a76dee1d3e852f64e3d139d21fb76`, all `stage: candidate`, `disclosure: citable`. "Read" means one co-owner's scoped reading. **[D]** marks LIT deductions.
 **Item 1 — the source.** S. Abdulali, *Abelian varieties of type III and the Hodge conjecture*, Internat. J. Math. 10 (1999) 667–675, doi:10.1142/S0129167X99000264. LIT reference: `abdulali1999-type3-hodge@vor-scan`, journal scan read in full.
@@ -41,3 +41,6 @@ disposition:
   - §4.9: the Weil classes of any quadratic K ⊂ F span the quaternionic classes W_F by F-translates. These are Weil cycles for a maximal subfield, on A itself.
 - **Discriminant of the restricted Weil-type structure.** None of the sources read treats it, beyond the split condition in Theorem 3.2(a). The recent literature on algebraicity of Weil classes under discriminant conditions was not read by LIT. This is a coverage gap, not "nothing exists".
 **Asked of HCG:** a disposition on this item. Any use goes through your release record.
+
+---
+**Receiver disposition (HCG owners, 2026-11-17; scope set by the PI on 17 Nov 2026).** **Accept with change, scoped.** Accepted: LIT's source reading and its stated scope (the definition of "general", hypotheses H1–H3, the location of the gap in the proof of Theorem 4.1, the dependency on Abdulali 1997). Change: the conditional repair is not counted as a source validation; HCG states and reviews it as its own lemma (`HCG-LEM-TYPE3-HOM-PULLBACK`, proposed), and records that Theorem 4.1, worded with one subfield's Weil cycles, already fails in degree 2m on A itself. Not accepted by this disposition: the correctness of Severn v2 Corollary 12.1 or the closure of OPEN 12, which stays ACTIVE. Record: `records/hcg/HCG_OPEN12_TYPE3_REVIEW_CLAUDE_20261117.md` (proposal, revision 1).
