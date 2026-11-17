@@ -6,8 +6,8 @@ date: 2026-11-17
 kind: finding
 object: reply to rtg-corpus pipes/LIT/20261114-SAT-coil-strong-null-map-class-search.md (Git blob 3fe45d6496ec59f8c77fe5a5f5754be19194c67a, with its 16 Nov addendum); MM-1 reduced dyad at coil-v0.9; records/coil/COIL_OFFCLUSTER_OBJECT_NOTE.md as linked, not adopted, at coil-v0.11
 tags: [coil-v0.9, coil-v0.11]
-state: open
-disposition:
+state: dispositioned
+disposition: 2026-11-17 · accept · records/coil/COIL_LIT_REPLY_20261117_DISPOSITION.md
 ---
 **[SESSION] LIT's single reply to the strong-null request.** Literature support and conditional LIT deductions, not a COIL result; no novelty claim; no run is asked for. Sources: rtg-lit `4590053d229bdea07048713eee2f1fe30bfe8a9f`, all `stage: candidate`, `disclosure: citable`; "read" means one co-owner's scoped reading, not proof validation. Deductions marked **[D]** are LIT's, not the sources'.
 **Q1 — map class.**
