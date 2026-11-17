@@ -38,22 +38,25 @@ ksep_waveform_comparison  python 3.13.18 numpy 2.5.3 scipy 1.18.1
   B3     | 2.74525 (g' 2.74525) | 2.75 | 0.00000 | 0.032
   B4     | 2.57297 (g' 2.57297) | 2.57 | 0.00000 | 0.035
 
-6. Coincidence count, d = 0.01 (threshold chosen after the data were seen): waveforms with a locked fracture-cell set
-   on [0.5, 8]; the ORTHO anchor is the same waveform as t = -0.140 and is counted once (TONGUESET entry).
-  t=-0.300 kappa_sep 3.04357  dist 0.03018  hit False  chance p 0.093
-  t=-0.220 kappa_sep 3.12441  dist 0.00184  hit True   chance p 0.066
-  t=-0.140 kappa_sep 2.89199  dist 0.00000  hit True   chance p 0.032
-  t=-0.060 kappa_sep 2.57636  dist 5.19239  hit False  chance p 0.003
-  A1       kappa_sep 3.31602  dist 0.03898  hit False  chance p 0.193
-  A2       kappa_sep 3.30708  dist 0.00792  hit True   chance p 0.125
-  A3       kappa_sep 2.66185  dist 1.93315  hit False  chance p 0.085
-  A4       kappa_sep 2.44415  dist 0.00085  hit True   chance p 0.061
-  B1       kappa_sep 3.04798  dist 0.00000  hit True   chance p 0.299
-  B2       kappa_sep 3.05210  dist 0.00000  hit True   chance p 0.085
-  B3       kappa_sep 2.74525  dist 0.00000  hit True   chance p 0.059
-  B4       kappa_sep 2.57297  dist 0.00000  hit True   chance p 0.059
-  observed hits 8 of 12; expected under chance 1.16; P(>= observed) = 6.81e-07 (independence assumed; post-hoc threshold)
-  stricter chance window [2.2, 3.4] (the range of the kappa_sep values): expected 1.14; P(>= 8) = 1.80e-07
-  per waveform, chance in [2.2, 3.4]: t=-0.300 0.071, t=-0.220 0.163, t=-0.140 0.040, t=-0.060 0.000, A1 0.079, A2 0.117, A3 0.000, A4 0.050, B1 0.388, B2 0.142, B3 0.050, B4 0.042
+6. Coincidence count, d = 0.01 (threshold chosen after the data were seen): waveforms with a locked fracture set on
+   [0.5, 8]; the ORTHO anchor is the same waveform as t = -0.140 and is counted once (TONGUESET entry).
+   Two definitions: (I) distance to nominal intervals (TONGUESET components as locked; ORTHO positive cells widened to
+   +-0.005); (P) distance to the measured positive kappa points (TONGUESET component end points; ORTHO positive cells).
+  t=-0.300 kappa_sep 3.04357  (I) dist 0.03018 hit False | (P) dist 0.03018 hit False | nearest component #1 of 46 | model p 0.093
+  t=-0.220 kappa_sep 3.12441  (I) dist 0.00184 hit True  | (P) dist 0.00184 hit True  | nearest component #2 of 26 | model p 0.066
+  t=-0.140 kappa_sep 2.89199  (I) dist 0.00000 hit True  | (P) dist 0.00074 hit True  | nearest component #1 of 11 | model p 0.032
+  t=-0.060 kappa_sep 2.57636  (I) dist 5.19239 hit False | (P) dist 5.19239 hit False | nearest component #1 of 1 | model p 0.003
+  A1       kappa_sep 3.31602  (I) dist 0.03898 hit False | (P) dist 0.04398 hit False | nearest component #3 of 103 | model p 0.193
+  A2       kappa_sep 3.30708  (I) dist 0.00792 hit True  | (P) dist 0.01292 hit False | nearest component #3 of 47 | model p 0.125
+  A3       kappa_sep 2.66185  (I) dist 1.93315 hit False | (P) dist 1.93815 hit False | nearest component #1 of 26 | model p 0.085
+  A4       kappa_sep 2.44415  (I) dist 0.00085 hit True  | (P) dist 0.00585 hit True  | nearest component #1 of 21 | model p 0.061
+  B1       kappa_sep 3.04798  (I) dist 0.00000 hit True  | (P) dist 0.00202 hit True  | nearest component #10 of 181 | model p 0.299
+  B2       kappa_sep 3.05210  (I) dist 0.00000 hit True  | (P) dist 0.00210 hit True  | nearest component #3 of 36 | model p 0.085
+  B3       kappa_sep 2.74525  (I) dist 0.00000 hit True  | (P) dist 0.00475 hit True  | nearest component #1 of 24 | model p 0.059
+  B4       kappa_sep 2.57297  (I) dist 0.00000 hit True  | (P) dist 0.00297 hit True  | nearest component #1 of 26 | model p 0.059
+  hits: (I) 8 of 12, (P) 7 of 12
+  (I) under a hypothetical independent-uniform model on [0.5, 8]: expected 1.16; P(>= 8) = 6.81e-07 -- arithmetic of that model only, not a calibrated significance
+  (I) same model on [2.2, 3.4] (the range of the kappa_sep values): expected 1.14; P(>= 8) = 1.80e-07 -- same caveat
+  per waveform, model p on [2.2, 3.4]: t=-0.300 0.071, t=-0.220 0.163, t=-0.140 0.040, t=-0.060 0.000, A1 0.079, A2 0.117, A3 0.000, A4 0.050, B1 0.388, B2 0.142, B3 0.050, B4 0.042
 
-RESULT: PASS (formula checks: sine = 3 to 1e-8; exact triangle = 1 + 4/pi to 1e-6). The comparison itself has no pass condition.
+RESULT: PASS (formula checks: sine = 3 and (1/2) sine with s = 1/2 = 3, to 1e-8; exact triangle = 1 + 4/pi to 1e-6). The comparison itself has no pass condition.

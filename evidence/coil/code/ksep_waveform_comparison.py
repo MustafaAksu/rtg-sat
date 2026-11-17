@@ -35,7 +35,8 @@ def ksep(g, dg=None, s=1.0):
     if dg is not None:
         p = lambda x: math.sqrt(2*max(W(x), 0.0))
         kG = s*integrate.quad(p, 0, math.pi, limit=400)[0]/integrate.quad(lambda x: dg(x)*p(x), 0, math.pi, limit=400)[0]
-    return kW/s if s != 1.0 else kW, kG
+    # kappa_sep scales with the normalisation s = g'(0): kappa_sep = s * (W-form value) (co-owner review 5945550412)
+    return s*kW, kG
 def harm(a3, a5, a7=0.0):
     g = lambda x: math.sin(x) + a3*(math.sin(3*x) - 3*math.sin(x)) + a5*(math.sin(5*x) - 5*math.sin(x)) + a7*(math.sin(7*x) - 7*math.sin(x))
     dg = lambda x: math.cos(x) + a3*(3*math.cos(3*x) - 3*math.cos(x)) + a5*(5*math.cos(5*x) - 5*math.cos(x)) + a7*(7*math.cos(7*x) - 7*math.cos(x))
@@ -109,31 +110,37 @@ for name in ("anchor", "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"):
     P("  %-6s | %.5f (g' %.5f) | %s | %s | %s" % (name, kW, kG, ("%.2f" % cells[0]) if cells else "none", ("%.5f" % d) if d is not None else "-", ("%.3f" % br) if br is not None else "-"))
     rows.append(("ortho", name, kW, "first fracture cell %s" % (("%.2f" % cells[0]) if cells else "none"), d))
 
-P("\n6. Coincidence count, d = 0.01 (threshold chosen after the data were seen): waveforms with a locked fracture-cell set")
-P("   on [0.5, 8]; the ORTHO anchor is the same waveform as t = -0.140 and is counted once (TONGUESET entry).")
+P("\n6. Coincidence count, d = 0.01 (threshold chosen after the data were seen): waveforms with a locked fracture set on")
+P("   [0.5, 8]; the ORTHO anchor is the same waveform as t = -0.140 and is counted once (TONGUESET entry).")
+P("   Two definitions: (I) distance to nominal intervals (TONGUESET components as locked; ORTHO positive cells widened to")
+P("   +-0.005); (P) distance to the measured positive kappa points (TONGUESET component end points; ORTHO positive cells).")
 sets = []
 for t in (-0.300, -0.220, -0.140, -0.060):
-    g, dg = harm(C/2 + t, C/2 - t); sets.append(("t=%+.3f" % t, ksep(g, dg)[0], tongues(t)))
+    g, dg = harm(C/2 + t, C/2 - t); sets.append(("t=%+.3f" % t, ksep(g, dg)[0], tongues(t), [x for c in tongues(t) for x in c]))
 for name in ("A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"):
     R = list(csv.DictReader(open(os.path.join(O, "ortho_results", "ortho_%s.csv" % name))))
     g, dg = harm(float(R[0]['a3']), float(R[0]['a5']), float(R[0]['a7']))
-    sets.append((name, ksep(g, dg)[0], [(float(r['kappa']) - 0.005, float(r['kappa']) + 0.005) for r in R if r['fracture'] == 'True']))
-ps, hits = [], 0
-for lab, k, comps in sets:
-    d = near(k, comps); pi = measure_within(comps, 0.01); ps.append(pi); h = d <= 0.01; hits += h
-    P("  %-8s kappa_sep %.5f  dist %.5f  hit %-5s  chance p %.3f" % (lab, k, d, h, pi))
+    pts = [float(r['kappa']) for r in R if r['fracture'] == 'True']
+    sets.append((name, ksep(g, dg)[0], [(c - 0.005, c + 0.005) for c in pts], pts))
+ps, hits, hitsP = [], 0, 0
+for lab, k, comps, pts in sets:
+    d = near(k, comps); dp = min(abs(k - x) for x in pts); pi = measure_within(comps, 0.01); ps.append(pi)
+    h = d <= 0.01; hp = dp <= 0.01; hits += h; hitsP += hp
+    nc = min(range(len(comps)), key=lambda i: 0.0 if comps[i][0] <= k <= comps[i][1] else min(abs(k - comps[i][0]), abs(k - comps[i][1])))
+    P("  %-8s kappa_sep %.5f  (I) dist %.5f hit %-5s | (P) dist %.5f hit %-5s | nearest component #%d of %d | model p %.3f" % (lab, k, d, h, dp, hp, nc + 1, len(comps), pi))
+P("  hits: (I) %d of %d, (P) %d of %d" % (hits, len(sets), hitsP, len(sets)))
 # Poisson-binomial tail P(hits >= observed) under independent chance placement
 dist = np.zeros(len(ps) + 1); dist[0] = 1.0
 for pi in ps:
     dist[1:] = dist[1:]*(1 - pi) + dist[:-1]*pi; dist[0] *= (1 - pi)
-P("  observed hits %d of %d; expected under chance %.2f; P(>= observed) = %.2e (independence assumed; post-hoc threshold)" % (hits, len(ps), sum(ps), dist[hits:].sum()))
-ps2 = [measure_within(comps, 0.01, 2.2, 3.4) for lab, k, comps in sets]
+P("  (I) under a hypothetical independent-uniform model on [0.5, 8]: expected %.2f; P(>= %d) = %.2e -- arithmetic of that model only, not a calibrated significance" % (sum(ps), hits, dist[hits:].sum()))
+ps2 = [measure_within(comps, 0.01, 2.2, 3.4) for lab, k, comps, pts in sets]
 dist = np.zeros(len(ps2) + 1); dist[0] = 1.0
 for pi in ps2:
     dist[1:] = dist[1:]*(1 - pi) + dist[:-1]*pi; dist[0] *= (1 - pi)
-P("  stricter chance window [2.2, 3.4] (the range of the kappa_sep values): expected %.2f; P(>= %d) = %.2e" % (sum(ps2), hits, dist[hits:].sum()))
-P("  per waveform, chance in [2.2, 3.4]: " + ", ".join("%s %.3f" % (lab, pi) for (lab, k, c), pi in zip(sets, ps2)))
-ok = abs(ksep(math.sin, math.cos)[0] - 3) < 1e-8 and abs((2/math.pi)*kWt - (1 + 4/math.pi)) < 1e-6
-P("\nRESULT:", "PASS" if ok else "FAIL", "(formula checks: sine = 3 to 1e-8; exact triangle = 1 + 4/pi to 1e-6). The comparison itself has no pass condition.")
+P("  (I) same model on [2.2, 3.4] (the range of the kappa_sep values): expected %.2f; P(>= %d) = %.2e -- same caveat" % (sum(ps2), hits, dist[hits:].sum()))
+P("  per waveform, model p on [2.2, 3.4]: " + ", ".join("%s %.3f" % (lab, pi) for (lab, k, c, x), pi in zip(sets, ps2)))
+ok = abs(ksep(lambda x: 0.5*math.sin(x), lambda x: 0.5*math.cos(x), s=0.5)[0] - 3) < 1e-8 and abs(ksep(math.sin, math.cos)[0] - 3) < 1e-8 and abs((2/math.pi)*kWt - (1 + 4/math.pi)) < 1e-6
+P("\nRESULT:", "PASS" if ok else "FAIL", "(formula checks: sine = 3 and (1/2) sine with s = 1/2 = 3, to 1e-8; exact triangle = 1 + 4/pi to 1e-6). The comparison itself has no pass condition.")
 open(os.path.join(O, "ksep_waveform_comparison.txt"), "w").write("\n".join(out) + "\n")
 sys.exit(0 if ok else 1)
