@@ -4,7 +4,7 @@
 
 **Owners:** the Claude and ChatGPT sessions of the "HHO Hurwitz–Hodge obstruction research" conversation. **PI:** Mustafa Aksu, who decides adoption.
 
-**Status of this file:** adopted by the PI on 14 Nov 2026 as the governance text of `hho-v0.4` (`records/hho/HHO_v0.4_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.4`.
+**Status of this file:** adopted by the PI on 16 Nov 2026 as the governance text of `hho-v0.5` (`records/hho/HHO_v0.5_RELEASE_RECORD.md`); first adopted with `hho-v0.1`. It carries no scientific claim. **Governing edition:** `hho-v0.5`.
 
 ## 0. Scope guard
 
@@ -66,12 +66,13 @@ Choosing P1 is a research priority. It adopts no claim.
 
 ## 3. Editions
 
-- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.4`.
+- The governing edition is the latest adopted tag `hho-v<version>` with its release record (`CONVENTIONS.md` §2). It is `hho-v0.5`.
 - Order of a release: decision, release record, merge, tag. A merge, a tag or a passing check is not an adoption.
 - The first release `hho-v0.1` contains this charter, the claim register and the source manifest. It is a register edition: it adopts no claim row.
 - `hho-v0.2` adds the placed evidence in `evidence/hho/` and two live summaries, `hho/HHO_GATES.md` and `hho/HHO_SUPPORT_RESULTS.md`. It is a register edition too.
 - `hho-v0.3` adds three conditional rows for the bridge B1 between the parabolic-cup form and the Jacobian-induced multiplicity form (register B.5). It is a register edition too.
 - `hho-v0.4` adds the conditional bridge B2 to Severn's polarized factor and nine rows that describe the parity at inert primes of positive defect by the sector module of the integral cup lattice (register B.6, B.7). It is a register edition too.
+- `hho-v0.5` re-pins HCG from `hcg-v0.2` to `hcg-v0.6` (§5.1) and adds the conditional Witt boundary gate with three numerical rows (register B.8). It is a register edition too.
 
 ## 4. Grades, review states, identifiers
 
@@ -127,10 +128,11 @@ HHO keeps two separate axes.
 
 ### 5.1 HCG
 
-HCG has the adopted edition `hcg-v0.2`. Only its session ledger v0.2 is adopted (`records/hcg/HCG_v0.2_RELEASE_RECORD.md`).
+HHO's pin of HCG is `hcg-v0.6` (from `hho-v0.5`; before that `hcg-v0.2`). In each HCG edition only the session ledger is adopted (`records/hcg/HCG_v0.6_RELEASE_RECORD.md`), scoped, with no claim ACCEPTED. The consumer comparison is `records/hho/HHO_HCG_REPIN_COMPARISON_CLAUDE.md`.
 
 - **How HHO cites HCG.** By tag, path and SHA-256, with the state the file has in HCG.
-- **Pending material.** Everything in HCG's Δ24–Δ29 is "placed at `hcg-v0.2`, pending in HCG, not adopted". This includes the locality theorem, the induced-period bound, the dimension screens of Δ27 and the HHO opening note.
+- **Adopted at the pin.** The parts of Δ24–Δ27 that the ledger records: among them the boundary Witt bound (§6.23), the locality theorem and the induced-period bound (§6.24) and the d ≤ 14 results of Δ27 addenda 1–5 (i) (§6.25).
+- **Pending material.** The rest of Δ27 (from addendum 5 (ii) on, including the bounds from d ≥ 25 to d ≥ 53), Δ28 (the HHO opening note) and Δ29 are "placed, pending in HCG, not adopted".
 - **No upgrade by citation.** An HCG theorem, definition, engine or certificate does not gain HHO grade because HHO uses it. A result that depends on it is graded `[THM-cond: …]`.
 - **The HHO track made in the HCG conversation.** The opening note and its founding documents are stored in `evidence/hcg/` as dated source evidence. Their scientific custody is with HHO (`hcg/HCG_CHARTER.md` §5). HHO cites them there and does not copy them.
 - **HHO → HCG.** An HHO result enters HCG only with all three of: an explicit disposition by the HCG owners, PI adoption, and an HCG release that records the import.
