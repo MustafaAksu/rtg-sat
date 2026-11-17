@@ -1,0 +1,59 @@
+ksep_waveform_comparison  python 3.13.18 numpy 2.5.3 scipy 1.18.1
+
+1. Checks of the formula
+  sine: W-form 3.0000000000  g'-form 3.0000000000  (expected 3)
+  R1 (2/pi) asin(0.99 sin phi), s = 0.630254: W-form kappa_sep = s * value = 2.3293949525
+  exact triangle, s = 2/pi: kappa_sep = 2.2732395447   closed form 1 + 4/pi = 2.2732395447
+
+2. Smooth-triangle holdout (locked): q | kappa_near | kappa_sep (W / g') | err | pre-locked kappa_pred | err
+  0.8750 | 2.58803 | 2.580432 / 2.580432 | -0.00760 | 2.62803 | +0.04000
+  0.9125 | 2.53556 | 2.521062 / 2.521062 | -0.01450 | 2.54056 | +0.00500
+  0.9475 | 2.43971 | 2.452426 / 2.452426 | +0.01272 | 2.43471 | -0.00500
+  0.9675 | 2.36910 | 2.403354 / 2.403354 | +0.03425 | 2.35410 | -0.01500
+  mean |err|: kappa_sep 0.01727   pre-locked predictor 0.01625
+
+3. Smooth-triangle birth/boundary (locked): q | status | window centre | kappa_sep
+  0.8350 | ABSENT  | 2.69817 | 2.633537
+  0.8450 | ABSENT  | 2.68048 | 2.621052
+  0.8500 | PRESENT | 2.67134 | 2.614626
+  0.8550 | PRESENT | 2.66199 | 2.608070
+  0.8750 | PRESENT | 2.62803 | 2.580432
+
+4. ISOA / TONGUESET family g_t (locked components, kappa in [0.5, 8]): t | kappa_sep | first component | nearest dist | base rate
+  -0.300 | 3.04357 (g' 3.04357) | [3.07375, 3.07875] | 0.03018 | 0.157
+  -0.220 | 3.12441 (g' 3.12441) | [3.08875, 3.09375] | 0.00184 | 0.040
+  -0.140 | 2.89199 (g' 2.89199) | [2.89125, 2.89375] | 0.00000 | 0.012
+  -0.060 | 2.57636 (g' 2.57636) | [7.76875, 7.77125] | 5.19239 | 0.723
+  +0.000 | 2.34521 (g' 2.34521) | none in [0.5, 8] | - | -
+  +0.008 | 2.31583 (g' 2.31583) | none in [0.5, 8] | - | -
+
+5. ORTHO arms (locked; coefficients read from the CSV): name | kappa_sep | first fracture cell | nearest dist | base rate
+  anchor | 2.89199 (g' 2.89199) | 2.90 | 0.00301 | 0.018
+  A1     | 3.31602 (g' 3.31602) | 2.26 | 0.03898 | 0.287
+  A2     | 3.30708 (g' 3.30708) | 3.25 | 0.00792 | 0.113
+  A3     | 2.66185 (g' 2.66185) | 4.60 | 1.93315 | 0.712
+  A4     | 2.44415 (g' 2.44415) | 2.45 | 0.00085 | 0.031
+  B1     | 3.04798 (g' 3.04798) | 2.73 | 0.00000 | 0.242
+  B2     | 3.05210 (g' 3.05210) | 3.00 | 0.00000 | 0.048
+  B3     | 2.74525 (g' 2.74525) | 2.75 | 0.00000 | 0.032
+  B4     | 2.57297 (g' 2.57297) | 2.57 | 0.00000 | 0.035
+
+6. Coincidence count, d = 0.01 (threshold chosen after the data were seen): waveforms with a locked fracture-cell set
+   on [0.5, 8]; the ORTHO anchor is the same waveform as t = -0.140 and is counted once (TONGUESET entry).
+  t=-0.300 kappa_sep 3.04357  dist 0.03018  hit False  chance p 0.093
+  t=-0.220 kappa_sep 3.12441  dist 0.00184  hit True   chance p 0.066
+  t=-0.140 kappa_sep 2.89199  dist 0.00000  hit True   chance p 0.032
+  t=-0.060 kappa_sep 2.57636  dist 5.19239  hit False  chance p 0.003
+  A1       kappa_sep 3.31602  dist 0.03898  hit False  chance p 0.193
+  A2       kappa_sep 3.30708  dist 0.00792  hit True   chance p 0.125
+  A3       kappa_sep 2.66185  dist 1.93315  hit False  chance p 0.085
+  A4       kappa_sep 2.44415  dist 0.00085  hit True   chance p 0.061
+  B1       kappa_sep 3.04798  dist 0.00000  hit True   chance p 0.299
+  B2       kappa_sep 3.05210  dist 0.00000  hit True   chance p 0.085
+  B3       kappa_sep 2.74525  dist 0.00000  hit True   chance p 0.059
+  B4       kappa_sep 2.57297  dist 0.00000  hit True   chance p 0.059
+  observed hits 8 of 12; expected under chance 1.16; P(>= observed) = 6.81e-07 (independence assumed; post-hoc threshold)
+  stricter chance window [2.2, 3.4] (the range of the kappa_sep values): expected 1.14; P(>= 8) = 1.80e-07
+  per waveform, chance in [2.2, 3.4]: t=-0.300 0.071, t=-0.220 0.163, t=-0.140 0.040, t=-0.060 0.000, A1 0.079, A2 0.117, A3 0.000, A4 0.050, B1 0.388, B2 0.142, B3 0.050, B4 0.042
+
+RESULT: PASS (formula checks: sine = 3 to 1e-8; exact triangle = 1 + 4/pi to 1e-6). The comparison itself has no pass condition.
