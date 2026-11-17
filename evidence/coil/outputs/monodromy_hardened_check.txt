@@ -1,0 +1,33 @@
+monodromy_hardened_check  python 3.13.18 numpy 2.5.3 scipy 1.18.1
+
+C4 (hardened)  Lame trace over 2K(m)
+  kappa 1.500  m 0.6023490613  trace -1.9619664936  stable
+  kappa 2.000  m 0.8400903751  trace -1.7058411995  stable
+  kappa 2.600  m 0.9644661713  trace -0.5231012625  stable
+  kappa 2.650  m 0.9706180435  trace -0.3185293068  stable
+  kappa 2.750  m 0.9814707932  trace +0.1988509428  stable
+  kappa 2.775  m 0.9838918395  trace +0.3578155561  stable
+  kappa 2.800  m 0.9861977475  trace +0.5319695347  stable
+  kappa 2.970  m 0.9986333269  trace +2.1068414918  HYPERBOLIC
+  agreement with the reviewed C4 output (|diff| < 2e-6 at the printed digits): True
+
+K4 (hardened)  RW family point | kappa | transverse rate per u per eps
+  Q 1.50  kappa 1.49490  rate -0.1569
+  Q 1.80  kappa 1.82277  rate -0.1667
+  Q 1.92  kappa 2.00437  rate -0.1360
+  Q 2.00  kappa 2.14778  rate -0.0899
+  Q 2.04  kappa 2.22749  rate -0.0546
+  Q 2.08  kappa 2.31324  rate -0.0078
+  Q 2.12  kappa 2.40567  rate +0.0542
+  kappa_T 2.32596 at Q 2.08569, E 2.44166
+  agreement with the reviewed K4 output (rates to 1e-4; kappa_T 2.3260 to 1e-4): True
+
+Negative tests (each must raise CheckError)
+  non-finite coefficient (Lame)                stopped: non-finite right-hand side at t = 0.0
+  integration stopped early (terminal event)   stopped: endpoint not reached: np.float64(3.0) of 10.0
+  solver failure (finite-time blow-up)         stopped: solver did not succeed: Required step size is less than spacing betwee
+  determinant far from 1                       stopped: det M = 1.1, not 1 within 1e-08
+  no conjugate pair (all real)                 stopped: no unique conjugate pair among [np.complex128(2+0j), np.complex128(0.5
+  two pairs (ambiguous selection)              stopped: no unique conjugate pair among [np.complex128(0.6+0.8j), np.complex128
+
+RESULT: PASS (C4 and K4 reproduced under enforced guards; all negative tests stopped)
