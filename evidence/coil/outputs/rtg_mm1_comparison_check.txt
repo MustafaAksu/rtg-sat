@@ -1,0 +1,64 @@
+rtg_mm1_comparison_check  python 3.13.18 sympy 1.14.0
+
+L. Linear parts
+  DT(P1) = [[1, -1], [1, 0]]  trace 1  det 1  eigenvalues [1/2 - sqrt(3)*I/2, 1/2 + sqrt(3)*I/2]
+  DF(0)  = [[1, 1], [-a*kappa, 1 - a]]  trace 2 - a  det a*kappa - a + 1
+  equal trace and determinant: [{a: 1, kappa: 1}]
+  L1   ok
+  kappa = 1: det = 1 ; trace^2 - 4 det = a*(a - 4) (< 0 for 0 < a < 4, so the multipliers are e^{+-i theta}); cos theta = trace/2 = 1 - a/2
+  L2   ok
+  K_p family: DT_p(P1) = [[1, -1], [K, 1 - K]]  trace 2 - K  det 1 = trace and det of DF(0) at kappa = 1, a = K
+  L3   ok
+  rotation per step at the spark (kappa = 1) for the locked pairs: a = 0.030: 2 pi / 36.23, a = 0.100: 2 pi / 19.79, a = 0.156: 2 pi / 15.80
+
+N. Cubic normal-form coefficients
+  RTG at P1: 6 conj(lambda) c1 = -3/2 - 2*sqrt(3)*I ; 3 mu6^W = -3/2 - 2*sqrt(3)*I ; arg = -113.413 deg
+  N1   ok
+  K_p family (RECOG v0.3.27 section 6.10), frame factor K between this frame and RECOG's Z-frame:
+    p     K          Re(Z-frame)    -p sin^2(pi/p)   arg (deg)
+    5     1.381966   -1.7274575141  -1.7274575141    -120.959
+    6     1.000000   -1.5000000000  -1.5000000000    -113.413
+    7     0.753020   -1.3177856935  -1.3177856935    -108.326
+    8     0.585786   -1.1715728753  -1.1715728753    -104.639
+    12    0.267949   -0.8038475773  -0.8038475773     -96.738
+    16    0.152241   -0.6089637399  -0.6089637399     -93.540
+    20    0.097887   -0.4894348370  -0.4894348370     -92.047
+    36    0.030384   -0.2734604458  -0.2734604458     -90.418
+  N2   ok
+  MM-1 at kappa = 1 (spark point), frame q = (1, lambda - 1):
+    a = 1 (theta = pi/3): conj(lambda) c1 = g3*(3 + sqrt(3)*I)/12  ; formula: g3*(3 + sqrt(3)*I)/12
+    random (theta, g3), 40 draws: max |numeric - formula| = 2.22e-15
+  N3   ok
+    sine (g3 = -1) along the same rotations as the K_p table:
+    p     a          arg MM-1 (deg)   arg RTG K_p (deg)
+    5     1.381966    -162.000         -120.959
+    6     1.000000    -150.000         -113.413
+    7     0.753020    -141.429         -108.326
+    8     0.585786    -135.000         -104.639
+    12    0.267949    -120.000          -96.738
+    16    0.152241    -112.500          -93.540
+    20    0.097887    -108.000          -92.047
+    36    0.030384    -100.000          -90.418
+
+  Shear/healing ratio Im/Re of the cubic coefficient (frame-independent):
+    RTG at P1: 4*sqrt(3)/3 = 2.309401   (Dyadic exports 4 sqrt(3)/3)
+    MM-1 at a = 1, kappa = 1, any odd g with g3 != 0: sqrt(3)/3 = 0.577350
+  N4   ok
+
+  Iterates (cubic jets composed and truncated):
+    MM-1 (theta = 0.7, sine): conj(lambda^2) c1(F^2) / (2 conj(lambda) c1(F)) = 2.339934285800+0.000000000000i
+    RTG T^7 (multiplier e^{i pi/3}): conj(lambda^7) c1(T^7) / (7 conj(lambda) c1(T)) = 1.000000000000+0.000000000000i
+  N5   ok
+    (a positive real ratio is the frame factor |s|^2 of a different eigenvector scaling: arguments, hence Im/Re, agree)
+  Rotation angle at which the MM-1 ratio cot(theta) would equal +-4 sqrt(3)/3: tan^2(theta) = 3/16, cos(2 theta) = (1 - 3/16)/(1 + 3/16) = 13/19 ; Niven: cos of a rational multiple of pi is rational only in {0, +-1/2, +-1}
+  N6   ok
+
+G. Invertibility of the reduced sine dyad: det DF(phi, w) = 1 - a + a kappa cos(phi)
+  det DF = a*kappa*cos(phi) - a + 1 ; minimum over phi at cos(phi) = -1: -a*kappa - a + 1
+  pair A a = 0.030: the reduced sine dyad is invertible for kappa < (1 - a)/a = 32.3333
+  pair B a = 0.100: the reduced sine dyad is invertible for kappa < (1 - a)/a = 9.0000
+  pair C a = 0.156: the reduced sine dyad is invertible for kappa < (1 - a)/a = 5.4103
+  a = 1: det DF = kappa cos(phi); critical lines phi = +-pi/2 for every kappa > 0
+  G1   ok
+
+RESULT: PASS (L1-L3, N1-N6, G1)

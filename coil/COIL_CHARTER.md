@@ -45,7 +45,7 @@ Campaign outcome words used in run reports are decisions of locked preregistrati
 
 ### 0.2 Programme lines
 
-COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic generator T; suspended) and the **MM-1 line** (object: the inertial relational-force family MM-1; active).
+COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic generator T; reopened 18 Nov 2026 for analytic comparison only) and the **MM-1 line** (object: the inertial relational-force family MM-1; active).
 
 > **SG-COIL-1 — MM-1/RM-01 separation.** Results established in either line are not transferred to the other without a named, proved bridge specifying the source and target objects, assumptions, domain and permitted conclusions. A reference, analogy, shared notation or abstract isomorphism is not such a bridge. Explicitly labelled reference-only comparisons remain permitted. A conditional bridge licenses only its stated implication; its assumptions remain explicit.
 
@@ -57,13 +57,14 @@ COIL runs two lines (§9.0): the **RTG line** (object: RTG's postulated dyadic g
 
 | COIL use | `rtg-corpus` tag | Document | Item | Grade as stated there |
 |---|---|---|---|---|
-| RTG dyadic generator T (RM-01's object) | `dyad-v6.4.23` | `dsn/RTG_DYADIC_OSCILLATOR_DSN.md` v6.4.23 | `DYAD-DEF-PRIMITIVE-MAP` (§ "Dyad map") | `[DEF]` `[v6.4.11, provisional]` |
+| RTG dyadic generator T (RM-01's object); RTG-line comparison (`records/coil/COIL_RTG_MM1_COMPARISON_NOTE.md`) | `dyad-v6.4.24` | `dsn/RTG_DYADIC_OSCILLATOR_DSN.md` v6.4.24 | `DYAD-DEF-PRIMITIVE-MAP` (§ "Dyad map"); for the comparison also §6.1 (fixed points, det DT), μ₆ and the frame rule `DYAD-ALG-KP-FRAME-SCALE`, the §6.14 six-step enclosure, `DYAD-THM-SMOOTH-EMBEDDING` (§6.17) | `[DEF]` `[v6.4.11]` `[scope: the Programme's reference map; generator selection open (RTG-OPEN-GENERATOR-SELECTION, OPEN-P0)]`; the other items with the grades stated there |
+| K_p family and its cubic radial identity (RTG-line comparison) | `recog-v0.3.27` | `dsn/RTG_RELATIONAL_RECOGNITION_DSN.md` v0.3.27 | §6.10: K_p family `[DEF]`; Re μ_p = −p sin²(π/p) in the Z-frame (named sub-statement of `RECOG-ALG-NU3-CLOSED-FORM`); guard SG-R11 | `[ALG]`; arguments at p = 5, 6, 7 `[OBS finite-p]` |
 | Legacy ringdiag update rule; §12.5 effective-parameter hypothesis (dt, γ) and dt-independence; OPEN-L0L1-0, OPEN-L0L1-1 | `legacy-v0.7` | `dsn/RTG_L0_L1_L2_BRIDGE_LEGACY_DSN.md` v0.7 | §3.1 QR-defined spark boundary; §12.5 (incl. `[OPEN]` OPEN-L0L1-O5: "establish any claimed dt-independence on a stated domain"); §9 OPEN items | §12.5 parameter entries `[ONTO legacy]` / `[MATH]`; dt-independence `[OPEN]`; OPEN items `[OPEN]` |
 | RTG transfer guards that bind the RTG-side material COIL reads: SG-PROG-1 (cross-branch physical use), SG-PROG-4 (document location creates no transfer authority); SG-L0L1-6 (legacy non-export) | `programme-v1.4`; `legacy-v0.7` | `dsn/RTG_PROGRAMME_OVERVIEW.md` v1.4 §§3.2, 8; LEGACY DSN v0.7 | SG-PROG-1, SG-PROG-4; SG-L0L1-6 | guards, not graded claims. COIL's own MM-1/RM-01 rule is SG-COIL-1 (§0.2) |
 
 COIL does not restate RTG grades in a stronger form. OPEN-P0 (primitive ontology) is an RTG open item that conditions the RTG line; COIL does not work on it.
 
-**Interfaces.** COIL is an admitted consumer of the RTG literature stream (LIT; `rtg-lit/CONVENTIONS.md` §8.2, PI decision 9 Nov 2026; `REGISTRY.md`). Admission is not validation: COIL claims no LIT-backed validation of any statement. A COIL request to LIT is open (`rtg-corpus` `pipes/LIT/20261114-SAT-coil-strong-null-map-class-search.md`, filed 14 Nov 2026, sender addendum 16 Nov 2026); filing it is not a LIT answer. No COIL result passes to RTG except as an item in `rtg-corpus/pipes/<STREAM>/` carrying owner scope, evidence pointer and source tag; filing such an item is not an adopted use by the receiver. Items addressed to COIL arrive in `rtg-sat/pipes/COIL/` and are read at each owner pass and before each release.
+**Interfaces.** COIL is an admitted consumer of the RTG literature stream (LIT; `rtg-lit/CONVENTIONS.md` §8.2, PI decision 9 Nov 2026; `REGISTRY.md`). Admission is not validation: COIL claims no LIT-backed validation of any statement. A COIL request to LIT (`rtg-corpus` `pipes/LIT/20261114-SAT-coil-strong-null-map-class-search.md`, filed 14 Nov 2026, sender addendum 16 Nov 2026) was answered on 17 Nov 2026 (`pipes/COIL/20261117-LIT-strong-null-literature-reply.md`) and dispositioned `accept` as literature support and as a list of open obligations (`records/coil/COIL_LIT_REPLY_20261117_DISPOSITION.md`); the cited sources keep their `candidate` status. No COIL result passes to RTG except as an item in `rtg-corpus/pipes/<STREAM>/` carrying owner scope, evidence pointer and source tag; filing such an item is not an adopted use by the receiver. Items addressed to COIL arrive in `rtg-sat/pipes/COIL/` and are read at each owner pass and before each release.
 
 ---
 
@@ -213,7 +214,7 @@ The programme in fact runs **two lines**:
 | | **RTG line** | **MM-1 line** |
 |---|---|---|
 | Object | RTG's postulated generator T (conditional on OPEN-P0) | inertial relational-force family |
-| State | **Phase 0 partial** (RM-01, RM-02 records); Phase 1 **not started** | Phase 1 and Phase 2 **completed**, gate G1 open |
+| State | **Phase 0 partial** (RM-01, RM-02 records); Phase 1 **not started**; **reopened for analytic comparison only** (PI, 18 Nov 2026; §9.2) | Phase 1 and Phase 2 **completed**, gate G1 open |
 | Firewall | SG-COIL-1 (§0.2); on the RTG side SG-PROG-1/SG-PROG-4, SG-L0L1-6 at full strength | SG-COIL-1 |
 | Relation | **There is NO named bridge between them** | |
 
@@ -228,8 +229,9 @@ On which line will the cross-layer claim be built? There is no answer yet — th
 - **Phase 4 — adaptive/cognitive.** The partial-template protocol (§6.7) applies here.
 - **Phase 5 — moral/relational.** Gate: not opened without at least one bridge at `[VAL-in-scope]` in Phases 3–4. The derivation prohibition is applied most strictly here.
 
-### 9.2 RTG line (suspended, deliberately)
+### 9.2 RTG line (reopened 18 Nov 2026 for analytic comparison only)
 
+- **PI decision, 18 Nov 2026:** the line is reopened for **analytic comparison only** — existing theorems of the pinned RTG tags (§0.3) are applied to COIL's questions; no new orbits are generated and no campaign is opened (§9.4 unchanged). First record: `records/coil/COIL_RTG_MM1_COMPARISON_NOTE.md` (working record, not adopted). A comparison is not a bridge (SG-COIL-1).
 - **Phase 0 continues:** RM-04 (path dependence) and the remaining RM records.
 - **Phase 1 not started:** RTG-internal robustness (the p-family ledger of the Dyadic DSN is the natural input). The OPEN-P0 conditionality structurally limits this line.
 - This line **cannot import** the results of the MM-1 line.
@@ -245,6 +247,7 @@ What this means in practice:
 - **No new COIL experimental campaign is opened** on the MM-1 line until there is a quantitative cross-family or cross-layer prediction, written before any run, that survives the strong null (generic bifurcation behaviour; for closed-loop systems the general slow–fast null of §9.1). Finding such a statement — or showing why the present model family cannot yield one — is the next work, and it is analysis, not a campaign.
 - Open items inside MM-1 (`coil/COIL_INDEX.md` §8: robustness forks, Casebook F2 validation, compendium certificate, RM-04, RM-07) are **not** made more urgent by this state and are not a substitute for it; each needs its own purpose statement against the goals of §8 before it is taken up.
 - The question of §10.2 — on which line a cross-layer claim could be built — is unchanged and now carries more weight: the MM-1 line has not produced a bridge.
+- The RTG line is reopened for analytic comparison only (§9.2, PI decision 18 Nov 2026). This is analysis in the sense of the first bullet, not a campaign.
 
 ## 10. Open programmatic questions
 
