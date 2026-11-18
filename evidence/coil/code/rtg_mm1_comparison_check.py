@@ -10,7 +10,7 @@ Maps (sources: rtg-corpus dyad-v6.4.24 DYAD-DEF-PRIMITIVE-MAP and RECOG v0.3.27 
 COIL MM-1, reduced dyad in the normalisation g'(0) = 1):
   RTG  T(rho, eta)   = (rho - sin eta, eta + (e^rho - 1) - sin eta)                   fixed point P1 = (0, 0)
   K_p  T_p(rho, eta) = (rho - sin eta, eta + K (e^rho - 1) - K sin eta), K = 2 - 2 cos(2 pi/p);  T_6 = T
-  MM-1 F(phi, w)     = (phi + w, (1 - a) w - a kappa g(phi)), g odd, g(phi) = phi + g3 phi^3/6 + O(phi^5)
+  MM-1 F(phi, w)     = (phi + w, (1 - a) w - a kappa g(phi)), g odd, g(phi) = phi + g3 phi^3/6 + o(phi^3) (g odd, C^3)
 
 Checks:
   L1  DT(P1) and DF(0) have equal trace and determinant only at (a, kappa) = (1, 1)            [exact]
@@ -19,16 +19,23 @@ Checks:
   N1  one-step cubic normal-form coefficient c1 of T at P1 (Kuznetsov's formula for maps, frame of the
       eigenvector with eta-component 1): 6 conj(lambda) c1 = 3 mu6^W, mu6^W = -1/2 - i 2 sqrt(3)/3
       (Dyadic frame rule DYAD-ALG-KP-FRAME-SCALE: mu6^Z = 3 mu6^W)                                   [exact]
-  N2  K_p family, p = 5..36: Re of the Z-frame coefficient = -p sin^2(pi/p) and arg = RECOG's values
+  N2  K_p family, p = 5, 6, 7, 8, 12, 16, 20, 36: Re of the Z-frame coefficient = -p sin^2(pi/p) and arg = RECOG's values
       (-120.96, -113.41, -108.33 deg at p = 5, 6, 7)                                                [numeric]
   N3  MM-1 at kappa = 1, any a in (0, 4): conj(lambda) c1 = (i g3 / 2) tan(theta/2) e^{-i theta}
       (frame q = (1, lambda - 1)); exact at p = 6 with symbolic g3, numeric at random (theta, g3)   [exact + numeric]
   N4  frame-independent shear/healing ratio Im/Re of the cubic coefficient:
       RTG at P1: 4 sqrt(3)/3 = 2.3094 (Dyadic's exported value); MM-1 at its 1:6 point: cot(pi/3) = 1/sqrt(3)  [exact]
-  N5  normal-form coefficients of iterates: conj(lambda^n) c1(F^n) = n conj(lambda) c1(F) up to a positive frame factor
+  N5  (supporting) normal-form coefficients of iterates: conj(lambda^n) c1(F^n) = n conj(lambda) c1(F) up to a positive frame factor
       (MM-1 n = 2; RTG T^7), so Im/Re is the same for every admissible iterate                      [numeric]
   N6  cot(theta) = +-4 sqrt(3)/3 has no solution with theta a rational multiple of pi (Niven)            [exact]
-  G1  invertibility of the reduced sine dyad: det DF = 1 - a + a kappa cos phi > 0 for all phi iff kappa < (1 - a)/a
+  P1  rotation-equivariant cubic monomials z^i zb^j (i + j = 3): only z^2 zb for the angles pi/3 (T) and theta (MM-1),
+      theta not in {pi/2, pi}                                                                       [exact]
+  P2  parabolic germs T^6, F^6 (a = 1, kappa = 1, sine) and F^3 (a = 3, kappa = 1, sine), composed raw: no quadratic
+      part; cubic part in the eigen-coordinate is n conj(lambda) c1 |z|^2 z only (c1 from N1 / N3)  [numeric]
+  P3  a real-linear L z = alpha z + beta zb with L(mu |z|^2 z) = nu |Lz|^2 Lz, nu != 0, forces alpha beta = 0:
+      the z^3 and zb^3 coefficients are -nu alpha^2 conj(beta) and -nu conj(alpha) beta^2           [exact]
+  G1  the reduced sine dyad is a global diffeomorphism iff a kappa < |1 - a| (the map w -> (1 - a) w - a kappa sin(phi' - w)
+      must be strictly monotone with nonzero derivative); example a = 3/2, kappa = 1/10: det < 0 everywhere, diffeomorphism
 """
 import cmath, math, random, sys
 import sympy as sp
@@ -195,16 +202,76 @@ P("  Rotation angle at which the MM-1 ratio cot(theta) would equal +-4 sqrt(3)/3
 check("N6", sp.Rational(13, 19) not in (0, sp.Rational(1, 2), -sp.Rational(1, 2), 1, -1) and
       sp.simplify((1 - sp.Rational(3, 16))/(1 + sp.Rational(3, 16)) - sp.Rational(13, 19)) == 0)
 
+# ---------------------------------------------------------------- P1-P3
+P("\nP. Parabolic germs (six-step and iterate clocks)")
+ok = True
+for name, ang in (("T, angle pi/3", sp.pi/3), ("MM-1, a = 1", sp.pi/3), ("MM-1, a = 3 (theta = 2 pi/3)", 2*sp.pi/3), ("MM-1, a = 0.03", sp.acos(1 - sp.Rational(3, 200)))):
+    eq = [(i, 3 - i) for i in range(4) if sp.simplify(sp.exp(sp.I*(i - (3 - i) - 1)*ang) - 1) == 0]
+    P("  %-30s equivariant cubic monomials z^i zb^j: %s" % (name, eq))
+    ok = ok and eq == [(2, 1)]
+for name, ang in (("MM-1, a = 2 (theta = pi/2)", sp.pi/2),):
+    eq = [(i, 3 - i) for i in range(4) if sp.simplify(sp.exp(sp.I*(i - (3 - i) - 1)*ang) - 1) == 0]
+    P("  %-30s equivariant cubic monomials z^i zb^j: %s  (excluded case)" % (name, eq))
+    ok = ok and (0, 3) in eq
+check("P1", ok)
+
+def jet_in_z(Fn, A, lam):
+    a11, a12, a21, a22 = A
+    q = [a12, lam - a11]; pv = [a21, lam.conjugate() - a11]
+    s_ = pv[0].conjugate()*q[0] + pv[1].conjugate()*q[1]; pv = [pv[0]/s_.conjugate(), pv[1]/s_.conjugate()]
+    x0 = q[0]*z + q[0].conjugate()*zb; x1 = q[1]*z + q[1].conjugate()*zb
+    e = Fn(x0, x1)
+    g = sp.expand(pv[0].conjugate()*e[0] + pv[1].conjugate()*e[1])
+    Pz = sp.Poly(g, z, zb)
+    return {(i, j): complex(Pz.coeff_monomial(z**i*zb**j)) for i in range(4) for j in range(4) if 1 < i + j <= 3}
+okP2 = True
+for name, Fmap, A, c1v in (("T^6 (RTG)", rtg_map(1.0), (1.0, -1.0, 1.0, 0.0), complex(c1T)),
+                           ("F^6 (MM-1, a = 1, sine)", mm1_map(1.0, -1.0), (1.0, 1.0, -1.0, 0.0), complex(c1M6.subs(g3, -1)))):
+    F6 = iterate(Fmap, 6)
+    J = jet_in_z(F6, A, complex(lam6))
+    expect = 6*complex(lam6).conjugate()*c1v
+    others = max(abs(v) for kk, v in J.items() if kk != (2, 1))
+    P("  %-26s z^2 zb coefficient %+.12f%+.12fi, expected 6 conj(lambda) c1 = %+.12f%+.12fi; largest other quadratic/cubic coefficient %.1e"
+      % (name, J[(2, 1)].real, J[(2, 1)].imag, expect.real, expect.imag, others))
+    okP2 = okP2 and abs(J[(2, 1)] - expect) < 1e-10 and others < 1e-10
+lam3 = cmath.exp(2j*math.pi/3)
+F3 = iterate(mm1_map(3.0, -1.0), 3)
+J = jet_in_z(F3, (1.0, 1.0, -3.0, -2.0), lam3)
+expect = 3*(1j*(-1.0)/2*math.tan(math.pi/3)*cmath.exp(-2j*math.pi/3))
+others = max(abs(v) for kk, v in J.items() if kk != (2, 1))
+P("  %-26s z^2 zb coefficient %+.12f%+.12fi, expected 3 x N3 formula = %+.12f%+.12fi; largest other quadratic/cubic coefficient %.1e"
+  % ("F^3 (MM-1, a = 3, sine)", J[(2, 1)].real, J[(2, 1)].imag, expect.real, expect.imag, others))
+okP2 = okP2 and abs(J[(2, 1)] - expect) < 1e-10 and others < 1e-10
+check("P2", okP2)
+
+al, be, alc, bec, mu_, nu_ = sp.symbols('alpha beta alphac betac mu nu')
+Lz = al*z + be*zb; Lzb = alc*zb + bec*z
+lhs = al*(mu_*z**2*zb) + be*(sp.conjugate(mu_)*zb**2*z)
+rhs = nu_*Lz*Lzb*Lz
+diff_ = sp.Poly(sp.expand(lhs - rhs), z, zb)
+c30, c03 = diff_.coeff_monomial(z**3), diff_.coeff_monomial(zb**3)
+P("  L(mu |z|^2 z) - nu |Lz|^2 Lz:  z^3 coefficient", sp.factor(c30), "; zb^3 coefficient", sp.factor(c03))
+check("P3", sp.simplify(c30 + nu_*al**2*bec) == 0 and sp.simplify(c03 + nu_*alc*be**2) == 0)
+
 # ---------------------------------------------------------------- G1
-P("\nG. Invertibility of the reduced sine dyad: det DF(phi, w) = 1 - a + a kappa cos(phi)")
-phi = sp.symbols('phi', real=True)
-detF = sp.expand(sp.Matrix([[1, 1], [-a*k*sp.cos(phi), 1 - a]]).det())
-P("  det DF =", detF, "; minimum over phi at cos(phi) = -1:", sp.simplify(detF.subs(sp.cos(phi), -1)))
-okG = sp.simplify(sp.solve(sp.Eq(detF.subs(sp.cos(phi), -1), 0), k)[0] - (1 - a)/a) == 0
+P("\nG. Invertibility of the reduced sine dyad F(phi, w) = (phi + w, (1 - a) w - a kappa sin phi)")
+P("  F^{-1}: phi = phi' - w, with w solving (1 - a) w - a kappa sin(phi' - w) = w'; the left side has derivative")
+P("  (1 - a) + a kappa cos(phi' - w), ranging over [(1 - a) - a kappa, (1 - a) + a kappa]: sign-definite iff a kappa < |1 - a|.")
+P("  det DF = 1 - a + a kappa cos(phi): the same interval. F is a global diffeomorphism iff a kappa < |1 - a|.")
+okG = True
 for av, lab in ((0.03, "A"), (0.10, "B"), (0.156, "C")):
-    P("  pair %s a = %.3f: the reduced sine dyad is invertible for kappa < (1 - a)/a = %.4f" % (lab, av, (1 - av)/av))
-P("  a = 1: det DF = kappa cos(phi); critical lines phi = +-pi/2 for every kappa > 0")
+    P("  pair %s a = %.3f: diffeomorphism iff kappa < (1 - a)/a = %.4f" % (lab, av, (1 - av)/av))
+av, kv = 1.5, 0.1
+dets = [1 - av + av*kv*math.cos(2*math.pi*i/1000) for i in range(1000)]
+P("  example a = 3/2, kappa = 1/10: det DF in [%.3f, %.3f] (negative everywhere): orientation-reversing diffeomorphism" % (min(dets), max(dets)))
+okG = okG and max(dets) < 0 and av*kv < abs(1 - av)
+random.seed(7)
+for _ in range(2000):
+    av = random.uniform(0.01, 3.0); kv = random.uniform(0.01, 40.0)
+    lo, hi = (1 - av) - av*kv, (1 - av) + av*kv
+    okG = okG and ((lo > 0 or hi < 0) == (av*kv < abs(1 - av)))
+P("  a = 1: det DF = kappa cos(phi); critical lines phi = +-pi/2 for every kappa > 0; not invertible")
 check("G1", okG)
 
-P("\nRESULT: %s (L1-L3, N1-N6, G1)" % ("PASS" if ok_all else "FAIL"))
+P("\nRESULT: %s (L1-L3, N1-N6, P1-P3, G1)" % ("PASS" if ok_all else "FAIL"))
 sys.exit(0 if ok_all else 1)
