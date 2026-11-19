@@ -8,6 +8,8 @@ S. Saddles
   pair B a = 0.100, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = 38.00
   pair C a = 0.156, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = 23.64
   S1  ok
+  a = kappa = c = 1: DF(pi, 0) = [[1, 1], [1, 0]] ; p(-1) = 1 > 0 (saddle); DF(pi, 0)^2 = [[2, 1], [1, 1]]  trace 3  det 1
+  S4  ok
 
 M. Mirror symmetry of MM-1 and its absence in RTG
   F(M x) - M(F x) = [[0, a*kappa*(-g(phi) - g(-phi + 2*pi))]]  ; vanishes iff g(2 pi - phi) = -g(phi)
@@ -24,11 +26,14 @@ B. Band area (signed, degree-weighted image area of a full band)
   B1  ok
 
 I. Invertibility where the escape mechanisms act
-  pair A a = 0.030: reduced sine dyad a diffeomorphism iff kappa < 32.3333; kappa_sep = 3 inside
-  pair B a = 0.100: reduced sine dyad a diffeomorphism iff kappa < 9.0000; kappa_sep = 3 inside
-  pair C a = 0.156: reduced sine dyad a diffeomorphism iff kappa < 5.4103; kappa_sep = 3 inside
+  pair A a = 0.030: reduced sine dyad a diffeomorphism iff kappa < 32.3333
+  pair B a = 0.100: reduced sine dyad a diffeomorphism iff kappa < 9.0000
+  pair C a = 0.156: reduced sine dyad a diffeomorphism iff kappa < 5.4103
   RTG: det DT = 0 needs |e^rho - 1| >= 1 with e^rho - 1 > 0 at cos eta < 0, i.e. rho >= ln 2 = log(2) ; for rho < 0, 0 < det DT < 2 (RECOG, negative half-plane)
   RECOG-THM-P2-C0-FIRST box: 2.03334 < rho_* < 2.03342 > ln 2 = 0.69315 (consistency only)
   I1  ok
+  R1: g_q'(phi) = 100*cos(phi)/sqrt(10000 - 9801*sin(phi)**2) ; (g_q')^2 = (1 - s)/(1 - q^2 s), s = sin^2 phi, decreasing in s, = 1 at s = 0; max |g_q'| on a grid = 1.000000000000
+  a = 0.03, kappa <= 3: det DF = 1 - a + a kappa g_q' >= 1 - a - a kappa = 0.88 > 0 -> diffeomorphism on the locked DYAD range
+  I2  ok
 
-RESULT: PASS (S1-S3, B1, I1)
+RESULT: PASS (S1-S4, B1, I1-I2)

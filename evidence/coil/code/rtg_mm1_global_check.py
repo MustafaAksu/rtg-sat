@@ -18,8 +18,11 @@ Checks:
   S3  RTG has no such mirror: T o N - N o T != 0 for N(rho, eta) = (-rho, 2 pi - eta); the discrepancy is the
       even part of e^rho - 1
   B1  band area: (1/2 pi) int det DT d eta = 1 for every rho; (1/2 pi) int det DF d phi = 1 - a for every w
-  I1  invertibility of the reduced sine dyad at kappa_sep = 3: a kappa < |1 - a| for the locked pairs A, B, C;
+  S4  iterate clocks: at a = kappa = c = 1 the MM-1 saddle is a saddle and DF(pi, 0)^2 has trace 3, det 1 (= DT(P2))
+  I1  invertibility bounds of the reduced sine dyad for the locked pairs A, B, C (diffeomorphism iff a kappa < |1 - a|);
       RTG critical curve C0 = {rho >= ln 2, cos eta = -1/(e^rho - 1)}: none on rho < ln 2
+  I2  reduced R1 dyad g_q = arcsin(q sin phi)/q, q = 0.99 (normalised g'(0) = 1): |g_q'| <= 1, hence
+      det DF >= 1 - a - a kappa = 0.88 > 0 for a = 0.03, kappa <= 3 (locked DYAD range; fracture recorded at kappa = 2.30)
 """
 import math, sys
 import sympy as sp
@@ -57,6 +60,11 @@ okS1 = okS1 and sp.solve(sp.Eq(DFpi.det(), 1), k) == []   # det = 1 impossible f
 for av, lab in ((0.03, "A"), (0.10, "B"), (0.156, "C")):
     P("  pair %s a = %.3f, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = %.2f" % (lab, av, (4 - 2*av)/av))
 check("S1", okS1)
+D1 = DFpi.subs({a: 1, k: 1, c: 1})
+D1sq = D1*D1
+P("  a = kappa = c = 1: DF(pi, 0) =", D1.tolist(), "; p(-1) =", 4 - 2 - 1, "> 0 (saddle); DF(pi, 0)^2 =", D1sq.tolist(),
+  " trace", D1sq.trace(), " det", D1sq.det())
+check("S4", D1sq.trace() == 3 and D1sq.det() == 1 and (4 - 2 - 1) > 0)
 
 # ---------------------------------------------------------------- S2
 P("\nM. Mirror symmetry of MM-1 and its absence in RTG")
@@ -97,14 +105,24 @@ P("\nI. Invertibility where the escape mechanisms act")
 okI = True
 for av, lab in ((0.03, "A"), (0.10, "B"), (0.156, "C")):
     lim = abs(1 - av)/av
-    P("  pair %s a = %.3f: reduced sine dyad a diffeomorphism iff kappa < %.4f; kappa_sep = 3 %s" % (lab, av, lim, "inside" if 3 < lim else "OUTSIDE"))
-    okI = okI and 3 < lim
+    P("  pair %s a = %.3f: reduced sine dyad a diffeomorphism iff kappa < %.4f" % (lab, av, lim))
 Amin = sp.solve(sp.Eq(sp.exp(rho) - 1, 1), rho)[0]
 P("  RTG: det DT = 0 needs |e^rho - 1| >= 1 with e^rho - 1 > 0 at cos eta < 0, i.e. rho >= ln 2 =", Amin,
   "; for rho < 0, 0 < det DT < 2 (RECOG, negative half-plane)")
 okI = okI and Amin == sp.log(2)
 P("  RECOG-THM-P2-C0-FIRST box: 2.03334 < rho_* < 2.03342 > ln 2 = %.5f (consistency only)" % math.log(2))
 check("I1", okI)
+q = sp.Rational(99, 100)
+gq_p = sp.diff(sp.asin(q*sp.sin(phi))/q, phi)
+s2 = sp.symbols('s2', nonnegative=True)
+ratio2 = (1 - s2)/(1 - q**2*s2)          # (g_q')^2 with s2 = sin^2 phi
+okI2 = sp.simplify(sp.diff(ratio2, s2)) .subs(s2, sp.Rational(1, 2)) < 0 and ratio2.subs(s2, 0) == 1
+mx = max(abs(float(gq_p.subs(phi, 2*math.pi*i/20000))) for i in range(20000))
+bound = 1 - 0.03 - 0.03*3
+P("  R1: g_q'(phi) =", sp.simplify(gq_p), "; (g_q')^2 = (1 - s)/(1 - q^2 s), s = sin^2 phi, decreasing in s, = 1 at s = 0; max |g_q'| on a grid = %.12f" % mx)
+P("  a = 0.03, kappa <= 3: det DF = 1 - a + a kappa g_q' >= 1 - a - a kappa = %.2f > 0 -> diffeomorphism on the locked DYAD range" % bound)
+okI2 = okI2 and mx <= 1 + 1e-12 and bound > 0 and sp.simplify(sp.diff(ratio2, s2)*(1 - q**2*s2)**2 + (1 - q**2)) == 0
+check("I2", okI2)
 
-P("\nRESULT: %s (S1-S3, B1, I1)" % ("PASS" if ok_all else "FAIL"))
+P("\nRESULT: %s (S1-S4, B1, I1-I2)" % ("PASS" if ok_all else "FAIL"))
 sys.exit(0 if ok_all else 1)

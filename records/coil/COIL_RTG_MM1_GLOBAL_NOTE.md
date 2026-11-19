@@ -10,13 +10,13 @@
 - RTG material is cited at the pinned tags `dyad-v6.4.24` and `recog-v0.3.27`, with the grades stated there.
 - RECOG's theorems on P₂ carry the scope label *conditional on postulated continuous generator T*. Every statement below that uses them inherits that condition.
 
-**Checks.** `evidence/coil/code/rtg_mm1_global_check.py` (S1–S3, B1, I1; `RESULT: PASS`) with output `evidence/coil/outputs/rtg_mm1_global_check.txt`. The script prints only; the output file is its redirected standard output.
+**Checks.** `evidence/coil/code/rtg_mm1_global_check.py` (S1–S4, B1, I1–I2; `RESULT: PASS`) with output `evidence/coil/outputs/rtg_mm1_global_check.txt`. The script prints only; the output file is its redirected standard output.
 
 ## 1. Result
 
-**1. Saddles `[DERIVED]`.** Both maps have an elliptic point and an antipodal saddle:
+**1. Saddles `[DERIVED]`.** Both maps have a fixed point at the origin and an antipodal saddle. RTG's P₁ is elliptic of order 6. MM-1's origin is a focus with |λ|² = 1 + a(κ − 1); it is elliptic only at κ = 1, the spark. The saddles compare as follows:
 - **RTG:** P₂ = (0, π), with trace 3, det 1 and multipliers φ^{±2} (φ the golden ratio).
-- **MM-1:** (π, 0), with trace 2 − a and det 1 − a(1 + κc), where c = −g′(π) > 0. This point is a saddle iff 4 − 2a − aκc > 0, and its unstable multiplier is always > 1. Because det ≠ 1, no same-clock C¹ conjugacy maps P₂ to this saddle.
+- **MM-1:** (π, 0), with trace 2 − a and det 1 − a(1 + κc), where c = −g′(π) > 0. This point is a saddle iff 4 − 2a − aκc > 0, and its unstable multiplier is always > 1. Because det ≠ 1, no same-clock C¹ conjugacy maps P₂ to this saddle. At iterate clocks the linear data can agree: at a = κ = c = 1, DF(π, 0)² = [[2, 1], [1, 1]] has the trace and determinant of DT(P₂) (co-owner, review `5983829254`). Item 2 is what excludes that case.
 
 **2. Branch fates — a global exclusion `[DERIVED, conditional on RECOG's P₂ theorems]`.**
 - **MM-1** is equivariant under the mirror M(φ, w) = (2π − φ, −w). This holds for every odd, 2π-periodic waveform. M fixes the saddle and swaps the two branches of its unstable manifold. Hence **either both branches meet the critical set of F^m or neither does.**
@@ -24,15 +24,17 @@
 - **Consequence:** no C¹ conjugacy between T^k on a forward-invariant neighbourhood of W^u(P₂) and F^m near the saddle, for any k, m ≥ 1 and any parameters (§3).
 - Unlike the local exclusion, this invariant is **qualitative**, the pattern of branch fates, not a coefficient.
 
-**3. Band area `[DERIVED]`.**
-- RTG preserves the signed area of every full band {ρ₁ < ρ < ρ₂} exactly: the mean of det DT over η is 1 for every ρ.
-- MM-1 multiplies the signed area of every full band {w₁ < w < w₂} by exactly 1 − a.
-- So MM-1 is uniformly dissipative and RTG has no net dissipation on bands. RTG's healing at P₁ is purely nonlinear; MM-1's below the spark is linear damping.
+**3. One-step full-band Jacobian integral `[DERIVED]`.**
+- For RTG, the integral of det DT over a full band {ρ₁ < ρ < ρ₂} × S¹ equals the band's area: the mean of det DT over η is 1 for every ρ.
+- For MM-1, the integral of det DF over a full band {w₁ < w < w₂} × S¹ is (1 − a) times the band's area.
+- This is a one-step, signed integral: image area counted with multiplicity and orientation. It says nothing about invariant measures, attractors or long-time area. The co-owner's review (R1) narrowed the earlier wording "RTG preserves area / MM-1 is uniformly dissipative" to this.
 
-**4. Where escape happens `[DERIVED]`.**
-- For the locked pairs A, B and C the reduced sine dyad is a diffeomorphism at κ_sep = 3, because 3 < (1 − a)/a. Its leading-order escape mechanism, the separatrix, involves no rank loss.
-- RTG's escaping branch W^u_+(P₂) reaches rank loss: the fold C₀ at ρ_* ≈ 2.033, which lies above ln 2, the lower edge of C₀ (RECOG).
-- So **rank loss is not a common cause** of the two global events.
+**4. Rank loss is not needed for an MM-1 fracture `[NUM locked]` + `[DERIVED]`.**
+- The locked DYAD run (`RUN-MM1-DYAD-v1.0`, Pair A, a = 0.03) met the fracture criterion with the R1 smoothed-triangle dyad at κ = 2.30 for 25 of 25 initial conditions.
+- In the normalisation g′(0) = 1 the waveform is g_q(φ) = arcsin(q sin φ)/q with q = 0.99, and |g_q′| ≤ 1. So det DF = 1 − a + aκ g_q′(φ) ≥ 1 − 0.03 − 0.03·3 = 0.88 > 0 on the whole locked range κ ≤ 3, and the reduced dyad is a diffeomorphism there (co-owner, review `5983829254`).
+- **A fracture was observed without rank loss.** RTG's escaping branch W^u_+(P₂), by contrast, meets the fold C₀ at ρ_* ≈ 2.033, above ln 2, the lower edge of C₀ (RECOG).
+- So **rank loss is not a common cause** of the two global events. Neither is it claimed that the two global events are of the same kind.
+- κ_sep is not used here: it is a leading-order net-work zero, not a proven finite-a escape threshold (co-owner R2).
 
 **Against the acceptance criterion (§5):** (b) is obtained a second time, now globally. (a), a common quantitative prediction candidate, is still not obtained. The note does produce a coordinate-free observable that tells the two maps apart, the branch-fate pattern of the antipodal saddle, which is a dictionary entry and not a prediction.
 
@@ -42,7 +44,8 @@
 
 - **RTG.** DT(P₂) = [[1, 1], [1, 2]]: trace 3, det 1, multipliers (3 ± √5)/2 = φ^{±2}. This is Dyadic §6.1, reproduced, including the escape law T_escape ≈ ln(1/ε)/ln φ².
 - **MM-1.** DF(π, 0) = [[1, 1], [aκc, 1 − a]], with c = −g′(π) > 0 (c = 1 for the sine and the triangle family). Its characteristic polynomial p satisfies p(1) = −aκc < 0, so one multiplier is greater than 1. The point is a saddle iff p(−1) = 4 − 2a − aκc > 0; for the sine this is κ < (4 − 2a)/a, i.e. 131.3, 38.0 and 23.6 for A, B and C.
-- **Same-clock linear obstruction.** det DF(π, 0) = 1 − a(1 + κc) < 1 for all a, κ, c > 0, while det DT(P₂) = 1. RTG's saddle is linearly area-preserving; MM-1's never is.
+- **Same-clock linear obstruction.** det DF(π, 0) = 1 − a(1 + κc) < 1 for all a, κ, c > 0, while det DT(P₂) = 1. RTG's saddle has det 1; MM-1's never has.
+- **Iterate clocks (S4).** The linear obstruction does not survive iteration. At a = κ = c = 1, DF(π, 0) = [[1, 1], [1, 0]] (a saddle, since 4 − 2a − aκc = 1 > 0), and DF(π, 0)² = [[2, 1], [1, 1]] has trace 3 and det 1, the data of DT(P₂). So a linear-level conjugacy between T and F² at the saddles is not excluded; §3 excludes it.
 
 ### 2.2 The MM-1 mirror (S2) and the RTG asymmetry (S3)
 
@@ -72,23 +75,23 @@
 - The tri0 and path3 networks.
 - Anything that depends on the later fate of W^u_+(P₂) or on the global geometry of W^s(P₂), both of which RECOG leaves `[OPEN]`.
 
-## 4. Band area and invertibility
+## 4. Full-band Jacobian integral and invertibility
 
-- **Band area (B1).** The signed, degree-weighted image area of a full band equals the band integral of det. For RTG, (1/2π)∫₀^{2π}(1 + (e^ρ − 1) cos η) dη = 1 for every ρ. For MM-1, (1/2π)∫₀^{2π}(1 − a + aκ g′(φ)) dφ = 1 − a for every w, because g′ has mean zero over a period for any periodic g.
-  - So MM-1 contracts every band uniformly by its damping 1 − a.
-  - RTG conserves every band. Its contraction where cos η < 0 (for ρ > 0) is balanced exactly by expansion where cos η > 0.
-  - RTG's attraction at P₁ is algebraic: Q_m⁻¹ = Q₀⁻¹ + m + O(√m), `dyad-v6.4.24` §6.5. This is a nonlinear effect on a band-conservative map, not damping.
-- **Invertibility (I1).** For the locked pairs A, B and C, the reduced sine dyad is a diffeomorphism iff κ < (1 − a)/a, i.e. κ < 32.3, 9.00 and 5.41 (comparison note §5). κ_sep = 3 lies inside each of these ranges. RTG's C₀ lies in ρ ≥ ln 2, and for ρ < 0, 0 < det DT < 2 (RECOG).
-  - The reduced dyad's escape at leading order, the separatrix crossing near κ_sep, therefore takes place on a diffeomorphism.
-  - RTG's escaping branch meets a fold.
-  - The network campaigns have other Jacobians, and this note makes no statement about them.
+- **One-step full-band integral (B1).** The signed, multiplicity-weighted image area of a full band equals the band integral of det. For RTG, (1/2π)∫₀^{2π}(1 + (e^ρ − 1) cos η) dη = 1 for every ρ. For MM-1, (1/2π)∫₀^{2π}(1 − a + aκ g′(φ)) dφ = 1 − a for every w, because g′ has mean zero over a period for any periodic g.
+  - In RTG, local contraction where cos η < 0 (for ρ > 0) is balanced in this integral by expansion where cos η > 0. In MM-1, the integral carries the damping factor 1 − a.
+  - Nothing follows about invariant sets or long-time behaviour. RTG's attraction at P₁ is algebraic: Q_m⁻¹ = Q₀⁻¹ + m + O(√m), `dyad-v6.4.24` §6.5. MM-1's attraction at 0 for κ < 1 is linear (|λ|² < 1).
+- **Invertibility (I1, I2).**
+  - The reduced sine dyad is a diffeomorphism iff aκ < |1 − a| (comparison note §5): κ < 32.3, 9.00 and 5.41 for A, B and C.
+  - The reduced R1 dyad (|g_q′| ≤ 1) has det DF ≥ 1 − a − aκ, so it is a diffeomorphism on the whole locked DYAD range κ ≤ 3 at a = 0.03 (det ≥ 0.88). Its recorded fracture at κ = 2.30 (25/25) therefore took place on a diffeomorphism.
+  - RTG's C₀ lies in ρ ≥ ln 2, and for ρ < 0, 0 < det DT < 2 (RECOG).
+  - The network campaigns (tri0, path3) have other Jacobians, and this note makes no statement about them.
 
 ## 5. Reading against the acceptance criterion
 
 The acceptance criterion is the co-owner's (comparison note §6).
 
-- **(b) obtained, globally.** §3 excludes C¹ conjugacy at every pair of iterate clocks, on a forward-invariant neighbourhood of W^u(P₂), for the whole reduced MM-1 dyad family with g′(π) < 0. Together with the local C³ exclusion, **RTG's dyad and the reduced MM-1 dyad are different dynamical objects both near P₁ and along the unstable manifold of the antipodal saddle.**
-- **(a) not obtained.** The shared features are generic for a dissipative-or-conservative circle map with one elliptic point and one saddle: the elliptic point with an antipodal saddle, cubic healing at the threshold point, and fold-type rank loss where it occurs. The MM-1 critical lines are folds whenever aκ > |1 − a|, since the kernel (1, −1) is transverse and ∂_φ det = −aκ sin φ ≠ 0 there. None of these features gives a common law.
+- **(b) obtained, globally.** §3 excludes C¹ conjugacy at every pair of iterate clocks, on a forward-invariant neighbourhood of W^u(P₂) with P₂ mapped to (π, 0), for the whole reduced MM-1 dyad family with g′(π) < 0. Together with the local C³ exclusion, **RTG's dyad and the reduced MM-1 dyad are not conjugate in either tested class**: C³ at the fixed points, and C¹ along the unstable manifold of the antipodal saddle.
+- **(a) not obtained.** The shared features are generic for a cylinder map with a fixed point at the origin and an antipodal saddle: the saddle itself, cubic healing at the point where the origin is elliptic (RTG's P₁; MM-1 only at κ = 1), and fold-type rank loss where it occurs. The MM-1 critical lines are folds whenever aκ > |1 − a|, since the kernel (1, −1) is transverse and ∂_φ det = −aκ sin φ ≠ 0 there. None of these features gives a common law.
 - **Candidate coarse observable `[CAND]`: the branch-fate pattern of the antipodal saddle.** For each branch of W^u it records whether the branch heals into the elliptic basin, crosses the separatrix (phase slip), or meets rank loss. It needs no coordinates.
   - RTG's pattern, parameter-free, is (heals into B(P₁), meets C₀).
   - MM-1's pattern is a mirror pair for every parameter, by §2.2. That it switches near κ_sep is a leading-order reading from the κ_sep note, not shown at finite a.
@@ -96,13 +99,20 @@ The acceptance criterion is the co-owner's (comparison note §6).
 
 ## 6. What this means for the RTG line (`[SESSION]` reading)
 
-At the level of conjugacy, the comparison of the two maps is now exhausted in both directions, local and global. Further work on the RTG line can only go through a coarser mapping class: an observation map, a semiconjugacy, or a shared threshold law in observed quantities. That is the interface Charter §10.2 (S-2) names. The branch-fate pattern (§5) is a candidate for its first entry.
+The tested conjugacy classes are now excluded in both directions, local and global (R3: this is a statement about the tested classes, not about every conjugacy). Untested classes remain:
+- C⁰ conjugacy;
+- conjugacies that send P₂ to another periodic saddle;
+- semiconjugacies;
+- observation maps;
+- shared threshold laws in observed quantities.
+
+Further work on the RTG line would go through one of these. That is the interface Charter §10.2 (S-2) names. The branch-fate pattern (§5) is a candidate for its first entry.
 
 Whether to continue the line in that direction, pause it, or return to the physical coil channel (comparison note §7, item 3 of the co-owner's order) is the PI's decision.
 
 ## 7. Open
 
 1. Independent check of §2–§4 (co-owner).
-2. C⁰ version of §3: are fold points, as non-local-injectivity points, enough to carry the argument to homeomorphisms?
+2. C⁰ version of §3: are fold points, as non-local-injectivity points, enough to carry the argument to homeomorphisms? The same question applies to the other untested classes of §6.
 3. MM-1 branch fates at finite a, beyond the leading-order κ_sep reading. This needs either a Melnikov-type estimate or orbit computation; the latter would be a new computation, outside this mandate unless the PI decides otherwise.
 4. RTG items owned by RECOG and left open there: the global geometry of W^s(P₂), and the later fate of W^u_+(P₂) after its first C₀ encounter.
