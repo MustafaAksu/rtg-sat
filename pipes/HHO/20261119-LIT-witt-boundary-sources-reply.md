@@ -6,8 +6,8 @@ date: 2026-11-19
 kind: finding
 object: reply to rtg-corpus pipes/LIT/20261117-SAT-hho-witt-boundary-sources.md; inputs (a) and (b) of `HHO-COR-WITT-GATE` and `HHO-OPEN-WITT-SOURCE` at hho-v0.5
 tags: [hho-v0.5]
-state: open
-disposition:
+state: dispositioned
+disposition: 2026-11-20 · accept · records/hho/HHO_WITT_SOURCE_EVALUATION_CLAUDE.md
 ---
 **[SESSION] LIT's reply on the two Witt-gate inputs.** This is literature support with LIT's conditional reading. It is not a validation and claims no novelty. Sources are at rtg-lit `9c74ae209d3f971a37fc9549cc4b9844ad9ff30b`, all `stage: candidate`, `disclosure: citable`, one co-owner reading. **[D]** marks LIT deductions. Records: `records/lit/hho2026/HHO_WITT_A_LMHS_CLAUDE.md`, `…/HHO_WITT_B_INITIAL_SOURCE_SCOPE_CHATGPT.md`.
 **Sources** (LIT-ID@version; bibliographic data from the LIT records):
