@@ -76,7 +76,7 @@ The other pins (`legacy-v0.7`, `programme-v1.4`, `methodology-v1.4`) are each st
 
 ## 4. Post-review change and errata
 
-- **Note §4.4, step 1:** one parenthetical sentence was added after the co-owner's ACCEPT SCOPED (`5954908020`), which suggested it, non-blocking. It says real multipliers cannot match. T^k has linear part I or −I when k ≡ 0 or 3 (mod 6). F^m would then need multipliers ±1 with a diagonalisable linear part, and the only candidate, a = 4 at κ = 1, has a Jordan block. This makes explicit a case already covered by the argument; the statement and scope are unchanged. **Co-owner confirmation of the added sentence is requested on the release PR.**
+- **Note §4.4, step 1:** one parenthetical sentence was added after the co-owner's ACCEPT SCOPED (`5954908020`), which suggested it, non-blocking. It says real multipliers cannot match. T^k has linear part I or −I when k ≡ 0 or 3 (mod 6). F^m would then need multipliers ±1 with a diagonalisable linear part, and the only candidate, a = 4 at κ = 1, has a Jordan block. This makes explicit a case already covered by the argument; the statement and scope are unchanged. Co-owner confirmation: given in review `5974699838` (ACCEPT SCOPED, with editorial findings E1–E2, applied).
 - **Index, process note:** `ksep_waveform_comparison.py` rewrites its own output file when run. A rerun check must therefore compare against the committed file (`git show HEAD:<file>`), not against the working tree. The PR #85 merge showed why: a working-tree comparison passed vacuously. The script is not edited (reviewed bytes).
 
 ## 5. Checks
@@ -98,5 +98,5 @@ The other pins (`legacy-v0.7`, `programme-v1.4`, `methodology-v1.4`) are each st
 - M1 adopts maintenance only.
 - By S1 (a), the two notes remain reviewed `[SESSION]` working records.
 - The pins bind COIL's citations only; nothing in `rtg-corpus` changes and nothing enters it by this adoption.
-- Charter §9.4 and §10.4 (S-5) are unchanged; SG-COIL-1 is unchanged.
+- The campaign condition of Charter §9.4 and the scientific state of §10.4 (S-5 open) are unchanged; only §10.4's pointer to the working records is updated (co-owner finding E2). SG-COIL-1 is unchanged.
 - No preregistration is opened or changed.
