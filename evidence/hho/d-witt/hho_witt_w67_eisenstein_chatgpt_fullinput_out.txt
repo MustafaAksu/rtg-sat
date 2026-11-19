@@ -1,0 +1,6 @@
+MODE: original repository source files; enforcing source SHA-256
+W6 input SHA-256 PASS: ae9048784171da49d7d39e13154addd9d1de291478f7af73aadbe44c1f42aedc
+W6: source roots=10, N=20, product-one=PASS, V^G=0: PASS, certificate edges=102, vertices=98, w=4; planar C18=477638700 min/max=4/4; direct witnesses min=(76, 72), max=(76, 72): PASS
+W7 input SHA-256 PASS: 45097b3042f30dcb746a1c0522c2375af9215957796c85f205c5b1e3c87f10ed
+W7: source roots=10, N=20, product-one=PASS, V^G=0: PASS, certificate edges=102, vertices=98, w=4; planar C18=477638700 min/max=4/4; direct witnesses min=(76, 72), max=(76, 72): PASS
+ALL PASS: exact Q(omega) arithmetic, new bottom-up interval DP; graph W0 only, NOT (D)

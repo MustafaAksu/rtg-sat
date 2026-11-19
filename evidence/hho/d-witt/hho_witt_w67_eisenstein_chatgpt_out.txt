@@ -1,0 +1,4 @@
+MODE: extracted source fixtures; full source SHA-256 independently verified on GitHub, not in this local fixture run
+W6: source roots=10, N=20, product-one=PASS, V^G=0: PASS, certificate edges=102, vertices=98, w=4; planar C18=477638700 min/max=4/4; direct witnesses min=(76, 72), max=(76, 72): PASS
+W7: source roots=10, N=20, product-one=PASS, V^G=0: PASS, certificate edges=102, vertices=98, w=4; planar C18=477638700 min/max=4/4; direct witnesses min=(76, 72), max=(76, 72): PASS
+ALL PASS: exact Q(omega) arithmetic, new bottom-up interval DP; graph W0 only, NOT (D)
