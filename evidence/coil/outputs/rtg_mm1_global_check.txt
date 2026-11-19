@@ -1,0 +1,34 @@
+rtg_mm1_global_check  python 3.13.18 sympy 1.14.0
+
+S. Saddles
+  RTG DT(P2) = [[1, 1], [1, 2]]  trace 3  det 1  multipliers [3/2 - sqrt(5)/2, sqrt(5)/2 + 3/2]
+  MM-1 DF(pi, 0) = [[1, 1], [a*c*kappa, 1 - a]]  (c = -g'(pi) > 0)  trace 2 - a  det -a*c*kappa - a + 1
+  characteristic polynomial p(lam) = -a*c*kappa + a*lam - a + lam**2 - 2*lam + 1 ; p(1) = -a*c*kappa ; p(-1) = -a*c*kappa - 2*a + 4
+  pair A a = 0.030, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = 131.33
+  pair B a = 0.100, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = 38.00
+  pair C a = 0.156, sine (c = 1): saddle at (pi, 0) iff kappa < (4 - 2a)/a = 23.64
+  S1  ok
+
+M. Mirror symmetry of MM-1 and its absence in RTG
+  F(M x) - M(F x) = [[0, a*kappa*(-g(phi) - g(-phi + 2*pi))]]  ; vanishes iff g(2 pi - phi) = -g(phi)
+  with g = sin: [[0, 0]]
+  M(pi, 0) = (pi, 0); DM = -I maps the unstable eigenvector v to -v (swaps the two branches); det DF(M x) - det DF(x) = 0
+  S2  ok
+  RTG: T(N x) - N(T x) = [[0, 2*cosh(rho) - 2]] for N(rho, eta) = (-rho, 2 pi - eta)
+  S3  ok
+  (the discrepancy e^rho + e^-rho - 2 = 2 (cosh rho - 1) is the even part of e^rho - 1 and vanishes only on rho = 0)
+
+B. Band area (signed, degree-weighted image area of a full band)
+  RTG: det DT = exp(rho)*cos(eta) - cos(eta) + 1 ; mean over eta = 1 for every rho
+  MM-1 (sine): det DF = a*kappa*cos(phi) - a + 1 ; mean over phi = 1 - a for every w (and every odd 2 pi-periodic g: the mean of g' over a period is 0)
+  B1  ok
+
+I. Invertibility where the escape mechanisms act
+  pair A a = 0.030: reduced sine dyad a diffeomorphism iff kappa < 32.3333; kappa_sep = 3 inside
+  pair B a = 0.100: reduced sine dyad a diffeomorphism iff kappa < 9.0000; kappa_sep = 3 inside
+  pair C a = 0.156: reduced sine dyad a diffeomorphism iff kappa < 5.4103; kappa_sep = 3 inside
+  RTG: det DT = 0 needs |e^rho - 1| >= 1 with e^rho - 1 > 0 at cos eta < 0, i.e. rho >= ln 2 = log(2) ; for rho < 0, 0 < det DT < 2 (RECOG, negative half-plane)
+  RECOG-THM-P2-C0-FIRST box: 2.03334 < rho_* < 2.03342 > ln 2 = 0.69315 (consistency only)
+  I1  ok
+
+RESULT: PASS (S1-S3, B1, I1)
