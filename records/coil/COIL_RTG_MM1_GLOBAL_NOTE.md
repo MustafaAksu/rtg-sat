@@ -14,7 +14,7 @@
 
 ## 1. Result
 
-**1. Saddles `[DERIVED]`.** Both maps have a fixed point at the origin and an antipodal saddle. RTG's P₁ is elliptic of order 6. MM-1's origin is a focus with |λ|² = 1 + a(κ − 1); it is elliptic only at κ = 1, the spark. The saddles compare as follows:
+**1. Saddles `[DERIVED]`.** Both maps have a fixed point at the origin and an antipodal saddle. RTG's P₁ is elliptic of order 6. MM-1's origin has trace 2 − a, det 1 − a + aκ and discriminant a(a − 4κ). It is a focus iff κ > a/4, with |λ|² = 1 + a(κ − 1); its linear spectrum is elliptic only at κ = 1 with 0 < a < 4, the spark (co-owner, review `5984502777`). The saddles compare as follows:
 - **RTG:** P₂ = (0, π), with trace 3, det 1 and multipliers φ^{±2} (φ the golden ratio).
 - **MM-1:** (π, 0), with trace 2 − a and det 1 − a(1 + κc), where c = −g′(π) > 0. This point is a saddle iff 4 − 2a − aκc > 0, and its unstable multiplier is always > 1. Because det ≠ 1, no same-clock C¹ conjugacy maps P₂ to this saddle. At iterate clocks the linear data can agree: at a = κ = c = 1, DF(π, 0)² = [[2, 1], [1, 1]] has the trace and determinant of DT(P₂) (co-owner, review `5983829254`). Item 2 is what excludes that case.
 
@@ -79,7 +79,7 @@
 
 - **One-step full-band integral (B1).** The signed, multiplicity-weighted image area of a full band equals the band integral of det. For RTG, (1/2π)∫₀^{2π}(1 + (e^ρ − 1) cos η) dη = 1 for every ρ. For MM-1, (1/2π)∫₀^{2π}(1 − a + aκ g′(φ)) dφ = 1 − a for every w, because g′ has mean zero over a period for any periodic g.
   - In RTG, local contraction where cos η < 0 (for ρ > 0) is balanced in this integral by expansion where cos η > 0. In MM-1, the integral carries the damping factor 1 − a.
-  - Nothing follows about invariant sets or long-time behaviour. RTG's attraction at P₁ is algebraic: Q_m⁻¹ = Q₀⁻¹ + m + O(√m), `dyad-v6.4.24` §6.5. MM-1's attraction at 0 for κ < 1 is linear (|λ|² < 1).
+  - Nothing follows about invariant sets or long-time behaviour. RTG's attraction at P₁ is algebraic: Q_m⁻¹ = Q₀⁻¹ + m + O(√m), `dyad-v6.4.24` §6.5. MM-1's origin is linearly attracting iff κ < 1 and 4 − 2a + aκ > 0 (Jury conditions; e.g. at a = 3, κ = 0.1 the multipliers are ≈ 0.896 and −1.896, so κ < 1 alone is not enough).
 - **Invertibility (I1, I2).**
   - The reduced sine dyad is a diffeomorphism iff aκ < |1 − a| (comparison note §5): κ < 32.3, 9.00 and 5.41 for A, B and C.
   - The reduced R1 dyad (|g_q′| ≤ 1) has det DF ≥ 1 − a − aκ, so it is a diffeomorphism on the whole locked DYAD range κ ≤ 3 at a = 0.03 (det ≥ 0.88). Its recorded fracture at κ = 2.30 (25/25) therefore took place on a diffeomorphism.
