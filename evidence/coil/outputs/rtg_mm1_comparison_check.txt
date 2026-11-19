@@ -1,0 +1,81 @@
+rtg_mm1_comparison_check  python 3.13.18 sympy 1.14.0
+
+L. Linear parts
+  DT(P1) = [[1, -1], [1, 0]]  trace 1  det 1  eigenvalues [1/2 - sqrt(3)*I/2, 1/2 + sqrt(3)*I/2]
+  DF(0)  = [[1, 1], [-a*kappa, 1 - a]]  trace 2 - a  det a*kappa - a + 1
+  equal trace and determinant: [{a: 1, kappa: 1}]
+  L1   ok
+  kappa = 1: det = 1 ; trace^2 - 4 det = a*(a - 4) (< 0 for 0 < a < 4, so the multipliers are e^{+-i theta}); cos theta = trace/2 = 1 - a/2
+  L2   ok
+  K_p family: DT_p(P1) = [[1, -1], [K, 1 - K]]  trace 2 - K  det 1 = trace and det of DF(0) at kappa = 1, a = K
+  L3   ok
+  rotation per step at the spark (kappa = 1) for the locked pairs: a = 0.030: 2 pi / 36.23, a = 0.100: 2 pi / 19.79, a = 0.156: 2 pi / 15.80
+
+N. Cubic normal-form coefficients
+  RTG at P1: 6 conj(lambda) c1 = -3/2 - 2*sqrt(3)*I ; 3 mu6^W = -3/2 - 2*sqrt(3)*I ; arg = -113.413 deg
+  N1   ok
+  K_p family (RECOG v0.3.27 section 6.10), frame factor K between this frame and RECOG's Z-frame:
+    p     K          Re(Z-frame)    -p sin^2(pi/p)   arg (deg)
+    5     1.381966   -1.7274575141  -1.7274575141    -120.959
+    6     1.000000   -1.5000000000  -1.5000000000    -113.413
+    7     0.753020   -1.3177856935  -1.3177856935    -108.326
+    8     0.585786   -1.1715728753  -1.1715728753    -104.639
+    12    0.267949   -0.8038475773  -0.8038475773     -96.738
+    16    0.152241   -0.6089637399  -0.6089637399     -93.540
+    20    0.097887   -0.4894348370  -0.4894348370     -92.047
+    36    0.030384   -0.2734604458  -0.2734604458     -90.418
+  N2   ok
+  MM-1 at kappa = 1 (spark point), frame q = (1, lambda - 1):
+    a = 1 (theta = pi/3): conj(lambda) c1 = g3*(3 + sqrt(3)*I)/12  ; formula: g3*(3 + sqrt(3)*I)/12
+    random (theta, g3), 40 draws: max |numeric - formula| = 2.22e-15
+  N3   ok
+    sine (g3 = -1) along the same rotations as the K_p table:
+    p     a          arg MM-1 (deg)   arg RTG K_p (deg)
+    5     1.381966    -162.000         -120.959
+    6     1.000000    -150.000         -113.413
+    7     0.753020    -141.429         -108.326
+    8     0.585786    -135.000         -104.639
+    12    0.267949    -120.000          -96.738
+    16    0.152241    -112.500          -93.540
+    20    0.097887    -108.000          -92.047
+    36    0.030384    -100.000          -90.418
+
+  Shear/healing ratio Im/Re of the cubic coefficient (frame-independent):
+    RTG at P1: 4*sqrt(3)/3 = 2.309401   (Dyadic exports 4 sqrt(3)/3)
+    MM-1 at a = 1, kappa = 1, any odd g with g3 != 0: sqrt(3)/3 = 0.577350
+  N4   ok
+
+  Iterates (cubic jets composed and truncated):
+    MM-1 (theta = 0.7, sine): conj(lambda^2) c1(F^2) / (2 conj(lambda) c1(F)) = 2.339934285800+0.000000000000i
+    RTG T^7 (multiplier e^{i pi/3}): conj(lambda^7) c1(T^7) / (7 conj(lambda) c1(T)) = 1.000000000000+0.000000000000i
+  N5   ok
+    (a positive real ratio is the frame factor |s|^2 of a different eigenvector scaling: arguments, hence Im/Re, agree)
+  Rotation angle at which the MM-1 ratio cot(theta) would equal +-4 sqrt(3)/3: tan^2(theta) = 3/16, cos(2 theta) = (1 - 3/16)/(1 + 3/16) = 13/19 ; Niven: cos of a rational multiple of pi is rational only in {0, +-1/2, +-1}
+  N6   ok
+
+P. Parabolic germs (six-step and iterate clocks)
+  T, angle pi/3                  equivariant cubic monomials z^i zb^j: [(2, 1)]
+  MM-1, a = 1                    equivariant cubic monomials z^i zb^j: [(2, 1)]
+  MM-1, a = 3 (theta = 2 pi/3)   equivariant cubic monomials z^i zb^j: [(2, 1)]
+  MM-1, a = 0.03                 equivariant cubic monomials z^i zb^j: [(2, 1)]
+  MM-1, a = 2 (theta = pi/2)     equivariant cubic monomials z^i zb^j: [(0, 3), (2, 1)]  (excluded case)
+  P1   ok
+  T^6 (RTG)                  z^2 zb coefficient -1.500000000000-3.464101615138i, expected 6 conj(lambda) c1 = -1.500000000000-3.464101615138i; largest other quadratic/cubic coefficient 5.0e-16
+  F^6 (MM-1, a = 1, sine)    z^2 zb coefficient -1.500000000000-0.866025403784i, expected 6 conj(lambda) c1 = -1.500000000000-0.866025403784i; largest other quadratic/cubic coefficient 2.0e-16
+  F^3 (MM-1, a = 3, sine)    z^2 zb coefficient -2.250000000000+1.299038105677i, expected 3 x N3 formula = -2.250000000000+1.299038105677i; largest other quadratic/cubic coefficient 2.3e-15
+  P2   ok
+  L(mu |z|^2 z) - nu |Lz|^2 Lz:  z^3 coefficient -alpha**2*betac*nu ; zb^3 coefficient -alphac*beta**2*nu
+  P3   ok
+
+G. Invertibility of the reduced sine dyad F(phi, w) = (phi + w, (1 - a) w - a kappa sin phi)
+  F^{-1}: phi = phi' - w, with w solving (1 - a) w - a kappa sin(phi' - w) = w'; the left side has derivative
+  (1 - a) + a kappa cos(phi' - w), ranging over [(1 - a) - a kappa, (1 - a) + a kappa]: sign-definite iff a kappa < |1 - a|.
+  det DF = 1 - a + a kappa cos(phi): the same interval. F is a global diffeomorphism iff a kappa < |1 - a|.
+  pair A a = 0.030: diffeomorphism iff kappa < (1 - a)/a = 32.3333
+  pair B a = 0.100: diffeomorphism iff kappa < (1 - a)/a = 9.0000
+  pair C a = 0.156: diffeomorphism iff kappa < (1 - a)/a = 5.4103
+  example a = 3/2, kappa = 1/10: det DF in [-0.650, -0.350] (negative everywhere): orientation-reversing diffeomorphism
+  a = 1: det DF = kappa cos(phi); critical lines phi = +-pi/2 for every kappa > 0; not invertible
+  G1   ok
+
+RESULT: PASS (L1-L3, N1-N6, P1-P3, G1)
