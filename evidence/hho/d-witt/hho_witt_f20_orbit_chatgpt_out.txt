@@ -1,0 +1,9 @@
+SOURCE SHA-256 PASS: evidence/hho/outputs/a4_direct_out.txt: 8d54d6622be6cef8a5568df5bee2285f780834d446c23bd3c1eae0b9b9ba6f89
+SOURCE SHA-256 PASS: evidence/hho/code/a4_direct.py: cd548934c63af78e688d0697cd23da05fe602d09de3df9bb4a0d28d03616bc9d
+F20 all 40 source tuples: product-one PASS; generated group order=60 PASS; V^G=0 PASS
+F20 subgroup invariants: independent orbit/stabilizer and character-average identities agree
+F20 nonsplit [5] source line 9: three distinct N=4 topologies w=[0, 0, 0]: PASS
+F20 nonsplit [5] source line 29: three distinct N=4 topologies w=[0, 0, 0]: PASS
+F20 nonsplit [5] source line 32: three distinct N=4 topologies w=[0, 0, 0]: PASS
+F20 split [1], signature (4,4,0), 27 tuples: counts (N,maxw) = {(4, 0): 4, (4, 1): 6, (4, 2): 5, (4, 4): 1, (5, 1): 3, (5, 2): 3, (5, 3): 3, (5, 4): 2}
+ALL PASS: exact finite-group combinatorics; original class/signature labels not recalculated; graph W0 only, NOT (D)
