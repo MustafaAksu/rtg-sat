@@ -96,7 +96,26 @@ The other pins (`legacy-v0.7`, `programme-v1.4`, `methodology-v1.4`) are each st
 
 ## 6. Adoption manifest
 
-*Filled in the manifest-only commit that follows the content commit.*
+**Status: ADOPTED (2026-11-19).** SHA-256 at the **content commit** `79aa3a5f833a2652b0604dbc6f2c7fbfa8c38f02`. These are the 14 files of COIL scope (`coil/`, `records/coil/`, `evidence/coil/`, `pipes/COIL/`, and `REGISTRY.md`) changed or added relative to `coil-v0.11`, not counting this record. Every other COIL-scope file is inherited unchanged from `coil-v0.11`. Changes of other studies merged into `main` (HCG #84 and #86, HHO #88 and #90) are not part of this release; `REGISTRY.md` is listed whole because it carries the COIL row.
+
+| File | SHA-256 |
+|---|---|
+| `REGISTRY.md` | `06be6e6afbcf4b059911aa4f0824c9da821ca160925eaa47209e05c1575ba154` |
+| `coil/COIL_CHARTER.md` | `0cb6431f3019d5c945800caa5ec04d4a1f4c1af675fc22a328d3c59ffcab11e5` |
+| `coil/COIL_INDEX.md` | `6420d9dff35248774d89b382705ad2affd64d67f21200a98b3b6554ec15f3f62` |
+| `coil/records/RM-01.md` | `9495c29434f9aa942e0452999fbaa867b2b96b4897c96b77655fd05e7e444176` |
+| `evidence/coil/code/SHA256SUMS` | `a8b03c68111bdce1d352bed53ab662a48132ce7d7a20b0adc8527c899daee790` |
+| `evidence/coil/code/ksep_waveform_comparison.py` | `58920becd648e9e0f0dda7eec4a926e7198304cb57a6b10f40039515167ffa45` |
+| `evidence/coil/code/rtg_mm1_comparison_check.py` | `344407266a6081733cce32a9281359383a24dc6471f79f1320ba07cd74836fae` |
+| `evidence/coil/outputs/SHA256SUMS` | `a6aba9d773bd6ba4aa1e85941e5ea770807f31fef4cd35022427b0bd26d265d4` |
+| `evidence/coil/outputs/ksep_waveform_comparison.txt` | `3e395178d8b24c97f3a5993dc6a28326e6527312eca3512a0deeb5b73d818ec6` |
+| `evidence/coil/outputs/rtg_mm1_comparison_check.txt` | `6da524487121a990fbc3d48eaffa5257f77b0d3348f778062515e4db66c9133d` |
+| `pipes/COIL/20261117-LIT-strong-null-literature-reply.md` | `9e0e049ac5c95e5b96f4f3b2e4db0237fccffaed86b65920a8128e73a5524c6b` |
+| `records/coil/COIL_KSEP_WAVEFORM_NOTE.md` | `ce5505e81f684c97e3f064ecbe82ad829bfea40a2fcfaf6fc14a86b7e978aeb2` |
+| `records/coil/COIL_LIT_REPLY_20261117_DISPOSITION.md` | `4efd9a5b042972894731b82b4b6da3a51d13bed5f3b2c30efaf8b94c326c7c72` |
+| `records/coil/COIL_RTG_MM1_COMPARISON_NOTE.md` | `1d2875bacbd3894141fdd4a56964f9883ff675634dfc3e50b4612eb5e7958ce2` |
+
+**Adoption scope (PI, 2026-11-19):** the files above as they stand at the content commit; every other COIL-scope file inherited from `coil-v0.11`; tag `coil-v0.12`.
 
 **Limits of effect:**
 - M1 adopts maintenance only.
