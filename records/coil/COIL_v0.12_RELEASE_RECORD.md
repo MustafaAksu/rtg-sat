@@ -1,6 +1,10 @@
 # COIL v0.12 — release record: maintenance; RTG line reopened for analytic comparison only; RTG pins moved; two reviewed working records linked
 
-**Status:** **CANDIDATE — awaiting PI adoption.** Successor of `coil-v0.11` (`fae159f`; record `records/coil/COIL_v0.11_RELEASE_RECORD.md`).
+**Status:** **ADOPTED** by PI Mustafa Aksu on 2026-11-19, as the candidate stood at head `34fbaddc98c4c9b1c6fedfe42d6cf5c83247719d` of PR #89; publication tag `coil-v0.12`. The PI's words (COIL owner session): "PI olarak M1 bakım benimsemesini ve S1(a) bilimsel statü kararını açıkça onaylıyorum." Successor of `coil-v0.11` (`fae159f`; record `records/coil/COIL_v0.11_RELEASE_RECORD.md`).
+
+**Review state at adoption:** co-owner ACCEPT SCOPED in review `5974699838`, with editorial findings E1–E2, applied in `34fbadd`; and in review `5982868397`, which closes E1–E2 and accepts M1 and S1 (a). A co-owner acceptance is not a PI adoption; the adoption is the PI's statement above. The record is frozen at adoption: a later finding goes into a later release.
+
+**Before publication:** PR #87 was merged separately (`5f6110d`, 19 Nov 2026). `main` then advanced to `3856d73` with PR #90, which touched only `pipes/HHO/`. Neither event changed a COIL file of this release or the COIL row of `REGISTRY.md`.
 
 **PI decisions behind this candidate (all given in chat):**
 - **18 Nov 2026:**
@@ -11,7 +15,7 @@
   - prepare `coil-v0.12` right after PR #87, without waiting for the global comparison;
   - use the scope the co-owner proposed (§2).
 
-**Basis.** The candidate is stacked on the head of PR #87 (`5a1a2531b45b2453a0f4a66301ff06552ebd31e2`, co-owner ACCEPT SCOPED, review `5954908020`). If PR #87 is merged first, the release PR adds only the changes of §3. If it is not, PR #87 reaches `main` with this release.
+**Basis.** The candidate is stacked on the head of PR #87 (`5a1a2531b45b2453a0f4a66301ff06552ebd31e2`, co-owner ACCEPT SCOPED, review `5954908020`), which was merged into `main` before publication (`5f6110d`).
 
 ## 1. Files
 
@@ -48,10 +52,10 @@
 
 | # | Decision | State |
 |---|---|---|
-| **M1** | **Maintenance** as in §3: the RTG line reopened for analytic comparison only; pins `dyad-v6.4.24` and `recog-v0.3.27`; RM-01 re-pinned; the two notes linked **as reviewed `[SESSION]` working records**; REGISTRY row updated | scope chosen by the PI on 19 Nov 2026 (co-owner's proposal); **adoption of this candidate pending** |
-| **S1** | **Scientific status of the two notes:** (a) they stay reviewed working records, with no adopted result; or (b) their stated, scoped results are adopted | the co-owner's proposal, accepted by the PI on 19 Nov 2026, is **(a)**; adopting the notes' mathematical findings is left as a separate later decision |
+| **M1** | **Maintenance** as in §3: the RTG line reopened for analytic comparison only; pins `dyad-v6.4.24` and `recog-v0.3.27`; RM-01 re-pinned; the two notes linked **as reviewed `[SESSION]` working records**; REGISTRY row updated | **ADOPTED** (PI, 2026-11-19) |
+| **S1** | **Scientific status of the two notes:** (a) they stay reviewed working records, with no adopted result; or (b) their stated, scoped results are adopted | **(a) ADOPTED** (PI, 2026-11-19); adopting the notes' mathematical findings is left as a separate later decision |
 
-Under S1 (a), none of the following becomes an adopted COIL result:
+By S1 (a), none of the following is an adopted COIL result:
 - κ_sep as a position mechanism (8 of 12 waveforms match on nominal intervals, 7 of 12 on measured points);
 - the linear identity between RTG's T at P₁ and the MM-1 spark point at a = 1;
 - the exclusion of local C³ conjugacy between iterates of T and of the reduced MM-1 dyad.
@@ -92,9 +96,9 @@ The other pins (`legacy-v0.7`, `programme-v1.4`, `methodology-v1.4`) are each st
 
 ## 6. Adoption manifest
 
-*Filled at adoption:* the content-commit hash and the SHA-256 of every file in §1 that is changed or added relative to `coil-v0.11`. Files not listed are inherited unchanged from `coil-v0.11`.
+*Filled in the manifest-only commit that follows the content commit.*
 
-**Limits of effect (proposed):**
+**Limits of effect:**
 - M1 adopts maintenance only.
 - By S1 (a), the two notes remain reviewed `[SESSION]` working records.
 - The pins bind COIL's citations only; nothing in `rtg-corpus` changes and nothing enters it by this adoption.
