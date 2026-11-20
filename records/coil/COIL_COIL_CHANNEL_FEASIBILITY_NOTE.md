@@ -28,7 +28,7 @@ The RTG line stays open for analysis (Charter §9.2) but **is not extended witho
 
 **Why.** The study's name comes from the PI's intuition that a dyad's internal relational rules may resemble a coil's. That intuition was never tested on a coil:
 - IDEALOG A1 demoted the "coil" reading of MM-1's inertial term to `[CAND/HEUR]`. In the RCSJ phase equation the inertial coefficient is the **capacitance**; the only coil there is the nonlinear Josephson inductance.
-- The Josephson plane was then examined only as a calibration plane for MM-1's signature (Phase 2.5, closed).
+- The Josephson plane was then examined only as a calibration plane for MM-1's signature. Phase 2.5 closed that specific calibration scope (biased-RCSJ calibration deferred, continuous Josephson plane unsuitable for calibrating the MM-1 signature, digital-PLL route closed); it did not close Josephson or PLL model families as such.
 
 **Target first** reverses COIL's earlier order (model first, target searched afterwards). The order is:
 1. Choose physical coil systems for their own sake.
@@ -39,31 +39,33 @@ A mismatch found at step 3 is a result, not a reason to adjust the target.
 
 ## 3. Feasibility criteria
 
-Each criterion comes from COIL's own record. A candidate system is feasible only if it can pass F1–F5 on published material.
+The criteria come from COIL's own record. They are **classification axes tied to a research target**, not gates every candidate must pass (co-owner review `5990306041`, R1). Which criterion matters depends on which MM-1 or RTG structure would be compared.
 
-| # | Criterion | Source in COIL's record |
-|---|---|---|
-| F1 | **Native discrete time.** The system's own description is a map with a physical clock, not a sampled continuous flow chosen by the analyst. Literal transfer of S1/S2, which exist only in discrete time (S-1), needs this. | Phase 3 options note; Charter §3.5 |
-| F2 | **Compact phase variable** (or a stated reason why fracture is not the object). Within the tested scope, MM-1's fracture is observed only with a periodic phase space (S3″). A non-compact target can only be compared at the spark (Neimark–Sacker) level. | Charter §3.4, S3″; MM-1.md |
-| F3 | **A mapping rule written before data** (state, clock, parameter, observable), as in the comparison note's dictionary. | Charter §10.2 (S-2) |
-| F4 | **A candidate quantitative statement beyond the strong null**, i.e. beyond generic Neimark–Sacker, period-doubling or torus-breakdown behaviour as LIT stated it on 17 Nov 2026. | Charter §9.4; LIT reply disposition |
-| F5 | **Published measured data** (no new experiment), with enough detail to evaluate F4 without fitting. | Charter §9.4 (no campaign) |
+| # | Criterion | Needed for | Not needed for | Source in COIL's record |
+|---|---|---|---|---|
+| F1 | **Kind of discrete time:** a physical switching or clock map, a natural Poincaré return, or analyst-chosen sampling | a **literal** transfer of S1/S2, which exist only in discrete time (S-1) | comparisons at the level of continuous-time structure (e.g. a Neimark–Sacker or Hopf threshold as such) | Phase 3 options note; Charter §3.5 |
+| F2 | **A compact phase variable** that is a dynamical state variable, not only an external drive phase | comparing MM-1's **fracture**. Within MM-1's tested scope fracture is observed only with a periodic phase space (S3″); this is an observation of that scope, not an impossibility statement | comparisons at the first-instability level | Charter §3.4, S3″; MM-1.md |
+| F3 | **A mapping rule written before data** (state, clock, parameter, observable), as in the comparison note's dictionary | any later validation or campaign decision | starting the literature stage | Charter §10.2 (S-2) |
+| F4 | **A candidate quantitative statement beyond the strong null**, i.e. beyond generic Neimark–Sacker, period-doubling or torus-breakdown behaviour as LIT stated it on 17 Nov 2026 | any later validation or campaign decision (Charter §9.4) | starting the literature stage | Charter §9.4; LIT reply disposition |
+| F5 | **Published measured data**, independent experiment rather than results fitted to a model | validation without a new experiment | mathematical feasibility, which a lack of measurements does not refute | Charter §9.4 (no campaign) |
 
 ## 4. Candidate systems `[CAND, UNVERIFIED]`
 
 These are from the owner session's general knowledge. LIT is asked to confirm or correct each, with sources.
 
-| Candidate | What makes it a "coil" system | F1 | F2 | Expected difficulty |
+| Candidate | What makes it a "coil" system | F1 (kind of clock) | F2 (compact state phase) | Expected difficulty |
 |---|---|---|---|---|
-| C1 **Switched-inductor DC-DC converters** (e.g. current-mode buck or boost) | the inductor current is the state; the switching period is a physical clock | **likely yes**: stroboscopic maps are the standard description | **no**: inductor current and capacitor voltage are not periodic variables | F2 fails for fracture; comparison only at the first-instability level. The maps are often piecewise-smooth (border-collision), not smooth like MM-1 |
-| C2 **Saturable-core (ferroresonant) circuits** | nonlinear inductance through core saturation | **no**: the native description is a driven continuous flow; maps are analyst-sampled | **no**: flux is not periodic | F1 and F2 both fail; useful mainly as a negative control for "nonlinear coil alone" |
-| C3 **Inductively coupled or injection-locked oscillators**, described by a phase | a phase variable with inductive coupling | depends on the system: a phase map per cycle may be native for pulse- or switch-coupled oscillators | **yes**: the phase is periodic | the most promising for F2; F1 must be checked per system |
-| (closed) Josephson junction (RCSJ), digital PLL | — | — | — | closed in Phase 2.5 (12 Nov 2026); not reopened |
+| C1 **Switched-inductor DC-DC converters** (e.g. current-mode buck or boost) | the inductor current is the state; the switching period is a physical clock | **likely yes**: stroboscopic maps are the standard description | **no**: inductor current and capacitor voltage are not periodic variables | fracture comparison not available (F2); comparison at the first-instability level possible. The maps are often piecewise-smooth (border-collision), not smooth like MM-1 |
+| C2 **Saturable-core (ferroresonant) circuits** | nonlinear inductance through core saturation | **no** for a physical clock: the native description is a driven continuous flow; a natural Poincaré return of the drive is available | **no** as a state variable: flux is not periodic; the periodic phase is the external drive phase | literal S1/S2 transfer and fracture comparison not available; useful mainly as a control for "nonlinear coil alone" |
+| C3 **Inductively coupled or injection-locked oscillators**, described by a phase | a phase variable with inductive coupling | depends on the system: a phase map per cycle may be native for pulse- or switch-coupled oscillators | **yes**: the phase is periodic | the most promising for F2; F1 and the presence of a physical inductive element must be checked per system |
+| Josephson junction (RCSJ), digital PLL | — | — | — | the sources read in Phase 2.5 need not be read again; only their specific calibration scopes were closed (12 Nov 2026). A different circuit of these kinds is not excluded |
 
-**Reading `[SESSION]`.** No candidate is known to pass F1 and F2 together, and C3 is the only one with a periodic phase. If LIT finds no C3-type system with a native clock and measured data, the channel ends at this stage with a recorded negative feasibility result. That outcome would also be informative: it would say that the "coil" intuition has no physical target in which MM-1's fracture signature could be compared at all.
+**Reading `[SESSION]`.** For a **fracture** comparison with a literal S1/S2 transfer, a candidate would need a physical clock (F1) and a compact state phase (F2) together. No candidate is known to have both, and C3 is the only one with a periodic phase. Comparisons at the first-instability level need neither.
+
+If the search finds no suitable target, the recorded result is: **no suitable target was identified within the candidates and evidence searched** (co-owner R2). It would not show that no physical coil target exists.
 
 ## 5. Next step
 
-- A COIL request to LIT is filed in `rtg-corpus` as `pipes/LIT/20261120-SAT-coil-physical-coil-channel.md`. It asks for sources on C1–C3 against F1, F2 and F5, and for the generic theory needed for F4. A filed request is not a LIT answer.
-- When the reply arrives, this note gets a disposition record and a feasibility verdict per candidate: feasible, not feasible, or not determinable from the literature.
+- A COIL request to LIT is proposed in `rtg-corpus` as `pipes/LIT/20261120-SAT-coil-physical-coil-channel.md` (rtg-corpus PR #336). It counts as filed only once that PR is merged, and a filed request is not a LIT answer. The request asks for sources on C1–C3, classified along F1, F2 and F5, and for the generic theory needed for F4.
+- When the reply arrives, this note gets a disposition record and a per-candidate verdict for each research target (first-instability comparison, fracture comparison, literal S1/S2 transfer): feasible, not feasible, or not determinable from the literature searched.
 - Only a feasible candidate with a pre-written F3 mapping and F4 statement could lead to a preregistration proposal. That proposal would need its own PI decision, because Charter §9.4 still governs.
