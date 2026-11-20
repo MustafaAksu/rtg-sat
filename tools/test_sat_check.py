@@ -285,6 +285,29 @@ class SatCheckTests(unittest.TestCase):
         git(corpus, 'tag', '-a', 'dyad-v6.4.20', '-m', 'x')
         self.assertTrue(has(self.fx.run(corpus), 'ERROR', 'pin', 'RTG pin dyad-v6.4.23 is not a tag'))
 
+    def test_satellite_tag_in_rtg_inputs_cell_is_not_an_rtg_pin(self):
+        # regression: a governing-edition tag mentioned in the RTG-inputs cell was listed as an RTG pin
+        write(self.fx.repo, 'REGISTRY.md', REGISTRY.replace('| `dyad-v6.4.23` |', '| `dyad-v6.4.23` (pin moved with `coil-v0.9`) |'))
+        rep = self.fx.run()
+        notchecked = [' '.join(map(str, r)) for r in rows(rep, 'INFO', 'pin') if 'RTG pins not checked' in ' '.join(map(str, r))]
+        self.assertTrue(notchecked)
+        self.assertTrue(all('dyad-v6.4.23' in r and 'coil-v0.9' not in r for r in notchecked))
+        self.assertEqual(rows(rep, 'ERROR', 'pin') + rows(rep, 'WARN', 'pin'), [])
+
+    def test_rtg_pin_beside_satellite_tag_is_still_checked(self):
+        corpus = tempfile.mkdtemp(prefix='satcheck-corpus-')
+        self.addCleanup(shutil.rmtree, corpus, True)
+        git(corpus, 'init', '-q', '-b', 'main')
+        git(corpus, 'commit', '-q', '--allow-empty', '-m', 'c')
+        git(corpus, 'tag', '-a', 'dyad-v6.4.23', '-m', 'x')
+        write(self.fx.repo, 'REGISTRY.md', REGISTRY.replace('| `dyad-v6.4.23` |', '| `dyad-v6.4.23` (pin moved with `coil-v0.9`) |'))
+        rep = self.fx.run(corpus)
+        self.assertTrue(has(rep, 'INFO', 'pin', 'RTG pin dyad-v6.4.23 is the newest tag'))
+        self.assertFalse(any('RTG pin coil-v0.9' in ' '.join(map(str, r)) for r in rep.rows if r[1] == 'pin'))
+        self.assertEqual(rows(rep, 'ERROR', 'pin'), [])
+        git(corpus, 'tag', '-d', 'dyad-v6.4.23'); git(corpus, 'tag', '-a', 'dyad-v6.4.20', '-m', 'x')
+        self.assertTrue(has(self.fx.run(corpus), 'ERROR', 'pin', 'RTG pin dyad-v6.4.23 is not a tag'))
+
     # --- exit status ---
     def test_exit_status(self):
         with contextlib.redirect_stdout(io.StringIO()):

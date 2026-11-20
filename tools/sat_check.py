@@ -388,7 +388,9 @@ def check_pins(rep, repo, rows, sat_tags, corpus):
         except RuntimeError as e:
             rep.add('WARN', 'pin', 'rtg-corpus', str(e))
     for key, row in sorted(rows.items()):
-        pins = BACKTICK_TAG_RE.findall(row['cells'][5])
+        # the cell may also mention tags of registered satellite studies (e.g. the edition that moved a pin);
+        # those are not RTG pins and are covered by the satellite-pin loop above
+        pins = [t for t in BACKTICK_TAG_RE.findall(row['cells'][5]) if TAG_RE.match(t).group(1) not in rows]
         if not pins:
             continue
         if corpus_tags is None:
