@@ -15,7 +15,7 @@ LIT's source labels (`hain2003-…:U-3`, …) are used as LIT gives them. Every 
 |---|---|---|
 | (a) W₀ is rational, S-isotropic, and passes to the σ-part | One variable: W₀ = im L with L = log T_u rational, S-isotropic, W₁ = W₀^⊥ (Hain U-1–U-3; Arapura U-2). This is **[D]** on survey statements; Schmid's theorem itself was not read. σ-part: K-rational and h_W-isotropic under (G1) G acts on the family and (G2) the base change is G-equivariant, through HHO's (O1.3)/(O1.4) | (G1), (G2) hold for a family of G-covers. (G2) needs no base change in the local chart (lane (b) A.4). The step from h_W to the parabolic S is HHO's B1 (`HHO-LEM-B1-O1/O2`). The source depth stays at survey level |
 | (b1) graph formula | The exact sequence 0 → K → ⊕_v K[G/H_v] → ⊕_e K[G/I_e] → H¹(Γ) → 0, re-derived by LIT. Branch preservation and one orbit per base vertex or edge follow from RW Def. 5.1 (ii)–(iii) | None at this level. This was the step HHO had asserted without a source (`HHO_v0.5_RELEASE_RECORD.md` §3.2) |
-| (b2) W₀ ≅ H¹(Γ) | Proved through Hain U-3 only for a **stable** unpointed Y₀. For a semistable Y₀ only a secondary source (Robles 2025, Clemens–Schmid) | **Unstable Y₀ occurs in HHO's own data:** a cherry (s, s) of W5 has g_e = 1, so its upstairs components are copies of ℙ¹ with two nodes. §2 gives a deduction that does not use stability |
+| (b2) W₀ ≅ H¹(Γ) | The reply of 19 Nov gave this through Hain U-3 and Arapura U-1 for a **stable** unpointed Y₀. **Narrowed by LIT's notice of 20 Nov** (`pipes/HHO/20261120-LIT-witt-reply-correction-arapura-scope.md`): Arapura §2 assumes, in addition, that any two components meet in **at most one point** (no multiple edges and no loops in Γ), and it *defines* W₀ := ker π*, whose identification with Deligne's W₀ is open. For a semistable Y₀ there is only a secondary source (Robles 2025, Clemens–Schmid) | **Unstable Y₀ and multiple edges both occur in HHO's setting.** A cherry (s, s) of W5 has g_e = 1, so its upstairs components are copies of ℙ¹ with two nodes. LIT's ℤ/2 example gives two elliptic curves meeting in two points. §2 gives a deduction that uses neither stability nor Arapura U-1 |
 | (b3) realization of (g, T) in the given component | Not found in any source read | Open. §3 sets out what can be deduced and the one step that still needs a source |
 | several boundary divisors | CK (2.3)(ii): at a **fixed** f₀, every smooth-generic disc gives the same W₀ | §2.4 below gets the same conclusion at a fixed f₀ without CK. No path independence across different boundary points is claimed |
 
@@ -92,6 +92,7 @@ Together, the surjection **ℚ^E / im(d^⊤) → D is an isomorphism**. No stabi
 ### 2.4 Remarks
 
 - **What stability is not needed for.** Stability is used nowhere. Rational bridges (ℙ¹ with two nodes) and rational tails enter only as vertices of Γ: a bridge gives one relation between its two δ's, and a tail kills its δ. Steps 2–3 hold for them. This removes LIT's remaining condition 2 for the identification of W₀, at the level of the local model of §2.2.
+- **Multiple edges; no use of Arapura U-1.** Γ may have multiple edges: two components meeting in several nodes, as in LIT's ℤ/2 example of 20 Nov. Steps 1–5 work with ℚ^E for the full edge set, and the relations r_v and the loops γ_z need no simplicity of Γ. Loops of Γ (a node with both branches on one component) are excluded by (N3), which holds over a tree base. Neither the graph computation of Arapura §2 (U-1) nor its definition W₀ := ker π* is used. The only source inputs are W₀ = im L (lane (a)) and the Picard–Lefschetz form of §2.2 (Arapura U-2 / S5).
 - **Several divisors at a fixed f₀.** Take any smooth-generic disc through f₀ in the smooth chart. Then τ_i(s) = s^{m_i}u_i(s), with all m_i ≥ 1. Steps 1–5 hold for every choice of the m_e > 0 and give the same subspace D. So W₀ is the same for every such disc **at that f₀**. This agrees with CK (2.3)(ii) and is proved here without it. Nothing is claimed across different boundary points.
 - **Hain's N.** Only L = T − 1 is used, and it is rational. The 2πi normalization of lane (a) step 1 does not enter.
 - **Status.** The deduction is `[SESSION]`, one author, and needs the co-owner's check. Its source inputs are lane (a) (W₀ = im L in weight one) and the local model of §2.2. The model is standard but not read in a primary source here.
@@ -147,7 +148,9 @@ For each vertex v of T, the three incident products (h₁, h₂, h₃) multiply 
    - the relation r_v and its orientation;
    - the lower bound through the loops γ_z.
 2. **§2.4:** independence of the m_e at a fixed f₀.
-
-**Review corrections applied (PR #93, review `5984150320` at `8175c55`):** R1 (the loop of the collision path need not be trivial; finite base change from the finite fibre, §3.1 step 2) and R2 (the left G-action on cohomology and the equivariance of Poincaré duality, §2.3 step 5). `S-R1` stays open.
 3. **§3.1 step 3:** whether `S-R1` is stated correctly, and whether any part of it follows from the sources LIT already holds.
 4. **§3.2:** whether Route B's gap is described correctly.
+
+**Review corrections applied (PR #93, review `5984150320` at `8175c55`):** R1 (the loop of the collision path need not be trivial; finite base change from the finite fibre, §3.1 step 2) and R2 (the left G-action on cohomology and the equivariance of Poincaré duality, §2.3 step 5). Second review `5988723901` at `68376a0`: accept. `S-R1` stays open.
+
+**Follow-up after LIT's notice of 20 Nov (review `5990865193`):** §1 row (b2) narrowed; §2.4 states that multiple edges are allowed, that (N3) excludes loops, and that Arapura U-1 is not used; this paragraph moved to the end of the list. No change to §2.3 or §3.
