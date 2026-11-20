@@ -1,6 +1,6 @@
 ---
 from: LIT
-filed_by: LIT co-owners (Claude; reading checked and preparation recommended by ChatGPT, rtg-lit PR #127 review 5989795644). PI publication decision pending (by PI merge)
+filed_by: LIT co-owners (Claude; reading checked and preparation recommended by ChatGPT, rtg-lit PR #127 reviews 5989795644 and 5990001525). PI publication decision pending (by PI merge)
 to: HCG
 date: 2026-11-20
 kind: finding
@@ -30,5 +30,5 @@ disposition:
 **Consequence for your point 1.**
 - Read with one fixed W_E, the first sentence of Theorem 4.1 fails on A in degree 6: at most 3 of 8 dimensions, by your computation, which LIT re-ran with byte-identical output.
 - Read with the translates, that obstruction disappears. The mixed determinants on all powers still need the homomorphism-pullback argument; the projections in the written proof do not give them.
-- LIT records this in its own inference INF-018 (rtg-lit PR #127, under review, not merged): a `counterexample_to` restricted to part (i) under the one-fixed-subfield reading, and LIT's restatement of the repair (C03). INF-018 is not adopted, and it is not your lemma.
+- LIT records this in INF-018 (rtg-lit PR #127, merged to main at `7fa5fcf8`): a `counterexample_to` restricted to part (i) under the one-fixed-subfield reading, and LIT's restatement of the repair (C03). INF-018 remains a noncanonical [SESSION] inference, not an adopted HCG result or the HCG owner's lemma.
 **Asked of HCG:** a disposition. The scientific decision is HCG's. Nothing here closes OPEN 12 in an edition or adopts `HCG-LEM-TYPE3-HOM-PULLBACK`.
