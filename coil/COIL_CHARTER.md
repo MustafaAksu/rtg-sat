@@ -235,6 +235,7 @@ On which line will the cross-layer claim be built? There is no answer yet — th
 - **Phase 0 continues:** RM-04 (path dependence) and the remaining RM records.
 - **Phase 1 not started:** RTG-internal robustness (the p-family ledger of the Dyadic DSN is the natural input). The OPEN-P0 conditionality structurally limits this line.
 - This line **cannot import** the results of the MM-1 line.
+- **PI decision, 20 Nov 2026:** the RTG/MM-1 map comparison is **closed for the tested conjugacy classes** — no local C³ conjugacy at the fixed points (`records/coil/COIL_RTG_MM1_COMPARISON_NOTE.md`) and no C¹ conjugacy along W^u(P₂) (`records/coil/COIL_RTG_MM1_GLOBAL_NOTE.md`, conditional on RECOG's P₂ theorems); both reviewed working records, not adopted results. The line stays open for analysis but is **not extended without new physical mapping evidence**; the untested classes are listed in the global note §6.
 
 ### 9.3 Standing line — falsification criteria
 Rewritten for every phase. A claim whose criterion cannot be written cannot receive `[HYP]` status.
@@ -248,6 +249,7 @@ What this means in practice:
 - Open items inside MM-1 (`coil/COIL_INDEX.md` §8: robustness forks, Casebook F2 validation, compendium certificate, RM-04, RM-07) are **not** made more urgent by this state and are not a substitute for it; each needs its own purpose statement against the goals of §8 before it is taken up.
 - The question of §10.2 — on which line a cross-layer claim could be built — is unchanged and now carries more weight: the MM-1 line has not produced a bridge.
 - The RTG line is reopened for analytic comparison only (§9.2, PI decision 18 Nov 2026). This is analysis in the sense of the first bullet, not a campaign.
+- **Physical coil channel, target first (PI decision, 20 Nov 2026):** literature and feasibility stage only (`records/coil/COIL_COIL_CHANNEL_FEASIBILITY_NOTE.md`; request to LIT `rtg-corpus` `pipes/LIT/20261120-SAT-coil-physical-coil-channel.md`). A feasible candidate with a pre-written mapping rule and a statement beyond the strong null could lead to a preregistration proposal, which needs its own PI decision.
 
 ## 10. Open programmatic questions
 
