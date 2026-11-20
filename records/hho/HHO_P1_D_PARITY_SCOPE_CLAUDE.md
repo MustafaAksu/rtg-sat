@@ -18,7 +18,7 @@ at the inert primes p of positive χ-defect? This is the remaining form of P1 (`
 | Fact | Row | Level |
 |---|---|---|
 | A nonsplit parabolic-cup class needs an inert p with p ∣ \|Γ\|/χ(1) | `HHO-COR-B1-GATE` | conditional on locality and B1 |
-| At such a p the parity is carried by the sector module A_χ; it is projective, so even, when no local monodromy has order divisible by p | `HHO-LEM-SECTOR`, `HHO-THM-COVER-BLOCK`, `HHO-COR-PROJ-EVEN` | conditional; the Gysin and integral Chevalley–Weil inputs are open |
+| At such a p, for the Jacobian-induced form h_W, ε_p is the parity of the length of the finite p-torsion sector module A_χ = e_χM_R/L_χ (`HHO-LEM-SECTOR`, which needs the reduction of χ mod p to be absolutely irreducible). The block cohomology M_B, not A_χ, is ≅ Ω(Q_B) ⊕ projective (`HHO-THM-COVER-BLOCK`), and M_B is projective when no local monodromy has order divisible by p, which makes ℓ(A_χ) even (`HHO-COR-PROJ-EVEN`). The passage to the parabolic-cup class carries the conditions of B1. For a reducible reduction, which constituent carries ε_p is open (`HHO-OPEN-PARITY-CONSTITUENT`) | `HHO-LEM-SECTOR`, `HHO-THM-COVER-BLOCK`, `HHO-COR-PROJ-EVEN`, B1 rows | conditional; the Gysin and integral Chevalley–Weil inputs are open |
 | Which constituent carries ε_p for a reducible reduction | `HHO-OPEN-PARITY-CONSTITUENT` | open |
 | The recorded proof of (D) (laminar, Severn) cannot apply to nonsplit data | `HHO_D_SOURCE_READING_CLAUDE.md` §3 | `[SESSION]`; other proofs of (D) are not excluded |
 | The budget N_eff ≥ 19 is necessary for (D) and not sufficient | `HHO-NEG-G616` | five tuples with N_eff = 20 and period rank ≤ 10 |
@@ -45,12 +45,18 @@ This is the definition of "period rank 16", restated through the dual differenti
 - A = H^{1,0}-part of M_χ, and A′ = H^{1,0}-part of M_{χ̄}. Signature (4,4) means dim A = 4 and dim H^{0,1}(M_χ) = 4.
 
 **Outline.**
-1. **Reduction to the effective group.** The χ-isotypic part of H¹(C) equals that of H¹(C′) = H¹(C)^{ker σ}, because χ is trivial on ker σ. Moving a branch point with σ(g_j) = 1 does not change the σ-part. So the relevant tangent directions are the N_eff points with σ(g_j) ≠ 1, and the relevant base has dimension N_eff − 3.
-2. **Quadratic differentials.** T*_{𝓗,t} ≅ H⁰(C′, ω^{⊗2})^Γ. These are the quadratic differentials on ℙ¹ with at most simple poles at the N_eff effective branch points, so the space has dimension N_eff − 3.
-3. **The period domain.** 𝒟_σ is the domain of 4-planes in the 8-dimensional M_χ that are positive for the Hermitian form (type U(4,4)). Its tangent space is Hom(A, M_χ/A) ≅ Hom(A, H^{0,1}(M_χ)), of dimension 16. Through the polarization, H^{0,1}(M_χ) ≅ (A′)^∨, and complex conjugation exchanges χ and χ̄ = χ^∨ for unitary U. So T*_{𝒟_σ} ≅ A ⊗ A′.
-4. **The candidate map.** μ_σ is the multiplication of holomorphic forms followed by the Γ-invariant contraction:
+1. **Reduction to the effective group (corrected after review R3).** The χ-isotypic part of H¹(C) equals that of H¹(C′) = H¹(C)^{ker σ}, because χ is trivial on ker σ. The σ-period map therefore factors as
 
-     μ_σ: A ⊗ A′ → H⁰(C′, ω^{⊗2})^Γ,   (φ ⊗ u, ψ ⊗ u′) ↦ ⟨u, u′⟩ · φψ.
+     𝓗_G → 𝓗_Γ → 𝒟_σ,
+
+   where 𝓗_G is the Hurwitz space of the G-covers, with all N marked branch points, and 𝓗_Γ is that of the Γ-covers, with the N_eff points where σ(g_j) ≠ 1. dim 𝓗_G = N − 3 and dim 𝓗_Γ = N_eff − 3. The first map forgets the non-effective points, and the σ-part does not depend on them. If N > N_eff, the cotangent space of 𝓗_G is **not** H⁰(C′, ω^{⊗2})^Γ. The statements below concern the map 𝓗_Γ → 𝒟_σ, and (D) is a statement about it. When all points are effective, N = N_eff and the two spaces agree.
+2. **Quadratic differentials.** T*_{𝓗_Γ,t} ≅ H⁰(C′, ω_{C′}^{⊗2})^Γ. These are the quadratic differentials on ℙ¹ with at most simple poles at the N_eff effective branch points, so the space has dimension N_eff − 3. This is standard for Hurwitz spaces of Γ-covers of ℙ¹, but it is not read here (part of O-KS2).
+3. **The period domain.** 𝒟_σ is the domain of 4-planes in the 8-dimensional M_χ that are positive for the Hermitian form (type U(4,4)). Its tangent space is Hom(A, M_χ/A) ≅ Hom(A, H^{0,1}(M_χ)), of dimension 16. Through the polarization, H^{0,1}(M_χ) ≅ (A′)^∨, and complex conjugation exchanges χ and χ̄ = χ^∨ for unitary U. So T*_{𝒟_σ} ≅ A ⊗ A′.
+4. **The candidate map, by the canonical Schur contraction (corrected after review R3).** Write A = Hom_Γ(U, H^{1,0}(C′)) and A′ = Hom_Γ(Ū, H^{1,0}(C′)). Here Ū ≅ U^∨ through the invariant pairing ⟨ , ⟩: U × Ū → ℂ. Take a basis (u_i) of U and its dual basis (u_i^*) of Ū. Then
+
+     μ_σ: A ⊗ A′ → H⁰(C′, ω^{⊗2})^Γ,   φ ⊗ ψ ↦ Σ_i φ(u_i) · ψ(u_i^*).
+
+   The right side does not depend on the basis, and it is Γ-invariant because Σ_i u_i ⊗ u_i^* is the invariant element of U ⊗ Ū. Whether this map, and not a twist or a multiple of it, is the codifferential remains **O-KS1/O-KS2**.
 
    The pairing ⟨ , ⟩ is the invariant pairing of U with U^∨ = Ū. This is the σ-part of the classical statement that the codifferential of the Jacobian period map is the multiplication S²H⁰(ω) → H⁰(ω²).
 5. **The budget.** Under this form, (D) needs dim A ⊗ A′ = 16 ≤ N_eff − 3, that is **N_eff ≥ 19**. This is the recorded budget, which supports the outline but does not prove it.
@@ -89,13 +95,29 @@ R_j is computed from the local expansions, at the points over x_j, of the forms 
 | W5 (G₃₄, 20 reflections) | 6 | 20 | rank 16 | [1] | HCG ledger §6.15 (`HCG-THM-G34D-SW5`), recorded |
 | G(6,1,6) P1–P3 (20 reflections) | 6 | 20 | rank ≤ 10 | [2] | `HHO-NEG-G616` (induced bound) |
 
-Both have the same d, the same N_eff and the same local types (reflections, c_j = 1).
+Both have the same d, the same N_eff and all c_j = 1. **Their local spectra are different** (review R1, co-owner's count):
+- W5 has 20 reflections of order 2.
+- G(6,1,6) P1–P3 have 17 of order 2, 2 of order 3 and 1 of order 6.
 
-**What any criterion must therefore do.** It must see global structure: for G(6,1,6), σ is induced from the monomial subgroup and the period map factors (`HCG-THM-INDUCED-PERIOD-BOUND`).
-- A purely local identity in the (λ_j, κ_j), or a count of local exponents, cannot separate these two data.
-- Neither can any condition that uses only N_eff and the c_j.
+At p = 2 the co-owner computed:
 
-In the residue picture of §2.3, the difference would appear as a proper subspace containing all the R_j. That subspace is imposed by an imprimitivity system for G(6,1,6), and absent for G₃₄.
+| Datum | Σλ_j | Σκ_j | ε₂ |
+|---|---|---|---|
+| W5 | 20 | 20 | 0 |
+| G616 P1, P2 | 16 | 17 | 1 |
+| G616 P3 | 14 | 17 | 1 |
+
+This uses the norm-6 roots of W5 and the norm-2 transposition reflections and diagonal reflections of `evidence/hho/code/g616.py`. It is a `[SESSION — ALG]` count by the co-owner, not re-derived here. Σκ_j agrees with the reflection orders (an order-2 reflection has one Φ₂ block; orders 3 and 6 have none).
+
+**Correction (review R1).** An earlier draft of this note said that no purely local identity in (λ_j, κ_j), and no count of local exponents, can separate these two data. **That was wrong and is withdrawn.** Both separate them: the local spectra differ, and ε₂ differs, as it must, since ε₂ is the class at 2. What the two controls do show is narrower:
+
+> the triple (d, N_eff, (c_j)_j) does not determine (D).
+
+From these two data nothing follows about whether all local spectral or arithmetic data together are insufficient.
+
+**What the controls suggest, and do not prove.**
+- In both, (D) and the parity at 2 go together: W5 has (D) and ε₂ = 0; G616 has no (D) and ε₂ = 1. This is two data points, not a pattern.
+- For G(6,1,6) the recorded reason for the failure of (D) is global: σ is induced from the monomial subgroup and the period map factors (`HCG-THM-INDUCED-PERIOD-BOUND`). In the residue picture of §2.3 this would appear as a proper subspace containing all the R_j, imposed by the imprimitivity system and absent for G₃₄.
 
 ## 4. Two directions (the PI decides)
 
@@ -134,3 +156,15 @@ Its output would be an obstruction through classification, of the type of Theore
 - Anything about the existence of nonsplit Weil eightfolds.
 
 Severn's results stay CLAIMED. No HHO grade changes.
+
+## 6. Review corrections
+
+Co-owner review: PR #98, review `5998782446` at `6b42044`, "ACCEPT WITH THREE REQUIRED CORRECTIONS".
+
+| Id | Point | Applied |
+|---|---|---|
+| R1 | The claim that local data cannot separate W5 from G(6,1,6) is false: the local spectra and ε₂ differ. Only (d, N_eff, (c_j)) is shown insufficient | §3 rewritten; the false claim is withdrawn; the co-owner's p = 2 count is added with its provenance |
+| R2 | §1 confused the sector module A_χ with the block cohomology M_B; A_χ is a finite p-torsion module | §1 row restated: A_χ carries the parity, M_B is projective under the stated conditions; the absolute irreducibility of χ mod p, the Jacobian-induced form, the B1 conditions and `HHO-OPEN-PARITY-CONSTITUENT` named separately |
+| R3 | Cotangent space of the effective Hurwitz space; canonical contraction | §2.2 items 1, 2 and 4: the factorization 𝓗_G → 𝓗_Γ → 𝒟_σ; T* of 𝓗_Γ, not of 𝓗_G, when N > N_eff; μ_σ defined by the Schur contraction with dual bases. Still O-KS1/O-KS2 |
+
+The co-owner recommends Direction 1. Nothing else changes.
