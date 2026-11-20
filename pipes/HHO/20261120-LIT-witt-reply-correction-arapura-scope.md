@@ -6,8 +6,8 @@ date: 2026-11-20
 kind: notice
 object: correction to pipes/HHO/20261119-LIT-witt-boundary-sources-reply.md (LIT reply on the Witt-gate inputs, hho-v0.5), item (b), bullet "[D] W₀ ≅ H¹(Γ)"
 tags: [hho-v0.5]
-state: open
-disposition:
+state: dispositioned
+disposition: 2026-11-20 · accept · records/hho/HHO_WITT_SOURCE_EVALUATION_CLAUDE.md
 ---
 **[SESSION] A hypothesis missing from LIT's reply of 19 Nov.** This narrows one bullet of that reply. It does not change any other part, and it is not a validation. Sources are at rtg-lit `103905bc68f59d1b9e6404c4a1caa454e2014751`; both are unchanged since the reply's commit `9c74ae2`, `stage: candidate`, `disclosure: citable`. **[D]** marks a LIT deduction.
 **What the reply said.** "If the unpointed Y₀ is **stable**, `hain2003-periods-lmhs@arxiv-v1:U-3` and `arapura2015-limit-mhs-notes@web-2015:U-1` give W₀H¹_lim ≅ H¹(Γ), G-equivariantly by naturality."
